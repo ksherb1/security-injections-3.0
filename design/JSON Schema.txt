@@ -1,0 +1,73 @@
+{	"name"		: "<html-source>",
+	"variant"	: "<html-source>",
+	"sections"	: [
+			{
+				"header"	: "<html-source>",
+				"units"		: [
+						{
+							"type"	: <"subheader" or "paragraph" or "list" or "question" or "checklist" or <to be extended>>,
+					<switch type>
+					<case "subheader">
+							"text"	: "<html-source>"
+					<case "paragraph">
+							"text"	: "<html-source>"
+					<case "list">
+							"items"		: [
+									"<html-source>",
+									...
+								],
+							"ordered"	: <boolean>
+					<case "question">
+							"id"		: "<id-string>",			<all unit id's within section must be unique>
+							"prompt"	: "<html-source>",
+							"ignored"	: <boolean>,
+							"mode"		: <"checkbox" or "radio" or "textarea" or <to be extended>>,
+						<switch mode>
+						<case "checkbox">
+							"choices"	: [
+									{
+										"id"	: "<id-string>",	<all choice id's within question must be unique>
+										"text"	: "<html-source>",
+										"ans"	: <boolean>
+									},
+									...
+								]
+						<case "radio">
+							"choices"	: [
+									{
+										"id"	: "<id-string>",	<all choice id's within question must be unique>
+										"text"	: "<html-source>"
+									},
+									...
+								],
+							"answer"	: "<id-string>"				<must be an id in question, or null only if "ignored" is true>
+						<case "textarea">
+							"pattern"	: "<regular-expression>"	<may be null only if "ignored" is true>
+						<expect addition of more cases>
+					<case "checklist">
+							"id"	: "<id-string">,				<all unit id's within section must be unique>
+							"list"	: [
+									{
+										"id"	: "<id-string>",	<all group id's within checklist must be unique>
+										"items"	: [
+												{
+													"id"	: "<id-string>",	<all item id's within group must be unique>
+													"text"	: "<html-source>",
+													"ans"	: <boolean>,
+													"js"	: <boolean>
+												},
+												...
+											]
+									},
+									...
+								],
+							"code"	: "<html-source>",				<may be null>
+							"js"	: "<js-source>"					<may be null only if no contained item has "js" set to true>
+					<expect addition of more cases>
+						},
+						...
+					]
+			},
+			...
+		]
+}

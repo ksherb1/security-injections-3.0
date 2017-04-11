@@ -1,0 +1,138 @@
+{
+	"name"		:	"Development",
+	"variant"	:	"Showcase",
+	"sections"	: [
+		{
+			"header"	:	"Background",
+			"units"		: [
+				{
+					"type"	:	"subheader",
+					"text"	:	"Subheader"
+				},
+				{
+					"type"	:	"paragraph",
+					"text"	:	"The purpose of this module is to have all possible unit types in one place. This makes it easy to copy a unit with appropriate syntax when developing new modules by hand. It also helps style developments. For example, this is a paragraph."
+				},
+				{
+					"type"	:	"paragraph",
+					"text"	:	"TODO (ongoing) maintain for new unit types and question modes."
+				},
+				{
+					"type"	:	"list",
+					"items"	: [
+						"This is an ordered list item.",
+						"This is another ordered list item."
+					],
+					"ordered": true
+				},
+				{
+					"type"	:	"list",
+					"items"	: [
+						"This is an unordered list item.",
+						"This is another unordered list item."
+					],
+					"ordered": true
+				},
+				{
+					"type"	:	"question",
+					"id"	:	"CB",
+					"prompt":	"This is a checkbox question (any number of right answers). Note that checkboxes checked with the wrong answer gain a class-tag saying so, and vice-versa.",
+					"ignored":	false,
+					"mode"	:	"checkbox",
+					"choices": [
+						{
+							"id"	:	"WRONG",
+							"text"	:	"This checkbox should  not be checked.",
+							"ans"	:	false
+						},
+						{
+							"id"	:	"RIGHT",
+							"text"	:	"This checkbox should  be checked.",
+							"ans"	:	true
+						}
+					]
+				},
+				{
+					"type"	:	"question",
+					"id"	:	"RB",
+					"prompt":	"This is a radio button question (one right answer).",
+					"ignored":	false,
+					"mode"	:	"radio",
+					"choices": [
+						{
+							"id"	:	"WRONG",
+							"text"	:	"This answer is wrong."
+						},
+						{
+							"id"	:	"RIGHT",
+							"text"	:	"This answer is right."
+						}
+					],
+					"answer":	"RIGHT"
+				},
+				{
+					"type"	:	"question",
+					"id"	:	"TA",
+					"prompt":	"This is a textarea question. Its answer could be checked against a regular expression, but normally we won't. This question also serves as the 'ignored question' example.",
+					"ignored":	true,
+					"mode"	:	"textarea",
+					"pattern":	null
+				},
+				{
+					"type"	:	"checklist",
+					"id"	:	"CHECKLIST",
+					"list"	: [
+						{
+							"id"	:	"GROUP1",
+							"items"	: [
+								{
+									"id"	:	"ONE",
+									"text"	:	"This group has three items.",
+									"ans"	:	true,
+									"js"	:	false
+								},
+								{
+									"id"	:	"TWO",
+									"text"	:	"You can have more than one group of items in a single checklist.",
+									"ans"	:	true,
+									"js"	:	false
+								},
+								{
+									"id"	:	"THREE",
+									"text"	:	"All the checkboxes in this group should be checked.",
+									"ans"	:	true,
+									"js"	:	false
+								}
+							]
+						},
+						{
+							"id"	:	"GROUP2",
+							"items"	: [
+								{
+									"id"	:	"ONE",
+									"text"	:	"This group has three items also.",
+									"ans"	:	false,
+									"js"	:	false
+								},
+								{
+									"id"	:	"TWO",
+									"text"	:	"Checkboxes controlled by javascript are disabled.",
+									"ans"	:	false,
+									"js"	:	true
+								},
+								{
+									"id"	:	"THREE",
+									"text"	:	"All the checkboxes in this group EXCEPT THIS ONE should be unchecked.",
+									"ans"	:	true,
+									"js"	:	false
+								}
+							]
+						}
+					],
+					"code"	:	"This is a code segment.\nIt is automatically put into a 'pre' tag.\nYou must end lines using the escape-sequence: \\n",
+					"js"	:	null
+				}
+			]
+		}
+	]
+}
