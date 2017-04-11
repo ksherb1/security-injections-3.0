@@ -8,20 +8,23 @@
  * 
  * Phase 2: functions for both 3.0 (which we have) and 1.0
  */
+	
+// REQUIRE
+var fs = require('fs');
+var UglifyJS = require("uglify-js");
+var Validate = require("./validate.js");
+
+
 exports.write_3 = function(name, variant, dev) {
 	if(typeof(dev)==='undefined') dev = false;		// default value for dev
-	
-	// REQUIRE
-	var fs = require('fs');
-	var UglifyJS = require("uglify-js");
-	var Validate = require("./validate.js");
 	
 	// CONSTANTS
 	var contentDir = "content/";
 	var resourceDir = "resource/";
 	var moduleDir = "modules/";
 	// MORE CONSTANTS
-	var contentFile = contentDir+name+"/"+variant+".json";
+	var contentLoc = contentDir+name+"/"+variant+"/";
+	var contentFile = contentLoc+"/content.json";
 	var templateFile = resourceDir+"template.html";
 	var angularFile = resourceDir+"angular.js";
 	var styleFile = resourceDir+"style.css";
@@ -30,10 +33,19 @@ exports.write_3 = function(name, variant, dev) {
 		moduleFile = 'DEV - '+moduleFile;
 	}
 	
-	// STEP 1 - load/validate/minify module content
-	var content = fs.readFileSync(contentFile);
-	var module = Validate.parse(content, {"name":name, "variant":variant});
+	
+	
+	// STEP 1 - load all content files and parse/validate/minify into single JSON string
+	var content = {}									// parameters for parsing
+	var files = fs.readdirSync(contentLoc);				// get all content files
+	for(i in files) {
+		content[files[i]] = ""+fs.readFileSync(contentLoc+files[i]);
+	}
+	
+	var prereqs = {'name': name, 'variant':variant};
+	var module = Validate.parse(content, prereqs);
 	content = JSON.stringify(module);					// content minified
+	
 	
 	// STEP 2 - load/minify each resource file
 	var template = fs.readFileSync(templateFile);

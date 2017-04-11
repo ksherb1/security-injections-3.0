@@ -1,0 +1,117 @@
+{
+	"name"		: "Development",
+	"variant"	: "Demo",
+	"sections"	: [
+		{
+			"header"	: "Background",
+			"units"		: [
+				{
+					"type"	: "subheader",
+					"text"	: "Summary"						
+				},
+				{
+					"type"	: "paragraph",
+					"text"	: "Integer Error is bad."						
+				},
+				{
+					"type"		: "question",
+					"id"		: "easy-a",
+					"prompt"	: "Is Integer Error bad?",
+					"ignored"	: false,
+					"mode"		: "radio",
+					"choices"	: [
+						{
+							"id"	: "yes",
+							"text"	: "Yes"
+						},
+						{
+							"id"	: "no",
+							"text"	: "No"
+						}
+					],
+					"answer"	: "yes"
+				},
+				{
+					"type"		: "question",
+					"id"		: "easy-d",
+					"prompt"	: "Why is Integer Error bad?",
+					"ignored"	: true,
+					"mode"		: "textarea",
+					"pattern"	: null
+				},
+				{
+					"type"		: "question",
+					"id"		: "easy-c",
+					"prompt"	: "Integer error is bad during:",
+					"ignored"	: false,
+					"mode"		: "checkbox",
+					"choices"	: [
+						{
+							"id"	: "morn",
+							"text"	: "the morning",
+							"ans"	: true
+						},
+						{
+							"id"	: "noon",
+							"text"	: "midday",
+							"ans"	: true
+						},
+						{
+							"id"	: "eve",
+							"text"	: "evening",
+							"ans"	: true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name"		: "security-checklist",
+			"header"	: "Security Checklist",
+			"units"		: [
+				{
+					"type"		: "checklist",
+					"id"		: "easy-b",
+					"list"		: [
+						{
+							"id"	: "bg-check",
+							"items"	: [
+								{
+									"id"	: "summary",
+									"text"	: "Did you read the summary?",
+									"ans"	: true,
+									"js"	: false
+								},
+								{
+									"id"	: "question",
+									"text"	: "Did you answer the question?",
+									"ans"	: true,
+									"js"	: false
+								},
+								{
+									"id"	: "correct",
+									"text"	: "Did you get it right?",
+									"ans"	: true,
+									"js"	: false
+								}
+							]
+						},
+						{
+							"id"	: "sc-check",
+							"items"	: [
+								{
+									"id"	: "checklist",
+									"text"	: "Did you complete the checklist?",
+									"ans"	: true,
+									"js"	: true
+								}
+							]
+						}
+					],
+					"code"	: null,
+					"js"	: "./checklist.js"
+				}
+			]
+		}
+	]
+}

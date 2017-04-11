@@ -1,0 +1,6 @@
+This is a code segment.
+It is automatically put into a 'pre' tag.
+If you are coding directly into JSON,
+	you must end lines using the escape-sequence: \n
+	since JSON must all be on one line
+Else, that happens automatically
