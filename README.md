@@ -8,6 +8,7 @@ This repository contains code for web-applications designed to teach secure codi
 NODE DEPENDENCIES (must be installed separately; see instructions below)
 -----------------
 express
+
 uglify-js
 -----------------
 
@@ -16,7 +17,9 @@ uglify-js
 SCRIPTS
 -------
 server.js - server-side script to handle interaction with clients
+
 create.js - compiles HTML, CSS, JS, and JSON into single HTML document
+
 validate.js - parses JSON content and checks that each field is permissible
 -------
 
@@ -27,9 +30,13 @@ validate.js - parses JSON content and checks that each field is permissible
 DIRECTORIES
 -----------
 content - contains directories for each module, which contain JSON content files for each variant
+
 design - contains design documents for this project
+
 images - repository for all images required by security injections
+
 modules - temporary storage location for modules created via create.js write methods
+
 resource - contains HTML, JS, and CSS files which are combined into a module
 -----------
 
