@@ -5,14 +5,14 @@ This repository contains code for web-applications designed to teach secure codi
 
 
 
-##NODE DEPENDENCIES (must be installed separately; see instructions below)
+## NODE DEPENDENCIES (must be installed separately; see instructions below)
 - express
 - uglify-js
 
 
 
 
-##SCRIPTS
+## SCRIPTS
 - server.js - server-side script to handle interaction with clients
 - create.js - compiles HTML, CSS, JS, and JSON into single HTML document
 - validate.js - parses JSON content and checks that each field is permissible
@@ -21,7 +21,7 @@ This repository contains code for web-applications designed to teach secure codi
 
 
 
-##DIRECTORIES
+## DIRECTORIES
 - content - contains directories for each module, which contain JSON content files for each variant
 - design - contains design documents for this project
 - images - repository for all images required by security injections
@@ -32,7 +32,7 @@ This repository contains code for web-applications designed to teach secure codi
 
 
 
-##HOW TO INSTALL NODE DEPENENCIES
+## HOW TO INSTALL NODE DEPENENCIES
 1) Install node and npm
 2) Open a terminal
 3) Navigate to your project directory
