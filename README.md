@@ -25,7 +25,7 @@ This repository contains code for web-applications designed to teach secure codi
 - content - contains directories for each module/variant, which contain JSON and other content files
 - design - contains design documents for this project
 - public - repository for all GETtable content, including images, published injections, and minified JSON content
-- resource - contains HTML, JS, and CSS files which are combined into a module
+- resources - contains HTML, JS, and CSS files which are combined into a module
 
 
 
