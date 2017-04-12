@@ -29,14 +29,15 @@ var allowedContentRequests = {
 	origin: '*'
 }
 
-// serve images as static resource
-app.use('/', express.static('images'));
-
 // serve module content with cors compatibility
-app.use('/', cors(allowedContentRequests), express.static('content'));
+// TODO: we may want to do this static serving in apache instead
+app.use('/', cors(allowedContentRequests), (req,res,next) => {
+	console.log("* Received request: "+req);
+	// TODO: more sophisticated logging
+	next();
+}, express.static('public'));
 
 // TODO: database update, with suitable validation
-// TODO: add logging for each request
 
 
 

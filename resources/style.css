@@ -1,0 +1,73 @@
+/* TODO: Everything.
+ 		See "template.html" or "../design/HTML Schema.txt" to see all the things that need styling.
+ 		
+ 		[What is currently present is only for demo purposes.]
+*/
+
+body {
+	background-color: lightgray;
+}
+
+.si-workflow {
+	border: 2px solid black;
+}
+
+
+
+
+.si-question {
+	width: 500px;
+	border: 2px solid black;
+}
+
+.si-question-correct {
+	background-color: chartreuse;
+}
+
+.si-question-incorrect {
+	background-color: pink;
+}
+
+
+
+
+.si-checkbox-label-correct::before {
+	color: forestgreen;
+	content: "V ";
+}
+
+.si-checkbox-label-incorrect::before {
+	color: maroon;
+	content: "X ";
+}
+
+
+
+
+
+.si-checklist {
+	border: 2px solid black;
+}
+
+.si-checklist-correct {
+	background-color: chartreuse;
+}
+
+.si-checklist-incorrect {
+	background-color: pink;
+}
+
+.si-checklist-active {
+	font-size: 1.6em;
+}
+
+
+
+.si-code-clicked {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.si-code-vulnerability {
+	background-color: yellow;
+}

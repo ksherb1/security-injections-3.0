@@ -1,5 +1,5 @@
-{	"name"		: "<html-source>",
-	"variant"	: "<html-source>",
+{	"name"		: "<string>",
+	"variant"	: "<string>",
 	"sections"	: [
 			{
 				"header"	: "<html-source>",
@@ -17,6 +17,14 @@
 									...
 								],
 							"ordered"	: <boolean>
+					<case "codeblock">
+							"code"	: "<string>"
+					<case "image">
+							"src"	: "<uri>",
+							"alt"	: "<string>",
+							"width"	: <number>,
+							"height": <number>,
+							"float"	: <"left" or "right" or null>
 					<case "question">
 							"id"		: "<id-string>",			<all unit id's within section must be unique>
 							"prompt"	: "<html-source>",
@@ -49,6 +57,7 @@
 							"list"	: [
 									{
 										"id"	: "<id-string>",	<all group id's within checklist must be unique>
+										"header": "<html-source>",
 										"items"	: [
 												{
 													"id"	: "<id-string>",	<all item id's within group must be unique>

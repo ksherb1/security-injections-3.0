@@ -75,6 +75,7 @@
 					"list"		: [
 						{
 							"id"	: "bg-check",
+							"header": "Be honest:",
 							"items"	: [
 								{
 									"id"	: "summary",
@@ -98,6 +99,7 @@
 						},
 						{
 							"id"	: "sc-check",
+							"header": "Don't even try to check this yourself:",
 							"items"	: [
 								{
 									"id"	: "checklist",

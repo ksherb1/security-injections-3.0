@@ -34,6 +34,18 @@
 					"ordered": true
 				},
 				{
+					"type"	:	"codeblock",
+					"code"	:	"./code.txt"
+				},
+				{
+					"type"	:	"image",
+					"src"	:	"http://imgs.xkcd.com/comics/cant_sleep.png",
+					"alt"	:	"This is SUPPOSED to be an image.",
+					"width"	:	740,
+					"height":	244,
+					"float"	:	null
+				},
+				{
 					"type"	:	"question",
 					"id"	:	"CB",
 					"prompt":	"This is a checkbox question (any number of right answers). Note that checkboxes checked with the wrong answer gain a class-tag saying so, and vice-versa.",
@@ -84,6 +96,7 @@
 					"list"	: [
 						{
 							"id"	:	"GROUP1",
+							"header":	"First Group",
 							"items"	: [
 								{
 									"id"	:	"ONE",
@@ -107,6 +120,7 @@
 						},
 						{
 							"id"	:	"GROUP2",
+							"header":	"Second Group",
 							"items"	: [
 								{
 									"id"	:	"ONE",

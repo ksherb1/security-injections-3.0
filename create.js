@@ -20,11 +20,11 @@ exports.write_3 = function(name, variant, dev) {
 	
 	// CONSTANTS
 	var contentDir = "content/";
-	var resourceDir = "resource/";
-	var moduleDir = "modules/";
+	var resourceDir = "resources/";
+	var publicDir = "public/";
+	var moduleDir = publicDir+"securityinjections/";
 	// MORE CONSTANTS
-	var contentLoc = contentDir+name+"/"+variant+"/";
-	var contentFile = contentLoc+"/content.json";
+	var contentLoc = name+"/"+variant+"/";
 	var templateFile = resourceDir+"template.html";
 	var angularFile = resourceDir+"angular.js";
 	var styleFile = resourceDir+"style.css";
@@ -37,9 +37,9 @@ exports.write_3 = function(name, variant, dev) {
 	
 	// STEP 1 - load all content files and parse/validate/minify into single JSON string
 	var content = {}									// parameters for parsing
-	var files = fs.readdirSync(contentLoc);				// get all content files
+	var files = fs.readdirSync(contentDir+contentLoc);				// get all content files
 	for(i in files) {
-		content[files[i]] = ""+fs.readFileSync(contentLoc+files[i]);
+		content[files[i]] = ""+fs.readFileSync(contentDir+contentLoc+files[i]);
 	}
 	
 	var prereqs = {'name': name, 'variant':variant};
@@ -61,6 +61,7 @@ exports.write_3 = function(name, variant, dev) {
 	html += '\t'+'<meta charset="UTF-8">'+'\n';
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>'+'\n';
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>'+'\n';
+	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>'+'\n';
 	html += '\t'+'<title>'+'Security Injection: '+module.name+' - '+module.variant+'</title>'+'\n';
 	if(dev) {	// in dev mode, link to sheets rather than including source
 		html += '\t'+'<link rel="stylesheet" href="../'+styleFile+'">'+'\n';
@@ -79,8 +80,8 @@ exports.write_3 = function(name, variant, dev) {
 	html += '</body>';
 	
 	// STEP 4 - write string to output file
+	fs.writeFileSync(publicDir+contentLoc.slice(0,-1)+".json", content);
 	fs.writeFileSync(moduleDir+moduleFile, html);
-	// Phase 2: we may wish to streamline process of getting this file to wherever it's supposed to ultimately be
 }
 
 // Phase 2: also create a 1.0 write function
@@ -89,5 +90,7 @@ exports.write_3 = function(name, variant, dev) {
 
 //Phase 2: module should not have "MAIN"
 // MAIN
-//exports.write_3("Integer Error", "CS0 C++");
 exports.write_3("Development", "Showcase", true);
+exports.write_3("Development", "Basic", true);
+exports.write_3("Development", "Demo");
+exports.write_3("Integer Error", "CS0 C++");

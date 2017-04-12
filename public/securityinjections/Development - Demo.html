@@ -1,0 +1,205 @@
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+	<title>Security Injection: Development - Demo</title>
+	<style>
+/* TODO: Everything.
+ 		See "template.html" or "../design/HTML Schema.txt" to see all the things that need styling.
+ 		
+ 		[What is currently present is only for demo purposes.]
+*/
+
+body {
+	background-color: lightgray;
+}
+
+.si-workflow {
+	border: 2px solid black;
+}
+
+
+
+
+.si-question {
+	width: 500px;
+	border: 2px solid black;
+}
+
+.si-question-correct {
+	background-color: chartreuse;
+}
+
+.si-question-incorrect {
+	background-color: pink;
+}
+
+
+
+
+.si-checkbox-label-correct::before {
+	color: forestgreen;
+	content: "V ";
+}
+
+.si-checkbox-label-incorrect::before {
+	color: maroon;
+	content: "X ";
+}
+
+
+
+
+
+.si-checklist {
+	border: 2px solid black;
+}
+
+.si-checklist-correct {
+	background-color: chartreuse;
+}
+
+.si-checklist-incorrect {
+	background-color: pink;
+}
+
+.si-checklist-active {
+	font-size: 1.6em;
+}
+
+
+
+.si-code-clicked {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.si-code-vulnerability {
+	background-color: yellow;
+}
+</style>
+	<script>var app=angular.module("modApp",["ngSanitize"]);app.controller("modCtrl",["$scope","$http",function(e,t){function o(t){e.module=t,e.currentsectionIndex=0,e.currentsection=e.module.sections[0],e.module.sections.push({header:"Final Page"})}function n(e,t,i){return i?($(t).removeClass("si-"+e+"-incorrect"),$(t).addClass("si-"+e+"-correct")):($(t).removeClass("si-"+e+"-correct"),$(t).addClass("si-"+e+"-incorrect")),i}function c(e,t){e.beginPath(),e.rect(0,0,500,348),e.fillStyle="white",e.fill(),e.fillStyle="black",e.textAlign="left",e.font="20px Arial",e.fillText("Security Injections @ offline",20,30),e.beginPath(),e.moveTo(20,40),e.lineTo(150,40),e.stroke(),e.font="12px Arial",e.fillText("Module: "+t.course,20,60),e.fillText("Student: "+t.name,20,80),e.fillText("Date: "+t.today,20,100),e.fillText("ID: "+t.hash,20,120)}function r(e,t,i){e.drawImage(i,0,0),e.font="12px Arial",e.textAlign="left",e.fillText(t.name,27,140),e.fillText(t.course,27,190),e.textAlign="center",e.fillText(t.hash,126,300),e.fillText(t.today,366,300)}e.loadContent=function(){var i=e.repo+$("#name").html()+"/"+$("#variant").html()+".json";console.log("Loading content from "+i),e.contentError=!1,t.get(i).then(function(e){o(e.data)},function(t){$("#default").length?(console.log("* No response - using default"),o(JSON.parse($("#default").html()))):(console.log("* No response - try again"),e.contentError=!0)})},function(){e.repo="http://127.0.0.1:8000/",e.loadContent(),e.sectionscompleted=0,e.form={}}(),e.checkAnswers=function(){var t=!0;for(i in e.currentsection.units)if(unit=e.currentsection.units[i],id="#"+unit.id,"question"!=unit.type||unit.ignored){if("checklist"==unit.type){var o=!0;for(j in unit.list){group=unit.list[j],group_id=id+"-"+group.id;for(k in group.items){item=group.items[k],item_id=group_id+"-"+item.id;var c=$(item_id).is(":checked")==item.ans;o&=c,n("checkbox",item_id,c),n("checkbox-label",item_id+"-label",c)}}t&=n("checklist",id,o)}}else switch(unit.mode){case"radio":t&=n("question",id,unit.value==unit.answer);break;case"checkbox":var o=!0;for(j in unit.choices){choice=unit.choices[j],choice_id=id+"-"+choice.id;var c=$(choice_id).is(":checked")==choice.ans;o&=c,n("checkbox",choice_id,c),n("checkbox-label",choice_id+"-label",c)}t&=n("question",id,o);break;case"textarea":var r=new RegExp(unit.pattern);t&=n("question",id,r.test(unit.value))}t&&e.sectionscompleted++},e.gotoSection=function(t){t<=e.sectionscompleted?(e.currentsectionIndex=t,e.currentsection=e.module.sections[t]):console.log("Cannot go to section "+t+": may only go up to section "+$sectionscompleted)},e.generateCertificate=function(){var o=e.module.name+" - "+e.module.variant,n=new Date,a=n.getDate(),l=n.getMonth()+1,s=n.getFullYear();a<10&&(a="0"+a),l<10&&(l="0"+l);var u=l+"/"+a+"/"+s,d=e.form.name+o+u,f=0;if(0==d.length)return f;for(i=0;i<d.length;i++)char=d.charCodeAt(i),f=(f<<5)-f+char,f&=f;f=Math.abs(f);var m={name:e.form.name,course:o,hash:f,today:u},h=document.getElementById("si-certificate-canvas"),g=h.getContext("2d");c(g,m);var p=new Image;p.crossOrigin="anonymous",p.onload=function(e){r(g,m,p)},p.src=e.repo+"images/blank_certificate.png",$("#si-certificate-link").html("Download Certificate"),$("#si-certificate-link").attr("href",h.toDataURL()),$("#si-certificate-link").prop("disabled",!1),e.form.modulename=e.module.name,e.form.variant=e.module.variant,e.form.date=n.toJSON(),t.post(e.repo+"record",e.form)}}]);</script>
+</head>
+<body>
+<div ng-app="modApp" ng-controller="modCtrl">
+	<div ng-if="contentError">
+		<p class="si-error">There was a problem getting content.</p>
+		<button ng-click="loadContent()">Try Again</button>
+		</div>
+	
+	<div ng-if="!contentError">
+		<h1>{{ module.name }} - {{ module.variant }}</h1>
+		
+		<!-- workflow -->
+		<div class="si-workflow">
+			<span ng-repeat="section in module.sections">
+				<button ng-if="$index <= sectionscompleted" ng-click="gotoSection($index)" ng-bind-html="section.header"></button>
+				<button ng-if="$index >  sectionscompleted" disabled ng-bind-html="section.header"></button>
+				</span>
+			</div>
+		
+		
+		<!-- section content -->
+		<div ng-if="currentsectionIndex < module.sections.length-1" class="si-content">
+			<h2 ng-bind-html="currentsection.header"></h2>
+			<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
+				<h3 ng-switch-when="subheader" ng-bind-html="unit.text"></h3>
+				<p ng-switch-when="paragraph" ng-bind-html="unit.text"></p>
+				<div ng-switch-when="list" class="si-list">
+					<ol ng-if="unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ol>
+					<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
+					</div>
+				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
+				<img ng-switch-when="image" src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};">
+				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
+					<h5 ng-bind-html="unit.prompt"></h5>
+					<div ng-switch="unit.mode">
+						<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
+							<label>
+								<input type="radio" ng-model="unit.value" value="{{ choice.id }}" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
+								<span ng-bind-html="choice.text" id="{{ unit.id+'-'+choice.id }}-label"></span>
+								</label>
+							</div>
+						<div ng-switch-when="checkbox" class="si-checkbox-choice" ng-repeat="choice in unit.choices">
+							<label>
+								<input type="checkbox" class="si-checkbox" ng-model="choice.value" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
+								<span ng-bind-html="choice.text" id="{{ unit.id+'-'+choice.id }}-label"></span>
+								</label>
+							</div>
+						<textarea ng-switch-when="textarea" ng-model="unit.value"></textarea>
+						<!-- TODO (ongoing) add more question modes -->
+						<p ng-switch-default class="si-error">Mode invalid</p>
+						</div>
+					</div>
+				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
+					<table ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+						<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
+						<tr ng-repeat="item in group.items">
+							<td ng-if="item.js" class="si-checklist-box-cell">
+								<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+										class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
+										disabled>
+								</td>
+							<td ng-if="!item.js" class="si-checklist-box-cell">
+								<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+										class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
+								</td>
+							<td class="si-checklist-label-cell">
+								<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
+								</td>
+							</tr>
+						</table>
+					<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+					<script ng-if="unit.js" ng-bind="unit.js"></script>
+					</div>
+				<!-- TODO (ongoing) add more unit types -->
+				<p ng-switch-default class="si-error">Type invalid</p>
+				</div>
+			
+			
+			<!-- buttons -->
+			<button id="btn-check-answers" ng-click="checkAnswers()">Check Answers</button>
+			<button ng-if="currentsectionIndex < sectionscompleted" ng-click="gotoSection(currentsectionIndex+1)">Next Section</button>
+			<button ng-if="currentsectionIndex >=  sectionscompleted" disabled>Next Section</button>
+			</div>
+		</div>
+	
+	<div ng-if="currentsectionIndex == module.sections.length-1" class="si-finished">
+		<div class="si-certificate-form">
+			<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
+			<p>Complete this form to generate your certificate</p>
+			<form ng-submit="generateCertificate()">
+				<table>
+					<tr class="si-form-name-row">
+						<td class="si-form-label-cell">Full name</td>
+						<td><input ng-model="form.name" type="text" required></td>
+						</tr>
+					<tr class="si-form-email-row">
+						<td class="si-form-label-cell">E-mail Address</td>
+						<td><input ng-model="form.email" type="email" required></td>
+						</tr>
+					<tr class="si-form-instructor-row">
+						<td class="si-form-label-cell">Instructor</td>
+						<td><input ng-model="form.instructor" type="text"></td>
+						</tr>
+					<tr class="si-form-institution-row">
+						<td class="si-form-label-cell">Institution</td>
+						<td><input ng-model="form.institution" type="text"></td>
+						</tr>	
+				</table>
+				<input type="submit" value="Generate Certificate">
+				</form>
+			</div>
+		<div class="si-certificate-pane">
+			<a id="si-certificate-link" download="certificate.png" disabled></a><br/>
+			<canvas id="si-certificate-canvas" width="500" height="348"></canvas>
+			</div>
+		</div>
+	
+	
+	</div>
+	<script type="text/plain" id="name">Development</script>
+	<script type="text/plain" id="variant">Demo</script>
+	<script type="text/plain" id="default">{"name":"Development","variant":"Demo","sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary"},{"type":"paragraph","text":"Integer Error is bad."},{"type":"question","id":"easy-a","prompt":"Is Integer Error bad?","ignored":false,"mode":"radio","choices":[{"id":"yes","text":"Yes"},{"id":"no","text":"No"}],"answer":"yes"},{"type":"question","id":"easy-d","prompt":"Why is Integer Error bad?","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"easy-c","prompt":"Integer error is bad during:","ignored":false,"mode":"checkbox","choices":[{"id":"morn","text":"the morning","ans":true},{"id":"noon","text":"midday","ans":true},{"id":"eve","text":"evening","ans":true}]}]},{"name":"security-checklist","header":"Security Checklist","units":[{"type":"checklist","id":"easy-b","list":[{"id":"bg-check","header":"Be honest:","items":[{"id":"summary","text":"Did you read the summary?","ans":true,"js":false},{"id":"question","text":"Did you answer the question?","ans":true,"js":false},{"id":"correct","text":"Did you get it right?","ans":true,"js":false}]},{"id":"sc-check","header":"Don't even try to check this yourself:","items":[{"id":"checklist","text":"Did you complete the checklist?","ans":true,"js":true}]}],"code":null,"js":"$(document).ready(function(){$(document).bind(\"click updateInfo keyup mousedown mousemove mouseup\",function(){$(\"#easy-b-bg-check-summary\").prop(\"checked\")&&$(\"#easy-b-bg-check-question\").prop(\"checked\")&&$(\"#easy-b-bg-check-correct\").prop(\"checked\")&&$(\"#easy-b-sc-check-checklist\").prop(\"checked\",!0)})});"}]}]}</script>
+</body>

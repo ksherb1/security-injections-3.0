@@ -17,24 +17,32 @@
 							<li>
 						<ul>
 							<li>
+					<pre>
+					<img>
 					<div .si-question [.si-question-correct] [.si-question-incorrect]>
 						<h5>
 						<div>
 							<div .si-radio-choice>
 								<label>
 									<input>
+									<span>
 							<div .si-checkbox-choice>
 								<label>
 									<input .si-checkbox [.si-checkbox-correct] [.si-checkbox-incorrect]>
+									<span [.si-checkbox-label-correct] [.si-checkbox-label-incorrect]>
 							<textarea>
 							<p .si-error>
 					<div .si-checklist [.si-checklist-correct] [.si-checklist-incorrect]>
 						<table>
 							<tr>
+								<th>
+							<tr>
 								<td .si-checklist-box-cell>
 									<input .si-checkbox [.si-checkbox-correct] [.si-checkbox-incorrect]>
-								<td .si-checklist-text-cell>
+								<td .si-checklist-label-cell>
+									<span [.si-checklist-active] [.si-checkbox-label-correct] [.si-checkbox-label-incorrect]>
 						<pre .si-checklist-code>
+							<[any] [.si-code-clicked] [.si-code-vulnerability]>
 						<script>
 					<p .si-error>
 		<button #btn-check-answers>
