@@ -5,7 +5,7 @@
 				"header"	: "<html-source>",
 				"units"		: [
 						{
-							"type"	: <"subheader" or "paragraph" or "list" or "question" or "checklist" or <to be extended>>,
+							"type"	: <"subheader" or "paragraph" or "list" or "codeblock" or "image" or "question" or "checklist" or <to be extended>>,
 					<switch type>
 					<case "subheader">
 							"text"	: "<html-source>"

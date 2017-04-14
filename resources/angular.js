@@ -71,7 +71,7 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 	 *  But we also should store answers to textarea questions, for certificate
 	 *  And to look completely professional we should restore ALL user inputs
 	 *  	note that graded MC questions don't need to be saved to do this
-	 *  	but MC questions can theoretically be ungraded, so we should accomodate them
+	 *  	but MC questions can theoretically be ungraded, so we should accommodate them
 	 *  
 	 */
 	
@@ -171,7 +171,7 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 			}
 		}
 		
-		if (perfect) {
+		if (perfect && $scope.currentsectionIndex == $scope.sectionscompleted) {
 			$scope.sectionscompleted ++;
 		}
 	}
