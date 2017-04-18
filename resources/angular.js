@@ -20,6 +20,36 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 	}
 	
 	/**
+	 * helper method to initialize score object
+	 * 
+	 * PARAMETERS: content - object containing all content for module
+	 */
+	function initScore(content) {
+		$scope.score = {							// initialize score report
+				name 	: content.name,
+				variant	: content.variant,
+				sections: []
+		}
+		
+		for (i in content.sections) {				// each section has header, time...
+			section = {
+				header	: content.sections[i].header,
+				time	: 0,
+				questions: {}
+			}
+			
+			for (j in content.sections[i].units) {	// ...and (question_id : # of attempts) pairs
+				unit = content.sections[i].units[j];
+				if((unit.type == "question" && !unit.ignored) || unit.type == "checklist") {
+					section.questions[unit.id] = 1;	// all graded questions are "attempted" at least once
+				}
+			}
+			
+			$scope.score.sections.push(section);
+		}
+	}
+	
+	/**
 	 * method to initialize module content
 	 * 
 	 * NETWORK: sends GET request to server, for JSON content
@@ -35,21 +65,28 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 			$scope.repo+$("#name").html()+'/'+$("#variant").html()+".json";
 		
 		console.log("Loading content from "+request);
-
-		$scope.contentError = false;	// assume content is loaded, until it isn't
 		
+		$scope.contentError = false;	// assume content is loaded, until it isn't
 		$http.get(request)				// send GET request
 			 .then(function(response) {			// response received from server
+				 
 				 initModule(response.data);
+				 initScore(response.data);
+				 
 			 },  function(response) {			// response not received
 				 if($("#default").length) {				// module has 'default' JSON content
 					 console.log("* No response - using default");
-					 initModule(JSON.parse($("#default").html()));
+					 var content = JSON.parse($("#default").html());
+
+					 initModule(content);
+					 initScore(content);
+					 
 				 } else {								// no content to work with
 					 console.log("* No response - try again");
 					 $scope.contentError = true;
 				 }
 			 });
+		
 	}
 	
 	// initialize all non-function fields
@@ -58,6 +95,7 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 		$scope.loadContent();						// initialize module object and contentError boolean
 		$scope.sectionscompleted = 0;				// start from the first section
 		$scope.form = {}							// initialize submission form
+		$scope.starttime = new Date();				// initialize start time, to track each section's completion time
 	}
 	
 	initialize();
@@ -114,10 +152,13 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 			unit = $scope.currentsection.units[i];
 			id = "#"+unit.id;
 			
+			var right = true;	// until proven wrong
+			
 			if(unit.type == "question" && !unit.ignored) {
 				switch(unit.mode) {
 				case "radio":
-					perfect &= classify("question", id, unit.value == unit.answer);
+					//perfect &= classify("question", id, unit.value == unit.answer);
+					right = classify("question", id, unit.value == unit.answer);
 					break;
 					
 				case "checkbox":
@@ -128,20 +169,22 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 						choice = unit.choices[j];
 						choice_id = id+"-"+choice.id;
 						
-						var right = $(choice_id).is(':checked') == choice.ans
-						correct &= right;
+						var item_right = $(choice_id).is(':checked') == choice.ans
+						correct &= item_right;
 						
-						classify("checkbox", choice_id, right);
-						classify("checkbox-label", choice_id+"-label", right);
+						classify("checkbox", choice_id, item_right);
+						classify("checkbox-label", choice_id+"-label", item_right);
 					}
 					
-					perfect &= classify("question", id, correct);
+					//perfect &= classify("question", id, correct);
+					right = classify("question", id, correct);
 					
 					break;
 					
 				case "textarea":
 					var re = new RegExp(unit.pattern);
-					perfect &= classify("question", id, re.test(unit.value));
+					//perfect &= classify("question", id, re.test(unit.value));
+					right = classify("question", id, re.test(unit.value));
 					break;
 				
 				// TODO (ongoing) maintain functionality for new question modes
@@ -159,19 +202,31 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 						item = group.items[k];
 						item_id = group_id+"-"+item.id;
 						
-						var right = $(item_id).is(':checked') == item.ans;
-						correct &= right;
+						var item_right = $(item_id).is(':checked') == item.ans;
+						correct &= item_right;
 						
-						classify("checkbox", item_id, right);
-						classify("checkbox-label", item_id+"-label", right);
+						classify("checkbox", item_id, item_right);
+						classify("checkbox-label", item_id+"-label", item_right);
 					}
 				}
 				
-				perfect &= classify("checklist", id, correct);
+				right &= classify("checklist", id, correct);
+			}
+			
+			if(!right) {
+				perfect = false;
+				$scope.score.sections[$scope.currentsectionIndex].questions[unit.id] += 1;	// count attempt
 			}
 		}
 		
+		// IF user has just successfully completed a new section
 		if (perfect && $scope.currentsectionIndex == $scope.sectionscompleted) {
+			// register time between starting and ending section
+			var now = new Date();
+			$scope.score.sections[$scope.sectionscompleted].time = now - $scope.starttime;
+			// update time
+			$scope.starttime = now;
+			// increment number of sections
 			$scope.sectionscompleted ++;
 		}
 	}
@@ -317,6 +372,8 @@ app.controller("modCtrl", ["$scope", "$http", function($scope, $http) {	// the a
 		$scope.form['modulename'] = $scope.module.name;
 		$scope.form['variant'] = $scope.module.variant;
 		$scope.form['date'] = now.toJSON();
+		$scope.form['score'] = JSON.stringify($scope.score);
+		console.log($scope.form['score']);
 		// TODO: make sure $scope.form content is securely encrypted. Student email is private info
 		$http.post($scope.repo+'record', $scope.form);
 	}
