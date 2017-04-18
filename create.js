@@ -64,8 +64,8 @@ exports.write_3 = function(name, variant, dev) {
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>'+'\n';
 	html += '\t'+'<title>'+'Security Injection: '+module.name+' - '+module.variant+'</title>'+'\n';
 	if(dev) {	// in dev mode, link to sheets rather than including source
-		html += '\t'+'<link rel="stylesheet" href="../'+styleFile+'">'+'\n';
-		html += '\t'+'<script src="../'+angularFile+'"></script>'+'\n';
+		html += '\t'+'<link rel="stylesheet" href="../../'+styleFile+'">'+'\n';
+		html += '\t'+'<script src="../../'+angularFile+'"></script>'+'\n';
 	} else {
 		html += '\t'+'<style>'+'\n'+style+'\n</style>'+'\n';
 		html += '\t'+'<script>'+angular+'</script>'+'\n';
