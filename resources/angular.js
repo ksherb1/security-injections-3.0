@@ -239,124 +239,99 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 		return right;
 	}
 
-	/**
-	 * method to check all answers in current section
-	 * called when 'check answers' button is selected
-	 *
-	 * FOR EACH graded answer
-	 * 	classify as correct or incorrect (to trigger CSS changes)
-	 * IF all answers are correct, enable 'continue' button
-	 */
-	$scope.checkAnswers = function() {
-		var perfect = true;		// true if all questions/checklists are correct
+ /* method to check all answers in current section
+ * called when 'check answers' button is selected
+ *
+ * FOR EACH graded answer
+ * 	classify as correct or incorrect (to trigger CSS changes)
+ * IF all answers are correct, enable 'continue' button
+ */
+$scope.checkAnswers = function() {
+	var perfect = true;		// true if all questions/checklists are correct
 
-		// go through each question and checklist, see if it's right
-		for (i in $scope.currentsection.units) {
-			unit = $scope.currentsection.units[i];
-			id = "#"+unit.id;
+	// go through each question and checklist, see if it's right
+	for (i in $scope.currentsection.units) {
+		unit = $scope.currentsection.units[i];
+		id = "#"+unit.id;
 
-			var right = true;	// until proven wrong
+		var right = true;	// until proven wrong
 
-			if(unit.type == "question" && !unit.ignored) {
-				switch(unit.mode) {
-				case "radio":
-					//perfect &= classify("question", id, unit.value == unit.answer);
-					right = classify("question", id, unit.value == unit.answer);
-					break;
+		if(unit.type == "question" && !unit.ignored) {
+			switch(unit.mode) {
+			case "radio":
+				//perfect &= classify("question", id, unit.value == unit.answer);
+				right = classify("question", id, unit.value == unit.answer);
+				break;
 
-				case "checkbox":
-					var correct = true; // true if this question is correct
-
-					// determine whether each box should be checked
-					for (j in unit.choices) {
-						choice = unit.choices[j];
-						choice_id = id+"-"+choice.id;
-
-
-						var item_right = $(choice_id).is(':checked') == choice.ans
-						correct &= item_right;
-
-						classify("checkbox", choice_id, item_right);
-						classify("checkbox-label", choice_id+"-label", item_right);
-					}
-
-					//perfect &= classify("question", id, correct);
-					right = classify("question", id, correct);
-
-
-						var right = $(choice_id).is(':checked') == choice.ans
-						correct &= right;
-
-						classify("checkbox", choice_id, right);
-						classify("checkbox-label", choice_id+"-label", right);
-					}
-
-					perfect &= classify("question", id, correct);
-
-					break;
-
-				case "textarea":
-					var re = new RegExp(unit.pattern);
-					//perfect &= classify("question", id, re.test(unit.value));
-					right = classify("question", id, re.test(unit.value));
-					break;
-
-				// TODO (ongoing) maintain functionality for new question modes
-
-				}
-			} else if(unit.type == "checklist") {
-				var correct = true; // true if all boxes are appropriately checked
+			case "checkbox":
+				var correct = true; // true if this question is correct
 
 				// determine whether each box should be checked
-				for (j in unit.list) {
-					group = unit.list[j];
-					group_id = id+"-"+group.id;
+				for (j in unit.choices) {
+					choice = unit.choices[j];
+					choice_id = id+"-"+choice.id;
 
-					for (k in group.items) {
-						item = group.items[k];
-						item_id = group_id+"-"+item.id;
+					var item_right = $(choice_id).is(':checked') == choice.ans
+					correct &= item_right;
 
-						var item_right = $(item_id).is(':checked') == item.ans;
-						correct &= item_right;
-
-						classify("checkbox", item_id, item_right);
-						classify("checkbox-label", item_id+"-label", item_right);
-					}
+					classify("checkbox", choice_id, item_right);
+					classify("checkbox-label", choice_id+"-label", item_right);
 				}
 
-				right &= classify("checklist", id, correct);
+				//perfect &= classify("question", id, correct);
+				right = classify("question", id, correct);
+
+				break;
+
+			case "textarea":
+				var re = new RegExp(unit.pattern);
+				//perfect &= classify("question", id, re.test(unit.value));
+				right = classify("question", id, re.test(unit.value));
+				break;
+
+			// TODO (ongoing) maintain functionality for new question modes
+
 			}
+		} else if(unit.type == "checklist") {
+			var correct = true; // true if all boxes are appropriately checked
 
-			if(!right) {
-				perfect = false;
-				$scope.score.sections[$scope.currentsectionIndex].questions[unit.id] += 1;	// count attempt
-			}
-		}
+			// determine whether each box should be checked
+			for (j in unit.list) {
+				group = unit.list[j];
+				group_id = id+"-"+group.id;
 
-		// IF user has just successfully completed a new section
+				for (k in group.items) {
+					item = group.items[k];
+					item_id = group_id+"-"+item.id;
 
-						var right = $(item_id).is(':checked') == item.ans;
-						correct &= right;
+					var item_right = $(item_id).is(':checked') == item.ans;
+					correct &= item_right;
 
-						classify("checkbox", item_id, right);
-						classify("checkbox-label", item_id+"-label", right);
-					}
+					classify("checkbox", item_id, item_right);
+					classify("checkbox-label", item_id+"-label", item_right);
 				}
-
-				perfect &= classify("checklist", id, correct);
 			}
+
+			right &= classify("checklist", id, correct);
 		}
 
-		if (perfect && $scope.currentsectionIndex == $scope.sectionscompleted) {
-			// register time between starting and ending section
-			var now = new Date();
-			$scope.score.sections[$scope.sectionscompleted].time = now - $scope.starttime;
-			// update time
-			$scope.starttime = now;
-			// increment number of sections
-			$scope.sectionscompleted ++;
+		if(!right) {
+			perfect = false;
+			$scope.score.sections[$scope.currentsectionIndex].questions[unit.id] += 1;	// count attempt
 		}
 	}
+
+	// IF user has just successfully completed a new section
+	if (perfect && $scope.currentsectionIndex == $scope.sectionscompleted) {
+		// register time between starting and ending section
+		var now = new Date();
+		$scope.score.sections[$scope.sectionscompleted].time = now - $scope.starttime;
+		// update time
+		$scope.starttime = now;
+		// increment number of sections
+		$scope.sectionscompleted ++;
+	}
+}
 
 	/**
 	 * method used to change sections
