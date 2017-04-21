@@ -135,7 +135,11 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 	 *
 	 */
 	 $scope.saveCookie = function (completed) {
-		 $cookies.put('progress', completed);
+		 var today = new Date();
+		 var expireTime = new Date(today);
+		 expireTime.setMinutes(today.getMinutes() + 300);//expires in 5 hours
+		 $cookies.put('progress', completed, {'expires': expireTime});
+
 
 		 questionCount = 0;
 		 for (i in $scope.currentsection.units) {
@@ -427,14 +431,15 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 		 */
 		var doc = new jsPDF();
 		certData = canvas.toDataURL();
+
 		var discussionQuestions = [];
 		for (i in $scope.module.sections) {
 			for (q in $scope.module.sections.units){
 					unit = $scope.section.units[q];
-				if(unit.type == "question" && !unit.ignored) {
+				if(unit.type == "question") {
 					if(unit.mode == "textarea"){
 						discussionQuestions[q] = {prompt:unit.prompt, answer:unit.value};
-						console.log(discussionQuestions[q].prompt);
+						//console.log(discussionQuestions[q].prompt);
 					}
 				}
 			}
@@ -447,7 +452,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 		// Step 6: Make certificate available for download
 
 		$("#si-certificate-link").html("Download Certificate");
-		$("#si-certificate-link").attr('href', pdfCertificate(doc));
+		$("#si-certificate-link").attr('href', pdfCertificate(doc,discussionQuestions,certData));
 		//$("#si-certificate-link").attr('href', doc.save());
 		$('#si-certificate-link').prop('disabled', false);
 
@@ -459,4 +464,5 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 		// TODO: make sure $scope.form content is securely encrypted. Student email is private info
 		$http.post($scope.repo+'record', $scope.form);
 	}
+
 }]);
