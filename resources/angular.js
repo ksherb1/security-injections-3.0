@@ -1,4 +1,4 @@
-/**
+>/**
  * Client-side script to control module process
  * Integrated into module file with create.js
  *
@@ -109,9 +109,9 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 	//Handles redirect and setting variables if need progress cookie exists.
 			$scope.redirectCookie = function(){
 					var progressCookie = $cookies.get('progress');
-					$scope.sectionscompleted = progressCookie;
-					$scope.currentsectionIndex = progressCookie;
-					$scope.currentsection = $scope.module.sections[progressCookie];
+					$scope.sectionscompleted = parseInt(progressCookie);
+					$scope.currentsectionIndex = $scope.sectionscompleted
+					$scope.currentsection = $scope.module.sections[$scope.currentsectionIndex];
 			}
 
 	//This method should retrieve all cookies.
@@ -119,11 +119,11 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 				if($cookies.get('progress')!= null){
 					$scope.redirectCookie();
 				}
-				cookieForms = $cookies.getObject('questionCookies');
+				/*cookieForms = $cookies.getObject('questionCookies');
 				//console.log(cookieback.question);
 
 			 questionCount = 0;
-			 for (i in $scope.currentsection.units) {
+			for (i in $scope.currentsection.units) {
 					unit = $scope.currentsection.units[i];
 					id = "#"+unit.id;
 
@@ -141,7 +141,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 								choice = unit.choices[j];
 								choice_id = id+"-"+choice.id;
 								$cookies.putObject('questionCookies',{question:unit.choices});
-							}*/
+							}
 							break;
 
 						case "textarea":
@@ -154,6 +154,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 
 				}
 			}
+			*/
 		}
 
 
@@ -179,7 +180,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 		 expireTime.setMinutes(today.getMinutes() + 300);//expires in 5 hours
 		 $cookies.put('progress', completed, {'expires': expireTime});
 
-
+/*
 		 questionCount = 0;
 		 for (i in $scope.currentsection.units) {
 			unit = $scope.currentsection.units[i];
@@ -199,7 +200,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 							choice = unit.choices[j];
 							choice_id = id+"-"+choice.id;
 							$cookies.putObject('questionCookies',{question:unit.choices});
-						}*/
+						}
 						break;
 
 					case "textarea":
@@ -215,6 +216,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 		 //console.log("Cookie has been saved: " + $cookies.get('progress'));
 
 	 }
+	 */
  }
 
 
@@ -345,7 +347,7 @@ $scope.checkAnswers = function() {
 			$scope.currentsection = $scope.module.sections[i];
 			$scope.saveCookie($scope.sectionscompleted);
 		} else {
-			console.log("Cannot go to section "+i+": may only go up to section "+$sectionscompleted);
+			console.log("Cannot go to section "+i+": may only go up to section "+$scope.sectionscompleted);
 		}
 	}
 
