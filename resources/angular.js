@@ -1,4 +1,4 @@
->/**
+/**
  * Client-side script to control module process
  * Integrated into module file with create.js
  *
@@ -110,7 +110,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 			$scope.redirectCookie = function(){
 					var progressCookie = $cookies.get('progress');
 					$scope.sectionscompleted = parseInt(progressCookie);
-					$scope.currentsectionIndex = $scope.sectionscompleted
+					$scope.currentsectionIndex = $scope.sectionscompleted;
 					$scope.currentsection = $scope.module.sections[$scope.currentsectionIndex];
 			}
 
@@ -273,7 +273,9 @@ $scope.checkAnswers = function() {
 					choice = unit.choices[j];
 					choice_id = id+"-"+choice.id;
 
-					var item_right = $(choice_id).is(':checked') == choice.ans
+					// if checkbox hasn't been touched, angular thinks it is undefined
+					if(typeof(choice.value)==='undefined') choice.value = false;
+					var item_right = choice.value == choice.ans;
 					correct &= item_right;
 
 					classify("checkbox", choice_id, item_right);
@@ -305,8 +307,13 @@ $scope.checkAnswers = function() {
 				for (k in group.items) {
 					item = group.items[k];
 					item_id = group_id+"-"+item.id;
-
-					var item_right = $(item_id).is(':checked') == item.ans;
+					
+					// if checkbox hasn't been touched, angular thinks it is undefined
+					if(typeof(item.value)==='undefined') item.value = false;
+					// when checkbox is mediated by javascript, must manually bind item.value
+					if(item.js) item.value = $(item_id).is(':checked');
+					
+					var item_right = item.value == item.ans;
 					correct &= item_right;
 
 					classify("checkbox", item_id, item_right);
@@ -414,7 +421,7 @@ $scope.checkAnswers = function() {
 			doc.text(q[i].answer, 30,(50+i*30));
 
 		}
-
+		
 		doc.save("certificate.pdf");
 	}
 
@@ -491,17 +498,17 @@ $scope.checkAnswers = function() {
 
 		var discussionQuestions = [];
 		for (i in $scope.module.sections) {
-			for (q in $scope.module.sections.units){
-					unit = $scope.section.units[q];
+			for (q in $scope.module.sections[i].units){
+					unit = $scope.module.sections[i].units[q];
 				if(unit.type == "question") {
 					if(unit.mode == "textarea"){
 						discussionQuestions[q] = {prompt:unit.prompt, answer:unit.value};
-						//console.log(discussionQuestions[q].prompt);
+//						console.log(discussionQuestions[q].prompt);
 					}
 				}
 			}
 		}
-		//pdfCertificate(doc, discussionQuestions, certData);
+//		pdfCertificate(doc, discussionQuestions, certData);
 
 
 
@@ -510,7 +517,7 @@ $scope.checkAnswers = function() {
 
 		$("#si-certificate-link").html("Download Certificate");
 		$("#si-certificate-link").attr('href', pdfCertificate(doc,discussionQuestions,certData));
-		//$("#si-certificate-link").attr('href', doc.save());
+//		$("#si-certificate-link").attr('href', doc.save());
 		$('#si-certificate-link').prop('disabled', false);
 
 
@@ -519,7 +526,6 @@ $scope.checkAnswers = function() {
 		$scope.form['variant'] = $scope.module.variant;
 		$scope.form['date'] = now.toJSON();
 		$scope.form['score'] = JSON.stringify($scope.score);
-		console.log($scope.form['score']);
 		// TODO: make sure $scope.form content is securely encrypted. Student email is private info
 		$http.post($scope.repo+'record', $scope.form);
 	}
