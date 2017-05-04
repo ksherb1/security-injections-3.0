@@ -6,7 +6,7 @@
  */
 
 var app = angular.module("modApp", ['ngSanitize', 'ngCookies']);		// the angular "app"
-app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http, $cookies) {	// the angular "controller"
+app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce) {	// the angular "controller"
 
 	/**
 	 * helper method to initialize module object
@@ -119,44 +119,83 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 				if($cookies.get('progress')!= null){
 					$scope.redirectCookie();
 				}
-				/*cookieForms = $cookies.getObject('questionCookies');
-				//console.log(cookieback.question);
 
-			 questionCount = 0;
-			for (i in $scope.currentsection.units) {
-					unit = $scope.currentsection.units[i];
-					id = "#"+unit.id;
+				cookieAnswer = $cookies.getObject('forms');
+				n = 0;
+				if(typeof(cookieAnswer)==='undefined'){
+					console.log("No cookies to be loaded");
+				}
+				else{
+				for (i in $scope.module.sections) {
+					for (q in $scope.module.sections[i].units){
+							unit = $scope.module.sections[i].units[q];
+						if(unit.type == "question") {
+							switch(unit.mode) {
+								case "radio":
+									if(cookieAnswer[n]!=null && cookieAnswer[n].prompt == unit.prompt ){
+										for(c in unit.choices){
+											if (unit.choices[c].id == cookieAnswer[n].answer){
+												unit.checked = true;
+												unit.value = cookieAnswer[n].answer;
 
-					if(unit.type == "question" && !unit.ignored) {
-						questionCount = questionCount + 1;
-						switch(unit.mode) {
-						case "radio":
-							question = questionCount;
-							unit.value = cookieForms.question;
-							break;
+											}
+										}
+										n++;
+									}
+									break;
+								case "checkbox":
+									if(cookieAnswer[n]!=null){
+										for(c in unit.choices){
+											if (unit.choices[c].id == cookieAnswer[n].prompt[c]){
+												if((cookieAnswer[n].answer[c] == true)){
+													unit.choices[c].value=true;
+												}
+												else unit.choices[c].value=false;
+											}
 
-						case "checkbox":
-							/*question = questionCount;
-							for (j in unit.choices) {
-								choice = unit.choices[j];
-								choice_id = id+"-"+choice.id;
-								$cookies.putObject('questionCookies',{question:unit.choices});
+										}
+										n++;
+									}
+									break;
+								case "textarea":
+								if(cookieAnswer[n]!=null && cookieAnswer[n].prompt == unit.prompt){
+									unit.value = cookieAnswer[n].answer;
+									n++;
+									}
+									break;
+								}
 							}
-							break;
+						else if(unit.type == "checklist") {
+							//Having trouble with checklist. Disregading for now
+							/*if(cookieAnswer[n]!=null){
+								for (j in unit.list) {
+									group = unit.list[j];
+									group_id = unit.id+"-"+group.id;
 
-						case "textarea":
-							question = questionCount;
-							unit.value = cookieForms.question;
-							break;
-						}
+									for (k in group.items) {
+										item = group.items[k];
+										item_id = group_id+"-"+item.id;
+
+
+										if (item_id == cookieAnswer[n].prompt[k]){
+											item.value = cookieAnswer[n].answer[k];
+										}
+										else{
+											item.value = false;
+										}
+										//console.log(item.value + "          "+ cookieAnswer[n].answer[k]);
+										//console.log(item_id+"    "+cookieAnswer[n].prompt[k]);
+									}
+								}
+								n++;
+							}
+							*/
+
 					}
-					else if(unit.type == "checklist") {
-
 				}
 			}
-			*/
 		}
-
+	}
 
 	/*
 	 * functionality to save and progress to cookies (or decide to not bother)
@@ -168,7 +207,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 	 *  	but MC questions can theoretically be ungraded, so we should accommodate them
 
 
-	 nformation we want is contained in
+	 information we want is contained in
 	 * 		$scope.module.sections[each].units[each whose type is 'question' and mode is 'textarea']
 	 * 			.prompt
 	 * 		and .value
@@ -177,48 +216,84 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", function($scope, $http
 	 $scope.saveCookie = function (completed) {
 		 var today = new Date();
 		 var expireTime = new Date(today);
-		 expireTime.setMinutes(today.getMinutes() + 300);//expires in 5 hours
+		 expireTime.setMinutes(today.getMinutes() + 120);//expires in 5 hours
 		 $cookies.put('progress', completed, {'expires': expireTime});
+		 $cookies.putObject('forms',[]);
+		 for (i in $scope.module.sections) {
+			for (q in $scope.module.sections[i].units){
+					unit = $scope.module.sections[i].units[q];
+				if(unit.type == "question") {
 
-/*
-		 questionCount = 0;
-		 for (i in $scope.currentsection.units) {
-			unit = $scope.currentsection.units[i];
-			id = "#"+unit.id;
+						switch(unit.mode) {
+							case "radio":
 
-			if(unit.type == "question" && !unit.ignored) {
-				questionCount = questionCount + 1;
-				switch(unit.mode) {
-					case "radio":
-						question = questionCount;
-						$cookies.putObject('questionCookies',{question:unit.value});
-						break;
+								var answers = $cookies.getObject('forms');
+								answers.push({prompt:unit.prompt, answer:unit.value});
+								$cookies.putObject('forms',answers);
+								break;
 
-					case "checkbox":
-						/*question = questionCount;
-						for (j in unit.choices) {
-							choice = unit.choices[j];
-							choice_id = id+"-"+choice.id;
-							$cookies.putObject('questionCookies',{question:unit.choices});
+							case "checkbox":
+								var answers = $cookies.getObject('forms');
+								var checked = [];
+								var ids = [];
+								for (c in unit.choices){
+									if(!(typeof(unit.choices[c].value)==='undefined') && !unit.ignored){
+										ids.push(unit.choices[c].id);
+										checked.push(unit.choices[c].value);
+									}
+								}
+								answers.push({prompt:ids, answer:checked});
+								$cookies.putObject('forms',answers);
+
+								break;
+
+							case "textarea":
+								var answers = $cookies.getObject('forms');
+								answers.push({prompt:unit.prompt, answer:unit.value});
+								$cookies.putObject('forms',answers);
+								break;
+							}
 						}
-						break;
 
-					case "textarea":
-						question = questionCount;
-						$cookies.putObject('questionCookies',{question:unit.value});
-						break;
-					}
+					else if(unit.type == "checklist") {
+						//Again checklist is being saved proper.... Not loading right.
+						/*
+						var answers = $cookies.getObject('forms');
+						var checked = [];
+						var ids = [];
+						for (j in unit.list) {
+							group = unit.list[j];
+							group_id = unit.id+"-"+group.id;
+
+							for (k in group.items) {
+								item = group.items[k];
+								item_id = group_id+"-"+item.id;
+
+								// if checkbox hasn't been touched, angular thinks it is undefined
+								if(typeof(item.value)==='undefined') checked.push(false);
+								else if (item.value == false) checked.push(false);
+								else if (item.value == true) checked.push(true);
+
+								//if(item.js) item.value = $(item_id).is(':checked');
+
+								ids.push(item_id);
+								console.log("ID PUSHED : "+ item_id);
+								//checked.push(item.value);
+								console.log("VAL PUSHED "  + item.value+"------------");
+							}
+						}
+
+						answers.push({prompt:ids, answer:checked});
+						$cookies.putObject('forms',answers);
+
+
 				}
-				else if(unit.type == "checklist") {
+				*/
 
-			}
-
-		 //console.log("Cookie has been saved: " + $cookies.get('progress'));
-
-	 }
-	 */
+		 }
+		}
  }
-
+}
 
 	/**
 	 * helper method to toggle classes on correct/incorrect elements
@@ -307,12 +382,12 @@ $scope.checkAnswers = function() {
 				for (k in group.items) {
 					item = group.items[k];
 					item_id = group_id+"-"+item.id;
-					
+
 					// if checkbox hasn't been touched, angular thinks it is undefined
 					if(typeof(item.value)==='undefined') item.value = false;
 					// when checkbox is mediated by javascript, must manually bind item.value
 					if(item.js) item.value = $(item_id).is(':checked');
-					
+
 					var item_right = item.value == item.ans;
 					correct &= item_right;
 
@@ -340,6 +415,7 @@ $scope.checkAnswers = function() {
 		// increment number of sections
 		$scope.sectionscompleted ++;
 	}
+	$scope.saveCookie($scope.sectionscompleted);
 }
 
 	/**
@@ -357,9 +433,6 @@ $scope.checkAnswers = function() {
 			console.log("Cannot go to section "+i+": may only go up to section "+$scope.sectionscompleted);
 		}
 	}
-
-
-
 
 	/**
 	 * Simple form of certificate, without Towson logo or fancy placement
@@ -389,6 +462,7 @@ $scope.checkAnswers = function() {
 		ctx.fillText("ID: "+data.hash, 20, 120);		// ID
 	}
 
+
 	/**
 	 * Pretty form of certificate, only available with connection to our server
 	 */
@@ -404,27 +478,43 @@ $scope.checkAnswers = function() {
 		ctx.fillText(data.today, 366, 300);		// DATE
 	}
 
+	function pdfCertificate(q,data){
+		var leftMargin=15; //left margin in mm
+		var rightMargin=15; //right margin in mm
+		var sizeOfPDF=210;  // width of A4 in mm
+		var lineBreak = sizeOfPDF-leftMargin-rightMargin;
 
+		var doc = new jsPDF("p","mm","a4");
 
-
-	function pdfCertificate(doc,q,img){
 		doc.setFontSize(20);
-		doc.addImage(img, 'PNG', 10, 10, 190, 132);
+		doc.text(10,20,"Security Injections @ offline");
+		doc.line(10,25,190,25);
+		doc.setFontSize(12);
+		doc.text("Module: "+data.course, 20, 35);	// COURSE
+		doc.text("Student: "+data.name, 20,45);		// NAME
+		doc.text("Date: "+data.today, 20, 55);		// DATE
+		doc.text("ID: "+data.hash, 20, 65);		// ID
+
+		//doc.addImage(img, 'PNG', 10, 10, 190, 132);
 		doc.addPage();
+		doc.setFontSize(20);
 		doc.text("Discussion Questions",10,20);
 		doc.line(10,25,190,25);
 
 		for (i in q){
-			doc.setFontSize(16);
-			doc.text(q[i].prompt,20,(40+i*30));
+			doc.setFontSize(16);    //COUNT CHARACTERS IN ARRAY OF STRING.
+			//var prompt = doc.splitTextToSize(q[i].prompt, lineBreak);
+			doc.text(leftMargin,(40),doc.splitTextToSize(q[i].prompt, lineBreak));
 			doc.setFontSize(12);
-			doc.text(q[i].answer, 30,(50+i*30));
-
+			doc.text(leftMargin+20,(60),doc.splitTextToSize(q[i].answer, lineBreak));
+			doc.addPage();
 		}
-		
-		doc.save("certificate.pdf");
-	}
 
+		dataUri = doc.output('datauristring');
+
+		$scope.detailFrame = $sce.trustAsResourceUrl(dataUri);
+
+	}
 
 	/**
 	 * method to generate the user's completion certificate
@@ -466,7 +556,7 @@ $scope.checkAnswers = function() {
 					'hash': hash,
 					'today': today
 				}
-
+		/*
 		var canvas = document.getElementById("si-certificate-canvas");
 		var ctx = canvas.getContext('2d');
 
@@ -480,7 +570,6 @@ $scope.checkAnswers = function() {
 		}
 		img.src = $scope.repo+"images/blank_certificate.png"
 
-
 		// Step 5: Append page(s) of answers to ungraded text-based questions.
 		/*
 		 * TODO: all of this
@@ -492,9 +581,9 @@ $scope.checkAnswers = function() {
 		 *
 		 * I think the hard part will be to get the certificate to have multiple pages.
 		 *
-		 */
-		var doc = new jsPDF();
+		 *
 		certData = canvas.toDataURL();
+		*/
 
 		var discussionQuestions = [];
 		for (i in $scope.module.sections) {
@@ -502,22 +591,26 @@ $scope.checkAnswers = function() {
 					unit = $scope.module.sections[i].units[q];
 				if(unit.type == "question") {
 					if(unit.mode == "textarea"){
-						discussionQuestions[q] = {prompt:unit.prompt, answer:unit.value};
-//						console.log(discussionQuestions[q].prompt);
+						if(unit.value != null){
+							discussionQuestions[q] = {prompt:unit.prompt, answer:unit.value};
+						}
 					}
 				}
 			}
 		}
-//		pdfCertificate(doc, discussionQuestions, certData);
+
+		pdfCertificate(discussionQuestions,draw_data);
+		finalPDF = $scope.detailFrame;
 
 
-
+//<object data="/url/to/file.pdf" type="application/pdf" width="500" height="300">
+//  <a href="/url/to/file.pdf">Download file.pdf</a>
+//</object>
 
 		// Step 6: Make certificate available for download
 
 		$("#si-certificate-link").html("Download Certificate");
-		$("#si-certificate-link").attr('href', pdfCertificate(doc,discussionQuestions,certData));
-//		$("#si-certificate-link").attr('href', doc.save());
+		$("#si-certificate-link").attr('href', finalPDF);
 		$('#si-certificate-link').prop('disabled', false);
 
 
@@ -529,5 +622,4 @@ $scope.checkAnswers = function() {
 		// TODO: make sure $scope.form content is securely encrypted. Student email is private info
 		$http.post($scope.repo+'record', $scope.form);
 	}
-
 }]);

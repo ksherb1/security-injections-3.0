@@ -6,7 +6,7 @@
 	
 	<div ng-if="!contentError">
 		<h1>{{ module.name }} - {{ module.variant }}</h1>
-		
+
 		<!-- workflow -->
 		<div class="si-workflow">
 			<span ng-repeat="section in module.sections">
@@ -14,8 +14,8 @@
 				<button ng-if="$index >  sectionscompleted" disabled ng-bind-html="section.header"></button>
 				</span>
 			</div>
-		
-		
+
+
 		<!-- section content -->
 		<div ng-if="currentsectionIndex < module.sections.length-1" class="si-content">
 			<h2 ng-bind-html="currentsection.header"></h2>
@@ -34,7 +34,7 @@
 						<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
 							<label>
 								<input type="radio" ng-model="unit.value" value="{{ choice.id }}" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
-								<span ng-bind-html="choice.text" id="{{ unit.id+'-'+choice.id }}-label"></span>
+								<span ng-bind-html="choice.text" ng-checked="unit.checked" id="{{ unit.id+'-'+choice.id }}-label"></span>
 								</label>
 							</div>
 						<div ng-switch-when="checkbox" class="si-checkbox-choice" ng-repeat="choice in unit.choices">
@@ -72,15 +72,15 @@
 				<!-- TODO (ongoing) add more unit types -->
 				<p ng-switch-default class="si-error">Type invalid</p>
 				</div>
-			
-			
+
+
 			<!-- buttons -->
 			<button id="btn-check-answers" ng-click="checkAnswers()">Check Answers</button>
 			<button ng-if="currentsectionIndex < sectionscompleted" ng-click="gotoSection(currentsectionIndex+1)">Next Section</button>
 			<button ng-if="currentsectionIndex >=  sectionscompleted" disabled>Next Section</button>
 			</div>
 		</div>
-	
+
 	<div ng-if="currentsectionIndex == module.sections.length-1" class="si-finished">
 		<div class="si-certificate-form">
 			<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
@@ -102,16 +102,16 @@
 					<tr class="si-form-institution-row">
 						<td class="si-form-label-cell">Institution</td>
 						<td><input ng-model="form.institution" type="text"></td>
-						</tr>	
+						</tr>
 				</table>
 				<input type="submit" value="Generate Certificate">
 				</form>
 			</div>
 		<div class="si-certificate-pane">
-			<a id="si-certificate-link" download="certificate.png" disabled></a><br/>
-			<canvas id="si-certificate-canvas" width="500" height="348"></canvas>
+			<a id="si-certificate-link" download="certificate.pdf" disabled></a><br/>
+			<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
 			</div>
 		</div>
-	
-	
+
+
 	</div>
