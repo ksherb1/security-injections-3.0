@@ -95,4 +95,5 @@ exports.write_3 = function(name, variant, dev) {
 exports.write_3("Development", "Showcase", true);
 exports.write_3("Development", "Basic", true);
 exports.write_3("Development", "Demo");
-exports.write_3("Integer Error", "CS0 C++");
+exports.write_3("Computer Literacy", "Passwords", true);
+//exports.write_3("Integer Error", "CS0 C++");
