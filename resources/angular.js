@@ -481,13 +481,17 @@ $scope.checkAnswers = function() {
 	function pdfCertificate(q,data){
 		var leftMargin=15; //left margin in mm
 		var rightMargin=15; //right margin in mm
-		var sizeOfPDF=210;  // width of A4 in mm
-		var lineBreak = sizeOfPDF-leftMargin-rightMargin;
+		var widthOfPDF=210;  // width of page in mm
+		var heightOfPDF=295; //height of page
+		var topMargin=20;
+		var bottomMargin=20;
+		var pageBreak = heightOfPDF-topMargin-bottomMargin; //will determine when new page should be made
+		var lineBreak = widthOfPDF-leftMargin-rightMargin;  //will determine when new line should be made
 
 		var doc = new jsPDF("p","mm","a4");
 
 		doc.setFontSize(20);
-		doc.text(10,20,"Security Injections @ offline");
+		doc.text("Security Injections @ offline",leftMargin,topMargin);
 		doc.line(10,25,190,25);
 		doc.setFontSize(12);
 		doc.text("Module: "+data.course, 20, 35);	// COURSE
@@ -498,21 +502,30 @@ $scope.checkAnswers = function() {
 		//doc.addImage(img, 'PNG', 10, 10, 190, 132);
 		doc.addPage();
 		doc.setFontSize(20);
-		doc.text("Discussion Questions",10,20);
+		doc.text("Discussion Questions",leftMargin,topMargin);
 		doc.line(10,25,190,25);
-
+		topMargin = 40; //setting up for question and answer loop
 		for (i in q){
-			doc.setFontSize(16);    //COUNT CHARACTERS IN ARRAY OF STRING.
-			//var prompt = doc.splitTextToSize(q[i].prompt, lineBreak);
-			doc.text(leftMargin,(40),doc.splitTextToSize(q[i].prompt, lineBreak));
-			doc.setFontSize(12);
-			doc.text(leftMargin+20,(60),doc.splitTextToSize(q[i].answer, lineBreak));
-			doc.addPage();
+			if (topMargin > pageBreak){
+				doc.addPage();
+				topMargin = 20;
+			}
+				doc.setFontSize(16);
+				var prompt = doc.splitTextToSize(q[i].prompt, lineBreak); //returns an array of strings for each line
+				var promptLines = prompt.length;
+				doc.text(leftMargin,(topMargin),prompt);
+				topMargin = topMargin + ((5.6444 * promptLines)+10); //5.64 is 16pt font converted to mm
+
+				doc.setFontSize(12);
+				var answer = doc.splitTextToSize(q[i].answer, lineBreak-20);
+				var answerLines = answer.length;
+				doc.text(leftMargin+20,(topMargin),answer);
+				topMargin = topMargin + ((4.2333 * answerLines)+10); //4.233 is 12 pt font converted to mm
 		}
 
-		dataUri = doc.output('datauristring');
+		dataUri = doc.output('datauristring'); //makes a uristring for iframe
 
-		$scope.detailFrame = $sce.trustAsResourceUrl(dataUri);
+		$scope.detailFrame = $sce.trustAsResourceUrl(dataUri); //found this neccessary for iframe to display in angular
 
 	}
 
