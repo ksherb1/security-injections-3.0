@@ -5,7 +5,7 @@
  * Assumes html page loaded up angular js and jquery
  */
 
-var app = angular.module("modApp", ['ngSanitize', 'ngCookies']);		// the angular "app"
+var app = angular.module("modApp", ['ngSanitize', 'ngCookies','mgcrea.ngStrap']);		// the angular "app"
 app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce) {	// the angular "controller"
 
 	/**
@@ -600,7 +600,7 @@ $scope.checkAnswers = function() {
 		}
 
 		pdfCertificate(discussionQuestions,draw_data);
-		finalPDF = $scope.detailFrame;
+		finalPDF = $scope.detailFrame
 
 
 //<object data="/url/to/file.pdf" type="application/pdf" width="500" height="300">
@@ -609,9 +609,9 @@ $scope.checkAnswers = function() {
 
 		// Step 6: Make certificate available for download
 
-		$("#si-certificate-link").html("Download Certificate");
 		$("#si-certificate-link").attr('href', finalPDF);
 		$('#si-certificate-link').prop('disabled', false);
+		$('#si-certificate-pane').show();
 
 
 		// Step 7: Post info to database

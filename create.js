@@ -59,11 +59,17 @@ exports.write_3 = function(name, variant, dev) {
 	// header
 	html += '<head>'+'\n';
 	html += '\t'+'<meta charset="UTF-8">'+'\n';
+	html += '\t'+'<meta http-equiv="X-UA-Compatible" content="IE=edge">'+'\n';
+	html += '\t'+'<meta name="viewport" content="width = device-width, initial-scale = 1">'+'\n';
+	html += '\t'+'<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">'+'\n';
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>'+'\n';
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>'+'\n';
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>'+'\n';
 	html += '\t'+'<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>'+'\n';
 	html += '\t'+'<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>'+'\n';
+	html += '\t'+'<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.min.js"></script>'+'\n';
+	html += '\t'+'<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.tpl.min.js"></script>'+'\n';
+
 	html += '\t'+'<title>'+'Security Injection: '+module.name+' - '+module.variant+'</title>'+'\n';
 	if(dev) {	// in dev mode, link to sheets rather than including source
 		html += '\t'+'<link rel="stylesheet" href="../../'+styleFile+'">'+'\n';

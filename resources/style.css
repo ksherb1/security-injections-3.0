@@ -4,33 +4,78 @@
  		[What is currently present is only for demo purposes.]
 */
 
+
 body {
-	background-color: lightgray;
+	background-color: whitesmoke;
+}
+
+/* For bootstrap since relies on empty hrefs */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+    [type="checkbox"]:checked + label:after {
+        content: '✔';
+        font-size: 30px;
+        color: #09ad7e;
+        transition: all .2s;
+    }
+
+
+.navbar{
+	margin-bottom: 0px;
+	background-color:silver;
+}
+
+.nav-tabs li  a {
+		color: #464646;
+    height: 50px;
 
 }
 
+.container{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.jumbotron{
+    background-color: white;
+		padding: 5px;
+		box-shadow: 0 8px 16px -6px black;
+}
+.page-header{
+	border-bottom: 5px solid #337ab7;
+}
+.well{
+
+}
+
+.nav-tabs{
+	margin-bottom: 0px;
+}
+.borderless td, .borderless th {
+    border: none !important;
+}
+
+
+
+/*
 .si-workflow {
 	border: 2px solid black;
 }
-
-
-
 
 .si-question {
 	width: 500px;
 	border: 2px solid black;
 }
+*/
 
-.si-question-correct {
-	background-color: chartreuse;
+
+.si-question-correct .well{
+	background-color: lightgreen;
 }
 
-.si-question-incorrect {
-	background-color: pink;
+.si-question-incorrect .well{
+	background-color: lightpink;
 }
-
-
-
 
 .si-checkbox-label-correct::before {
 	color: forestgreen;
@@ -41,21 +86,17 @@ body {
 	color: maroon;
 	content: "X ";
 }
-
-
-
-
-
+/*
 .si-checklist {
 	border: 2px solid black;
 }
-
-.si-checklist-correct {
-	background-color: chartreuse;
+*/
+.si-checklist-correct .well{
+	background-color: lightgreen;
 }
 
-.si-checklist-incorrect {
-	background-color: pink;
+.si-checklist-incorrect .well{
+	background-color: lightpink;
 }
 
 .si-checklist-active {
