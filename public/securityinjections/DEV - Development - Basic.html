@@ -52,15 +52,12 @@
 						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
-
   			<div ng-switch-when="image" class="col-md">
-						<img  src="{{ unit.src }}" alt="{{ unit.alt }}" >
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" >
 				</div>
+				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
 				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
-
 					<div class="well">
-
-
 					<h5 ng-bind-html="unit.prompt"></h5>
 					<div ng-switch="unit.mode">
 						<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">

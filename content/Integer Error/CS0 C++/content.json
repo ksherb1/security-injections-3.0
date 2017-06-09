@@ -7,11 +7,11 @@
 			"units"		: [
 				{
 					"type"	: "subheader",
-					"text"	: "Summary"						
+					"text"	: "Summary"
 				},
 				{
 					"type"	: "paragraph",
-					"text"	: "Integer values that are too large or too small may fall outside the allowable range for their data type, leading to undefined behavior that can both reduce the robustness of your code and lead to security vulnerabilities."						
+					"text"	: "Integer values that are too large or too small may fall outside the allowable range for their data type, leading to undefined behavior that can both reduce the robustness of your code and lead to security vulnerabilities."
 				},
 				{
 					"type"	:	"image",
@@ -22,20 +22,26 @@
 					"float"	:	null
 				},
 				{
-					"type"	: "subheader",
-					"text"	: "Description"						
-				},
-				{
-					"type"	: "paragraph",
-					"text"	: "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short</strong>, <strong>int</strong>, <strong>long</strong>, etc. , to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."						
-				},
-				{
-					"type"	: "paragraph",
-					"text"	: "Input or mathematical operations such as addition, subtraction, and multiplication may lead to values that are outside of this range. This results in an integer error or overflow, which causes undefined behavior and the resulting value will likely not be what the programmer intended. Integer overflow is a common cause of software errors and vulnerabilities."						
+					"type"	:	"attribution",
+					"copyright"	:	"XKCD",
+					"date"	:	"2017",
+					"link"	:	"http://imgs.xkcd.com/comics/cant_sleep.png"
 				},
 				{
 					"type"	: "subheader",
-					"text"	: "Risk - How can it happen?"						
+					"text"	: "Description"
+				},
+				{
+					"type"	: "paragraph",
+					"text"	: "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short</strong>, <strong>int</strong>, <strong>long</strong>, etc. , to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
+				},
+				{
+					"type"	: "paragraph",
+					"text"	: "Input or mathematical operations such as addition, subtraction, and multiplication may lead to values that are outside of this range. This results in an integer error or overflow, which causes undefined behavior and the resulting value will likely not be what the programmer intended. Integer overflow is a common cause of software errors and vulnerabilities."
+				},
+				{
+					"type"	: "subheader",
+					"text"	: "Risk - How can it happen?"
 				},
 				{
 					"type"	: "paragraph",
@@ -50,8 +56,14 @@
 					"float"	:	"right"
 				},
 				{
+					"type"	:	"attribution",
+					"copyright"	:	"Facebook",
+					"date"	:	"2017",
+					"link"	:	"http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png"
+				},
+				{
 					"type"	: "subheader",
-					"text"	: "Real-world Examples"						
+					"text"	: "Real-world Examples"
 				},
 				{
 					"type"	: "list",
@@ -271,7 +283,7 @@
 				{
 					"type"	: "question",
 					"id"	: "will-cause",
-					"prompt": "Which of the following operations can lead to an integer error?",
+					"prompt": "Which of the operations listed in question 3 is most likely to cause an integer error?",
 					"ignored": false,
 					"mode"	: "radio",
 					"choices": [
@@ -337,7 +349,7 @@
 						}
 					],
 					"code"	: "./program1checklist.html",
-					"js"	: "./checklist.js"
+					"javascript"	: "./checklist.js"
 				},
 				{
 					"type"	: "paragraph",

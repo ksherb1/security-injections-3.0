@@ -51,7 +51,8 @@ exports.write_3 = function(name, variant, dev) {
 	var template = fs.readFileSync(templateFile);
 	if(!dev) {	// in dev mode, we don't need CSS of JS content
 		var style = fs.readFileSync(styleFile);				// TODO: minify CSS, presumably similar to minifying js below
-		var angular = UglifyJS.minify(angularFile).code;	// javscript minified
+		//var angular = UglifyJS.minify(angularFile).code;	// javscript minified
+		var angular = fs.readFileSync(angularFile);
 	}
 
 	// STEP 3 - craft new file-string
@@ -98,8 +99,5 @@ exports.write_3 = function(name, variant, dev) {
 
 //Phase 2: module should not have "MAIN"
 // MAIN
-exports.write_3("Development", "Showcase", true);
-exports.write_3("Development", "Basic", true);
-exports.write_3("Development", "Demo");
 exports.write_3("Computer Literacy", "Passwords", true);
-//exports.write_3("Integer Error", "CS0 C++");
+exports.write_3("Integer Error", "CS0 C++");
