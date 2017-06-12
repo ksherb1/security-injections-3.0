@@ -1,0 +1,468 @@
+{
+	"name"		: "Data Hiding",
+	"variant"	: "CS2 C++",
+	"sections": [
+		{
+			"header": "Background",
+			"units": [
+				{
+					"type": "subheader",
+					"text": "Summary"
+				},
+				{
+					"type": "paragraph",
+					"text": "\"Data hiding\" is the process of obscuring sensitive data so that others cannot easily understand it. \"Cryptology\", which is literally Greek for the \"study of hiding\", is the most secure form of data hiding."
+				},
+				{
+					"type": "subheader",
+					"text": "Risk - How can it happen?"
+				},
+				{
+					"type": "paragraph",
+					"text": "Digital messages can easily be intercepted, especially when they are transmitted wirelessly or over the Internet. If sensitive information such as a credit card number or an account password is not obscured in some way, assailants can steal it and wreak havoc."
+				},
+				{
+					"type": "subheader",
+					"text": "Real-world Example"
+				},
+				{
+					"type": "paragraph",
+					"text": "The following excerpt is from the New York Times, dated August 17, 2009:"
+				},
+				{
+					"type": "paragraph",
+					"text": "The man who prosecutors said had masterminded some of the most brazen thefts of credit and debit card numbers in history was charged on Monday with an even larger set of digital break-ins."
+				},
+				{
+					"type": "paragraph",
+					"text": "In an indictment, the Justice Department said that Albert Gonzalez, 28, of Miami and two unnamed Russian conspirators made off with more than 130 million credit and debit card numbers from late 2006 to early 2008."
+				},
+				{
+					"type": "paragraph",
+					"text": "Prosecutors called it the largest case of computer crime and identity theft ever prosecuted. According to the government, the culprits infiltrated the computer networks of Heartland Payment Systems, a payment processor in Princeton, N.J.; 7-Eleven Inc.; Hannaford Brothers, a regional supermarket chaing; and two unnamed national retailers."
+				},
+				{
+					"type": "paragraph",
+					"text": "An unspecified portio of the stolen credit and debit card numbers were then sold online, and some were used to make unauthorized purchases and withdrawals from banks, according to the indictment, which was filed in United States District Court in Newark..."
+				},
+				{
+					"type": "paragraph",
+					"text": "Richard Wang, manager of SophosLabs, a security company, said the case provided more evidence that retailers and banks needed to strengthen industry standards and encrypt credit card numbers when they are transmitted between computers. Currently, major banks agree to encrypt such data only when it is stored."
+				},
+				{
+					"type": "paragraph",
+					"text": "<a href='http://www.nytimes.com/2009/08/18/technology/18card.html?_r=2&ref=business'>http://www.nytimes.com/2009/08/18/technology/18card.html?_r=2&ref=business</a>"
+				},
+				{
+					"type": "subheader",
+					"text": "Description"
+				},
+				{
+					"type": "paragraph",
+					"text": "Data hiding simply refers to the practice of obscuring sensitive information so that it is not easy to read. One example may be wrting a nonsense letter where the message you really want to send is hidden as the first letters of each sentence. Another example would be transmitting a radio message alongside a song - the latter must be filtered out before the message can be clearly heard. Cryptography is a form of data hiding where the message is converted into a completely different form."
+				},
+				{
+					"type": "paragraph",
+					"text": "In cryptology, a <strong>cipher</strong> is used to convert a readable message (<strong>plaintext</strong>) into an indecipherable form (<strong>ciphertext</strong>). This ciphertext can be safely transmitted without risk of exposing the sensitive information it contains. Ciphers may take additional arguments, collectively referred to as a <strong>key</strong>, to determine how plaintext is converted to and from ciphertext."
+				},
+				{
+					"type":	"question",
+					"id":	"whichtext",
+					"prompt": "Encrypted messages are called:",
+					"ignored": false,
+					"mode":	"radio",
+					"choices": [
+						{
+							"id": "plain",
+							"text": "plaintext"
+						},
+						{
+							"id": "cipher",
+							"text": "ciphertext"
+						}
+					],
+					"answer": "cipher"
+				},
+				{
+					"type":	"question",
+					"id":	"risk",
+					"prompt": "When private information is sent over a network (like the Internet) in plaintext, the message can be intercepted and stolen.",
+					"ignored": false,
+					"mode":	"radio",
+					"choices": [
+						{
+							"id": "true",
+							"text": "true"
+						},
+						{
+							"id": "false",
+							"text": "false"
+						}
+					],
+					"answer": "true"
+				}
+			]
+		},
+		{
+			"header": "Encrypt Responsibly",
+			"units": [
+				{
+					"type": "paragraph",
+					"text": "Even if ciphertext looks nothing like the plaintext it hides, it might not be safe from attack. Any good cipher should:"
+				},
+				{
+					"type": "list",
+					"items": [
+						"be resistant to brute-force attacks",
+						"be resistant to statistical attacks",
+						"resolve the key-sharing problem",
+						"be computationally efficient"
+					],
+					"ordered": true
+				},
+				{
+					"type": "subheader",
+					"text": "Resistance to Brute-Force Attacks"
+				},
+				{
+					"type": "paragraph",
+					"text": "A \"brute-force\" attack is one where the assailant simply tries to decrypt the ciphertext with every possible key until something makes sense."
+				},
+				{
+					"type": "paragraph",
+					"text": "<strong>To be resistant to a brute-force attack, a cipher should have a very large number of possible keys.</strong> For example, a \"single-substitution cipher\" maps each letter of plaintext to a different letter of ciphertext. There are over 4*10<sup>26</sup> different ways to map all 26 letters, so there are over 4*10<sup>26</sup> keys. In general, the more possible keys there are, the more time an assailant must devote for a brute-force attack to be effective."
+				},
+				{
+					"type": "subheader",
+					"text": "Resistance to Statistical Attacks"
+				},
+				{
+					"type": "paragraph",
+					"text": "A \"statistical attack\" is one where the assailant exploits the natural patterns in a language to decrypt the ciphertext."
+				},
+				{
+					"type": "paragraph",
+					"text": "<strong>To be resistant to a statistical attack, a cipher should avoid creating a one-to-one mapping of characters in plaintext and ciphertext</strong> (ex. 'a' should not always become 's', 'b' should not always become 'h', etc.). One strategy to resist statistical attacks is to perform substitution on blocks of text, rather than single letters. For example, a \"double-substitution cipher\" might convert the letters 'aa' to 'st', the letters 'ab' to 'qi', and so on."
+				},
+				{
+					"type": "paragraph",
+					"text": "But beware! Certain multi-letter combinations still appear with different frequency than others, and are therefore still vulnerable to sophisticated statistical attacks. In general, the larger the block size, the less pronounced these differences, and the longer a message must be for a statistical attack to be effective."
+				},
+				{
+					"type": "subheader",
+					"text": "The Key-Sharing Problem"
+				},
+				{
+					"type": "paragraph",
+					"text": "The key-sharing problem is simple: say two people are on opposite sides of the globe, and they would like to exchange messages securely. How can they agree on a key to use, without the risk that an attacker may intercept it (and also preferably without flying)?"
+				},
+				{
+					"type": "paragraph",
+					"text": "<strong>Public-key cryptosystems</strong> bypass this problem by using ciphers that rely on two separate keys: a <strong>public key</strong>, used for encryption, and a <strong>private key</strong>, used for decryption. Every person who receives encrypted messages must have their own public/private key pair. All public keys can be safely shared with anyone, allowing anyone to send encrypted messages. But each person keeps their own private key secret, meaning only they are able to decrypt messages sent to them."
+				},
+				{
+					"type": "subheader",
+					"text": "Computational Efficiency"
+				},
+				{
+					"type": "paragraph",
+					"text": "The public-key scheme described above, while effective for bypassing the key-sharing problem, is far less efficient than a traditional block cipher using a shared key. The algorithms to encrypt and decrypt messages take an unreasonable amount of time for especially long messages. Therefore, public-key cryptography is most often used today as a secure way of sharing keys secretly, while actual messages are encrypted and decrypted with a block cipher using that shared key."
+				},
+				{
+					"type":	"question",
+					"id":	"brute",
+					"prompt": "Which of these properties make a cipher resistant to statistical attack?",
+					"ignored": false,
+					"mode":	"checkbox",
+					"choices": [
+						{
+							"id": "complex",
+							"text": "a time-consuming encryption/decryption process",
+							"ans": false
+						},
+						{
+							"id": "keys",
+							"text": "a large number of possible keys",
+							"ans": false
+						},
+						{
+							"id": "plaintocipher",
+							"text": "each letter of plaintext may become several letters of ciphertext",
+							"ans": true
+						},
+						{
+							"id": "ciphertoplain",
+							"text": "each letter of ciphertext may have been several letters of plaintext",
+							"ans": true
+						}
+					]
+				},
+				{
+					"type":	"question",
+					"id":	"send",
+					"prompt": "Alice would like to send Bob a message using public-key cryptography. Which key does she use to encrypt her message?",
+					"ignored": false,
+					"mode":	"radio",
+					"choices": [
+						{
+							"id": "AS",
+							"text": "Alice's private key"
+						},
+						{
+							"id": "AP",
+							"text": "Alice's public key"
+						},
+						{
+							"id": "BS",
+							"text": "Bob's private key"
+						},
+						{
+							"id": "BP",
+							"text": "Bob's public key"
+						}
+					],
+					"answer": "BP"
+				},
+				{
+					"type":	"question",
+					"id":	"receive",
+					"prompt": "Bob has just received a message from Alice encrypted using public-key cryptography. Which key does he use to decrypt her message?",
+					"ignored": false,
+					"mode":	"radio",
+					"choices": [
+						{
+							"id": "AS",
+							"text": "Alice's private key"
+						},
+						{
+							"id": "AP",
+							"text": "Alice's public key"
+						},
+						{
+							"id": "BS",
+							"text": "Bob's private key"
+						},
+						{
+							"id": "BP",
+							"text": "Bob's public key"
+						}
+					],
+					"answer": "BS"
+				}
+			]
+		},
+		{
+			"header": "Lab Assignment",
+			"units": [
+				{
+					"type": "paragraph",
+					"text": "Consider the <strong>shift cipher</strong>, which shifts each letter in the alphabet by a certain amount. The <strong>key</strong> is simply a number between 1 and 25, specifying the amount to shift by. For example, the letter 'a' shifted by 1 becomes 'b'. The letter 'z' wraps back to the beginning of the alphabet, so 'z' shifted by 1 becomes 'a'."
+				},
+				{
+					"type": "subheader",
+					"text": "Encryption"
+				},
+				{
+					"type": "question",
+					"id": "encrypt",
+					"prompt": "Encrypt the following message with the specified key:<br/>Key: 7<br/><kbd>traditionally plaintext is all lower case and ciphertext is all uppercase and punctuation is avoided</kbd>",
+					"ignored": false,
+					"mode": "textarea",
+					"pattern": "AYHKPAPVUHSSF WSHPUALEA PZ HSS SVDLY JHZL HUK JPWOLYALEA PZ HSS BWWLYJHZL HUK WBUJABHAPVU PZ HCVPKLK"
+				},
+				{
+					"type": "subheader",
+					"text": "Decryption"
+				},
+				{
+					"type": "question",
+					"id": "decrypt",
+					"prompt": "Decrypt the following messages with the specified key:<br/>Key: 23<br/><kbd>KLQB QEXQ JLABOK AXB ZOVMQLPVPQBJP LMBOXQB LK PBNRBKZBP LC WBOLP XKA LKBP KLQ IBQQBOP</kbd>",
+					"ignored": false,
+					"mode": "textarea",
+					"pattern": "note that modern day cryptosystems operate on sequences of zeros and ones not letters"
+				},
+				{
+					"type": "subheader",
+					"text": "Code Assignment: Brute Force Attack"
+				},
+				{
+					"type": "paragraph",
+					"text": "Using the following method to decrypt a single letter with a given key, write a program which prompts for and receives a ciphertext string, then displays all 25 possible decryptions."
+				},
+				{
+					"type": "codeblock",
+					"code": "./decrypt.cpp"
+				},
+				{
+					"type": "question",
+					"id": "key",
+					"prompt": "Use your program on the following message. What key produced the ciphertext?<br/>KYV JYZWK TZGYVI ZJ RCJF BEFNE RJ KYV TRVJRI TZGYVI, RWKVI ALCZLJ TRVJRI, NYF IVGLKVUCP LJVU KYV TZGYVI KF GRJJ DVJJRXVJ KF YZJ KIFFGJ ULIZEX YZJ DZCZKRIP TRDGRZXEJ ZE XRLC. EFKV KYRK KYB <strong>TRVJRI</strong> TZGYVI ZJ VRJZCP TIRTBVU SP KYV <strong>SILKV</strong>-WFITV RKKRTB.",
+					"ignored": false,
+					"mode": "textarea",
+					"pattern": "17"
+				}
+			]
+		},
+		{
+			"header": "Security Checklists",
+			"units": [
+				{
+					"type": "paragraph",
+					"text": "Consider the <strong>shift cipher</strong> described in the lab assignment. Complete the following checklist:"
+				},
+				{
+					"type": "checklist",
+					"id": "shift",
+					"list": [
+						{
+							"id": "cl",
+							"header": "A <strong>shift cipher</strong>...",
+							"items": [
+								{
+									"id": "brute",
+									"text": "...is resistant to brute-force attack.",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "stat",
+									"text": "...is resistant to statistical attack.",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "share",
+									"text": "...resolves the key-sharing problem.",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "compute",
+									"text": "...is computationally efficient.",
+									"ans": true,
+									"js": false
+								}
+							]
+						}
+					],
+					"code": null,
+					"js": null
+				},
+				{
+					"type": "paragraph",
+					"text": "Consider the <strong>single-substitution cipher</strong>, which exchanges each letter in the alphabet for another. The <strong>key</strong> is a string of all 26 letters, in whatever order the letters should be replaced by. For example, say my key is <var>shopkentablizfrcmguywxvjdq</var>. The letter 'a' is the first letter of the alphabet, so it becomes 's', the first letter in the key. The letter 'z' is the last letter in the alphabet, so it becomes 'q'. Complete the following checklist:"
+				},
+				{
+					"type": "checklist",
+					"id": "sub",
+					"list": [
+						{
+							"id": "cl",
+							"header": "A <strong>single-substitution cipher</strong>...",
+							"items": [
+								{
+									"id": "brute",
+									"text": "...is resistant to brute-force attack.",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "stat",
+									"text": "...is resistant to statistical attack.",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "share",
+									"text": "...resolves the key-sharing problem.",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "comp",
+									"text": "...is computationally efficient.",
+									"ans": true,
+									"js": false
+								}
+							]
+						}
+					],
+					"code": null,
+					"js": null
+				},
+				{
+					"type": "paragraph",
+					"text": "Consider the <strong>Rivest-Shamir-Adleman (RSA)</strong> public-key cryptosystem, which operates on integer numbers modulo a very large number <var>n</var>, rather than letters. The public key consists of <var>n</var> and another, smaller number <var>e</var>. The private key consists of large prime numbers <var>p</var> and <var>q</var> such that <var>n=pq</var>, and the number <var>d</var> such that <var>d=e<sup>-1</sup> mod (p-1)(q-1)</var>. Given the plaintext number <var>m</var>, your ciphertext is the number <var>c=m<sup>e</sup> mod n</var>. If you are given <var>c</var>, you can calculate the original number <var>m=c<sup>d</sup> mod n</var>. Complete the following checklist:"
+				},
+				{
+					"type": "checklist",
+					"id": "rsa",
+					"list": [
+						{
+							"id": "cl",
+							"header": "The <strong>RSA</strong> public-key cryptosystem...",
+							"items": [
+								{
+									"id": "brute",
+									"text": "...is resistant to brute-force attack.",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "stat",
+									"text": "...is resistant to statistical attack.",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "share",
+									"text": "...resolves the key-sharing problem.",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "compute",
+									"text": "...is computationally efficient.",
+									"ans": false,
+									"js": false
+								}
+							]
+						}
+					],
+					"code": null,
+					"js": null
+				}
+			]
+		},
+		{
+			"header": "Discussion Questions",
+			"units": [
+				{
+					"type": "question",
+					"id": "shift",
+					"prompt": "Say you have intercepted a message encrypted with a shift cipher, and you know the message ends with \"Love Bob\". Describe how you can decrypt the rest of the message without knowing the key.",
+					"ignored": true,
+					"mode": "textarea",
+					"pattern": null
+				},
+				{
+					"type": "question",
+					"id": "sub",
+					"prompt": "Say you have intercepted a message encrypted with a single-substitution cipher, and you know the message starts with \"Dear Alice\". Describe how you can decrypt the rest of the message without knowing the key.",
+					"ignored": true,
+					"mode": "textarea",
+					"pattern": null
+				},
+				{
+					"type": "question",
+					"id": "rsa",
+					"prompt": "You've learned that RSA doesn't really meet two of our criteria for a good cipher, yet it is the most widely used public-key cryptosystem today. What makes it secure enough for use?",
+					"ignored": true,
+					"mode": "textarea",
+					"pattern": null
+				}
+			]
+		}
+	]
+}
