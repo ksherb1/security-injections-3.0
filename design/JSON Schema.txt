@@ -25,6 +25,10 @@
 							"width"	: <number>,
 							"height": <number>,
 							"float"	: <"left" or "right" or null>
+					<case "attribution">
+							"copyright" : "<string>"
+							"date" : "<string>"
+							"link" : "<uri>
 					<case "question">
 							"id"		: "<id-string>",			<all unit id's within section must be unique>
 							"prompt"	: "<html-source>",

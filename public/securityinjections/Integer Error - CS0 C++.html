@@ -1,786 +1,28 @@
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
 	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
-	<!--angular bootstrapui-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.tpl.min.js"></script>
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-
 	<title>Security Injection: Integer Error - CS0 C++</title>
-
-<style>
-
-
-/* TODO: Everything.
- 		See "template.html" or "../design/HTML Schema.txt" to see all the things that need styling.
-
- 		[What is currently present is only for demo purposes.]
-*/
-
-body {
-	background-color: whitesmoke;
-}
-
-/* For bootstrap since relies on empty hrefs */
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-
-    [type="checkbox"]:checked + label:after {
-        content: '✔';
-        font-size: 30px;
-        color: #09ad7e;
-        transition: all .2s;
-    }
-
-
-.navbar{
-	margin-bottom: 0px;
-	background-color:silver;
-}
-
-.nav-tabs li  a {
-		color: #464646;
-    height: 50px;
-
-}
-
-.container{
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
-
-.jumbotron{
-    background-color: white;
-		padding: 5px;
-		box-shadow: 0 8px 16px -6px black;
-}
-.page-header{
-	border-bottom: 5px solid #337ab7;
-}
-.well{
-
-}
-
-.nav-tabs{
-	margin-bottom: 0px;
-}
-.borderless td, .borderless th {
-    border: none !important;
-}
-
-
-
-/*
-.si-workflow {
-	border: 2px solid black;
-}
-
-.si-question {
-	width: 500px;
-	border: 2px solid black;
-}
-*/
-
-
-.si-question-correct .well{
-	background-color: lightgreen;
-}
-
-.si-question-incorrect .well{
-	background-color: lightpink;
-}
-
-.si-checkbox-label-correct::before {
-	color: forestgreen;
-	content: "V ";
-}
-
-.si-checkbox-label-incorrect::before {
-	color: maroon;
-	content: "X ";
-}
-/*
-.si-checklist {
-	border: 2px solid black;
-}
-*/
-.si-checklist-correct .well{
-	background-color: lightgreen;
-}
-
-.si-checklist-incorrect .well{
-	background-color: lightpink;
-}
-
-.si-checklist-active {
-	font-size: 1.6em;
-}
-
-
-
-.si-code-clicked {
-	font-weight: bold;
-	font-style: italic;
-}
-
-.si-code-vulnerability {
-	background-color: yellow;
-}
-
-
-
-
+	<style>
+body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{cursor:pointer}[type="checkbox"]:checked+label:after{content:'✔';font-size:30px;color:#09ad7e;transition:all .2s}.navbar{margin-bottom:0;background-color:silver}.nav-tabs li a{color:#464646;height:50px}.container{margin-top:25px;margin-bottom:25px}.jumbotron{background-color:white;padding:5px;box-shadow:0 8px 16px -6px black}.page-header{border-bottom:5px solid #337ab7}.nav-tabs{margin-bottom:0}.borderless td,.borderless th{border:none !important}.si-question-correct .well{background-color:lightgreen}.si-question-incorrect .well{background-color:lightpink}.si-checkbox-label-correct::before{color:forestgreen;content:"V "}.si-checkbox-label-incorrect::before{color:maroon;content:"X "}.si-checklist-correct .well{background-color:lightgreen}.si-checklist-incorrect .well{background-color:lightpink}.si-checklist-active{font-size:1.6em}.si-code-clicked{font-weight:bold;font-style:italic}.si-code-vulnerability{background-color:yellow}
 </style>
-
-<script>
-	/**
-	 * Client-side script to control module process
-	 * Integrated into module file with create.js
-	 *
-	 * Assumes html page loaded up angular js and jquery
-	 */
-
-	var app = angular.module("modApp", ['ngSanitize', 'ngCookies','mgcrea.ngStrap']);		// the angular "app"
-	app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce) {	// the angular "controller"
-
-		/**
-		 * helper method to initialize module object
-		 *
-		 * PARAMETERS: content - object containing all content for module
-		 */
-		function initModule(content) {
-			$scope.module = content;
-			$scope.currentsectionIndex = 0;
-			$scope.currentsection = $scope.module.sections[0];
-			$scope.module.sections.push({header:"Final Page"});		// section for completion page
-			getCookies();//on Module load attempt to fill with cookies and redirect if needed
-		}
-
-		/**
-		 * helper method to initialize score object
-		 *
-		 * PARAMETERS: content - object containing all content for module
-		 */
-		function initScore(content) {
-			$scope.score = {							// initialize score report
-					name 	: content.name,
-					variant	: content.variant,
-					sections: []
-			}
-
-			for (i in content.sections) {				// each section has header, time...
-				section = {
-					header	: content.sections[i].header,
-					time	: 0,
-					questions: {}
-				}
-
-				for (j in content.sections[i].units) {	// ...and (question_id : # of attempts) pairs
-					unit = content.sections[i].units[j];
-					if((unit.type == "question" && !unit.ignored) || unit.type == "checklist") {
-						section.questions[unit.id] = 1;	// all graded questions are "attempted" at least once
-					}
-				}
-
-				$scope.score.sections.push(section);
-			}
-		}
-
-		/**
-		 * method to initialize module content
-		 *
-		 * NETWORK: sends GET request to server, for JSON content
-		 *
-		 * GET content from server
-		 * IF server responds, use that content
-		 * ELSE
-		 * 	IF page has default content, use that content
-		 * 	ELSE show error
-		 */
-		$scope.loadContent = function() {
-			var request = 					// JSON location on server
-				$scope.repo+$("#name").html()+'/'+$("#variant").html()+".json";
-
-			console.log("Loading content from "+request);
-
-			$scope.contentError = false;	// assume content is loaded, until it isn't
-
-			$http.get(request)				// send GET request
-				 .then(function(response) {			// response received from server
-
-					 initModule(response.data);
-					 initScore(response.data);
-
-				 },  function(response) {			// response not received
-					 if($("#default").length) {				// module has 'default' JSON content
-						 console.log("* No response - using default");
-						 var content = JSON.parse($("#default").html());
-
-						 initModule(content);
-						 initScore(content);
-
-					 } else {								// no content to work with
-						 console.log("* No response - try again");
-						 $scope.contentError = true;
-					 }
-				 });
-
-		}
-
-		// initialize all non-function fields
-		function initialize() {
-			$scope.repo = "http://127.0.0.1:8000/";		// IP address of our production server TODO: change as needed
-			$scope.sectionscompleted = 0;				// start from the first section
-			$scope.loadContent();						// initialize module object and contentError boolean
-			$scope.form = {}							// initialize submission form
-			$scope.starttime = new Date();				// initialize start time, to track each section's completion time
-		}
-
-
-		initialize();
-
-
-		// TODO: load more cookies for form data.)
-		//Handles redirect and setting variables if need progress cookie exists.
-				$scope.redirectCookie = function(){
-						var progressCookie = $cookies.get('progress');
-						$scope.sectionscompleted = parseInt(progressCookie);
-						$scope.currentsectionIndex = $scope.sectionscompleted;
-						$scope.currentsection = $scope.module.sections[$scope.currentsectionIndex];
-				}
-
-		//This method should retrieve all cookies.
-				function getCookies(){
-					if($cookies.get('progress')!= null){
-						$scope.redirectCookie();
-					}
-
-					cookieAnswer = $cookies.getObject('forms');
-				 	n = 0;
-					if(typeof(cookieAnswer)==='undefined'){
-						console.log("No cookies to be loaded");
-					}
-					else{
-					for (i in $scope.module.sections) {
-	  				for (q in $scope.module.sections[i].units){
-	  						unit = $scope.module.sections[i].units[q];
-	  					if(unit.type == "question") {
-	 							switch(unit.mode) {
-	 								case "radio":
-	 								  if(cookieAnswer[n]!=null && cookieAnswer[n].prompt == unit.prompt ){
-											for(c in unit.choices){
-												if (unit.choices[c].id == cookieAnswer[n].answer){
-													unit.checked = true;
-													unit.value = cookieAnswer[n].answer;
-
-												}
-											}
-											n++;
-										}
-	 									break;
-	 								case "checkbox":
-										if(cookieAnswer[n]!=null){
-											for(c in unit.choices){
-												if (unit.choices[c].id == cookieAnswer[n].prompt[c]){
-													if((cookieAnswer[n].answer[c] == true)){
-														unit.choices[c].value=true;
-													}
-													else unit.choices[c].value=false;
-												}
-
-											}
-											n++;
-										}
-	 									break;
-	 								case "textarea":
-									if(cookieAnswer[n]!=null && cookieAnswer[n].prompt == unit.prompt){
-										unit.value = cookieAnswer[n].answer;
-										n++;
-										}
-	 									break;
-	 								}
-	 							}
-	 						else if(unit.type == "checklist") {
-								//Having trouble with checklist. Disregading for now
-								/*if(cookieAnswer[n]!=null){
-									for (j in unit.list) {
-										group = unit.list[j];
-										group_id = unit.id+"-"+group.id;
-
-										for (k in group.items) {
-											item = group.items[k];
-											item_id = group_id+"-"+item.id;
-
-
-											if (item_id == cookieAnswer[n].prompt[k]){
-												item.value = cookieAnswer[n].answer[k];
-											}
-											else{
-												item.value = false;
-											}
-											//console.log(item.value + "          "+ cookieAnswer[n].answer[k]);
-											//console.log(item_id+"    "+cookieAnswer[n].prompt[k]);
-										}
-									}
-									n++;
-								}
-								*/
-
-	 					}
-	 			 	}
-	  		}
-			}
-		}
-
-		/*
-		 * functionality to save and progress to cookies (or decide to not bother)
-		 *
-		 *  At a minimum, cookies to remember sectionscompleted
-		 *  TODO: But we also should store answers to textarea questions, for certificate
-		 *  And to look completely professional we should restore ALL user inputs
-		 *  	note that graded MC questions don't need to be saved to do this
-		 *  	but MC questions can theoretically be ungraded, so we should accommodate them
-
-
-		 information we want is contained in
-		 * 		$scope.module.sections[each].units[each whose type is 'question' and mode is 'textarea']
-		 * 			.prompt
-		 * 		and .value
-		 *
-		 */
-		 $scope.saveCookie = function (completed) {
-			 var today = new Date();
-			 var expireTime = new Date(today);
-			 expireTime.setMinutes(today.getMinutes() + 120);//expires in 5 hours
-			 $cookies.put('progress', completed, {'expires': expireTime});
-			 $cookies.putObject('forms',[]);
-			 for (i in $scope.module.sections) {
- 				for (q in $scope.module.sections[i].units){
- 						unit = $scope.module.sections[i].units[q];
- 					if(unit.type == "question") {
-
-							switch(unit.mode) {
-								case "radio":
-
-									var answers = $cookies.getObject('forms');
-									answers.push({prompt:unit.prompt, answer:unit.value});
-									$cookies.putObject('forms',answers);
-									break;
-
-								case "checkbox":
-									var answers = $cookies.getObject('forms');
-									var checked = [];
-									var ids = [];
-									for (c in unit.choices){
-										if(!(typeof(unit.choices[c].value)==='undefined') && !unit.ignored){
-											ids.push(unit.choices[c].id);
-	 										checked.push(unit.choices[c].value);
-										}
-									}
-									answers.push({prompt:ids, answer:checked});
-									$cookies.putObject('forms',answers);
-
-									break;
-
-								case "textarea":
-									var answers = $cookies.getObject('forms');
-									answers.push({prompt:unit.prompt, answer:unit.value});
-									$cookies.putObject('forms',answers);
-									break;
-								}
-							}
-
-						else if(unit.type == "checklist") {
-							//Again checklist is being saved proper.... Not loading right.
-							/*
-							var answers = $cookies.getObject('forms');
-							var checked = [];
-							var ids = [];
-							for (j in unit.list) {
-								group = unit.list[j];
-								group_id = unit.id+"-"+group.id;
-
-								for (k in group.items) {
-									item = group.items[k];
-									item_id = group_id+"-"+item.id;
-
-									// if checkbox hasn't been touched, angular thinks it is undefined
-									if(typeof(item.value)==='undefined') checked.push(false);
-									else if (item.value == false) checked.push(false);
-									else if (item.value == true) checked.push(true);
-
-									//if(item.js) item.value = $(item_id).is(':checked');
-
-									ids.push(item_id);
-									console.log("ID PUSHED : "+ item_id);
-									//checked.push(item.value);
-									console.log("VAL PUSHED "  + item.value+"------------");
-								}
-							}
-
-							answers.push({prompt:ids, answer:checked});
-							$cookies.putObject('forms',answers);
-
-
-					}
-					*/
-
-			 }
- 			}
-	 }
- }
-
-		/**
-		 * helper method to toggle classes on correct/incorrect elements
-		 *
-		 * PARAMETERS
-		 * 		type of element - "question" or "checkbox" or "checklist", etc.
-		 * 		id - the id of the question to classify
-		 * 		right - boolean for whether the question is correct or not
-		 *
-		 * RETURN right, for convenience
-		 */
-		function classify(type, id, right) {
-			if(right) {			// element is correct
-				$(id).removeClass("si-"+type+"-incorrect");
-				$(id).addClass("si-"+type+"-correct");
-			} else {			// element is incorrect
-				$(id).removeClass("si-"+type+"-correct");
-				$(id).addClass("si-"+type+"-incorrect");
-			}
-			return right;
-		}
-
-	 /* method to check all answers in current section
-	 * called when 'check answers' button is selected
-	 *
-	 * FOR EACH graded answer
-	 * 	classify as correct or incorrect (to trigger CSS changes)
-	 * IF all answers are correct, enable 'continue' button
-	 */
-	$scope.checkAnswers = function() {
-		var perfect = true;		// true if all questions/checklists are correct
-
-		// go through each question and checklist, see if it's right
-		for (i in $scope.currentsection.units) {
-			unit = $scope.currentsection.units[i];
-			id = "#"+unit.id;
-
-			var right = true;	// until proven wrong
-
-			if(unit.type == "question" && !unit.ignored) {
-				switch(unit.mode) {
-				case "radio":
-					//perfect &= classify("question", id, unit.value == unit.answer);
-					right = classify("question", id, unit.value == unit.answer);
-					break;
-
-				case "checkbox":
-					var correct = true; // true if this question is correct
-
-					// determine whether each box should be checked
-					for (j in unit.choices) {
-						choice = unit.choices[j];
-						choice_id = id+"-"+choice.id;
-
-						// if checkbox hasn't been touched, angular thinks it is undefined
-						if(typeof(choice.value)==='undefined') choice.value = false;
-						var item_right = choice.value == choice.ans;
-						correct &= item_right;
-
-						classify("checkbox", choice_id, item_right);
-						classify("checkbox-label", choice_id+"-label", item_right);
-					}
-
-					//perfect &= classify("question", id, correct);
-					right = classify("question", id, correct);
-
-					break;
-
-				case "textarea":
-					var re = new RegExp(unit.pattern);
-					//perfect &= classify("question", id, re.test(unit.value));
-					right = classify("question", id, re.test(unit.value));
-					break;
-
-				// TODO (ongoing) maintain functionality for new question modes
-
-				}
-			} else if(unit.type == "checklist") {
-				var correct = true; // true if all boxes are appropriately checked
-
-				// determine whether each box should be checked
-				for (j in unit.list) {
-					group = unit.list[j];
-					group_id = id+"-"+group.id;
-
-					for (k in group.items) {
-						item = group.items[k];
-						item_id = group_id+"-"+item.id;
-
-						// if checkbox hasn't been touched, angular thinks it is undefined
-						if(typeof(item.value)==='undefined') item.value = false;
-						// when checkbox is mediated by javascript, must manually bind item.value
-						if(item.js) item.value = $(item_id).is(':checked');
-
-						var item_right = item.value == item.ans;
-						correct &= item_right;
-
-						classify("checkbox", item_id, item_right);
-						classify("checkbox-label", item_id+"-label", item_right);
-					}
-				}
-
-				right &= classify("checklist", id, correct);
-			}
-
-			if(!right) {
-				perfect = false;
-				$scope.score.sections[$scope.currentsectionIndex].questions[unit.id] += 1;	// count attempt
-			}
-		}
-
-		// IF user has just successfully completed a new section
-		if (perfect && $scope.currentsectionIndex == $scope.sectionscompleted) {
-			// register time between starting and ending section
-			var now = new Date();
-			$scope.score.sections[$scope.sectionscompleted].time = now - $scope.starttime;
-			// update time
-			$scope.starttime = now;
-			// increment number of sections
-			$scope.sectionscompleted ++;
-		}
-		$scope.saveCookie($scope.sectionscompleted);
-	}
-
-		/**
-		 * method used to change sections
-		 * fails if user has not completed up to the given section
-		 *
-		 * PARAMETERS: i - the new section index
-		 */
-		$scope.gotoSection = function(i) {
-			if(i <= $scope.sectionscompleted) {
-				$scope.currentsectionIndex = i;
-				$scope.currentsection = $scope.module.sections[i];
-				$scope.saveCookie($scope.sectionscompleted);
-			} else {
-				console.log("Cannot go to section "+i+": may only go up to section "+$scope.sectionscompleted);
-			}
-		}
-
-		/**
-		 * Simple form of certificate, without Towson logo or fancy placement
-		 * TODO: prettify this
-		 */
-		function defaultCertificate(ctx, data) {
-			// white background
-			ctx.beginPath();
-			ctx.rect(0,0,500,348);
-			ctx.fillStyle = "white";
-			ctx.fill();
-
-			ctx.fillStyle = "black";
-			ctx.textAlign = "left";
-			// header
-			ctx.font = "20px Arial";
-			ctx.fillText("Security Injections @ offline", 20,30);
-			ctx.beginPath();
-			ctx.moveTo(20,40);
-			ctx.lineTo(150,40);
-			ctx.stroke();
-
-			ctx.font = "12px Arial";
-			ctx.fillText("Module: "+data.course, 20, 60);	// COURSE
-			ctx.fillText("Student: "+data.name, 20,80);		// NAME
-			ctx.fillText("Date: "+data.today, 20, 100);		// DATE
-			ctx.fillText("ID: "+data.hash, 20, 120);		// ID
-		}
-
-
-		/**
-		 * Pretty form of certificate, only available with connection to our server
-		 */
-		function prettyCertificate(ctx, data, img) {
-			ctx.drawImage(img, 0,0);
-
-			ctx.font = "12px Arial";
-			ctx.textAlign = "left";
-			ctx.fillText(data.name, 27,140);		// NAME
-			ctx.fillText(data.course, 27, 190);		// COURSE
-			ctx.textAlign = "center";
-			ctx.fillText(data.hash, 126, 300);		// ID
-			ctx.fillText(data.today, 366, 300);		// DATE
-		}
-
-		function pdfCertificate(q,data){
-			var leftMargin=15; //left margin in mm
-			var rightMargin=15; //right margin in mm
-			var sizeOfPDF=210;  // width of A4 in mm
-			var lineBreak = sizeOfPDF-leftMargin-rightMargin;
-
-			var doc = new jsPDF("p","mm","a4");
-
-			doc.setFontSize(20);
-			doc.text(10,20,"Security Injections @ offline");
-			doc.line(10,25,190,25);
-			doc.setFontSize(12);
-			doc.text("Module: "+data.course, 20, 35);	// COURSE
-			doc.text("Student: "+data.name, 20,45);		// NAME
-			doc.text("Date: "+data.today, 20, 55);		// DATE
-			doc.text("ID: "+data.hash, 20, 65);		// ID
-
-			//doc.addImage(img, 'PNG', 10, 10, 190, 132);
-			doc.addPage();
-			doc.setFontSize(20);
-			doc.text("Discussion Questions",10,20);
-			doc.line(10,25,190,25);
-
-			for (i in q){
-				doc.setFontSize(16);    //COUNT CHARACTERS IN ARRAY OF STRING.
-				//var prompt = doc.splitTextToSize(q[i].prompt, lineBreak);
-				doc.text(leftMargin,(40),doc.splitTextToSize(q[i].prompt, lineBreak));
-				doc.setFontSize(12);
-				doc.text(leftMargin+20,(60),doc.splitTextToSize(q[i].answer, lineBreak));
-				doc.addPage();
-			}
-
-			dataUri = doc.output('datauristring');
-
-			$scope.detailFrame = $sce.trustAsResourceUrl(dataUri);
-
-		}
-
-		/**
-		 * method to generate the user's completion certificate
-		 * and also update our database
-		 *
-		 * NETWORK: sends POST 'request' to server with everything the database wants
-		 */
-		$scope.generateCertificate = function() {
-			// Step 1: Get module/variant into printable string.
-			var course = $scope.module.name+" - "+$scope.module.variant;
-
-			// Step 2: Get the time into a printable format.
-			// SOURCE: http://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
-			var now = new Date();
-			var dd = now.getDate();
-			var mm = now.getMonth()+1; //January is 0!
-			var yyyy = now.getFullYear();
-			if(dd<10) { dd='0'+dd } // force date to be 2 digits
-			if(mm<10) { mm='0'+mm } // force month to be 2 digits
-			var today = mm+'/'+dd+'/'+yyyy;
-
-			// Step 3: Produce a hash-string id using all this info.
-			// SOURCE: http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
-			var to_hash = $scope.form.name + course + today;
-			var hash = 0;
-				if (to_hash.length == 0) return hash;
-				for (i = 0; i < to_hash.length; i++) {
-						char = to_hash.charCodeAt(i);
-						hash = ((hash<<5)-hash)+char;
-						hash = hash & hash; // Convert to 32bit integer
-				}
-				hash = Math.abs(hash);
-
-
-			// Step 4: Draw the certificate user data.
-				var draw_data = {
-						'name': $scope.form.name,
-						'course': course,
-						'hash': hash,
-						'today': today
-					}
-			/*
-			var canvas = document.getElementById("si-certificate-canvas");
-			var ctx = canvas.getContext('2d');
-
-			defaultCertificate(ctx, draw_data);
-
-			var img = new Image();
-			img.crossOrigin = "anonymous";	// teach JS it's safe to download this image...
-			img.onload = function(event) {
-				// paint right over the default
-				prettyCertificate(ctx, draw_data, img);
-			}
-			img.src = $scope.repo+"images/blank_certificate.png"
-
-			// Step 5: Append page(s) of answers to ungraded text-based questions.
-			/*
-			 * TODO: all of this
-			 *
-			 * Information we want is contained in
-			 * 		$scope.module.sections[each].units[each whose type is 'question' and mode is 'textarea']
-			 * 			.prompt
-			 * 		and .value
-			 *
-			 * I think the hard part will be to get the certificate to have multiple pages.
-			 *
-			 *
-			certData = canvas.toDataURL();
-			*/
-
-			var discussionQuestions = [];
-			for (i in $scope.module.sections) {
-				for (q in $scope.module.sections[i].units){
-						unit = $scope.module.sections[i].units[q];
-					if(unit.type == "question") {
-						if(unit.mode == "textarea"){
-							if(unit.value != null){
-								discussionQuestions[q] = {prompt:unit.prompt, answer:unit.value};
-							}
-						}
-					}
-				}
-			}
-
-			pdfCertificate(discussionQuestions,draw_data);
-			finalPDF = $scope.detailFrame
-
-
-//<object data="/url/to/file.pdf" type="application/pdf" width="500" height="300">
-  //  <a href="/url/to/file.pdf">Download file.pdf</a>
-//</object>
-
-			// Step 6: Make certificate available for download
-
-			$("#si-certificate-link").attr('href', finalPDF);
-			$('#si-certificate-link').prop('disabled', false);
-			$('#si-certificate-pane').show();
-
-
-			// Step 7: Post info to database
-			$scope.form['modulename'] = $scope.module.name;
-			$scope.form['variant'] = $scope.module.variant;
-			$scope.form['date'] = now.toJSON();
-			$scope.form['score'] = JSON.stringify($scope.score);
-			// TODO: make sure $scope.form content is securely encrypted. Student email is private info
-			$http.post($scope.repo+'record', $scope.form);
-		}
-	}]);
-
-
-	</script>
+	<script>var app=angular.module("modApp",["ngSanitize","ngCookies","mgcrea.ngStrap"]);app.controller("modCtrl",["$scope","$http","$cookies","$sce",function(e,t,o,s){function r(t){e.module=t,e.currentsectionIndex=0,e.currentsection=e.module.sections[0],e.module.sections.push({header:"Final Page"}),a()}function u(t){e.score={name:t.name,variant:t.variant,sections:[]};for(i in t.sections){section={header:t.sections[i].header,time:0,questions:{}};for(j in t.sections[i].units)unit=t.sections[i].units[j],("question"==unit.type&&!unit.ignored||"checklist"==unit.type)&&(section.questions[unit.id]=1);e.score.sections.push(section)}}function a(){if(null!=o.get("progress")&&e.redirectCookie(),cookieAnswer=o.getObject("forms"),n=0,"undefined"==typeof cookieAnswer)console.log("No cookies to be loaded");else for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":if(null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].answer&&(unit.checked=!0,unit.value=cookieAnswer[n].answer);n++}break;case"checkbox":if(null!=cookieAnswer[n]){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].prompt[c]&&(1==cookieAnswer[n].answer[c]?unit.choices[c].value=!0:unit.choices[c].value=!1);n++}break;case"textarea":null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt&&(unit.value=cookieAnswer[n].answer,n++)}else unit.type}function l(e,t,i){return i?($(t).removeClass("si-"+e+"-incorrect"),$(t).addClass("si-"+e+"-correct")):($(t).removeClass("si-"+e+"-correct"),$(t).addClass("si-"+e+"-incorrect")),i}function d(t,o){var n=20,c=295-n-20,r=new jsPDF("p","mm","a4");r.setFontSize(20),r.text("Security Injections @ offline",15,n),r.line(10,25,190,25),r.setFontSize(12),r.text("Module: "+o.course,20,35),r.text("Student: "+o.name,20,45),r.text("Date: "+o.today,20,55),r.text("ID: "+o.hash,20,65),r.addPage(),r.setFontSize(20),r.text("Discussion Questions",15,n),r.line(10,25,190,25),n=40;for(i in t){n>c&&(r.addPage(),n=20),r.setFontSize(16);var u=r.splitTextToSize(t[i].prompt,180),a=u.length;r.text(15,n,u),n+=5.6444*a+10,r.setFontSize(12);var l=r.splitTextToSize(t[i].answer,160),d=l.length;r.text(35,n,l),n+=4.2333*d+10}dataUri=r.output("datauristring"),e.detailFrame=s.trustAsResourceUrl(dataUri)}e.loadContent=function(){var i=e.repo+$("#name").html()+"/"+$("#variant").html()+".json";console.log("Loading content from "+i),e.contentError=!1,t.get(i).then(function(e){r(e.data),u(e.data)},function(t){if($("#default").length){console.log("* No response - using default");var i=JSON.parse($("#default").html());r(i),u(i)}else console.log("* No response - try again"),e.contentError=!0})},function(){e.repo="http://127.0.0.1:8000/",e.sectionscompleted=0,e.loadContent(),e.form={},e.starttime=new Date}(),e.redirectCookie=function(){var t=o.get("progress");e.sectionscompleted=parseInt(t),e.currentsectionIndex=e.sectionscompleted,e.currentsection=e.module.sections[e.currentsectionIndex]},e.saveCookie=function(t){var n=new Date,s=new Date(n);s.setMinutes(n.getMinutes()+120),o.put("progress",t,{expires:s}),o.putObject("forms",[]);for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":(r=o.getObject("forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject("forms",r);break;case"checkbox":var r=o.getObject("forms"),u=[],a=[];for(c in unit.choices)void 0===unit.choices[c].value||unit.ignored||(a.push(unit.choices[c].id),u.push(unit.choices[c].value));r.push({prompt:a,answer:u}),o.putObject("forms",r);break;case"textarea":(r=o.getObject("forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject("forms",r)}else unit.type},e.checkAnswers=function(){var t=!0;for(i in e.currentsection.units){unit=e.currentsection.units[i],id="#"+unit.id;var o=!0;if("question"!=unit.type||unit.ignored){if("checklist"==unit.type){s=!0;for(j in unit.list){group=unit.list[j],group_id=id+"-"+group.id;for(k in group.items){item=group.items[k],item_id=group_id+"-"+item.id,void 0===item.value&&(item.value=!1),item.js&&(item.value=$(item_id).is(":checked"));var n=item.value==item.ans;s&=n,l("checkbox",item_id,n),l("checkbox-label",item_id+"-label",n)}}o&=l("checklist",id,s)}}else switch(unit.mode){case"radio":o=l("question",id,unit.value==unit.answer);break;case"checkbox":var s=!0;for(j in unit.choices)choice=unit.choices[j],choice_id=id+"-"+choice.id,void 0===choice.value&&(choice.value=!1),s&=n=choice.value==choice.ans,l("checkbox",choice_id,n),l("checkbox-label",choice_id+"-label",n);o=l("question",id,s);break;case"textarea":var c=new RegExp(unit.pattern);o=l("question",id,c.test(unit.value))}o||(t=!1,e.score.sections[e.currentsectionIndex].questions[unit.id]+=1)}if(t&&e.currentsectionIndex==e.sectionscompleted){var r=new Date;e.score.sections[e.sectionscompleted].time=r-e.starttime,e.starttime=r,e.sectionscompleted++}e.saveCookie(e.sectionscompleted)},e.gotoSection=function(t){t<=e.sectionscompleted?(e.currentsectionIndex=t,e.currentsection=e.module.sections[t],e.saveCookie(e.sectionscompleted)):console.log("Cannot go to section "+t+": may only go up to section "+e.sectionscompleted)},e.generateCertificate=function(){var o=e.module.name+" - "+e.module.variant,n=new Date,s=n.getDate(),c=n.getMonth()+1,r=n.getFullYear();s<10&&(s="0"+s),c<10&&(c="0"+c);var u=c+"/"+s+"/"+r,a=e.form.name+o+u,l=0;if(0==a.length)return l;for(i=0;i<a.length;i++)char=a.charCodeAt(i),l=(l<<5)-l+char,l&=l;l=Math.abs(l);var m={name:e.form.name,course:o,hash:l,today:u},p=[];for(i in e.module.sections)for(q in e.module.sections[i].units)unit=e.module.sections[i].units[q],"question"==unit.type&&"textarea"==unit.mode&&null!=unit.value&&(p[q]={prompt:unit.prompt,answer:unit.value});d(p,m),finalPDF=e.detailFrame,$("#si-certificate-link").attr("href",finalPDF),$("#si-certificate-link").prop("disabled",!1),$("#si-certificate-pane").show(),e.form.modulename=e.module.name,e.form.variant=e.module.variant,e.form.date=n.toJSON(),e.form.score=JSON.stringify(e.score),t.post(e.repo+"record",e.form)}}]);</script>
 </head>
 <body>
-
-
 <div ng-app="modApp" ng-controller="modCtrl">
 	<div class = "container">
-	<div ng-if="contentError">
-		<p class="si-error">There was a problem getting content.</p>
-		<button ng-click="loadContent()">Try Again</button>
-	</div>
+		<div ng-if="contentError">
+			<p class="si-error">There was a problem getting content.</p>
+			<button ng-click="loadContent()">Try Again</button>
+		</div>
 
 	<div ng-if="!contentError">
 		<div class ="page-header">
@@ -805,22 +47,19 @@ body {
 			<h2 ng-bind-html="currentsection.header"></h2>
 			<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
 				<div class = "row">
-				<h3 ng-switch-when="subheader" ng-bind-html="unit.text"></h3>
-				<p ng-switch-when="paragraph" ng-bind-html="unit.text"></p>
-				<div ng-switch-when="list" class="si-list">
-					<ol ng-if="unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ol>
-					<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
+					<h3 ng-switch-when="subheader" ng-bind-html="unit.text"></h3>
+					<p ng-switch-when="paragraph" ng-bind-html="unit.text"></p>
+					<div ng-switch-when="list" class="si-list">
+						<ol ng-if="unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ol>
+						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
-
   			<div ng-switch-when="image" class="col-md">
-						<img  src="{{ unit.src }}" alt="{{ unit.alt }}" >
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" >
 				</div>
+				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
 				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
-
 					<div class="well">
-
-
 					<h5 ng-bind-html="unit.prompt"></h5>
 					<div ng-switch="unit.mode">
 						<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
@@ -866,12 +105,12 @@ body {
 					</div>
 				</div>
 
-					<script ng-if="unit.js" ng-bind="unit.js"></script>
-					</div>
-				<!-- TODO (ongoing) add more unit types -->
-				<p ng-switch-default class="si-error">Type invalid</p>
+						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 				</div>
-			</div>
+						<!-- TODO (ongoing) add more unit types -->
+						<p ng-switch-default class="si-error">Type invalid</p>
+					</div>
+				</div>
 			</div>
 
 
@@ -888,54 +127,54 @@ body {
 			<h2 ng-bind-html="currentsection.header"></h2>
 				<div class = "col-md-6">
 					<div class = "well">
-					<div class="si-certificate-form">
-						<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
-						<p>Complete this form to generate your certificate</p>
-						<form ng-submit="generateCertificate()">
+						<div class="si-certificate-form">
+							<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
+							<p>Complete this form to generate your certificate</p>
+							<form ng-submit="generateCertificate()">
 
 							<div class="input-group">
-			  			<span class="input-group-addon">Full Name</span>
-			  			<input ng-model="form.name" required type="text" class="form-control">
+				  			<span class="input-group-addon">Full Name</span>
+				  			<input ng-model="form.name" required type="text" class="form-control">
 							</div>
 							<br>
 
 							<div class="input-group">
-			  			<span class="input-group-addon">Email Address</span>
-			  			<input ng-model="form.email" required type="email" class="form-control">
+				  			<span class="input-group-addon">Email Address</span>
+				  			<input ng-model="form.email" required type="email" class="form-control">
 							</div>
 							<br>
 
 							<div class="input-group">
-			  			<span class="input-group-addon">Instructor</span>
-			  			<input ng-model="form.instructor" required type="text" class="form-control">
+				  			<span class="input-group-addon">Instructor</span>
+				  			<input ng-model="form.instructor" required type="text" class="form-control">
 							</div>
 							<br>
 
 							<div class="input-group">
-			  			<span class="input-group-addon">Institution</span>
-			  			<input ng-model="form.institution" required type="text" class="form-control">
+			  				<span class="input-group-addon">Institution</span>
+			  				<input ng-model="form.institution" required type="text" class="form-control">
 							</div>
 							<br>
 
 							<input class="btn btn-success btn-lg" type="submit" value="Generate Certificate">
 							</form>
+						</div>
+					</div>
+				</div>
+					<div class = "col-md-6">
+						<div id="si-certificate-pane" style="display:none">
+								<!--<canvas id="si-certificate-canvas" width="500" height="348"></canvas>-->
+								<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
+								<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class = "col-md-6">
-					<div id="si-certificate-pane" style="display:none">
-							<!--<canvas id="si-certificate-canvas" width="500" height="348"></canvas>-->
-							<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
-							<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
-					</div>
-			</div>
 		</div>
 	</div>
-	</div>
-	</div>
+</div>
+
 	<script type="text/plain" id="name">Integer Error</script>
 	<script type="text/plain" id="variant">CS0 C++</script>
-	<script type="text/plain" id="default">{"name":"Integer Error","variant":"CS0 C++","sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary"},{"type":"paragraph","text":"Integer values that are too large or too small may fall outside the allowable range for their data type, leading to undefined behavior that can both reduce the robustness of your code and lead to security vulnerabilities."},{"type":"image","src":"http://imgs.xkcd.com/comics/cant_sleep.png","alt":"*XKCD Comic*","width":740,"height":244,"float":null},{"type":"subheader","text":"Description"},{"type":"paragraph","text":"Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short</strong>, <strong>int</strong>, <strong>long</strong>, etc. , to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."},{"type":"paragraph","text":"Input or mathematical operations such as addition, subtraction, and multiplication may lead to values that are outside of this range. This results in an integer error or overflow, which causes undefined behavior and the resulting value will likely not be what the programmer intended. Integer overflow is a common cause of software errors and vulnerabilities."},{"type":"subheader","text":"Risk - How can it happen?"},{"type":"paragraph","text":"An integer error can lead to unexpected behavior or may be exploited to cause a program crash, corrupt data, lead to incorrect behavior, or allow the execution of malicious software."},{"type":"image","src":"http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png","alt":"*Facebook group image*","width":378,"height":275,"float":"right"},{"type":"subheader","text":"Real-world Examples"},{"type":"list","items":["There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.","On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,768) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments."],"ordered":true},{"type":"question","id":"memory","prompt":"Declaring a variable as type integer:","ignored":false,"mode":"radio","choices":[{"id":"infinite","text":"allocates an infinite amount of storage"},{"id":"fixed","text":"allocates a fixed amount of storage"}],"answer":"fixed"},{"type":"question","id":"effect","prompt":"An integer error in C++ causes:","ignored":false,"mode":"radio","choices":[{"id":"syntax","text":"a syntax error"},{"id":"correction","text":"the program to correct itself"},{"id":"unexpected","text":"unexpected behavior"}],"answer":"unexpected"}]},{"header":"Code Responsibly","units":[{"type":"subheader","text":"How can I avoid an Integer Error?"},{"type":"list","items":["<em>Know your limits:</em> Familiarize yourself with the ranges available for each data type. With languages such as C and C++, the sizes of the data types are machine and compiler dependent.","<em>Choose your data types wisely:</em> Many programming languages contain multiple data types for storing integer values. If you have any concerns about the integer values that you will be using, learn about the options available in the language you are using, and choose integer types that are large enough to hold the values you will be using.","<em>Validate your input:</em> Check input for range and reasonableness before conducting operation (more on this later)"],"ordered":true},{"type":"question","id":"avoid","prompt":"How can you avoid integer error in your program?","ignored":false,"mode":"checkbox","choices":[{"id":"bounds","text":"Know the smallest and largest allowable values for each data type in the programming language you are using.","ans":true},{"id":"float","text":"Always pick float or double as the data types for numbers.","ans":false},{"id":"check","text":"Check your input for reasonable values before conducting mathematical operations.","ans":true}]}]},{"header":"Laboratory Assignment","units":[{"type":"paragraph","text":"<strong>STEP 1</strong> Type Program 1 and compile. Run and enter reasonable values."},{"type":"subheader","text":"Program 1"},{"type":"codeblock","code":"#include <iostream>\n#include <climits>\nusing namespace std;\nint main() {\n\tint i;\n\tint j;\n\n\tcout << \"For this compiler: \" << endl;\n\tcout << \"integers are: \" << sizeof(int) << \" bytes\" << endl;\n\tcout << \"largest integer is \" << INT_MAX << endl;\n\tcout << \"smallest integer id \" << INT_MIN << endl;\n\n\tcout << \"Input two integers values \" << endl;\n\tcin >> i >> j;\n\n\tcout << endl << \"You entered the following values: \" << endl;\n\tcout << \"integer \" << i << \" \" << j << endl;\n\n\t/*\n\tint result = i * 10;\n\tcout << \"Your number times 10 is \" << result << endl;\n\tresult = i + j;\n\tcout << \"The sum of your numbers is \" << result << endl;\n\tresult = i * j;\n\tcout << \"The product of your numbers is \" << result << endl;\n\t*/\n\treturn 0;\n}\n"},{"type":"question","id":"largest","prompt":"Look at the output. What is the largest possible value of type <strong>int</strong> the program can handle?","ignored":false,"mode":"radio","choices":[{"id":"3","text":"2,147,483,647"},{"id":"1","text":"32,767"},{"id":"4","text":"2,147,483,648"},{"id":"2","text":"1,000,000"}],"answer":"3"},{"type":"paragraph","text":"<strong>STEP 2</strong> Remove the comment lines: /* and */. Compile and run again."},{"type":"question","id":"error-million","prompt":"Enter 1000000 (1 million): did you get an error?","ignored":false,"mode":"radio","choices":[{"id":"y","text":"Yes"},{"id":"n","text":"No"}],"answer":"y"},{"type":"question","id":"error-billion","prompt":"Enter 2000000000 (2 billion): did you get an error?","ignored":false,"mode":"radio","choices":[{"id":"y","text":"Yes"},{"id":"n","text":"No"}],"answer":"y"},{"type":"question","id":"error-ten-billion","prompt":"Enter 10000000000 (10 billion): did you get an error?","ignored":false,"mode":"radio","choices":[{"id":"y","text":"Yes"},{"id":"n","text":"No"}],"answer":"y"},{"type":"question","id":"can-cause","prompt":"Which of the following operations can lead to an integer error?","ignored":false,"mode":"checkbox","choices":[{"id":"plus","text":"addition","ans":true},{"id":"minus","text":"subtraction","ans":true},{"id":"times","text":"multiplication","ans":true}]},{"type":"question","id":"will-cause","prompt":"Which of the following operations can lead to an integer error?","ignored":false,"mode":"radio","choices":[{"id":"minus","text":"subtraction"},{"id":"times","text":"multiplication"},{"id":"plus","text":"addition"}],"answer":"times"}]},{"header":"Security Checklist","units":[{"type":"checklist","id":"Pgm1CL","list":[{"id":"var","header":"Check each line of code:","items":[{"id":"var","text":"Click each declaration of an integer variable.","ans":true,"js":true}]},{"id":"vuln","header":"For each variable:","items":[{"id":"input","text":"Click all input operations that assign values to the variable.","ans":true,"js":true},{"id":"math","text":"Click all mathematical operations involving the variable.","ans":true,"js":true},{"id":"assign","text":"Click all assignments made to the variable.","ans":true,"js":true}]}],"code":"#include &lt;iostream&gt;\n#include &lt;climits&gt;\nusing namespace std;\nint main() {\n\t<span class=\"span-Pgm1CL Pgm1CL-var-var-Pgm1CL\">int i;</span>\n\t<span class=\"span-Pgm1CL Pgm1CL-var-var-Pgm1CL\">int j;</span>\n\t\n\tcout << \"For this compiler: \" << endl;\n\tcout << \"integers are: \" << sizeof(int) << \" bytes\" << endl;\n\tcout << \"largest integer is \" << INT_MAX << endl;\n\tcout << \"smallest integer id \" << INT_MIN << endl;\n\t\n\tcout << \"Input two integers values \" << endl;\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL\">cin >> i >> j;</span>\n\t\n\tcout << endl << \"You entered the following values: \" << endl;\n\tcout << \"integer \" << i << \" \" << j << endl;\n\t\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL\"><span class=\"span-Pgm1CL Pgm1CL-var-var-Pgm1CL\">int result</span> = <span class=\"span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL\">i * 10;</span></span>\n\tcout << \"Your number times 10 is \" << result << endl;\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL\">result = <span class=\"span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL\">i + j</span>;</span>\n\tcout << \"The sum of your numbers is \" << result << endl;\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL\">result = <span class=\"span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL\">i * j</span>;</span>\n\tcout << \"The product of your numbers is \" << result << endl;\n\t\n\treturn 0;\n}\n","js":"$(document).ready(function(){function a(a){var s;if(void 0===a)s=n+\"-var-var\";else switch($(\"#\"+a).prop(\"checked\",!0),$(\"#\"+a+\"-label\").removeClass(\"si-checklist-active\"),a){case n+\"-var-var\":s=n+\"-vuln-input\";break;case n+\"-vuln-input\":s=n+\"-vuln-math\";break;case n+\"-vuln-math\":s=n+\"-vuln-assign\";break;default:return}return $(\"#\"+s+\"-label\").addClass(\"si-checklist-active\"),l=[],$(\".span-\"+n).each(function(a){$(this).hasClass(s+\"-\"+n)&&l.push(a)}),s}var s,n=\"Pgm1CL\",e=[],l=[];s=a(),$(\".span-\"+n).each(function(c){$(this).on(\"click\",function(){if(span=$(this),span.hasClass(s+\"-\"+n)&&$.inArray(c,e)<0){e.push(c),span.addClass(\"si-code-clicked\"),(span.hasClass(n+\"-vuln-input-\"+n)||span.hasClass(n+\"-vuln-assign-\"+n))&&span.addClass(\"si-code-vulnerability\");var r=!0;for(i in l)r&=$.inArray(l[i],e)>=0;r&&(s=a(s))}})})});"},{"type":"paragraph","text":"Highlighted areas indicate vulnerabilities."}]},{"header":"Discussion Questions","units":[{"type":"question","id":"largest","prompt":"What is the largest possible value of type int? Explain your answer using the information you read in the Background section.","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"operation","prompt":"What happens when the result of an operation on values of type int exceeds this value ? Explain.","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"popUS","prompt":"Look up the population of the United States:","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"popEarth","prompt":"Look up the population of the world:","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"debtUS","prompt":"Look up the United States's national debt:","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"problem","prompt":"For which of these would the int data type be a problem: Population of the US, population of the world or US national debt?","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"Comair","prompt":"Discuss the Comair problem described in background section. What are the repercussions of such a problem?","ignored":true,"mode":"textarea","pattern":null}]}]}</script>
-
-</div>
+	<script type="text/plain" id="default">{"name":"Integer Error","variant":"CS0 C++","sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary"},{"type":"paragraph","text":"Integer values that are too large or too small may fall outside the allowable range for their data type, leading to undefined behavior that can both reduce the robustness of your code and lead to security vulnerabilities."},{"type":"image","src":"http://imgs.xkcd.com/comics/cant_sleep.png","alt":"*XKCD Comic*","width":740,"height":244,"float":null},{"type":"attribution","copyright":"XKCD","date":"2017","link":"http://imgs.xkcd.com/comics/cant_sleep.png"},{"type":"subheader","text":"Description"},{"type":"paragraph","text":"Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short</strong>, <strong>int</strong>, <strong>long</strong>, etc. , to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."},{"type":"paragraph","text":"Input or mathematical operations such as addition, subtraction, and multiplication may lead to values that are outside of this range. This results in an integer error or overflow, which causes undefined behavior and the resulting value will likely not be what the programmer intended. Integer overflow is a common cause of software errors and vulnerabilities."},{"type":"subheader","text":"Risk - How can it happen?"},{"type":"paragraph","text":"An integer error can lead to unexpected behavior or may be exploited to cause a program crash, corrupt data, lead to incorrect behavior, or allow the execution of malicious software."},{"type":"image","src":"http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png","alt":"*Facebook group image*","width":378,"height":275,"float":"right"},{"type":"attribution","copyright":"Facebook","date":"2017","link":"http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png"},{"type":"subheader","text":"Real-world Examples"},{"type":"list","items":["There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.","On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,768) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments."],"ordered":true},{"type":"question","id":"memory","prompt":"Declaring a variable as type integer:","ignored":false,"mode":"radio","choices":[{"id":"infinite","text":"allocates an infinite amount of storage"},{"id":"fixed","text":"allocates a fixed amount of storage"}],"answer":"fixed"},{"type":"question","id":"effect","prompt":"An integer error in C++ causes:","ignored":false,"mode":"radio","choices":[{"id":"syntax","text":"a syntax error"},{"id":"correction","text":"the program to correct itself"},{"id":"unexpected","text":"unexpected behavior"}],"answer":"unexpected"}]},{"header":"Code Responsibly","units":[{"type":"subheader","text":"How can I avoid an Integer Error?"},{"type":"list","items":["<em>Know your limits:</em> Familiarize yourself with the ranges available for each data type. With languages such as C and C++, the sizes of the data types are machine and compiler dependent.","<em>Choose your data types wisely:</em> Many programming languages contain multiple data types for storing integer values. If you have any concerns about the integer values that you will be using, learn about the options available in the language you are using, and choose integer types that are large enough to hold the values you will be using.","<em>Validate your input:</em> Check input for range and reasonableness before conducting operation (more on this later)"],"ordered":true},{"type":"question","id":"avoid","prompt":"How can you avoid integer error in your program?","ignored":false,"mode":"checkbox","choices":[{"id":"bounds","text":"Know the smallest and largest allowable values for each data type in the programming language you are using.","ans":true},{"id":"float","text":"Always pick float or double as the data types for numbers.","ans":false},{"id":"check","text":"Check your input for reasonable values before conducting mathematical operations.","ans":true}]}]},{"header":"Laboratory Assignment","units":[{"type":"paragraph","text":"<strong>STEP 1</strong> Type Program 1 and compile. Run and enter reasonable values."},{"type":"subheader","text":"Program 1"},{"type":"codeblock","code":"#include <iostream>\n#include <climits>\nusing namespace std;\nint main() {\n\tint i;\n\tint j;\n\n\tcout << \"For this compiler: \" << endl;\n\tcout << \"integers are: \" << sizeof(int) << \" bytes\" << endl;\n\tcout << \"largest integer is \" << INT_MAX << endl;\n\tcout << \"smallest integer id \" << INT_MIN << endl;\n\n\tcout << \"Input two integers values \" << endl;\n\tcin >> i >> j;\n\n\tcout << endl << \"You entered the following values: \" << endl;\n\tcout << \"integer \" << i << \" \" << j << endl;\n\n\t/*\n\tint result = i * 10;\n\tcout << \"Your number times 10 is \" << result << endl;\n\tresult = i + j;\n\tcout << \"The sum of your numbers is \" << result << endl;\n\tresult = i * j;\n\tcout << \"The product of your numbers is \" << result << endl;\n\t*/\n\treturn 0;\n}\n"},{"type":"question","id":"largest","prompt":"Look at the output. What is the largest possible value of type <strong>int</strong> the program can handle?","ignored":false,"mode":"radio","choices":[{"id":"3","text":"2,147,483,647"},{"id":"1","text":"32,767"},{"id":"4","text":"2,147,483,648"},{"id":"2","text":"1,000,000"}],"answer":"3"},{"type":"paragraph","text":"<strong>STEP 2</strong> Remove the comment lines: /* and */. Compile and run again."},{"type":"question","id":"error-million","prompt":"Enter 1000000 (1 million): did you get an error?","ignored":false,"mode":"radio","choices":[{"id":"y","text":"Yes"},{"id":"n","text":"No"}],"answer":"y"},{"type":"question","id":"error-billion","prompt":"Enter 2000000000 (2 billion): did you get an error?","ignored":false,"mode":"radio","choices":[{"id":"y","text":"Yes"},{"id":"n","text":"No"}],"answer":"y"},{"type":"question","id":"error-ten-billion","prompt":"Enter 10000000000 (10 billion): did you get an error?","ignored":false,"mode":"radio","choices":[{"id":"y","text":"Yes"},{"id":"n","text":"No"}],"answer":"y"},{"type":"question","id":"can-cause","prompt":"Which of the following operations can lead to an integer error?","ignored":false,"mode":"checkbox","choices":[{"id":"plus","text":"addition","ans":true},{"id":"minus","text":"subtraction","ans":true},{"id":"times","text":"multiplication","ans":true}]},{"type":"question","id":"will-cause","prompt":"Which of the operations listed in question 3 is most likely to cause an integer error?","ignored":false,"mode":"radio","choices":[{"id":"minus","text":"subtraction"},{"id":"times","text":"multiplication"},{"id":"plus","text":"addition"}],"answer":"times"}]},{"header":"Security Checklist","units":[{"type":"checklist","id":"Pgm1CL","list":[{"id":"var","header":"Check each line of code:","items":[{"id":"var","text":"Click each declaration of an integer variable.","ans":true,"js":true}]},{"id":"vuln","header":"For each variable:","items":[{"id":"input","text":"Click all input operations that assign values to the variable.","ans":true,"js":true},{"id":"math","text":"Click all mathematical operations involving the variable.","ans":true,"js":true},{"id":"assign","text":"Click all assignments made to the variable.","ans":true,"js":true}]}],"code":"#include &lt;iostream&gt;\n#include &lt;climits&gt;\nusing namespace std;\nint main() {\n\t<span class=\"span-Pgm1CL Pgm1CL-var-var-Pgm1CL\">int i;</span>\n\t<span class=\"span-Pgm1CL Pgm1CL-var-var-Pgm1CL\">int j;</span>\n\t\n\tcout << \"For this compiler: \" << endl;\n\tcout << \"integers are: \" << sizeof(int) << \" bytes\" << endl;\n\tcout << \"largest integer is \" << INT_MAX << endl;\n\tcout << \"smallest integer id \" << INT_MIN << endl;\n\t\n\tcout << \"Input two integers values \" << endl;\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL\">cin >> i >> j;</span>\n\t\n\tcout << endl << \"You entered the following values: \" << endl;\n\tcout << \"integer \" << i << \" \" << j << endl;\n\t\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL\"><span class=\"span-Pgm1CL Pgm1CL-var-var-Pgm1CL\">int result</span> = <span class=\"span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL\">i * 10;</span></span>\n\tcout << \"Your number times 10 is \" << result << endl;\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL\">result = <span class=\"span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL\">i + j</span>;</span>\n\tcout << \"The sum of your numbers is \" << result << endl;\n\t<span class=\"span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL\">result = <span class=\"span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL\">i * j</span>;</span>\n\tcout << \"The product of your numbers is \" << result << endl;\n\t\n\treturn 0;\n}\n","javascript":"$(document).ready(function() {\n\tvar name = \"Pgm1CL\";\n\t\n\t// track id of the current checklist task (initialized later)\n\tvar current;\n\t// track which spans have been clicked appropriately\n\tvar clicked = [];\n\t// track which spans are needed for current question\n\tvar waitingOn = [];\n\t\n\t\n\t/**\n\t * returns the id of the next question, and rearranges class indicators\n\t * if question is not provided, initialize the first question\n\t */\n\tfunction advance(question) {\n\t\tvar next;\n\t\tif(typeof(question)==='undefined') {\t\n\t\t\tnext = name+\"-var-var\";\t\t\t\t// first question\n\t\t} else {\n\t\t\t// check off question\n\t\t\t$(\"#\"+question).prop('checked', true);\n\t\t\t// take focus away from current question\n\t\t\t$(\"#\"+question+\"-label\").removeClass(\"si-checklist-active\");\n\t\t\t\n\t\t\tswitch(question) { // here's where flow is really controlled\n\t\t\tcase name+\"-var-var\":\t\tnext = name+\"-vuln-input\";\tbreak;\n\t\t\tcase name+\"-vuln-input\":\tnext = name+\"-vuln-math\";\tbreak;\n\t\t\tcase name+\"-vuln-math\":\t\tnext = name+\"-vuln-assign\";\tbreak;\n\t\t\tdefault:\treturn;\t// input invalid or question is complete\n\t\t\t}\n\t\t}\n\t\t\n\t\t// focus on next question\n\t\t$(\"#\"+next+\"-label\").addClass(\"si-checklist-active\");\n\t\t\n\t\t// track which spans are needed for next question\n\t\twaitingOn = [];\n\t\t$(\".span-\"+name).each(function(index) {\n\t\t\tif( $(this).hasClass(next+\"-\"+name) ) {\n\t\t\t\twaitingOn.push(index);\n\t\t\t}\n\t\t});\n\t\t\n\t\treturn next;\n\t}\n\t\n\t\n\tcurrent = advance();\n\t\n\t\n\t\n\t$(\".span-\"+name).each(function(index) {\n\t\t\n\t\t$(this).on('click', function() {\n\t\t\tspan = $(this);\n\t\t\t\n\t\t\t// continue if user is currently supposed to click this span, and hasn't already\n\t\t\tif( span.hasClass(current+\"-\"+name) && $.inArray(index,clicked) < 0 ) {\n\t\t\t\tclicked.push(index);\t\t\t\t\t// \t\tnote that it's been clicked, programmatically\n\t\t\t\tspan.addClass(\"si-code-clicked\");\t\t//\t\tnote that it's been clicked, graphically\n\t\t\t\tif( \t   span.hasClass(name+\"-vuln-input-\"+name)\n\t\t\t\t\t\t|| span.hasClass(name+\"-vuln-assign-\"+name)\t\t) {\n\t\t\t\t\tspan.addClass(\"si-code-vulnerability\"); //\tsome spans get extra graphics to indicate vulnerability\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t// Check if 'current' question is finished yet\n\t\t\t\tvar finished = true;\n\t\t\t\tfor(i in waitingOn) {\n\t\t\t\t\tfinished &= $.inArray(waitingOn[i],clicked) >= 0;\n\t\t\t\t}\n\t\t\t\t// if it is, go to next question\n\t\t\t\tif(finished) current = advance(current);\n\t\t\t}\n\t\t});\n\t});\n});"},{"type":"paragraph","text":"Highlighted areas indicate vulnerabilities."}]},{"header":"Discussion Questions","units":[{"type":"question","id":"largest","prompt":"What is the largest possible value of type int? Explain your answer using the information you read in the Background section.","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"operation","prompt":"What happens when the result of an operation on values of type int exceeds this value ? Explain.","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"popUS","prompt":"Look up the population of the United States:","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"popEarth","prompt":"Look up the population of the world:","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"debtUS","prompt":"Look up the United States's national debt:","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"problem","prompt":"For which of these would the int data type be a problem: Population of the US, population of the world or US national debt?","ignored":true,"mode":"textarea","pattern":null},{"type":"question","id":"Comair","prompt":"Discuss the Comair problem described in background section. What are the repercussions of such a problem?","ignored":true,"mode":"textarea","pattern":null}]}]}</script>
 </body>

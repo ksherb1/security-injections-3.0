@@ -12,6 +12,7 @@
 // REQUIRE
 var fs = require('fs');
 var UglifyJS = require("uglify-js");
+var UglifyCSS = require('uglifycss');
 var Validate = require("./validate.js");
 
 
@@ -33,7 +34,11 @@ exports.write_3 = function(name, variant, dev) {
 		moduleFile = 'DEV - '+moduleFile;
 	}
 
-
+	//Make folder for blank JSON
+	var newFolderDir = "public/"+name;
+	if (!fs.existsSync(newFolderDir)){
+	    fs.mkdirSync(newFolderDir);
+	}
 
 	// STEP 1 - load all content files and parse/validate/minify into single JSON string
 	var content = {}									// parameters for parsing
@@ -46,14 +51,14 @@ exports.write_3 = function(name, variant, dev) {
 	var module = Validate.parse(content, prereqs);
 	content = JSON.stringify(module);					// content minified
 
-
 	// STEP 2 - load/minify each resource file
 	var template = fs.readFileSync(templateFile);
 	if(!dev) {	// in dev mode, we don't need CSS of JS content
-		var style = fs.readFileSync(styleFile);				// TODO: minify CSS, presumably similar to minifying js below
-		//var angular = UglifyJS.minify(angularFile).code;	// javscript minified
-		var angular = fs.readFileSync(angularFile);
-	}
+		var stylecode = fs.readFileSync(styleFile).toString();
+		var style = UglifyCSS.processString(stylecode);
+		var code = fs.readFileSync(angularFile).toString();
+		var angular = UglifyJS.minify(code).code;
+		}
 
 	// STEP 3 - craft new file-string
 	var html = '';
@@ -99,5 +104,7 @@ exports.write_3 = function(name, variant, dev) {
 
 //Phase 2: module should not have "MAIN"
 // MAIN
-exports.write_3("Computer Literacy", "Passwords", true);
+exports.write_3("Computer Literacy", "Passwords");
+exports.write_3("Data Hiding","CS2 C++");
+exports.write_3("Data Hiding","CS2 Java");
 exports.write_3("Integer Error", "CS0 C++");
