@@ -1,7 +1,7 @@
 {
     "name": "Computer Literacy",
     "variant": "Phishing",
-    "Sections": [
+    "sections": [
         {
             "header": "Background",
             "units": [
@@ -15,7 +15,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Description"
+                    "text": "Description:"
                 },
                 {
                     "type": "paragraph",
@@ -23,7 +23,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Risk"
+                    "text": "Risk:"
                 },
                 {
                     "type": "paragraph",
@@ -31,7 +31,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Example of occurence"
+                    "text": "Example of occurence:"
                 },
                 {
                     "type": "paragraph",
@@ -42,16 +42,20 @@
                     "text": "Twitter responded by reporting the offending domain, and changing the affected users’ passwords. (<a href = https://www.theguardian.com/technology/2009/jan/08/twitter-barack-obama-britney-spears-micro-blog-networking> What sort of Twitter would give away their password?</a>)"
                 },
                 {
+                    "type": "paragraph",
+                    "text": "<strong>A phishing email example: </strong>"
+                },
+                {
                     "type": "image",
                     "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phishing-email.jpg",
-                    "alt": "",
+                    "alt": "Amazon phising example",
                     "width": 581,
                     "height": 292,
                     "float": null
                 },
                 {
                     "type": "subheader",
-                    "text": "Answer the following question:"
+                    "text": "Answer the following questions:"
                 },
                 {
                     "type": "question",
@@ -100,7 +104,273 @@
             ]
         },
         {
-            //
+            "header": "Identify Phishing Responsibly",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Protect Yourself from Phishing Scams"
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phishing-comic.jpg",
+                    "alt": "Phising comic",
+                    "width": 992,
+                    "height": 603,
+                    "float": null
+                },
+                {
+                    "type": "subheader",
+                    "text": "Anti-Phish Training"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Training users to identify a 'phish' is an important component in the fight against phishing. Training has taken two forms: the first is simply to provide anti-phishing information to users through e-mail and other media. The second is to give firsthand experience to users through games, simulated phish, cartoons, etc. Recent studies seem to indicate that the latter—giving firsthand experience to users—might be more effective. The game, Anti-Phishing Phil (see picture), which teaches people how to identify suspicious Web site addresses while providing the experience of being captured by a phisher, is such an example. PhishGuru in the previous section is another example. It delivers cartoon-based, anti-phishing information after a user has been deceived by simulated phishing messages."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phish-game1.jpg",
+                    "alt": "Anti-Phising",
+                    "width": 552,
+                    "height": 414,
+                    "float": "right"
+                },
+                {
+                    "type": "attribution",
+                    "copyright": "Anti-Phishing Phil © Wombat Security Technologies, Inc.",
+                    "date": "no date",
+                    "link": "http://heron.towson.edu/securityinjections/comp_lit/01/exams/phishing-code-responsibly"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Anti-Phishing Technologies"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Although user ability to identify phish is an important component in the battle against phishing, combining it with technology yields better results. One of the techniques used to automatically identify phish is <strong>filtering</strong>. The objective of filtering is to identify (or flag) phishing attempts in e-mail or on Web pages. Filters are usually integrated into browsers or e-mail software. When a Web address is encountered the software compares it with a so-called \"blacklist\" of known phishing Web sites. It then takes appropriate actions, which usually include informing the user. The blacklist is updated periodically (for example, every 30 minutes) as new phishing sites become available. As with any blacklist, there is also a \"whitelist\" of known legitimate sites."
+                },
+                {
+                    "type": "subheader",
+                    "text": "In order to protect yourself from a phishing attack, indicate your choice for the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "links",
+                    "prompt": "Never click on links within emails",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "true"
+                },
+                {
+                    "type": "question",
+                    "id": "personalInfo",
+                    "prompt": "Give out personal information upon email request",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "false"
+                },
+                {
+                    "type": "question",
+                    "id": "address",
+                    "prompt": "Type in the real website address in the web browser",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "true"
+                },
+                {
+                    "type": "question",
+                    "id": "suspiciousSites",
+                    "prompt": "Always be wary of suspicious sites",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "true"
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Question 1"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Complete this security checklist for the following PayPal e-mail. The Web address in the box, <strong>http://211.248.156/Paypal/cgi-bin/webscrcmd_login.php</strong>, appears when the user 'mouse-overs' the \"Click here to verify your account\" link."
+                },
+                {
+                    "type": "checklist",
+                    "id": "securityChecklist",
+                    "list": [
+                        {
+                            "id": "questions",
+                            "header": "Security Checklist",
+                            "items": [
+                                {
+                                    "id": "q1",
+                                    "text": "1. Were there suspicious words, phrases or sentences?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q2",
+                                    "text": "2. Were there suspicious links?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q3",
+                                    "text": "3. Are there grammatical or spelling errors in the e-mail?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q4",
+                                    "text": "4. Does the e-mail start with a generic greeting?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q5",
+                                    "text": "5. Does the e-mail contain any pop-up boxes or attachments?",
+                                    "ans": false,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q6",
+                                    "text": "6. Does the e-mail contain an air of urgency or a need to respond immediately?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q7",
+                                    "text": "7. Does the email ask you for personal information such as passwords and social security number?",
+                                    "ans": false,
+                                    "js": false
+                                }
+                            ]
+                        }
+                    ],
+                    "code": null,
+                    "js": null
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you checked any of the above boxes, then the e-mail should be suspected as phishing mail."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/paypal-email-cis0.jpg",
+                    "alt": "PayPal",
+                    "width": 612,
+                    "height": 797,
+                    "float": null
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Question 1"
+                },
+                {
+                    "type": "question",
+                    "id": "suspectedPhish",
+                    "prompt": "List any sentence, phrase or word that makes the e-mail from the \"Checklist\" section a suspected phish:",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Question 2"
+                },
+                {
+                    "type": "question",
+                    "id": "games",
+                    "prompt": "Play at least two games of Anti-Phishing Phil at <a href = http://info.wombatsecurity.com/student-phil-phyllis-demo>http://info.wombatsecurity.com/student-phil-phyllis-demo</a>. Use \"students1\" as the password on the site. Create a \"blacklist\" of the phishing Web site addresses you encountered, and a \"whitelist\" of the legitimate Web sites (Hint: see the section on Anti-phishing Technologies.) Describe how the Anti-Phising Phil experience has helped you to better recognize phishing Web sites. What are your likes and dislikes about the game? Are there any suggestion(s) that you would like to provide so as to improve it? If so, explain.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Question 3"
+                },
+                {
+                    "type": "question",
+                    "id": "test",
+                    "prompt": "Take the \"SonicWall Phishing and Spam IQ Test\" a couple of times (<a href = http://www.sonicwall.com/phishing/>http://www.sonicwall.com/phishing/</a>). What was your maximum score? Look at the test result sheet, and give the name that appears in the \"Subject\" column for three of the questions. For each of the subjects, click on the \"Why?\" link that appears under the \"Explain Answer Column.\" The e-mail you viewed for that question should re-appear—this time with explanations. Copy one of the given explanations for each of the e-mails.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Question 4"
+                },
+                {
+                    "type": "question",
+                    "id": "spearPhishing",
+                    "prompt": "In recent years, a more insidious form of phishing, known as spear phishing, has taken root. Spear phishing is customized to a particular user. It often addresses the recipient directly (by name) and may include other personal information about the user. Provide a recent example of spear phishing and discuss the peculiarities of the e-mail that makes it a suspected phish. Your example could be taken from an e-mail you or someone you know received, from a handout from your instructor, or from a recent newspaper or Web article.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Question 5"
+                },
+                {
+                    "type": "question",
+                    "id": "spearPhishing",
+                    "prompt": "Pharming is yet another recent form of phishing, which automatically redirects the user to a fake Web site—no clicking required. Give a recent example of pharming and discuss the peculiarities of the e-mail that makes it a suspected phish. Again, your example could be taken from an e-mail you or someone you know received, a handout from your instructor, or from a recent newspaper or Web article.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
         }
     ]
 }
