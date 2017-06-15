@@ -1,0 +1,106 @@
+{
+    "name": "Computer Literacy",
+    "variant": "Phishing",
+    "Sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Phishing is a type of social engineering technique in which an attacker sends an e-mail or displays a Web announcement that falsely claims to be from a legitimate organization. The intention of the messenger is to trick the user into surrendering private information."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A more specific definition is offered by the Anti-phishing Working Group (APWG): “Phishing is a criminal mechanism employing both social engineering and technical subterfuge to steal consumers’ personal identity data and financial account credentials.” The victim in a phishing attack is asked to respond to an e-mail or is directed to a Web site to update personal information, such as passwords, credit card numbers, Social Security numbers, bank account numbers, or other information for which the legitimate organization already has a record. However, the site is actually a fraudulent Web site designed to steal the user’s information."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Phishing can and usually leads to online identity theft. By capturing a user’s personal information, an attacker can gain access to the user’s account on a legitimate Web site, and can engage in a number of activities resulting in substantial financial loss to the user, denial of access to e-mail, and other problems."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of occurence"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "On the weekend of January 3, 2009, several users on the social network Web site, Twitter, became victims of a phishing attack. The users were deceived into giving away their passwords when they received an e-mail similar to one that they would receive from Twitter with a link that read, “hey, check out this funny blog about you…”. The link redirects to a site masquerading as the real Twitter site. Any personal information entered by the user on the fake site is then captured by the attacker."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Twitter responded by reporting the offending domain, and changing the affected users’ passwords. (<a href = https://www.theguardian.com/technology/2009/jan/08/twitter-barack-obama-britney-spears-micro-blog-networking> What sort of Twitter would give away their password?</a>)"
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phishing-email.jpg",
+                    "alt": "",
+                    "width": 581,
+                    "height": 292,
+                    "float": null
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following question:"
+                },
+                {
+                    "type": "question",
+                    "id": "phishingAttack",
+                    "prompt": "Phishing is an attack intended to steal private information:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "true"
+                },
+                {
+                    "type": "question",
+                    "id": "privateInfo",
+                    "prompt": "In order to steal private information, the victim in the phishing attack may be ______________:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "email",
+                            "text": "Asked to respond to an email"
+                        },
+                        {
+                            "id": "website",
+                            "text": "Directed to a website to update personal information"
+                        },
+                        {
+                            "id": "both",
+                            "text": "Both of the above"
+                        },
+                        {
+                            "id": "none",
+                            "text": "None of the above"
+                        }
+                    ],
+                    "answer": "both"
+                }
+            ]
+        },
+        {
+            //
+        }
+    ]
+}
