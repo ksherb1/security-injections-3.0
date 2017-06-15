@@ -283,7 +283,7 @@
 				{
 					"type"	: "question",
 					"id"	: "will-cause",
-					"prompt": "Which of the operations listed in question 3 is most likely to cause an integer error?",
+					"prompt": "Which of the operations listed in the previous question is most likely to cause an integer error?",
 					"ignored": false,
 					"mode"	: "radio",
 					"choices": [

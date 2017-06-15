@@ -137,7 +137,6 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 											if (unit.choices[c].id == cookieAnswer[n].answer){
 												unit.checked = true;
 												unit.value = cookieAnswer[n].answer;
-
 											}
 										}
 										n++;
@@ -597,11 +596,15 @@ $scope.checkAnswers = function() {
 		 *
 		certData = canvas.toDataURL();
 		*/
+		for(i in $scope.module.sections){
+			if ($scope.module.sections[i].header == "Discussion Questions"){
+				pageIndex = i;
+			}
+		}
 
 		var discussionQuestions = [];
-		for (i in $scope.module.sections) {
-			for (q in $scope.module.sections[i].units){
-					unit = $scope.module.sections[i].units[q];
+			for (q in $scope.module.sections[pageIndex].units){
+					unit = $scope.module.sections[pageIndex].units[q];
 				if(unit.type == "question") {
 					if(unit.mode == "textarea"){
 						if(unit.value != null){
@@ -610,7 +613,6 @@ $scope.checkAnswers = function() {
 					}
 				}
 			}
-		}
 
 		pdfCertificate(discussionQuestions,draw_data);
 		finalPDF = $scope.detailFrame

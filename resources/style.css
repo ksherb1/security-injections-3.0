@@ -12,13 +12,12 @@ body {
 /* For bootstrap since relies on empty hrefs */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
-    [type="checkbox"]:checked + label:after {
-        content: '✔';
-        font-size: 30px;
-        color: #09ad7e;
-        transition: all .2s;
-    }
-
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  font-size: 30px;
+  color: #09ad7e;
+  transition: all .2s;
+}
 
 .navbar{
 	margin-bottom: 0px;
@@ -80,6 +79,7 @@ body {
 .si-checkbox-label-correct::before {
 	color: forestgreen;
 	content: "V ";
+	text-decoration: none;
 }
 
 .si-checkbox-label-incorrect::before {
@@ -102,8 +102,6 @@ body {
 .si-checklist-active {
 	font-size: 1.6em;
 }
-
-
 
 .si-code-clicked {
 	font-weight: bold;

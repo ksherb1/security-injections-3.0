@@ -26,9 +26,23 @@
 							"height": <number>,
 							"float"	: <"left" or "right" or null>
 					<case "attribution">
-							"copyright" : "<string>"
-							"date" : "<string>"
+							"copyright" : "<string>",
+							"date" : "<string>",
 							"link" : "<uri>
+					<case "table">
+							"headers":[
+								"<string>",
+								...
+							],
+							"cells":[
+								{
+									"first": "<string>",
+									"second": "<string>"
+								},
+								{
+								...
+								}
+							]
 					<case "question">
 							"id"		: "<id-string>",			<all unit id's within section must be unique>
 							"prompt"	: "<html-source>",
@@ -75,7 +89,7 @@
 									...
 								],
 							"code"	: "<html-source>",				<may be null>
-							"js"	: "<js-source>"					<may be null only if no contained item has "js" set to true>
+							"javascript"	: "<js-source>"					<may be null only if no contained item has "js" set to true>
 					<expect addition of more cases>
 						},
 						...

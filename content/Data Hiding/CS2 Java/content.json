@@ -265,7 +265,7 @@
 				{
 					"type": "question",
 					"id": "encrypt",
-					"prompt": "Encrypt the following message with the specified key:<br/>Key: 7<br/><kbd>traditionally plaintext is all lower case and ciphertext is all uppercase and punctuation is avoided</kbd>",
+					"prompt": "Encrypt the following message with the specified key:<br/>Key: 7<br/><br/><kbd>traditionally plaintext is all lower case and ciphertext is all uppercase and punctuation is avoided</kbd>",
 					"ignored": false,
 					"mode": "textarea",
 					"pattern": "AYHKPAPVUHSSF WSHPUALEA PZ HSS SVDLY JHZL HUK JPWOLYALEA PZ HSS BWWLYJHZL HUK WBUJABHAPVU PZ HCVPKLK"
@@ -277,7 +277,7 @@
 				{
 					"type": "question",
 					"id": "decrypt",
-					"prompt": "Decrypt the following messages with the specified key:<br/>Key: 23<br/><kbd>KLQB QEXQ JLABOK AXB ZOVMQLPVPQBJP LMBOXQB LK PBNRBKZBP LC WBOLP XKA LKBP KLQ IBQQBOP</kbd>",
+					"prompt": "Decrypt the following messages with the specified key:<br/>Key: 23<br/><br/><kbd>KLQB QEXQ JLABOK AXB ZOVMQLPVPQBJP LMBOXQB LK PBNRBKZBP LC WBOLP XKA LKBP KLQ IBQQBOP</kbd>",
 					"ignored": false,
 					"mode": "textarea",
 					"pattern": "note that modern day cryptosystems operate on sequences of zeros and ones not letters"
@@ -297,7 +297,7 @@
 				{
 					"type": "question",
 					"id": "key",
-					"prompt": "Use your program on the following message. What key produced the ciphertext?<br/>KYV JYZWK TZGYVI ZJ RCJF BEFNE RJ KYV TRVJRI TZGYVI, RWKVI ALCZLJ TRVJRI, NYF IVGLKVUCP LJVU KYV TZGYVI KF GRJJ DVJJRXVJ KF YZJ KIFFGJ ULIZEX YZJ DZCZKRIP TRDGRZXEJ ZE XRLC. EFKV KYRK KYB <strong>TRVJRI</strong> TZGYVI ZJ VRJZCP TIRTBVU SP KYV <strong>SILKV</strong>-WFITV RKKRTB.",
+					"prompt": "Use your program on the following message. What key produced the ciphertext?<br/><br/>KYV JYZWK TZGYVI ZJ RCJF BEFNE RJ KYV TRVJRI TZGYVI, RWKVI ALCZLJ TRVJRI, NYF IVGLKVUCP LJVU KYV TZGYVI KF GRJJ DVJJRXVJ KF YZJ KIFFGJ ULIZEX YZJ DZCZKRIP TRDGRZXEJ ZE XRLC. EFKV KYRK KYB <strong>TRVJRI</strong> TZGYVI ZJ VRJZCP TIRTBVU SP KYV <strong>SILKV</strong>-WFITV RKKRTB.",
 					"ignored": false,
 					"mode": "textarea",
 					"pattern": "17"
