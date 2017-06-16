@@ -1,0 +1,28 @@
+{
+    "name": "Computer Literacy",
+    "variant": "Cryptography",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type:" : " ",
+                    "text" : " "
+                },
+                {
+                    "type:" : "paragraph",
+                    "text" : " "
+                },
+                {
+                    "type:" : "subheader",
+                    "text" : " "
+                },
+                {
+                    "type:" : "paragraph",
+                    "text" : "The objective of <strong>cryptography</strong> is to scramble a message (also called plaintext) so that only the intended recipient is able to recover the original plaintext. As illustrated in the figure, Bob (the sender) wishes to send a secret message to Alice (the recipient). He encrypts the plaintext using an encryption algorithm. The encryption process scrambles the plaintext to produce what is known as ciphertext. Alice recovers the plaintext using the process of decryption. The encryption/decryption algorithm is usually not secret. What makes the ciphertext difficult to decipher is the use of one or more keys in the encryption/decryption process. In secret key (or symmetric) encryption, one key is used and is known only to Bob and Alice. In public key (or asymmetric) encryption both Bob and Alice own a pair of unique keys. Each pair consists of a private key and a public key. The public key is known by the public, but only Bob and Alice know their respective private keys."
+                },
+                
+            ]
+        }
+    ]
+}
