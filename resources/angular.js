@@ -105,10 +105,8 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 	initialize();
 
 
-	// TODO: load more cookies for form data.)
-	//Handles redirect and setting variables if need progress cookie exists.
 			$scope.redirectCookie = function(){
-					var progressCookie = $cookies.get('progress');
+					var progressCookie = $cookies.get(moduleCookie + 'progress');
 					$scope.sectionscompleted = parseInt(progressCookie);
 					$scope.currentsectionIndex = $scope.sectionscompleted;
 					$scope.currentsection = $scope.module.sections[$scope.currentsectionIndex];
@@ -116,11 +114,13 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 
 	//This method should retrieve all cookies.
 			function getCookies(){
-				if($cookies.get('progress')!= null){
+				moduleCookie = $scope.module.name + "-" + $scope.module.variant + "-";
+
+				if($cookies.get(moduleCookie + 'progress')!= null){
 					$scope.redirectCookie();
 				}
 
-				cookieAnswer = $cookies.getObject('forms');
+				cookieAnswer = $cookies.getObject(moduleCookie + 'forms');
 				n = 0;
 				if(typeof(cookieAnswer)==='undefined'){
 					console.log("No cookies to be loaded");
@@ -216,8 +216,9 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 		 var today = new Date();
 		 var expireTime = new Date(today);
 		 expireTime.setMinutes(today.getMinutes() + 120);//expires in 5 hours
-		 $cookies.put('progress', completed, {'expires': expireTime});
-		 $cookies.putObject('forms',[]);
+
+		 $cookies.put(moduleCookie + 'progress', completed, {'expires': expireTime});
+		 $cookies.putObject(moduleCookie + 'forms',[]);
 		 for (i in $scope.module.sections) {
 			for (q in $scope.module.sections[i].units){
 					unit = $scope.module.sections[i].units[q];
@@ -226,13 +227,13 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 						switch(unit.mode) {
 							case "radio":
 
-								var answers = $cookies.getObject('forms');
+								var answers = $cookies.getObject(moduleCookie + 'forms');
 								answers.push({prompt:unit.prompt, answer:unit.value});
-								$cookies.putObject('forms',answers);
+								$cookies.putObject(moduleCookie + 'forms',answers);
 								break;
 
 							case "checkbox":
-								var answers = $cookies.getObject('forms');
+								var answers = $cookies.getObject(moduleCookie + 'forms');
 								var checked = [];
 								var ids = [];
 								for (c in unit.choices){
@@ -242,14 +243,14 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 									}
 								}
 								answers.push({prompt:ids, answer:checked});
-								$cookies.putObject('forms',answers);
+								$cookies.putObject(moduleCookie + 'forms',answers);
 
 								break;
 
 							case "textarea":
-								var answers = $cookies.getObject('forms');
+								var answers = $cookies.getObject(moduleCookie + 'forms');
 								answers.push({prompt:unit.prompt, answer:unit.value});
-								$cookies.putObject('forms',answers);
+								$cookies.putObject(moduleCookie + 'forms',answers);
 								break;
 							}
 						}
