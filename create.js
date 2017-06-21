@@ -107,16 +107,9 @@ exports.write_3 = function(name, variant, dev) {
 exports.write_3("Integer Error", "CS0 C++");
 exports.write_3("Computer Literacy", "Passwords");
 exports.write_3("Computer Literacy", "Phishing");
-<<<<<<< HEAD
 exports.write_3("Computer Literacy", "Cryptography");
 exports.write_3("Computer Literacy", "Social Networking Security");
-exports.write_3("Data Hiding","CS2 C++");
-exports.write_3("Data Hiding","CS2 Java");
-exports.write_3("Integer Error", "CS0 C++");
-
-=======
 exports.write_3("Data Hiding","CS0 C++");
 exports.write_3("Data Hiding","CS2 Java");
 exports.write_3("Data Hiding","CS2 C++");
 exports.write_3("Data Hiding","CS2 Python");
->>>>>>> origin/master

@@ -12,9 +12,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.tpl.min.js"></script>
 	<title>Security Injection: Computer Literacy - Social Networking Security</title>
 	<style>
-body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{cursor:pointer}[type="checkbox"]:checked+label:after{content:'✔';font-size:30px;color:#09ad7e;transition:all .2s}.navbar{margin-bottom:0;background-color:silver}.nav-tabs li a{color:#464646;height:50px}.container{margin-top:25px;margin-bottom:25px}.jumbotron{background-color:white;padding:5px;box-shadow:0 8px 16px -6px black}.page-header{border-bottom:5px solid #337ab7}.nav-tabs{margin-bottom:0}.borderless td,.borderless th{border:none !important}.si-question-correct .well{background-color:lightgreen}.si-question-incorrect .well{background-color:lightpink}.si-checkbox-label-correct::before{color:forestgreen;content:"V "}.si-checkbox-label-incorrect::before{color:maroon;content:"X "}.si-checklist-correct .well{background-color:lightgreen}.si-checklist-incorrect .well{background-color:lightpink}.si-checklist-active{font-size:1.6em}.si-code-clicked{font-weight:bold;font-style:italic}.si-code-vulnerability{background-color:yellow}
+body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{cursor:pointer}[type="checkbox"]:checked+label:after{content:'✔';font-size:30px;color:#09ad7e;transition:all .2s}.navbar{margin-bottom:0;background-color:silver}.nav-tabs li a{color:#464646;height:50px}.container{margin-top:25px;margin-bottom:25px}.jumbotron{background-color:white;padding:5px;box-shadow:0 8px 16px -6px black}.page-header{border-bottom:5px solid #337ab7}.nav-tabs{margin-bottom:0}.borderless td,.borderless th{border:none !important}.si-question-correct .well{background-color:lightgreen}.si-question-incorrect .well{background-color:lightpink}.si-checkbox-label-correct::before{color:forestgreen;content:"V ";text-decoration:none}.si-checkbox-label-incorrect::before{color:maroon;content:"X "}.si-checklist-correct .well{background-color:lightgreen}.si-checklist-incorrect .well{background-color:lightpink}.si-checklist-active{font-size:1.6em}.si-code-clicked{font-weight:bold;font-style:italic}.si-code-vulnerability{background-color:yellow}
 </style>
-	<script>var app=angular.module("modApp",["ngSanitize","ngCookies","mgcrea.ngStrap"]);app.controller("modCtrl",["$scope","$http","$cookies","$sce",function(e,t,o,s){function r(t){e.module=t,e.currentsectionIndex=0,e.currentsection=e.module.sections[0],e.module.sections.push({header:"Final Page"}),u()}function a(t){e.score={name:t.name,variant:t.variant,sections:[]};for(i in t.sections){section={header:t.sections[i].header,time:0,questions:{}};for(j in t.sections[i].units)unit=t.sections[i].units[j],("question"==unit.type&&!unit.ignored||"checklist"==unit.type)&&(section.questions[unit.id]=1);e.score.sections.push(section)}}function u(){if(null!=o.get("progress")&&e.redirectCookie(),cookieAnswer=o.getObject("forms"),n=0,"undefined"==typeof cookieAnswer)console.log("No cookies to be loaded");else for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":if(null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].answer&&(unit.checked=!0,unit.value=cookieAnswer[n].answer);n++}break;case"checkbox":if(null!=cookieAnswer[n]){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].prompt[c]&&(1==cookieAnswer[n].answer[c]?unit.choices[c].value=!0:unit.choices[c].value=!1);n++}break;case"textarea":null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt&&(unit.value=cookieAnswer[n].answer,n++)}else unit.type}function l(e,t,i){return i?($(t).removeClass("si-"+e+"-incorrect"),$(t).addClass("si-"+e+"-correct")):($(t).removeClass("si-"+e+"-correct"),$(t).addClass("si-"+e+"-incorrect")),i}function d(t,o){var n=20,c=295-n-20,r=new jsPDF("p","mm","a4");r.setFontSize(20),r.text("Security Injections @ offline",15,n),r.line(10,25,190,25),r.setFontSize(12),r.text("Module: "+o.course,20,35),r.text("Student: "+o.name,20,45),r.text("Date: "+o.today,20,55),r.text("ID: "+o.hash,20,65),r.addPage(),r.setFontSize(20),r.text("Discussion Questions",15,n),r.line(10,25,190,25),n=40;for(i in t){n>c&&(r.addPage(),n=20),r.setFontSize(16);var a=r.splitTextToSize(t[i].prompt,180),u=a.length;r.text(15,n,a),n+=5.6444*u+10,r.setFontSize(12);var l=r.splitTextToSize(t[i].answer,160),d=l.length;r.text(35,n,l),n+=4.2333*d+10}dataUri=r.output("datauristring"),e.detailFrame=s.trustAsResourceUrl(dataUri)}e.loadContent=function(){var i=e.repo+$("#name").html()+"/"+$("#variant").html()+".json";console.log("Loading content from "+i),e.contentError=!1,t.get(i).then(function(e){r(e.data),a(e.data)},function(t){if($("#default").length){console.log("* No response - using default");var i=JSON.parse($("#default").html());r(i),a(i)}else console.log("* No response - try again"),e.contentError=!0})},e.repo="http://127.0.0.1:8000/",e.sectionscompleted=0,e.loadContent(),e.form={},e.starttime=new Date,e.redirectCookie=function(){var t=o.get("progress");e.sectionscompleted=parseInt(t),e.currentsectionIndex=e.sectionscompleted,e.currentsection=e.module.sections[e.currentsectionIndex]},e.saveCookie=function(t){var n=new Date,s=new Date(n);s.setMinutes(n.getMinutes()+120),o.put("progress",t,{expires:s}),o.putObject("forms",[]);for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":(r=o.getObject("forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject("forms",r);break;case"checkbox":var r=o.getObject("forms"),a=[],u=[];for(c in unit.choices)void 0===unit.choices[c].value||unit.ignored||(u.push(unit.choices[c].id),a.push(unit.choices[c].value));r.push({prompt:u,answer:a}),o.putObject("forms",r);break;case"textarea":(r=o.getObject("forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject("forms",r)}else unit.type},e.checkAnswers=function(){var t=!0;for(i in e.currentsection.units){unit=e.currentsection.units[i],id="#"+unit.id;var o=!0;if("question"!=unit.type||unit.ignored){if("checklist"==unit.type){s=!0;for(j in unit.list){group=unit.list[j],group_id=id+"-"+group.id;for(k in group.items){item=group.items[k],item_id=group_id+"-"+item.id,void 0===item.value&&(item.value=!1),item.js&&(item.value=$(item_id).is(":checked"));var n=item.value==item.ans;s&=n,l("checkbox",item_id,n),l("checkbox-label",item_id+"-label",n)}}o&=l("checklist",id,s)}}else switch(unit.mode){case"radio":o=l("question",id,unit.value==unit.answer);break;case"checkbox":var s=!0;for(j in unit.choices)choice=unit.choices[j],choice_id=id+"-"+choice.id,void 0===choice.value&&(choice.value=!1),s&=n=choice.value==choice.ans,l("checkbox",choice_id,n),l("checkbox-label",choice_id+"-label",n);o=l("question",id,s);break;case"textarea":var c=new RegExp(unit.pattern);o=l("question",id,c.test(unit.value))}o||(t=!1,e.score.sections[e.currentsectionIndex].questions[unit.id]+=1)}if(t&&e.currentsectionIndex==e.sectionscompleted){var r=new Date;e.score.sections[e.sectionscompleted].time=r-e.starttime,e.starttime=r,e.sectionscompleted++}e.saveCookie(e.sectionscompleted)},e.gotoSection=function(t){t<=e.sectionscompleted?(e.currentsectionIndex=t,e.currentsection=e.module.sections[t],e.saveCookie(e.sectionscompleted)):console.log("Cannot go to section "+t+": may only go up to section "+e.sectionscompleted)},e.generateCertificate=function(){var o=e.module.name+" - "+e.module.variant,n=new Date,s=n.getDate(),c=n.getMonth()+1,r=n.getFullYear();s<10&&(s="0"+s),c<10&&(c="0"+c);var a=c+"/"+s+"/"+r,u=e.form.name+o+a,l=0;if(0==u.length)return l;for(i=0;i<u.length;i++)char=u.charCodeAt(i),l=(l<<5)-l+char,l&=l;l=Math.abs(l);var m={name:e.form.name,course:o,hash:l,today:a},p=[];for(i in e.module.sections)for(q in e.module.sections[i].units)unit=e.module.sections[i].units[q],"question"==unit.type&&"textarea"==unit.mode&&null!=unit.value&&(p[q]={prompt:unit.prompt,answer:unit.value});d(p,m),finalPDF=e.detailFrame,$("#si-certificate-link").attr("href",finalPDF),$("#si-certificate-link").prop("disabled",!1),$("#si-certificate-pane").show(),e.form.modulename=e.module.name,e.form.variant=e.module.variant,e.form.date=n.toJSON(),e.form.score=JSON.stringify(e.score),t.post(e.repo+"record",e.form)}}]);</script>
+	<script>var app=angular.module("modApp",["ngSanitize","ngCookies","mgcrea.ngStrap"]);app.controller("modCtrl",["$scope","$http","$cookies","$sce",function(e,t,o,s){function r(t){e.module=t,e.currentsectionIndex=0,e.currentsection=e.module.sections[0],e.module.sections.push({header:"Final Page"}),a()}function u(t){e.score={name:t.name,variant:t.variant,sections:[]};for(i in t.sections){section={header:t.sections[i].header,time:0,questions:{}};for(j in t.sections[i].units)unit=t.sections[i].units[j],("question"==unit.type&&!unit.ignored||"checklist"==unit.type)&&(section.questions[unit.id]=1);e.score.sections.push(section)}}function a(){if(moduleCookie=e.module.name+"-"+e.module.variant+"-",null!=o.get(moduleCookie+"progress")&&e.redirectCookie(),cookieAnswer=o.getObject(moduleCookie+"forms"),n=0,"undefined"==typeof cookieAnswer)console.log("No cookies to be loaded");else for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":if(null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].answer&&(unit.checked=!0,unit.value=cookieAnswer[n].answer);n++}break;case"checkbox":if(null!=cookieAnswer[n]){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].prompt[c]&&(1==cookieAnswer[n].answer[c]?unit.choices[c].value=!0:unit.choices[c].value=!1);n++}break;case"textarea":null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt&&(unit.value=cookieAnswer[n].answer,n++)}else unit.type}function l(e,t,i){return i?($(t).removeClass("si-"+e+"-incorrect"),$(t).addClass("si-"+e+"-correct")):($(t).removeClass("si-"+e+"-correct"),$(t).addClass("si-"+e+"-incorrect")),i}function d(t,o){var n=20,c=295-n-20,r=new jsPDF("p","mm","a4");r.setFontSize(20),r.text("Security Injections @ offline",15,n),r.line(10,25,190,25),r.setFontSize(12),r.text("Module: "+o.course,20,35),r.text("Student: "+o.name,20,45),r.text("Date: "+o.today,20,55),r.text("ID: "+o.hash,20,65),r.addPage(),r.setFontSize(20),r.text("Discussion Questions",15,n),r.line(10,25,190,25),n=40;for(i in t){n>c&&(r.addPage(),n=20),r.setFontSize(16);var u=r.splitTextToSize(t[i].prompt,180),a=u.length;r.text(15,n,u),n+=5.6444*a+10,r.setFontSize(12);var l=r.splitTextToSize(t[i].answer,160),d=l.length;r.text(35,n,l),n+=4.2333*d+10}dataUri=r.output("datauristring"),e.detailFrame=s.trustAsResourceUrl(dataUri)}e.loadContent=function(){var i=e.repo+$("#name").html()+"/"+$("#variant").html()+".json";console.log("Loading content from "+i),e.contentError=!1,t.get(i).then(function(e){r(e.data),u(e.data)},function(t){if($("#default").length){console.log("* No response - using default");var i=JSON.parse($("#default").html());r(i),u(i)}else console.log("* No response - try again"),e.contentError=!0})},function(){e.repo="http://127.0.0.1:8000/",e.sectionscompleted=0,e.loadContent(),e.form={},e.starttime=new Date}(),e.redirectCookie=function(){var t=o.get(moduleCookie+"progress");e.sectionscompleted=parseInt(t),e.currentsectionIndex=e.sectionscompleted,e.currentsection=e.module.sections[e.currentsectionIndex]},e.saveCookie=function(t){var n=new Date,s=new Date(n);s.setMinutes(n.getMinutes()+120),o.put(moduleCookie+"progress",t,{expires:s}),o.putObject(moduleCookie+"forms",[]);for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":(r=o.getObject(moduleCookie+"forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject(moduleCookie+"forms",r);break;case"checkbox":var r=o.getObject(moduleCookie+"forms"),u=[],a=[];for(c in unit.choices)void 0===unit.choices[c].value||unit.ignored||(a.push(unit.choices[c].id),u.push(unit.choices[c].value));r.push({prompt:a,answer:u}),o.putObject(moduleCookie+"forms",r);break;case"textarea":(r=o.getObject(moduleCookie+"forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject(moduleCookie+"forms",r)}else unit.type},e.checkAnswers=function(){var t=!0;for(i in e.currentsection.units){unit=e.currentsection.units[i],id="#"+unit.id;var o=!0;if("question"!=unit.type||unit.ignored){if("checklist"==unit.type){s=!0;for(j in unit.list){group=unit.list[j],group_id=id+"-"+group.id;for(k in group.items){item=group.items[k],item_id=group_id+"-"+item.id,void 0===item.value&&(item.value=!1),item.js&&(item.value=$(item_id).is(":checked"));var n=item.value==item.ans;s&=n,l("checkbox",item_id,n),l("checkbox-label",item_id+"-label",n)}}o&=l("checklist",id,s)}}else switch(unit.mode){case"radio":o=l("question",id,unit.value==unit.answer);break;case"checkbox":var s=!0;for(j in unit.choices)choice=unit.choices[j],choice_id=id+"-"+choice.id,void 0===choice.value&&(choice.value=!1),s&=n=choice.value==choice.ans,l("checkbox",choice_id,n),l("checkbox-label",choice_id+"-label",n);o=l("question",id,s);break;case"textarea":var c=new RegExp(unit.pattern);o=l("question",id,c.test(unit.value))}o||(t=!1,e.score.sections[e.currentsectionIndex].questions[unit.id]+=1)}if(t&&e.currentsectionIndex==e.sectionscompleted){var r=new Date;e.score.sections[e.sectionscompleted].time=r-e.starttime,e.starttime=r,e.sectionscompleted++}e.saveCookie(e.sectionscompleted)},e.gotoSection=function(t){t<=e.sectionscompleted?(e.currentsectionIndex=t,e.currentsection=e.module.sections[t],e.saveCookie(e.sectionscompleted)):console.log("Cannot go to section "+t+": may only go up to section "+e.sectionscompleted)},e.generateCertificate=function(){var o=e.module.name+" - "+e.module.variant,n=new Date,s=n.getDate(),c=n.getMonth()+1,r=n.getFullYear();s<10&&(s="0"+s),c<10&&(c="0"+c);var u=c+"/"+s+"/"+r,a=e.form.name+o+u,l=0;if(0==a.length)return l;for(i=0;i<a.length;i++)char=a.charCodeAt(i),l=(l<<5)-l+char,l&=l;l=Math.abs(l);var m={name:e.form.name,course:o,hash:l,today:u};for(i in e.module.sections)"Discussion Questions"==e.module.sections[i].header&&(pageIndex=i);var p=[];for(q in e.module.sections[pageIndex].units)unit=e.module.sections[pageIndex].units[q],"question"==unit.type&&"textarea"==unit.mode&&null!=unit.value&&(p[q]={prompt:unit.prompt,answer:unit.value});d(p,m),finalPDF=e.detailFrame,$("#si-certificate-link").attr("href",finalPDF),$("#si-certificate-link").prop("disabled",!1),$("#si-certificate-pane").show(),e.form.modulename=e.module.name,e.form.variant=e.module.variant,e.form.date=n.toJSON(),e.form.score=JSON.stringify(e.score),t.post(e.repo+"record",e.form)}}]);</script>
 </head>
 <body>
 <div ng-app="modApp" ng-controller="modCtrl">
@@ -30,14 +30,12 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 	</div>
 		<!-- workflow -->
 			<div class = "container-fluid">
-				<!--<nav class="navbar navbar-default">-->
         <div class="container-fluid">
 					<ul class="nav nav-tabs nav-justified">
 								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted"  ng-class="{'active': $index==currentsectionIndex}" ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
 								<li class = "disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted" ><a>{{section.header}}</a></li>
 					</ul>
 				</div>
-			<!--</nav>-->
 			</div>
 
 
@@ -54,10 +52,19 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
-  			<div ng-switch-when="image" class="col-md">
-						<img src="{{ unit.src }}" alt="{{ unit.alt }}" >
+				<div ng-switch-when="image" class="col-md-12">
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>
 				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
+				<table ng-switch-when="table" class="table">
+					<tr>
+						<th ng-repeat = "items in unit.headers" ng-bind-html ="items"></th>
+					</tr>
+					<tr ng-repeat = "items in unit.cells">
+						<td ng-bind-html = "items.first"></td>
+						<td ng-bind-html = "items.second"></td>
+					</tr>
+				</table>
 				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
 					<div class="well">
 					<h5 ng-bind-html="unit.prompt"></h5>
@@ -75,39 +82,36 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 								</label>
 							</div>
 						<textarea class = "form-control" rows = "5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
-						<!-- TODO (ongoing) add more question modes -->
 						<p ng-switch-default class="si-error">Mode invalid</p>
 						</div>
 					</div>
 
 				</div>
 				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
-					<pre class= "col-md-6" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
-					<div class ="col-md-6">
-					<div class="well">
-					<table class="table borderless" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
-						<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
-						<tr ng-repeat="item in group.items">
-							<td ng-if="item.js" class="si-checklist-box-cell">
-								<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-										class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
-										disabled>
-								</td>
-							<td ng-if="!item.js" class="si-checklist-box-cell">
-								<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-										class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
-								</td>
-							<td class="si-checklist-label-cell">
-								<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
-								</td>
-							</tr>
-						</table>
+					<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+					<div class ="col-md-5">
+						<div class="well">
+						<table class="table borderless" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+							<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
+							<tr ng-repeat="item in group.items">
+								<td ng-if="item.js" class="si-checklist-box-cell">
+									<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
+											disabled>
+									</td>
+								<td ng-if="!item.js" class="si-checklist-box-cell">
+									<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
+									</td>
+								<td class="si-checklist-label-cell">
+									<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
+									</td>
+								</tr>
+							</table>
+						</div>
 					</div>
-				</div>
-
 						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 				</div>
-						<!-- TODO (ongoing) add more unit types -->
 						<p ng-switch-default class="si-error">Type invalid</p>
 					</div>
 				</div>
@@ -131,31 +135,26 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 							<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
 							<p>Complete this form to generate your certificate</p>
 							<form ng-submit="generateCertificate()">
-
 							<div class="input-group">
 				  			<span class="input-group-addon">Full Name</span>
 				  			<input ng-model="form.name" required type="text" class="form-control">
 							</div>
 							<br>
-
 							<div class="input-group">
 				  			<span class="input-group-addon">Email Address</span>
 				  			<input ng-model="form.email" required type="email" class="form-control">
 							</div>
 							<br>
-
 							<div class="input-group">
 				  			<span class="input-group-addon">Instructor</span>
 				  			<input ng-model="form.instructor" required type="text" class="form-control">
 							</div>
 							<br>
-
 							<div class="input-group">
 			  				<span class="input-group-addon">Institution</span>
 			  				<input ng-model="form.institution" required type="text" class="form-control">
 							</div>
 							<br>
-
 							<input class="btn btn-success btn-lg" type="submit" value="Generate Certificate">
 							</form>
 						</div>
@@ -163,7 +162,6 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 				</div>
 					<div class = "col-md-6">
 						<div id="si-certificate-pane" style="display:none">
-								<!--<canvas id="si-certificate-canvas" width="500" height="348"></canvas>-->
 								<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
 								<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
 						</div>
@@ -176,5 +174,5 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 
 	<script type="text/plain" id="name">Computer Literacy</script>
 	<script type="text/plain" id="variant">Social Networking Security</script>
-	<script type="text/plain" id="default">{"name":"Computer Literacy","variant":"Social Networking Security","sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary:"},{"type":"paragraph","text":"Today, the use of social media websites such as Facebook, Twitter, and Vine has become the norm for online communication with friends, family, and acquaintances. While such sites help people keep in touch, they also pose a great risk to personal identifiable information (PII). In order to protect this PII, users must think of confidentiality, availability, and trust (or the CAT model) before making posts on a social networking website like Facebook or Twitter."},{"type":"subheader","text":"Description"},{"type":"image","src":"http://lsf.truman.edu/files/2013/04/Twitter_Logo_Volt.png","alt":"Twitter","width":132,"height":32,"float":null},{"type":"image","src":"http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_132x32_2.png","alt":"LinkedIn","width":132,"height":32,"float":null},{"type":"paragraph","text":"The use of all social networking websites revolve around one main activity-- posting information about yourself. While sharing information about yourself can be fun, you always run the risk of sharing it with someone you didn't want to; this is the real danger of using social networking websites like Facebook or Twitter."},{"type":"subheader","text":"Risk - How Can It Happen?"},{"type":"paragraph","text":"Posting online without first weighing the consequences or taking precautions to ensure that your information is safe is a practice that can get any user in trouble. It is important that before you make any post, you consider the privacy of your post, the lifetime of your post, and the audience your post will reach. These three considerations are the <strong>CAT model: Confidentiality</strong> (How private your posts are), <strong>Availability</strong> (How long your posts are accessible), and <strong>Trust</strong> (who you're trusting with your posts). Posting carelessly without taking these issues into consideration can be a risky practice that can lead to trouble for you now or down the road in your career."},{"type":"subheader","text":"Example of Occurence"},{"type":"paragraph","text":"A woman working as a teacher's aide made a post on Facebook out of frustration towards the kids she worked with, and later got fired for her behavior."},{"type":"paragraph","text":"<small>Source: <a href =http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post> http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post </a> </small>"}]}]}</script>
+	<script type="text/plain" id="default">{"name":"Computer Literacy","variant":"Social Networking Security","sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary:"},{"type":"paragraph","text":"Today, the use of social media websites such as Facebook, Twitter, and Vine has become the norm for online communication with friends, family, and acquaintances. While such sites help people keep in touch, they also pose a great risk to personal identifiable information (PII). In order to protect this PII, users must think of confidentiality, availability, and trust (or the CAT model) before making posts on a social networking website like Facebook or Twitter."},{"type":"subheader","text":"Description"},{"type":"image","src":"http://lsf.truman.edu/files/2013/04/Twitter_Logo_Volt.png","alt":"Twitter","width":132,"height":32,"float":null},{"type":"image","src":"http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_132x32_2.png","alt":"LinkedIn","width":132,"height":32,"float":null},{"type":"paragraph","text":"The use of all social networking websites revolve around one main activity-- posting information about yourself. While sharing information about yourself can be fun, you always run the risk of sharing it with someone you didn't want to; this is the real danger of using social networking websites like Facebook or Twitter."},{"type":"subheader","text":"Risk - How Can It Happen?"},{"type":"paragraph","text":"Posting online without first weighing the consequences or taking precautions to ensure that your information is safe is a practice that can get any user in trouble. It is important that before you make any post, you consider the privacy of your post, the lifetime of your post, and the audience your post will reach. These three considerations are the <strong>CAT model: Confidentiality</strong> (How private your posts are), <strong>Availability</strong> (How long your posts are accessible), and <strong>Trust</strong> (who you're trusting with your posts). Posting carelessly without taking these issues into consideration can be a risky practice that can lead to trouble for you now or down the road in your career."},{"type":"subheader","text":"Example of Occurence"},{"type":"paragraph","text":"A woman working as a teacher's aide made a post on Facebook out of frustration towards the kids she worked with, and later got fired for her behavior."},{"type":"paragraph","text":"<small>Source: <a href =http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post> http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post </a> </small>"}]},{"type":"subheader","text":"Answer the following questions:"}]}</script>
 </body>
