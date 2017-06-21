@@ -34,7 +34,7 @@
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
 				<div ng-switch-when="image" class="col-md-12">
-						<img src="{{ unit.src }}" alt="{{ unit.alt }}" class = "img-responsive">
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>
 				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
 				<table ng-switch-when="table" class="table">
