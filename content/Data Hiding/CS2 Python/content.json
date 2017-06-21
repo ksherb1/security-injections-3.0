@@ -1,6 +1,6 @@
 {
 	"name"		: "Data Hiding",
-	"variant"	: "CS2 C++",
+	"variant"	: "CS2 Python",
 	"sections": [
 		{
 			"header": "Background",
@@ -292,7 +292,7 @@
 				},
 				{
 					"type": "codeblock",
-					"code": "./decrypt.cpp"
+					"code": "./decrypt.py"
 				},
 				{
 					"type": "question",
