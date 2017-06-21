@@ -39,7 +39,7 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "Weak Password Brings 'Happiness' to Twitter Hacker http://blog.wired.com/27bstroke6/2009/01/professed-twitt.html"
+					"text": "Weak Password Brings 'Happiness' to Twitter Hacker:  <a href='http://blog.wired.com/27bstroke6/2009/01/professed-twitt.html'>http://blog.wired.com/27bstroke6/2009/01/professed-twitt.html</a>"
 				},
 				{
 					"type": "subheader",
@@ -155,23 +155,40 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "One method to help construct a good password includes the following steps: <strong>(1)</strong> make up a sentence you can easily remember, <strong>(2)</strong> take the first letter of every word in the sentence, and include the punctuation; throw in extra punctuation or change numbers into digits for variety. Here are some examples:"
+					"text": "One method to help construct a good password includes the following steps:"
+				},
+				{
+					"type": "list",
+					"items": [
+						"Make up a sentence you can easily remember",
+						"Make the first letter of every word in the sentence, and include the punctuation; throw in extra punctuation or change numbers into digits for variety. "
+					],
+					"ordered": false
 				},
 				{
 					"type": "paragraph",
-					"text": "<strong>Password</strong> &emsp;&emsp;&emsp;<strong>How to remember it</strong>"
+					"text": "Here are some examples:"
 				},
 				{
-					"type": "paragraph",
-					"text": "Mrci7yo! &emsp;&emsp;&emsp; My rusty car is 7 years old!"
-				},
-				{
-					"type": "paragraph",
-					"text": "2emBp,1ib2 &emsp;&emsp;elephants make bad pets, 1 is better"
-				},
-				{
-					"type": "paragraph",
-					"text": "ItMc?Gib.&emsp;&emsp;&emsp;Is that MY coat? Give it back."
+					"type": "table",
+						"headers":[
+							"<strong>Password</strong>",
+							"<strong>How to remember it</strong>"
+						],
+						"cells":[
+							{
+						    "first": "Mrci7yo!",
+							 	"second": "My rusty car is 7 years old!"
+							},
+							{
+						    "first": "2emBp,1ibt2",
+							 	"second": "2 elephants make bad pets, 1 is better than 2"
+							},
+							{
+						    "first": "ItMc?Gib.",
+							 	"second": "Is that MY coat? Give it back."
+							}
+				 		]
 				},
 				{
 					"type": "subheader",
@@ -344,38 +361,48 @@
 					"text": "<strong><em>Password:</em></strong> IlteD&Aic. <Strong><em>Password hint:</em></strong> I like to eat Dave & Andy's ice cream."
 				},
 				{
-					"type": "question",
+					"type": "checklist",
 					"id": "completedSample",
-					"prompt": "Task - For the above password, decide whether the following criteria are met:",
-					"ignored": false,
-					"mode": "checkbox",
-					"choices": [
+					"list": [
 						{
-							"id": "lengthOfPw",
-							"text": "1. Is the password at least 8 characters long?",
-							"ans": true
-						},
-						{
-							"id": "memorablePw",
-							"text": "2. Is the password memorable?",
-							"ans": true
-						},
-						{
-							"id": "alphanumericPw",
-							"text": "3. Does the password contain alphanumeric characters?",
-							"ans": false
-						},
-						{
-							"id": "case",
-							"text": "4. Does the password include both upper and lowercase characters?",
-							"ans": true
-						},
-						{
-							"id": "punctuation",
-							"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
-							"ans": true
+							"id": "clSample",
+							"header": "Task - For the above password, decide whether the following criteria are met:",
+							"items": [
+								{
+									"id": "lengthOfPw",
+									"text": "1. Is the password at least 8 characters long?",
+									"ans": true,
+									"js": true
+								},
+								{
+									"id": "memorablePw",
+									"text": "2. Is the password memorable?",
+									"ans": true,
+									"js": true
+								},
+								{
+									"id": "alphanumericPw",
+									"text": "3. Does the password contain alphanumeric characters?",
+									"ans": false,
+									"js": true
+								},
+								{
+									"id": "case",
+									"text": "4. Does the password include both upper and lowercase characters?",
+									"ans": true,
+									"js": true
+								},
+								{
+									"id": "punctuation",
+									"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
+									"ans": true,
+									"js": true
+								}
+							]
 						}
-					]
+					],
+					"code": null,
+					"javascript": "./samplechecklist.js"
 				},
 				{
 					"type": "paragraph",
@@ -390,38 +417,48 @@
 					"text": "<strong><em>Password:</em></strong> password <Strong><em>"
 				},
 				{
-					"type": "question",
-					"id": "question1",
-					"prompt": "Task - For the above password, decide whether the following criteria are met:",
-					"ignored": false,
-					"mode": "checkbox",
-					"choices": [
+					"type": "checklist",
+					"id": "cl",
+					"list": [
 						{
-							"id": "lengthOfPw",
-							"text": "1. Is the password at least 8 characters long?",
-							"ans": true
-						},
-						{
-							"id": "memorablePw",
-							"text": "2. Is the password memorable?",
-							"ans": true
-						},
-						{
-							"id": "alphanumericPw",
-							"text": "3. Does the password contain alphanumeric characters?",
-							"ans": false
-						},
-						{
-							"id": "case",
-							"text": "4. Does the password include both upper and lowercase characters?",
-							"ans": false
-						},
-						{
-							"id": "punctuation",
-							"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
-							"ans": false
+							"id": "question1",
+							"header": "Task - For the above password, decide whether the following criteria are met:",
+							"items": [
+								{
+									"id": "lengthOfPw",
+									"text": "1. Is the password at least 8 characters long?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "memorablePw",
+									"text": "2. Is the password memorable?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "alphanumericPw",
+									"text": "3. Does the password contain alphanumeric characters?",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "case",
+									"text": "4. Does the password include both upper and lowercase characters?",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "punctuation",
+									"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
+									"ans": false,
+									"js": false
+								}
+							]
 						}
-					]
+					],
+					"code": null,
+					"js": null
 				},
 				{
 					"type": "paragraph",
@@ -436,38 +473,48 @@
 					"text": "<strong><em>Password:</em></strong> N,tcoWiC! <Strong><em> Password hint:</em></strong> No, the capital of Wisconsin isn't Cheesopolis!"
 				},
 				{
-					"type": "question",
-					"id": "question2",
-					"prompt": "Task - For the above password, decide whether the following criteria are met:",
-					"ignored": false,
-					"mode": "checkbox",
-					"choices": [
+					"type": "checklist",
+					"id": "cl",
+					"list": [
 						{
-							"id": "lengthOfPw",
-							"text": "1. Is the password at least 8 characters long?",
-							"ans": true
-						},
-						{
-							"id": "memorablePw",
-							"text": "2. Is the password memorable?",
-							"ans": true
-						},
-						{
-							"id": "alphanumericPw",
-							"text": "3. Does the password contain alphanumeric characters?",
-							"ans": false
-						},
-						{
-							"id": "case",
-							"text": "4. Does the password include both upper and lowercase characters?",
-							"ans": true
-						},
-						{
-							"id": "punctuation",
-							"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
-							"ans": true
+							"id": "question2",
+							"header": "Task - For the above password, decide whether the following criteria are met:",
+							"items": [
+								{
+									"id": "lengthOfPw",
+									"text": "1. Is the password at least 8 characters long?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "memorablePw",
+									"text": "2. Is the password memorable?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "alphanumericPw",
+									"text": "3. Does the password contain alphanumeric characters?",
+									"ans": false,
+									"js": false
+								},
+								{
+									"id": "case",
+									"text": "4. Does the password include both upper and lowercase characters?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "punctuation",
+									"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
+									"ans": true,
+									"js": false
+								}
+							]
 						}
-					]
+					],
+					"code": null,
+					"js": null
 				},
 				{
 					"type": "paragraph",
@@ -482,42 +529,48 @@
 					"text": "<strong><em>Password:</em></strong> ALs\"4s+7ya\" <Strong><em> Password hint:</em></strong> Abraham Lincoln said \"Four score and seven years ago\""
 				},
 				{
-					"type": "question",
-					"id": "question3",
-					"prompt": "Task - For the above password, decide whether the following criteria are met:",
-					"ignored": false,
-					"mode": "checkbox",
-					"choices": [
+					"type": "checklist",
+					"id": "cl",
+					"list": [
 						{
-							"id": "lengthOfPw",
-							"text": "1. Is the password at least 8 characters long?",
-							"ans": true
-						},
-						{
-							"id": "memorablePw",
-							"text": "2. Is the password memorable?",
-							"ans": true
-						},
-						{
-							"id": "alphanumericPw",
-							"text": "3. Does the password contain alphanumeric characters?",
-							"ans": true
-						},
-						{
-							"id": "case",
-							"text": "4. Does the password include both upper and lowercase characters?",
-							"ans": true
-						},
-						{
-							"id": "punctuation",
-							"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
-							"ans": true
+							"id": "question3",
+							"header": "Task - For the above password, decide whether the following criteria are met:",
+							"items": [
+								{
+									"id": "lengthOfPw",
+									"text": "1. Is the password at least 8 characters long?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "memorablePw",
+									"text": "2. Is the password memorable?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "alphanumericPw",
+									"text": "3. Does the password contain alphanumeric characters?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "case",
+									"text": "4. Does the password include both upper and lowercase characters?",
+									"ans": true,
+									"js": false
+								},
+								{
+									"id": "punctuation",
+									"text": "5. Does the password include punctuation and/or other non-alphanumeric characters?",
+									"ans": true,
+									"js": false
+								}
+							]
 						}
-					]
-				},
-				{
-					"type": "paragraph",
-					"text": "If you did not check yes to any of the above questions, then your password is weak."
+					],
+					"code": null,
+					"js": null
 				}
 			]
 		},
@@ -553,12 +606,11 @@
 					"text": "Additional Exercises"
 				},
 				{
-					"type": "paragraph",
-					"text": "1. Use the Password Meter to verify whether your passwords are strong enough. The Password Meter is a free tool and is available at: <a href = http://www.passwordmeter.com> www.passwordmeter.com </a>"
-				},
-				{
-					"type": "paragraph",
-					"text": "2. Click the link to watch a video on \"<a href = https://www.usatoday.com/videos/tech/2016/02/07/79939088>how to make your passwords less hackable\".</a>"
+					"type": "list",
+					"items" : [
+						"Use the Password Meter to verify whether your passwords are strong enough. The Password Meter is a free tool and is available at: <a href = http://www.passwordmeter.com> www.passwordmeter.com </a>",
+					  "Click the link to watch a video on <a href = 'https://www.usatoday.com/videos/tech/2016/02/07/79939088'>how to make your passwords less hackable</a>."
+					]
 				}
 			]
 		}

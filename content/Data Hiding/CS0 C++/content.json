@@ -1,6 +1,6 @@
 {
 	"name"		: "Data Hiding",
-	"variant"	: "CS2 C++",
+	"variant"	: "CS0 C++",
 	"sections": [
 		{
 			"header": "Background",
@@ -288,11 +288,11 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "Using the following method to decrypt a single letter with a given key, write a program which prompts for and receives a ciphertext string, then displays all 25 possible decryptions."
+					"text": "Finish the following program, which prompts for and receives a ciphertext string, then displays all 25 possible decryptions."
 				},
 				{
 					"type": "codeblock",
-					"code": "./decrypt.cpp"
+					"code": "./breakshift.cpp"
 				},
 				{
 					"type": "question",

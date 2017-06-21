@@ -11,14 +11,12 @@
 	</div>
 		<!-- workflow -->
 			<div class = "container-fluid">
-				<!--<nav class="navbar navbar-default">-->
         <div class="container-fluid">
 					<ul class="nav nav-tabs nav-justified">
 								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted"  ng-class="{'active': $index==currentsectionIndex}" ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
 								<li class = "disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted" ><a>{{section.header}}</a></li>
 					</ul>
 				</div>
-			<!--</nav>-->
 			</div>
 
 
@@ -35,10 +33,19 @@
 						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
-  			<div ng-switch-when="image" class="col-md">
-						<img src="{{ unit.src }}" alt="{{ unit.alt }}" >
+				<div ng-switch-when="image" class="col-md-12">
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>
 				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
+				<table ng-switch-when="table" class="table">
+					<tr>
+						<th ng-repeat = "items in unit.headers" ng-bind-html ="items"></th>
+					</tr>
+					<tr ng-repeat = "items in unit.cells">
+						<td ng-bind-html = "items.first"></td>
+						<td ng-bind-html = "items.second"></td>
+					</tr>
+				</table>
 				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
 					<div class="well">
 					<h5 ng-bind-html="unit.prompt"></h5>
@@ -56,39 +63,36 @@
 								</label>
 							</div>
 						<textarea class = "form-control" rows = "5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
-						<!-- TODO (ongoing) add more question modes -->
 						<p ng-switch-default class="si-error">Mode invalid</p>
 						</div>
 					</div>
 
 				</div>
 				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
-					<pre class= "col-md-6" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
-					<div class ="col-md-6">
-					<div class="well">
-					<table class="table borderless" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
-						<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
-						<tr ng-repeat="item in group.items">
-							<td ng-if="item.js" class="si-checklist-box-cell">
-								<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-										class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
-										disabled>
-								</td>
-							<td ng-if="!item.js" class="si-checklist-box-cell">
-								<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-										class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
-								</td>
-							<td class="si-checklist-label-cell">
-								<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
-								</td>
-							</tr>
-						</table>
+					<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+					<div class ="col-md-5">
+						<div class="well">
+						<table class="table borderless" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+							<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
+							<tr ng-repeat="item in group.items">
+								<td ng-if="item.js" class="si-checklist-box-cell">
+									<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
+											disabled>
+									</td>
+								<td ng-if="!item.js" class="si-checklist-box-cell">
+									<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
+									</td>
+								<td class="si-checklist-label-cell">
+									<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
+									</td>
+								</tr>
+							</table>
+						</div>
 					</div>
-				</div>
-
 						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 				</div>
-						<!-- TODO (ongoing) add more unit types -->
 						<p ng-switch-default class="si-error">Type invalid</p>
 					</div>
 				</div>
@@ -112,31 +116,26 @@
 							<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
 							<p>Complete this form to generate your certificate</p>
 							<form ng-submit="generateCertificate()">
-
 							<div class="input-group">
 				  			<span class="input-group-addon">Full Name</span>
 				  			<input ng-model="form.name" required type="text" class="form-control">
 							</div>
 							<br>
-
 							<div class="input-group">
 				  			<span class="input-group-addon">Email Address</span>
 				  			<input ng-model="form.email" required type="email" class="form-control">
 							</div>
 							<br>
-
 							<div class="input-group">
 				  			<span class="input-group-addon">Instructor</span>
 				  			<input ng-model="form.instructor" required type="text" class="form-control">
 							</div>
 							<br>
-
 							<div class="input-group">
 			  				<span class="input-group-addon">Institution</span>
 			  				<input ng-model="form.institution" required type="text" class="form-control">
 							</div>
 							<br>
-
 							<input class="btn btn-success btn-lg" type="submit" value="Generate Certificate">
 							</form>
 						</div>
@@ -144,7 +143,6 @@
 				</div>
 					<div class = "col-md-6">
 						<div id="si-certificate-pane" style="display:none">
-								<!--<canvas id="si-certificate-canvas" width="500" height="348"></canvas>-->
 								<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
 								<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
 						</div>

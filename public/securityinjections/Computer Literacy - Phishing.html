@@ -12,9 +12,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.tpl.min.js"></script>
 	<title>Security Injection: Computer Literacy - Phishing</title>
 	<style>
+<<<<<<< HEAD
 body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{cursor:pointer}[type="checkbox"]:checked+label:after{content:'✔';font-size:30px;color:#09ad7e;transition:all .2s}.navbar{margin-bottom:0;background-color:silver}.nav-tabs li a{color:#464646;height:50px}.container{margin-top:25px;margin-bottom:25px}.jumbotron{background-color:white;padding:5px;box-shadow:0 8px 16px -6px black}.page-header{border-bottom:5px solid #337ab7}.nav-tabs{margin-bottom:0}.borderless td,.borderless th{border:none !important}.si-question-correct .well{background-color:lightgreen}.si-question-incorrect .well{background-color:lightpink}.si-checkbox-label-correct::before{color:forestgreen;content:"V "}.si-checkbox-label-incorrect::before{color:maroon;content:"X "}.si-checklist-correct .well{background-color:lightgreen}.si-checklist-incorrect .well{background-color:lightpink}.si-checklist-active{font-size:1.6em}.si-code-clicked{font-weight:bold;font-style:italic}.si-code-vulnerability{background-color:yellow}
 </style>
 	<script>var app=angular.module("modApp",["ngSanitize","ngCookies","mgcrea.ngStrap"]);app.controller("modCtrl",["$scope","$http","$cookies","$sce",function(e,t,o,s){function r(t){e.module=t,e.currentsectionIndex=0,e.currentsection=e.module.sections[0],e.module.sections.push({header:"Final Page"}),u()}function a(t){e.score={name:t.name,variant:t.variant,sections:[]};for(i in t.sections){section={header:t.sections[i].header,time:0,questions:{}};for(j in t.sections[i].units)unit=t.sections[i].units[j],("question"==unit.type&&!unit.ignored||"checklist"==unit.type)&&(section.questions[unit.id]=1);e.score.sections.push(section)}}function u(){if(null!=o.get("progress")&&e.redirectCookie(),cookieAnswer=o.getObject("forms"),n=0,"undefined"==typeof cookieAnswer)console.log("No cookies to be loaded");else for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":if(null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].answer&&(unit.checked=!0,unit.value=cookieAnswer[n].answer);n++}break;case"checkbox":if(null!=cookieAnswer[n]){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].prompt[c]&&(1==cookieAnswer[n].answer[c]?unit.choices[c].value=!0:unit.choices[c].value=!1);n++}break;case"textarea":null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt&&(unit.value=cookieAnswer[n].answer,n++)}else unit.type}function l(e,t,i){return i?($(t).removeClass("si-"+e+"-incorrect"),$(t).addClass("si-"+e+"-correct")):($(t).removeClass("si-"+e+"-correct"),$(t).addClass("si-"+e+"-incorrect")),i}function d(t,o){var n=20,c=295-n-20,r=new jsPDF("p","mm","a4");r.setFontSize(20),r.text("Security Injections @ offline",15,n),r.line(10,25,190,25),r.setFontSize(12),r.text("Module: "+o.course,20,35),r.text("Student: "+o.name,20,45),r.text("Date: "+o.today,20,55),r.text("ID: "+o.hash,20,65),r.addPage(),r.setFontSize(20),r.text("Discussion Questions",15,n),r.line(10,25,190,25),n=40;for(i in t){n>c&&(r.addPage(),n=20),r.setFontSize(16);var a=r.splitTextToSize(t[i].prompt,180),u=a.length;r.text(15,n,a),n+=5.6444*u+10,r.setFontSize(12);var l=r.splitTextToSize(t[i].answer,160),d=l.length;r.text(35,n,l),n+=4.2333*d+10}dataUri=r.output("datauristring"),e.detailFrame=s.trustAsResourceUrl(dataUri)}e.loadContent=function(){var i=e.repo+$("#name").html()+"/"+$("#variant").html()+".json";console.log("Loading content from "+i),e.contentError=!1,t.get(i).then(function(e){r(e.data),a(e.data)},function(t){if($("#default").length){console.log("* No response - using default");var i=JSON.parse($("#default").html());r(i),a(i)}else console.log("* No response - try again"),e.contentError=!0})},e.repo="http://127.0.0.1:8000/",e.sectionscompleted=0,e.loadContent(),e.form={},e.starttime=new Date,e.redirectCookie=function(){var t=o.get("progress");e.sectionscompleted=parseInt(t),e.currentsectionIndex=e.sectionscompleted,e.currentsection=e.module.sections[e.currentsectionIndex]},e.saveCookie=function(t){var n=new Date,s=new Date(n);s.setMinutes(n.getMinutes()+120),o.put("progress",t,{expires:s}),o.putObject("forms",[]);for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":(r=o.getObject("forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject("forms",r);break;case"checkbox":var r=o.getObject("forms"),a=[],u=[];for(c in unit.choices)void 0===unit.choices[c].value||unit.ignored||(u.push(unit.choices[c].id),a.push(unit.choices[c].value));r.push({prompt:u,answer:a}),o.putObject("forms",r);break;case"textarea":(r=o.getObject("forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject("forms",r)}else unit.type},e.checkAnswers=function(){var t=!0;for(i in e.currentsection.units){unit=e.currentsection.units[i],id="#"+unit.id;var o=!0;if("question"!=unit.type||unit.ignored){if("checklist"==unit.type){s=!0;for(j in unit.list){group=unit.list[j],group_id=id+"-"+group.id;for(k in group.items){item=group.items[k],item_id=group_id+"-"+item.id,void 0===item.value&&(item.value=!1),item.js&&(item.value=$(item_id).is(":checked"));var n=item.value==item.ans;s&=n,l("checkbox",item_id,n),l("checkbox-label",item_id+"-label",n)}}o&=l("checklist",id,s)}}else switch(unit.mode){case"radio":o=l("question",id,unit.value==unit.answer);break;case"checkbox":var s=!0;for(j in unit.choices)choice=unit.choices[j],choice_id=id+"-"+choice.id,void 0===choice.value&&(choice.value=!1),s&=n=choice.value==choice.ans,l("checkbox",choice_id,n),l("checkbox-label",choice_id+"-label",n);o=l("question",id,s);break;case"textarea":var c=new RegExp(unit.pattern);o=l("question",id,c.test(unit.value))}o||(t=!1,e.score.sections[e.currentsectionIndex].questions[unit.id]+=1)}if(t&&e.currentsectionIndex==e.sectionscompleted){var r=new Date;e.score.sections[e.sectionscompleted].time=r-e.starttime,e.starttime=r,e.sectionscompleted++}e.saveCookie(e.sectionscompleted)},e.gotoSection=function(t){t<=e.sectionscompleted?(e.currentsectionIndex=t,e.currentsection=e.module.sections[t],e.saveCookie(e.sectionscompleted)):console.log("Cannot go to section "+t+": may only go up to section "+e.sectionscompleted)},e.generateCertificate=function(){var o=e.module.name+" - "+e.module.variant,n=new Date,s=n.getDate(),c=n.getMonth()+1,r=n.getFullYear();s<10&&(s="0"+s),c<10&&(c="0"+c);var a=c+"/"+s+"/"+r,u=e.form.name+o+a,l=0;if(0==u.length)return l;for(i=0;i<u.length;i++)char=u.charCodeAt(i),l=(l<<5)-l+char,l&=l;l=Math.abs(l);var m={name:e.form.name,course:o,hash:l,today:a},p=[];for(i in e.module.sections)for(q in e.module.sections[i].units)unit=e.module.sections[i].units[q],"question"==unit.type&&"textarea"==unit.mode&&null!=unit.value&&(p[q]={prompt:unit.prompt,answer:unit.value});d(p,m),finalPDF=e.detailFrame,$("#si-certificate-link").attr("href",finalPDF),$("#si-certificate-link").prop("disabled",!1),$("#si-certificate-pane").show(),e.form.modulename=e.module.name,e.form.variant=e.module.variant,e.form.date=n.toJSON(),e.form.score=JSON.stringify(e.score),t.post(e.repo+"record",e.form)}}]);</script>
+=======
+body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{cursor:pointer}[type="checkbox"]:checked+label:after{content:'✔';font-size:30px;color:#09ad7e;transition:all .2s}.navbar{margin-bottom:0;background-color:silver}.nav-tabs li a{color:#464646;height:50px}.container{margin-top:25px;margin-bottom:25px}.jumbotron{background-color:white;padding:5px;box-shadow:0 8px 16px -6px black}.page-header{border-bottom:5px solid #337ab7}.nav-tabs{margin-bottom:0}.borderless td,.borderless th{border:none !important}.si-question-correct .well{background-color:lightgreen}.si-question-incorrect .well{background-color:lightpink}.si-checkbox-label-correct::before{color:forestgreen;content:"V ";text-decoration:none}.si-checkbox-label-incorrect::before{color:maroon;content:"X "}.si-checklist-correct .well{background-color:lightgreen}.si-checklist-incorrect .well{background-color:lightpink}.si-checklist-active{font-size:1.6em}.si-code-clicked{font-weight:bold;font-style:italic}.si-code-vulnerability{background-color:yellow}
+</style>
+	<script>var app=angular.module("modApp",["ngSanitize","ngCookies","mgcrea.ngStrap"]);app.controller("modCtrl",["$scope","$http","$cookies","$sce",function(e,t,o,s){function r(t){e.module=t,e.currentsectionIndex=0,e.currentsection=e.module.sections[0],e.module.sections.push({header:"Final Page"}),a()}function u(t){e.score={name:t.name,variant:t.variant,sections:[]};for(i in t.sections){section={header:t.sections[i].header,time:0,questions:{}};for(j in t.sections[i].units)unit=t.sections[i].units[j],("question"==unit.type&&!unit.ignored||"checklist"==unit.type)&&(section.questions[unit.id]=1);e.score.sections.push(section)}}function a(){if(moduleCookie=e.module.name+"-"+e.module.variant+"-",null!=o.get(moduleCookie+"progress")&&e.redirectCookie(),cookieAnswer=o.getObject(moduleCookie+"forms"),n=0,"undefined"==typeof cookieAnswer)console.log("No cookies to be loaded");else for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":if(null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].answer&&(unit.checked=!0,unit.value=cookieAnswer[n].answer);n++}break;case"checkbox":if(null!=cookieAnswer[n]){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].prompt[c]&&(1==cookieAnswer[n].answer[c]?unit.choices[c].value=!0:unit.choices[c].value=!1);n++}break;case"textarea":null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt&&(unit.value=cookieAnswer[n].answer,n++)}else unit.type}function l(e,t,i){return i?($(t).removeClass("si-"+e+"-incorrect"),$(t).addClass("si-"+e+"-correct")):($(t).removeClass("si-"+e+"-correct"),$(t).addClass("si-"+e+"-incorrect")),i}function d(t,o){var n=20,c=295-n-20,r=new jsPDF("p","mm","a4");r.setFontSize(20),r.text("Security Injections @ offline",15,n),r.line(10,25,190,25),r.setFontSize(12),r.text("Module: "+o.course,20,35),r.text("Student: "+o.name,20,45),r.text("Date: "+o.today,20,55),r.text("ID: "+o.hash,20,65),r.addPage(),r.setFontSize(20),r.text("Discussion Questions",15,n),r.line(10,25,190,25),n=40;for(i in t){n>c&&(r.addPage(),n=20),r.setFontSize(16);var u=r.splitTextToSize(t[i].prompt,180),a=u.length;r.text(15,n,u),n+=5.6444*a+10,r.setFontSize(12);var l=r.splitTextToSize(t[i].answer,160),d=l.length;r.text(35,n,l),n+=4.2333*d+10}dataUri=r.output("datauristring"),e.detailFrame=s.trustAsResourceUrl(dataUri)}e.loadContent=function(){var i=e.repo+$("#name").html()+"/"+$("#variant").html()+".json";console.log("Loading content from "+i),e.contentError=!1,t.get(i).then(function(e){r(e.data),u(e.data)},function(t){if($("#default").length){console.log("* No response - using default");var i=JSON.parse($("#default").html());r(i),u(i)}else console.log("* No response - try again"),e.contentError=!0})},function(){e.repo="http://127.0.0.1:8000/",e.sectionscompleted=0,e.loadContent(),e.form={},e.starttime=new Date}(),e.redirectCookie=function(){var t=o.get(moduleCookie+"progress");e.sectionscompleted=parseInt(t),e.currentsectionIndex=e.sectionscompleted,e.currentsection=e.module.sections[e.currentsectionIndex]},e.saveCookie=function(t){var n=new Date,s=new Date(n);s.setMinutes(n.getMinutes()+120),o.put(moduleCookie+"progress",t,{expires:s}),o.putObject(moduleCookie+"forms",[]);for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":(r=o.getObject(moduleCookie+"forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject(moduleCookie+"forms",r);break;case"checkbox":var r=o.getObject(moduleCookie+"forms"),u=[],a=[];for(c in unit.choices)void 0===unit.choices[c].value||unit.ignored||(a.push(unit.choices[c].id),u.push(unit.choices[c].value));r.push({prompt:a,answer:u}),o.putObject(moduleCookie+"forms",r);break;case"textarea":(r=o.getObject(moduleCookie+"forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject(moduleCookie+"forms",r)}else unit.type},e.checkAnswers=function(){var t=!0;for(i in e.currentsection.units){unit=e.currentsection.units[i],id="#"+unit.id;var o=!0;if("question"!=unit.type||unit.ignored){if("checklist"==unit.type){s=!0;for(j in unit.list){group=unit.list[j],group_id=id+"-"+group.id;for(k in group.items){item=group.items[k],item_id=group_id+"-"+item.id,void 0===item.value&&(item.value=!1),item.js&&(item.value=$(item_id).is(":checked"));var n=item.value==item.ans;s&=n,l("checkbox",item_id,n),l("checkbox-label",item_id+"-label",n)}}o&=l("checklist",id,s)}}else switch(unit.mode){case"radio":o=l("question",id,unit.value==unit.answer);break;case"checkbox":var s=!0;for(j in unit.choices)choice=unit.choices[j],choice_id=id+"-"+choice.id,void 0===choice.value&&(choice.value=!1),s&=n=choice.value==choice.ans,l("checkbox",choice_id,n),l("checkbox-label",choice_id+"-label",n);o=l("question",id,s);break;case"textarea":var c=new RegExp(unit.pattern);o=l("question",id,c.test(unit.value))}o||(t=!1,e.score.sections[e.currentsectionIndex].questions[unit.id]+=1)}if(t&&e.currentsectionIndex==e.sectionscompleted){var r=new Date;e.score.sections[e.sectionscompleted].time=r-e.starttime,e.starttime=r,e.sectionscompleted++}e.saveCookie(e.sectionscompleted)},e.gotoSection=function(t){t<=e.sectionscompleted?(e.currentsectionIndex=t,e.currentsection=e.module.sections[t],e.saveCookie(e.sectionscompleted)):console.log("Cannot go to section "+t+": may only go up to section "+e.sectionscompleted)},e.generateCertificate=function(){var o=e.module.name+" - "+e.module.variant,n=new Date,s=n.getDate(),c=n.getMonth()+1,r=n.getFullYear();s<10&&(s="0"+s),c<10&&(c="0"+c);var u=c+"/"+s+"/"+r,a=e.form.name+o+u,l=0;if(0==a.length)return l;for(i=0;i<a.length;i++)char=a.charCodeAt(i),l=(l<<5)-l+char,l&=l;l=Math.abs(l);var m={name:e.form.name,course:o,hash:l,today:u};for(i in e.module.sections)"Discussion Questions"==e.module.sections[i].header&&(pageIndex=i);var p=[];for(q in e.module.sections[pageIndex].units)unit=e.module.sections[pageIndex].units[q],"question"==unit.type&&"textarea"==unit.mode&&null!=unit.value&&(p[q]={prompt:unit.prompt,answer:unit.value});d(p,m),finalPDF=e.detailFrame,$("#si-certificate-link").attr("href",finalPDF),$("#si-certificate-link").prop("disabled",!1),$("#si-certificate-pane").show(),e.form.modulename=e.module.name,e.form.variant=e.module.variant,e.form.date=n.toJSON(),e.form.score=JSON.stringify(e.score),t.post(e.repo+"record",e.form)}}]);</script>
+>>>>>>> origin/master
 </head>
 <body>
 <div ng-app="modApp" ng-controller="modCtrl">
@@ -30,14 +36,20 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 	</div>
 		<!-- workflow -->
 			<div class = "container-fluid">
+<<<<<<< HEAD
 				<!--<nav class="navbar navbar-default">-->
+=======
+>>>>>>> origin/master
         <div class="container-fluid">
 					<ul class="nav nav-tabs nav-justified">
 								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted"  ng-class="{'active': $index==currentsectionIndex}" ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
 								<li class = "disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted" ><a>{{section.header}}</a></li>
 					</ul>
 				</div>
+<<<<<<< HEAD
 			<!--</nav>-->
+=======
+>>>>>>> origin/master
 			</div>
 
 
@@ -54,10 +66,26 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
+<<<<<<< HEAD
   			<div ng-switch-when="image" class="col-md">
 						<img src="{{ unit.src }}" alt="{{ unit.alt }}" >
 				</div>
 				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
+=======
+				<div ng-switch-when="image" class="col-md-12">
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" class = "img-responsive">
+				</div>
+				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
+				<table ng-switch-when="table" class="table">
+					<tr>
+						<th ng-repeat = "items in unit.headers" ng-bind-html ="items"></th>
+					</tr>
+					<tr ng-repeat = "items in unit.cells">
+						<td ng-bind-html = "items.first"></td>
+						<td ng-bind-html = "items.second"></td>
+					</tr>
+				</table>
+>>>>>>> origin/master
 				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
 					<div class="well">
 					<h5 ng-bind-html="unit.prompt"></h5>
@@ -75,13 +103,17 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 								</label>
 							</div>
 						<textarea class = "form-control" rows = "5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
+<<<<<<< HEAD
 						<!-- TODO (ongoing) add more question modes -->
+=======
+>>>>>>> origin/master
 						<p ng-switch-default class="si-error">Mode invalid</p>
 						</div>
 					</div>
 
 				</div>
 				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
+<<<<<<< HEAD
 					<pre class= "col-md-6" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 					<div class ="col-md-6">
 					<div class="well">
@@ -108,6 +140,32 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 				</div>
 						<!-- TODO (ongoing) add more unit types -->
+=======
+					<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+					<div class ="col-md-5">
+						<div class="well">
+						<table class="table borderless" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+							<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
+							<tr ng-repeat="item in group.items">
+								<td ng-if="item.js" class="si-checklist-box-cell">
+									<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
+											disabled>
+									</td>
+								<td ng-if="!item.js" class="si-checklist-box-cell">
+									<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
+									</td>
+								<td class="si-checklist-label-cell">
+									<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
+				</div>
+>>>>>>> origin/master
 						<p ng-switch-default class="si-error">Type invalid</p>
 					</div>
 				</div>
@@ -131,31 +189,46 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 							<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
 							<p>Complete this form to generate your certificate</p>
 							<form ng-submit="generateCertificate()">
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 							<div class="input-group">
 				  			<span class="input-group-addon">Full Name</span>
 				  			<input ng-model="form.name" required type="text" class="form-control">
 							</div>
 							<br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 							<div class="input-group">
 				  			<span class="input-group-addon">Email Address</span>
 				  			<input ng-model="form.email" required type="email" class="form-control">
 							</div>
 							<br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 							<div class="input-group">
 				  			<span class="input-group-addon">Instructor</span>
 				  			<input ng-model="form.instructor" required type="text" class="form-control">
 							</div>
 							<br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 							<div class="input-group">
 			  				<span class="input-group-addon">Institution</span>
 			  				<input ng-model="form.institution" required type="text" class="form-control">
 							</div>
 							<br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 							<input class="btn btn-success btn-lg" type="submit" value="Generate Certificate">
 							</form>
 						</div>
@@ -163,7 +236,10 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 				</div>
 					<div class = "col-md-6">
 						<div id="si-certificate-pane" style="display:none">
+<<<<<<< HEAD
 								<!--<canvas id="si-certificate-canvas" width="500" height="348"></canvas>-->
+=======
+>>>>>>> origin/master
 								<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
 								<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
 						</div>
@@ -176,5 +252,9 @@ body{background-color:whitesmoke}.nav,.pagination,.carousel,.panel-title a{curso
 
 	<script type="text/plain" id="name">Computer Literacy</script>
 	<script type="text/plain" id="variant">Phishing</script>
+<<<<<<< HEAD
 	<script type="text/plain" id="default">{"name":"Computer Literacy","variant":"Phishing","sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary:"},{"type":"paragraph","text":"Phishing is a type of social engineering technique in which an attacker sends an e-mail or displays a Web announcement that falsely claims to be from a legitimate organization. The intention of the messenger is to trick the user into surrendering private information."},{"type":"subheader","text":"Description:"},{"type":"paragraph","text":"A more specific definition is offered by the Anti-phishing Working Group (APWG): “Phishing is a criminal mechanism employing both social engineering and technical subterfuge to steal consumers’ personal identity data and financial account credentials.” The victim in a phishing attack is asked to respond to an e-mail or is directed to a Web site to update personal information, such as passwords, credit card numbers, Social Security numbers, bank account numbers, or other information for which the legitimate organization already has a record. However, the site is actually a fraudulent Web site designed to steal the user’s information."},{"type":"subheader","text":"Risk:"},{"type":"paragraph","text":"Phishing can and usually leads to online identity theft. By capturing a user’s personal information, an attacker can gain access to the user’s account on a legitimate Web site, and can engage in a number of activities resulting in substantial financial loss to the user, denial of access to e-mail, and other problems."},{"type":"subheader","text":"Example of occurence:"},{"type":"paragraph","text":"On the weekend of January 3, 2009, several users on the social network Web site, Twitter, became victims of a phishing attack. The users were deceived into giving away their passwords when they received an e-mail similar to one that they would receive from Twitter with a link that read, “hey, check out this funny blog about you…”. The link redirects to a site masquerading as the real Twitter site. Any personal information entered by the user on the fake site is then captured by the attacker."},{"type":"paragraph","text":"Twitter responded by reporting the offending domain, and changing the affected users’ passwords. (<a href = https://www.theguardian.com/technology/2009/jan/08/twitter-barack-obama-britney-spears-micro-blog-networking> What sort of Twitter would give away their password?</a>)"},{"type":"paragraph","text":"<strong>A phishing email example: </strong>"},{"type":"image","src":"http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phishing-email.jpg","alt":"Amazon phising example","width":581,"height":292,"float":null},{"type":"subheader","text":"Answer the following questions:"},{"type":"question","id":"phishingAttack","prompt":"Phishing is an attack intended to steal private information:","ignored":false,"mode":"radio","choices":[{"id":"true","text":"True"},{"id":"false","text":"False"}],"answer":"true"},{"type":"question","id":"privateInfo","prompt":"In order to steal private information, the victim in the phishing attack may be ______________:","ignored":false,"mode":"radio","choices":[{"id":"email","text":"Asked to respond to an email"},{"id":"website","text":"Directed to a website to update personal information"},{"id":"both","text":"Both of the above"},{"id":"none","text":"None of the above"}],"answer":"both"}]},{"header":"Identify Phishing Responsibly","units":[{"type":"subheader","text":"Protect Yourself from Phishing Scams"},{"type":"image","src":"http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phishing-comic.jpg","alt":"Phising comic","width":992,"height":603,"float":null},{"type":"subheader","text":"Anti-Phish Training"},{"type":"paragraph","text":"Training users to identify a 'phish' is an important component in the fight against phishing. Training has taken two forms: the first is simply to provide anti-phishing information to users through e-mail and other media. The second is to give firsthand experience to users through games, simulated phish, cartoons, etc. Recent studies seem to indicate that the latter—giving firsthand experience to users—might be more effective. The game, Anti-Phishing Phil (see picture), which teaches people how to identify suspicious Web site addresses while providing the experience of being captured by a phisher, is such an example. PhishGuru in the previous section is another example. It delivers cartoon-based, anti-phishing information after a user has been deceived by simulated phishing messages."},{"type":"image","src":"http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phish-game1.jpg","alt":"Anti-Phising","width":552,"height":414,"float":"right"},{"type":"attribution","copyright":"Anti-Phishing Phil © Wombat Security Technologies, Inc.","date":"no date","link":"http://heron.towson.edu/securityinjections/comp_lit/01/exams/phishing-code-responsibly"},{"type":"subheader","text":"Anti-Phishing Technologies"},{"type":"paragraph","text":"Although user ability to identify phish is an important component in the battle against phishing, combining it with technology yields better results. One of the techniques used to automatically identify phish is <strong>filtering</strong>. The objective of filtering is to identify (or flag) phishing attempts in e-mail or on Web pages. Filters are usually integrated into browsers or e-mail software. When a Web address is encountered the software compares it with a so-called \"blacklist\" of known phishing Web sites. It then takes appropriate actions, which usually include informing the user. The blacklist is updated periodically (for example, every 30 minutes) as new phishing sites become available. As with any blacklist, there is also a \"whitelist\" of known legitimate sites."},{"type":"subheader","text":"In order to protect yourself from a phishing attack, indicate your choice for the following questions:"},{"type":"question","id":"links","prompt":"Never click on links within emails","ignored":false,"mode":"radio","choices":[{"id":"true","text":"True"},{"id":"false","text":"False"}],"answer":"true"},{"type":"question","id":"personalInfo","prompt":"Give out personal information upon email request","ignored":false,"mode":"radio","choices":[{"id":"true","text":"True"},{"id":"false","text":"False"}],"answer":"false"},{"type":"question","id":"address","prompt":"Type in the real website address in the web browser","ignored":false,"mode":"radio","choices":[{"id":"true","text":"True"},{"id":"false","text":"False"}],"answer":"true"},{"type":"question","id":"suspiciousSites","prompt":"Always be wary of suspicious sites","ignored":false,"mode":"radio","choices":[{"id":"true","text":"True"},{"id":"false","text":"False"}],"answer":"true"}]},{"header":"Laboratory Assignment","units":[{"type":"subheader","text":"Question 1"},{"type":"paragraph","text":"Complete this security checklist for the following PayPal e-mail. The Web address in the box, <strong>http://211.248.156/Paypal/cgi-bin/webscrcmd_login.php</strong>, appears when the user 'mouse-overs' the \"Click here to verify your account\" link. Read the e-mail carefully and check the boxes as appropriate."},{"type":"checklist","id":"securityChecklist","list":[{"id":"questions","header":"Security Checklist","items":[{"id":"q1","text":"1. Were there suspicious words, phrases or sentences?","ans":true,"js":false},{"id":"q2","text":"2. Were there suspicious links?","ans":true,"js":false},{"id":"q3","text":"3. Are there grammatical or spelling errors in the e-mail?","ans":true,"js":false},{"id":"q4","text":"4. Does the e-mail start with a generic greeting?","ans":true,"js":false},{"id":"q5","text":"5. Does the e-mail contain any pop-up boxes or attachments?","ans":false,"js":false},{"id":"q6","text":"6. Does the e-mail contain an air of urgency or a need to respond immediately?","ans":true,"js":false},{"id":"q7","text":"7. Does the email ask you for personal information such as passwords and social security number?","ans":false,"js":false}]}],"code":null,"js":null},{"type":"paragraph","text":"If you checked any of the above boxes, then the e-mail should be suspected as phishing mail."},{"type":"image","src":"http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/paypal-email-cis0.jpg","alt":"PayPal","width":612,"height":797,"float":null}]},{"header":"Discussion Questions","units":[{"type":"subheader","text":"Question 1"},{"type":"question","id":"suspectedPhish","prompt":"List any sentence, phrase or word that makes the e-mail from the \"Checklist\" section a suspected phish:","ignored":true,"mode":"textarea","pattern":"null"},{"type":"subheader","text":"Question 2"},{"type":"question","id":"games","prompt":"Play at least two games of Anti-Phishing Phil at <a href = http://info.wombatsecurity.com/student-phil-phyllis-demo>http://info.wombatsecurity.com/student-phil-phyllis-demo</a>. Use \"students1\" as the password on the site. Create a \"blacklist\" of the phishing Web site addresses you encountered, and a \"whitelist\" of the legitimate Web sites (Hint: see the section on Anti-phishing Technologies.) Describe how the Anti-Phising Phil experience has helped you to better recognize phishing Web sites. What are your likes and dislikes about the game? Are there any suggestion(s) that you would like to provide so as to improve it? If so, explain.","ignored":true,"mode":"textarea","pattern":"null"},{"type":"subheader","text":"Question 3"},{"type":"question","id":"test","prompt":"Take the \"SonicWall Phishing and Spam IQ Test\" a couple of times (<a href = http://www.sonicwall.com/phishing/>http://www.sonicwall.com/phishing/</a>). What was your maximum score? Look at the test result sheet, and give the name that appears in the \"Subject\" column for three of the questions. For each of the subjects, click on the \"Why?\" link that appears under the \"Explain Answer Column.\" The e-mail you viewed for that question should re-appear—this time with explanations. Copy one of the given explanations for each of the e-mails.","ignored":true,"mode":"textarea","pattern":"null"},{"type":"subheader","text":"Question 4"},{"type":"question","id":"spearPhishing","prompt":"In recent years, a more insidious form of phishing, known as spear phishing, has taken root. Spear phishing is customized to a particular user. It often addresses the recipient directly (by name) and may include other personal information about the user. Provide a recent example of spear phishing and discuss the peculiarities of the e-mail that makes it a suspected phish. Your example could be taken from an e-mail you or someone you know received, from a handout from your instructor, or from a recent newspaper or Web article.","ignored":true,"mode":"textarea","pattern":"null"},{"type":"subheader","text":"Question 5"},{"type":"question","id":"spearPhishing","prompt":"Pharming is yet another recent form of phishing, which automatically redirects the user to a fake Web site—no clicking required. Give a recent example of pharming and discuss the peculiarities of the e-mail that makes it a suspected phish. Again, your example could be taken from an e-mail you or someone you know received, a handout from your instructor, or from a recent newspaper or Web article.","ignored":true,"mode":"textarea","pattern":"null"}]}]}</script>
+=======
+	<script type="text/plain" id="default">{"name":"Computer Literacy","variant":"Phishing","Sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary:"},{"type":"paragraph","text":"Phishing is a type of social engineering technique in which an attacker sends an e-mail or displays a Web announcement that falsely claims to be from a legitimate organization. The intention of the messenger is to trick the user into surrendering private information."},{"type":"subheader","text":"Description"},{"type":"paragraph","text":"A more specific definition is offered by the Anti-phishing Working Group (APWG): “Phishing is a criminal mechanism employing both social engineering and technical subterfuge to steal consumers’ personal identity data and financial account credentials.” The victim in a phishing attack is asked to respond to an e-mail or is directed to a Web site to update personal information, such as passwords, credit card numbers, Social Security numbers, bank account numbers, or other information for which the legitimate organization already has a record. However, the site is actually a fraudulent Web site designed to steal the user’s information."},{"type":"subheader","text":"Risk"},{"type":"paragraph","text":"Phishing can and usually leads to online identity theft. By capturing a user’s personal information, an attacker can gain access to the user’s account on a legitimate Web site, and can engage in a number of activities resulting in substantial financial loss to the user, denial of access to e-mail, and other problems."},{"type":"subheader","text":"Example of occurence"},{"type":"paragraph","text":"On the weekend of January 3, 2009, several users on the social network Web site, Twitter, became victims of a phishing attack. The users were deceived into giving away their passwords when they received an e-mail similar to one that they would receive from Twitter with a link that read, “hey, check out this funny blog about you…”. The link redirects to a site masquerading as the real Twitter site. Any personal information entered by the user on the fake site is then captured by the attacker."},{"type":"paragraph","text":"Twitter responded by reporting the offending domain, and changing the affected users’ passwords. (<a href = https://www.theguardian.com/technology/2009/jan/08/twitter-barack-obama-britney-spears-micro-blog-networking> What sort of Twitter would give away their password?</a>)"},{"type":"image","src":"http://cis1.towson.edu/~cssecinj/wp-content/uploads/cis0/phishing-email.jpg","alt":"","width":581,"height":292,"float":null},{"type":"subheader","text":"Answer the following question:"},{"type":"question","id":"phishingAttack","prompt":"Phishing is an attack intended to steal private information:","ignored":false,"mode":"radio","choices":[{"id":"true","text":"True"},{"id":"false","text":"False"}],"answer":"true"},{"type":"question","id":"privateInfo","prompt":"In order to steal private information, the victim in the phishing attack may be ______________:","ignored":false,"mode":"radio","choices":[{"id":"email","text":"Asked to respond to an email"},{"id":"website","text":"Directed to a website to update personal information"},{"id":"both","text":"Both of the above"},{"id":"none","text":"None of the above"}],"answer":"both"}]},{}]}</script>
+>>>>>>> origin/master
 </body>
