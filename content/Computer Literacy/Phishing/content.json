@@ -235,7 +235,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Complete this security checklist for the following PayPal e-mail. The Web address in the box, <strong>http://211.248.156/Paypal/cgi-bin/webscrcmd_login.php</strong>, appears when the user 'mouse-overs' the \"Click here to verify your account\" link."
+                    "text": "Complete this security checklist for the following PayPal e-mail. The Web address in the box, <strong>http://211.248.156/Paypal/cgi-bin/webscrcmd_login.php</strong>, appears when the user 'mouse-overs' the \"Click here to verify your account\" link. Read the e-mail carefully and check the boxes as appropriate."
                 },
                 {
                     "type": "checklist",

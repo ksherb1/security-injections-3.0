@@ -1,0 +1,67 @@
+{
+    "name": "Computer Literacy",
+    "variant": "Social Networking Security",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Today, the use of social media websites such as Facebook, Twitter, and Vine has become the norm for online communication with friends, family, and acquaintances. While such sites help people keep in touch, they also pose a great risk to personal identifiable information (PII). In order to protect this PII, users must think of confidentiality, availability, and trust (or the CAT model) before making posts on a social networking website like Facebook or Twitter."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description"
+                },
+                {
+                    "type": "image",
+                    "src": "http://lsf.truman.edu/files/2013/04/Twitter_Logo_Volt.png",
+                    "alt": "Twitter",
+                    "width": 132,
+                    "height": 32,
+                    "float": null
+                },
+                {
+                    "type": "image",
+                    "src": "http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_132x32_2.png",
+                    "alt": "LinkedIn",
+                    "width": 132,
+                    "height": 32,
+                    "float": null
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The use of all social networking websites revolve around one main activity-- posting information about yourself. While sharing information about yourself can be fun, you always run the risk of sharing it with someone you didn't want to; this is the real danger of using social networking websites like Facebook or Twitter."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Posting online without first weighing the consequences or taking precautions to ensure that your information is safe is a practice that can get any user in trouble. It is important that before you make any post, you consider the privacy of your post, the lifetime of your post, and the audience your post will reach. These three considerations are the <strong>CAT model: Confidentiality</strong> (How private your posts are), <strong>Availability</strong> (How long your posts are accessible), and <strong>Trust</strong> (who you're trusting with your posts). Posting carelessly without taking these issues into consideration can be a risky practice that can lead to trouble for you now or down the road in your career."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A woman working as a teacher's aide made a post on Facebook out of frustration towards the kids she worked with, and later got fired for her behavior."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small>Source: <a href =http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post> http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post </a> </small>"
+                }
+            ]
+        },
+        {
+            "type": "subheader",
+            "text": "Answer the following questions:"
+        }
+    ]
+}
