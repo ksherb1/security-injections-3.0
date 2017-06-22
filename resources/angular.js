@@ -94,7 +94,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 
 	// initialize all non-function fields
 	function initialize() {
-		$scope.repo = "http://127.0.0.1:8000/";		// IP address of our production server TODO: change as needed
+		$scope.repo = "http://cis1.towson.edu/~cyber4all/modules/content/";		// IP address of our production server TODO: change as needed
 		$scope.sectionscompleted = 0;				// start from the first section
 		$scope.loadContent();						// initialize module object and contentError boolean
 		$scope.form = {}							// initialize submission form

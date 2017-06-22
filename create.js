@@ -29,9 +29,9 @@ exports.write_3 = function(name, variant, dev) {
 	var templateFile = resourceDir+"template.html";
 	var angularFile = resourceDir+"angular.js";
 	var styleFile = resourceDir+"style.css";
-	var moduleFile = name+' - '+variant+'.html';	// for output
+	var moduleFile = name+'-'+variant+'.html';	// for output
 	if(dev) {
-		moduleFile = 'DEV - '+moduleFile;
+		moduleFile = 'DEV-'+moduleFile;
 	}
 
 	//Make folder for blank JSON
@@ -92,6 +92,10 @@ exports.write_3 = function(name, variant, dev) {
 	html += '\t'+'<script type="text/plain" id="variant">'+module.variant+'</script>'+'\n';
 	html += '\t'+'<script type="text/plain" id="default">'+content+'</script>'+'\n';
 	html += '</body>';
+
+
+	// Make the URL more readable, avoiding %20 for space characters
+	moduleFile = moduleFile.split(' ').join('_');
 
 	// STEP 4 - write string to output file
 	fs.writeFileSync(publicDir+contentLoc.slice(0,-1)+".json", content);

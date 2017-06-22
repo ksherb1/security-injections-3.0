@@ -3,10 +3,15 @@
 
  		[What is currently present is only for demo purposes.]
 */
-
+html {
+	position: relative;
+	min-height: 100%;
+}
 
 body {
+	/*margin-top: 80px;*/
 	background-color: whitesmoke;
+	margin-bottom: 80px;
 }
 
 /* For bootstrap since relies on empty hrefs */
@@ -19,17 +24,47 @@ body {
   transition: all .2s;
 }
 
+.header{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #464646;
+}
+.header-text{
+	color: silver;
+	text-align: left;
+}
+.page-header{
+	border-bottom: 5px solid #337ab7;
+}
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	background-color: #464646;
+}
+.footer-text{
+	color: silver;
+	text-align: center;
+}
+
 .navbar{
 	margin-bottom: 0px;
 	background-color:silver;
 }
 
 .nav-tabs li  a {
-		color: #464646;
+		color: #555;
     height: 50px;
-
 }
-
+.nav > li.disabled > a {
+  color: #9999;
+}
+.nav-tabs > li.active > a{
+  color: #337ab7;
+}
 .container{
 	margin-top: 25px;
 	margin-bottom: 25px;
@@ -39,9 +74,6 @@ body {
     background-color: white;
 		padding: 5px;
 		box-shadow: 0 8px 16px -6px black;
-}
-.page-header{
-	border-bottom: 5px solid #337ab7;
 }
 .well{
 
@@ -53,19 +85,6 @@ body {
 .borderless td, .borderless th {
     border: none !important;
 }
-
-
-
-/*
-.si-workflow {
-	border: 2px solid black;
-}
-
-.si-question {
-	width: 500px;
-	border: 2px solid black;
-}
-*/
 
 
 .si-question-correct .well{
@@ -86,11 +105,7 @@ body {
 	color: maroon;
 	content: "X ";
 }
-/*
-.si-checklist {
-	border: 2px solid black;
-}
-*/
+
 .si-checklist-correct .well{
 	background-color: lightgreen;
 }
