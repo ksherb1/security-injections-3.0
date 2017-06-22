@@ -71,4 +71,5 @@
 							<input>
 		<div .si-certificate-pane>
 			<a #si-certificate-link>
-			<canvas #si-certificate-canvas>    //////IFRAME
+			<iframe #si-certificate-canvas>
+<footer>
