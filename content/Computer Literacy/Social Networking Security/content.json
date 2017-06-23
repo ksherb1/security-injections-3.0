@@ -64,7 +64,7 @@
                 {
                     "type": "question",
                     "id": "Question1",
-                    "prompt": "<strong>Question 1:</strong><br><br>The CAT model helps protect information you post from being seen by an inappropriate audience.",
+                    "prompt": "The CAT model helps protect information you post from being seen by an inappropriate audience.",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -82,7 +82,7 @@
                 {
                     "type": "question",
                     "id": "Question2",
-                    "prompt": "<strong>Question 2:</strong><br><br>What considerations are associated with the CAT model?",
+                    "prompt": "What considerations are associated with the CAT model?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -185,7 +185,7 @@
                 {
                     "type": "question",
                     "id": "Question1",
-                    "prompt": "<strong>Question 1:</strong><br><br> Select the correct summarization:",
+                    "prompt": "Select the correct summarization:",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -425,7 +425,7 @@
                 {
                     "type": "question",
                     "id": "question1",
-                    "prompt": "<strong>Question 1:</strong><br><br> After discussing your findings with your partner, was there anything in particular that you/your partner found that surprised you? (Please write your partner's username in the response).",
+                    "prompt": "<strong>Question 1</strong><br><br>After discussing your findings with your partner, was there anything in particular that you/your partner found that surprised you? (Please write your partner's username in the response).",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
