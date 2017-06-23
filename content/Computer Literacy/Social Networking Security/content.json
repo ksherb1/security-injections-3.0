@@ -56,12 +56,438 @@
                 {
                     "type": "paragraph",
                     "text": "<small>Source: <a href =http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post> http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post </a> </small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "Question1",
+                    "prompt": "<strong>Question 1:</strong><br><br>The CAT model helps protect information you post from being seen by an inappropriate audience.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "true"
+                },
+                {
+                    "type": "question",
+                    "id": "Question2",
+                    "prompt": "<strong>Question 2:</strong><br><br>What considerations are associated with the CAT model?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "potentialAudience",
+                            "text": "Potential audience of your post"
+                        },
+                        {
+                            "id": "lifetime",
+                            "text": "Lifetime of your post"
+                        },
+                        {
+                            "id": "privacy",
+                            "text": "Privacy of your post"
+                        },
+                        {
+                            "id": "all",
+                            "text": "All of the above"
+                        }
+                    ],
+                    "answer": "all"
                 }
             ]
         },
         {
-            "type": "subheader",
-            "text": "Answer the following questions:"
+            "header": "Post Responsibly",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In order to avoid privacy issues, it is important to take <strong>CAT</strong>, or <strong>Confidentiality</strong>, <strong>Availability</strong>, and <strong>Trust</strong> into consideration. Below is a brief description of each:"
+                },
+                {
+                    "type": "subheader",
+                    "text": "CONFIDENTIALITY"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Confidentiality answers the question \"how private are my posts?\" The confidentiality of your posts can be analyzed by completing a few steps:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>a. Read the Privacy Policy.</strong></i> While many of these can be long and tedious reads, if you are planning on disclosing information you might not want to be seen by the public, it is important to at least get a general idea of your rights and privileges when using these sites. These are subject to change, so make sure that you keep an eye on and updates the company may announce."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>b. Check your settings!</strong></i> Before you post any information on an account, check to see who will be able to see the posts you make. Most sites give you the ability to control who, or what groups you want to allow access to your profile. Remember, default settings are not always enough!"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>c. View your public profile. </strong></i> One of the best ways to make sure your information is safe from the public is by checking it yourself. Simply sign out of your account and check your profile URL. This will show you exactly what the public can see, and help you decide what settings to change."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>d. Think of your four audiences.</strong></i>  When posting to a profile, think about what permissions you have given each of these four audiences: friends, family, potential employers, and public. Consider who you want to see the post vs. who might see it."
+                },
+                {
+                    "type": "subheader",
+                    "text": "AVAILABILITY"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Availability answers the question \"how long is my information accessible?\" In order to determine the availability of posts or information you post on a social networking website, the following steps can be taken:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>a. Keep different accounts for different purposes.</strong></i> It’s likely you don’t want to let your boss see that picture of you at that party last weekend that your friend posted on Facebook. At the same time, you want potential employees to be able to get a basic idea of who you are through an online profile. Keep different accounts for different purposes; save Facebook for your friends, and keep a professional, public account on another site like LinkedIn. This will help you balance work and social life, while keeping information available for each audience."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>b. Take advantage of settings controlling availability.</strong></i>  The settings on social networking websites are getting more advanced. Look into some of the controls available to you and utilize them."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>c. Clean your profile.</strong></i> A very simple way to control the availability of information on your profile is by systematically going through your account to make sure all information is appropriate. Schedule an hour or so each month to go through your posts and delete anything that you may not want to be available."
+                },
+                {
+                    "type": "subheader",
+                    "text": "TRUST"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Trust answers the question \"who am I trusting with my information?\" The people you trust are the people who you allow to see your information and posts. To analyze the security of the trust you have, you can take the following steps:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>a. Pay attention to who you ‘friend’.</strong></i> When adding friends, you’re giving them permission to access personal data you have posted on your account. Are you going to connect with strangers you’ve never met before, on an account that gives all your personal details? Your boss may want to be friends on Facebook, but is it appropriate to entwine your social life with your work life? These are all aspects you will have to consider when choosing to allow different people access to your profile."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>b. Watch friends’ online habits.</strong></i> On websites like Facebook, users have the ability to play games. Often, these applications request access to personal information. However, some applications ask to access their friends’ personal data as well. This is why it is important to keep an eye on your friend’s online habits and check to see what permissions they are giving applications."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><strong>c. Be aware of who you share your profile with.</strong></i> On some social networking accounts, your account doesn’t use your name, only a username. These profiles give you the ability to pick and choose who knows about the account. It is important that when you are giving your username to someone to look up, they fit into the proper audience for that given profile."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following question:"
+                },
+                {
+                    "type": "question",
+                    "id": "Question1",
+                    "prompt": "<strong>Question 1:</strong><br><br> Select the correct summarization:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "c",
+                            "text": "Confidentiality is about how long your post/information is accessible."
+                        },
+                        {
+                            "id": "a",
+                            "text": "Availability is concerned witht he privacy of the post."
+                        },
+                        {
+                            "id": "t",
+                            "text": "Trust is about who you trust enough to share information with."
+                        }
+                    ],
+                    "answer": "t"
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "For this assignment, you will be working in partners. It is important that you are not friends with this partner on any social media website. Both partners should have accounts on Facebook and Twitter. Introduce yourselves and log on to your computers.In order to complete this lab, each partner will plant two ‘flags’ for the other partner to try and find through social networking. On your Twitter account, post your favorite movie title. On your Facebook account, post your favorite color."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong> One of the first things someone looking for information will do is a simple Google search. Record all information about your partner you find on the first page of results when you Google the following:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Your partner’s name",
+                        "Your partner’s name and state",
+                        "Your partner’s name and school"
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 2:</strong> Now it’s time to look at their Facebook account. Login to your account and find your partner’s page. Record the information you find (or can infer) about them when looking at their profile, and answer these questions:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Can you see where they are currently living? Working?",
+                        "Can you see their phone number?",
+                        "Can you look at photos/videos of them?",
+                        "Can you read posts that they have made? Can you see what they have posted as their favorite color?",
+                        "Was there any information that you were surprised you were able to see? If so, what was it?"
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3:</strong> Now find your partner’s Twitter account. Login to your Twitter account and see what kind of information you can find. Record the information you find (or can infer) about them when looking at their profile, and answer these questions."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Can you see where they are currently living? Working?",
+                        "Can you see their phone number?",
+                        "Can you look at photos/videos of them?",
+                        "Can you read posts that they have made? Can you see what they have posted as their favorite color?",
+                        "Was there any information that you were surprised you were able to see? If so, what was it?"
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 4:</strong> Now that you have analyzed your partner's account, analyze your own. Choose either your Facebook or Twitter account, and complete the following steps to determine the security of your account."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 5:</strong>  Complete the security checklist for confidentiality."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Do each of the following to analyze the confidentiality of information on your online profile:"
+                },
+                {
+                    "type": "checklist",
+                    "id": "securityChecklist",
+                    "list": [
+                        {
+                            "id": "questions",
+                            "header": "Security Checklist: Confidentiality",
+                            "items": [
+                                {
+                                    "id": "q1",
+                                    "text": "1. Google search the current privacy policy to see if there is any controversy. Do you see any results on the first page with potential issues?",
+                                    "ans": false,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q2",
+                                    "text": "2. Check the general settings on your account to determine who can see your information/posts. Is this information availabile to your:",
+                                    "ans": false,
+                                    "js": true
+                                },
+                                {
+                                    "id": "q3",
+                                    "text": "a. Friends?",
+                                    "ans": false,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q4",
+                                    "text": "b. Family?",
+                                    "ans": false,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q5",
+                                    "text": "c. Potential employers/General public?",
+                                    "ans": false,
+                                    "js": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small>Highlighted areas above indicate the confidentiality of your information is risky!</small>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 6:</strong> Complete the security checklist for Availability."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Do each of the following to analyze the availability of information on your online profile:"
+                },
+                {
+                    "type": "checklist",
+                    "id": "securityChecklist2",
+                    "list": [
+                        {
+                            "id": "questions",
+                            "header": "Security Checklist: Availability",
+                            "items": [
+                                {
+                                    "id": "q1",
+                                    "text": "1. Consider the lifetime of your posts. Can any group (friends, family, public) see all your posts, all the way back to the first post you made?",
+                                    "ans": false,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q2",
+                                    "text": "2. Look at some of your most recent posts, then consider your future. Do you want these posts to be available in:",
+                                    "ans": false,
+                                    "js": true
+                                },
+                                {
+                                    "id": "q3",
+                                    "text": "a. 5 years time?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q4",
+                                    "text": "b. 10 years time?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q5",
+                                    "text": "c. 30 years time?",
+                                    "ans": true,
+                                    "js": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small>Highlighted areas above indicate the confidentiality of your information is risky!</small>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 7:</strong> Complete the security checklist for Trust."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Do each of the following to analyze the trust on your online profile:"
+                },
+                {
+                    "type": "checklist",
+                    "id": "securityChecklist3",
+                    "list": [
+                        {
+                            "id": "questions",
+                            "header": "Security Checklist: Trust",
+                            "items": [
+                                {
+                                    "id": "q1",
+                                    "text": "1. Look at your friends list and think about the information you post. Do you trust everyone on your list with all the information you post?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q2",
+                                    "text": "2. Consider the personalities of the people on your friends list, and then think about your future. Will you still want to be connected to these people in:",
+                                    "ans": false,
+                                    "js": true
+                                },
+                                {
+                                    "id": "q3",
+                                    "text": "a. 5 years time?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q4",
+                                    "text": "b. 10 years time?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q5",
+                                    "text": "c. 30 years time?",
+                                    "ans": true,
+                                    "js": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small>Highlighted areas above indicate the confidentiality of your information is risky!</small>"
+                },
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "<strong>Question 1:</strong><br><br> After discussing your findings with your partner, was there anything in particular that you/your partner found that surprised you? (Please write your partner's username in the response).",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "(Note:  Please enter your partner's username before each response)."
+                },
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "<strong>Question 1</strong><br><br>Did you find any potential weaknesses in your Confidentiality, Availability, or Trust? What can you do to fix the issue?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question2",
+                    "prompt": "<strong>Question 2</strong><br><br>Do you feel less confident in the security of your account after going through the checklists?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question3",
+                    "prompt": "<strong>Question 3</strong><br><br>Which of your accounts do you think is least secure according to the CAT model, your Facebook account or your Twitter account? Why?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Further Work (optional – check with your instructor if you need to answer the following questions)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Copy the following questions and your responses and paste them below the checklist in your word document."
+                },
+                {
+                    "type": "question",
+                    "id": "question1optional",
+                    "prompt": "<strong>Question 1</strong><br><br>Add your partner to your connections (or friends list) and repeat the lab assignment. Is there a difference in what you can see now, as opposed to what you could see before?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question2optional",
+                    "prompt": "<strong>Question 2</strong><br><br>Do you feel that your account is secure, based on the people you trust/allow to view your profile?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
         }
     ]
 }
