@@ -1,0 +1,195 @@
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.tpl.min.js"></script>
+	<title>Security Injection: Integer Error - CS0 Pseudocode</title>
+	<style>
+html{position:relative;min-height:100%}body{background-color:whitesmoke;margin-bottom:80px}.nav,.pagination,.carousel,.panel-title a{cursor:pointer}[type="checkbox"]:checked+label:after{content:'✔';font-size:30px;color:#09ad7e;transition:all .2s}.header{position:absolute;top:0;width:100%;height:100px;background-color:#464646}.header-text{color:silver;text-align:left}.page-header{border-bottom:5px solid #337ab7}.footer{position:absolute;bottom:0;width:100%;height:80px;background-color:#464646}.footer-text{color:silver;text-align:center}.navbar{margin-bottom:0;background-color:silver}.nav-tabs li a{color:#555;height:50px}.nav>li.disabled>a{color:#9999}.nav-tabs>li.active>a{color:#337ab7}.container{margin-top:25px;margin-bottom:25px}.jumbotron{background-color:white;padding:5px;box-shadow:0 8px 16px -6px black}.nav-tabs{margin-bottom:0}.borderless td,.borderless th{border:none !important}.si-question-correct .well{background-color:lightgreen}.si-question-incorrect .well{background-color:lightpink}.si-checkbox-label-correct::before{color:forestgreen;content:"V ";text-decoration:none}.si-checkbox-label-incorrect::before{color:maroon;content:"X "}.si-checklist-correct .well{background-color:lightgreen}.si-checklist-incorrect .well{background-color:lightpink}.si-checklist-active{font-size:1.6em}.si-code-clicked{font-weight:bold;font-style:italic}.si-code-vulnerability{background-color:yellow}
+</style>
+	<script>var app=angular.module("modApp",["ngSanitize","ngCookies","mgcrea.ngStrap"]);app.controller("modCtrl",["$scope","$http","$cookies","$sce",function(e,t,o,s){function r(t){e.module=t,e.currentsectionIndex=0,e.currentsection=e.module.sections[0],e.module.sections.push({header:"Final Page"}),a()}function u(t){e.score={name:t.name,variant:t.variant,sections:[]};for(i in t.sections){section={header:t.sections[i].header,time:0,questions:{}};for(j in t.sections[i].units)unit=t.sections[i].units[j],("question"==unit.type&&!unit.ignored||"checklist"==unit.type)&&(section.questions[unit.id]=1);e.score.sections.push(section)}}function a(){if(moduleCookie=e.module.name+"-"+e.module.variant+"-",null!=o.get(moduleCookie+"progress")&&e.redirectCookie(),cookieAnswer=o.getObject(moduleCookie+"forms"),n=0,"undefined"==typeof cookieAnswer)console.log("No cookies to be loaded");else for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":if(null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].answer&&(unit.checked=!0,unit.value=cookieAnswer[n].answer);n++}break;case"checkbox":if(null!=cookieAnswer[n]){for(c in unit.choices)unit.choices[c].id==cookieAnswer[n].prompt[c]&&(1==cookieAnswer[n].answer[c]?unit.choices[c].value=!0:unit.choices[c].value=!1);n++}break;case"textarea":null!=cookieAnswer[n]&&cookieAnswer[n].prompt==unit.prompt&&(unit.value=cookieAnswer[n].answer,n++)}else unit.type}function l(e,t,o){return o?($(t).removeClass("si-"+e+"-incorrect"),$(t).addClass("si-"+e+"-correct")):($(t).removeClass("si-"+e+"-correct"),$(t).addClass("si-"+e+"-incorrect")),o}function d(t,o){var n=20,c=295-n-20,r=new jsPDF("p","mm","a4");r.setFontSize(20),r.text("Security Injections @ offline",15,n),r.line(10,25,190,25),r.setFontSize(12),r.text("Module: "+o.course,20,35),r.text("Student: "+o.name,20,45),r.text("Date: "+o.today,20,55),r.text("ID: "+o.hash,20,65),r.addPage(),r.setFontSize(20),r.text("Discussion Questions",15,n),r.line(10,25,190,25),n=40;for(i in t){n>c&&(r.addPage(),n=20),r.setFontSize(16);var u=r.splitTextToSize(t[i].prompt,180),a=u.length;r.text(15,n,u),n+=5.6444*a+10,r.setFontSize(12);var l=r.splitTextToSize(t[i].answer,160),d=l.length;r.text(35,n,l),n+=4.2333*d+10}dataUri=r.output("datauristring"),e.detailFrame=s.trustAsResourceUrl(dataUri)}e.loadContent=function(){var o=e.repo+$("#name").html()+"/"+$("#variant").html()+".json";console.log("Loading content from "+o),e.contentError=!1,t.get(o).then(function(e){r(e.data),u(e.data)},function(t){if($("#default").length){console.log("* No response - using default");var o=JSON.parse($("#default").html());r(o),u(o)}else console.log("* No response - try again"),e.contentError=!0})},e.repo="http://cis1.towson.edu/~cyber4all/modules/content/",e.sectionscompleted=0,e.loadContent(),e.form={},e.starttime=new Date,e.redirectCookie=function(){var t=o.get(moduleCookie+"progress");e.sectionscompleted=parseInt(t),e.currentsectionIndex=e.sectionscompleted,e.currentsection=e.module.sections[e.currentsectionIndex]},e.saveCookie=function(t){var n=new Date,s=new Date(n);s.setMinutes(n.getMinutes()+120),o.put(moduleCookie+"progress",t,{expires:s}),o.putObject(moduleCookie+"forms",[]);for(i in e.module.sections)for(q in e.module.sections[i].units)if(unit=e.module.sections[i].units[q],"question"==unit.type)switch(unit.mode){case"radio":(r=o.getObject(moduleCookie+"forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject(moduleCookie+"forms",r);break;case"checkbox":var r=o.getObject(moduleCookie+"forms"),u=[],a=[];for(c in unit.choices)void 0===unit.choices[c].value||unit.ignored||(a.push(unit.choices[c].id),u.push(unit.choices[c].value));r.push({prompt:a,answer:u}),o.putObject(moduleCookie+"forms",r);break;case"textarea":(r=o.getObject(moduleCookie+"forms")).push({prompt:unit.prompt,answer:unit.value}),o.putObject(moduleCookie+"forms",r)}else unit.type},e.checkAnswers=function(){var t=!0;for(i in e.currentsection.units){unit=e.currentsection.units[i],id="#"+unit.id;var o=!0;if("question"!=unit.type||unit.ignored){if("checklist"==unit.type){s=!0;for(j in unit.list){group=unit.list[j],group_id=id+"-"+group.id;for(k in group.items){item=group.items[k],item_id=group_id+"-"+item.id,void 0===item.value&&(item.value=!1),item.js&&(item.value=$(item_id).is(":checked"));var n=item.value==item.ans;s&=n,l("checkbox",item_id,n),l("checkbox-label",item_id+"-label",n)}}o&=l("checklist",id,s)}}else switch(unit.mode){case"radio":o=l("question",id,unit.value==unit.answer);break;case"checkbox":var s=!0;for(j in unit.choices)choice=unit.choices[j],choice_id=id+"-"+choice.id,void 0===choice.value&&(choice.value=!1),s&=n=choice.value==choice.ans,l("checkbox",choice_id,n),l("checkbox-label",choice_id+"-label",n);o=l("question",id,s);break;case"textarea":var c=new RegExp(unit.pattern);o=l("question",id,c.test(unit.value))}o||(t=!1,e.score.sections[e.currentsectionIndex].questions[unit.id]+=1)}if(t&&e.currentsectionIndex==e.sectionscompleted){var r=new Date;e.score.sections[e.sectionscompleted].time=r-e.starttime,e.starttime=r,e.sectionscompleted++}e.saveCookie(e.sectionscompleted)},e.gotoSection=function(t){t<=e.sectionscompleted?(e.currentsectionIndex=t,e.currentsection=e.module.sections[t],e.saveCookie(e.sectionscompleted)):console.log("Cannot go to section "+t+": may only go up to section "+e.sectionscompleted)},e.generateCertificate=function(){var o=e.module.name+" - "+e.module.variant,n=new Date,s=n.getDate(),c=n.getMonth()+1,r=n.getFullYear();s<10&&(s="0"+s),c<10&&(c="0"+c);var u=c+"/"+s+"/"+r,a=e.form.name+o+u,l=0;if(0==a.length)return l;for(i=0;i<a.length;i++)char=a.charCodeAt(i),l=(l<<5)-l+char,l&=l;l=Math.abs(l);var m={name:e.form.name,course:o,hash:l,today:u};for(i in e.module.sections)"Discussion Questions"==e.module.sections[i].header&&(pageIndex=i);var p=[];for(q in e.module.sections[pageIndex].units)unit=e.module.sections[pageIndex].units[q],"question"==unit.type&&"textarea"==unit.mode&&null!=unit.value&&(p[q]={prompt:unit.prompt,answer:unit.value});d(p,m),finalPDF=e.detailFrame,$("#si-certificate-link").attr("href",finalPDF),$("#si-certificate-link").prop("disabled",!1),$("#si-certificate-pane").show(),e.form.modulename=e.module.name,e.form.variant=e.module.variant,e.form.date=n.toJSON(),e.form.score=JSON.stringify(e.score),t.post(e.repo+"record",e.form)}}]);</script>
+</head>
+<body>
+<div ng-app="modApp" ng-controller="modCtrl">
+	<!--<header class = "header">
+		<div class = "container">
+			<h1 class = "header-text">
+				Security Injections 3.0
+			</h1>
+		</div>
+	</header>-->
+	<div class = "container">
+		<div ng-if="contentError">
+			<p class="si-error">There was a problem getting content.</p>
+			<button ng-click="loadContent()">Try Again</button>
+		</div>
+
+	<div ng-if="!contentError">
+		<div class ="page-header">
+		<h1>{{ module.name }} - {{ module.variant }}</h1>
+	</div>
+		<!-- workflow -->
+			<div class = "container-fluid">
+        <div class="container-fluid">
+					<ul class="nav nav-tabs nav-justified">
+								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted"  ng-class="{'active': $index==currentsectionIndex}" ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
+								<li class = "disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted" ><a>{{section.header}}</a></li>
+					</ul>
+				</div>
+			</div>
+
+
+		<!-- section content -->
+		<div ng-if="currentsectionIndex < module.sections.length-1" class="si-content">
+			<div class = "jumbotron">
+			<h2 ng-bind-html="currentsection.header"></h2>
+			<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
+				<div class = "row">
+					<h3 ng-switch-when="subheader" ng-bind-html="unit.text"></h3>
+					<p ng-switch-when="paragraph" ng-bind-html="unit.text"></p>
+					<div ng-switch-when="list" class="si-list">
+						<ol ng-if="unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ol>
+						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
+					</div>
+				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
+				<div ng-switch-when="image" class="col-md-12">
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
+				</div>
+				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
+				<table ng-switch-when="table" class="table">
+					<tr>
+						<th ng-repeat = "items in unit.headers" ng-bind-html ="items"></th>
+					</tr>
+					<tr ng-repeat = "items in unit.cells">
+						<td ng-bind-html = "items.first"></td>
+						<td ng-bind-html = "items.second"></td>
+					</tr>
+				</table>
+				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
+					<div class="well">
+					<h5 ng-bind-html="unit.prompt"></h5>
+					<div ng-switch="unit.mode">
+						<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
+							<label>
+								<input type="radio" ng-model="unit.value"  value="{{ choice.id }}" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
+								<span ng-bind-html="choice.text" ng-checked="unit.checked" id="{{ unit.id+'-'+choice.id }}-label"></span>
+								</label>
+							</div>
+						<div ng-switch-when="checkbox" class="si-checkbox-choice" ng-repeat="choice in unit.choices">
+							<label>
+								<input type="checkbox" class="si-checkbox" ng-model="choice.value" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
+								<span ng-bind-html="choice.text" id="{{ unit.id+'-'+choice.id }}-label"></span>
+								</label>
+							</div>
+						<textarea class = "form-control" rows = "5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
+						<p ng-switch-default class="si-error">Mode invalid</p>
+						</div>
+					</div>
+
+				</div>
+				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
+					<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+					<div class ="col-md-5">
+						<div class="well">
+						<table class="table borderless" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+							<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
+							<tr ng-repeat="item in group.items">
+								<td ng-if="item.js" class="si-checklist-box-cell">
+									<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
+											disabled>
+									</td>
+								<td ng-if="!item.js" class="si-checklist-box-cell">
+									<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
+									</td>
+								<td class="si-checklist-label-cell">
+									<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
+				</div>
+						<p ng-switch-default class="si-error">Type invalid</p>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- buttons -->
+			<button class = "btn btn-primary btn-md" id="btn-check-answers" ng-click="checkAnswers()">Check Answers <span class="glyphicon glyphicon-ok"></span></button>
+			<button class = "btn btn-success btn-md" ng-if="currentsectionIndex < sectionscompleted" ng-click="gotoSection(currentsectionIndex+1)">Next Section <span class="glyphicon glyphicon-chevron-right"></span></button>
+			<button class = "btn btn-default btn-md" ng-if="currentsectionIndex >=  sectionscompleted" disabled>Next Section <span class="glyphicon glyphicon-ban-circle"></span></button>
+			</div>
+		</div>
+
+	<div ng-if="currentsectionIndex == module.sections.length-1" class="si-finished">
+		<div class ="jumbotron">
+			<div class = "row">
+			<h2 ng-bind-html="currentsection.header"></h2>
+				<div class = "col-md-6">
+					<div class = "well">
+						<div class="si-certificate-form">
+							<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
+							<p>Complete this form to generate your certificate</p>
+							<form ng-submit="generateCertificate()">
+							<div class="input-group">
+				  			<span class="input-group-addon">Full Name</span>
+				  			<input ng-model="form.name" required type="text" class="form-control">
+							</div>
+							<br>
+							<div class="input-group">
+				  			<span class="input-group-addon">Email Address</span>
+				  			<input ng-model="form.email" required type="email" class="form-control">
+							</div>
+							<br>
+							<div class="input-group">
+				  			<span class="input-group-addon">Instructor</span>
+				  			<input ng-model="form.instructor" required type="text" class="form-control">
+							</div>
+							<br>
+							<div class="input-group">
+			  				<span class="input-group-addon">Institution</span>
+			  				<input ng-model="form.institution" required type="text" class="form-control">
+							</div>
+							<br>
+							<input class="btn btn-success btn-lg" type="submit" value="Generate Certificate">
+							</form>
+						</div>
+					</div>
+				</div>
+					<div class = "col-md-6">
+						<div id="si-certificate-pane" style="display:none">
+								<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
+								<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<footer class = "footer">
+		<div class = "container">
+			<p class = "footer-text">
+				The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation
+				under grants NSF DUE-1241738,  NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649,
+				the GenCyber program, and the Intel Corporation.
+			</p>
+		</div>
+	</footer>
+</div>
+
+	<script type="text/plain" id="name">Integer Error</script>
+	<script type="text/plain" id="variant">CS0 Pseudocode</script>
+	<script type="text/plain" id="default">{"name":"Integer Error","variant":"CS0 Pseudocode","sections":[{"header":"Background","units":[{"type":"subheader","text":"Summary"},{"type":"paragraph","text":"Integer values that are too large or too small may fall outside the allowable range for their data type, leading to undefined behavior that can both reduce the robustness of your code and lead to security vulnerabilities."},{"type":"image","src":"http://imgs.xkcd.com/comics/cant_sleep.png","alt":"*XKCD Comic*","width":740,"height":244,"float":null},{"type":"attribution","copyright":"XKCD","date":"2017","link":"http://imgs.xkcd.com/comics/cant_sleep.png"},{"type":"subheader","text":"Description"},{"type":"paragraph","text":"Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short</strong>, <strong>int</strong>, <strong>long</strong>, etc. , to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."},{"type":"paragraph","text":"Input or mathematical operations such as addition, subtraction, and multiplication may lead to values that are outside of this range. This results in an integer error or overflow, which causes undefined behavior and the resulting value will likely not be what the programmer intended. Integer overflow is a common cause of software errors and vulnerabilities."},{"type":"subheader","text":"Risk - How can it happen?"},{"type":"paragraph","text":"An integer error can lead to unexpected behavior or may be exploited to cause a program crash, corrupt data, lead to incorrect behavior, or allow the execution of malicious software."},{"type":"image","src":"http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png","alt":"*Facebook group image*","width":378,"height":275,"float":null},{"type":"attribution","copyright":"Facebook","date":"2017","link":"http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png"},{"type":"subheader","text":"Real-world Examples"},{"type":"list","items":["There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.","On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,768) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments."],"ordered":true},{"type":"question","id":"memory","prompt":"Declaring a variable as type integer:","ignored":false,"mode":"radio","choices":[{"id":"infinite","text":"allocates an infinite amount of storage"},{"id":"fixed","text":"allocates a fixed amount of storage"}],"answer":"fixed"},{"type":"question","id":"effect","prompt":"An integer error in C++ causes:","ignored":false,"mode":"radio","choices":[{"id":"syntax","text":"a syntax error"},{"id":"correction","text":"the program to correct itself"},{"id":"unexpected","text":"unexpected behavior"}],"answer":"unexpected"}]}]}</script>
+</body>
