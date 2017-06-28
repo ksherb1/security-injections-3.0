@@ -1,0 +1,300 @@
+{
+    "name": "Software Development Lifecycle",
+    "variant": "CS0 C++",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Security should be considered at all phases of the software development lifecycle."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The traditional Software Development Lifecycle (SDLC) is a structured methodology for developing software. These phases of development include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Analysis or requirements gathering -- clearly defining the problem or project",
+                        "Design or planning-- creating an algorithmic solution for the problem",
+                        "Implementation-- coding the solution using a programming language, and running for correctness",
+                        "Testing-- formally testing and debugging",
+                        "Maintenance-- maintaining, changing, and documenting the program"
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Since security has become a more prevalent concern, it is important to consider security at all stages of a software project. Building secure software is more effective than adding security features after the project is complete."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/SDLC.jpg",
+                    "alt": "SDLC",
+                    "width": 275,
+                    "height": 150,
+                    "float": null
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk -- What's the Risk?:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Poor design and insufficient testing lead to insecure software. Most security issues result from attacks exploiting insecure software."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Real-world Examples:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "In 2002, in response to the proliferation of security issues, including terrorist attacks and malicious software, Bill Gates wrote a famous \"security evangelist\" memo (found here), committing his company to building secure software.",
+                        "Thousands of vulnerabilities are reported each year (see here). At the same time, the number and severity of the attacks continue to increase."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "background1",
+                    "prompt": "Security should be considered at all phases of the software development lifecycle.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a1",
+                            "text": "True"
+                        },
+                        {
+                            "id": "a2",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "a1"
+                },
+                {
+                    "type": "question",
+                    "id": "background2",
+                    "prompt": "Building secure software is more effective than adding security features after the project is complete.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a1",
+                            "text": "True"
+                        },
+                        {
+                            "id": "a2",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "a1"
+                },
+                {
+                    "type": "question",
+                    "id": "background3",
+                    "prompt": "Poor design and insufficient testing in the Software Development Life Cycle (SDLC) lead to the development of insecure software.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a1",
+                            "text": "True"
+                        },
+                        {
+                            "id": "a2",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "a1"
+                },
+                {
+                    "type": "question",
+                    "id": "background4",
+                    "prompt": "Most security issues result from attackers exploiting insecure software.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a1",
+                            "text": "True"
+                        },
+                        {
+                            "id": "a2",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "a1"
+                }
+            ]
+        },
+        {
+            "header": "Develop Responsibly",
+            "units": [
+                {
+                    "type": "list",
+                    "items": [
+                        "<i>Analyze Responsibly:</i> You must understand the given problem and consider the security risks to develop a solution.",
+                        "<i>Design Responsibly:</i> Create an algorithm to solve the problem you understood in the above step.",
+                        "<i>Implement Responsibly:</i>&nbsp;<ul><li>If possible, select a programming language (C, C++, Java, Python, etc.) you would like to code in. There are different security considerations in each language.</li><li>Select an appropriate IDE (Integrated Development Environment) tool kit for the programming language you selected (eg. Visual Studio, Net Beans, Eclipse, Dr Java, etc.). Many IDE's provide functionality to check for insecure code.</li><li>Code and compile your program, correcting syntax errors and warnings issued by the compiler.</li></ul>",
+                        "<i>Test Responsibly:</i> Run your program and examine the output carefully. Test the program for both reasonable and unreasonable values.",
+                        "<i>Maintain Responsibly:</i> Maintain your code to accommodate updates. The code must be documented, well-formatted, and readable."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "question",
+                    "id": "develop1",
+                    "prompt": " ",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "a1",
+                            "text": "The programmer's familiarity with any given language",
+                            "ans": true
+                        },
+                        {
+                            "id": "a2",
+                            "text": "Specific security features and vulnerabities in each language",
+                            "ans": true
+                        },
+                        {
+                            "id": "a3",
+                            "text": "How easily a problem can be solved using a given language",
+                            "ans": true
+                        },
+                        {
+                            "id": "a4",
+                            "text": "What languages are compatible with the given development environment (eg. what languages is your instructor willing to grade)",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "develop2",
+                    "prompt": "True or False: When testing, coders can assume that users will enter only reasonable values as input into their programs.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a1",
+                            "text": "True"
+                        },
+                        {
+                            "id": "a2",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "a2"
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Laboratory Assignment"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong>   Create a project in an Integrated Development Environment (IDE), recommended by your instructor."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 2:</strong>   Type in the following C++ program exactly as written. Include your name and date."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/SDLCc++.jpg",
+                    "alt": "Software Development Lifecycle Code Block",
+                    "width": 550,
+                    "height": 300,
+                    "float": null
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3:</strong>    Compile and run the program. Examine the output carefully."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 4:</strong>    If you carefully completed the background section, you will see that 6 is incorrect. Security features should not be added after the program is complete, but should be included at all levels of the SDLC. Revise the program (remove step 6 and add \"with security in mind\" at each step), so that it produces the correct output."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 5:</strong>    Checklists are used by airline pilots, in emergency rooms in hospitals, and increasingly in the software industry, to enforce safety procedures. We will use checklists throughout these modules, primarily to check the security of our code. Use the following checklist to ensure you have completed this lab correctly."
+                },
+                {
+                    "type": "checklist",
+                    "id": "securityChecklist",
+                    "list": [
+                        {
+                            "id": "questions",
+                            "header": "Security Checklist",
+                            "items": [
+                                {
+                                    "id": "q1",
+                                    "text": "1. Is security considered in the analysis phase, when you are defining the problem?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q2",
+                                    "text": "2. Is security considered in the design phase?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q3",
+                                    "text": "3. Is security considered in the implementation phase?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q4",
+                                    "text": "4. Is security considered in the testing phase?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q5",
+                                    "text": "5. Is security considered in the maintenance phase?",
+                                    "ans": true,
+                                    "js": false
+                                },
+                                {
+                                    "id": "q6",
+                                    "text": "6. Is security considered in all parts of the SDLC?",
+                                    "ans": true,
+                                    "js": true
+                                }
+                            ]
+                        }
+                    ],
+                    "code": null,
+                    "javascript": "./checklist.js"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you answered yes to all of the above questions, you are describing the Secure Development Lifecycle (SDLC)"
+                }
+            ]
+        }
+    ]
+}
