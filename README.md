@@ -7,7 +7,10 @@ This repository contains code for web-applications designed to teach secure codi
 
 ## NODE DEPENDENCIES (must be installed separately; see instructions below)
 - express
+- cors
 - uglify-js
+- uglifycss
+
 
 
 
@@ -35,8 +38,8 @@ This repository contains code for web-applications designed to teach secure codi
 1) Install node and npm
 2) Open a terminal
 3) Navigate to your project directory
-4) Type the following command (for example):
+4) Type the following command:
 
-`npm install uglify-js`
+`npm install`
 
 5) All dependencies required should be automatically downloaded and stored in a "node_modules" directory in your project folder.

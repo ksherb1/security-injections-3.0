@@ -1,0 +1,21 @@
+{
+  "name": "security-injections-3.0",
+  "description": "Cybersecurity modules to teach secure programming principles",
+  "dependencies": {
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "uglify-js": "^3.0.20",
+    "uglifycss": "^0.0.27"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "",
+    "postinstall": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylernhoward/security-injections-3.0.git"
+  },
+  "author": "",
+  "license": ""
+}
