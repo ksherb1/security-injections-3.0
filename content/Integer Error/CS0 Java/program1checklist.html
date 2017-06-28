@@ -6,25 +6,25 @@ public class IntegerError {
 
     Scanner scan = new Scanner(System.in);
     // variable declarations
-    int i;
-    int j;
-    int result;
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">int i;</span>
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">int j;</span>
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">int result;</span>
 
     System.out.println("Largest integer is " + Integer.MAX_VALUE);
     System.out.println("Smallest integer is " + Integer.MIN_VALUE);
 
     System.out.print("Input two integer values: ");
-    i = scan.nextInt();
-    j = scan.nextInt();
+    i = <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">scan.nextInt();</span>
+    j = <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">scan.nextInt();</span>
 
     System.out.println("\nYou entered the following values: ");
     System.out.println("Integer: " + i + " " + j);
 
-    result = i * 10;
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">result = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i * 10;</span></span>
     System.out.println("Your number times ten is " + result);
-    result = i + j;
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">result = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i + j</span>;</span>
     System.out.println("The sum of your numbers is " + result);
-    result = i * j;
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">result = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i * j</span>;</span>
     System.out.println("The product of your numbers is " + result);
 
   }
