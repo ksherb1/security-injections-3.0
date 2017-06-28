@@ -97,7 +97,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 		$scope.repo = "http://cis1.towson.edu/~cyber4all/modules/content/";		// IP address of our production server TODO: change as needed
 		$scope.sectionscompleted = 0;				// start from the first section
 		$scope.loadContent();						// initialize module object and contentError boolean
-		$scope.form = {}							// initialize submission form
+		$scope.form = {}							 // initialize submission form
 		$scope.starttime = new Date();				// initialize start time, to track each section's completion time
 	}
 
@@ -198,15 +198,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 
 	/*
 	 * functionality to save and progress to cookies (or decide to not bother)
-	 *
-	 *  At a minimum, cookies to remember sectionscompleted
-	 *  TODO: But we also should store answers to textarea questions, for certificate
-	 *  And to look completely professional we should restore ALL user inputs
-	 *  	note that graded MC questions don't need to be saved to do this
-	 *  	but MC questions can theoretically be ungraded, so we should accommodate them
-
-
-	 information we want is contained in
+	 *  information we want is contained in
 	 * 		$scope.module.sections[each].units[each whose type is 'question' and mode is 'textarea']
 	 * 			.prompt
 	 * 		and .value
@@ -285,11 +277,8 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 
 						answers.push({prompt:ids, answer:checked});
 						$cookies.putObject('forms',answers);
-
-
 				}
 				*/
-
 		 }
 		}
  }
@@ -491,7 +480,7 @@ $scope.checkAnswers = function() {
 		var doc = new jsPDF("p","mm","a4");
 
 		doc.setFontSize(20);
-		doc.text("Security Injections @ offline",leftMargin,topMargin);
+		doc.text("Security Injections @ Towson",leftMargin,topMargin);
 		doc.line(10,25,190,25);
 		doc.setFontSize(12);
 		doc.text("Module: "+data.course, 20, 35);	// COURSE
@@ -569,34 +558,7 @@ $scope.checkAnswers = function() {
 					'hash': hash,
 					'today': today
 				}
-		/*
-		var canvas = document.getElementById("si-certificate-canvas");
-		var ctx = canvas.getContext('2d');
 
-		defaultCertificate(ctx, draw_data);
-
-		var img = new Image();
-		img.crossOrigin = "anonymous";	// teach JS it's safe to download this image...
-		img.onload = function(event) {
-			// paint right over the default
-			prettyCertificate(ctx, draw_data, img);
-		}
-		img.src = $scope.repo+"images/blank_certificate.png"
-
-		// Step 5: Append page(s) of answers to ungraded text-based questions.
-		/*
-		 * TODO: all of this
-		 *
-		 * Information we want is contained in
-		 * 		$scope.module.sections[each].units[each whose type is 'question' and mode is 'textarea']
-		 * 			.prompt
-		 * 		and .value
-		 *
-		 * I think the hard part will be to get the certificate to have multiple pages.
-		 *
-		 *
-		certData = canvas.toDataURL();
-		*/
 		for(i in $scope.module.sections){
 			if ($scope.module.sections[i].header == "Discussion Questions"){
 				pageIndex = i;
@@ -618,10 +580,6 @@ $scope.checkAnswers = function() {
 		pdfCertificate(discussionQuestions,draw_data);
 		finalPDF = $scope.detailFrame
 
-
-//<object data="/url/to/file.pdf" type="application/pdf" width="500" height="300">
-//  <a href="/url/to/file.pdf">Download file.pdf</a>
-//</object>
 
 		// Step 6: Make certificate available for download
 
