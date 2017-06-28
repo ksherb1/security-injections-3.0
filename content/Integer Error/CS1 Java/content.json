@@ -1,0 +1,119 @@
+{
+    "name": "Integer Error",
+    "variant": "CS1 Java",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Integer values that are too large or too small may fall outside the allowable bounds for their data type, leading to unpredictable problems that can both reduce the robustness of your code and lead to potential security problems."
+                },
+                {
+                    "type": "image",
+                    "src": "http://imgs.xkcd.com/comics/cant_sleep.png",
+                    "alt": "*XKCD Comic*",
+                    "width": 740,
+                    "height": 244,
+                    "float": null
+                },
+                {
+                    "type": "attribution",
+                    "copyright": "XKCD",
+                    "date": "2017",
+                    "link": "http://imgs.xkcd.com/comics/cant_sleep.png"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -231 through 231-1."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Input or mathematical operations such as addition, subtraction, and multiplication may lead to values that are outside of this range. This results in an integer error or overflow, which causes undefined behavior and the resulting value will likely not be what the programmer intended. Integer overflow is a common cause of software errors and vulnerabilities."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk – How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "An integer error can lead to unexpected behavior or may be exploited to cause a program crash, corrupt data, lead to incorrect behavior, or allow the execution of malicious software."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "image",
+                    "src": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png",
+                    "alt": "*Facebook group image*",
+                    "width": 230,
+                    "height": 175,
+                    "float": null
+                },
+                {
+                    "type": "attribution",
+                    "copyright": "Facebook",
+                    "date": "2017",
+                    "link": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.",
+                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then. <small>Source: Year 2038 Problem\"http://en.wikipedia.org/wiki/Year_2038_problem.</small>"
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "question",
+                    "id": "memory",
+                    "prompt": "Declaring a variable as type integer:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "infinite",
+                            "text": "Allocates an infinite amount of storage"
+                        },
+                        {
+                            "id": "fixed",
+                            "text": "Allocates a fixed amount of storage"
+                        }
+                    ],
+                    "answer": "fixed"
+                },
+                {
+                    "type": "question",
+                    "id": "effect",
+                    "prompt": "An integer error in C++ or Java causes:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "syntax",
+                            "text": "A syntax error"
+                        },
+                        {
+                            "id": "correction",
+                            "text": "The program to correct itself"
+                        },
+                        {
+                            "id": "unexpected",
+                            "text": "Unexpected behavior"
+                        }
+                    ],
+                    "answer": "unexpected"
+                }
+            ]
+        }
+    ]
+}

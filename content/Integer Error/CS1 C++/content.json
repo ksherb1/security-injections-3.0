@@ -246,7 +246,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 3:</strong> Compile and run the program formed in step 3."
+                    "text": "<strong>STEP 4:</strong> Compile and run the program formed in step 3."
                 },
                 {
                     "type": "question",
@@ -295,6 +295,148 @@
                         }
                     ],
                     "answer": "2"
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": [
+                {
+                    "type": "checklist",
+                    "id": "Pgm1CL",
+                    "list": [
+                        {
+                            "id": "var",
+                            "header": "Check each line of code:",
+                            "items": [
+                                {
+                                    "id": "var",
+                                    "text": "Click each declaration of an integer variable.",
+                                    "ans": true,
+                                    "js": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "vuln",
+                            "header": "For each variable:",
+                            "items": [
+                                {
+                                    "id": "input",
+                                    "text": "Click all input operations that assign values to the variable.",
+                                    "ans": true,
+                                    "js": true
+                                },
+                                {
+                                    "id": "math",
+                                    "text": "Click all mathematical operations involving the variable.",
+                                    "ans": true,
+                                    "js": true
+                                },
+                                {
+                                    "id": "assign",
+                                    "text": "Click all assignments made to the variable.",
+                                    "ans": true,
+                                    "js": true
+                                }
+                            ]
+                        }
+                    ],
+                    "code": "./securityChecklist.cpp",
+                    "javascript": "./checklist.js"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Highlighted areas indicate vulnerabilities."
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "discussionqQestion1",
+                    "prompt": "In your own words, describe an integer error.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion2",
+                    "prompt": "How could an integer overflow error occur in your program?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion3",
+                    "prompt": "What happens when an integer error occurs?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion4",
+                    "prompt": "Why is multiplication particularly risky?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion5",
+                    "prompt": "Overflow can also occur when the dividend is equal to the minimum (negative) value for the signed integer type and the divisor is equal to -1. Demonstrate this problem adding the following lines to the end of the above program.<br><br><code>cout << \"INTEGER OVERFLOW: i = \" << INT_MIN/-1 << endl;</code>",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "subheader",
+                    "text": "For each of the following give the appropriate Java declaration:"
+                },
+                {
+                    "type": "question",
+                    "id": "numStudents",
+                    "prompt": "Number of students at your college",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": null
+                },
+                {
+                    "type": "question",
+                    "id": "popBaltimore",
+                    "prompt": "Population of Baltimore 637,455",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": null
+                },
+                {
+                    "type": "question",
+                    "id": "popMaryland",
+                    "prompt": "Population of Maryland 5.6 million",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": null
+                },
+                {
+                    "type": "question",
+                    "id": "popWorld",
+                    "prompt": "the world population (6.6 billion)",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": null
+                },
+                {
+                    "type": "question",
+                    "id": "threeThings",
+                    "prompt": "Name three things you might do in your next program to prevent an integer error from occurring.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
                 }
             ]
         }
