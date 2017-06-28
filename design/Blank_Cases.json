@@ -1,0 +1,180 @@
+//THIS IS THE BACKBONE OF THE WHOLE CONTENT.JSON FILE
+{
+    "name": " ",
+    "variant": " ",
+    "sections": [
+        {
+            "header": " ",
+            "units": []
+        }
+    ]
+}
+
+//TEXT AREA: For questions where you need text boxes for the asnwers
+{
+    "type": "question",
+    "id": "question1",
+    "prompt": " ",
+    "ignored": true,
+    "mode": "textarea",
+    "pattern": "null"
+}
+
+
+
+//CHECKBOX MODE: For questions with multiple answers
+{
+    "type": "question",
+    "id": " ",
+    "prompt": " ",
+    "ignored": false,
+    "mode": "checkbox",
+    "choices": [
+        {
+            "id": " ",
+            "text": " ",
+            "ans":
+        },
+        {
+            "id": " ",
+            "text": " ",
+            "ans":
+        },
+        {
+            "id": " ",
+            "text": " ",
+            "ans":
+        }
+    ]
+}
+
+//RADIO MODE: For questions with only one answer
+{
+    "type": "question",
+    "id": "Question ",
+    "prompt": " ",
+    "ignored": false,
+    "mode": "radio",
+    "choices": [
+        {
+            "id": " ",
+            "text": " "
+        },
+        {
+            "id": " ",
+            "text": " "
+        },
+        {
+            "id": " ",
+            "text": " "
+        }
+    ],
+    "answer": " "
+}
+
+//BLANK
+{
+    "type": " ",
+    "text": " "
+}
+
+//SUBHEADER
+{
+    "type": "subheader",
+    "text": " "
+}
+
+//PARAGRAPH
+{
+    "type": "paragraph",
+    "text": " "
+}
+
+
+//LIST: creates a bulleted list where "Step 1" is bolded. If you want to number it, change "ordered" to 'true'.
+{
+    "type": "list",
+    "items": [
+        "<strong> Step 1:</strong> ",
+        "<strong> :</strong>  ",
+        "<strong> :</strong>  ",
+        "<strong> :</strong>  ",
+        "<strong> :</strong>  "
+    ],
+    "ordered": false
+}
+
+//IMAGE: "alt" is for the text that will appear if the image doesn't.
+{
+    "type": "image",
+    "src": " ",
+    "alt": " ",
+    "width": ,
+    "height": ,
+    "float": null
+}
+
+
+//SECURITY CHECKLIST TEMPLATE (change as needed)
+{
+    "type": "checklist",
+    "id": "securityChecklist",
+    "list": [
+        {
+            "id": "questions",
+            "header": "Security Checklist",
+            "items": [
+                {
+                    "id": "q1",
+                    "text": "1. ",
+                    "ans": true,
+                    "js": false
+                },
+                {
+                    "id": "q2",
+                    "text": "2. ",
+                    "ans": true,
+                    "js": false
+                },
+                {
+                    "id": "q3",
+                    "text": "3. ",
+                    "ans": true,
+                    "js": false
+                },
+                {
+                    "id": "q4",
+                    "text": "4. ",
+                    "ans": true,
+                    "js": false
+                },
+                {
+                    "id": "q5",
+                    "text": "5. ",
+                    "ans": true,
+                    "js": false
+                },
+                {
+                    "id": "q6",
+                    "text": "6. ",
+                    "ans": true,
+                    "js": false
+                },
+                {
+                    "id": "q7",
+                    "text": "7. ",
+                    "ans": true,
+                    "js": false
+                }
+            ]
+        }
+    ]
+}
+
+//CODEBLOCK: for attaching pieces of code to the webpage. (You don't have to copy and past the code
+// which can be more tedious, you can just create a new code file and link it like this:  
+//"code": "./program1step3.cpp )
+{
+    "type": "codeblock",
+    "code": " "
+}

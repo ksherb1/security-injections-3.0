@@ -1,0 +1,16 @@
+    cout << "Input an integer value " << endl;
+    cin >> i;
+    cout << "Enter a character value " << endl;
+    cin >> ch;
+    cout << "Enter a short value " << endl;
+    cin >> sh;
+    cout << "Enter an unsigned short value " << endl;
+    cin >> us;
+    cout << "Enter a long value " << endl;
+    cin >> lon;
+    cout << endl << "You entered the following values: " << endl;
+    cout << "integer: " << i << endl;
+    cout << "character: " << ch << endl;
+    cout << "short: " << sh << endl;
+    cout << "unsigned short: " << us << endl;
+    cout << "long: " << lon << endl;
