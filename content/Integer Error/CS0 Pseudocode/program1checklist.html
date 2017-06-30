@@ -1,18 +1,18 @@
-    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">integer i;
-    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">integer j;
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">integer i</span>
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">integer j</span>
 
     Display "For this compiler: " sizeof (int) "bytes"
     Display "largest integer is " INT_MAX
     Display "smallest integer is " INT_MIN
 
     Display "Input two integer values "
-    Input i, j
+    <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">Input i, j</span>
 
     Display "You entered the following integers: " i " " j
 
-    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">integer result</span> = i * 10
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">integer result</span> = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i * 10</span></span>
     Display "Your number times ten is " result
-    result = i + j;
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">result = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i + j</span></span>
     Display "The sum of your numbers is " result
-    result = i * j;
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">result = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i * j</span></span>
     Display "The product of your number is " result
