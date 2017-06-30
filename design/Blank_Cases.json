@@ -95,11 +95,11 @@
 {
     "type": "list",
     "items": [
-        "<strong> Step 1:</strong> ",
-        "<strong> :</strong>  ",
-        "<strong> :</strong>  ",
-        "<strong> :</strong>  ",
-        "<strong> :</strong>  "
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
     ],
     "ordered": false
 }
