@@ -1,0 +1,387 @@
+{
+    "name": "Integer Error",
+    "variant": "CS2 Java",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Integer values that are too large or too small may fall outside the allowable bounds for their data type, leading to unpredictable problems that can both reduce the robustness of your code and lead to potential security problems."
+                },
+                {
+                    "type": "image",
+                    "src": "http://imgs.xkcd.com/comics/cant_sleep.png",
+                    "alt": "*XKCD Comic*",
+                    "width": 740,
+                    "height": 244,
+                    "float": null
+                },
+                {
+                    "type": "attribution",
+                    "copyright": "XKCD",
+                    "date": "2017",
+                    "link": "http://imgs.xkcd.com/comics/cant_sleep.png"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Operations that result in values outside of this range can lead to a variety of problems, which apply to all data types that store integer variables, including <strong>int</strong>, <strong>short</strong>, and <strong>long</strong>."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<i>Integer Overflow/Underflow</i>: Mathematical operations can increase integer values above the maximum or decrease them below the minimum allowed values. For instance, if <code>i = Integer.MAX_VALUE</code> , the increment operator i++ will cause an overflow and the resulting value will be the smallest possible integer value <code>Integer.MIN_VALUE</code>. Addition, subtraction, multiplication, and even division can cause overflow problems.",
+                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type (say, from a <strong>long</strong> to a <strong>short</strong>), the value will be truncated if it is outside the range of the smaller type: data that can't fit will simply be thrown out. For example, if you have a <strong>long</strong> variable that has a value that is greater than the largest value that can be stored in a <strong>short</strong> (<code>long l=32800</code>), assigning the <strong>long</strong> to a <strong>short</strong> (<code>short s = (short)l;</code>) will cause a truncation error (<code>s=-32736</code>)."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk – How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Integer variables are often used to indicate the number of items that must be stored in an array or other fixed-size buffer. If a variable with an overflow is used for this purpose, the resulting buffer might be too small for the data that will be copied into it. This can cause your program to crash, lead to incorrect behavior, or open security vulnerabilities."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small><small>Source: Year 2038 Problem <a href = http://en.wikipedia.org/wiki/Year_2038_problem> http://en.wikipedia.org/wiki/Year_2038_problem</a>.</small></small></small>"
+                },
+                {
+                    "type": "question",
+                    "id": "memory",
+                    "prompt": "Declaring a variable as type integer:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "infinite",
+                            "text": "Allocates an infinite amount of storage"
+                        },
+                        {
+                            "id": "fixed",
+                            "text": "Allocates a fixed amount of storage"
+                        }
+                    ],
+                    "answer": "fixed"
+                },
+                {
+                    "type": "question",
+                    "id": "effect",
+                    "prompt": "An integer error in C++ or Java causes:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "syntax",
+                            "text": "A syntax error"
+                        },
+                        {
+                            "id": "correction",
+                            "text": "The program to correct itself"
+                        },
+                        {
+                            "id": "unexpected",
+                            "text": "Unexpected behavior"
+                        }
+                    ],
+                    "answer": "unexpected"
+                }
+            ]
+        },
+        {
+            "header": "Code Responsibly",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "How can I avoid an Integer Error?"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<i><strong>Know your limits</i></strong>: Familiarize yourself with the ranges available for each data type. Since the size of data types is compiler and machine dependent, it is a good idea to run this sample program to show you the limits of each variable type.<br><br><code>import java.util.Scanner; <br> public class IntegerCheck { <br> &nbsp&nbsp&nbsp&nbsp public static void main(String[] args) { <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Scanner scan = new Scanner(System.in); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp int i; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp byte b; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp short sh; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp long lon; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid integer is between \" + Integer.MIN_VALUE + \" and \" + Integer.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid byte    is between \" + Byte.MIN_VALUE + \" and \" + Byte.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid short   is between \" + Short.MIN_VALUE + \" and \" + Short.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid long    is between \" + Long.MIN_VALUE + \" and \" + Long.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp } <br>}</code><br>",
+                        "<i><strong>Validate your input</i></strong>: Check input for range and reasonableness before conducting operations (more on this later).",
+                        "<i><strong>Check for possible overflows</i></strong>: Always check results of arithmetic operations or parsing of strings to integers, to be sure that an overflow has not occurred. The result of multiplying two positive integers should be at least as big as both of those integers. If you find a result that overflows, you can take appropriate action before the result is used. Imagine you were adding two positive integers. Instead of writing:<br><br><code>int sum = someInteger + someOtherInteger;</code><br><br>You might try this instead:<br><br><code>if (((someInteger >0) && (someOtherInteger >0) && (some Integer> (Integer.MAX_VALUE-someOtherInteger))) ||<br>&nbsp&nbsp&nbsp&nbsp((someInteger <0) && (someOtherInteger <0) && (someInteger < (Integer.MIN_VALUE-someOtherInteger)))) {<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp// throw an exception to handle the problem}<br>else   //  no exception, so no overflow.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  int sum = someInteger+someOtherInteger;<br></code><br>This won't completely solve the problem – you'll need to recover from the exception. As these tests can become fairly complex[1], you should be careful when relying upon manual checks for preventing integer overflow.",
+                        "<i><strong>Use compiler checks</i></strong>: Many compilers include options that can be used to check for possible integer overflows. Read the documentation for your compiler and use these functions whenever possible.",
+                        "<i><strong>Use libraries that will help you avoid errors</i></strong>: C++ programmers might use the SafeInt class, which tests for errors before conducting operations. Java programmers can use the BigInteger class to conduct arbitrary-precision integer operations that might go beyond the bounds of long integers."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small><small>[1]See <a href = https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow>https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow</a> for examples of solutions for other operations.</small></small></small>"
+                },
+                {
+                    "type": "question",
+                    "id": "avoid",
+                    "prompt": "How can you avoid integer error in your program?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "bounds",
+                            "text": "Know the smallest and largest allowable values for each data type in the programming language you are using.",
+                            "ans": true
+                        },
+                        {
+                            "id": "float",
+                            "text": "Always pick float or double as the data types for numbers.",
+                            "ans": false
+                        },
+                        {
+                            "id": "check",
+                            "text": "Check your input for reasonable values before conducting mathematical operations.",
+                            "ans": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong> Type the program below, in a Java compiler. Compile and Run."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Program 1"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./program1.java"
+                },
+                {
+                    "type": "question",
+                    "id": "populationGrowth",
+                    "prompt": "What happens if you start with a population of 10,000 and a 10% growth rate?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "Invalid output due to integer overflow"
+                        },
+                        {
+                            "id": "2",
+                            "text": "The program displays yearly population of next 10 years, with final population as 25,934"
+                        },
+                        {
+                            "id": "3",
+                            "text": "Program crashes"
+                        }
+                    ],
+                    "answer": "2"
+                },
+                {
+                    "type": "question",
+                    "id": "whatHappens",
+                    "prompt": "What happens if you start with a population of 20,000 and a 10% growth rate?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "Invalid output due to integer overflow"
+                        },
+                        {
+                            "id": "2",
+                            "text": "The program displays yearly population of next 10 years, with final population as 25,934"
+                        },
+                        {
+                            "id": "3",
+                            "text": "Program crashes"
+                        }
+                    ],
+                    "answer": "1"
+                },
+                {
+                    "type": "question",
+                    "id": "AtWhatGrowth",
+                    "prompt": "At what growth rate does the population of 20,000 start overflowing?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "5 percent"
+                        },
+                        {
+                            "id": "2",
+                            "text": "7 percent"
+                        },
+                        {
+                            "id": "3",
+                            "text": "6 percent"
+                        },
+                        {
+                            "id": "4",
+                            "text": "10 percent"
+                        }
+                    ],
+                    "answer": "3"
+                },
+                {
+                    "type": "question",
+                    "id": "doesAShort",
+                    "prompt": "Does a short seem like a good choice of data type for this program?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "yes",
+                            "text": "Yes, since the population grows at a single digit rate"
+                        },
+                        {
+                            "id": "no",
+                            "text": "No, since the population of a country can go upto 1.3 billion"
+                        }
+                    ],
+                    "answer": "no"
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": [
+                {
+                    "type": "checklist",
+                    "id": "Pgm1CL",
+                    "list": [
+                        {
+                            "id": "var",
+                            "header": "Check each line of code:",
+                            "items": [
+                                {
+                                    "id": "var",
+                                    "text": "Click each declaration of an integer variable.",
+                                    "ans": true,
+                                    "js": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "vuln",
+                            "header": "For each variable:",
+                            "items": [
+                                {
+                                    "id": "input",
+                                    "text": "Click all input operations that assign values to the variable.",
+                                    "ans": true,
+                                    "js": true
+                                },
+                                {
+                                    "id": "math",
+                                    "text": "Click all mathematical operations involving the variable.",
+                                    "ans": true,
+                                    "js": true
+                                },
+                                {
+                                    "id": "assign",
+                                    "text": "Click all assignments made to the variable.",
+                                    "ans": true,
+                                    "js": true
+                                }
+                            ]
+                        }
+                    ],
+                    "code": "./securityChecklist.java",
+                    "javascript": "./checklist.js"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Highlighted areas indicate vulnerabilities."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 2:</strong> Write a corrected version of this program that uses appropriate data types that will make this program run correctly for calculating population growths for any university and any country in the world. Turn in the correct program to your instructor."
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "image",
+                    "src": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png",
+                    "alt": "*Facebook group image*",
+                    "width": 175,
+                    "height": 120,
+                    "float": null
+                },
+                {
+                    "type": "question",
+                    "id": "discussionqQestion1",
+                    "prompt": "Look at the image above and explain the concept behind this group. Do you think it is likely that the group might cause an overflow?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion2",
+                    "prompt": "What dangers do integer overflows present?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion3",
+                    "prompt": "Discuss the implications of positive integer errors for array indices.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion4",
+                    "prompt": "Explore how division might cause integer overflows (hint: you should look at sources on the web for the answer).",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion5",
+                    "prompt": "Write a version of program 1 that still uses short variables to store results, and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the short variables.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "qDiscussionQuestion6",
+                    "prompt": "Does a short seem like a good choice of data type for this program? Why or why not?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}

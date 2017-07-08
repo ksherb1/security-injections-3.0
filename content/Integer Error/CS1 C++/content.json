@@ -33,7 +33,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -231 through 231-1."
+                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
                 },
                 {
                     "type": "paragraph",
@@ -49,7 +49,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Example of Occurence:"
+                    "text": "Examples of Occurence:"
                 },
                 {
                     "type": "image",
@@ -69,9 +69,13 @@
                     "type": "list",
                     "items": [
                         "There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.",
-                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then. <small>Source: Year 2038 Problem\"http://en.wikipedia.org/wiki/Year_2038_problem.</small>"
+                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then."
                     ],
                     "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small><small>Source: Year 2038 Problem <a href = http://en.wikipedia.org/wiki/Year_2038_problem> http://en.wikipedia.org/wiki/Year_2038_problem</a>.</small></small></small>"
                 },
                 {
                     "type": "question",
@@ -127,7 +131,7 @@
                     "items": [
                         "<em>Know your limits:</em> Familiarize yourself with the ranges available for each data type. With languages such as C and C++, the sizes of the data types are machine and compiler dependent.",
                         "<em>Choose your data types wisely:</em> Many programming languages contain multiple data types for storing integer values. If you have any concerns about the integer values that you will be using, learn about the options available in the language you are using, and choose integer types that are large enough to hold the values you will be using.",
-                        "<em>Validate your input:</em> Check input for range and reasonableness before conducting operation (more on this later)."
+                        "<em>Validate your input:</em> Check input for range and reasonableness before conducting operations (more on this later)."
                     ],
                     "ordered": true
                 },

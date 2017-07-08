@@ -33,56 +33,44 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -231 through 231-1."
+                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
                 },
                 {
                     "type": "paragraph",
                     "text": "Operations that result in values outside of this range can lead to a variety of problems, which apply to all data types that store integer variables, including <strong>int</strong>, <strong>short</strong>, and <strong>long</strong>."
                 },
                 {
-    "type": "list",
-    "items": [
-        "Integer Overflow: Mathematical operations can increase integer values above the maximum or decrease them below the minimum allowed values. For instance, if i = INT_MAX , the increment operator i++ will cause an overflow and the resulting value will be the smallest possible integer value INT_MIN. Addition, subtraction, multiplication, and even division can cause overflow problems.",
-        " ",
-        " ",
-        " ",
-        " "
-    ],
-    "ordered": false
-},
+                    "type": "list",
+                    "items": [
+                        "<i>Integer Overflow</i>: Mathematical operations can increase integer values above the maximum or decrease them below the minimum allowed values. For instance, if <code>i = INT_MAX</code> , the increment operator i++ will cause an overflow and the resulting value will be the smallest possible integer value <code>INT_MIN</code>. Addition, subtraction, multiplication, and even division can cause overflow problems.",
+                        "<i>Sign Errors</i>: C++ has both signed and unsigned integer types. Signed variables can go from a large negative value to a large positive value, while unsigned variables can only store non-negative values. Problems can arise when converting from a signed to an unsigned variable. For example, if you have a negative signed value (<code>short i = -32767</code>), and you were to assign that value to an unsigned variable (<code>unsigned short u = i</code>), the internal representation of the number is unchanged, but the resulting value is interpreted as being unsigned, leading to an undesired result (<code>u=32769</code>).",
+                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type (say, from a <strong>long</strong> to a <strong>short</strong>), the value will be truncated if it is outside the range of the smaller type: data that can't fit will simply be thrown out. For example, if you have a <strong>long</strong> variable that has a value that is greater than the largest value that can be stored in a <strong>short</strong> (<code>long l=32800</code>), assigning the <strong>long</strong> to a <strong>short</strong> (<code>short s = (short)l;</code>) will cause a truncation error (<code>s=-32736</code>)."
+                    ],
+                    "ordered": false
+                },
                 {
                     "type": "subheader",
                     "text": "Risk – How Can It Happen?"
                 },
                 {
                     "type": "paragraph",
-                    "text": "An integer error can lead to unexpected behavior or may be exploited to cause a program crash, corrupt data, lead to incorrect behavior, or allow the execution of malicious software."
+                    "text": "Integer variables are often used to indicate the number of items that must be stored in an array or other fixed-size buffer. If a variable with an overflow is used for this purpose, the resulting buffer might be too small for the data that will be copied into it. This can cause your program to crash, lead to incorrect behavior, or open security vulnerabilities."
                 },
                 {
                     "type": "subheader",
-                    "text": "Example of Occurence:"
-                },
-                {
-                    "type": "image",
-                    "src": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png",
-                    "alt": "*Facebook group image*",
-                    "width": 230,
-                    "height": 175,
-                    "float": null
-                },
-                {
-                    "type": "attribution",
-                    "copyright": "Facebook",
-                    "date": "2017",
-                    "link": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png"
+                    "text": "Examples of Occurence:"
                 },
                 {
                     "type": "list",
                     "items": [
-                        "There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.",
-                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then. <small>Source: Year 2038 Problem\"http://en.wikipedia.org/wiki/Year_2038_problem.</small>"
+                        "On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,768) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments.",
+                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then."
                     ],
                     "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small><small>Source: Year 2038 Problem <a href = http://en.wikipedia.org/wiki/Year_2038_problem> http://en.wikipedia.org/wiki/Year_2038_problem</a>.</small></small></small>"
                 },
                 {
                     "type": "question",
@@ -105,7 +93,7 @@
                 {
                     "type": "question",
                     "id": "effect",
-                    "prompt": "An integer error in C++ or Java causes:",
+                    "prompt": "An integer error in C++ or Cpp causes:",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -136,11 +124,18 @@
                 {
                     "type": "list",
                     "items": [
-                        "<em>Know your limits:</em> Familiarize yourself with the ranges available for each data type. With languages such as C and C++, the sizes of the data types are machine and compiler dependent.",
-                        "<em>Choose your data types wisely:</em> Many programming languages contain multiple data types for storing integer values. If you have any concerns about the integer values that you will be using, learn about the options available in the language you are using, and choose integer types that are large enough to hold the values you will be using.",
-                        "<em>Validate your input:</em> Check input for range and reasonableness before conducting operation (more on this later)."
+                        "<i>Know your limits</i>: Familiarize yourself with the ranges available for each data type. Since the size of C++ data types is compiler and machine dependent, it is a good idea to run this sample program to show you the limits of each variable type.",
+                        "<i>Choose your data types wisely</i>: Many programming languages contain multiple data types for storing integer values. If you have any concerns about the integer values that you will be using, learn about the options available in the language you are using, and choose integer types that are large enough to hold the values you will be using. One useful strategy for reducing integer errors is to declare any variable that is used to represent the size of an object, including integer values used as sizes, indices, loop counters, and lengths, as <strong>size_t</strong>. The <strong>size_t</strong> type is the unsigned integer type. If your variable will hold only positive values, declare as an <strong>unsigned int</strong>. If there's any doubt at all as to whether the variable will have values that are too large for a <strong>short</strong>, use an <strong>int</strong>. If an <strong>int</strong> might be too small, use a <strong>long</strong>.",
+                        "<i>Validate your input</i>: Check input for range and reasonableness before conducting operations (more on this later).",
+                        "<i>Check for possible overflows</i>: Always check results of arithmetic operations or parsing of strings to integers, to be sure that an overflow has not occurred. The result of multiplying two positive integers should be at least as big as both of those integers. If you find a result that overflows, you can take appropriate action before the result is used. Imagine you were adding two positive integers. Instead of writing:<br><br><code>int sum = someInteger + someOtherInteger;</code><br><br>You might try this instead:<br><br><code>if (((someInteger >0) && (someOtherInteger >0) && (some Integer> (INT_MAX-someOtherInteger))) ||<br>&nbsp&nbsp&nbsp&nbsp((someInteger <0) && (someOtherInteger <0) && (someInteger < (INT_MIN-someOtherInteger))))<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp... throw an exception to handle the problem<br>else   //  no exception, so no overflow.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  int sum = someInteger+someOtherInteger;<br></code><br>This won't completely solve the problem – you'll need to recover from the exception. As these tests can become fairly complex[1], you should be careful when relying upon manual checks for preventing integer overflow.",
+                        "<i>Use compiler checks</i>: Many compilers include options that can be used to check for possible integer overflows. Read the documentation for your compiler and use these functions whenever possible.",
+                        "<i>Use libraries that will help you avoid errors</i>: C++ programmers might use the SafeInt class, which tests for errors before conducting operations. C programmers can use IntegerLib."
                     ],
                     "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small><small>[1]See <a href = https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow>https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow</a> for examples of solutions for other operations.</small></small></small>"
                 },
                 {
                     "type": "question",
@@ -173,7 +168,7 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 1:</strong> Type Program 1. Compile and run."
+                    "text": "<strong>STEP 1:</strong> Type the program below, in a Cpp compiler. Compile and Run."
                 },
                 {
                     "type": "subheader",
@@ -185,120 +180,18 @@
                 },
                 {
                     "type": "question",
-                    "id": "largestInt",
-                    "prompt": "Look at the output. What is the largest possible integer value?",
+                    "id": "populationGrowth",
+                    "prompt": "What happens if you start with a population of 10,000 and a 10% growth rate?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "1",
-                            "text": "1,000,000"
+                            "text": "Invalid output due to integer overflow"
                         },
                         {
                             "id": "2",
-                            "text": "2,147,483,647"
-                        },
-                        {
-                            "id": "3",
-                            "text": "2,000,000,000"
-                        },
-                        {
-                            "id": "4",
-                            "text": "32,767"
-                        }
-                    ],
-                    "answer": "2"
-                },
-                {
-                    "type": "question",
-                    "id": "largestShort",
-                    "prompt": "Look at the output. What is the largest possible short integer value?",
-                    "ignored": false,
-                    "mode": "radio",
-                    "choices": [
-                        {
-                            "id": "1",
-                            "text": "54,767"
-                        },
-                        {
-                            "id": "2",
-                            "text": "2,147,483,647"
-                        },
-                        {
-                            "id": "3",
-                            "text": "32,000"
-                        },
-                        {
-                            "id": "4",
-                            "text": "32,767"
-                        }
-                    ],
-                    "answer": "4"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong> Type the lines below into Program 1, before 'return 0;'."
-                },
-                {
-                    "type": "codeblock",
-                    "code": "./program1step2.cpp"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 2.1:</strong> Compile and Run the program formed in step 2. Enter valid values at each prompt. For example, enter the smallest positive value for the short that leads to an error."
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 3:</strong>  Add the following lines to the end of the program (before 'return 0;') formed in step 2."
-                },
-                {
-                    "type": "codeblock",
-                    "code": "./program1step3.cpp"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 4:</strong> Compile and run the program formed in step 3."
-                },
-                {
-                    "type": "question",
-                    "id": "enter400",
-                    "prompt": "What happens when you enter 400 for short?",
-                    "ignored": false,
-                    "mode": "radio",
-                    "choices": [
-                        {
-                            "id": "1",
-                            "text": "Unxpected result"
-                        },
-                        {
-                            "id": "2",
-                            "text": "Integer overflow occurs"
-                        },
-                        {
-                            "id": "3",
-                            "text": "Program crashes"
-                        },
-                        {
-                            "id": "4",
-                            "text": "Prints 4000"
-                        }
-                    ],
-                    "answer": "4"
-                },
-                {
-                    "type": "question",
-                    "id": "enter3277",
-                    "prompt": "What happens when you enter 3277 for short?",
-                    "ignored": false,
-                    "mode": "radio",
-                    "choices": [
-                        {
-                            "id": "1",
-                            "text": "Prints 32,770"
-                        },
-                        {
-                            "id": "2",
-                            "text": "Integer overflow occurs"
+                            "text": "The program displays yearly population of next 10 years, with final population as 25,934"
                         },
                         {
                             "id": "3",
@@ -306,6 +199,76 @@
                         }
                     ],
                     "answer": "2"
+                },
+                {
+                    "type": "question",
+                    "id": "whatHappens",
+                    "prompt": "What happens if you start with a population of 20,000 and a 10% growth rate?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "Invalid output due to integer overflow"
+                        },
+                        {
+                            "id": "2",
+                            "text": "The program displays yearly population of next 10 years, with final population as 25,934"
+                        },
+                        {
+                            "id": "3",
+                            "text": "Program crashes"
+                        }
+                    ],
+                    "answer": "1"
+                },
+                {
+                    "type": "question",
+                    "id": "AtWhatGrowth",
+                    "prompt": "At what growth rate does the population of 20,000 start overflowing?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "5 percent"
+                        },
+                        {
+                            "id": "2",
+                            "text": "7 percent"
+                        },
+                        {
+                            "id": "3",
+                            "text": "6 percent"
+                        },
+                        {
+                            "id": "4",
+                            "text": "10 percent"
+                        }
+                    ],
+                    "answer": "3"
+                },
+                {
+                    "type": "question",
+                    "id": "doesAShort",
+                    "prompt": "Does a short seem like a good choice of data type for this program?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "yes",
+                            "text": "Yes, since the population grows at a single digit rate"
+                        },
+                        {
+                            "id": "no",
+                            "text": "No, since the population of a country can go upto 1.3 billion"
+                        }
+                    ],
+                    "answer": "no"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 2:</strong> Write a corrected version of this program that uses appropriate data types that will make this program run correctly for calculating population growths for any university and any country in the world. Turn in the correct program to your instructor."
                 }
             ]
         },
@@ -366,9 +329,17 @@
             "header": "Discussion Questions",
             "units": [
                 {
+                    "type": "image",
+                    "src": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png",
+                    "alt": "*Facebook group image*",
+                    "width": 175,
+                    "height": 120,
+                    "float": null
+                },
+                {
                     "type": "question",
                     "id": "discussionqQestion1",
-                    "prompt": "In your own words, describe an integer error.",
+                    "prompt": "Look at the image above and explain the concept behind this group. Do you think it is likely that the group might cause an overflow?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -376,7 +347,7 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion2",
-                    "prompt": "How could an integer overflow error occur in your program?",
+                    "prompt": "What dangers do integer overflows present?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -384,7 +355,7 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion3",
-                    "prompt": "What happens when an integer error occurs?",
+                    "prompt": "Discuss the implications of positive integer errors for array indices.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -392,7 +363,7 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion4",
-                    "prompt": "Why is multiplication particularly risky?",
+                    "prompt": "Explore how division might cause integer overflows (hint: you should look at sources on the web for the answer).",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -400,51 +371,15 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion5",
-                    "prompt": "Overflow can also occur when the dividend is equal to the minimum (negative) value for the signed integer type and the divisor is equal to -1. Demonstrate this problem adding the following lines to the end of the above program.<br><br><code>cout << \"INTEGER OVERFLOW: i = \" << INT_MIN/-1 << endl;</code>",
+                    "prompt": "Write a version of program 1 that still uses short variables to store results, and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the short variables.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
                 },
                 {
-                    "type": "subheader",
-                    "text": "For each of the following give the appropriate Java declaration:"
-                },
-                {
                     "type": "question",
-                    "id": "numStudents",
-                    "prompt": "Number of students at your college",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": null
-                },
-                {
-                    "type": "question",
-                    "id": "popBaltimore",
-                    "prompt": "Population of Baltimore 637,455",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": null
-                },
-                {
-                    "type": "question",
-                    "id": "popMaryland",
-                    "prompt": "Population of Maryland 5.6 million",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": null
-                },
-                {
-                    "type": "question",
-                    "id": "popWorld",
-                    "prompt": "the world population (6.6 billion)",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": null
-                },
-                {
-                    "type": "question",
-                    "id": "threeThings",
-                    "prompt": "Name three things you might do in your next program to prevent an integer error from occurring.",
+                    "id": "qDiscussionQuestion6",
+                    "prompt": "Does a short seem like a good choice of data type for this program? Why or why not?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

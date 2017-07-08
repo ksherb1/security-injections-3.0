@@ -49,7 +49,7 @@
 				},
 				{
 					"type": "subheader",
-					"text": "Example of Occurence:"
+					"text": "Examples of Occurence:"
 				},
 				{
 					"type": "image",
@@ -127,7 +127,7 @@
 					"items": [
 						"<em>Know your limits:</em> Familiarize yourself with the ranges available for each data type. With languages such as C and C++, the sizes of the data types are machine and compiler dependent.",
 						"<em>Choose your data types wisely:</em> Many programming languages contain multiple data types for storing integer values. If you have any concerns about the integer values that you will be using, learn about the options available in the language you are using, and choose integer types that are large enough to hold the values you will be using.",
-						"<em>Validate your input:</em> Check input for range and reasonableness before conducting operation (more on this later)"
+						"<em>Validate your input:</em> Check input for range and reasonableness before conducting operations (more on this later)"
 					],
 					"ordered": true
 				},

@@ -62,8 +62,7 @@ $(document).ready(function() {
 			if( span.hasClass(current+"-"+name) && $.inArray(index,clicked) < 0 ) {
 				clicked.push(index);					// 		note that it's been clicked, programmatically
 				span.addClass("si-code-clicked");		//		note that it's been clicked, graphically
-				if( 	   span.hasClass(name+"-vuln-input-"+name)
-						|| span.hasClass(name+"-vuln-assign-"+name)		) {
+				if(span.hasClass(name+"-vuln-input-"+name) || span.hasClass(name+"-vuln-assign-"+name)) {
 					span.addClass("si-code-vulnerability"); //	some spans get extra graphics to indicate vulnerability
 				}
 
