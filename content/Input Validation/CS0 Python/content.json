@@ -1,0 +1,15 @@
+{
+    "name": "Input Validation",
+    "variant": "CS0 Python",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                }
+            ]
+        }
+    ]
+}

@@ -468,7 +468,7 @@
                 },
                 {
                     "type": "question",
-                    "id": "question1",
+                    "id": "question2",
                     "prompt": "What are the challenges of adding input validation to your program?",
                     "ignored": true,
                     "mode": "textarea",
@@ -476,7 +476,7 @@
                 },
                 {
                     "type": "question",
-                    "id": "question1",
+                    "id": "question3",
                     "prompt": "Describe some input validation that you have encountered when using software such as registering for courses, checking your account balance, using a game, ordering an item online. Have you ever encountered a problem with the validation?",
                     "ignored": true,
                     "mode": "textarea",
