@@ -9,7 +9,7 @@
         }
     ]
 }
-//TEXT AREA: For questions where you need text boxes for the asnwers
+//TEXT AREA: For questions where you need text boxes for the answers
 {
     "type": "question",
     "id": "question1",

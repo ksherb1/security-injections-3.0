@@ -19,7 +19,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Determined attackers can use carefully crafted input to cause programs to execute arbitrary code. This technique can be used to delete or damage data, propagate worms, or obtain sensitive information."
+                    "text": "Determined attackers can use carefully crafted input to cause programs to run unauthorized commands. This technique can be used to delete or damage data, run malicious programs, or obtain sensitive information."
                 },
                 {
                     "type": "paragraph",
@@ -137,11 +137,10 @@
                 {
                     "type": "list",
                     "items": [
-                        "<strong>Type check:</strong> variables are checked to ensure they are the appropriate data type; for example, names should generally be alphabetic and age should be numeric.",
-                        "<strong>Length check:</strong> variables are checked to ensure they are the appropriate length; for example, a US telephone number has 10 digits.",
+                        "<strong>Length check:</strong> variables are checked to ensure they are the appropriate length, for example, a US telephone number has 10 digits.",
                         "<strong>Range check:</strong> numbers are checked to ensure they are within a range of possible values; for example, the value for month should lie between 1 and 12.",
                         "<strong>Reasonable check:</strong> values are checked for their reasonableness; for example: (age > 16) && (age < 100)",
-                        "<strong>Arithmetic check:</strong> variables are checked for values that might cause problems such as division by zero.",
+                        "<strong>Divide by zero check:</strong> variables are checked for values that might cause problems such as division by zero.",
                         "<strong>Format check:</strong> data are checked to ensure they are in a specified format (template); for example, dates have to be in the format DD/MM/YYYY."
                     ],
                     "ordered": false
@@ -156,7 +155,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong><i>Recover appropriately:</i></strong> A robust program responds to invalid input in a manner that is appropriate, correct, and secure. When your program runs across invalid input, it should recover as much as possible, and then repeat the request, or otherwise continue on."
+                    "text": "<strong><i>Recover appropriately:</i></strong>  A robust program will respond to invalid input in a manner that is appropriate, correct, and secure. When your program runs across invalid input, it should recover as much as possible, and then repeat the request, or otherwise continue on. Arbitrary decisions such as truncating or otherwise reformatting data to “make it fit” should be avoided."
                 },
                 {
                     "type": "question",
@@ -435,7 +434,7 @@
                             "text": "name"
                         }
                     ],
-                    "answer": "name"
+                    "answer": "4"
                 },
                 {
                     "type": "paragraph",
