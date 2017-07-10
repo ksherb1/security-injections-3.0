@@ -1,0 +1,488 @@
+{
+    "name": "Input Validation",
+    "variant": "CS0 C++",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Any program input--such as a user typing at a keyboard, a file or a network connection--can be the source of security vulnerabilities and disastrous bugs. All input should be treated as potentially dangerous."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Determined attackers can use carefully crafted input to cause programs to execute arbitrary code. This technique can be used to delete or damage data, propagate worms, or obtain sensitive information."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If the video does not work, try refreshing the page:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = https://www.youtube.com/watch?v=-8bDdrZhj_k>https://www.youtube.com/watch?v=-8bDdrZhj_k</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small>Video by Summer Lagambi, Haley McComas, and Abbey Baker.</small></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "All program inputs are a potential source of problems. If external data is not validated to ensure that it contains the right type of information, the right amount of information, and the right structure of information, it can cause problems."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/fat_finger.jpg",
+                    "alt": "Dominik Joswig",
+                    "width": 406,
+                    "height": 226,
+                    "float": null
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small>Drawing used by permission of Dominik Joswig</small></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Examples of Occurence:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "In December 2005, a Japanese securities trader made a $1 billion typing error, when he mistakenly sold 600,000 shares of stock at 1 yen each instead of selling one share for 600,000 yen. A few lines of code may have averted this error. Fat fingered typing costs a trader’s bosses £128m. The Times Online, December 09, 2005",
+                        "Web applications are highly vulnerable to input validation errors. Inputting the invalid entry \"!@#$%^&*()\" on a vulnerable e-commerce site may cause performance issues or denial of service on a vulnerable system or invalid passwords such as \"pwd’\" or \"1=1— \" may result in unauthorized access. <a href = http://www.processor.com/editorial/article.asp?article=articles%2Fp3112%2F32p12%2F32p12%2F32p12.asp&guid=&searchtype=&WordList=&bJumpTo=True>http://www.processor.com/editorial/article.asp?article=articles%2Fp3112%2F32p12%2F32p12%2F32p12.asp&guid=&searchtype=&WordList=&bJumpTo=True</a>",
+                        "A Norwegian woman mistyped her account number on an internet banking system. Instead of typing her 11-digit account number, she accidentally typed an extra digit, for a total of 12 numbers. The system discarded the extra digit, and transferred $100,000 to the (incorrect) account. A simple dialog box informing her that she had typed too many digits would have helped avoid this expensive error.<br><small><small><small>Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008</small></small></small>",
+                        "The site <strong>xssed.com</strong> lists nearly 13,000 vulnerable Web pages, including sites such as <strong>yahoo.com</strong>, <strong>google.com</strong>, <strong>msn.com</strong>, <strong>facebook.com</strong>, <strong>craigslist.com</strong> and <strong>cnn.com</strong>"
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example in Code:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./examplesInCode.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small>This code fails to check for negative test scores or for test scores above 100.</small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "inputPrograms",
+                    "prompt": "The following are sources of input for programs:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "Keyboard",
+                            "text": "Keyboard",
+                            "ans": true
+                        },
+                        {
+                            "id": "Network",
+                            "text": "Network",
+                            "ans": true
+                        },
+                        {
+                            "id": "File",
+                            "text": "File",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "evilInput",
+                    "prompt": "\"Evil\" input can occur from an error made by the user:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "true"
+                }
+            ]
+        },
+        {
+            "header": "Code Responsibly",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<strong><i>Check all input:</i></strong> Below is a partial list of some checks to include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<strong>Type check:</strong> variables are checked to ensure they are the appropriate data type; for example, names should generally be alphabetic and age should be numeric.",
+                        "<strong>Length check:</strong> variables are checked to ensure they are the appropriate length; for example, a US telephone number has 10 digits.",
+                        "<strong>Range check:</strong> numbers are checked to ensure they are within a range of possible values; for example, the value for month should lie between 1 and 12.",
+                        "<strong>Reasonable check:</strong> values are checked for their reasonableness; for example: (age > 16) && (age < 100)",
+                        "<strong>Arithmetic check:</strong> variables are checked for values that might cause problems such as division by zero.",
+                        "<strong>Format check:</strong> data are checked to ensure they are in a specified format (template); for example, dates have to be in the format DD/MM/YYYY."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The following function shows input validation to check range and/or reasonableness:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./codeResponsibly.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong><i>Recover appropriately:</i></strong> A robust program responds to invalid input in a manner that is appropriate, correct, and secure. When your program runs across invalid input, it should recover as much as possible, and then repeat the request, or otherwise continue on."
+                },
+                {
+                    "type": "question",
+                    "id": "checkedForReasonableness",
+                    "prompt": "Which of the following inputs should be checked for reasonableness?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "age",
+                            "text": "age",
+                            "ans": true
+                        },
+                        {
+                            "id": "firstName",
+                            "text": "first name",
+                            "ans": false
+                        },
+                        {
+                            "id": "city",
+                            "text": "city",
+                            "ans": false
+                        },
+                        {
+                            "id": "itemPrice",
+                            "text": "item price",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "template",
+                    "prompt": "Which of the following inputs would require a specific template or format to be appropriate?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "ssn",
+                            "text": "social security number",
+                            "ans": true
+                        },
+                        {
+                            "id": "nationalDebt",
+                            "text": "national debt",
+                            "ans": false
+                        },
+                        {
+                            "id": "telephoneNumber",
+                            "text": "telephone number",
+                            "ans": true
+                        },
+                        {
+                            "id": "bd",
+                            "text": "birth date",
+                            "ans": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<strong>Which type of input validation (length, range, format, or type) applies to each of the following:</strong>"
+                },
+                {
+                    "type": "question",
+                    "id": "phoneNumber",
+                    "prompt": "1. Phone number",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": true
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": false
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": true
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "age",
+                    "prompt": "2. Age",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": false
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": true
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": false
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "ccNum",
+                    "prompt": "3. Credit card number",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": true
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": false
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": true
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "name",
+                    "prompt": "4. Name",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": false
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": false
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": false
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong> Type (do not copy and paste) the example code from Background section into a program and compile. Run the program"
+                },
+                {
+                    "type": "question",
+                    "id": "score250",
+                    "prompt": "What does the program display when you enter a test score of 250 ?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a",
+                            "text": "\"Your grade is A\""
+                        },
+                        {
+                            "id": "b",
+                            "text": "\"Your grade is B\""
+                        },
+                        {
+                            "id": "c",
+                            "text": "\"Your grade is C\""
+                        }
+                    ],
+                    "answer": "a"
+                },
+                {
+                    "type": "question",
+                    "id": "display",
+                    "prompt": "What does the program display when you enter a test score of -5 ?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "e",
+                            "text": "\"Your grade is E\""
+                        },
+                        {
+                            "id": "error",
+                            "text": "\"Error\""
+                        },
+                        {
+                            "id": "f",
+                            "text": "\"Your grade is F\""
+                        }
+                    ],
+                    "answer": "f"
+                },
+                {
+                    "type": "question",
+                    "id": "shouldDisplay",
+                    "prompt": "What <i>should</i> the program display when you enter a test score of -5 ?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a",
+                            "text": "\"Your grade is A\""
+                        },
+                        {
+                            "id": "invalid",
+                            "text": "\"Your score is invalid\""
+                        },
+                        {
+                            "id": "e",
+                            "text": "\"Your grade is E\""
+                        }
+                    ],
+                    "answer": "invalid"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong> Type Program 1 and compile. Run the program."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><strong>Program 1</strong></small>"
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/program_images/cs0_input_val_program1.png",
+                    "alt": "program 1",
+                    "width": 469,
+                    "height": 278,
+                    "float": null
+                },
+                {
+                    "type": "question",
+                    "id": "integerOverflow",
+                    "prompt": "Could integer overflow occur for the variable total? (Refer to the Integer Error lab if necessary)",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "y"
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": []
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<strong>Note:</strong>You may want to refer Background and Code Responsibly sections to answer the Discussion Questions."
+                },
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "Refer to Question 1 in the lab assignment. Which example (phone number, age, credit card number, or name) do you think would be the most challenging to properly validate? Why?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "What are the challenges of adding input validation to your program?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "Describe some input validation that you have encountered when using software such as registering for courses, checking your account balance, using a game, ordering an item online. Have you ever encountered a problem with the validation?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
