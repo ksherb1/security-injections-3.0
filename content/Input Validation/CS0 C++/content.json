@@ -159,6 +159,10 @@
                     "text": "<strong><i>Recover appropriately:</i></strong> A robust program responds to invalid input in a manner that is appropriate, correct, and secure. When your program runs across invalid input, it should recover as much as possible, and then repeat the request, or otherwise continue on."
                 },
                 {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
                     "type": "question",
                     "id": "checkedForReasonableness",
                     "prompt": "Which of the following inputs should be checked for reasonableness?",
