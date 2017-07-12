@@ -60,7 +60,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "In December 2005, a Japanese securities trader made a $1 billion typing error, when he mistakenly sold 600,000 shares of stock at 1 yen each instead of selling one share for 600,000 yen. A few lines of code may have averted this error. Fat fingered typing costs a trader’s bosses £128m. The Times Online, December 09, 2005",
+                        "In December 2005, a Japanese securities trader made a $1 billion typing error, when he mistakenly sold 600,000 shares of stock at 1 yen each instead of selling one share for 600,000 yen. A few lines of code may have averted this error. Fat fingered typing costs a trader’s bosses £128m. <br><small><small><small><i>The Times Online</i>, December 09, 2005</small></small></small>",
                         "Web applications are highly vulnerable to input validation errors. Inputting the invalid entry \"!@#$%^&*()\" on a vulnerable e-commerce site may cause performance issues or denial of service on a vulnerable system or invalid passwords such as \"pwd’\" or \"1=1— \" may result in unauthorized access. <a href = http://www.processor.com/editorial/article.asp?article=articles%2Fp3112%2F32p12%2F32p12%2F32p12.asp&guid=&searchtype=&WordList=&bJumpTo=True>http://www.processor.com/editorial/article.asp?article=articles%2Fp3112%2F32p12%2F32p12%2F32p12.asp&guid=&searchtype=&WordList=&bJumpTo=True</a>",
                         "A Norwegian woman mistyped her account number on an internet banking system. Instead of typing her 11-digit account number, she accidentally typed an extra digit, for a total of 12 numbers. The system discarded the extra digit, and transferred $100,000 to the (incorrect) account. A simple dialog box informing her that she had typed too many digits would have helped avoid this expensive error.<br><small><small><small>Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008</small></small></small>",
                         "The site <strong>xssed.com</strong> lists nearly 13,000 vulnerable Web pages, including sites such as <strong>yahoo.com</strong>, <strong>google.com</strong>, <strong>msn.com</strong>, <strong>facebook.com</strong>, <strong>craigslist.com</strong> and <strong>cnn.com</strong>"
@@ -148,7 +148,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The following function shows input validation to check range and/or reasonableness:"
+                    "text": "<small>The following function shows input validation to check range and/or reasonableness:</small>"
                 },
                 {
                     "type": "codeblock",
