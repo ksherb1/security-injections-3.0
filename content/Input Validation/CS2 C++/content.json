@@ -57,8 +57,12 @@
                     "ordered": false
                 },
                 {
+                    "type": "subheader",
+                    "text": "Example in Code:"
+                },
+                {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "This program stores the squares of the number from one to ten in an array, and then asks the user to type a number. The square of that number will then be returned:"
                 },
                 {
                     "type": "codeblock",

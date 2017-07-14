@@ -1,0 +1,408 @@
+{
+    "name": "Input Validation",
+    "variant": "CS2 Java",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Any input that comes into a program from an external source – such as a user typing at a keyboard or a network connection – can be the source of security concerns and disastrous bugs. All input should be treated as potentially dangerous."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Most software packages rely on external input, either via the keyboard, network, or other external sources. Generally, this input will be of a specific type: for example, a user interface that requests a person’s name expects a series of alphabetic characters. If programs are not carefully written, attackers can construct inputs that can cause malicious code to be executed."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If the video does not work, try refreshing the page:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = https://www.youtube.com/watch?v=-8bDdrZhj_k>https://www.youtube.com/watch?v=-8bDdrZhj_k</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small>Video by Summer Lagambi, Haley McComas, and Abbey Baker.</small></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "All input data is a potential source of problems. If input is not checked to verify that it has the correct type, format, and length, it can cause problems. Failure to validate input can lead to serious security risks such as integer error, buffer overflow, and <i>SQL injections</i> among others."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/fat_finger.jpg",
+                    "alt": "Dominik Joswig",
+                    "width": 406,
+                    "height": 226,
+                    "float": null
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small>Drawing used by permission of Dominik Joswig</small></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A Norwegian woman mistyped her account number on an internet banking system. Instead of typing her 11-digit account number, she accidentally typed an extra digit, for a total of 12 numbers. The system discarded the extra digit, and transferred $100,000 to the (incorrect) account. A simple dialog box informing her that she had typed too many digits would have helped avoid this expensive error.<br><small><small><small>Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008</small></small></small>"
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example in Code:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This program returns the square of an input number from a stored array."
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./exampleInCode.java"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This program has two input validation problems. The first problem occurs if the user inputs a non-integer value. In Java, this causes a <i>NumberFormatException</i> to be thrown. The second problem occurs if the user enters a value that does not lie between 0 and 9. In Java, this will lead to an <i>ArrayIndexOutOfBoundsException</i>. A robust program would catch this error, provide a clear and appropriate error message, and ask the user to re-type their input."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "inputPrograms",
+                    "prompt": "The following are sources of input for programs:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "Keyboard",
+                            "text": "Keyboard",
+                            "ans": true
+                        },
+                        {
+                            "id": "Network",
+                            "text": "Network",
+                            "ans": true
+                        },
+                        {
+                            "id": "File",
+                            "text": "File",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "evilInput",
+                    "prompt": "\"Evil\" input can occur from an error made by the user:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "true",
+                            "text": "True"
+                        },
+                        {
+                            "id": "false",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "true"
+                }
+            ]
+        },
+        {
+            "header": "Code Responsibly",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<strong><i>Check your input:</i></strong> The basic rule is for input validation is to check that input data matches all of the constraints that it must meet to be used correctly in the given circumstance. In many cases, this can be very difficult: confirming that a set of digits is, in fact, a telephone number may require consideration of the many differing phone number formats used by countries around the world. Some of the checks that you might want to use include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<i>Type:</i> Input data should be of the right type. Names should generally be alphabetic, numbers numeric. Punctuation and other uncommon characters are particularly troubling, as they can often be used to form the basis of code-injection attacks. Many programs will handle input data by assuming that all input is of string form, verifying that the string contains appropriate characters, and then converting the string into the desired data type.",
+                        "<i>Range:</i> Verify that numbers are within a range of possible values: For example, the month of a person's date of birth should lie between 1 and 12. Another common range check involves values that may lead to division by zero errors.",
+                        "<i>Plausibility:</i> Check that values make sense: a person's age shouldn't be less than 0 or more than 150.",
+                        "<i>Presence check:</i> Guarantee presence of important data – the omission of important data can be seen as an input validation error.",
+                        "<i>Length:</i> Input that is either too long or too short will not be legitimate. Phone numbers generally don't have 39 digits; Social Security Numbers have exactly 9.",
+                        "<i>Format:</i> Dates, credit card numbers, and other data types have limitations on the number of digits and any other characters used for separation. For example, dates are usually specified by 2 digits for the month, one or two for the day, and either two or four for the year.",
+                        "<i>Checksums:</i>  Identification numbers such as bank accounts, often have check digits: additional digits included at the end of a number to provide a verifiability check. The check digit is determined by a calculation based on the remaining digits – if the check digit does not match the results of the calculation,either the ID is bad or the check digit is bad. In either case, the number should be rejected as invalid."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong><i>Use appropriate language tools:</i></strong> The safety of tools that read user input varies across programming languages and systems. Some languages, such as C and C++ have library calls that read user input into a character buffer without checking the bounds of that buffer, causing a both a buffer overflow and an input validation problem. Alternative libraries specifically designed with security in mind are often more robust."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The choice of programming languages can play a role in the potential severity of input validation vulnerabilities. As strongly-typed languages, Java and C++ require that the type of data stored in a variable is known ahead of time. This requirement leads to the type mismatch problem when – for example- a string such as \"abcd\" is typed in response to a request for an integer. Untyped languages such as Perl and Ruby do not have any such requirements – any variable can store any type of value. Of course, these languages do not eliminate validation problems – you may still run into trouble if you use a string to retrieve an item from an integer- indexed array. Some languages provide additional help in the form of built-in procedures that can be used to remove potentially damaging characters from input strings."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong><i>Recover appropriately:</i></strong> A robust program will respond to invalid input in a manner that is appropriate, correct, and secure. For user input, this will often mean providing an informative error message and requesting re-entry of the data. Invalid input from other sources – such as a network connection – may require alternate measures. Arbitrary decisions such as truncating or otherwise reformatting data to \"make it fit\" should be avoided."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "checkedForReasonableness",
+                    "prompt": "Which of the following inputs should be checked for reasonableness?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "age",
+                            "text": "age",
+                            "ans": true
+                        },
+                        {
+                            "id": "firstName",
+                            "text": "first name",
+                            "ans": false
+                        },
+                        {
+                            "id": "city",
+                            "text": "city",
+                            "ans": false
+                        },
+                        {
+                            "id": "itemPrice",
+                            "text": "item price",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "template",
+                    "prompt": "Which of the following inputs would require a specific template or format to be appropriate?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "ssn",
+                            "text": "social security number",
+                            "ans": true
+                        },
+                        {
+                            "id": "nationalDebt",
+                            "text": "national debt",
+                            "ans": false
+                        },
+                        {
+                            "id": "telephoneNumber",
+                            "text": "telephone number",
+                            "ans": true
+                        },
+                        {
+                            "id": "bd",
+                            "text": "birth date",
+                            "ans": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong>Complete the security checklist for this program."
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./codeResponsibly.java"
+                },
+                {
+                    "type": "question",
+                    "id": "input",
+                    "prompt": "Which of the following are potential input validation errors?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "index",
+                            "text": "The index used returned by getWhich is not validated.",
+                            "ans": true
+                        },
+                        {
+                            "id": "scanner",
+                            "text": "The Scanner arguement \"System.in\" is not type checked.",
+                            "ans": false
+                        },
+                        {
+                            "id": "value",
+                            "text": "The value returned by getArraySize() is not checked for reasonableness.",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "example",
+                    "prompt": "Which of the following example inputs might cause validation problems?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a",
+                            "text": "If the number typed for getWhich is less than the number provided for getArraySize."
+                        },
+                        {
+                            "id": "b",
+                            "text": "If the number typed for getWhich is an integer."
+                        },
+                        {
+                            "id": "c",
+                            "text": "If the number typed for getWhich is greater than the number provided for getArraySize."
+                        }
+                    ],
+                    "answer": "c"
+                },
+                {
+                    "type": "question",
+                    "id": "type",
+                    "prompt": "What happens if you type non-numeric characters for either the number of names or which name you wanted to retrieve?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "expected",
+                            "text": "The program will run as expected"
+                        },
+                        {
+                            "id": "thrown",
+                            "text": "InputMismatchException will be thrown."
+                        },
+                        {
+                            "id": "crash",
+                            "text": "The program will crash."
+                        }
+                    ],
+                    "answer": "thrown"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 2:</strong>  Revise the program to properly validate input and gracefully recover from errors."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3: Program 2</strong> (optional - check with your instructor if you need to complete this program)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3.1:</strong> You’re writing a program that will be used to submit bid on items from an online auction site. Each item is available in multiple lots – for example, there might be 100 boxes of crayons available. Your program must ask users for two important pieces of information:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The price that they are willing to pay for the item, given in dollars and cents.",
+                        "The quantity of that item that they want to bid on. This quantity must be at least one, and it must be a whole number – it’s not possible to buy fractional parts of an item."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3.2:</strong> Your program should validate the user input for both quantities. To do so, take the following steps:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Price of items"
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ask the user to type the number of items",
+                        "Read this value into a string",
+                        "Write a routine that will examine the string to verify that it contains a number that can be a legal amount of money. This string must contain:<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -Some number of integers (possibly zero) – the number of dollars<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -An optional decimal point<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -Some number of integers (possibly zero) - the number of cents<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -There must be at least one digit in the number. Thus, \"12.34\", \"12\", and \".34\", are all valid prices, but \"12,34\" and ‘.\" are not. To examine all of the characters in the string, you can use the charAt(i) method from the string class. You can check each character in the string to see that it is either a decimal or an integer. You should also check to make sure that there are not multiple decimal points.<br>This routine should return a boolean value that is true if the string is a legitimate price and false otherwise.",
+                        "If the value provided is not legitimate, print an error message.",
+                        "If the value is legitimate, convert it into a float by using<br><code>Float f = Float.parseFloat(s) </code><br>if s is the string that the user typed."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Number of items: This will be similar to the price, but you must simply check for whole numbers – no decimals allowed. The quantity must be greater than or equal to one. You will convert the result to an int (using Integer.parseInt(s) ), not a float.",
+                        "An interactive loop: put these two checks in a loop that will ask for both values, check both to see if they are valid, and then repeat requests for any values that are not valid. The easiest way to do this is probably to have two boolean values , one for each input quantity. These values will represent the validity of the input quantities. You will stay in an input loop as long as at least one of them is false. When this is the case, you will then check the values to see which is false (i.e., invalid) . If a value is not valid, you will repeat the prompt and validate the response. This will continue until both are valid."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3.3:</strong> Turn in program 2 to your instructor."
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "You're writing a program that asks the user to type in a telephone number. How might you validate that the characters that they've typed represent a legal telephone number? You should assume that you're only concerned about phone numbers from the US, but you want to give users as much flexibility as possible, in terms of spaces and punctuation characters. List some rules that you might use. Make sure that you complete this question before moving on to question #2.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question2",
+                    "prompt": "Find an example of a phone number that doesn't fit your rules.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question3",
+                    "prompt": "Describe either an example of an input validation problem that you may have encountered. If you can't remember having any sort of problem, try some web pages or other software tools – try to find a system that fails to validate input data correctly.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question4",
+                    "prompt": "If input is sufficiently cryptic, it might be hard to provide useful error messages in responses to invalid input. Describe some strategies that might be used to help users recover from invalid input.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question5",
+                    "prompt": "Revisit Program 2 (if you completed program 2 from laboratory assignment section). Are there any inputs that the above description accepts as valid that perhaps should be considered invalid? If so, what are they and how might you handle them?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
