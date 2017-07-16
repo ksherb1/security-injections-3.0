@@ -1,0 +1,255 @@
+{
+    "name": "Buffer Overflow",
+    "variant": "CS0 Python",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Buffer overflow occurs when data is input or written beyond the allocated bounds of an object, such as an array, causing a program crash or creating a vulnerability that attackers might exploit."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A buffer overflow occurs when data is written beyond the boundaries of a fixed length buffer, overwriting adjacent memory locations which may include other buffers, variables, and program flow instructions. Considered the \"nuclear bomb\" of the software industry, the buffer overflow is one of the most persistently exploited security vulnerabilities."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = https://www.youtube.com/watch?v=5Seq4pv4nvA> https://www.youtube.com/watch?v=5Seq4pv4nvA</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk: How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Writing outside the bounds of a block of allocated memory can corrupt data, crash the program, or cause the execution of malicious code. Python, like Java, makes an effort to avoid buffer overflow by checking the bounds of a buffer (like an array) and preventing any access beyond those bounds. No language is perfect, though, so it is essential for all programmers to understand the concepts described below."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Real-world Example:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan Morris Worm Turns 20: Look what it's Done Network World, October 30, 2008  <a href = http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1 > http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1</a></small></small></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example in Code:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./exampleInCode.py"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In the code above, buffer has 10 elements but the loop writes 15 elements, which results in an error."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "bf",
+                    "prompt": "A buffer overflow can write over adjacent data such as:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "variables",
+                            "text": "Variables",
+                            "ans": true
+                        },
+                        {
+                            "id": "program",
+                            "text": "Program flow instructions",
+                            "ans": true
+                        },
+                        {
+                            "id": "other",
+                            "text": "Other buffers",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "unchecked",
+                    "prompt": "An unchecked buffer overflow may cause:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "data",
+                            "text": "Data to be corrupted",
+                            "ans": true
+                        },
+                        {
+                            "id": "crash",
+                            "text": "A program crash",
+                            "ans": true
+                        },
+                        {
+                            "id": "correct",
+                            "text": "The program to correct itself",
+                            "ans": false
+                        },
+                        {
+                            "id": "execution",
+                            "text": "The execution of malicious code",
+                            "ans": true
+                        },
+                        {
+                            "id": "unexpected",
+                            "text": "Unexpected behavior",
+                            "ans": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Code Responsibly",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "How Can I Avoid Buffer Overflow?"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<i><strong>Make sure you have enough space:</strong></i> When using static arrays, be sure that the size of the array is large enough to hold the maximum amount of data that it may need.",
+                        "<i><strong>Validate indices:</strong></i> If you have an integer variable, verify that it is within the proper bounds before you use it as an index to an array. This validation is particularly important for any values that might have been provided as user input or other untrusted input, such as information that might be read from a file or from a network connection.",
+                        "<i><strong>Use alternative data structures that reduce the risk of overflows:</strong></i> When possible, use lists in Python without defining the initial size and use the .append method to add elements which can reduce your risk of buffer overflow vulnerabilities."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "variable",
+                    "prompt": "A variable used for an array index could be obtained from:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "file",
+                            "text": "A file",
+                            "ans": true
+                        },
+                        {
+                            "id": "network",
+                            "text": "A network",
+                            "ans": true
+                        },
+                        {
+                            "id": "user input",
+                            "text": "User input",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "legal",
+                    "prompt": "Given the following array:<br><br><code>scores [100];</code><br><br> Specify the legal range or bounds for an array index i:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "0 < i < 100"
+                        },
+                        {
+                            "id": "2",
+                            "text": "0 < i <= 100"
+                        },
+                        {
+                            "id": "3",
+                            "text": "0 <= i < 100"
+                        },
+                        {
+                            "id": "4",
+                            "text": "0 <= i <= 100"
+                        }
+                    ],
+                    "answer": "3"
+                }
+            ]
+        },
+        {
+            "header": " Security Checklist",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "The gray highlighted areas in the checklist indicates where the potential buffer overflow could occur. How could we prevent this?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "Dquestion1",
+                    "prompt": "Describe the buffer overflow problem.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion2",
+                    "prompt": "How could you prevent a buffer overflow from occurring in your program?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion3",
+                    "prompt": "Give three real life examples of buffer overflow attacks (research on the web).",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion4",
+                    "prompt": "What can result from a buffer overflow ?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion5",
+                    "prompt": "Provide three different examples of code that contains buffer overflows.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}

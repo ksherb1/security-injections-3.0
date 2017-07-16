@@ -126,7 +126,7 @@ exports.write_3("Input Validation", "CS2 C++");
 exports.write_3("Input Validation", "CS2 Java");
 exports.write_3("Buffer Overflow", "CS0 C++");
 exports.write_3("Buffer Overflow", "CS0 Java");
-//exports.write_3("Buffer Overflow", "CS0 Python");
+exports.write_3("Buffer Overflow", "CS0 Python");
 //exports.write_3("Buffer Overflow", "CS0 Pseudocode");
 //exports.write_3("Buffer Overflow", "CS1 C++");
 //exports.write_3("Buffer Overflow", "CS1 Java");
