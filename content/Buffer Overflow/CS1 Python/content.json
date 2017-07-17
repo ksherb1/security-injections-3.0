@@ -1,0 +1,422 @@
+{
+    "name": "Buffer Overflow",
+    "variant": "CS1 Python",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Buffer overflow occurs when data is input or written beyond the allocated bounds of a buffer, array, or other object, causing a program crash or a vulnerability that attackers might exploit."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A buffer overflow occurs when data is written beyond the boundaries of a fixed length buffer overwriting adjacent memory locations which may include other buffers, variables, and program flow instructions. Considered the “nuclear bomb” of the software industry, the buffer overflow is one of the most persistently exploited security vulnerabilities and frequently used attacks."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = https://www.youtube.com/watch?v=5Seq4pv4nvA> https://www.youtube.com/watch?v=5Seq4pv4nvA</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk: How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Writing outside the bounds of a block of allocated memory can corrupt data, crash the program, or allow the execution of malicious code. Python, like Java, makes an effort to avoid buffer overflow by checking the bounds of a buffer (like an array) and preventing any access beyond those bounds. No language is perfect, though, so it is essential for all programmers to understand the concepts described below."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Real-world Example:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A buffer overflow in a 2004 version of AOL's AIM instant-messaging software exposed users to buffer overflow vulnerabilities. If a user posted a URL in their \"I'm away\" message, any of his or her friends who clicked on that link might be vulnerable to attack. AOL's response was to suggest that users update to a new version that would fix the bug.<br><small><small><small>Paul Roberts “AOL IM 'Away' message flaw deemed critical”, Infoworld, August 9, 2004<a href = http://www.infoworld.com/article/04/08/09/HNaolimflaw_1.html > http://www.infoworld.com/article/04/08/09/HNaolimflaw_1.html</a></small></small></small>"
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/buffer_overflow.png",
+                    "alt": "buffer overflow",
+                    "width": 337,
+                    "height": 117,
+                    "float": null
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example in Code:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./exampleInCode.py"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When this program is run, the loop counter will exceed the value of a suitable index for the array. When the assignment statement tries to store a value in vals[10], buffer overflow occurs. The result is unpredictable. Depending on the operating system and the specific nature of the overflow, it may not cause any apparent problems, or it will cause the program to crash. Buffer Overflow can occur in many languages. In Python, the code results in an \"IndexError: list assignment index out of range.\""
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "bf",
+                    "prompt": "A buffer overflow can write over adjacent data such as:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "variables",
+                            "text": "Variables",
+                            "ans": true
+                        },
+                        {
+                            "id": "program",
+                            "text": "Program flow instructions",
+                            "ans": true
+                        },
+                        {
+                            "id": "other",
+                            "text": "Other buffers",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "unchecked",
+                    "prompt": "An unchecked buffer overflow may cause:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "data",
+                            "text": "Data to be corrupted",
+                            "ans": true
+                        },
+                        {
+                            "id": "crash",
+                            "text": "A program crash",
+                            "ans": true
+                        },
+                        {
+                            "id": "correct",
+                            "text": "The program to correct itself",
+                            "ans": false
+                        },
+                        {
+                            "id": "execution",
+                            "text": "The execution of malicious code",
+                            "ans": true
+                        },
+                        {
+                            "id": "unexpected",
+                            "text": "Unexpected behavior",
+                            "ans": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Code Responsibly",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "How Can I Avoid Buffer Overflow?"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<i><strong>Mind your Indices!</strong></i> <br>&nbsp&nbsp&nbsp&nbsp -Validate your input. Always check values that are input as an array index.<br> &nbsp&nbsp&nbsp&nbsp -Check your loops! Especially watch the limit, beware of off-by-one errors.<br> &nbsp&nbsp&nbsp&nbsp -Check any methods that may modify an array index.",
+                        "<i><strong>Make sure you have enough space:</strong></i> Before copying data to a fixed size block, make sure it is large enough to hold the data that you are going to copy. If it is not large enough, do not copy more data than your available space can hold. If your program is not able to continue properly after filling the available space, you may have to find some way to recover from the error.",
+                        "<i><strong>Validate indices:</strong></i> If you have an integer variable, verify that it is within the proper bounds before you use it as an index to an array. This validation is particularly important for any values that might have been provided as user input or other untrusted input, such as information that might be read from a file or from a network connection.",
+                        "<i><strong>When possible, use buffer-size accessors:</strong></i> Loops that iterate over arrays need to know the size of the array. Using a variable with the wrong value – or the incorrect constant value – can lead to buffer overflows. Some languages -such as Java or Python – provide operators that can be used to retrieve the size of an array. Using these operators can help you avoid some of these problems.",
+                        "<i><strong>Use alternative data structures that reduce the risk of overflows:</strong></i> Many buffer overflow vulnerabilities can be avoided by using lists or other structures instead of traditional arrays. When possible, use lists and iterators instead of arrays, use integer-indexed loops without defining the initial size, and use the .append method to add elements. Note that these tools will not prevent you from running into trouble: you will still have to write your code carefully and correctly. However, they can reduce your risk of buffer overflow vulnerabilities."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "variable",
+                    "prompt": "A variable used for an array index could be obtained from:",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "file",
+                            "text": "A file",
+                            "ans": true
+                        },
+                        {
+                            "id": "network",
+                            "text": "A network",
+                            "ans": true
+                        },
+                        {
+                            "id": "user input",
+                            "text": "User input",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "legal",
+                    "prompt": "Given the following list array:<br><br><code>scores = range(0,100);</code><br><br> Specify the legal range or bounds for an array index i:",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "0 < i < 100"
+                        },
+                        {
+                            "id": "2",
+                            "text": "0 < i <= 100"
+                        },
+                        {
+                            "id": "3",
+                            "text": "0 <= i < 100"
+                        },
+                        {
+                            "id": "4",
+                            "text": "0 <= i <= 100"
+                        }
+                    ],
+                    "answer": "3"
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong> Type (do not copy and paste) Program 1 in a python interpreter recommended by your instrcutor and run the program."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Program 1:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./labAssignment.py"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ1",
+                    "prompt": "Describe the results of above program run in step 1 ?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ2",
+                    "prompt": "What happens if you type \"3\" for the first prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ3",
+                    "prompt": "What happens if you type \"7\" for the first prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ4",
+                    "prompt": "What happens if you type \"12\" for the first prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ5",
+                    "prompt": "What happens if you type \"20\" for the first prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ6",
+                    "prompt": "What happens if you type 10 for the first prompt and then 3 for the second prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ7",
+                    "prompt": "What happens if you type 10 for the first prompt and then 7 for the second prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ8",
+                    "prompt": "What happens if you type 10 for the first prompt and then 12 for the second prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "LQ9",
+                    "prompt": "What happens if you type 10 for the first prompt and then 20 for the second prompt?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        },
+        {
+            "header": " Security Checklist",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Complete the security checklist."
+                },
+                {
+                    "type": "question",
+                    "id": "SC1",
+                    "prompt": "List places where the bounds or range checking should occur?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "SC2",
+                    "prompt": "For each input, what numbers will cause list index out of range errors?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong> Rewrite the above program to include the appropriate bounds checking."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 2:</strong> Create the following python file:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./scProgram.py"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3:</strong> Create the following temps.txt file (Make sure this file is in the same folder where the above python file is stored):<br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 </code><br>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 4:</strong> Compile and run the program. It should list 10 temperatures as being read."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 5:</strong>  Change temps.txt to the following: <br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 31.0 31.2 </code><br>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 6:</strong> Compile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "SC3",
+                    "prompt": "What happended after compiling and running the program in step 6 and why?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 7:</strong> Modify the program to fix the problem. DO NOT change the size of the array! Hint: Add a check to the loop."
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "Dquestion1",
+                    "prompt": "Describe the buffer overflow problem.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion2",
+                    "prompt": "What happens if you exceed the size of an array in Python? Do you consider this robust behavior?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion3",
+                    "prompt": "List three ways you could potentially overflow a buffer or exceed the size of an array in your program.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion4",
+                    "prompt": "How could you prevent a buffer overflow from occurring in your program?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion5",
+                    "prompt": "Give three real life examples of buffer overflow attacks (research on the web).",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion6",
+                    "prompt": "What can result from a buffer overflow?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion7",
+                    "prompt": "Buffer overflows can be troublesome if they are used by attackers to run their own code. What sort of things might an attacker try to do if he or she were able to run any code they wanted on a computer?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
