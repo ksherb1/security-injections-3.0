@@ -40,8 +40,8 @@
                     "type": "image",
                     "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/SDLC.jpg",
                     "alt": "SDLC",
-                    "width": 275,
-                    "height": 150,
+                    "width": 550,
+                    "height": 301,
                     "float": null
                 },
                 {
@@ -224,8 +224,8 @@
                     "type": "image",
                     "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/SDLCc++.jpg",
                     "alt": "Software Development Lifecycle Code Block",
-                    "width": 550,
-                    "height": 300,
+                    "width": 522,
+                    "height": 261,
                     "float": null
                 },
                 {
@@ -293,6 +293,43 @@
                 {
                     "type": "paragraph",
                     "text": "If you answered yes to all of the above questions, you are describing the Secure Development Lifecycle (SDLC)"
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion1",
+                    "prompt": "Where do you think security should fit into the SDLC?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion2",
+                    "prompt": "Why is security more of a concern than it was 10 years ago?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion3",
+                    "prompt": "If a program has no syntax errors, can we assume that it is secure? Why or why not?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "DiscussionQuestion4",
+                    "prompt": "Compare software security and security software.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
                 }
             ]
         }
