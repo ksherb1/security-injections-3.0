@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short pop;</span>
+  <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short growth;</span>
+
+  cout << "What is the current population? ";
+  <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">cin >> pop;</span>
+  cout << "What is the rate of growth? (e.g., for 10% enter 10)";
+  <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">cin >> growth;</span>
+
+  <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">float growthRate = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">static_cast(growth) / 100;</span></span>
+  cout << growthRate << endl;
+
+  cout << "Year\tGrowth\tNew Population" << endl;
+
+  for (<span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">size_t i</span> = 1;</span> i <= 10; <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i++</span>) {
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short increase</span> = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">static_cast(pop * growthRate);</span></span>
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short newpop</span> = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">pop + increase;</span></span>
+
+    cout << i << "\t" << increase << "\t" << newpop << endl;
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">pop = newpop;</span>
+  }
+  cout << "Final population is " << pop << endl;
+}

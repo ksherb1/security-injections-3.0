@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class PopCheck {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("What is the current population? ");
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short pop </span> = <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">scan.nextShort();</span></span>
+    System.out.print("What is the rate of growth?
+                     (e.g., for 10% enter 10) ");
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short growth</span> = <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">scan.nextShort();</span></span>
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">float growthRate = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">growth / 100f;</span></span>
+    System.out.println("Year\tGrowth\tNew Population");
+    for (<span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">int i</span> = 1;</span> i <= 10; <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">i++</span>) {
+      <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short increase</span> = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">(short) (pop * growthRate);</span></span>
+      <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short newpop</span> = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">(short) (pop + increase);</span></span>
+      System.out.println(i+"\t"+increase+"\t" + newpop);
+      <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">pop = newpop;</span>
+    }
+    System.err.println("Final population is " + pop);
+  }
+}

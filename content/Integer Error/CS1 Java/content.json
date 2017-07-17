@@ -346,7 +346,7 @@
                             ]
                         }
                     ],
-                    "code": "./securityChecklist.java",
+                    "code": "./securityChecklist.html",
                     "javascript": "./checklist.js"
                 },
                 {
@@ -393,7 +393,7 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion5",
-                    "prompt": "Overflow can also occur when the dividend is equal to the minimum (negative) value for the signed integer type and the divisor is equal to -1. Demonstrate this problem adding the following lines to the end of the above program.<br><br><code>i = Integer.MIN_VALUE/-1;<br><br>&nbsp&nbsp&nbsp&nbsp&nbspSystem.out.println(\"Integer Overflow: \" + Integer.MIN_VALUE + \"/-1 = \" +i);</code>",
+                    "prompt": "Overflow can also occur when the dividend is equal to the minimum (negative) value for the signed integer type and the divisor is equal to -1. Demonstrate this problem adding the following lines to the end of the above program.<br><br><code>i = Integer.MIN_VALUE/-1;<br><br>System.out.println(\"Integer Overflow: \" + Integer.MIN_VALUE + \"/-1 = \" +i);</code>",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -413,7 +413,7 @@
                 {
                     "type": "question",
                     "id": "popBaltimore",
-                    "prompt": "Population of Baltimore 637,455",
+                    "prompt": "Population of Baltimore (637,455)",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": null
@@ -421,7 +421,7 @@
                 {
                     "type": "question",
                     "id": "popMaryland",
-                    "prompt": "Population of Maryland 5.6 million",
+                    "prompt": "Population of Maryland (5.6 million)",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": null

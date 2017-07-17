@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class IntegerCheck {
-  
+
   public static void main(String[] args) {
 
     Scanner scan = new Scanner(System.in);
-    int i;
-    byte b;
-    short sh;
-    long lon;
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">int i;</span>
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">byte b;</span>
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short sh;</span>
+    <span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">long lon;</span>
 
     System.out.println("Valid integer is between "
       + Integer.MIN_VALUE + " and " + Integer.MAX_VALUE );
@@ -20,13 +20,13 @@ public class IntegerCheck {
       + Long.MIN_VALUE + " and " + Long.MAX_VALUE );
 
     System.out.print("Type an integer value: ");
-    i = scan.nextInt();
+    <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">i = scan.nextInt();</span>
     System.out.print("Type a byte value: ");
-    b = scan.nextByte();
+    <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">b = scan.nextByte();</span>
     System.out.print("Type a short value: ");
-    sh = scan.nextShort();
+    <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">sh = scan.nextShort();</span>
     System.out.print("Type a long value: ");
-    lon = scan.nextLong();
+    <span class="span-Pgm1CL Pgm1CL-vuln-input-Pgm1CL">lon = scan.nextLong();</span>
 
     System.out.println("\nYou entered the following values: ");
     System.out.println("Integer: " + i);
@@ -34,9 +34,9 @@ public class IntegerCheck {
     System.out.println("Short: " + sh);
     System.out.println("Long: " + lon);
 
-    short newsh = (short)(sh * 10);
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-var-Pgm1CL">short newsh</span> = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">(short)(sh * 10);</span></span>
     System.out.println("Ten times " + sh + " is " + newsh);
-    i = Integer.MAX_VALUE + 1;
+    <span class="span-Pgm1CL Pgm1CL-vuln-assign-Pgm1CL">i = <span class="span-Pgm1CL Pgm1CL-vuln-math-Pgm1CL">Integer.MAX_VALUE + 1;</span></span>
     System.out.println("Integer Overflow: "
       + Integer.MAX_VALUE + " + 1 = " + i);
 

@@ -316,7 +316,7 @@
                             ]
                         }
                     ],
-                    "code": "./securityChecklist.cpp",
+                    "code": "./securityChecklist.html",
                     "javascript": "./checklist.js"
                 },
                 {
