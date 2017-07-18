@@ -43,6 +43,9 @@
 				<div ng-switch-when="image" class="col-md-12">
 						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>
+				<div ng-switch-when="video" class= "embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
+				</div>
 				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
 				<table ng-switch-when="table" class="table">
 					<tr>
@@ -165,6 +168,8 @@
 				The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation
 				under grants NSF DUE-1241738,  NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649,
 				the GenCyber program, and the Intel Corporation.
+				<br>
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 			</p>
 		</div>
 	</footer>

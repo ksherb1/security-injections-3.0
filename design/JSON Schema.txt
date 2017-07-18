@@ -29,6 +29,8 @@
 							"copyright" : "<string>",
 							"date" : "<string>",
 							"link" : "<uri>
+					<case "video">
+							"url" : "<string>"
 					<case "table">
 							"headers":[
 								"<string>",

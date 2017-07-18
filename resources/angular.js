@@ -596,4 +596,7 @@ $scope.checkAnswers = function() {
 		// TODO: make sure $scope.form content is securely encrypted. Student email is private info
 		$http.post($scope.repo+'record', $scope.form);
 	}
+	$scope.trustSrc = function(src) {
+    return $sce.trustAsResourceUrl(src);
+  }
 }]);
