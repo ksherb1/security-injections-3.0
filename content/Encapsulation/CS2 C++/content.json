@@ -207,12 +207,12 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "<br><br>Answer the following questions:"
+                    "text": "<br><br>Answer the following question:"
                 },
                 {
                     "type": "question",
                     "id": "validated",
-                    "prompt": " ",
+                    "prompt": "Where should data in a class be validated?",
                     "ignored": false,
                     "mode": "checkbox",
                     "choices": [
@@ -342,7 +342,7 @@
                     "choices": [
                         {
                             "id": "succesful",
-                            "text": "Program compiled successfully"
+                            "text": "Program compiled successfully."
                         },
                         {
                             "id": "error",
