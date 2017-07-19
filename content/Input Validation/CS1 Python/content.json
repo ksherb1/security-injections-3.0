@@ -26,8 +26,8 @@
                     "text": "If the video does not work, try refreshing the page:"
                 },
                 {
-                    "type": "paragraph",
-                    "text": "<a href = https://www.youtube.com/watch?v=-8bDdrZhj_k>https://www.youtube.com/watch?v=-8bDdrZhj_k</a>"
+                    "type": "video",
+                    "url": "https://www.youtube.com/embed/-8bDdrZhj_k"
                 },
                 {
                     "type": "paragraph",

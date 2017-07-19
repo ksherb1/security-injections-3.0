@@ -26,8 +26,8 @@
                     "text": "If the video does not work, try refreshing the page:"
                 },
                 {
-                    "type": "paragraph",
-                    "text": "<a href = https://www.youtube.com/watch?v=-8bDdrZhj_k>https://www.youtube.com/watch?v=-8bDdrZhj_k</a>"
+                    "type": "video",
+                    "url": "https://www.youtube.com/embed/-8bDdrZhj_k"
                 },
                 {
                     "type": "paragraph",
@@ -157,7 +157,7 @@
                     "type": "paragraph",
                     "text": "<strong><i>Recover appropriately:</i></strong>  A robust program will respond to invalid input in a manner that is appropriate, correct, and secure. When your program runs across invalid input, it should recover as much as possible, and then repeat the request, or otherwise continue on. Arbitrary decisions such as truncating or otherwise reformatting data to \"make it fit\" should be avoided."
                 },
-                 {
+                {
                     "type": "subheader",
                     "text": "Answer the following questions:"
                 },
