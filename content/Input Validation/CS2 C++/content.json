@@ -169,10 +169,60 @@
                     "type": "paragraph",
                     "text": "<strong>STEP 1:</strong>Complete the security checklist for this program."
                 },
-                {
-                    "type": "codeblock",
-                    "code": "./codeResponsibly.cpp"
-                },
+            				{
+            					"type": "checklist",
+            					"id": "Pgm1CL",
+            					"list": [
+            						{
+            							"id": "var",
+            							"header": "Check each line of code:",
+            							"items": [
+            								{
+            									"id": "input",
+            									"text": "Click all variables that recieve external input",
+            									"ans": true,
+            									"js": true
+            								}
+            							]
+            						},
+            						{
+            							"id": "vuln",
+            							"header": "For each statement that is clicked, verify that the variable is checked for these criteria. Note any it is not checked for:",
+            							"items": [
+            								{
+            									"id": "length",
+            									"text": "Length",
+            									"ans": true,
+            									"js": true
+            								},
+            								{
+            									"id": "range",
+            									"text": "Range (reasonableness)",
+            									"ans": true,
+            									"js": true
+            								},
+            								{
+            									"id": "format",
+            									"text": "Format",
+            									"ans": true,
+            									"js": true
+            								},
+                            {
+            									"id": "type",
+            									"text": "Type",
+            									"ans": true,
+            									"js": true
+            								}
+            							]
+            						}
+            					],
+            					"code": "./securityChecklist.html",
+            					"javascript": "./checklist.js"
+            				},
+            				{
+            					"type": "paragraph",
+            					"text": "Highlighted areas indicate vulnerabilities."
+            				},
                 {
                     "type": "question",
                     "id": "input",

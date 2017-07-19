@@ -457,6 +457,64 @@
         {
             "header": "Security Checklist",
             "units": [
+              {
+      					"type": "checklist",
+      					"id": "Pgm1CL",
+      					"list": [
+      						{
+      							"id": "var",
+      							"header": "Check each line of code:",
+      							"items": [
+      								{
+      									"id": "input",
+      									"text": "Click the variable that is input",
+      									"ans": true,
+      									"js": true
+      								}
+      							]
+      						},
+      						{
+      							"id": "vuln",
+      							"header": "For the variable, which of the following is applicable:",
+      							"items": [
+      								{
+      									"id": "length",
+      									"text": "Check length?",
+      									"ans": false,
+      									"js": false
+      								},
+      								{
+      									"id": "range",
+      									"text": "Check range? (reasonableness)",
+      									"ans": true,
+      									"js": false
+      								},
+      								{
+      									"id": "format",
+      									"text": "Check format?",
+      									"ans": false,
+      									"js": false
+      								},
+                      {
+      									"id": "type",
+      									"text": "Check type?",
+      									"ans": true,
+      									"js": false
+      								}
+      							]
+      						}
+      					],
+      					"code": "./securityChecklist.html",
+      					"javascript": "./checklist.js"
+      				},
+      				{
+      					"type": "paragraph",
+      					"text": "Highlighted areas indicate vulnerabilities."
+      				},
+              {
+                  "type": "subheader",
+                  "text": "Answer the following questions:"
+              },
                 {
                     "type": "question",
                     "id": "whichVariable",
