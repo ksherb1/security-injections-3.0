@@ -349,7 +349,48 @@
         },
         {
             "header": "Discussion Questions",
-            "units": []
+            "units": [
+                {
+                    "type": "question",
+                    "id": "question1",
+                    "prompt": "You're writing a program that asks the user to type in a telephone number. How might you validate that the characters that they've typed represent a legal telephone number? You should assume that you're only concerned about phone numbers from the US, but you want to give users as much flexibility as possible, in terms of spaces and punctuation characters. List some rules that you might use. Make sure that you complete this question before moving on to question #2.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question2",
+                    "prompt": "Find an example of a phone number that doesn't fit your rules.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question3",
+                    "prompt": "Describe either an example of an input validation problem that you may have encountered. If you can't remember having any sort of problem, try some web pages or other software tools – try to find a system that fails to validate input data correctly.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question4",
+                    "prompt": "If input is sufficiently cryptic, it might be hard to provide useful error messages in responses to invalid input. Describe some strategies that might be used to help users recover from invalid input.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "question5",
+                    "prompt": "Revisit Program 2 (if you completed program 2 from laboratory assignment section). Are there any inputs that the above description accepts as valid that perhaps should be considered invalid? If so, what are they and how might you handle them?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
         }
     ]
 }
