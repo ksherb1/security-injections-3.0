@@ -22,8 +22,8 @@
                     "text": "A buffer overflow occurs when data is written beyond the boundaries of a fixed length buffer, overwriting adjacent memory locations which may include other buffers, variables, and program flow instructions. Considered the \"nuclear bomb\" of the software industry, the buffer overflow is one of the most persistently exploited security vulnerabilities."
                 },
                 {
-                    "type": "paragraph",
-                    "text": "<a href = https://www.youtube.com/watch?v=5Seq4pv4nvA> https://www.youtube.com/watch?v=5Seq4pv4nvA</a>"
+                    "type": "video",
+                    "url": "https://www.youtube.com/embed/5Seq4pv4nvA"
                 },
                 {
                     "type": "paragraph",

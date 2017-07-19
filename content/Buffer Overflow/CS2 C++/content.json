@@ -150,9 +150,9 @@
                         "<i><strong>Use alternative data structures that reduce the risk of overflows:</strong></i>When possible, use vectors and iterators instead of arrays and integer-indexed loops. These tools will not eliminate the problem, but will greatly reduce the risk of buffer overflow.",
                         "<i><strong>Try to avoid allocating storage until you know how much you need:</strong></i> When possible, wait to allocate memory until after you know how much space you need. In some cases, this may mean allocating a new buffer instead of reusing an old one.",
                         "<i><strong>Send the size of the array along with the array:</strong></i> If you’re using an array as an argument to a function, be sure to send the size of the array to the function as well. This value can be used as an upper limit on array indices.",
-                        "<i><strong>Avoid risky functions</strong></i> Some languages have a variety of library functions that may lead to buffer overflow vulnerabilities. If you are using any library functions for reading user data, copying data, or allocating/freeing blocks of data, understand the appropriate uses of these functions. In many cases, more secure versions of risky functions are available—use these instead.",
-                        "<i><strong>Use your tools</strong></i> Many compilers provide warnings in cases of potential buffer overflows. Use high warning settings, and fix your code to avoid these warnings. Use static analysis tools to analyze your source coda or use dynamic analysis tools to examine and report on the state of your program while running.",
-                        "<i><strong>Handle exceptions with care</strong></i> Checking for and responding to potential overflows in your code, instead of relying on the exception-handling mechanism, will make your code more robust and secure."
+                        "<i><strong>Avoid risky functions:</strong></i> Some languages have a variety of library functions that may lead to buffer overflow vulnerabilities. If you are using any library functions for reading user data, copying data, or allocating/freeing blocks of data, understand the appropriate uses of these functions. In many cases, more secure versions of risky functions are available—use these instead.",
+                        "<i><strong>Use your tools:</strong></i> Many compilers provide warnings in cases of potential buffer overflows. Use high warning settings, and fix your code to avoid these warnings. Use static analysis tools to analyze your source coda or use dynamic analysis tools to examine and report on the state of your program while running.",
+                        "<i><strong>Handle exceptions with care:</strong></i> Checking for and responding to potential overflows in your code, instead of relying on the exception-handling mechanism, will make your code more robust and secure."
                     ],
                     "ordered": true
                 },
@@ -230,7 +230,7 @@
                 {
                     "type": "question",
                     "id": "LQ1",
-                    "prompt": "List the potential buffer overflow overflows.",
+                    "prompt": "List the potential buffer overflow errors.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
