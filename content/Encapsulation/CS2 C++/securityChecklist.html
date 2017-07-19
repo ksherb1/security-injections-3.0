@@ -1,0 +1,19 @@
+// file Time.h
+class Time
+{
+   private:
+      <span class="span-Pgm1CL Pgm1CL-list-var-Pgm1CL">int hour;</span>    // current hour in military time
+      <span class="span-Pgm1CL Pgm1CL-list-var-Pgm1CL">int minute;</span>  // current minute in military time
+      <span class="span-Pgm1CL Pgm1CL-list-var-Pgm1CL">int second;</span>  // current second in military time
+
+   public:
+      // set the time to the time specified by the parameters
+      <span class="span-Pgm1CL Pgm1CL-list-modify-Pgm1CL">void setTime (int newHour, int newMinute, int newSecond);</span>
+
+      // return the time to the calling method using the provided
+      // parameters
+      <span class="span-Pgm1CL Pgm1CL-list-access-Pgm1CL">void getTime (int& currHour, int& currMinute, int& currSecond);</span>
+
+      // increment the current time by one second
+      <span class="span-Pgm1CL Pgm1CL-list-modify-Pgm1CL">void incrementTime (void);</span>
+};

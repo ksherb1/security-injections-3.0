@@ -485,7 +485,44 @@
         },
         {
             "header": "Security Checklist",
-            "units": []
+            "units": [
+        				{
+        					"type": "checklist",
+        					"id": "Pgm1CL",
+        					"list": [
+        						{
+        							"id": "list",
+        							"header": "Check each line of code:",
+        							"items": [
+        								{
+        									"id": "var",
+        									"text": "Click each private data member",
+        									"ans": true,
+        									"js": true
+        								},
+        								{
+        									"id": "access",
+        									"text": "Click the method header of each method that accesses the values of private data members, but does not change them",
+        									"ans": true,
+        									"js": true
+        								},
+        								{
+        									"id": "modify",
+        									"text": "Click the method header of each method that changes the value of any private data member",
+        									"ans": true,
+        									"js": true
+        								}
+        							]
+        						}
+        					],
+        					"code": "./securityChecklist.html",
+        					"javascript": "./checklist.js"
+        				},
+                {
+        					"type": "paragraph",
+        					"text": "Highlighted areas indicate vulnerabilities."
+        				}
+        	   ]
         },
         {
             "header": "Discussion Questions",
