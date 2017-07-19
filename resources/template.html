@@ -40,6 +40,10 @@
 						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
+				<div class="popover">
+				    <input type="text" class="span1" />
+				    <input type="button" class="btn" value="Save" />
+				</div>
 				<div ng-switch-when="image" class="col-md-12">
 						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>

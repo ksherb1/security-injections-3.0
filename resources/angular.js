@@ -5,7 +5,7 @@
  * Assumes html page loaded up angular js and jquery
  */
 
-var app = angular.module("modApp", ['ngSanitize', 'ngCookies','mgcrea.ngStrap']);		// the angular "app"
+var app = angular.module("modApp", ['ngSanitize', 'ngCookies']);		// the angular "app"
 app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce) {	// the angular "controller"
 
 	/**
