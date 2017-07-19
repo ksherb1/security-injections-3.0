@@ -46,7 +46,7 @@
 //RADIO MODE: For questions with only one answer
 {
     "type": "question",
-    "id": "Question ",
+    "id": "",
     "prompt": " ",
     "ignored": false,
     "mode": "radio",
@@ -85,9 +85,9 @@
 }
 //VIDEO
 {
-    "type" : "video",
-    "url" : ""
-}						
+    "type": "video",
+    "url": ""
+}
 //PARAGRAPH
 {
     "type": "paragraph",
@@ -113,6 +113,27 @@
     "width": ,
     "height": ,
     "float": null
+}
+//TABLE
+{
+    "type": "table",
+    "headers": [
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+    ],
+    "cells": [
+        {
+            "first": "",
+            "second": "",
+        },
+        {
+            "first": "",
+            "second": "",
+        }
+    ]
 }
 //ATTRIBUTION
 {

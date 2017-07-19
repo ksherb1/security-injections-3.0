@@ -1,0 +1,604 @@
+{
+    "name": "Encapsulation",
+    "variant": "CS2 C++",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Encapsulation is an important feature of C++ that allows a programmer to control access to components of a class. Used properly, encapsulation can enhance program security. Used improperly, encapsulation can create major security risks in a program."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Object-oriented programming languages such as C++ include features that support the object-oriented programming paradigm. These features include data abstraction, encapsulation, information hiding, polymorphism, and inheritance. Encapsulation refers to the bundling of both data and methods (behaviors) into a single entity called a class, which can be easily incorporated into different programs. A class defined in a C++ program is used to declare objects of that class type. Using the feature of encapsulation, the programmer can restrict access to components of the class, which is a key strength of encapsulation in C++. C++ classifies class members (data members and member methods) into one of three categories using access specifiers, which are also reserved words: private, public, and protected. Access specifiers determine the visibility or accessibility of an object's members, as specified in the table below:<br><br>"
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Types of Threat",
+                        "Accesibility"
+                    ],
+                    "cells": [
+                        {
+                            "first": "Private",
+                            "second": "Accessible only by member methods of the class or by friends of the class"
+                        },
+                        {
+                            "first": "Public",
+                            "second": "Accessible by methods both inside and outside of the class"
+                        },
+                        {
+                            "first": "Protected",
+                            "second": "Accessible by member methods of the class, by friends of the class, and by member methods of any subclass"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Note: Friends should be used with great caution because the use of friends compromises encapsulation and data security. For more information about friends, see C++ How to Program by Deitel and Deitel.<br><br>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The general format of a C++ class declaration is:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./example1.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Note that each access specifier is followed by a colon (:), and then followed by declarations for one or more class members. In the general format shown above, the private access specifier is shown first; however, the access specifiers can be shown in any order. All of the declarations that follow the private access specifier, up to the protected access specifier, are private members of the class. All of the declarations that follow the protected access specifier, up to the public access specifier, are protected members of the class. All of the declarations that follow the public access specifier, up to the closing curly brace (}), are public members of the class."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<br><br>An example of a C++ class declaration follows:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./example2.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In the example above, the data members hour, minute, and second and the member methods setTime(), getTime() and incrementTime() are bundled into a single autonomous class named Time. This demonstrates the encapsulation feature of C++. When all data is declared as private, the data is only accessible through the methods provided by the class. This restricted access is illustrated below."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads//encapsulation.JPG",
+                    "alt": "wheel",
+                    "width": 554,
+                    "height": 343,
+                    "float": null
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<br>Such restricted access requires programmers to write specialized accessor methods like getTime() for acquiring the values of private data members and specialized mutator methods like setTime() and incrementTime() for performing operations on them. This allows programmers to validate changes to data members before making such a change. In this example, the setTime() method would be written to check for valid values for military time (hour is between 0 and 23 and minute and second are between 0 and 59.)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Encapsulation hides the private data members and the implementation details of a class, but it does not necessarily mean a class is completely isolated. Many objects must share information with other objects, usually with good reason. However, protecting private data by providing accessor and mutator methods ensures that an object is affected only in known ways by other objects in the system. Sharing should be minimized so that the class provides as few interfaces (public methods) as possible. Other methods required for the class should be private, so they are not available outside the class."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Using encapsulation properly and providing a controlled public interface is similar to a fast-food restaurant that has no indoor customer access and provides only a drive-up window. The customer can read the menu, place an order from the menu, pay for the order, and pick up the completed order. The customer does not know exactly what is occurring inside the restaurant; he or she knows only that placing an order and paying for it results in the food showing up in the completed order. The customer may return to the same fast-food restaurant every day for a month and interact with the restaurant in the same way. If the restaurant hires a consultant to cut costs and changes the way orders are filled, the customer has no knowledge of the change, and does not really need to know about it. As long as the customer interacts with the restaurant in the same way and the food tastes just as good each time, the customer does not really even care about the internal operations of the restaurant."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<br>Proper use of encapsulation in C++ enhances program security for several reasons:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The initial value of all data members is controlled by the programmer writing the code for the class.",
+                        "Access to an object's data is controlled by the programmer writing the code for the class, resulting in fewer human errors caused by improper use of the class by other programmers. Encapsulated objects that declare data as private or protected act as a black box, protecting the object's data and allowing access to the data only by calling class member methods, which control how the data can be accessed and/or changed. Data is secure because it can only be accessed in a safe manner, in the same way that a bank account is secure because it can only be accessed in a safe manner.",
+                        "Encapsulated objects provide full functionality; however, calling objects do not know the implementation details, and cannot rely on or take advantage of a particular implementation. This means that the implementation can be enhanced or updated in the future without affecting calling objects.",
+                        "If a class is isolated from the effects of other classes in the program using encapsulation, it is easier to trace a fault to the class that caused it and to limit the damage caused by the fault."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If a programmer does not use encapsulation properly, the existence of the encapsulation feature in C++ provides no enhanced security. In fact, using encapsulation improperly can greatly increase the insecurity of the program. Encapsulation violations increase program insecurities in direct proportion to how much intelligence the class contains. If the class stores one simple data element, such as a char, whose value can be any legal char value, then encapsulation violations are probably not a big issue. As the data becomes more complicated, encapsulation violations create more and more insecurities, since the special properties of the data (such as limiting hour to values between 0 and 23, inclusive) are more and more likely to be violated."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "As the rules of proper encapsulation are violated, all clients of the class become responsible for more and more code to correctly access and use the object's data. As the class is enhanced and updated over time, it is not possible to correct all uses of the class, particularly if external users are out of the programmer's control. Eventually the class loses integrity entirely and becomes a security vulnerability."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example in Code:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Consider the following class declaration:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./exampleInCode.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The RiskyTime class has no modesty; its data is hanging out in public for the entire program to see. The reason this is an issue for a class is the same reason it is a personal issue. When a person is exposed, he or she may get sunburned in all the wrong places. When data is exposed, other components have complete access to that data and can cause mischief. Since RiskyTime allows all methods in the entire program direct access to its data members, an external method could set hour, minute, and second to an invalid time, such as 36:99:-33 (hour:minute:second). Clients that use the class cannot count on the time being valid. If the client uses the class, anyway, and does not check to be sure the object's data is valid every time it is used, the invalid values can cause strange, and even dangerous, things to occur when the program executes."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "bq1",
+                    "prompt": "Which of the following statements about object-oriented programming are false?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "ba",
+                            "text": "Data and methods related to a single entity are bound together into a \"class\"."
+                        },
+                        {
+                            "id": "bb",
+                            "text": "Classes calling external methods do not need to know their implementation details."
+                        },
+                        {
+                            "id": "bc",
+                            "text": "Classes should share as much information and functionality as possible with other classes."
+                        },
+                        {
+                            "id": "bd",
+                            "text": "Data and methods can be \"private\", \"public\", or \"protected\"."
+                        }
+                    ],
+                    "answer": "bc"
+                },
+                {
+                    "type": "question",
+                    "id": "bq2",
+                    "prompt": "Which of these is a way encapsulation enhances security?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "b1",
+                            "text": "Members declared 'public' can be utilized by any external class."
+                        },
+                        {
+                            "id": "b2",
+                            "text": "Try-catch blocks help prevent programs from unexpectedly crashing."
+                        },
+                        {
+                            "id": "b3",
+                            "text": "Pointer variables can reference any location in memory."
+                        },
+                        {
+                            "id": "b4",
+                            "text": "Data can be validated before it is changed."
+                        }
+                    ],
+                    "answer": "b4"
+                }
+            ]
+        },
+        {
+            "header": "Code Responsibly",
+            "units": [
+                {
+                    "type": "list",
+                    "items": [
+                        "<strong><i>Restrict access:</i></strong>  Declare all data members as private. In addition, keep all methods that do not need to be called by external program components private. Create public methods to provide a controlled interface between the object's data and all external program components.",
+                        "<strong><i>Know the limits:</i></strong> Familiarize yourself with the range of valid values for each data element being stored in the class.",
+                        "<strong><i>Initialize the data:</i></strong> Set all the data elements to valid initial values for an empty or non-existent object using a default constructor.",
+                        "<strong><i>Choose the data types wisely:</i></strong> For example, C++ contains multiple data types for storing integer values. Be sure to choose integer types that are large enough to hold all the valid values that will be stored on each type of computer that will be used.",
+                        "<strong><i>Validate the input:</i></strong> Check input for validity before changing the data values stored in the object.",
+                        "<strong><i>Double check all operations performed:</i></strong> Be sure that any operations that change the data, such as incrementing the time, maintain the validity of all the data elements."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "subheader",
+                    "text": "<br><br>Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "validated",
+                    "prompt": " ",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "getter",
+                            "text": "\"Getter\" methods, which return a particular field so that it can be accessed publicly.",
+                            "ans": false
+                        },
+                        {
+                            "id": "setter",
+                            "text": "\"Setter\" methods, when a particular field is set to a given argument.",
+                            "ans": true
+                        },
+                        {
+                            "id": "parameterless",
+                            "text": "Parameterless methods which change data in a particular way.",
+                            "ans": true
+                        },
+                        {
+                            "id": "constructors",
+                            "text": "Constructors, where all data is initialized to some given or default value.",
+                            "ans": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Program 1"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./labAssignment.cpp"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Lab Questions:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "1. Type Program 1 above into the 3 separate files specified by the header comments. Compile and run the program. "
+                },
+                {
+                    "type": "question",
+                    "id": "output",
+                    "prompt": "Does the output make sense?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "y"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "2. Change the call to currTime.setTime() in main.cpp to the following:<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<code>currTime.setTime(-55, 99, 1025);</code><br>&nbspCompile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "makeSense",
+                    "prompt": "Does the output make sense?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "n"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "3. Add the following lines to main.cpp just before the return statement at the end of the method:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./labStep3.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Compile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "s3makeSense",
+                    "prompt": "Does the output make sense?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "n"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "4. We need to fix the problem caused by declaring the data in the Time class as public. Change Time.h to make the three data declarations private. Compile the program. "
+                },
+                {
+                    "type": "question",
+                    "id": "compile",
+                    "prompt": "What happens when you compile the program here?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "succesful",
+                            "text": "Program compiled successfully"
+                        },
+                        {
+                            "id": "error",
+                            "text": " A syntax error because we are trying to externally manipulate variables which are now private."
+                        },
+                        {
+                            "id": "getTime",
+                            "text": "A syntax error because we are trying to manipulate private variables using public function getTime."
+                        }
+                    ],
+                    "answer": "error"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "5. Remove the lines that were added to main.cpp in step 4 above. Compile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "s5makeSense",
+                    "prompt": "Does the output make sense?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "n"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "6. Now, let's fix the setTime() method. Change it as shown below:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./labStep6.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Compile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "s6makeSense",
+                    "prompt": "Does the output make sense?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "y"
+                },
+                {
+                    "type": "question",
+                    "id": "setTime",
+                    "prompt": "Why is this version of the setTime() method more secure than the previous version?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "newMethod",
+                            "text": "This new method prints output to the users."
+                        },
+                        {
+                            "id": "private",
+                            "text": "This new method modifies class's private data."
+                        },
+                        {
+                            "id": "validate",
+                            "text": "This new method validates its parameters before blindly changing its class's private data."
+                        }
+                    ],
+                    "answer": "validate"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "7. Change the call to currTime.setTime() in main.cpp to the following:<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<code>currTime.setTime(23, 59, 59);</code><br>&nbspCompile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "s7makeSense",
+                    "prompt": "Does the output make sense?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "n"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "8. Add an appropriate constructor to the Time class. Compile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "q9",
+                    "prompt": "Which values are well-suited to initialize hour, minute, and second in a default constructor?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "t1",
+                            "text": "01:01:01"
+                        },
+                        {
+                            "id": "t2",
+                            "text": "00:00:00"
+                        },
+                        {
+                            "id": "t3",
+                            "text": "23:59:59"
+                        }
+                    ],
+                    "answer": "t2"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i><small>*Copying and pasting programs may result in syntax errors and other inconsistencies. It is recommended you type each program.</small></i>"
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": []
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "Dquestion1",
+                    "prompt": "Why are public data members in a class a major security issue?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion2",
+                    "prompt": "Are accessor methods vulnerabilities in a class? Why or why not?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion3",
+                    "prompt": "Why is it important for a programmer to know the range of valid values for each data element being stored in the class?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion4",
+                    "prompt": "Is it acceptable to omit default constructors in a class? Why or why not?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion5",
+                    "prompt": "Why should the data types for class data members be chosen carefully?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion6",
+                    "prompt": "Why should a mutator method validate the input before changing the data values stored in an object?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion7",
+                    "prompt": "Why is it important for a programmer to double check any operations that change the value of class data members?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Further Work (optional – check with your instructor to see if you need to perform the following steps)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "1. Now, let's fix the incrementTime() method. Change it as shown below:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./dq1.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Compile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion8",
+                    "prompt": "Does the output make sense? If not, why not? ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion9",
+                    "prompt": "Why is this version of the incrementTime() method more secure than the original version?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "2. Add the following lines to main.cpp just before the call to currTime.setTime():"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./dq2.cpp"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Compile and run the program."
+                },
+                {
+                    "type": "question",
+                    "id": "Dquestion10",
+                    "prompt": "Does the output make sense? If not, why not?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
