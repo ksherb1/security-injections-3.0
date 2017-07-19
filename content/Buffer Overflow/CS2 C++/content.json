@@ -23,7 +23,7 @@
                 },
                 {
                     "type": "video",
-                    "url": "<a href = https://www.youtube.com/watch?v=5Seq4pv4nvA> https://www.youtube.com/watch?v=5Seq4pv4nvA</a>"
+                    "url": "https://www.youtube.com/embed/5Seq4pv4nvA"
                 },
                 {
                     "type": "paragraph",
@@ -272,17 +272,17 @@
                         "An ending point in the source array",
                         "The destination array of buffers – the array that you will be copying numbers to",
                         "The length of the destination array",
-                        "An buffer indicating the index in the destination array where copying should start."
+                        "A buffer indicating the index in the destination array where copying should start."
                     ],
                     "ordered": true
-                }, //////////////////////////////////////////////////////
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 3.2:</strong> "
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 3.3:</strong> "
+                    "text": "<strong>STEP 3.2:</strong> To avoid overflow, your routine should copy only those values that are available in the source array, to positions that are available in the destination array. If there are not enough values from the source array in the given range, use only those values that are available. If there is not enough space in the destination array, copy values only until the available space is full. Your function should return the number of values copied."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 3.3:</strong> Turn in program 2 to your instructor."
                 }
             ]
         },
@@ -292,62 +292,6 @@
                 {
                     "type": "subheader",
                     "text": "Complete the security checklist."
-                },
-                {
-                    "type": "question",
-                    "id": "SC1",
-                    "prompt": "List places where the bounds or range checking should occur?",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "SC2",
-                    "prompt": "For each input, what numbers will cause list index out of range errors?",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 1:</strong> Rewrite the above program to include the appropriate bounds checking."
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong> Create the following python file:"
-                },
-                {
-                    "type": "codeblock",
-                    "code": "./scProgram.py"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 3:</strong> Create the following temps.txt file (Make sure this file is in the same folder where the above python file is stored):<br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 </code><br>"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 4:</strong> Compile and run the program. It should list 10 temperatures as being read."
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 5:</strong>  Change temps.txt to the following: <br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 31.0 31.2 </code><br>"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 6:</strong> Compile and run the program."
-                },
-                {
-                    "type": "question",
-                    "id": "SC3",
-                    "prompt": "What happended after compiling and running the program in step 6 and why?",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<strong>STEP 7:</strong> Modify the program to fix the problem. DO NOT change the size of the array! Hint: Add a check to the loop."
                 }
             ]
         },
@@ -357,7 +301,7 @@
                 {
                     "type": "question",
                     "id": "Dquestion1",
-                    "prompt": "Describe the buffer overflow problem.",
+                    "prompt": "Buffer overflows are more troublesome for some programming languages than for others. For example, C and C++ lack the built-in bounds checking facilities that Java provides. Some people have argued that this is a good reason to avoid C and C++ in favor of Java or other \"safer\" languages. Do you think this is a good idea? Why or why not?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -365,7 +309,7 @@
                 {
                     "type": "question",
                     "id": "Dquestion2",
-                    "prompt": "What happens if you exceed the size of an array in Python? Do you consider this robust behavior?",
+                    "prompt": "Countless currently running programs were built using C and C++. Buffer overflow vulnerabilities are often found in these programs, often after they have been in use for many years. Why should it be so difficult to find and fix buffer overflow flaws in software?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -373,39 +317,7 @@
                 {
                     "type": "question",
                     "id": "Dquestion3",
-                    "prompt": "List three ways you could potentially overflow a buffer or exceed the size of an array in your program.",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "Dquestion4",
-                    "prompt": "How could you prevent a buffer overflow from occurring in your program?",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "Dquestion5",
-                    "prompt": "Give three real life examples of buffer overflow attacks (research on the web).",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "Dquestion6",
-                    "prompt": "What can result from a buffer overflow?",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "Dquestion7",
-                    "prompt": "Buffer overflows can be troublesome if they are used by attackers to run their own code. What sort of things might an attacker try to do if he or she were able to run any code they wanted on a computer?",
+                    "prompt": "Buffer overflows can be troublesome if they are used by hackers to run their own code. What sort of things might an attacker try to do if he or she were able to run arbitrary code on a computer?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
