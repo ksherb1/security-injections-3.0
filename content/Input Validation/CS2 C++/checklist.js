@@ -8,6 +8,7 @@ $(document).ready(function() {
 	// track which spans are needed for current question
 	var waitingOn = [];
 
+	var spans = [];
 
 	/**
 	 * returns the id of the next question, and rearranges class indicators
@@ -39,23 +40,98 @@ $(document).ready(function() {
 					// focus on next question
 					$("#"+next+"-label").addClass("si-checklist-active");
 
+
 					// track which spans are needed for next question
-					waitingOn = [];
-					$(".span-"+name).each(function(index) {
-						if( $(this).hasClass(next+"-"+name) ) {
-							waitingOn.push(index);
+					if(next === name+"-var-input"){
+
+							waitingOn = [];
+							$(".span-"+name).each(function(index) {
+								if( $(this).hasClass(next+"-"+name) ) {
+									waitingOn.push(index);
+								}
+							});
+
+				}
+
+				else{
+					console.log("OURS "+name+"-var-input-"+name);
+					console.log(spans[0]);
+					showPopOver(spans[0]);
+					$('input[name=popSave]').on('click', function() {
+						//console.log($('input[name=popOpt]:checked').val());
+
+						if ($('input[name=popOpt]:checked').val() === "No"){
+							$("#"+"Pgm1CL-vuln-length").prop('checked', true);
+							$('.radiopop').hide();
+							//console.log("HIDE");
+							$('input[name=popOpt]:checked').prop('checked', false);
 						}
 					});
+					var interval = setInterval(function(){
+
+						if(document.getElementById("Pgm1CL-vuln-length").checked === true && document.getElementById("Pgm1CL-vuln-range").checked == false){
+								$("#"+"Pgm1CL-vuln-length"+"-label").removeClass("si-checklist-active");
+								$("#"+"Pgm1CL-vuln-range"+"-label").addClass("si-checklist-active");
+								showPopOver(spans[1]);
+								//console.log($('input[name=popOpt]:checked').val());
+								$('input[name=popSave]').on('click', function() {
+								console.log($('input[name=popOpt]:checked').val());
+								if ($('input[name=popOpt]:checked').val() == "No"){
+									$("#"+"Pgm1CL-vuln-range").prop('checked', true);
+									$('.radiopop').hide();
+									console.log("HIDE");
+									$('input[name=popOpt]:checked').prop('checked', false);
+								}
+							});
+						}
+						if(document.getElementById("Pgm1CL-vuln-range").checked === true && document.getElementById("Pgm1CL-vuln-format").checked == false){
+								$("#"+"Pgm1CL-vuln-range"+"-label").removeClass("si-checklist-active");
+								$("#"+"Pgm1CL-vuln-format"+"-label").addClass("si-checklist-active");
+								showPopOver(spans[0]);
+								$('input[name=popSave]').on('click', function() {
+								console.log($('input[name=popOpt]:checked').val());
+								if ($('input[name=popOpt]:checked').val() == "No"){
+									$("#"+"Pgm1CL-vuln-format").prop('checked', true);
+									$('.radiopop').hide();
+									console.log("HIDE");
+									$('input[name=popOpt]:checked').prop('checked', false);
+								}
+							});
+						}
+						if(document.getElementById("Pgm1CL-vuln-format").checked === true && document.getElementById("Pgm1CL-vuln-type").checked == false){
+								$("#"+"Pgm1CL-vuln-format"+"-label").removeClass("si-checklist-active");
+								$("#"+"Pgm1CL-vuln-type"+"-label").addClass("si-checklist-active");
+								showPopOver(spans[1]);
+								$('input[name=popSave]').on('click', function() {
+								console.log($('input[name=popOpt]:checked').val());
+								if ($('input[name=popOpt]:checked').val() == "No"){
+									$("#"+"Pgm1CL-vuln-type").prop('checked', true);
+									$('.radiopop').hide();
+									console.log("HIDE");
+									$('input[name=popOpt]:checked').prop('checked', false);
+								}
+							});
+						}
+						if(document.getElementById("Pgm1CL-vuln-type").checked === true){
+								$("#"+"Pgm1CL-vuln-type"+"-label").removeClass("si-checklist-active");
+								clearInterval(interval);
+						}
+					},5000);
+				}
 
 					return next;
-	}
+				}
+
 
 				current = advance();
 
 
 	$(".span-"+name).each(function(index) {
+		spans.push($(this));
+		console.log(spans);
 		$(this).on('click', function() {
 			span = $(this);
+			console.log(span);
 
 			// continue if user is currently supposed to click this span, and hasn't already
 			if( span.hasClass(current+"-"+name) && $.inArray(index,clicked) < 0 ) {
@@ -84,6 +160,7 @@ $(document).ready(function() {
 	    $('.radiopop').show();
 	    $('.popover').css('left', (position.left+500) + 'px');
 	    $('.popover').css('top', (position.top+320-(theHeight/2)-10) + 'px');
-			console.log($('input[name=popOpt]:checked').val());
+			//console.log($('input[name=popOpt]:checked').val());
 	}
+
 });
