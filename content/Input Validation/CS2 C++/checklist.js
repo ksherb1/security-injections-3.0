@@ -22,32 +22,38 @@ $(document).ready(function() {
 			$("#"+question).prop('checked', true);
 
 
-			// take focus away from current question
-			$("#"+question+"-label").removeClass("si-checklist-active");
+
+						// take focus away from current question
+						$("#"+question+"-label").removeClass("si-checklist-active");
 
 
-		}
-		// focus on next question
-		$("#"+next+"-label").addClass("si-checklist-active");
+						switch(question) { // here's where flow is really controlled
+						case name+"-var-input":		next = name+"-vuln-length";	break;
+						case name+"-vuln-length":	next = name+"-vuln-range";	break;
+						case name+"-vuln-range":		next = name+"-vuln-format";	break;
+						case name+"-vuln-format":	next = name+"-vuln-type";	break;
+						default:	return;	// input invalid or question is complete
+						}
+					}
 
-		// track which spans are needed for next question
-		waitingOn = [];
-		$(".span-"+name).each(function(index) {
-			if( $(this).hasClass(next+"-"+name) ) {
-				waitingOn.push(index);
-			}
-		});
+					// focus on next question
+					$("#"+next+"-label").addClass("si-checklist-active");
 
-		return next;
+					// track which spans are needed for next question
+					waitingOn = [];
+					$(".span-"+name).each(function(index) {
+						if( $(this).hasClass(next+"-"+name) ) {
+							waitingOn.push(index);
+						}
+					});
+
+					return next;
 	}
 
-
-	current = advance();
-
+				current = advance();
 
 
 	$(".span-"+name).each(function(index) {
-
 		$(this).on('click', function() {
 			span = $(this);
 
@@ -71,18 +77,13 @@ $(document).ready(function() {
 		});
 	});
 
-	$(".span-"+name).click(function (e) {
-	    var offset = $(this).offset();
-	    var left = e.pageX;
-	    var top = e.pageY;
+	function showPopOver(span) {
+	    var offset = span.offset();
+	    var position = span.position();
 	    var theHeight = $('.popover').height();
-	    $('.popover').show();
-	    $('.popover').css('left', (left+10) + 'px');
-	    $('.popover').css('top', (top-(theHeight/2)-10) + 'px');
-			console.log($('.span1').val().toString());
-	});
-
-
-
-
+	    $('.radiopop').show();
+	    $('.popover').css('left', (position.left+500) + 'px');
+	    $('.popover').css('top', (position.top+320-(theHeight/2)-10) + 'px');
+			console.log($('input[name=popOpt]:checked').val());
+	}
 });
