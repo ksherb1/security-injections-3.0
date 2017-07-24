@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 
 					//show Popover over the index span
-					showPopOver(spans[7]);
+					showPopOver(spans[6]);
 
 					var tag = "Pgm1CL-var-range"; //the one that needs the popover
 					$('input[name=popSave2]').on('click', function() {
