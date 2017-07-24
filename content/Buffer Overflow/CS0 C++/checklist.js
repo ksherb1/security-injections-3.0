@@ -41,12 +41,8 @@ $(document).ready(function() {
 					// focus on next question
 					$("#"+next+"-label").addClass("si-checklist-active");
 
-
-					// track which spans are needed for next question
-				if(next === name+"-var-range"){
-
-
-					waitingOn = [];
+				if(next === name+"-var-range"){ //IF POPOVER IS NEEDED
+					waitingOn = []; //Gather spans
 					$(".span-"+name).each(function(index) {
 						if( $(this).hasClass(next+"-"+name) ) {
 							waitingOn.push(index);
@@ -54,16 +50,16 @@ $(document).ready(function() {
 					});
 
 
-
+					//show Popover over the index span
 					showPopOver(spans[7]);
-					//var choice;
-					var tag = "Pgm1CL-var-range";
+
+					var tag = "Pgm1CL-var-range"; //the one that needs the popover
 					$('input[name=popSave2]').on('click', function() {
 						if ($('#lowInt').val() == "0" && $('#popSelect1').val() == "<="
-						 	&& $('#popSelect2').val() == "<" && $('#highInt').val() == "10"){
-							$("#"+tag).prop('checked', true);
+						 	&& $('#popSelect2').val() == "<" && $('#highInt').val() == "10"){//these need to change to the right answer for the question
+							//$("#"+tag).prop('checked', true); //not needed because click event handles this.
 							$('.rangepop').hide();
-							$(".span-"+name).click();
+							$(".span-"+name).click(); //click the empty span so that next question is asked.
 						}
 
 					});
@@ -71,7 +67,7 @@ $(document).ready(function() {
 
 				}
 
-				else{
+				else{ //normal question
 
 					waitingOn = [];
 					$(".span-"+name).each(function(index) {
@@ -98,7 +94,7 @@ $(document).ready(function() {
 			if( span.hasClass(current+"-"+name) && $.inArray(index,clicked) < 0 ) {
 				clicked.push(index);					// 		note that it's been clicked, programmatically
 				span.addClass("si-code-clicked");		//		note that it's been clicked, graphically
-				if(span.hasClass(name+"-var-modify-"+name)|| span.hasClass(name+"-var-array-"+name)) {
+				if(span.hasClass(name+"-var-modify-"+name)|| span.hasClass(name+"-var-array-"+name)) { //needs to be changed for vulnerabilities
 					span.addClass("si-code-vulnerability"); //	some spans get extra graphics to indicate vulnerability
 				}
 
@@ -115,7 +111,7 @@ $(document).ready(function() {
 		});
 	});
 
-	function showPopOver(span) {
+	function showPopOver(span) { //showsPopover over span
 	    var offset = span.offset();
 	    var position = span.position();
 	    var theHeight = $('.popover').height();
