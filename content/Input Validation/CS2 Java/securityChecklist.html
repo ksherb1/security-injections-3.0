@@ -13,7 +13,7 @@ public class Input {
 
   public static int getArraySize(Scanner scan) {
     System.out.print("How many names? ");
-    <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">int n = scan.nextInt();</span>
+    <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">int n = scan.nextInt();</span></span><span class="span-Pgm1CL Pgm1CL-vuln-length-Pgm1CL"></span>
     scan.nextLine();
     return n;
   }
@@ -22,14 +22,14 @@ public class Input {
     String[] names = new String[sz];
     for (int i = 0; i < sz; i++ ) {
       System.out.print("type name #" + (i + 1) + ": ");
-      <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">names[i] = scan.nextLine();</span>
+      <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">names[i] = scan.nextLine();</span></span><span class="span-Pgm1CL Pgm1CL-vuln-format-Pgm1CL"></span>
     }
     return names;
   }
 
   public static int getWhich(Scanner scan) {
     System.out.print("Which name: ");
-    <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">int x = scan.nextInt();</span>
+    <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">int x = scan.nextInt();</span></span><span class="span-Pgm1CL Pgm1CL-vuln-range-Pgm1CL"></span><span class="span-Pgm1CL Pgm1CL-vuln-type-Pgm1CL"></span>
     return x;
   }
 

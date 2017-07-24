@@ -45,35 +45,7 @@
 						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
-				<div class="popover radiopop">
-					<label name= "popPrompt" text = "fuck"></label>
-					<form>
-				    <input type="radio" name= "popOpt" value="Yes"/>&nbsp;Yes
-						<input type="radio" name = "popOpt" value ="No"/>&nbsp;No
-				    <input type="button" name = "popSave" class="btn-md" value="Check"/>
-					</form>
-				</div>
-				<div class="popover rangepop">
-				    <form>
-							<input type = "textarea" name= "lowInt" style = "width: 24px"/>
-							<select name = "popSelect1">
-								<option value = "<"/>&lt;
-								<option value = "<="/>&lt;=
-								<option value = "="/>=
-								<option value = ">="/>&gt;=
-								<option value = ">"/>&gt;
-							</select>&nbsp;i&nbsp;
-							<select name = "popSelect2">
-								<option value = "<"/>&lt;
-								<option value = "<="/>&lt;=
-								<option value = "="/>=
-								<option value = ">="/>&gt;=
-								<option value = ">"/>&gt;
-							</select>
-							<input type = "textarea" name= "highInt" style = "width: 24px"/>
-				    	<input type="button" name = "popSave" class="btn-md" value="Check"/>
-						</form>
-				</div>
+
 				<div ng-switch-when="image" class="col-md-12">
 						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>
@@ -141,10 +113,41 @@
 							</table>
 						</div>
 					</div>
-					<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
-
+					<div class = "checklist-block" style = "position:relative;">
+						<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
+						<div class="popover radiopop" style = "position:absolute;">
+							<label name= "popPrompt" text = " "></label>
+							<form>
+						    <input type="radio" name= "popOpt" value="Yes"/>&nbsp;Yes&nbsp;
+								<input type="radio" name = "popOpt" value ="No"/>&nbsp;No&nbsp;
+						    <input type="button" name = "popSave" class="btn-md" value="Check"/>
+							</form>
+						</div>
+						<div class="popover rangepop" style = "position:absolute;">
+						    <form>
+									<input type = "textarea" name= "lowInt" style = "width: 24px"/>
+									<select name = "popSelect1">
+										<option value = "<"/>&lt;
+										<option value = "<="/>&lt;=
+										<option value = "="/>=
+										<option value = ">="/>&gt;=
+										<option value = ">"/>&gt;
+									</select>&nbsp;i&nbsp;
+									<select name = "popSelect2">
+										<option value = "<"/>&lt;
+										<option value = "<="/>&lt;=
+										<option value = "="/>=
+										<option value = ">="/>&gt;=
+										<option value = ">"/>&gt;
+									</select>
+									<input type = "textarea" name= "highInt" style = "width: 24px"/>
+						    	<input type="button" name = "popSave" class="btn-md" value="Check"/>
+								</form>
+						</div>
+					</div>
 				</div>
+
 						<p ng-switch-default class="si-error">Type invalid</p>
 					</div>
 				</div>

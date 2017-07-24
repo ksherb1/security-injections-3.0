@@ -54,7 +54,7 @@ $(document).ready(function() {
 				}
 
 				else{
-					showPopOver(spans[0]);
+					showPopOver(spans[1]);
 					var choice;
 					var tag = "Pgm1CL-vuln-length";
 					$('label[name=popPrompt]').text("Is length checked?");
@@ -79,7 +79,7 @@ $(document).ready(function() {
 								$("#"+"Pgm1CL-vuln-length"+"-label").removeClass("si-checklist-active");
 								$("#"+"Pgm1CL-vuln-range"+"-label").addClass("si-checklist-active");
 								tag = "Pgm1CL-vuln-range";
-								showPopOver(spans[2]);
+								showPopOver(spans[5]);
 								$('label[name=popPrompt]').text("Is range checked?");
 						}
 						if(document.getElementById("Pgm1CL-vuln-length").checked === true && document.getElementById("Pgm1CL-vuln-range").checked === true
@@ -87,7 +87,7 @@ $(document).ready(function() {
 								$("#"+"Pgm1CL-vuln-range"+"-label").removeClass("si-checklist-active");
 								$("#"+"Pgm1CL-vuln-format"+"-label").addClass("si-checklist-active");
 								tag = "Pgm1CL-vuln-format";
-								showPopOver(spans[1]);
+								showPopOver(spans[3]);
 								$('label[name=popPrompt]').text("Is format checked?");
 						}
 						if(document.getElementById("Pgm1CL-vuln-length").checked === true && document.getElementById("Pgm1CL-vuln-range").checked === true
@@ -95,7 +95,7 @@ $(document).ready(function() {
 								$("#"+"Pgm1CL-vuln-format"+"-label").removeClass("si-checklist-active");
 								$("#"+"Pgm1CL-vuln-type"+"-label").addClass("si-checklist-active");
 								tag = "Pgm1CL-vuln-type";
-								showPopOver(spans[2]);
+								showPopOver(spans[6]);
 								$('label[name=popPrompt]').text("Is type checked?");
 						}
 						if(document.getElementById("Pgm1CL-vuln-type").checked === true){
@@ -142,8 +142,8 @@ $(document).ready(function() {
 	    var position = span.position();
 	    var theHeight = $('.popover').height();
 	    $('.radiopop').show();
-	    $('.popover').css('left', (position.left+500) + 'px');
-	    $('.popover').css('top', (position.top+320-(theHeight/2)-10) + 'px');
+	    $('.popover').css('left', (offset.left) + 'px');
+	    $('.popover').css('top', (position.top-(theHeight/2)-5) + 'px');
 	}
 
 });

@@ -25,7 +25,7 @@ void getNames(string names[],size_t sz)
   for (size_t i = 0; i < sz; i++ )
   {
     cout << "type name # " << i+1 <<": ";
-    <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">cin >> names[i];</span>
+    <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">cin >> names[i];</span><span class="span-Pgm1CL Pgm1CL-vuln-length-Pgm1CL"></span><span class="span-Pgm1CL Pgm1CL-vuln-range-Pgm1CL"></span>
   }
 }
 
@@ -34,7 +34,7 @@ size_t getWhich()
 {
   size_t x;
   cout << "Which name: ";
-  <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">cin >> x;</span>
+  <span class="span-Pgm1CL Pgm1CL-var-input-Pgm1CL">cin >> x;</span><span class="span-Pgm1CL Pgm1CL-vuln-format-Pgm1CL"></span><span class="span-Pgm1CL Pgm1CL-vuln-type-Pgm1CL"></span>
   return x;
 }
 

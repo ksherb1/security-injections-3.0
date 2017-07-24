@@ -38,10 +38,13 @@ body {
 
 .popover {
     position:absolute;
+		text-align: center;
+		margin-left: auto;
+		margin-right: 0;
     display:none;
     background:#fff;
     border: 1px solid #999;
-    padding:10px;
+    padding: 10px;
     width:auto;
 
 }
@@ -64,9 +67,9 @@ body {
 .popover:before {
     border-color: rgba(201, 201, 201, 0);
     border-right-color: #c9c9c9;
-    border-width: 11px;
+    border-width: 10px;
     top: 50%;
-    margin-top: -11px;
+    margin-top: -10px;
 }
 
 .header{
