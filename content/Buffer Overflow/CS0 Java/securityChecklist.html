@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Overflow2
+{
+  public static void main(String[] args)
+  {
+    <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">int[] tests = new int[10];</span>
+    int test;
+    int count;
+    Scanner scan = new Scanner(System.in);
+
+    System.out.print("How many numbers? ");
+    count = scan.nextInt();
+    for (<span class="span-Pgm1CL Pgm1CL-var-modify-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">int i</span> = 0;</span> <span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">i</span>< count;<span class="span-Pgm1CL Pgm1CL-var-modify-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL"> i</span>++</span>)
+    {
+        System.out.print("Please type a number: ");
+        test = scan.nextInt();
+        <span class="span-Pgm1CL Pgm1CL-var-array-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">tests[i]</span></span> = test; <span class = "span-Pgm1CL Pgm1CL-var-range-Pgm1CL"></span>
+    }
+  }
+}
