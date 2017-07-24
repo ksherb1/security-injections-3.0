@@ -1,9 +1,14 @@
 <div ng-app="modApp" ng-controller="modCtrl">
-	<!--<header class = "header">
-		<div class = "container">
+<!--	<header class = "header">
+		<div class = "container-fluid">
+		<div class = "col-md-6">
 			<h1 class = "header-text">
-				Security Injections 3.0
+				Security Injections @
 			</h1>
+		</div>
+			<div class = "col-md-6">
+					<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo-horiz-rev.png" class = "img-responsive header-image">
+			</div>
 		</div>
 	</header>-->
 	<div class = "container">
@@ -41,32 +46,32 @@
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
 				<div class="popover radiopop">
+					<label name= "popPrompt" text = "fuck"></label>
 					<form>
-				    <input type="radio" name= "popOpt" value="Yes"/>Yes
-						<input type="radio" name = "popOpt" value ="No"/>No
-				    <input type="button" name = "popSave" class="btn-md" value="Save"/>
+				    <input type="radio" name= "popOpt" value="Yes"/>&nbsp;Yes
+						<input type="radio" name = "popOpt" value ="No"/>&nbsp;No
+				    <input type="button" name = "popSave" class="btn-md" value="Check"/>
 					</form>
 				</div>
 				<div class="popover rangepop">
 				    <form>
-							<input type = "textarea" style = "width: 30px"/>
-							<select name = "popSelect">
+							<input type = "textarea" name= "lowInt" style = "width: 24px"/>
+							<select name = "popSelect1">
+								<option value = "<"/>&lt;
+								<option value = "<="/>&lt;=
+								<option value = "="/>=
+								<option value = ">="/>&gt;=
+								<option value = ">"/>&gt;
+							</select>&nbsp;i&nbsp;
+							<select name = "popSelect2">
 								<option value = "<"/>&lt;
 								<option value = "<="/>&lt;=
 								<option value = "="/>=
 								<option value = ">="/>&gt;=
 								<option value = ">"/>&gt;
 							</select>
-							<input type = "textarea" style = "width: 30px"/>
-							<select name = "popSelect">
-								<option value = "<"/>&lt;
-								<option value = "<="/>&lt;=
-								<option value = "="/>=
-								<option value = ">="/>&gt;=
-								<option value = ">"/>&gt;
-							</select>
-							<input type = "textarea" style = "width: 30px"/>
-				    	<input type="button" class="btn-md" value="Save"/>
+							<input type = "textarea" name= "highInt" style = "width: 24px"/>
+				    	<input type="button" name = "popSave" class="btn-md" value="Check"/>
 						</form>
 				</div>
 				<div ng-switch-when="image" class="col-md-12">
@@ -108,28 +113,36 @@
 
 				</div>
 				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
-					<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 					<div class ="col-md-5">
 						<div class="well">
-						<table class="table borderless" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+						<table class="table" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
 							<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
 							<tr ng-repeat="item in group.items">
-								<td ng-if="item.js" class="si-checklist-box-cell">
-									<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
-											disabled>
-									</td>
-								<td ng-if="!item.js" class="si-checklist-box-cell">
-									<input type="checkbox" ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-											class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
-									</td>
 								<td class="si-checklist-label-cell">
 									<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
 									</td>
+								<td style = "vertical-align: middle;" ng-if="item.js" class="si-checklist-box-cell">
+									<div id = "checkMark">
+										<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+												class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
+												disabled>
+										<label for="{{ unit.id+'-'+group.id+'-'+item.id }}"></label>
+									</div>
+									</td>
+								<td style = "vertical-align: middle;" ng-if="!item.js" class="si-checklist-box-cell">
+									<div id = "checkMark">
+										<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
+												class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
+										<label for="{{ unit.id+'-'+group.id+'-'+item.id }}"></label>
+									</div>
+									</td>
+
 								</tr>
 							</table>
 						</div>
 					</div>
+					<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+
 						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 				</div>
 						<p ng-switch-default class="si-error">Type invalid</p>
@@ -194,7 +207,8 @@
 	<footer class = "footer">
 		<div class = "container">
 			<div class = "col-md-1">
-					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/towsonu-logo.png" class = "img-responsive">
+					<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo-rev.png" class = "img-responsive" style:"vertical-align:middle;">
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
 			</div>
 			<div class = "col-md-10">
 					<p class = "footer-text">
@@ -202,11 +216,11 @@
 						under grants NSF DUE-1241738,  NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649,
 						the GenCyber program, and the Intel Corporation.
 						<br>
-						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+						This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 					</p>
 			</div>
 			<div class = "col-md-1">
-					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class = "img-responsive">
+					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class = "img-responsive" style:"vertical-align:middle;">
 			</div>
 		</div>
 	</footer>

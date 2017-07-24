@@ -11,11 +11,23 @@ html {
 body {
 	/*margin-top: 80px;*/
 	background-color: whitesmoke;
+	/*margin-top:100px;*/
 	margin-bottom: 120px;
 }
 
 /* For bootstrap since relies on empty hrefs */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+
+#checkMark {
+  position: relative;
+}
+#checkMark label{
+  position: absolute;
+	top: -12;
+	left: -5;
+}
 
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -31,6 +43,7 @@ body {
     border: 1px solid #999;
     padding:10px;
     width:auto;
+
 }
 .popover:after, .popover:before {
     right: 100%;
@@ -64,13 +77,21 @@ body {
 	background-color: #464646;
 }
 .header-text{
-	color: silver;
+	font-family: "Sabon";
+	color: whitesmoke;
 	text-align: left;
+}
+.header-image {
+    width:auto; /* you can use % */
+    height: 100px;
+		float: right;
 }
 .page-header{
 	border-bottom: 5px solid #337ab7;
 }
 .footer{
+	margin: 0 auto !important;
+	text-align: center !important;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -78,7 +99,7 @@ body {
 	background-color: #464646;
 }
 .footer-text{
-	color: silver;
+	color: whitesmoke;
 	text-align: center;
 }
 

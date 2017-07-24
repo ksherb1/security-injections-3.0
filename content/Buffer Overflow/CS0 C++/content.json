@@ -291,7 +291,68 @@
         },
         {
             "header": " Security Checklist",
-            "units": []
+            "units": [
+              {
+      					"type": "checklist",
+      					"id": "Pgm1CL",
+      					"list": [
+      						{
+      							"id": "array",
+      							"header": "1. Finding Arrays:",
+      							"items": [
+      								{
+      									"id": "dec",
+      									"text": "Click each array declaration in the above code",
+      									"ans": true,
+      									"js": true
+      								},
+                      {
+      									"id": "ref",
+      									"text": "For each array, click all subsequent references",
+      									"ans": true,
+      									"js": true
+      								}
+      							]
+      						},
+      						{
+      							"id": "var",
+      							"header": "2. Index Variables:",
+      							"items": [
+      								{
+      									"id": "range",
+      									"text": "For each array access that uses a variable as an index, write the legal index range next to it",
+      									"ans": true,
+      									"js": true
+      								},
+      								{
+      									"id": "occur",
+      									"text": "For each index marked in the previous step, click all occurrences of that variable",
+      									"ans": true,
+      									"js": true
+      								},
+      								{
+      									"id": "modify",
+      									"text": "Click any assignments, inputs or operations that may modify these index variables",
+      									"ans": true,
+      									"js": true
+      								},
+                      {
+      									"id": "array",
+      									"text": "Click any array that is indexed by a highlighted index variable",
+      									"ans": true,
+      									"js": true
+      								}
+      							]
+      						}
+      					],
+      					"code": "./securityChecklist.html",
+      					"javascript": "./checklist.js"
+      				},
+      				{
+      					"type": "paragraph",
+      					"text": "Highlighted areas indicate vulnerabilities."
+      				}
+            ]
         },
         {
             "header": "Discussion Questions",
