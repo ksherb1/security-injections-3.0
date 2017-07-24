@@ -59,17 +59,10 @@ $(document).ready(function() {
 					//var choice;
 					var tag = "Pgm1CL-var-range";
 					$('input[name=popSave2]').on('click', function() {
-						//console.log($('input[name=popOpt]:checked').val());
-						//choice = $('input[name=popOpt]:checked').val();
-						console.log($('#lowInt').val());
-						console.log($('#popSelect1').val());
-						console.log($('#popSelect2').val());
-						console.log($('#highInt').val());
-						if ($('input[name=lowInt]').val() == "0" && $('input[name=popSelect1]').val() == "<="
-						 	&& $('input[name=popSelect2]').val() == "<" && $('input[name=highInt]').val() == "10"){
+						if ($('#lowInt').val() == "0" && $('#popSelect1').val() == "<="
+						 	&& $('#popSelect2').val() == "<" && $('#highInt').val() == "10"){
 							$("#"+tag).prop('checked', true);
 							$('.rangepop').hide();
-						//	$('input[name=popOpt]').prop('checked', false);
 							$(".span-"+name).click();
 						}
 
@@ -127,8 +120,8 @@ $(document).ready(function() {
 	    var position = span.position();
 	    var theHeight = $('.popover').height();
 	    $('.rangepop').show();
-	    $('.popover').css('left', (position.left+500) + 'px');
-	    $('.popover').css('top', (position.top+275-(theHeight/2)-10) + 'px');
+	    $('.popover').css('left', (offset.left) + 'px');
+	    $('.popover').css('top', (position.top-(theHeight/2)-5) + 'px');
 	}
 
 });
