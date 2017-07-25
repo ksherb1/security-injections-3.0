@@ -338,7 +338,7 @@
                         "js": true
                       }
                     ]
-                  }
+                  },
                     {
                     "id": "loop",
                     "header": "3. Loops that modify index variables:",
@@ -354,7 +354,7 @@
                         "text": "Fill in the legal range of the array index next to the loop limit. Note if the loop limit could exceed the legal range of the array index.",
                         "ans": true,
                         "js": true
-                      },
+                      }
                     ]
                   }
                 ],
