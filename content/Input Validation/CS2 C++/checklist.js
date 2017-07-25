@@ -65,6 +65,10 @@ $(document).ready(function() {
 							$("#"+tag).prop('checked', true);
 							$('.radiopop').hide();
 							$('input[name=popOpt]').prop('checked', false);
+							$('.popover').css('background-color', 'white');
+						}
+						else{
+							$('.popover').css('background-color', 'lightpink');
 						}
 					});
 
@@ -134,13 +138,17 @@ $(document).ready(function() {
 		});
 	});
 
+
+
 	function showPopOver(span) {
 	    var offset = span.offset();
 	    var position = span.position();
 	    var theHeight = $('.popover').height();
 	    $('.radiopop').show();
-	    $('.popover').css('left', (offset.left) + 'px');
-	    $('.popover').css('top', (position.top-(theHeight/2)-5) + 'px');
+			$(".popover").css({
+            'position': 'absolute',
+            'top': (position.top-(theHeight/2)-5) + 'px',
+            'left': (position.left+50) + 'px'
+      });
 	}
-
 });

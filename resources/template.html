@@ -113,8 +113,8 @@
 							</table>
 						</div>
 					</div>
-					<div class = "checklist-block" style = "position:relative;">
-						<pre class= "col-md-7" ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+					<div class = "col-md-7 checklist-block" style = "position:relative;">
+						<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 						<div class="popover radiopop" style = "position:absolute;">
 							<label name= "popPrompt" text = " "></label>

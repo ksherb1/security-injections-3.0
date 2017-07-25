@@ -60,6 +60,10 @@ $(document).ready(function() {
 							//$("#"+tag).prop('checked', true); //not needed because click event handles this.
 							$('.rangepop').hide();
 							$(".span-"+name).click(); //click the empty span so that next question is asked.
+							$('.popover').css('background-color', 'white');
+						}
+						else{
+							$('.popover').css('background-color', 'lightpink');
 						}
 
 					});
@@ -116,8 +120,11 @@ $(document).ready(function() {
 	    var position = span.position();
 	    var theHeight = $('.popover').height();
 	    $('.rangepop').show();
-	    $('.popover').css('left', (offset.left) + 'px');
-	    $('.popover').css('top', (position.top-(theHeight/2)-5) + 'px');
+			$(".popover").css({
+            'position': 'absolute',
+            'top': (position.top-(theHeight/2)-5) + 'px',
+            'left': (position.left+50) + 'px'
+      });
 	}
 
 });
