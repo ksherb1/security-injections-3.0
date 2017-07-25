@@ -129,10 +129,10 @@ $(document).ready(function() {
 	    var theHeight = $('.popover').height();
 	    $('.rangepop').show();
 			$(".popover").css({
-            'position': 'absolute',
-            'top': (position.top-(theHeight/2)-5) + 'px',
-            'left': (position.left+50) + 'px'
-      });
+             'position': 'absolute',
+             'top': (position.top-(theHeight/2)-5) + 'px',
+             'left': (position.left+50) + 'px'
+       });
 	}
 
 });
