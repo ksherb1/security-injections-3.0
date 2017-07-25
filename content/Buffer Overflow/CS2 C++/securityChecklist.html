@@ -1,0 +1,58 @@
+#include
+#include
+using namespace std;
+const int INPUT_SIZE = 10;
+string getString();
+void copyVals(string, char[]);
+void getSubstring(char[], char[]);
+void getChars(int, int, char[], char[]);
+
+int main()
+{
+  <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char vals[INPUT_SIZE];</span>
+  <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char sub[INPUT_SIZE];</span>
+  string s1 = getString();
+
+  <span class="span-Pgm1CL Pgm1CL-function-loop-Pgm1CL">copyVals(s1, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>);</span>
+  getSubstring(<span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">sub</span>);
+  cout << "sub string: " << <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">sub</span> << endl;
+
+  return 0;
+}
+
+string getString()
+{
+  cout << "Please type a string: ";
+  string s;
+  getline(cin, s);
+  return s;
+}
+
+void copyVals(<span class="span-Pgm1CL Pgm1CL-function-loop-Pgm1CL">string s</span>, <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char vals[]</span>)  <span class = "span-Pgm1CL Pgm1CL-function-range-Pgm1CL"></span>
+{
+  for (<span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">size_t i</span> = 0; <span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">i</span> < <span class="span-Pgm1CL Pgm1CL-loop-limit-Pgm1CL">  s.length()</span>; <span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-modify-Pgm1CL">i++</span></span>)  <span class = "span-Pgm1CL Pgm1CL-loop-range-Pgm1CL"></span>
+    <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals[<span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">i</span>]</span></span> = s.at(<span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">i</span>);  <span class = "span-Pgm1CL Pgm1CL-var-range-Pgm1CL"></span>
+    <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals[s.length() - 1]</span> = '\0';
+}
+
+void getSubstring(<span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char vals[]</span>, <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char newChars[]</span>)
+{
+  size_t start;
+  size_t end;
+  cout << "Starting point(buffer index): ";
+  cin >> start;
+
+  cout << "Ending point(buffer index): ";
+  cin >> end;
+
+  span class="span-Pgm1CL Pgm1CL-function-loop-Pgm1CL">getChars(start, end, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">newChars</span>);</span>
+}
+
+void getChars(<span class="span-Pgm1CL Pgm1CL-function-index-Pgm1CL">size_t start</span>, <span class="span-Pgm1CL Pgm1CL-function-index-Pgm1CL">size_t end</span>, <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char vals[]</span>, <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char newChars[</span>])  <span class = "span-Pgm1CL Pgm1CL-function-range-Pgm1CL"></span>
+{
+  size_t sz = (end - start) + 1;
+  // must do only sz-1 characters, to leave room for terminator
+  for (<span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">size_t i</span> = 0; <span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">i</span> < <span class="span-Pgm1CL Pgm1CL-loop-limit-Pgm1CL">(sz - 1)</span>; <span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-var-modify-Pgm1CL">i++</span></span>)  <span class = "span-Pgm1CL Pgm1CL-loop-range-Pgm1CL"></span>
+    <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">newChars[<span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">i</span>]</span></span> = <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL"><span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals[start + <span class="span-Pgm1CL Pgm1CL-var-occur-Pgm1CL">i</span>];</span></span> <span class = "span-Pgm1CL Pgm1CL-var-range-Pgm1CL"></span>
+    <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">newChars[sz - 1]</span> = '\0';
+}
