@@ -13,7 +13,7 @@ int main()
   <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char sub[INPUT_SIZE];</span>
   string s1 = getString();
 
-  <span class="span-Pgm1CL Pgm1CL-function-loop-Pgm1CL">copyVals(s1, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>);</span>
+  <span class="span-Pgm1CL Pgm1CL-function-call-Pgm1CL">copyVals(s1, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>);</span>
   getSubstring(<span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">sub</span>);
   cout << "sub string: " << <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">sub</span> << endl;
 
@@ -45,7 +45,7 @@ void getSubstring(<span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char vals[]<
   cout << "Ending point(buffer index): ";
   cin >> end;
 
-  span class="span-Pgm1CL Pgm1CL-function-loop-Pgm1CL">getChars(start, end, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">newChars</span>);</span>
+  <span class="span-Pgm1CL Pgm1CL-function-call-Pgm1CL">getChars(start, end, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">vals</span>, <span class="span-Pgm1CL Pgm1CL-array-ref-Pgm1CL">newChars</span>);</span>
 }
 
 void getChars(<span class="span-Pgm1CL Pgm1CL-function-index-Pgm1CL">size_t start</span>, <span class="span-Pgm1CL Pgm1CL-function-index-Pgm1CL">size_t end</span>, <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char vals[]</span>, <span class="span-Pgm1CL Pgm1CL-array-dec-Pgm1CL">char newChars[</span>])  <span class = "span-Pgm1CL Pgm1CL-function-range-Pgm1CL"></span>
