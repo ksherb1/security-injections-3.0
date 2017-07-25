@@ -51,8 +51,8 @@ $(document).ready(function() {
 						}
 					});
 					var spanLoc;
-					if(next === name+"-var-range"){spanLoc = 11;} //NEED TO BE SET TO THE RIGHT SPAN
-					else if (next === name+'-loop-range'){spanLoc = 6;}
+					if(next === name+"-var-range"){spanLoc = 6;} //NEED TO BE SET TO THE RIGHT SPAN
+					else if (next === name+'-loop-range'){spanLoc = 4;}
 
 					//show Popover over the index span
 					showPopOver(spans[spanLoc]);
