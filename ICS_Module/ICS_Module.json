@@ -1,0 +1,409 @@
+{
+    "name": "Industrial Control Systems",
+    "variant": "CS Capstone",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Industrial Control Systems (ICS) are the backbone for the nation’s critical infrastructure including water, gas, transportation, aerospace, hazardous materials, and electricity management and protecting these systems is paramount for society. "
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Industrial Control Systems (ICS) are vital to everyday operations including power, water, hazardous materials and transportation management. These systems can be widely distributed and take the form of centralized and decentralized systems - interconnected and mutually dependent.  Understanding and protecting ICS is crucial for national security.  Cyber operators should have a foundational understanding of the threats, vulnerabilities, and mitigation strategies associated with ICS."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "ICS includes SCADA (supervisory control and data acquisition), DCS (digital control systems), distributed nodes such as PLC (programmable logic controllers), and feedback controllers.  ICS receive and transmit data and systems respond to available information.  Examples actions include turning on/off, opening/closing, sounding alarms, and providing specific detail such as temperature, height, and weight."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "With advances in technology, ICS has evolved from centralized to decentralized management.  Early on, ICS systems had isolated and limited functionality. An operator would have visible and physical access to a discreet number of physical systems making comprehensive situational awareness impossible without cooperation and accurate information from other parties.  Centralized management provided these same controls and services in one location, but in the form of direct physical access – think levers, switches, and knobs.  The attack vectors are limited in a centralized direct access system including physical attack and malfunction from both non- and nefarious actors.  However, these systems were highly inflexible.  Change due to an addition or modification would require the facilities to be modified since the systems were hard-wired.  Advances in technology allowed computers to manage the systems more efficiently, effectively, and productively than humans.  The modern approach to ICS using sensors, networks, and software management is called DCS (Distributed Computing Systems). DCS is a generic term as each implementation is customized to the situation.  In DCS systems, PLC’s (Programmable Logic Controllers) have replaced the manual switches, levers, and valves found in the earliest ICS systems.  Originally found in the automotive industry, DCS has evolved to become intertwined with SCADA.  SCADA uses RTU (remote terminal units) instead of PLC’s – often to accomplish similar objectives of supervising existing units.   SCADA and DCS are control systems for decentralized management.  The transition to decentralized management and embedded systems has created a larger attack surface."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Cyber criminals and terrorist no longer need physical access to systems and control rooms to penetrate ICS.  SCADA and DCS often rely on commercial infrastructure with known vulnerabilities and trained professionals. Resources are available to detect and manipulate sensor information.  Cyber operators protect a large attack service with diversified and increasing vulnerabilities (<a href = https://kasperskycontenthub.com/securelist/files/2016/07/KL_REPORT_ICS_Statistic_vulnerabilities.pdf> https://kasperskycontenthub.com/securelist/files/2016/07/KL_REPORT_ICS_Statistic_vulnerabilities.pdf </a>). A cyber operator must have the capability to identify and mitigate potential security vulnerabilities."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In ICS, systems are dependent upon data.  Data comes from managed nodes on the network.  Data is captured and identified to determine the current state of a system.  Operators and system controller must put in the necessary controls to prevent data from being altered. The state of a node may be manipulated physically or electronically providing an altered or inaccurate state. Another approach is to compromise the operator or system directly without manipulating the nodes.  Viruses, including malware and ransomware, may prevent the system from functioning, alter the functionality, or obfuscate the functionality."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Stuxnet is a malicious virus targeting Windows-based Siemens ICS.  The malware was implemented to attack the PLCs of Iranian nuclear centrifuges causing the machines to spin out of control and destroy themselves.  Stuxnet also impacted other countries, including the U.S. during the infection. The methodology and approach used in Stuxnet can be applied to both SCADA and DCS systems. Stuxnet derivates are known to exist, and there is concern about the next \"Stuxnet.\""
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The U.S. Nuclear Regulatory Commission outlined various potential points of attack for ICS (<a href = https://www.nrc.gov/docs/ML1319/ML13198A409.pdf> https://www.nrc.gov/docs/ML1319/ML13198A409.pdf</a>).  The USNRC expressed concerns over the ubiquity of wirelessly connected devices and the capabilities of such devices – tethering, rogue access points, and networking. Legacy concerns such transferable media (USB drives, cd’s, disk) to remain credible. Also, the USNRC posed concerns about external vendor vulnerabilities."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "infrastructure",
+                    "prompt": "What key U.S. infrastructure components use ICS?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "sewer",
+                            "text": "Sewer",
+                            "ans": true
+                        },
+                        {
+                            "id": "water",
+                            "text": "Water",
+                            "ans": true
+                        },
+                        {
+                            "id": "electricity",
+                            "text": "Electricity",
+                            "ans": true
+                        },
+                        {
+                            "id": "oilGas",
+                            "text": "Oil and gas distribution",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "susceptible",
+                    "prompt": "ICS is not susceptible to similar cyber threats that a home-user would encounter",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "t",
+                            "text": "true"
+                        },
+                        {
+                            "id": "f",
+                            "text": "false"
+                        }
+                    ],
+                    "answer": "f"
+                },
+                {
+                    "type": "question",
+                    "id": "devicesSystems",
+                    "prompt": "What devices and systems can be found ICS implementations?",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "plcs",
+                            "text": "PLCs",
+                            "ans": true
+                        },
+                        {
+                            "id": "sensors",
+                            "text": "Sensors",
+                            "ans": true
+                        },
+                        {
+                            "id": "modern",
+                            "text": "Modern Operating Systems (Windows, Linux, etc.)",
+                            "ans": true
+                        },
+                        {
+                            "id": "usb",
+                            "text": "USB Devices",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "header": "Code Responsibly",
+                    "units": [
+                        {
+                            "type": "subheader",
+                            "text": "How Can You Avoid This Error?"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "The first step in protecting ICS is able to explain and summarize the associated vulnerabilities with a particular implementation.  The Penetration Testing Execution Standard (PTES) (<a href = http://www.pentest-standard.org/index.php/Main_Page> www.pentest-standard.org</a>) provides a framework for identifying potential security vulnerabilities.  PTES includes intelligence gathering, threat modeling, and vulnerability analysis.  Intelligence gathering, arguably the most important aspect of vulnerability detection, requires the administration to learn the behaviors, operations, and existing attack vectors while identifying existing protection methods.  Intelligence gathering occurs passively and actively.  Passive intelligence discovers information about targets without touching the systems such as recording instrument telemetry that could identify communicating controls.  Active intelligence directly interacts with the system such as transmitting information and assessing changes in feedback controls. Information acquired in the intelligence gathering process is used for threat modeling. Threat modeling can aid in determining the most effective attack method based on the identified security vulnerabilities.  A cyber operator should think like an adversary.  Threat modeling also includes threat capability analysis and motivation modeling based on the specific infrastructure.  After gathering intelligence and threat modeling, vulnerability analysis starts.  Vulnerability analysis is the process of discovering flaws in the system.  The process can be done manually or through automation tools through active and passive scanning.  Further analysis may include exploitation may occur in a controlled fashion to gather more information only if the rules of engagement include such action."
+                        },
+                        {
+                            "type": "subheader",
+                            "text": "Answer the following questions:"
+                        },
+                        {
+                            "type": "question",
+                            "id": "intelligence",
+                            "prompt": "Intelligence gathering includes which of the following steps?",
+                            "ignored": false,
+                            "mode": "checkbox",
+                            "choices": [
+                                {
+                                    "id": "effective",
+                                    "text": "Determining the most effective attack methods",
+                                    "ans": false
+                                },
+                                {
+                                    "id": "learning",
+                                    "text": "Learning how a target behaves, operates, and how it can be attacked",
+                                    "ans": true
+                                },
+                                {
+                                    "id": "establishing",
+                                    "text": "Establishing access to a system",
+                                    "ans": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "question",
+                            "id": "importantProcess",
+                            "prompt": "What is (are) the most important process for identifying potential security vulnerabilities?",
+                            "ignored": false,
+                            "mode": "checkbox",
+                            "choices": [
+                                {
+                                    "id": "intelligence",
+                                    "text": "Intelligence gathering",
+                                    "ans": true
+                                },
+                                {
+                                    "id": "threat",
+                                    "text": "Threat modeling",
+                                    "ans": false
+                                },
+                                {
+                                    "id": "vuln",
+                                    "text": "Vulnerability analysis",
+                                    "ans": false
+                                },
+                                {
+                                    "id": "exp",
+                                    "text": "Exploitation",
+                                    "ans": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "question",
+                            "id": "manageNodes",
+                            "prompt": "How do ICS manage distributed nodes?",
+                            "ignored": false,
+                            "mode": "checkbox",
+                            "choices": [
+                                {
+                                    "id": "gather",
+                                    "text": "Gathering information from nodes for accuracy, reliability, and tampering",
+                                    "ans": true
+                                },
+                                {
+                                    "id": "training",
+                                    "text": "Training operators to monitor, control, and secure ICS systems",
+                                    "ans": true
+                                },
+                                {
+                                    "id": "organizing",
+                                    "text": "Organizing information on current systems through electronic dashboards",
+                                    "ans": true
+                                },
+                                {
+                                    "id": "building",
+                                    "text": "Building redundancies and failovers",
+                                    "ans": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "header": "Laboratory Assignment",
+                    "units": [
+                        {
+                            "type": "subheader",
+                            "text": "SETUP"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Items you will need:"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<ul><li><a href = https://www.amazon.com/CanaKit-Raspberry-Ultimate-Starter-Kit/dp/B01C6Q4GLE/ref=as_li_ss_tl?s=pc&ie=UTF8&qid=1500393798&sr=1-11&keywords=raspberry+pi+3&linkCode=sl1&tag=andrewmangle-20&linkId=13bea409485d5df3737cf8bd40937683> This kit </a> provides everything you will need.</li><li>Individual parts:</li></ul>"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Raspberry Pi 3 Model B ($35)<ul><li>16 GB or higher MicroSD Card ($10)</li><li>Micro USB power supply ($10)</li><li>Raspberry Pi 3 Case with opening for GP/IO cable</li><li><i>Consider <a href =https://www.amazon.com/Vilros-Raspberry-Kit-Clear-Bluetooth-Connectivity/dp/B01D92SSX6/ref=as_li_ss_tl?s=pc&ie=UTF8&qid=1500393798&sr=1-7&keywords=raspberry+pi+3&linkCode=sl1&tag=andrewmangle-20&linkId=218031d3273fe16fe7ab181b14deb47a> this </a> kit</i></li></ul>",
+                                "<a href = https://www.amazon.com/Elegoo-Breadboard-Solderless-Distribution-Connecting/dp/B01EV6LJ7G/ref=as_li_ss_tl?ie=UTF8&qid=1500393772&sr=8-3&keywords=breadboard&linkCode=sl1&tag=andrewmangle-20&linkId=6e06cb65c0fb87d60ad4886e4ed83a19> Solderless Breadboard</a> – at least 400 points and 830 points would be better",
+                                "GPIO to Breadboard Interface Board and Ribbon Cable",
+                                "At least 10 LEDs and 10 resistors – one is necessary, but more is better"
+                            ],
+                            "ordered": false
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Download the ICS_Pi.img (15.9 GB)."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Write the image to the Raspberry Pi Micro SD Card."
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "You will need to use an image-writing tool.  We suggest <a href  = https://etcher.io> Etcher</a> which is compatible with Mac OS, Linux, and Windows.  Etcher instructions can be found <a href = https://www.raspberrypi.org/documentation/installation/installing-images/> here</a>."
+                            ],
+                            "ordered": false
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Place the Micro SD Card inside Raspberry Pi 3 (Model A or B) [<i>do not power on yet</i>]."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Build the Breadboard as outlined below (see images below). You will need to match wires to the appropriate GPIO pins."
+                        },
+                        {
+                            "type": "image",
+                            "src": " ",
+                            "alt": " ",
+                            "width": ,
+                            "height": ,
+                            "float": null
+                        },
+                        {
+                            "type": "image",
+                            "src": " ",
+                            "alt": " ",
+                            "width": ,
+                            "height": ,
+                            "float": null
+                        },
+                        {
+                            "type": "image",
+                            "src": " ",
+                            "alt": " ",
+                            "width": ,
+                            "height": ,
+                            "float": null
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Plug the breadboard ribbon cable into the Raspberry Pi 3 – Look for the red in the ribbon to install properly – <i>do not bend a GPIO pin</i> (see image below)."
+                        },
+                        {
+                            "type": "image",
+                            "src": " ",
+                            "alt": " ",
+                            "width": ,
+                            "height": ,
+                            "float": null
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Plug the Raspberry Pi 3 into a power source."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Once the Lights turn on, the lab exercise may begin."
+                        },
+                        {
+                            "type": "subheader",
+                            "text": "Lab Exercise"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "For the lab exercise, you will need to perform some basic intelligence gathering using both active and passive information gathering. A threat model should be developed based on the information gathered.  Using the threat model, a vulnerability analysis including active and passive scanning should commence. Access may be established if outlined in the rules of engagement.  Please note, the ONLY modification to the system permitted in this lab is disabling or enabling a single light – any other action violates the rules of engagement."
+                        },
+                        {
+                            "type": "question",
+                            "id": "ports",
+                            "prompt": "Question 1: What ports are currently open on the Pi? Why?",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "question",
+                            "id": "user",
+                            "prompt": "Question 2: What user accounts are on the system?",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "question",
+                            "id": "lights",
+                            "prompt": "Question 3: How are the lights controlled on the Pi?",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        }
+                    ]
+                },
+                {
+                    "header": "Discussion Questions",
+                    "units": [
+                        {
+                            "type": "question",
+                            "id": "dq1",
+                            "prompt": "Question 1: Where would a similar ICS environment be implemented?",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "question",
+                            "id": "dq2",
+                            "prompt": "Question 2: What are the potential attack vectors for this system?",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "question",
+                            "id": "dq3",
+                            "prompt": "Question 3: Build a system using a Raspberry Pi to control a power outlet.",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "question",
+                            "id": "dq4",
+                            "prompt": "Question 4: How is the lab similar / different than a Water Distribution ICS system?",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "question",
+                            "id": "dq5",
+                            "prompt": "Question 5: Who accessed/modified the system?",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -12,7 +12,7 @@
 //TEXT AREA: For questions where you need text boxes for the answers
 {
     "type": "question",
-    "id": "question1",
+    "id": "",
     "prompt": " ",
     "ignored": true,
     "mode": "textarea",
@@ -83,15 +83,15 @@
     "type": "subheader",
     "text": " "
 }
-//VIDEO
-{
-    "type": "video",
-    "url": ""
-}
 //PARAGRAPH
 {
     "type": "paragraph",
     "text": " "
+}
+//VIDEO
+{
+    "type": "video",
+    "url": ""
 }
 //LIST: creates a bulleted list where "Step 1" is bolded. If you want to number it, change "ordered" to 'true'.
 {
