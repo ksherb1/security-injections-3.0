@@ -1,16 +1,15 @@
 <div ng-app="modApp" ng-controller="modCtrl">
-<!--	<header class = "header">
-		<div class = "container-fluid">
-		<div class = "col-md-6">
+<header class = "header">
+		<div class = "container">
+		<div class = "col-sm-10">
 			<h1 class = "header-text">
-				Security Injections @
+
 			</h1>
 		</div>
-			<div class = "col-md-6">
-					<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo-horiz-rev.png" class = "img-responsive header-image">
-			</div>
+			<div class = "col-sm-2">
+				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" class = "img-responsive" style:"vertical-align:middle;"></div>
 		</div>
-	</header>-->
+	</header>
 	<div class = "container">
 		<div ng-if="contentError">
 			<p class="si-error">There was a problem getting content.</p>
@@ -19,8 +18,8 @@
 
 	<div ng-if="!contentError">
 		<div class ="page-header">
-		<h1>{{ module.name }} - {{ module.variant }}</h1>
-	</div>
+				<h1>{{ module.name }} - {{ module.variant }}</h1>
+		</div>
 		<!-- workflow -->
 			<div class = "container-fluid">
         <div class="container-fluid">
@@ -210,7 +209,7 @@
 	<footer class = "footer">
 		<div class = "container">
 			<div class = "col-md-1">
-					<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo-rev.png" class = "img-responsive" style:"vertical-align:middle;">
+					<br>
 					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
 			</div>
 			<div class = "col-md-10">

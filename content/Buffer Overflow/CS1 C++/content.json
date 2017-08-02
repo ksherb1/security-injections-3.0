@@ -288,6 +288,10 @@
             "header": " Security Checklist",
             "units": [
               {
+                  "type": "subheader",
+                  "text": "Complete the security checklist."
+              },
+              {
                 "type": "checklist",
                 "id": "Pgm1CL",
                 "list": [

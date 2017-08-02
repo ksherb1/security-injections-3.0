@@ -95,11 +95,11 @@
                     "choices": [
                         {
                             "id": "t",
-                            "text": "true"
+                            "text": "True"
                         },
                         {
                             "id": "f",
-                            "text": "false"
+                            "text": "False"
                         }
                     ],
                     "answer": "f"
@@ -131,9 +131,11 @@
                             "text": "USB Devices",
                             "ans": true
                         }
-                    ]
-                },
-                {
+                      ]
+                  }
+                ]
+            },
+            {
                     "header": "Code Responsibly",
                     "units": [
                         {
@@ -142,7 +144,11 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "The first step in protecting ICS is able to explain and summarize the associated vulnerabilities with a particular implementation.  The Penetration Testing Execution Standard (PTES) (<a href = http://www.pentest-standard.org/index.php/Main_Page> www.pentest-standard.org</a>) provides a framework for identifying potential security vulnerabilities.  PTES includes intelligence gathering, threat modeling, and vulnerability analysis.  Intelligence gathering, arguably the most important aspect of vulnerability detection, requires the administration to learn the behaviors, operations, and existing attack vectors while identifying existing protection methods.  Intelligence gathering occurs passively and actively.  Passive intelligence discovers information about targets without touching the systems such as recording instrument telemetry that could identify communicating controls.  Active intelligence directly interacts with the system such as transmitting information and assessing changes in feedback controls. Information acquired in the intelligence gathering process is used for threat modeling. Threat modeling can aid in determining the most effective attack method based on the identified security vulnerabilities.  A cyber operator should think like an adversary.  Threat modeling also includes threat capability analysis and motivation modeling based on the specific infrastructure.  After gathering intelligence and threat modeling, vulnerability analysis starts.  Vulnerability analysis is the process of discovering flaws in the system.  The process can be done manually or through automation tools through active and passive scanning.  Further analysis may include exploitation may occur in a controlled fashion to gather more information only if the rules of engagement include such action."
+                            "text": "The first step in protecting ICS is able to explain and summarize the associated vulnerabilities with a particular implementation.  The Penetration Testing Execution Standard (PTES) (<a href = http://www.pentest-standard.org/index.php/Main_Page> www.pentest-standard.org</a>) provides a framework for identifying potential security vulnerabilities.  PTES includes intelligence gathering, threat modeling, and vulnerability analysis.  Intelligence gathering, arguably the most important aspect of vulnerability detection, requires the administration to learn the behaviors, operations, and existing attack vectors while identifying existing protection methods.  Intelligence gathering occurs passively and actively.  Passive intelligence discovers information about targets without touching the systems such as recording instrument telemetry that could identify communicating controls.  Active intelligence directly interacts with the system such as transmitting information and assessing changes in feedback controls."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Information acquired in the intelligence gathering process is used for threat modeling. Threat modeling can aid in determining the most effective attack method based on the identified security vulnerabilities.  A cyber operator should think like an adversary.  Threat modeling also includes threat capability analysis and motivation modeling based on the specific infrastructure.  After gathering intelligence and threat modeling, vulnerability analysis starts.  Vulnerability analysis is the process of discovering flaws in the system.  The process can be done manually or through automation tools through active and passive scanning.  Further analysis may include exploitation may occur in a controlled fashion to gather more information only if the rules of engagement include such action."
                         },
                         {
                             "type": "subheader",
@@ -281,28 +287,8 @@
                             "text": "Build the Breadboard as outlined below (see images below). You will need to match wires to the appropriate GPIO pins."
                         },
                         {
-                            "type": "image",
-                            "src": " ",
-                            "alt": " ",
-                            "width": ,
-                            "height": ,
-                            "float": null
-                        },
-                        {
-                            "type": "image",
-                            "src": " ",
-                            "alt": " ",
-                            "width": ,
-                            "height": ,
-                            "float": null
-                        },
-                        {
-                            "type": "image",
-                            "src": " ",
-                            "alt": " ",
-                            "width": ,
-                            "height": ,
-                            "float": null
+                            "type": "paragraph",
+                            "text": "<img src = 'http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/08/Picture1.png'><img src = 'http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/08/Picture2.png'><img src = 'http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/08/Picture3.png' height='198' width='265'>"
                         },
                         {
                             "type": "paragraph",
@@ -310,10 +296,10 @@
                         },
                         {
                             "type": "image",
-                            "src": " ",
+                            "src": "http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/08/Picture4.png",
                             "alt": " ",
-                            "width": ,
-                            "height": ,
+                            "width": "265",
+                            "height": "198",
                             "float": null
                         },
                         {
@@ -364,7 +350,7 @@
                         {
                             "type": "question",
                             "id": "dq1",
-                            "prompt": "Question 1: Where would a similar ICS environment be implemented?",
+                            "prompt": "Where would a similar ICS environment be implemented?",
                             "ignored": true,
                             "mode": "textarea",
                             "pattern": "null"
@@ -372,7 +358,7 @@
                         {
                             "type": "question",
                             "id": "dq2",
-                            "prompt": "Question 2: What are the potential attack vectors for this system?",
+                            "prompt": "What are the potential attack vectors for this system?",
                             "ignored": true,
                             "mode": "textarea",
                             "pattern": "null"
@@ -380,7 +366,7 @@
                         {
                             "type": "question",
                             "id": "dq3",
-                            "prompt": "Question 3: Build a system using a Raspberry Pi to control a power outlet.",
+                            "prompt": "How is the lab similar / different than a Water Distribution ICS system?",
                             "ignored": true,
                             "mode": "textarea",
                             "pattern": "null"
@@ -388,22 +374,16 @@
                         {
                             "type": "question",
                             "id": "dq4",
-                            "prompt": "Question 4: How is the lab similar / different than a Water Distribution ICS system?",
+                            "prompt": "Who accessed/modified the system?",
                             "ignored": true,
                             "mode": "textarea",
                             "pattern": "null"
                         },
                         {
-                            "type": "question",
-                            "id": "dq5",
-                            "prompt": "Question 5: Who accessed/modified the system?",
-                            "ignored": true,
-                            "mode": "textarea",
-                            "pattern": "null"
+                            "type": "paragraph",
+                            "text": "<small>Project: Build a system using a Raspberry Pi to control a power outlet.</small>"
                         }
                     ]
                 }
             ]
         }
-    ]
-}

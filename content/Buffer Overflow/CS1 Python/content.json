@@ -296,6 +296,10 @@
             "header": " Security Checklist",
             "units": [
               {
+                  "type": "subheader",
+                  "text": "Complete the security checklist."
+              },
+              {
                 "type": "checklist",
                 "id": "Pgm1CL",
                 "list": [
@@ -373,10 +377,6 @@
                 "type": "paragraph",
                 "text": "Highlighted areas indicate vulnerabilities."
               },
-                {
-                    "type": "subheader",
-                    "text": "Complete the security checklist."
-                },
                 {
                     "type": "question",
                     "id": "SC1",
