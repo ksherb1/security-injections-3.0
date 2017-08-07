@@ -3,10 +3,14 @@
 	"variant": "CS0 C++",
 	"objectives": {
 			"goals" : [
-				""
+				"Define integer error and be able to identify avoidance methods"
 			],
 			"outcomes" : [
-				""
+				"Describe integer errors and the risk associated with them",
+				"Identify the techniques to avoid an integer error",
+				"Evaluate mathematical operations that might lead to an overflow",
+				"Inspect code for segments that might lead to vulnerabilities",
+				"Appraise a problem and discuss the implications of integer overflow"
 			]
 	},
 	"sections": [
