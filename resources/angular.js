@@ -14,10 +14,12 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 	 * PARAMETERS: content - object containing all content for module
 	 */
 	function initModule(content) {
+
 		$scope.module = content;
-		$scope.currentsectionIndex = 0;
-		$scope.currentsection = $scope.module.sections[0];
 		$scope.module.sections.push({header:"Final Page"});		// section for completion page
+		$scope.module.sections.splice(0,0,{header:"Learning Objectives"});
+		$scope.currentsectionIndex = 1;
+		$scope.currentsection = $scope.module.sections[1];
 		getCookies();//on Module load attempt to fill with cookies and redirect if needed
 	}
 
@@ -95,8 +97,9 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 	// initialize all non-function fields
 	function initialize() {
 		$scope.repo = "http://cis1.towson.edu/~cyber4all/modules/content/";		// IP address of our production server TODO: change as needed
-		$scope.sectionscompleted = 0;				// start from the first section
+		$scope.sectionscompleted = 1;				// start from the first section
 		$scope.loadContent();						// initialize module object and contentError boolean
+		loadCoverPage();
 		$scope.form = {}							 // initialize submission form
 		$scope.starttime = new Date();				// initialize start time, to track each section's completion time
 	}
@@ -599,4 +602,11 @@ $scope.checkAnswers = function() {
 	$scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
   }
+
+function loadCoverPage(){
+	var coverPageUri = $scope.repo+$("#name").html()+'/'+"coverpage.pdf";
+	$scope.coverPageFrame = $sce.trustAsResourceUrl(coverPageUri);
+}
+
+
 }]);

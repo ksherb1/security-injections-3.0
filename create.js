@@ -149,4 +149,6 @@ exports.write_3("Computer Literacy", "Passwords");
 exports.write_3("Computer Literacy", "Phishing");
 exports.write_3("Computer Literacy", "Cryptography");
 exports.write_3("Computer Literacy", "Social Networking Security");
-exports.write_3("Industrial Control Systems", "CS Capstone");
+exports.write_3("Industrial Control Systems", "Introduction");
+exports.write_3("Mobile Risk Management", "Introduction");
+exports.write_3("Integer Error", "CS0 C++ Sample");

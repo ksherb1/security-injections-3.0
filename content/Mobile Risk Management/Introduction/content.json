@@ -1,0 +1,427 @@
+{
+    "name": "Mobile Risk Management",
+    "variant": "Introduction",
+    "objectives": {
+        "goals" : [
+          "Define mobile risk management",
+          "Analyze real-world examples of mobile risk",
+          "Evaluate information systems using risk management methods"
+        ],
+        "outcomes" : [
+          "Remember and Understand: Demonstrate the ability to define the NIST and OCTAVE risk assessment models.",
+          "Remember and Understand: Demonstrate the ability to understand the CIA triad for information systems",
+          "Apply and Analyze: Demonstrate the ability to apply the risk assessment models to understand and analyze risks in information systems.",
+          "Evaluate and Synthesize: Design the recommended action plan for the identified risks.",
+          "Evaluate and Synthesize: Conduct an audit of the information system and infer the impact and likelihood of the risks and present preemptive policy measures to address them."
+        ]
+    },
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                  "type": "author",
+                  "name": "Subrata Acharya, Towson University"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This module will help to understand business requirements and objectives for mobile information systems; assess threats, vulnerabilities and impact by conducting risk assessment; and provide the steps to design an appropriate risk mitigation plan."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Mobile devices need to support the core security objectives of confidentiality, integrity, and availability through their operation life cycle. Significant amounts of personal data, financial data, and enterprise data are being carried around on these devices which are increasingly prone to data loss through both theft and software-based attack. Hence, ensuring and maintaining mobile security is of vital importance to secure operation and management of such systems. To achieve these objectives, organizations must meet the growing trend of mobile platforms with greater security measures to support critical business functions and protect sensitive data on these devices. Mobile architectures and/or applications must be developed and managed in compliance with up-to-date federal guidelines and standards. The federally directed NIST risk management framework is depicted in the figure below. The framework lays the foundation for risk assessment of data access, storage and transmission for a typical distributed information system. The steps are discussed below."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/08/riskmanage.png",
+                    "alt": " ",
+                    "width": "500",
+                    "height": "391",
+                    "float": null
+                },
+                {
+        					"type": "attribution",
+        					"copyright": "NIST Special Publication 800-37",
+        					"date": "2010",
+        					"link": ""
+        				},
+                {
+                    "type": "paragraph",
+                    "text": "<br><strong>Categorize</strong> the information system and the information processed, stored, and transmitted by that system based on an impact analysis. "
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>Select</strong> an initial set of baseline security controls for the information system based on the security categorization. "
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>Implement</strong> the security controls and describe how the controls are employed within the information system and its environment of operation."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>Assess</strong> the security controls using appropriate assessment procedures to determine the extent to which the controls are implemented correctly, operating as intended, and producing the desired outcome with respect to meeting the security requirements for the system. "
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>Authorize</strong> information system operation based on a determination of the risk to organizational operations and assets, individuals, other organizations, and the decision that this risk is acceptable. "
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>Monitor</strong> the security controls in the information system on an ongoing basis including assessing control effectiveness, documenting changes to the system or its environment of operation, conducting security impact analyses of the associated changes, and reporting the security state of the system."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The following are the most relevant types of vulnerabilities:"
+                },
+                {
+        					"type": "list",
+        					"items": [
+        						"<strong>Insecure Communication</strong>(This covers poor handshaking, incorrect SSL versions, weak negotiation, clear text communication of sensitive assets, etc.)",
+        						"<strong>Insecure Data Storage</strong> (This covers insecure data storage over local and remote settings)",
+                    "<strong>Insecure Authentication</strong> (This captures notions of authenticating the end user or bad session management.)",
+                    "<strong>Improper Platform Use</strong> (This covers misuse of a platform feature or failure to use platform security controls.)",
+        						"<strong>Insufficient Cryptography</strong> (This applies cryptography to a sensitive information asset. However, the cryptography is insufficient.)",
+                    "<strong>Insecure Authorization</strong> (This captures any failures in authorization)",
+                    "<strong>Client Code Quality</strong> (This includes buffer overflows, format string vulnerabilities, and various other code-level errors where the solution is to rewrite some code that's running on the mobile device.) ",
+        						"<strong>Code Tampering</strong> (This covers binary patching, local resource modification, and dynamic memory modification.)",
+                    "<strong>Reverse Engineering</strong> (This includes analysis of the final core binary to determine its source code, libraries, algorithms, and other assets.)",
+                    "<strong>Extraneous Functionality</strong> (Developers include hidden backdoor functionality or other internal development security controls that are not intended to be released into a production environment.)"
+        					],
+        					"ordered": false
+        				},
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Example 1: Theft or loss: Computers and laptops, portable electronic devices, electronic media, paper files."
+                },
+                {
+        					"type": "list",
+        					"items": [
+        						"Veteran’s Administration (VA) incident: 26.5 million discharged veterans’ records, including name, SSN & date of birth, stolen from the home of an employee who 'improperly took the material home.'"
+                  ],
+        					"ordered": false
+        				},
+                {
+                    "type": "paragraph",
+                    "text": "Example 2: Insecure storage or transmission of PII and other sensitive information"
+                },
+                {
+        					"type": "list",
+        					"items": [
+        						"PII, protected student records, or financial data being emailed in plain text, or sent in unprotected attachments. This puts data at risk should it be intercepted while in transit. Saving files containing PII or protected student data in a web folder that is publicly accessible online.",
+        						"Files containing SSNs generated by a web form stored in the same publicly-accessible directory as the web form"
+        					],
+        					"ordered": false
+        				},
+                {
+                    "type": "paragraph",
+                    "text": "Example 3: Missing 'patches' and updates:"
+                },
+                {
+        					"type": "list",
+        					"items": [
+        						"Hackers can take advantage of vulnerabilities in operating systems (OS) and applications if they are not properly patched or updated."
+        					],
+        					"ordered": false
+        				},
+                {
+                    "type": "paragraph",
+                    "text": "Example 4: Insecure disposal & re-use:"
+                },
+                {
+        					"type": "list",
+        					"items": [
+        						"Idaho Power Co. (Boise, ID): Four hard drives sold on eBay in 2006 contained hundreds of thousands of confidential documents, employee names and SSNs, and confidential memos to the CEO.",
+        						"A computer at Loyola University containing names, Social Security numbers, and some financial aid information for 5800 students was disposed of before the hard drive was wiped. ",
+                    "Photocopiers that were used to copy sensitive medical information were sent to be re-sold without wiping the hard drives. The data was discovered in the warehouse storing the copiers."
+        					],
+        					"ordered": false
+        				},
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "mobileUse",
+                    "prompt": "Which of the following factors is least critical when limiting mobile device use?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "security",
+                            "text": "Security"
+                        },
+                        {
+                            "id": "liability",
+                            "text": "Liability"
+                        },
+                        {
+                            "id": "device",
+                            "text": "Type of Device"
+                        }
+                    ],
+                    "answer": "device"
+                },
+                {
+                    "type": "question",
+                    "id": "bestpractice",
+                    "prompt": "Which of the following is not a best practice that should be completed before mobile devices are deployed?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "analysis",
+                            "text": "Performing a risk analysis for each class of mobile devices"
+                        },
+                        {
+                            "id": "policies",
+                            "text": "Writing policies primarily aimed at only keeping hackers away"
+                        },
+                        {
+                            "id": "auth",
+                            "text": "Implementing bidirectional password authentication"
+                        }
+                    ],
+                    "answer": "policies"
+                },
+                {
+                    "type": "question",
+                    "id": "rootcause",
+                    "prompt": "What is the root of most mobile device security problems?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "patching",
+                            "text": "Patching"
+                        },
+                        {
+                            "id": "weak",
+                            "text": "Weak passwords"
+                        },
+                        {
+                            "id": "networksec",
+                            "text": "Network security"
+                        }
+                    ],
+                    "answer": "patching"
+                }
+              ]
+            },
+            {
+                    "header": "Code Responsibly",
+                    "units": [
+                        {
+                            "type": "subheader",
+                            "text": "How Can You Avoid This Error?"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Recommended Action Plan:</strong> Theft or loss"
+                        },
+                        {
+                					"type": "list",
+                					"items": [
+                            "Ensure proper physical security of electronic and physical restricted data wherever it resides.<br>&nbsp;&nbsp;&nbsp;&nbsp;- Lock down laptops as a deterrent.<br>&nbsp;&nbsp;&nbsp;&nbsp;- Secure your area, files and portable equipment before leaving them unattended.<br>&nbsp;&nbsp;&nbsp;&nbsp;- Don't leave papers, computers or other electronic devices visible in unsecured areas<br>&nbsp;&nbsp;&nbsp;&nbsp;- Shred sensitive paper records before disposing of them.<br>&nbsp;&nbsp;&nbsp;&nbsp;- Don’t leave sensitive information lying around unprotected, including on printers, fax machines, copiers, or in storage.",
+                            "Devices should be secured at all times<br>&nbsp;&nbsp;&nbsp;&nbsp;- Keep it with you or lock it up securely before you step away - and make sure it is locked to or in something permanent."
+                          ],
+                					"ordered": false
+                				},
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Recommended Action Plan:</strong> Insecure storage or transmission of sensitive information"
+                        },
+                        {
+                					"type": "list",
+                					"items": [
+                            "Be sure you know who has access to folders before you put restricted data in them.",
+                            "Be certain you don’t put sensitive information in locations that are publicly accessible from the Internet.",
+                            "Always transmit restricted data securely. This includes remote access and client/server transmissions.",
+                            "Don't use open/unencrypted wireless when working with or sending this data.",
+                            "Don’t email or IM (instant message) unencrypted restricted data.",
+                            "Don’t forget about restricted data in attachments, screen shots, test data, etc. These need to be sent securely, as well."
+                          ],
+                					"ordered": false
+                				},
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Recommended Action Plan:</strong> Missing 'patches' and updates"
+                        },
+                        {
+                					"type": "list",
+                					"items": [
+                						"Make sure all systems connected to the network/Internet have all necessary operating system (OS) and application security “patches” and updates."
+                          ],
+                					"ordered": false
+                				},
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Recommended Action Plan:</strong> Insecure disposal & re-use"
+                        },
+                        {
+                					"type": "list",
+                					"items": [
+                						 "Destroy or securely delete restricted data prior to re-use or disposal of equipment or media. For information on how to securely delete files.",
+                              "Work with Copy Services or IT Services to securely erase printers, fax machines and photocopiers before disposal, resale or returning them to the vendor.",
+                              "Shred sensitive paper records before disposing of them. Do not re-use them where the information could be exposed."
+                					],
+                					"ordered": false
+                				},
+                        {
+                            "type": "subheader",
+                            "text": "Answer the following questions:"
+                        },
+                        {
+                            "type": "question",
+                            "id": "factor",
+                            "prompt": "What is (are) the most important factor to consider during risk mitigation?",
+                            "ignored": false,
+                            "mode": "checkbox",
+                            "choices": [
+                                {
+                                    "id": "availability",
+                                    "text": "System availability",
+                                    "ans": true
+                                },
+                                {
+                                    "id": "confidentiality",
+                                    "text": "System confidentiality",
+                                    "ans": false
+                                },
+                                {
+                                    "id": "integrity",
+                                    "text": "System integrity",
+                                    "ans": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "question",
+                            "id": "minnecessary",
+                            "prompt": "The concept of “minimal necessary” states:",
+                            "ignored": false,
+                            "mode": "checkbox",
+                            "choices": [
+                                {
+                                    "id": "minusage",
+                                    "text": "Minimal resource usage for a given information security operation",
+                                    "ans": false
+                                },
+                                {
+                                    "id": "minpriv",
+                                    "text": "Invocation of minimal privileges necessary to complete the task",
+                                    "ans": true
+                                },
+                                {
+                                    "id": "minpol",
+                                    "text": "Providing minimal policy standards to security risk assessment",
+                                    "ans": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "header": "Laboratory Assignment",
+                    "units": [
+                        {
+                            "type": "subheader",
+                            "text": "Breach Analysis and Security Risk Assessment Planning"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Conduct a risk assessment for the following case scenario using the NIST and OCTAVE risk assessment models. "
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Step 1:</strong> Understand Environment, requirements, objectives, risk tolerance and boundaries"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Step 2:</strong> Identify threats, vulnerabilities, and existing controls to determine risks"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Step 3:</strong> Assess risk based on impact and likelihood"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Step 4:</strong> Determine risk response. Document final risk determination and approval/acceptance"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<strong>Step 5:</strong> Periodic monitoring of risks and response for the information system"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "<br>Scenario 1:"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "A hacker attacked a restricted database on a computer in UC Berkeley’s health services center via a public web site on the same server. The database contained the names, Social Security numbers, health insurance information, immunization records, and patient physician information for more than 160,000 UC Berkeley students and alumni as well as former Mills College students."
+                        },
+                        {
+                            "type": "question",
+                            "id": "scen1",
+                            "prompt": "Risk Assessment:",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Scenario 2:"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "The Georgia Dept. of Human Resources notified parents of infants born between 4/1/06 and 3/16/07 that paper records containing parents' SSNs and medical histories -- but not names or addresses -- were discarded without shredding."
+                        },
+                        {
+                            "type": "question",
+                            "id": "scen2",
+                            "prompt": "Risk Assessment:",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        }
+                    ]
+                },
+                {
+                    "header": "Discussion Questions",
+                    "units": [
+                        {
+                            "type": "question",
+                            "id": "dq1",
+                            "prompt": "Discuss the preemptive policy updates necessary to prevent the breach occurrences discussed above. Discuss both user level and technology level modifications.",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        },
+                        {
+                            "type": "question",
+                            "id": "dq2",
+                            "prompt": "Present the risk determination diagram with details on each asset, risk scores with their impact to likelihood measures.",
+                            "ignored": true,
+                            "mode": "textarea",
+                            "pattern": "null"
+                        }
+                    ]
+                }
+    ]
+}

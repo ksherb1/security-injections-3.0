@@ -1,10 +1,27 @@
 {
     "name": "Industrial Control Systems",
-    "variant": "CS Capstone",
+    "variant": "Introduction",
+    "objectives": {
+        "goals" : [
+          "Analyze industrial control systems"
+        ],
+        "outcomes" : [
+          "Apply and Analyze: Demonstrate the ability to discover and understand an ICS environment and identify the attack surface.",
+          "Remember and Understand: Explain key U.S. infrastructures controlled by ICS including the associated vulnerabilities associated with each infrastructure",
+          "Remember and Understand: Describe how embedded systems are employed in industrial infrastructures and control systems.",
+          "Remember and Understand: Identify means for capturing instrument telemetry and identifying feedback controls.",
+          "Remember and Understand: Describe methods for managing distributed nodes",
+          "Remember and Understand: Identify potential security vulnerabilities associated with the use of such systems and means for mitigating these vulnerabilities."
+        ]
+    },
     "sections": [
         {
             "header": "Background",
             "units": [
+                {
+                  "type": "author",
+                  "name": "Andrew Mangle, Towson University"
+                },
                 {
                     "type": "subheader",
                     "text": "Summary:"

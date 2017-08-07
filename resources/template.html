@@ -30,13 +30,35 @@
 				</div>
 			</div>
 
+		<div ng-if="currentsectionIndex == 0">
+				<div class ="jumbotron">
+					<div class = "row">
+					<h2 ng-bind-html="currentsection.header"></h2>
+					<div class = "col-sm-6">
+					<h3>Learning Goals</h3>
+					<p ng-repeat = "goals in module.objectives.goals" ng-bind-html = "' - ' + goals"></p>
+					<h3>Learning Outcomes</h3>
+					<p ng-repeat = "outcomes in module.objectives.outcomes" ng-bind-html = "' - ' + outcomes"></p>
+				</div>
+				<div class = "col-sm-6">
+					<h3>Cover Page</h3>
+					<div id="coverPage" style="">
+							<iframe width="500" height="500" ng-src="{{coverPageFrame}}"></iframe>
+					</div>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
 
 		<!-- section content -->
-		<div ng-if="currentsectionIndex < module.sections.length-1" class="si-content">
+		<div ng-if="(currentsectionIndex < module.sections.length-1) && (currentsectionIndex != 0)" class="si-content">
 			<div class = "jumbotron">
+				<div class = "row">
 			<h2 ng-bind-html="currentsection.header"></h2>
 			<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
-				<div class = "row">
+
 					<h3 ng-switch-when="subheader" ng-bind-html="unit.text"></h3>
 					<p ng-switch-when="paragraph" ng-bind-html="unit.text"></p>
 					<div ng-switch-when="list" class="si-list">
@@ -45,12 +67,13 @@
 					</div>
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
 
-				<div ng-switch-when="image" class="col-md-12">
+				<div ng-switch-when="image" class="col-sm-12">
 						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>
 				<div ng-switch-when="video" class= "embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
 				</div>
+				<small ng-switch-when="author" ng-bind-html = "'Created by: ' + unit.name"></small>
 				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
 				<table ng-switch-when="table" class="table">
 					<tr>
@@ -84,7 +107,7 @@
 
 				</div>
 				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
-					<div class ="col-md-5">
+					<div class ="col-sm-5">
 						<div class="well">
 						<table class="table" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
 							<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
@@ -112,7 +135,7 @@
 							</table>
 						</div>
 					</div>
-					<div class = "col-md-7 checklist-block" style = "position:relative;">
+					<div class = "col-sm-7 checklist-block" style = "position:relative;">
 						<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 						<div class="popover radiopop" style = "position:absolute;">
@@ -164,7 +187,7 @@
 		<div class ="jumbotron">
 			<div class = "row">
 			<h2 ng-bind-html="currentsection.header"></h2>
-				<div class = "col-md-6">
+				<div class = "col-sm-6">
 					<div class = "well">
 						<div class="si-certificate-form">
 							<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
@@ -195,7 +218,7 @@
 						</div>
 					</div>
 				</div>
-					<div class = "col-md-6">
+					<div class = "col-sm-6">
 						<div id="si-certificate-pane" style="display:none">
 								<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
 								<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
@@ -208,11 +231,11 @@
 	<br>
 	<footer class = "footer">
 		<div class = "container">
-			<div class = "col-md-1">
+			<div class = "col-sm-1">
 					<br>
 					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
 			</div>
-			<div class = "col-md-10">
+			<div class = "col-sm-10">
 					<p class = "footer-text">
 						The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation
 						under grants NSF DUE-1241738,  NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649,
@@ -221,7 +244,7 @@
 						This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 					</p>
 			</div>
-			<div class = "col-md-1">
+			<div class = "col-sm-1">
 					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class = "img-responsive" style:"vertical-align:middle;">
 			</div>
 		</div>
