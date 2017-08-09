@@ -56,12 +56,12 @@
 		<div ng-if="(currentsectionIndex < module.sections.length-1) && (currentsectionIndex != 0)" class="si-content">
 			<div class = "jumbotron">
 				<div class = "row">
-			<h2 ng-bind-html="currentsection.header"></h2>
+			<h2 ng-bind-html="currentsection.header" class = "col-sm-12"></h2>
 			<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
 
-					<h3 ng-switch-when="subheader" ng-bind-html="unit.text"></h3>
-					<p ng-switch-when="paragraph" ng-bind-html="unit.text"></p>
-					<div ng-switch-when="list" class="si-list">
+					<h3 ng-switch-when="subheader" ng-bind-html="unit.text" class = "col-sm-12"></h3>
+					<p ng-switch-when="paragraph" ng-bind-html="unit.text" class = "col-sm-12"></p>
+					<div ng-switch-when="list" class="si-list col-sm-12" >
 						<ol ng-if="unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ol>
 						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
 					</div>
@@ -70,12 +70,14 @@
 				<div ng-switch-when="image" class="col-sm-12">
 						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
 				</div>
-				<div ng-switch-when="video" class= "embed-responsive embed-responsive-16by9">
+				<div ng-switch-when="video" class= "col-sm-12 embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
 				</div>
-				<small ng-switch-when="author" ng-bind-html = "'Created by: ' + unit.name"></small>
-				<small ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
-				<table ng-switch-when="table" class="table">
+				<small class = "col-sm-12" ng-switch-when="author" ng-bind-html = "'Created by: ' + unit.name"></small>
+				<small  class = "col-sm-12"ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
+
+				<div ng-switch-when="table" class = "col-sm-8">
+					<table class="table">
 					<tr>
 						<th ng-repeat = "items in unit.headers" ng-bind-html ="items"></th>
 					</tr>
@@ -84,7 +86,8 @@
 						<td ng-bind-html = "items.second"></td>
 					</tr>
 				</table>
-				<div ng-switch-when="question" class="si-question" id="{{ unit.id }}">
+				</div>
+				<div ng-switch-when="question" class="col-sm-12 si-question" id="{{ unit.id }}">
 					<div class="well">
 					<h5 ng-bind-html="unit.prompt"></h5>
 					<div ng-switch="unit.mode">

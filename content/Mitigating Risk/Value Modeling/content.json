@@ -221,7 +221,31 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "To determine our final answer, for every metric or best practice, we multiply the score it received on an attribute by the weight of the attribute, and add them all up.  Mathematically, this is: <KBD> where  is the weight of attribute  and  is the value for attribute  from the value function, with m total attributes.  The weights for the lowest level attributes can be elicited from the decision maker or subject matter expert, or can be found using a mathematical formula called rank order centroid.  That formula is: <KBD>  (Barron, 1992).  If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the attribute weights are shown below and were found using the rank order centroid method."
+                            "text": "To determine our final answer, for every metric or best practice, we multiply the score it received on an attribute by the weight of the attribute, and add them all up.  Mathematically, this is: "
+                        },
+                        {
+                            "type": "image",
+                            "src": "http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/08/math1.png",
+                            "alt": " ",
+                            "width": "125",
+                            "height": "65",
+                            "float": null,
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "where  <em>w<sub>i</sub></em> is the weight of attribute <em>i</em> and <em>v<sub>ia</sub></em> is the value for attribute <em>i</em> from the value function, with <em>m</em> total attributes.  The weights for the lowest level attributes can be elicited from the decision maker or subject matter expert, or can be found using a mathematical formula called rank order centroid.  That formula is:"
+                        },
+                        {
+                            "type": "image",
+                            "src": "http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/08/math2.png",
+                            "alt": " ",
+                            "width": "144",
+                            "height": "70",
+                            "float": null
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "(Barron, 1992) If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the attribute weights are shown below and were found using the rank order centroid method."
                         },
                         {
                 					"type": "table",
