@@ -36,11 +36,13 @@
 					<h2 ng-bind-html="currentsection.header"></h2>
 					<div class = "col-sm-6">
 					<h3>Learning Goals</h3>
-					<p ng-repeat = "goals in module.objectives.goals" ng-bind-html = "' - ' + goals"></p>
+					<p ng-if = "module.objectives.goals != ''" ng-repeat = "goals in module.objectives.goals" ng-bind-html = "' - ' + goals"></p>
+					<p ng-if = "module.objectives.goals == ''">None given</p>
 					<h3>Learning Outcomes</h3>
-					<p ng-repeat = "outcomes in module.objectives.outcomes" ng-bind-html = "' - ' + outcomes"></p>
+					<p ng-if = "module.objectives.outcomes != ''" ng-repeat = "outcomes in module.objectives.outcomes" ng-bind-html = "' - ' + outcomes"></p>
+					<p ng-if = "module.objectives.outcomes == ''">None given</p>
 					</div>
-				<div class = "col-sm-6">
+				<div ng-if = "module.objectives.goals != ''&& module.objectives.outcomes != ''"class = "col-sm-6">
 					<h3>Cover Page</h3>
 					<div id="coverPage" style="">
 							<iframe width="500" height="500" ng-src="{{coverPageFrame}}"></iframe>
@@ -68,7 +70,7 @@
 				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
 
 				<div ng-switch-when="image" class="col-sm-12">
-						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}};" class = "img-responsive">
+						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}}; align: {{unit.align}};" class = "img-responsive">
 				</div>
 				<div ng-switch-when="video" class= "col-sm-12 embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
