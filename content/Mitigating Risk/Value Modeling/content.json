@@ -229,7 +229,7 @@
                             "alt": " ",
                             "width": "125",
                             "height": "65",
-                            "float": null,
+                            "float": null
                         },
                         {
                             "type": "paragraph",
@@ -245,7 +245,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "(Barron, 1992) If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the attribute weights are shown below and were found using the rank order centroid method."
+                            "text": "(Barron, 1992). If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the attribute weights are shown below and were found using the rank order centroid method."
                         },
                         {
                 					"type": "table",
