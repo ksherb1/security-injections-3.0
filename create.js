@@ -136,7 +136,7 @@ exports.write_3("Buffer Overflow", "CS2 C++");
 exports.write_3("Software Development Lifecycle", "CS0 C++");
 exports.write_3("Software Development Lifecycle", "CS0 Java");
 exports.write_3("Software Development Lifecycle", "CS0 Python");
-//exports.write_3("Best Practices for Secure Variables", "CS1 Java");
+exports.write_3("Best Practices for Secure Variables", "CS1 Java");
 exports.write_3("Encapsulation", "CS2 C++");
 exports.write_3("Encapsulation", "CS2 Java");
 exports.write_3("Data Hiding","CS0 C++");
