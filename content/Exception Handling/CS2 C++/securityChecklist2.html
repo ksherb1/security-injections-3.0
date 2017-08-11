@@ -1,0 +1,22 @@
+#include 
+#include 
+
+using namespace std;
+
+int main() {
+    int total = 0;
+    int num = 0;
+    
+    ifstream inputFile;
+    
+    inputFile.open("inFile.txt");
+
+    while(!inputFile.eof()) {   // until we have reached the end of the file
+            inputFile >> num;
+            total += num;
+    }
+    
+    inputFile.close();
+    
+    cout << "The total value is " << total << "." << endl;
+}
