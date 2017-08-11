@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+  <head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Meta Images -->
+	<link rel="shortcut icon" href="http://www.towson.edu/favicon.ico" type="image/x-icon" />	
+<!-- Title and External Script Integration -->
+			<title>  Exception Handling &#8211; CS2 &#8211; Java</title>
+		
+	
+<!-- Wordpress Stuff -->
+	<meta name="generator" content="WordPress 4.0" /> <!-- leave this for stats -->
+	<link rel="alternate" type="application/rss+xml" title="Cybersecurity Modules: Security Injections|Cyber4All @Towson RSS Feed" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" />
+	<link rel="pingback" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php" />
+	 <!-- This makes the comment box appear where the ‘reply to this comment’ link is -->
+		
+			<script type="text/javascript">//<![CDATA[
+			// Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-38487412-1']);
+							_gaq.push(['_trackPageview']);
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+			//]]></script>
+			<link rel='stylesheet' id='contact-form-7-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sccss_style-css'  href='http://cis1.towson.edu/~cssecinj?sccss=1&#038;ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='easy-modal-theme-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/themes/default/styles.css?ver=4.0' type='text/css' media='all' />
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var easymodal = 
+    {"ajaxurl":"http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/ajax/content.php","settings":{"1":{"requestData":{"modalId":"1","action":"easy_modal"},"cf7form":true},"2":{"requestData":{"modalId":"2","action":"easy_modal"},"cf7form":true},"3":{"requestData":{"modalId":"3","action":"easy_modal"},"cf7form":true},"4":{"requestData":{"modalId":"4","action":"easy_modal"},"cf7form":true}}};
+    /* ]]> */
+    </script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/jquery.cycle.all.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/loader.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/js/easy-modal.js?ver=4.0'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cis1.towson.edu/~cssecinj/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.0" />
+<link rel='canonical' href='http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/' />
+<link rel='shortlink' href='http://cis1.towson.edu/~cssecinj/?p=2799' />
+<link type="text/css" rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-css-button/wp_button.css" />
+<script type="text/javascript" src="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_script.js"></script><link rel="stylesheet" type="text/css" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_style.css" />
+<!-- Stylesheets -->
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/wp_core.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/style.css" type="text/css" media="screen" />
+	
+<!-- This is for printing - inserted by Sidd -->
+	<link rel="stylesheet" type="text/css" media="screen,print" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/print.css" />
+
+
+
+
+<!-- Modules w/ Javascript -->	
+
+
+
+	
+
+
+<!-- IE -->
+<!--[if IE 6]>
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/css/ie6.css" type="text/css" media="screen" />
+	<script  type="text/javascript"  src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/js/belatedpng.js"></script>
+	<script>
+	  DD_belatedPNG.fix('.pngbg, .welcometext, .icons a, .containershadow, .fboxdividers, #morefootbg, .plimage, .post-footer .left span, #welcome');
+	 </script>	
+<![endif]--><style type="text/css">
+
+
+</style>
+<!-- Font Replacement -->
+  		</head>
+<body class="page page-id-2799 page-parent page-child parent-pageid-2782 page-template-default">
+		<div id="site">
+		<div id="wrapper">
+			
+	
+					<div id="header" class="fix">
+						<div class="content fix">
+							<div class="headline">
+																<h1 class="site-title"><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Cybersecurity Modules: Security Injections|Cyber4All @Towson</a></h1>
+								<h6 class="site-description">towson.edu/securityinjections</h6>
+															</div>
+							<div class="icons">
+								
+						<!--										<a target="_blank" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" class="rsslink"></a>
+								 -->
+								
+																
+							</div>
+						</div>
+					</div>
+					<div class="container fix ">
+						<div class="effect containershadow">
+							<div class="effect containershadow_rpt">
+								<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in 'header_orig.php' - Kyle Sherbert -->
+								<!--div id="sitenav" class="content fix">
+									<!--div id="nav" class="fix">
+										<!--?php if(pagelines('enable_drop_down')):?>
+											<!--ul class="dropdown clearfix">
+										<!--?php else:?>	 
+											<!--ul class="clearfix">
+										<!--?php endif;?>	
+								
+											<!--li class="page_item "><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Home</a></li>
+											<!--?php 
+												$frontpage_id = get_option('page_on_front');
+												if($bbpress_forum && pagelinesforum('exclude_pages')){ $forum_exclude= ','.pagelinesforum('exclude_pages');}
+												else{ $forum_exclude = '';}
+												wp_list_pages('exclude='.$frontpage_id.$forum_exclude.'&depth=3&title_li=');?>
+										<!--/ul>
+									<!--/div><!-- /nav -->
+									<!--div class="clear"></div-->
+								<!--/div-->
+
+    <script type="text/javascript" language="JavaScript" src="http://j.maxmind.com/app/geoip.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>							
+
+<div id="contentcontainer" class="content fix"> 
+	<div id="contentborder">
+
+						<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in '_sub_head_orig.php' - Kyle Sherbert -->
+		<!--div id="sub_head" class="fix">
+			<!--?php require(THEME_LIB.'/_sub_nav.php');?>
+		<!--/div-->
+			
+				
+		
+			<div id="maincontent" class="fullwidth" >
+								
+									
+	<div class="postwrap fix">	
+		<div class="post-2799 page type-page status-publish hentry" id="post-2799">
+						  	
+				<div class="copy fix">
+										<div class="textcontent">
+						<p><strong><em>The module for this lesson is still under development. Please <a href="mailto:securityinjections@towson.edu">contact us</a> if you have any questions.</em></strong></p>
+<p>&nbsp;</p>
+<h1 style="text-align: left;">Exception Handling-&#8220;What Can Go Wrong Will Go Wrong&#8221; -CS2</h1>
+<div>
+<p><a name="top"></a></p>
+<p>&nbsp;</p>
+<table style="height: 43px;" border="0" cellpadding="4" align="center">
+<tbody>
+<tr>
+<td style="text-align: center; width: 150px;">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#B" >Read Background</a></h5>
+</td>
+<td style="text-align: center; width: 200px;">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#LA" > Execute Lab Assignment</a></h5>
+</td>
+<td style="text-align: center; width: 200px;">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#C" >Complete Security Checklist</a></h5>
+</td>
+<td style="text-align: center; width: 200px;">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#D" > Answer Discussion Questions</a></h5>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="B"></a>Background</h2>
+<h6><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#top" >top</a></h6>
+<h3>Summary:</h3>
+<p>During the execution of a program, things can, and do go wrong. The user may enter inappropriate data, a device may go offline, necessary disk space for output may not be available, etc. Errors occurring at runtime are known as exceptions and exception handling is the process designed to handle exceptions. Failure to properly handle an exception can cause a program to abort and/or expose sensitive information about the program and the environment in which the program is executing.</p>
+<h3>Description:</h3>
+<p>When an exception occurs, the Java runtime creates an exception object containing information about the error and the program state at the time of the error. There are numerous (well over 50!) exception classes defined in the Java API.</p>
+<p>Once the exception object has been constructed, it is handed to the Java runtime system. This is called &#8216;throwing&#8217; an exception. The Java runtime system must then locate an exception handler. In searching for an exception handler, the runtime system begins with the method in which the exception occurred. If this method is not prepared to handle the exception, the runtime system will search the call stack in reverse in search of a suitable exception handler. For example, if methodA calls methodB which calls methodC and an exception occurs during the execution of methodC, the runtime system will search methodC first, then methodB, and lastly methodA for an exception handler. When an appropriate exception handler is found, the runtime system turns over the exception object to the handler. The selected exception handler is said to &#8216;catch&#8217; the exception.</p>
+<h3>Risk – How Can It Happen?</h3>
+<p>Some exceptions are known as checked exceptions and exception handling, or catching checked exceptions, is required to be included in the program. Other exceptions, unchecked exceptions, do not require an exception handler. Most unchecked exceptions, however, cause the program to display an error message (which may be a security issue since it exposes the inner details of your application) and stop execution when not handled. Exception handling provides a way for the program to possibly recover from an error or at least terminate in a graceful manner.</p>
+<h3><em>Code Responsibly – How to Handle Exceptions?</em></h3>
+<ol>
+<li>Know your exceptions: Every method in the Java API lists any exceptions that might be thrown. Checked exceptions must be handled. Although unchecked exceptions do not require exception handling code, consider handling them or providing code checks such that the exception can never occur.</li>
+<li>Order exception handlers correctly: When more than one exception handler is desired, code them in the order that they are more likely to occur. When a generic exception handler is also used, it should appear last.</li>
+<li>Handle exceptions appropriately: Once an exception occurs, the remaining statements of the try block will not be executed. Therefore, it is important that the exception handler recover from the exception such that the program can continue. If recovery in not possible, exit the program.</li>
+<li>An exception should not expose sensitive information: Some exception objects such as FileNotFoundException, define messages that expose information about the state of the program and/or the file system. Displaying the stack trace from the exception object may also leak information. Therefore, do not utilize the exception object’s printStackTrace() method and do not display the result of the exception object’s getMessage() method.</li>
+<li>RuntimeException exceptions are thrown due to bugs in the program. These bugs should be corrected during development.</li>
+</ol>
+<h3><a name="LA"></a>Lab Assignment</h3>
+<h6><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#top" >top</a></h6>
+<h4>Program 1</h4>
+<pre>import java.util.Scanner;
+
+public class Exception1 {
+
+  public static void main(String[] args) </pre>
+<pre>    {</pre>
+<pre>        Scanner scan = new Scanner(System.in);
+
+        int num = 0;
+
+        do {
+              System.out.println("Enter a number between 1 and 10");    </pre>
+<pre>              num = scan.nextInt();
+
+              if (num < 1 || num > 10)
+              </pre>
+<pre>              System.out.println("\nIllegal value, " + num + " entered.  Please try again.");</pre>
+<pre>           }  while (num < 1 || num > 10);    
+
+              System.out.println("\nValue correctly entered! Thank you.");
+
+      }</pre>
+<pre> }
+</pre>
+<p><strong>Lab Questions:</strong></p>
+<ol>
+<ol>
+<li>Type* the program above and compile. Run and enter an integer between 1 and 10.</li>
+<li>The program is requesting a number between 1 and 10. Run the program again and enter 5.5.  Although this number is between 1 and 10, the program will abort.  Examine the error message.  You should see the word Exception, the method where the exception occurred (main), the class name of the exception (InputMismatchException), as well as the call stack listing the method calls.</li>
+<li>Add a try/catch block to catch and handle the InputMismatchException exception. Identify the statements that cause the error as well as the portions of the program that depend upon these statements.  Enclose these statements within the try block.  Follow the try block with the catch block given below.  Note, the InputMismatchException class is defined in java.util and must be imported.  Also, when the Scanner throws an InputMismatchException, the input token will remain in the buffer so that it can be examined by the program.  In our case, we will not be examining the token, but will simply clear out of the buffer to start over.</li>
+</ol>
+</ol>
+<pre style="padding-left: 90px;">catch (InputMismatchException ime) {
+     
+    System.out.println("Enter whole numbers only, with no spaces or other characters");
+    scan.next();        // clear the scanner buffer
+ }</pre>
+<p style="padding-left: 60px;">4. Compile and run the program again, testing with a variety of input (integers, floats, characters) The program should not abort when floats or character data is given.</p>
+<p style="padding-left: 60px;">5. Complete the security checklist for Program 1.</p>
+<p><em>*Copying and pasting programs may result in syntax errors and other inconsistencies. It is recommended you type each program</em>.</p>
+<p>&nbsp;</p>
+<h4>Program 2</h4>
+<pre>import java.util.Scanner;
+import java.io.File;
+
+public class Exception2 {
+
+  public static void main(String[] args) {
+
+    int total = 0;
+    int num = 0;
+
+    File myFile = null;
+    Scanner inputFile = null;
+
+    myFile = new File("inFile.txt");
+    inputFile = new Scanner(myFile);
+
+    while (inputFile.hasNext())  {
+      num = inputFile.nextInt();
+      total += num;
+    }
+
+    System.out.println("The total value is " + total);
+  }
+}
+</pre>
+<p><strong>Lab Questions:</strong></p>
+<ol>
+<li>As we saw in Lab Program 1, the Scanner may throw an <em>InputMismatchException</em>. This is an unchecked exception and we are not required to handle unchecked exceptions. The Java runtime system will handle the exception by aborting the program and displaying the exception information. Other methods may throw checked exceptions. A checked exception must be handled. Type* the program above and compile. You should receive a compilation error stating that the <em>FileNotFoundException</em> must be caught or declared to be thrown.</li>
+<li>We will first test the program knowing that the input file does not exist. Add a try/catch block such that if the input file is not found, report the problem and display a total of 0. Use the getMessage() method of the exception object to report the problem.
+<pre>} catch (FileNotFoundException fnf)
+    {
+	//display total of 0</pre>
+<pre style="background-color:#EEEEEE">	System.out.println(fnf.getMessage())</pre>
+<pre>    }
+</pre>
+</li>
+<li>Create a file named inFile.txt using a plain text editor. Enter only integer values into the file and save the file in the same folder as the program (if you are using a IDE, then put it in the main project folder). Run the program to verify that the program functions correctly with a valid input file.</li>
+<li>Any number of catch clauses may be coded for a single try block. Add another catch clause to catch <em>InputMismatchException</em> immediately before or after the <em>FileNotFoundException</em> clause. Remember to import the exception class and to clear the scanner buffer. Modify the inFile.txt file to include an error. Run and test the program. As soon as an exception occurs, the catch clause is executed. Since the <em>InputMismatchException</em> catch clause is outside of the read loop, the first invalid piece of data will cause the program to end without reading the remainder of the file.</li>
+<li>Any number of try blocks may be coded with each having a least one catch clause. Rather than catching the <em>InputMismatchException</em> outside the loop, let’s move it inside the loop. This will allow our program to report the invalid data, resume processing, and produce correct results for the valid data given. Add a new try block within the while loop and move the <em>InputMismatchException</em> catch block such that the while loop is as shown below.
+<pre>while (inputFile.hasNext())  {
+      try {
+         num = inputFile.nextInt();
+         total += num;
+      } catch (InputMismatchException ime) {
+          System.out.print("Illegal value found");
+          inputFile.next();
+      }
+   }  // end while
+</pre>
+</li>
+<li>Complete the security checklist for Program 2.</li>
+</ol>
+<p><em>*Copying and pasting programs may result in syntax errors and other inconsistencies. It is recommended you type each program</em>.</p>
+<h3><a name="C"></a>Security Checklist</h3>
+<p><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#top" >top</a></p>
+<table class="checklist" style="width: 778px; height: 409px; border: 2px solid #000000;" border="2" cellspacing="3" cellpadding="3" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="2">
+<p><strong>Security Checklist</strong></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: left; width: 500px;"><strong>Vulnerability:</strong> <em>Exception</em> <strong>Course:</strong> <em>CS1</em></td>
+<td> </td>
+</tr>
+<tr>
+<td style="text-align: left; width: 500px;"><strong>Check each line of code </strong></td>
+<td style="text-align: center;"><strong>Completed</strong></td>
+</tr>
+<tr>
+<td><em>1. </em>Underline each statement that may cause an exception to occur.</td>
+<td class="vuln" style="background-color: #d3d3d3;"> </td>
+</tr>
+<tr>
+<td>For each underlined statement:</td>
+<td> </td>
+</tr>
+<tr>
+<td><em>2. </em>Highlight any statement in the exception handler that may expose information about the program.</td>
+<td class="vuln" style="background-color: #d3d3d3;"> </td>
+</tr>
+<tr>
+<td><em>3. </em>Highlight any statement in the exception handler that may expose information about the file system.</td>
+<td class="vuln" style="background-color: #d3d3d3;"> </td>
+</tr>
+<tr>
+<td class="vuln" style="background-color: #d3d3d3;"><strong>Highlighted areas indicate vulnerabilities!</strong></td>
+<td class="vuln" style="background-color: #d3d3d3;"> </td>
+</tr>
+</tbody>
+</table>
+<h3><a name="D"></a>Discussion Questions</h3>
+<h6><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/build-the-lab/build-the-lab-lab-module-2/#top" >top</a></h6>
+<ol>
+<li>With keyboard input, what types of errors may occur?</li>
+<li>An <em>InputMismatchException</em> is an unchecked exception. Since exception handling of an unchecked exception in not required, why should the programmer add this checking?</li>
+<li>What types of exceptions may occur when working with a file? Hint, visit the Java API and select the java.io library. Review the list of exceptions included in this library.</li>
+<li>Describe other types of exceptions (non-IO related) that may occur at runtime. Hint: view the Exceptions category of various libraries such as java.lang and java.util in the Java API.</li>
+<li>If a method throws a checked exception, how can the calling method avoid coding a try/catch block to handle the exception? In what cases might the calling method use this option?</li>
+<li>Exception classes are derived from other exception classes. For example, the <em>FileNotFoundException</em> class is derived from <em>IOException</em> class. And, the <em>IOException</em> class is derived from the <em>Exception</em> class. Rather than check for the exact exception class, the catch clause could specify a super class. What are the advantages and disadvantages of specifying a super class in a catch clause?</li>
+</ol>
+</div>
+	
+							
+							
+					</div>	
+					<div class="tags">
+					&nbsp;
+					</div>
+				</div>
+												
+								
+					</div><!--post -->
+
+	</div>
+	
+	
+	<div class="clear"></div>
+	
+				
+									
+			
+	
+		
+				</div>
+		
+					
+		<div class="hl"></div>
+<div class="post-footer pfooterdark">
+	<div class="right"><span><a href="#header">Go To Top &raquo;</a></span></div>
+	<div class="clear"></div>
+
+</div>
+<div class="hl2"></div>		<div class="clear"></div>
+	</div>
+</div>
+		</div>
+	</div> 
+</div>
+
+<!--full width bottom widget -->
+<!--END full width bottom widget -->
+
+
+
+		<div class="clear"></div>
+				
+
+</div>
+	<div class="clear"></div>
+	
+	<div id="subfoot">
+	
+					<div id="cred" class="pagelines">
+				<a class="plimage" target="_blank" href="http://www.pagelines.com">
+					<img src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/images/pagelines.png" alt="WhiteHouse by PageLines" />
+				</a>
+			</div>
+			 	<hr class="hidden" />
+	</div><!--/subfoot -->
+
+  </div><!--/wrapper -->
+</div> <!-- end #site -->
+
+<!-- Footer Scripts Go Here -->
+	<center><font color="gray">Copyright © Towson University</font></center>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5547553; 
+var sc_invisible=1; 
+var sc_security="6be6d23b"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="counter customizable"
+href="http://statcounter.com/free_hit_counter.html"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/5547553/0/6be6d23b/1/"
+alt="counter customizable" ></a></div></noscript>
+<!-- End of StatCounter Code -->	<script type="text/javascript">
+$('a#feedback').hover(function(e){
+    $(this).animate({'right':'-1px'}, 500);
+},
+function(e){
+    $(this).animate({'right':'-10px'}, 500);
+});
+</script>
+<a class="eModal eModal-1" id="feedback" href="#contact_form_pop&quot;"><img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png" /></a>
+<div style="display: none;" class="eModal eModal-1">
+<div id="contact_form_pop">
+        [contact-form-7 id="4890" title="feedback"]
+    </div>
+</div>
+<!-- End Footer scripts -->
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/comment-reply.min.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.25.0-2013.01.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/cis1.towson.edu\/~cssecinj\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.3.3'></script>
+</body>
+</html>

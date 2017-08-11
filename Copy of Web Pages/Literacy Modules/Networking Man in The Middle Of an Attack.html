@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+  <head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Meta Images -->
+	<link rel="shortcut icon" href="http://www.towson.edu/favicon.ico" type="image/x-icon" />	
+<!-- Title and External Script Integration -->
+			<title>  Physical Security and Man-in-the-Middle Attack</title>
+		
+	
+<!-- Wordpress Stuff -->
+	<meta name="generator" content="WordPress 4.0" /> <!-- leave this for stats -->
+	<link rel="alternate" type="application/rss+xml" title="Cybersecurity Modules: Security Injections|Cyber4All @Towson RSS Feed" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" />
+	<link rel="pingback" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php" />
+	 <!-- This makes the comment box appear where the ‘reply to this comment’ link is -->
+		
+			<script type="text/javascript">//<![CDATA[
+			// Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-38487412-1']);
+							_gaq.push(['_trackPageview']);
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+			//]]></script>
+			<link rel='stylesheet' id='contact-form-7-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sccss_style-css'  href='http://cis1.towson.edu/~cssecinj?sccss=1&#038;ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='easy-modal-theme-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/themes/default/styles.css?ver=4.0' type='text/css' media='all' />
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var easymodal = 
+    {"ajaxurl":"http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/ajax/content.php","settings":{"1":{"requestData":{"modalId":"1","action":"easy_modal"},"cf7form":true},"2":{"requestData":{"modalId":"2","action":"easy_modal"},"cf7form":true},"3":{"requestData":{"modalId":"3","action":"easy_modal"},"cf7form":true},"4":{"requestData":{"modalId":"4","action":"easy_modal"},"cf7form":true}}};
+    /* ]]> */
+    </script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/jquery.cycle.all.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/loader.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/js/easy-modal.js?ver=4.0'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cis1.towson.edu/~cssecinj/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.0" />
+<link rel='canonical' href='http://cis1.towson.edu/~cssecinj/modules/other-modules/networking-4/physical-security-and-man-in-the-middle-attack/' />
+<link rel='shortlink' href='http://cis1.towson.edu/~cssecinj/?p=4109' />
+<link type="text/css" rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-css-button/wp_button.css" />
+<script type="text/javascript" src="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_script.js"></script><link rel="stylesheet" type="text/css" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_style.css" />
+<!-- Stylesheets -->
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/wp_core.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/style.css" type="text/css" media="screen" />
+	
+<!-- This is for printing - inserted by Sidd -->
+	<link rel="stylesheet" type="text/css" media="screen,print" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/print.css" />
+
+
+
+
+<!-- Modules w/ Javascript -->	
+
+
+
+	
+
+
+<!-- IE -->
+<!--[if IE 6]>
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/css/ie6.css" type="text/css" media="screen" />
+	<script  type="text/javascript"  src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/js/belatedpng.js"></script>
+	<script>
+	  DD_belatedPNG.fix('.pngbg, .welcometext, .icons a, .containershadow, .fboxdividers, #morefootbg, .plimage, .post-footer .left span, #welcome');
+	 </script>	
+<![endif]--><style type="text/css">
+
+
+</style>
+<!-- Font Replacement -->
+  		</head>
+<body class="page page-id-4109 page-child parent-pageid-3972 page-template-default">
+		<div id="site">
+		<div id="wrapper">
+			
+	
+					<div id="header" class="fix">
+						<div class="content fix">
+							<div class="headline">
+																<h1 class="site-title"><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Cybersecurity Modules: Security Injections|Cyber4All @Towson</a></h1>
+								<h6 class="site-description">towson.edu/securityinjections</h6>
+															</div>
+							<div class="icons">
+								
+						<!--										<a target="_blank" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" class="rsslink"></a>
+								 -->
+								
+																
+							</div>
+						</div>
+					</div>
+					<div class="container fix ">
+						<div class="effect containershadow">
+							<div class="effect containershadow_rpt">
+								<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in 'header_orig.php' - Kyle Sherbert -->
+								<!--div id="sitenav" class="content fix">
+									<!--div id="nav" class="fix">
+										<!--?php if(pagelines('enable_drop_down')):?>
+											<!--ul class="dropdown clearfix">
+										<!--?php else:?>	 
+											<!--ul class="clearfix">
+										<!--?php endif;?>	
+								
+											<!--li class="page_item "><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Home</a></li>
+											<!--?php 
+												$frontpage_id = get_option('page_on_front');
+												if($bbpress_forum && pagelinesforum('exclude_pages')){ $forum_exclude= ','.pagelinesforum('exclude_pages');}
+												else{ $forum_exclude = '';}
+												wp_list_pages('exclude='.$frontpage_id.$forum_exclude.'&depth=3&title_li=');?>
+										<!--/ul>
+									<!--/div><!-- /nav -->
+									<!--div class="clear"></div-->
+								<!--/div-->
+
+    <script type="text/javascript" language="JavaScript" src="http://j.maxmind.com/app/geoip.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>							
+
+<div id="contentcontainer" class="content fix"> 
+	<div id="contentborder">
+
+						<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in '_sub_head_orig.php' - Kyle Sherbert -->
+		<!--div id="sub_head" class="fix">
+			<!--?php require(THEME_LIB.'/_sub_nav.php');?>
+		<!--/div-->
+			
+				
+		
+			<div id="maincontent" class="fullwidth" >
+								
+									
+	<div class="postwrap fix">	
+		<div class="post-4109 page type-page status-publish hentry" id="post-4109">
+						  	
+				<div class="copy fix">
+										<div class="textcontent">
+						<p><strong><em>The module for this lesson is still under development. Please <a href="mailto:securityinjections@towson.edu">contact us</a> if you have any questions.</em></strong></p>
+<p>&nbsp;</p>
+<h1 style="text-align: center;">Physical Security and Man-in-the-Middle Attack</h1>
+<p style="text-align: left;"><br class="spacer_" /></p>
+<table style="width: 753px; text-align: left; height: 43px;" border="0" cellpadding="4">
+<tbody>
+<tr style="height: 10px;">
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/networking-4/physical-security-and-man-in-the-middle-attack/#B" >1. Read Background</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/networking-4/physical-security-and-man-in-the-middle-attack/#LA" >2. How can i avoid man-in-the-middle attack</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/networking-4/physical-security-and-man-in-the-middle-attack/#C" >3. Complete Security Checklist</a></h5>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Summary: </span></h2>
+<p style="text-align: left;">Although often overlooked, physical security has been described as the weakest link in network security. This is because the network’s underlying communication mediais sometimes directly accessible to unauthorized individuals, or can be made accessible through light social engineering techniques.</p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Description: </span></h2>
+<p id="B" style="text-align: left;">Physical security addresses the design, implementation, and maintenance of countermeasures that protect the physical resources of an organization. It includes the physical protection of people, hardware, and the supporting system elements and resources that control information in all its states (transmission, storage, and processing).<br />
+ Layer1(the Physical Layer) of the Open Systems Interconnection (OSI) modelconsists of the basic hardware transmission technologies of a network. The OSI Reference Model is a set of seven layers that defines the different stages that data must navigate to travel from one device to another over a communication network. Cabling technologies, such as fiber optic, coax, Ethernet, and T1 are defined here. Each of these communication technologies is vulnerable to attack. Fiber is among the hardest media types to break into because it is noticeable and the equipment is expensive. Most intercity connections are implemented via fiber.Coax cable is easy to break into, but not very prevalent. Ethernet (10, 100, 1000BaseT) is the most widely used in network closets and can easily be intercepted without notice.T1 is the easiest Layer 1 hacking target. Since it consist of two simple pairs of wires, T1 links are easy to listen in on.</p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Risk&#8211; How it happens ?</span></h2>
+<p style="text-align: left;">Man-in-the-middle (MITM) is an attack in which the abuser records data packets from the network, modifies them, and inserts them back into the network. Under the right conditions, an attacker could insert a MITM device, capturing all outside connections. Shared phone closets are an easy target, and provide the anonymous access a hacker seeks. Figure 2 illustrates how the area of the network of Fig. 1 comprising of the Channel Service Unit/Data Service Unit (CSU/DSU) can be manipulated to cause a MITM attack. With a low-end 1600 Cisco router, aphysical MITM device can be created. In many cases, closet circuits are labeled with company name and circuit ID. By using a small router device with two CSUs/DSUs and one Ethernet interface, a hacker can insert a simple MITM bridge with only five to ten seconds of downtime that more than likely would be invisible to the end user.With a MITM in progress, traffic can be sniffed and parsed out. Although secure protocols might be partially safe, any normal traffic could be manipulated.T1 links are often deployed for point-to-point interoffice communication, but are prone to MITM attack. Man-in-the-middle attack on an internal office T1 allows an attacker full access to internal network.</p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Example of Occurrence: </span></h2>
+<p style="text-align: left;">A security researcher for InfoSec Institute has outlined a scenario in which an attacker could launch a man-in-the-middle attack over an IPv6 network. The attacker would essentially overlay a parasitic IPv6 network on top of the targeted IPv4 network to intercept Internet traffic. His proof-of-concept attack is considered only Windows 7 systems, but is assumed to work for Windows Vista, Windows 2008 Server and operating systems with IPv6 enable by default.<br />
+ If the attack is tobe successful, the attacker would need physical access to the targeted network long enough to connect an IPv6 router.In the case of a corporate network, the attacker would need to connect the IPv6 router to an existing IPv4 hub.</p>
+<p style="text-align: left;">Attackers Can Use IPv6 to Launch Man-in-the-Middle Attacks<br />
+ <a href="http://cis1.towson.edu//www.eweek.com/c/a/Security/Attackers-Can-Use-IPv6-to-Launch-ManInTheMiddleAttacks-857667/" >http://www.eweek.com/c/a/Security/Attackers-Can-Use-IPv6-to-Launch-ManInTheMiddleAttacks-857667/</a></p>
+<p style="text-align: left;"><img class="alignnone" title="Network11" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//Network11.jpg" alt="" width="311" height="210" /></p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">How can I avoid man-in-the-middle attcks?</span></h2>
+<p id="LA" style="text-align: left;">Although there are a variety of controls for physical security, including guards, locks and mantraps,the challenge of securing a network increases as the network scales up in terms of either size or complexity. The following are twelve of the physical and environmental controls for a computer room and wiring closet:</p>
+<ul style="text-align: left;">
+<li> Card keys for building and entrance to work area;</li>
+<li> 24-hour guards at all entrances and exits;</li>
+<li> Controlled access to file server room;</li>
+<li> Closed circuit television monitors;</li>
+<li> Cipher lock on computer room door;</li>
+<li> Raised floor in computer room;</li>
+<li> Dedicated cooling system;</li>
+<li> Emergency lighting in computer room;</li>
+<li> Smoke water and heat detectors;</li>
+<li> Power strips and suppressors for peripherals and computers;</li>
+<li> Smoke, water and head detectors;</li>
+<li> Uninterruptable power supply for LAN servers</li>
+</ul>
+<p style="text-align: left;"><strong>Example: Physical man-in-the-middle attack</strong><br />
+ An example of a physical MITM attack is depicted in Fig. 2. The entry point is the CSU/DSU of Fig. 1. A detail explanation is provided in the section, Risk—How it Happens.</p>
+<p style="text-align: left;"><img class="alignnone" title="network" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//network.jpg" alt="" width="311" height="210" /></p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Lab assignment</span></h2>
+<p style="text-align: left;">Complete the following:</p>
+<ul style="text-align: left;">
+1.	Use NS-3 (<a href="http://www.nsnam.org" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.nsnam.org']);">http://www.nsnam.org</a>/) or NS-2 (<a href="http://isi.edu/nsnam/ns/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://isi.edu']);">http://isi.edu/nsnam/ns/</a>) to simulate the network in Fig. 1. (Alternatively, if you have access to all the devices in the Figure or to other network simulators, please feel free to use them instead).</p>
+<p>2.	Modify the network to illustrate the MITM attack of Fig. 2</p>
+<p>3.	Show and discuss your results.</p>
+</ul>
+<h2 id="C" style="text-align: left;"><span style="font-weight: normal;">Security Checklist</span></h2>
+<p><span style="font-size: small;"><span style="line-height: normal;"> </span></span></p>
+<div style="text-align: center;">
+<table class="MsoNormalTable" style="border-collapse: collapse; width: 619px; border: initial none initial;" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; height: 10.3pt;">
+<td style="width: 6.45in; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.3pt;" colspan="4" width="619" valign="top">
+<p class="MsoNormal" style="text-align: center; mso-layout-grid-align: none; text-autospace: none;"><strong><span style="font-family: &amp;amp;amp;">Security checklist</span></strong></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 1; height: 17.05pt;">
+<td style="width: 95.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 17.05pt;" width="127" valign="top">
+<p class="MsoNormal"><strong><span style="font-family: &amp;amp;amp;">Vulnerability</span></strong></p>
+</td>
+<td style="width: 2.5in; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 17.05pt;" width="240" valign="top">
+<p class="MsoNormal" style="text-indent: 0in; mso-layout-grid-align: none; text-autospace: none;">Man-in-the-middle attack</p>
+</td>
+<td style="width: 67.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 17.05pt;" width="90" valign="top">
+<p class="MsoNormal" style="text-align: left; mso-layout-grid-align: none; text-autospace: none;"><strong><span style="font-family: &amp;amp;amp;">Course<span> </span></span></strong></p>
+</td>
+<td style="width: 121.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 17.05pt;" width="162" valign="top">
+<p class="MsoNormal" style="text-indent: 0in; mso-layout-grid-align: none; text-autospace: none;"><span style="font-family: &amp;amp;amp;">Networking</span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 2; height: 9.85pt;">
+<td style="width: 275.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 9.85pt;" colspan="2" width="367" valign="top">
+<p class="MsoNormal" style="text-indent: 0in;"><strong><span style="font-family: &amp;amp;amp;">Answer the following   questions to determine if your server room or wiring closet has some of the important physical protections against man-in-the-middle attacks.</span></strong></p>
+</td>
+<td style="width: 189.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 9.85pt;" colspan="2" width="252" valign="top">
+<p class="MsoNormal"><strong><span style="font-family: &amp;amp;amp;">Yes/No &#8211; describe</span></strong></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 3; height: 10.6pt;">
+<td style="width: 275.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.6pt;" colspan="2" width="367" valign="top">
+<p class="MsoListParagraph" style="margin-left: .25in; mso-add-space: auto; text-indent: -.25in; mso-list: l0 level1 lfo1;"><!--[if !supportLists]--><span style="font-family: &amp;amp;amp; mso-fareast-font-family: Arial;"><span>1.<span style="font: 7.0pt &amp;amp;amp;"> Are cards keys needed to gain access to building and entrance to work areas</span></span></span></p>
+</td>
+<td style="width: 189.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.6pt;" colspan="2" width="252" valign="top">
+<p class="MsoNormal"><span style="font-family: &amp;amp;amp;"> </span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 4; height: 16.15pt;">
+<td style="width: 275.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 16.15pt;" colspan="2" width="367" valign="top">
+<p class="MsoListParagraph" style="margin-left: .25in; mso-add-space: auto; text-indent: -.25in; mso-list: l0 level1 lfo1;"><!--[if !supportLists]--><span style="font-family: &amp;amp;amp; mso-fareast-font-family: Arial;"><span>2.<span style="font: 7.0pt &amp;amp;amp;"> </span></span></span><!--[endif]--><span style="font-family: &amp;amp;amp;">Are 24- hours guards are posted at entrances and exits?</span></p>
+</td>
+<td style="width: 189.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 16.15pt;" colspan="2" width="252" valign="top">
+<p class="MsoNormal"><span style="font-family: &amp;amp;amp; mso-bidi-font-weight: bold;"> </span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 5; height: 10.75pt;">
+<td style="width: 275.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="367" valign="top">
+<p class="MsoListParagraph" style="margin-left: .25in; mso-add-space: auto; text-align: left; text-indent: -.25in; mso-list: l0 level1 lfo1;"><!--[if !supportLists]--><span style="font-family: &amp;amp;amp; mso-fareast-font-family: Arial;"><span>3.<span style="font: 7.0pt &amp;amp;amp;"> </span></span></span><!--[endif]--><span style="font-family: &amp;amp;amp;">Is there controlled access to server rooms?</span></p>
+</td>
+<td style="width: 189.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="252" valign="top">
+<p class="MsoNormal"><span style="font-family: &amp;amp;amp; mso-bidi-font-weight: bold;"> </span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 6; height: 10.75pt;">
+<td style="width: 275.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="367" valign="top">
+<p class="MsoNormal" style="margin-left: .25in; text-align: left; text-indent: -.25in; mso-list: l0 level1 lfo1;"><!--[if !supportLists]--><span style="font-family: &amp;amp;amp; mso-fareast-font-family: Arial;"><span>4.<span style="font: 7.0pt &amp;amp;amp;"> </span></span></span><!--[endif]--><span style="font-family: &amp;amp;amp;">Are closed circuit television monitors installed?</span></p>
+</td>
+<td style="width: 189.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="252" valign="top">
+<p class="MsoNormal"><span style="font-family: &amp;amp;amp; mso-bidi-font-weight: bold;"> </span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 7; height: 10.75pt;">
+<td style="width: 275.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="367" valign="top">
+<p class="MsoNormal" style="margin-left: .25in; text-align: left; text-indent: -.25in; mso-list: l0 level1 lfo1;"><!--[if !supportLists]--><span style="font-family: &amp;amp;amp; mso-fareast-font-family: Arial;"><span>5.<span style="font: 7.0pt &amp;amp;amp;"> Are there cipher lock on computer room doors</span></span></span><span style="font-family: &amp;amp;amp;">?</span></p>
+</td>
+<td style="width: 189.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="252" valign="top">
+<p class="MsoNormal"><span style="font-family: &amp;amp;amp; mso-bidi-font-weight: bold;"> </span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 9; mso-yfti-lastrow: yes; height: 10.75pt;">
+<td style="width: 275.4pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="367" valign="top">
+<p class="MsoNormal" style="text-indent: 0in;"><span style="font-family: &amp;amp;amp;">If   you answered no to any of the above questions, then your server room may be vulnerable to MITM attack.</span></p>
+</td>
+<td style="width: 189.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 10.75pt;" colspan="2" width="252" valign="top">
+<p class="MsoNormal"><span style="font-family: &amp;amp;amp; mso-bidi-font-weight: bold;"> </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Key Terms</span></h2>
+<ul>
+•	Protected network—the sub-network in Fig. 1 that consists of all the components starting at Computer A proceeding right to include all components up to and including the NAT.<br />
+ •	Firewall—sometimes called a packet filter, is designed to prevent malicious packets from entering a network or computer. Firewalls are typically located outside the network security perimeter as the first line of defense.<br />
+ •	Intrusion Detection System—monitors activity on a network/computer and determines whether an intrusion has occurred.<br />
+ •	Network Address Translation (NAT) Systems—hides the IP address of network devices from malicious hackers. The computers in a network using NAT are assigned special IP addresses. As a packet leaves the network, NAT removes the special IP address from the sender’s packet and replace it with an alias IP address.<br />
+ •	Proxy Server—conceals the identity of the computers within a protected network. It functions similarly to a NAT but can also inspect packets and look for malicious content.<br />
+ •	Demilitarized Zone (DMZ)—another network that sits outside the protected network perimeter. Outside users can access the DMZ but cannot enter the secure network.<br />
+ •	Channel Service Unit/Data Service Unit (CSU/DSU)—translates between the digital representation of data used by the phone companies and the digital representation used by the computer industry.<br />
+ •	PunchdownBlock—a type electrical connection often used in telephony. It is so named because the solid copper wires are “punched down” into short open-ended slots.<br />
+ <a href="http://www.youtube.com/watch?v=rUTxJxSmp60" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.youtube.com']);">http://www.youtube.com/watch?v=rUTxJxSmp60</a></p>
+<p><br class="spacer_" /></p>
+<p><br class="spacer_" /></p>
+</ul>
+	
+							
+							
+					</div>	
+					<div class="tags">
+					&nbsp;
+					</div>
+				</div>
+												
+								
+					</div><!--post -->
+
+	</div>
+	
+	
+	<div class="clear"></div>
+	
+				
+									
+			
+	
+		
+				</div>
+		
+					
+		<div class="hl"></div>
+<div class="post-footer pfooterdark">
+	<div class="right"><span><a href="#header">Go To Top &raquo;</a></span></div>
+	<div class="clear"></div>
+
+</div>
+<div class="hl2"></div>		<div class="clear"></div>
+	</div>
+</div>
+		</div>
+	</div> 
+</div>
+
+<!--full width bottom widget -->
+<!--END full width bottom widget -->
+
+
+
+		<div class="clear"></div>
+				
+
+</div>
+	<div class="clear"></div>
+	
+	<div id="subfoot">
+	
+					<div id="cred" class="pagelines">
+				<a class="plimage" target="_blank" href="http://www.pagelines.com">
+					<img src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/images/pagelines.png" alt="WhiteHouse by PageLines" />
+				</a>
+			</div>
+			 	<hr class="hidden" />
+	</div><!--/subfoot -->
+
+  </div><!--/wrapper -->
+</div> <!-- end #site -->
+
+<!-- Footer Scripts Go Here -->
+	<center><font color="gray">Copyright © Towson University</font></center>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5547553; 
+var sc_invisible=1; 
+var sc_security="6be6d23b"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="counter customizable"
+href="http://statcounter.com/free_hit_counter.html"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/5547553/0/6be6d23b/1/"
+alt="counter customizable" ></a></div></noscript>
+<!-- End of StatCounter Code -->	<script type="text/javascript">
+$('a#feedback').hover(function(e){
+    $(this).animate({'right':'-1px'}, 500);
+},
+function(e){
+    $(this).animate({'right':'-10px'}, 500);
+});
+</script>
+<a class="eModal eModal-1" id="feedback" href="#contact_form_pop&quot;"><img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png" /></a>
+<div style="display: none;" class="eModal eModal-1">
+<div id="contact_form_pop">
+        [contact-form-7 id="4890" title="feedback"]
+    </div>
+</div>
+<!-- End Footer scripts -->
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/comment-reply.min.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.25.0-2013.01.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/cis1.towson.edu\/~cssecinj\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.3.3'></script>
+</body>
+</html>

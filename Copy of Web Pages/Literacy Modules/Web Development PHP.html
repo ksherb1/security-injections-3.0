@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+  <head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Meta Images -->
+	<link rel="shortcut icon" href="http://www.towson.edu/favicon.ico" type="image/x-icon" />	
+<!-- Title and External Script Integration -->
+			<title>  Cross Site Scripting (XSS) &#8211; Web Development</title>
+		
+	
+<!-- Wordpress Stuff -->
+	<meta name="generator" content="WordPress 4.0" /> <!-- leave this for stats -->
+	<link rel="alternate" type="application/rss+xml" title="Cybersecurity Modules: Security Injections|Cyber4All @Towson RSS Feed" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" />
+	<link rel="pingback" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php" />
+	 <!-- This makes the comment box appear where the ‘reply to this comment’ link is -->
+		
+			<script type="text/javascript">//<![CDATA[
+			// Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-38487412-1']);
+							_gaq.push(['_trackPageview']);
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+			//]]></script>
+			<link rel='stylesheet' id='contact-form-7-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sccss_style-css'  href='http://cis1.towson.edu/~cssecinj?sccss=1&#038;ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='easy-modal-theme-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/themes/default/styles.css?ver=4.0' type='text/css' media='all' />
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var easymodal = 
+    {"ajaxurl":"http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/ajax/content.php","settings":{"1":{"requestData":{"modalId":"1","action":"easy_modal"},"cf7form":true},"2":{"requestData":{"modalId":"2","action":"easy_modal"},"cf7form":true},"3":{"requestData":{"modalId":"3","action":"easy_modal"},"cf7form":true},"4":{"requestData":{"modalId":"4","action":"easy_modal"},"cf7form":true}}};
+    /* ]]> */
+    </script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/jquery.cycle.all.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/loader.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/js/easy-modal.js?ver=4.0'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cis1.towson.edu/~cssecinj/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.0" />
+<link rel='canonical' href='http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/' />
+<link rel='shortlink' href='http://cis1.towson.edu/~cssecinj/?p=2197' />
+<link type="text/css" rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-css-button/wp_button.css" />
+<script type="text/javascript" src="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_script.js"></script><link rel="stylesheet" type="text/css" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_style.css" />
+<!-- Stylesheets -->
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/wp_core.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/style.css" type="text/css" media="screen" />
+	
+<!-- This is for printing - inserted by Sidd -->
+	<link rel="stylesheet" type="text/css" media="screen,print" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/print.css" />
+
+
+
+
+<!-- Modules w/ Javascript -->	
+
+
+
+	
+
+
+<!-- IE -->
+<!--[if IE 6]>
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/css/ie6.css" type="text/css" media="screen" />
+	<script  type="text/javascript"  src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/js/belatedpng.js"></script>
+	<script>
+	  DD_belatedPNG.fix('.pngbg, .welcometext, .icons a, .containershadow, .fboxdividers, #morefootbg, .plimage, .post-footer .left span, #welcome');
+	 </script>	
+<![endif]--><style type="text/css">
+
+
+</style>
+<!-- Font Replacement -->
+  		</head>
+<body class="page page-id-2197 page-parent page-child parent-pageid-176 page-template-default">
+		<div id="site">
+		<div id="wrapper">
+			
+	
+					<div id="header" class="fix">
+						<div class="content fix">
+							<div class="headline">
+																<h1 class="site-title"><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Cybersecurity Modules: Security Injections|Cyber4All @Towson</a></h1>
+								<h6 class="site-description">towson.edu/securityinjections</h6>
+															</div>
+							<div class="icons">
+								
+						<!--										<a target="_blank" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" class="rsslink"></a>
+								 -->
+								
+																
+							</div>
+						</div>
+					</div>
+					<div class="container fix ">
+						<div class="effect containershadow">
+							<div class="effect containershadow_rpt">
+								<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in 'header_orig.php' - Kyle Sherbert -->
+								<!--div id="sitenav" class="content fix">
+									<!--div id="nav" class="fix">
+										<!--?php if(pagelines('enable_drop_down')):?>
+											<!--ul class="dropdown clearfix">
+										<!--?php else:?>	 
+											<!--ul class="clearfix">
+										<!--?php endif;?>	
+								
+											<!--li class="page_item "><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Home</a></li>
+											<!--?php 
+												$frontpage_id = get_option('page_on_front');
+												if($bbpress_forum && pagelinesforum('exclude_pages')){ $forum_exclude= ','.pagelinesforum('exclude_pages');}
+												else{ $forum_exclude = '';}
+												wp_list_pages('exclude='.$frontpage_id.$forum_exclude.'&depth=3&title_li=');?>
+										<!--/ul>
+									<!--/div><!-- /nav -->
+									<!--div class="clear"></div-->
+								<!--/div-->
+
+    <script type="text/javascript" language="JavaScript" src="http://j.maxmind.com/app/geoip.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>							
+
+<div id="contentcontainer" class="content fix"> 
+	<div id="contentborder">
+
+						<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in '_sub_head_orig.php' - Kyle Sherbert -->
+		<!--div id="sub_head" class="fix">
+			<!--?php require(THEME_LIB.'/_sub_nav.php');?>
+		<!--/div-->
+			
+				
+		
+			<div id="maincontent" class="fullwidth" >
+								
+									
+	<div class="postwrap fix">	
+		<div class="post-2197 page type-page status-publish hentry" id="post-2197">
+						  	
+				<div class="copy fix">
+										<div class="textcontent">
+						<p><strong><em>The module for this lesson is still under development. Please <a href="mailto:securityinjections@towson.edu">contact us</a> if you have any questions.</em></strong></p>
+<p>&nbsp;</p>
+<p><a name="top"></a></p>
+<h1>Cross-site Scripting (XSS)</h1>
+<p><br class="spacer_" /></p>
+<table style="width: 753px; height: 43px;" border="0" cellpadding="4" align="center">
+<tbody>
+<tr style="height: 10px;">
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#B" >1. Read Background</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#LA" >2. Execute Lab Assignment</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#C" >3. Complete Security Checklist</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#D" >4. Answer Discussion Questions</a></h5>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="B"></a></h2>
+<h6><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#top" >top</a></h6>
+<h2><span style="font-weight: normal;">Summary:</span></h2>
+<p>A web-browser may unknowingly run malicious client-side scripts (like JavaScript) that may be have been placed within the content from a trusted site.</p>
+<h2><span style="font-weight: normal;">Description:</span></h2>
+<p>Browsers can run scripts like JavaScript that are sent to them from a website. If a user trusts a website, then they are likely to allow these scripts to run. However, it is possible to &#8216;inject&#8217; malicious scripts into content from trusted websites especially if those websites allow user generated content. These malicious scripts can hijack valid user sessions, deface the webpage being viewed, or redirect the user to other sites (hence the name &#8216;Cross-Site Scripting&#8217; (XSS)).</p>
+<p>XSS flaws can be generally categorized into two types: stored and reflected. Stored XSS flaws are those where the malicious code is permanently stored in the target website (for example, in databases &#8211; comments, product descriptions, etc.). Reflected XSS attacks on the other hand, are ‘reflected’ off a trusted webserver where the malicious content is injected into the response sent by the webserver (for example, a search result, or an error page). Reflected attacks are sent to the victim through another route like an email or another website (see Example in code &#8211; 1 below).</p>
+<p><span style="font-size: 20px;">Risk – How can it happen?</span></p>
+<p>XSS vulnerabilities can occur when a trusted website allows users to provide content. A classic example is a blog that allows its readers to comment on an article. An attacker can enter the following comment:</p>
+<p><code>< script type="text/javascript" > alert("Your hard disk is corrupted."); < /script ><br />
+ </code></p>
+<p>When the owner of the blog or any other user views the comments, the script is sent to their browser which executes it showing the victim the message in a pop-up alert box. This script (though probably harmless as it is written above) will get executed within the context of the victims browser and thus may have access to the victim&#8217;s  login session and cookies. Such scripts do not have to be within HTML tags, they can also be associated with JavaScript events such as <em>onLoad</em> or <em>MouseOver</em>.</p>
+<p><span style="font-size: 20px;">Example of occurrence:</span></p>
+<p><span style="font-weight: normal;">On September 21st 2010, Twitter was effected by a XSS attack that was based on a <em>mouseover </em>event. If users moused over a link sent as a tweet to their accounts, they would be redirected to a third party site. This was because Twitter had failed to escape out parts of JavaScript from the posted Tweets. </span></p>
+<p><span style="font-weight: normal;"><span style="font-size: xx-small;">Charles Arthur, &#8220;Twitter users including Sarah Brown hit by malicious hacker attack&#8221; <a href="http://www.guardian.co.uk/technology/blog/2010/sep/21/twitter-bug-malicious-exploit-xss" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.guardian.co.uk']);">http://www.guardian.co.uk/technology/blog/2010/sep/21/twitter-bug-malicious-exploit-xss</a></span></span></p>
+<h2><span style="font-weight: normal;">Example in code &#8211; 1:</span></h2>
+<h3><span style="font-weight: normal; font-size: 13px;">Consider the following scenario: The attacker knows that the victim uses a popular e-commerce site (lets call it www.shopwithtrust.com). The attacker also knows that www.shopwithtrust.com allows users to post comments for products. The URL for posting a comment is:</span></h3>
+<p style="text-align: center;"><span style="font-family: monospace;">shopwithtrust.com/post-rating.php?product=5&amp;comment=somecomment</span></p>
+<p>A valid link to post a comment sent to a user&#8217;s email looks like the following:</p>
+<pre style="text-align: center;"><a href="shopwithtrust.com/post-rating.php?product=5&amp;comment=somecomment">
+Click here to post a comment for the product you just bought</a>
+</pre>
+<p>When the user clicks this link, the comment will be posted to shopwithtrust.com. The website may then display the product page back to the user with the new comment on it. In this scenario, the attacker may use the following link instead (where the comment text is replaced with a JavaScript) and send to the victim&#8217;s email:</p>
+<pre style="text-align: center;"><a href="shopwithtrust.com/post-rating.php?product=5&amp;comment=&amp;lt;script&amp;gt;alert('hello')&amp;lt;/script&amp;gt;">
+Click here to post a comment for the product you just bought</a>
+</pre>
+<p>In the above case, the comment posted to shopwithtrust.com is</p>
+<pre style="text-align: center;">&amp;lt;script&amp;gt;alert('hello')&amp;lt;/script&amp;gt; </pre>
+<p><span style="font-family: monospace;"> </span>which may be converted to text:</p>
+<pre style="text-align: center;"><script>alert('hello')</script> </pre>
+<p>When the website shows the victim the product page with his/her comment, the browser will execute this script. This vulnerability can be used to run other malicious scripts or redirect to other malicious  sites instead of popping a harmless alert box. This is a classic reflected XSS attack, where the malicious script is &#8216;reflected&#8217; off a trusted website.</p>
+<p><span style="font-size: 20px;">Example in code &#8211; 2:</span></p>
+<p>Consider the following JSP script <span style="font-size: xx-small;">(Source: </span><span style="font-size: xx-small;"><a href="http://www.owasp.org" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.owasp.org']);">www.owasp.org</a>)</span>.<br />
+ It takes input from the user using a HTTP request and then displays it on the page.</p>
+<pre style="text-align: left;"><span style="background-color: #ffffff;"> <% String eid = request.getParameter("eid"); %>
+ ... 	<span> </span></span></pre>
+<pre style="padding-left: 30px; text-align: left;"><span style="background-color: #ffffff;">Employee ID: <%= eid %>
+</span></pre>
+<p><span style="background-color: #ffffff;">In this case, if the the parameter </span><em><span style="background-color: #ffffff;">eid</span></em><span style="background-color: #ffffff;"> is a alphanumeric parameter (which is what is expected), then, there may not be any problem. However, if </span><em><span style="background-color: #ffffff;">eid </span></em><span style="background-color: #ffff00;"><span style="background-color: #ffffff;">is a script, then the browser may execute that script when the user views the page</span><span style="background-color: #ffffff;">.</span></span></p>
+<p><span><br />
+ </span></p>
+<h2><span style="font-weight: normal;">Code Responsibly &#8211; How can I avoid a XSS vulnerability?</span></h2>
+<p class="MsoNormal">The basic premise in avoiding a XSS vulnerability is to look out for untrusted data entering your application and escape any characters in the untrusted data (like Javascript tags) that may have special meaning. There are many places in aHTML document where an attacker might be able to introduce malicious code.</p>
+<p><span style="font-weight: normal;">The <a href="http://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.owasp.org']);" target="_blank">OWASP XSS Cheat Sheet</a> recommends rules to prevent XSS. The rules are based on the concept of having a whitelist rather than a blacklist for preventing security vulnerabilities.</span><span style="font-weight: normal;"> A whitelist is the best way to validate input to an application since a blacklist is likely to list only the known vulnerabilities and may miss unknown ways to attack an application. We adapt and list the most important rules here, for a thorough analysis visit the OWASP website. </span></p>
+<ol>
+<li><span style="font-weight: normal;">The first rule is based on the principle of </span><span style="font-weight: normal;"><strong>deny all</strong></span><span style="font-weight: normal;">. Never insert untrusted data anywhere in the following contexts. Putting untrusted/user-generated data in these contexts is rarely (if ever) needed in a Web Application. </span>
+<pre><script><strong>...NEVER PUT UNTRUSTED DATA HERE...</strong></script> directly in a script
+<!--<strong>...NEVER PUT UNTRUSTED DATA HERE...</strong>--> inside an HTML comment
+<div <strong>...NEVER PUT UNTRUSTED DATA HERE...</strong>=test > ... </div> in an attribute name
+<<strong>NEVER PUT UNTRUSTED DATA HERE...</strong> href="/test" /> in a tag name</pre>
+<p><span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; line-height: 19px; white-space: normal; font-size: 13px;">Most importantly, never accept actual JavaScript code from an untrusted source and then run it. All JavaScript from other sources (like in the code example) should be escaped.</span></p>
+</li>
+<p><br class="spacer_" /></p>
+<li>HTML escape before inserting data into HTML element content
+<p>If you have to put untrusted data within a HTML document within tags like div, p, td. etc., then you have to escape it.</p>
+<pre> <body><strong>...ESCAPE UNTRUSTED DATA BEFORE PUTTING HERE ...</strong></body>
+<div> <strong>...ESCAPE UNTRUSTED DATA BEFORE PUTTING HERE ...</strong></div> </pre>
+<p><span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; line-height: 19px; white-space: normal; font-size: 13px;">The same is true for any other HTML element like</p>
+<td>,</p>
+<p>, <b>, etc.</span></p>
+<p>Escape the following characters that have special meaning in  HTML before you insert them in your document from untrusted sources.</p>
+<pre>Replace &amp; with &amp;amp;
+Replace < with &amp;lt;
+Replace > with &amp;gt;
+Replace " with &amp;quot;
+Replace ' with &amp;#x27;
+Replace / with &amp;#x2F;
+</pre>
+<p><span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; line-height: 19px; white-space: normal; font-size: 13px;"><br />
+ However, implementing Rule 2 is not easy. Even though escaping code in some situations is simple, it is difficult to predict all the possibilities in all the contexts.</span></p>
+<p><span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; line-height: 19px; white-space: normal; font-size: 13px;">It is recommended that you use pre-built libraries to escape code. The OWASP ESAPI<br />
+ (<a href="http://www.owasp.org/index.php/ESAPI" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.owasp.org']);" target="_blank">http://www.owasp.org/index.php/ESAPI</a>) project has created an escaping library for many languages including Java, .NET,<br />
+ and PHP. Many web frameworks and languages also come with their own libraries.</span></p>
+<p>If you use the ESAPI libraries, then you have use the following statement for escaping characters obtained through user entered parameters before inserting them in the HTML document.</p>
+<pre> $safe_input_from_user = <span style="border-collapse: collapse; font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; font-size: 11px; white-space: pre-wrap; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; line-height: normal;"><span class="pln" style="color: #000000;">ESAPI</span><span class="pun" style="color: #666600;">::</span><span class="pln" style="color: #000000;">getEncoder</span><span class="pun" style="color: #666600;">()-></span><span class="pln" style="color: #000000;">encodeForHTML</span></span>( $input_from_user );</pre>
+</li>
+<p><code><br />
+ </code></p>
+<li>Attribute Escape before inserting untrusted data into common HTML attributes. This rule is for putting data into attributes like width, name, value, href, style, etc.
+<pre><div attr=<strong>...ESCAPE UNTRUSTED DATA BEFORE PUTTING HERE...</strong>>content</div>
+</pre>
+<p>If you use the ESAPI libraries, then you have use the following statement for escaping characters obtained through user entered parameters before inserting them in the HTML attribute.</p>
+<pre> $safe_input_from_user = <span style="border-collapse: collapse; font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; font-size: 11px; white-space: pre-wrap; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; line-height: normal;"><span class="pln" style="color: #000000;">ESAPI</span><span class="pun" style="color: #666600;">::</span><span class="pln" style="color: #000000;">getEncoder</span><span class="pun" style="color: #666600;">()-></span><span class="pln" style="color: #000000;">encodeForHTML</span></span>Attribute( $input_from_user );</pre>
+</li>
+</ol>
+<p><strong>Laboratory Assignment</strong></p>
+<h6><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#top" >top</a></h6>
+<h4><strong>Program 1</strong></h4>
+<p>Consider the following simple web application:</p>
+<pre><div style="width: 500px;">
+Please take a moment to share your comments with us. 
+
+Your Name:
+<form enctype="application/x-www-form-urlencoded" method="post">
+<input name="name" type="text" />
+
+Your E-mail address:
+<input name="email" type="text" />
+
+Your Web Page address:
+<input name="url" type="text" />
+
+Your occupation:
+<input name="job" type="text" />
+
+Location (state):
+<input name="location" type="text" />
+
+Favorite color:
+<input name="color" type="text" />
+
+Comments:
+<textarea cols="60" rows="6" name="comments"></textarea>
+<input name="submitMe" type="submit" value="Submit" />
+<input type="reset" value="Clear" /> </form>
+</div>
+</pre>
+<p>The following code segment accepts data from the form above and inserts it into the database (assuming the database connection parameters are given):</p>
+<pre> <?php
+
+    $connection = @ mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Could not connect");
+    @ mysql_select_db(DB_NAME, $connection) or die("Error opening database");
+    if ($_POST){
+        import_request_variables('P');
+        mysql_query( "insert into guestbook (name, email, url, job, location, color, comments) values
+        ('$name', '$email', '$url', '$job', '$location', '$color', '$comments')")
+              or die("Error " . mysql_errno() . " : " . mysql_error());
+        echo "<P>Thanks! We appreciate your comments on our application. ";
+        }
+</pre>
+<p>The following code segment queries that database to show all the comments to any user who views the page. It also shows the users comments in his/her favorite color:</p>
+<pre>    $result = mysql_query( "select name, email, url, job, location, comments from guestbook");
+    if (mysql_num_rows($result)>0)
+        echo "<H2>View Guestbook Entries</H2>";
+    // fetch the rows one at a time, and then echo the data to the page
+    while ($row = mysql_fetch_row($result)) {
+        echo "<!--This is for user $row[0] -->"
+        echo "<div style="color:$row[5]">"
+        echo "<HR>";
+        echo "<B>Name:</B> $row[0]";
+        echo "<BR><B>E-mail:</B> <A HREF=\"mailto:$row[1]\">$row[1]</A>";
+        echo "<BR><B>Web Page:</B> <A HREF=\"$row[2]\">$row[2]</A>";
+        echo "<BR><B>Occupation:</B> $row[3]";
+        echo "<BR><B>From:</B> $row[4]";
+        echo "<BR><B>Comments:</B>"; echo "<BR>$row[6]";
+        echo "</div>"
+    }
+    mysql_free_result($result);
+    mysql_close($connection);
+?>
+</pre>
+<h5>Lab Questions:</h5>
+<ol>
+<li>Complete the <a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#C" >security checklist </a>for this program (<a href="http://cis1.towson.edu/~cssecinj/?page_id=2756" >click here to print the checklist and the code above</a>).</li>
+<li>Provide example inputs that might cause Cross Site Scripting (XSS) problems, and describe the problems that they might cause.</li>
+</ol>
+<p><strong><a name="C"></a></strong></p>
+<h6><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#top" >top</a></h6>
+<table class="checklist" style="width: 778px; height: 409px; border: 2px solid #000000;" border="2" cellspacing="3" cellpadding="3" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="2">
+<p><strong>Security Checklist</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 40px;"><strong>Vulnerability:</strong>Cross Site Scripting (XSS) <strong>Course: </strong>Web</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 500px;">Task &#8211; Check each line of code displaying on the web page</td>
+<td style="text-align: center;">Completed</td>
+</tr>
+<tr>
+<td style="width: 400px;">1. Highlight/circle each line of code that inserts user supplied/untrusted data into the HTML comment tag.</td>
+<td></td>
+</tr>
+<tr>
+<td style="width: 400px;">2. Highlight /circle each line of code that inserts user supplied/untrusted data into an HTML attribute value.</td>
+<td></td>
+</tr>
+<tr>
+<td style="width: 400px;">3. Highlight/circle each line of code that inserts <em>unescaped</em> data inside an HTML tag content (like between <b></b>,
+</p>
+<p>, etc.). This is a common issue, look carefully at all insertions into the HTML page.</td>
+<td></td>
+</tr>
+<tr>
+<td class="vuln" style="background-color: #d3d3d3; width: 700px;"><strong>Highlighted areas in the application may be vulnerable to XSS attacks!</strong></td>
+<td class="vuln" style="background-color: #d3d3d3;"></td>
+</tr>
+</tbody>
+</table>
+<p><code><br />
+ </code></p>
+<h3><a name="D"></a></h3>
+<h6><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/#top" >top</a></h6>
+<h5>Further Work (optional &#8211; check with your instructor if you need to answer the following questions. Note to instructor: these questions may take significant time and are best assigned as take home work)</h5>
+<ol>
+<li>Revise the Program 1<span style="color: #ff0000;"><strong><em>*</em></strong></span> to properly prevent Cross Site Scripting (XSS) problems. You may use the <a href="http://code.google.com/p/owasp-esapi-php/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://code.google.com']);" target="_blank">OWASP ESAPI</a> toolkit for it. See an example <a href="http://code.google.com/p/swingset-php/source/browse/trunk/OutputUserInputTutorial.php?spec=svn2&amp;r=2" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://code.google.com']);" target="_blank">here</a> for using ESAPI to escape HTML tag and attribute content.</li>
+<li>Download an install the OWASP <a href="http://www.owasp.org/index.php/Category:OWASP_WebGoat_Project" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.owasp.org']);" target="_blank">WebGoat application</a>. WebGoat is a deliberately insecure J2EE web application maintained by OWASP designed to teach web application security lessons. Complete the XSS lesson. </li>
+</ol>
+<p style="padding-left: 30px;">*Copying and pasting programs may result in syntax errors and other inconsistencies. It is recommended you type each program.</p>
+<div id="_mcePaste" style="position: absolute; width: 1px; height: 1px; overflow: hidden; top: 491px; left: -10000px;">
+<p><br class="spacer_" /></p>
+<p><br class="spacer_" /></p>
+<p><br class="spacer_" /></p>
+<p class="MsoNormal"><span style="font-size: 8pt; font-family: &amp;amp;amp;">Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008 </span></p>
+</div>
+<p><br class="spacer_" /></p>
+	
+							
+							
+					</div>	
+					<div class="tags">
+					&nbsp;
+					</div>
+				</div>
+												
+								
+					</div><!--post -->
+
+	</div>
+	
+	
+	<div class="clear"></div>
+	
+				
+									
+			
+	
+		
+				</div>
+		
+					
+		<div class="hl"></div>
+<div class="post-footer pfooterdark">
+	<div class="right"><span><a href="#header">Go To Top &raquo;</a></span></div>
+	<div class="clear"></div>
+
+</div>
+<div class="hl2"></div>		<div class="clear"></div>
+	</div>
+</div>
+		</div>
+	</div> 
+</div>
+
+<!--full width bottom widget -->
+<!--END full width bottom widget -->
+
+
+
+		<div class="clear"></div>
+				
+
+</div>
+	<div class="clear"></div>
+	
+	<div id="subfoot">
+	
+					<div id="cred" class="pagelines">
+				<a class="plimage" target="_blank" href="http://www.pagelines.com">
+					<img src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/images/pagelines.png" alt="WhiteHouse by PageLines" />
+				</a>
+			</div>
+			 	<hr class="hidden" />
+	</div><!--/subfoot -->
+
+  </div><!--/wrapper -->
+</div> <!-- end #site -->
+
+<!-- Footer Scripts Go Here -->
+	<center><font color="gray">Copyright © Towson University</font></center>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5547553; 
+var sc_invisible=1; 
+var sc_security="6be6d23b"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="counter customizable"
+href="http://statcounter.com/free_hit_counter.html"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/5547553/0/6be6d23b/1/"
+alt="counter customizable" ></a></div></noscript>
+<!-- End of StatCounter Code -->	<script type="text/javascript">
+$('a#feedback').hover(function(e){
+    $(this).animate({'right':'-1px'}, 500);
+},
+function(e){
+    $(this).animate({'right':'-10px'}, 500);
+});
+</script>
+<a class="eModal eModal-1" id="feedback" href="#contact_form_pop&quot;"><img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png" /></a>
+<div style="display: none;" class="eModal eModal-1">
+<div id="contact_form_pop">
+        [contact-form-7 id="4890" title="feedback"]
+    </div>
+</div>
+<!-- End Footer scripts -->
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/comment-reply.min.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.25.0-2013.01.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/cis1.towson.edu\/~cssecinj\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.3.3'></script>
+</body>
+</html>

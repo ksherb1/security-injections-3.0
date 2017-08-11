@@ -1,0 +1,1647 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"903533f3ce","agent":"","transactionName":"blQAZkRRXEQFBRFaX1ceJEdYU0ZeCwhKUF9MQxFXRR5XTwULFh1GUFQVQQxDWlgTOQBLUVQ=","applicationID":"4596097","errorBeacon":"bam.nr-data.net","applicationTime":225}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <link rel="stylesheet" href="/static/css/font/SourceSansPro.css" />
+    <link rel="stylesheet" href="/static/css/core/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/core/responsive.css" />
+    <link rel="stylesheet" href="/static/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/static/css/core/body.css" />
+    <link rel="stylesheet" href="/static/css/core/divs.css" />
+    <link rel="stylesheet" href="/static/css/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/static/css/core/Stanford-styles.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/themes/blue/style.css">
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome-ie7.css">
+    <![endif]-->
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="/static/js/core/respond.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+            alert("Warning: you are using an unsupported browser\nand will be unable to save or submit work!\n\nWe suggest you use either Mozilla Firefox or\nGoogle Chrome.");
+            });
+        </script>
+    <![endif]-->
+    <script type="text/javascript" src="/static/js/Chart.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="/static/js/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="/static/js/zeroclipboard/ZeroClipboard.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <title>Security Injections@Towson | powered by class2go</title>
+</head>
+
+<body class="">
+    <div id="viewport">
+      
+        <div id="global-header">
+           <h2>
+            	
+                  Security Injections @Towson
+                
+            </h2>
+            <p id="skip-nav"><a href="#main-content" class="hidden-accessible">Jump to content</a></p>
+        </div>
+        <div id="top-content"></div>
+      
+        <div id="c2g_layout_topbar">
+            
+                <div class="top-nav">
+                    <ul class="unstyled">
+                    
+                    <li>
+                        <form action="/securityinjections/accounts/logout?next=/securityinjections/cyber4all_healthcare/Fall2016" method="POST">
+                            <input type="submit" id="login_button" class="btn logout hidden-phone" value="Logout" />
+                            <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='fHnBdpbicqnsgFH3eC1s1hccDikptDTX' /></div>
+                        </form>
+                    </li>
+                    <li class="hidden-phone"><span> Welcome, <strong> anon_2017-08-11-08-19-19_228 </strong>!</span></li>
+                    
+                    <li class="visible-phone"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><em class="icon-reorder"></em></a></li>
+                        
+                    </ul>
+                </div>
+            
+                  
+            
+                
+
+
+ 
+                  <div class="navbar">
+                  	<div class="navbar-inner">
+                  		<div class="container-fluid">
+                  		
+                  		</div>
+                  	</div>
+                  </div>  
+              
+
+            
+            
+            <div class="row-fluid" style="position:relative;">
+                
+<div class="pull-left page-title">
+    <h2>Cyber4All - Healthcare</h2>
+</div>
+
+        
+                
+                
+                
+            </div>
+
+
+        </div>
+
+
+        
+
+
+
+
+
+<div id="main-content" class="container-fluid body-content" role="main">
+    <div id="main-column-container" class="row-fluid">
+        <div id="left-column-container" class="span12"
+             style="position:relative;height:100px;margin-bottom:20px;margin-top:-20px;">
+            
+ <div id="c2g_layout_l_column" class="">
+     <div class="leftnav_modal"></div>
+
+
+     <!--Skeleton Div to be filled in by leftnav ajax -->
+ </div>
+
+            
+
+
+
+
+        </div>
+
+        
+        
+<div id="c2g_layout_m_column" class="span12" style="position: relative;">
+   <div class="main_modal"></div>
+   <style>
+      .selected { color:red; }
+      .highlight { background:yellow; }
+  </style>
+
+
+
+
+    <style>(r'^about', 'django.views.generic.simple.direct_to_template', {'template': 'path/to/about_us.html'}),
+    #exam-pane label {clear: both; display: block; width:100%;}
+    #exam-pane label input {float: left; margin-right: 1em;}
+    #exam-pane  p {clear: both; display: block; padding: 0 0 1em;}
+    h3 {clear:both;}
+    div.question, div.subquestion {float:left; width:95%; position:relative;}
+    div.problem, div.problem {float:left; width:95%; position:relative;}
+    #problemset-nav {float: left; padding: 0 0 1em 0; }
+    #next-question {float: right;}
+    #prev-question {float: left;}
+    label pre {margin-left:30px;}
+
+    .explanation {background: #fff; border: 1px solid black; border-radius: 3px; clear: both; margin: 1em; padding: 1em;}
+    .explanation .toggle-expl {cursor: pointer;}
+    #exam-pane .explanation p {margin: 0; padding: 0 0 1em;}
+
+    #exam-pane .inline-explanation {background-color: #ffc; border-radius: 3px; color: #900; font-size: 90%; margin-left: 10px; padding: 2px;}
+    #exam-pane .correct {color: #090;}
+    #saveWorkBtn {margin-right: .5em;}
+
+    #exam-pane {float: left; position: relative; width: 100%;}
+    #exam-pane .exam-navigation {padding: 2px 0; width: 100%;}
+    #exam-pane .exam-navigation .btn {margin-right: 6em;}
+    div.question textarea { width:70%; height:100px; }
+    div.question .per-question-btns {border: 2px solid #ddcf99; border-radius: 4px; float: left; margin: 1em 0; padding: 5px; }
+    div.question .per-question-btns input {float: left;}
+    div.preamble {margin-bottom: 2em; }
+    div.postamble {margin-top: 2em; }
+
+    .questionNumLabelDiv {
+        position: absolute;
+        left: 0px;
+        top: -10px;
+        width: 97%;
+        text-align: center;
+    }
+    .questionNumLabel {
+        background: white;
+        padding: 2px;
+        border: 1px solid #DDCF99;
+        font-size: 14px;
+    }
+
+    .correct {color: #090;}
+    .incorrect {color: #900;}
+    .timer_container {float:right; position:relative; right:0px; padding:2px; margin:0px; font-size:16px; background:white; border: 1px solid transparent;}
+    .timer_container.fixed { padding:2px; margin:0px; position: fixed; top:5px; right:5px; z-index:11; background:white; border-radius: 4px; border: 1px solid #DDCF99;}
+    input[type="checkbox"] {margin-top: 4px;}
+
+    #submit-button{
+        background: linear-gradient(to bottom, rgb(3, 75, 138) 0%, rgb(7, 42, 90) 56%, rgb(7, 42, 90) 100%) repeat scroll 0% 0% transparent;
+    }
+    #submit-button:hover{
+        background: linear-gradient(to bottom, rgb(7, 42, 90) 50%, rgb(3, 75, 138) 100%) repeat scroll 0% 0% transparent;
+    }
+
+    #inline {
+        width: 435px;
+    }
+
+
+    #c2g_layout_topbar h2 {
+        margin-left: 20px;
+    }
+
+    .checklist fieldset {
+        margin-bottom: 0px;
+    }
+
+    #exam-pane .checklist .cb_container {
+        position: relative;
+    }
+
+
+    .checklist input {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+    }
+
+    #exam-pane .checklist .cb_container label {
+        clear: none;
+        z-index: 100;
+        position: absolute;
+        float: none;
+        top: -3px;
+        left: 24px;
+    }
+
+
+
+    #exam-pane textarea {
+        height: 3em;
+    }
+
+
+
+
+    [type="checkbox"]:checked + label:after {
+        content: '✔';
+        font-size: 30px;
+        color: #09ad7e;
+        transition: all .2s;
+    }
+
+    p {padding-bottom: 0px; }
+    fieldset {margin-bottom: 2em;}
+    select {margin-bottom: 2em; }
+
+    .leftnav_modal {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 172px;
+        width: 100%;
+        background: rgb(247, 247, 247)
+        url('/static/graphics/loading_blu.gif')
+        50% 50%
+        no-repeat;
+        border: 1px solid rgb(0, 0, 0);
+        border-color: rgb(0, 0, 0);
+        border-radius: 4px 4px 4px 4px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+    }
+
+    .fancybox-wrap, .fancybox-wrap *{
+        -moz-box-sizing: content-box !important;
+        -webkit-box-sizing: content-box !important;
+        -safari-box-sizing: content-box !important;
+        box-sizing: content-box !important;
+    }
+
+    .main_modal {
+        display: none;
+        position: absolute;
+        float: left;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        background: rgba( 247, 247, 247, .8 )
+        url('/static/graphics/loading_blu.gif')
+        50% 90%
+        no-repeat;
+    }
+
+    #c2g_layout_m_column.loading .main_modal {
+        display: block;
+    }
+
+    #checklist_video_btn p {
+        cursor: pointer;
+        width: 250px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: 'palatino linotype',palatino,georgia,serif;
+        margin: 10px 0px;
+        padding: 10px;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25), 0px -1px 0px rgba(0, 0, 0, 0.1) inset;
+        background: none repeat scroll 0% 0% rgb(245, 245, 245);
+    }
+
+    #checklist_video_btn p:hover {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15) inset, 0px 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    #checklist_video_btn {
+        text-decoration: none;
+    }
+
+    .play-icon {
+        margin-top: 3px;
+    }
+
+    .flashing-step {
+        -webkit-animation-name: blinker;
+        -webkit-animation-duration: 1.0s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+
+        -moz-animation-name: blinker;
+        -moz-animation-duration: 1.0s;
+        -moz-animation-timing-function: linear;
+        -moz-animation-iteration-count: infinite;
+
+        animation-name: blinker;
+        animation-duration: 1.0s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @-moz-keyframes blinker {
+        0% { opacity: 1.0; }
+        50% { opacity: 0.0; }
+        100% { opacity: 1.0; }
+    }
+
+    @-webkit-keyframes blinker {
+        0% { opacity: 1.0; }
+        50% { opacity: 0.0; }
+        100% { opacity: 1.0; }
+    }
+
+    @keyframes blinker {
+        0% { opacity: 1.0; }
+        50% { opacity: 0.0; }
+        100% { opacity: 1.0; }
+    }
+
+
+#partner{
+display: none;
+}
+
+#login_button{
+display: none !important;
+}
+
+
+
+    </style>
+
+
+
+
+    
+
+    
+    
+    
+
+
+    
+    
+
+
+
+
+    
+
+   
+
+
+    
+    <noscript>
+    <div class="alert alert-error">Your browser does not have JavaScript enabled. Please enable it before taking this exam</div>
+    </noscript>
+
+    <div id="exam-pane" class="summative">
+        <form>
+        <h1 style="text-align: left;">HLTH 207 Health Care in the United States – Lecture on Health Information Management Systems"</h1>
+<h3 style:="text-align: left;">Created by: Mary Helen McSweeney-Feld, Towson University</h3>
+<p> </p>
+<h2 style="text-align: left;"><a name="B"></a>Background</h2>
+<h3 style="text-align: left;">Summary:</h3>
+<p style="text-align: left;">This module provides an overview of Health Information Basics, Cybersecurity and HIPAA Compliance.  The purpose of this module is to provide health care students with an overview of health information management basics, where cybersecurity falls in the area of health information management, and the importance of understanding the final provisions of the Health Information Portability and Accountability Act (HIPAA) and their application in healthcare workplaces.</p>
+<h3 style="text-align: left;">Description:</h3>
+<p style="text-align: left;">There have been a number of significant cybersecurity intrusions into the databases of large healthcare organizations in recent years.  Many of these events have occurred because of insufficient attention paid to the connection between HIPAA compliance in the workplace by healthcare workers and staff.  The purpose of this model is to raise awareness of healthcare students of potential problems faced in accessing and utilizing health information management systems and databases, and the necessity of compliance with the final HIPAA provisions to prevent potential cybersecurity events.</p>
+<h3 style="text-align: left;">Risk - How can it happen?</h3>
+<p style="text-align: left;">Health care organizations become vulnerable to cybersecurity intrusions because of insufficient awareness and training of their staff on HIPAA compliance issues.  For example, sharing passwords to systems, opening attachments to emails from unknown individuals or organizations, failures to remove or store data in a secure fashion can lead to potential cyber intrusions and events.  </p>
+<h3 style="text-align: left;">Example of occurrence:</h3>
+<p style="text-align: left;">Multiple examples of cybersecurity problems exist in the healthcare field.  Allowing staff to bring home files containing the personal health information (PHI) of patients in a medical practice, use of laptops with unencrypted health information outside the workplace, sharing passwords, use of personal USB drives to access and store personal health information are all behaviors that can open the door to a healthcare organization’s database being hacked and information being used in unauthorized ways.  Interactions with unauthorized vendors can also introduce viruses and other malware into a healthcare organization’s systems and databases.</p>
+
+ <h3>Answer the following questions:</h3>
+<div id="problem_1" title="Comp Lit Passwords Background Section Question 1"
+data-report="comp-lit-passwords-background-section-question1" class="question">
+    <h3 class="questionNumber"><span>Question 1:  </span></h3>
+    <h4>What are the key HIPAA provisions affecting healthcare workers that use health information management systems?</h4>
+        <fieldset name="Q1_MC1" data-report="problems-with-passwords">
+            <label for="Q1_MC1_1">
+                <input value="1" data-report="comp-lit-passwords-background-section-question1_option1" id="Q1_MC1_1" name="Q1_MC1" type="radio">Privacy and confidentiality of patient health information (PHI) must be maintained</label>
+            <label for="Q1_MC1_2">
+                <input value="2" data-report="comp-lit-passwords-background-section-question1_option2" id="Q1_MC1_2" name="Q1_MC1" type="radio">Administrative safeguards should be set up to protect unauthorized access to health information systems by healthcare workers</label>
+            <label for="Q1_MC1_3">
+                <input value="3" data-report="comp-lit-passwords-background-section-question1_option3" id="Q1_MC1_3" name="Q1_MC1" type="radio">Physical safeguards should be set up to protect health information systems</label>
+            <label for="Q1_MC1_4">
+                <input value="4" data-report="comp-lit-passwords-background-section-question1_option4" id="Q1_MC1_4" name="Q1_MC1" type="radio">Technical safeguards should be set up to protect health information systems</label>
+             <label for="Q1_MC1_5">
+                <input value="5" data-report="comp-lit-passwords-background-section-question1_option5" id="Q1_MC1_5" name="Q1_MC1" type="radio">All the Above</label>
+        </fieldset>
+        <p> (Hint: read summary and description sections to answer this question.)</p>
+</div>
+
+<div id="problem_2" title="Comp Lit Passwords Background Section Question 2"
+data-report="comp-lit-passwords-background-section-question2" class="question">
+    <h3 class="questionNumber"><span>Question 2:  </span></h3>
+    <h4>All of the following types of actions should be taken by healthcare workers take to be HIPAA compliant and prevent unauthorized data breaches EXCEPT...</h4>
+        <fieldset name="Q2_MC2" data-report="hacker-attacks-password">
+            <label for="Q2_MC2_1">
+                <input value="1" data-report="comp-lit-passwords-background-section-question2_option1" id="Q2_MC2_1" name="Q2_MC2" type="radio">Maintain a strong password that is changed every 90 days, and do not share passwords</label>
+            <label for="Q2_MC2_2">
+                <input value="2" data-report="comp-lit-passwords-background-section-question2_option2" id="Q2_MC2_2" name="Q2_MC2" type="radio">Store PHI in a secure place and encrypt the data, especially if computers are upgraded</label>
+            <label for="Q2_MC2_3">
+                <input value="3" data-report="comp-lit-passwords-background-section-question2_option3" id="Q2_MC2_3" name="Q2_MC2" type="radio">Allow patients of the healthcare organization to access its system for copies of their PHI </label>
+            <label for="Q2_MC2_4">
+                <input value="4" data-report="comp-lit-passwords-background-section-question2_option4" id="Q2_MC2_4" name="Q2_MC2" type="radio">Prohibit the use of unencrypted laptops or devices outside the healthcare organization</label>
+        </fieldset>
+        <p> (Hint: read summary and description sections to answer this question.)</p>
+</div>
+
+        </form>
+
+        <div class="exam-navigation">
+             
+             
+             <div id="problemset-nav">
+            </div>
+             <input class="btn btn-primary pull-right" id="submit-button" type="submit" value="Submit Answers" />
+
+             
+        </div>
+    </div> <!-- END #exam-pane -->
+    
+
+
+
+
+
+    <div>
+    <div class="modal fade" id="checklist_video_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:960px;height:600px;margin-left:-500px;margin-top:-300px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Checklist example video</h4>
+            </div>
+            <div class="modal-body" style="max-height:500px;">
+                <video src="/static/videos/checklist_demo.webm" controls>
+                </video>
+            </div>
+        </div>
+   </div>
+    </div>
+    </div>
+
+</div>
+
+
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+  user_name=$("li.hidden-phone").text();
+ind=user_name.indexOf("anon_"); 
+	if (ind>0){
+
+	$("li.hidden-phone").remove()
+}
+}); 
+
+</script>
+<script>
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78376449-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+        
+    </div>
+
+    
+    
+
+
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+
+    <div id="global-footer" class="footer hidden-phone">
+        <div class="container">
+            <div class="row">
+                <div id="bottom-text">
+                    <div id="bottom-menu">
+                        <table border="0">
+<tr>
+<td style="text-align: justify; vertical-align: middle;width: 90px;">
+<a href="http://www.nsf.gov/" target="_blank"><img class="alignleft" title="NSF" alt="" src="http://bio-optics.uprm.edu/images/nsf_logo.jpg" width="90" height="50" /></a></td>
+<td><p class="vcard" style="font-size:small;text-align:center;">This project is supported by the National Science Foundation under grants DUE-1241738 and DUE -0817267. Any opinions, findings, conclusions, or recommendations expressed are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+</p><p class="vcard" style="text-align: center;"><a href="http://class2go.stanford.edu" target="_blank">Powered by a modified version of Class2Go</a></p></td>
+</tr>
+</table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+
+    
+    <script type="text/javascript" src="/static/js/core/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="/static/js/core/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/core/app.js"></script>
+    <script type="text/javascript">
+        //alert(navigator.userAgent);
+        
+        var getServerTime = function() {
+            $.ajax("/securityinjections/server_epoch", {
+                cache:false,
+                success:function(data){
+                    var serverDate = new Date(JSON.parse(data) * 1000);
+                    var serverMinutes = parseInt(serverDate.getMinutes());
+                    var serverHours = parseInt(serverDate.getHours());
+                    if (serverHours >= 12) { ampm = "PM" } else { ampm = "AM" }
+                    displayTime(serverHours, serverMinutes, ampm);
+                }, 
+                error:function(data){
+                    var hours = parseInt($('#PacTime .hours').text()); 
+                    var minutes = parseInt($('#PacTime .minutes').text()); 
+                    var ampm = $('#PacTime .ampm').text();
+                    adjustLocalTime(hours, minutes, ampm);
+                }
+            });
+        };
+        
+        var displayTime = function(h, m, ap) {
+            if (m < 10) {
+                m = '0' + m;
+            }
+            if (h > 12) {
+                h = h - 12;
+            }
+            else if (h == 0) h = 12; //0 a.m. -> 12 a.m.
+            $('#PacTime .hours').text(h);
+            $('#PacTime .minutes').text(m);
+            $('#PacTime .ampm').text(ap);
+        };
+
+        // increments time passed in by 1 minute
+        var adjustLocalTime = function(h, m, ap){
+            var localM, localH, localAP;
+
+            // only major changes are when flipping over :59 to :00
+            if (m >= 59) {
+                localM = 0;
+                // hours not displayed in 24 hour format, so no need to subtract 12;
+                // just handle 12:59 to 1:00, >= is for safety 
+                localH = (h >= 12) ? 1 : (h + 1);
+                if (localH == 12 && ap.toUpperCase() == "AM") {
+                    localAP = "PM";
+                } else if (localH == 12 && ap.toUpperCase() == "PM") {
+                    localAP = "AM";
+                } else {
+                    localAP = ap;
+                } 
+            } else {
+                localM = m + 1;
+                localH = h;
+                localAP = ap;
+            }
+
+            displayTime(localH, localM, localAP);
+        };
+        
+        $(function(){
+            getServerTime();
+            setInterval(function(){
+                getServerTime();
+            }, 60000);
+        });
+        
+        /*******************************************************************************************
+	Make Footer Sticky
+	
+	Removed for now until I can figure out the left nav script behavior...
+	
+        function stickyFooter(){
+            var windowHeight = $(window).height(); //get current window height
+            var initContentHeight = $("#viewport").height() + 0; //get page content height
+            var contentHeight = initContentHeight;
+            var footerHeight = $("#global-footer").height() + parseInt($("#global-footer").css('paddingTop')) + parseInt($("#global-footer").css('paddingBottom')) + $(".class2go").height() + 0; //get footer height
+            var footerOffset = $('#global-footer').offset().top;
+            if ((footerOffset + footerHeight ) < windowHeight) {
+                contentHeight = initContentHeight + windowHeight - (footerOffset + footerHeight);
+                $("#viewport").height(contentHeight);
+            }
+            $(window).resize(function() {
+                windowHeight = $(window).height();
+                if ((footerOffset + footerHeight) < windowHeight) {
+                    contentHeight = initContentHeight + windowHeight - (footerOffset + footerHeight);
+                    $("#viewport").height(contentHeight);
+                } else {
+                    $("#viewport").height(initContentHeight);
+                }
+            });
+        }
+        stickyFooter();
+        */
+        
+    </script>
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33859275-1']);
+      _gaq.push(['_trackPageview']);
+
+
+
+
+
+
+    </script>
+    
+<script>
+$(document).ready(function(){
+  user_name=$("li.hidden-phone").text();
+ind=user_name.indexOf("anon_"); 
+	if (ind>0){
+	$("li.hidden-phone").remove()
+}
+}); 
+
+</script>
+    
+    
+
+    <script>
+
+    
+    
+    
+    
+
+               $(document).ready(function() {
+                 if (''>= 1 && '' == '') {
+            $('#main-content input').attr('disabled','disabled');
+
+
+            $('#main-content textarea').attr('disabled','disabled');
+            $('#main-content select').attr('disabled', 'disabled');
+            //$('.btn toggle-explanation').each(function(){alert(this.id);});
+            $('.toggle-explanation').removeAttr('disabled');
+
+            $('#saveWorkBtn').hide();
+	    // replaced getStringwhenattempted_questions.slice(-9) == "questions" with next_urlwhenattempted == ""
+	    // -Kyle, 4-7-2016
+            // var getStringwhenattempted_questions = 'hippa-background';
+	    var next_urlwhenattempted = 'Treat-PHI-Responsibly'
+            var submitBtn = $('#submit-button');
+            submitBtn.addClass('btn btn-spaced');
+            submitBtn.hide();
+            var reEnableBtnwhenattempted = document.createElement('input');
+            $(reEnableBtnwhenattempted).attr('id', 'reEnableFormwhenattempted');
+            $(reEnableBtnwhenattempted).attr('type', 'button');
+             if (next_urlwhenattempted == "") {
+            $(reEnableBtnwhenattempted).attr('title', 'Complete! Finish');
+             }
+             else {
+            $(reEnableBtnwhenattempted).attr('title', 'Go To Next Section');
+             }
+            $(reEnableBtnwhenattempted).addClass('btn btn-success pull-right');
+             if (next_urlwhenattempted == "") {
+             $(reEnableBtnwhenattempted).val('Finish');
+             }
+             else {
+              $(reEnableBtnwhenattempted).val('Go To Next Section');
+             }
+            submitBtn.replaceWith($(reEnableBtnwhenattempted));
+            $(reEnableBtnwhenattempted).click(function () {
+		
+		/*
+		 * Edit by Kyle Sherbert, 4-5-2016
+		 * 	The below section forces slugs to conform to the same pattern in order to automatically redirect, which limits the flexibility of each module
+		 *	I have recently added a parameter via courses/exams/views.py (next_exam_slug) to make this much simpler and more general
+		 */
+
+		// OLD CODE *************************************************************
+               	   /*var getStringwhenattempted = 'hippa-background';
+
+                   if (getStringwhenattempted.slice(-10) == "background") {
+                        var next_urlwhenunattempted_for_background_section=getStringwhenattempted.replace(getStringwhenattempted.slice(-10),"code-responsibly");
+
+                        window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_urlwhenunattempted_for_background_section;
+                       }
+                   if (getStringwhenattempted.slice(-11) == "responsibly") {
+                        var next_urlwhenunattempted_for_coderesponsibly_section=getStringwhenattempted.replace(getStringwhenattempted.slice(-16),"laboratory-assignment");
+                        window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_urlwhenunattempted_for_coderesponsibly_section;
+                       }
+                   if (getStringwhenattempted.slice(-10) == "assignment") {
+                         var next_urlwhenunattempted_for_discussionques_section=getStringwhenattempted.replace(getStringwhenattempted.slice(-21),"discussion-questions");
+                         window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_urlwhenunattempted_for_discussionques_section;
+                       }
+                   if (getStringwhenattempted.slice(-9) == "questions") {
+			//   window.location = "/securityinjections/secinjmodulecompletion";
+                       window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+
+                       }*/
+
+		// NEW CODE **************************************************************
+			var next_urlwhenattempted = 'Treat-PHI-Responsibly';
+			if (next_urlwhenattempted == "") {			// empty slug means this exam was the last: the module is completed
+				window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+			} else {
+				window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_urlwhenattempted;
+			}
+            });
+            }
+
+// note by Kyle Sherbert: this getCookie function was commented out, inside the above reEnableBtnwhenattempted method. I'm assuming that was not intentional
+ /* Grab Partner if exists */
+        /*    function getCookie(cname){
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++){
+                    var c = ca[i].trim();
+                    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+                }
+                return "";
+            }
+
+            var partner = getCookie("partner");*/
+
+
+
+                $('#discussion-question-btn').click(function() {
+
+
+                      //   window.location = "/securityinjections/secinjmodulecompletion";
+                            window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+
+
+                  }
+                );
+             });
+
+
+
+
+
+
+
+
+              // Added by Sagar on July 4, 2013 - This part is added for those sections in which we don't have gate keeper questions.
+              // For this, admin creates the section using problemsets functionality of class2go. Later when we have auto graded
+              // facility for textual questions then we will have to create this section using "exam" related functionality of the class2go.
+              // How does it work - It takes the url of the current webpage and finds the last few characters of the url. If the url matches
+              // the specific character set then a specific url which would url of the next section is selected.
+
+              $(document).ready(function() {
+                $('#lab-assignment-btn').click(function() {
+		    /*
+		     * Edit by Kyle Sherbert, 4-5-2016
+		     * 	The below section forces slugs to conform to the same pattern in order to automatically redirect, which limits the flexibility of each module
+		     *	I have recently added a parameter via courses/exams/views.py (next_exam_slug) to make this much simpler and more general
+		     */
+		    // OLD CODE *************************************************************
+                    /*var getString_url = 'hippa-background';
+                    if (getString_url.slice(-10) == "background") {
+                         var next_getString_url_for_background_section=getString_url.replace(getString_url.slice(-10),"code-responsibly");
+
+                        window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_getString_url_for_background_section;
+                       }
+                   if (getString_url.slice(-11) == "responsibly") {
+                        var next_getString_url_for_coderesponsibly_section=getString_url.replace(getString_url.slice(-16),"laboratory-assignment");
+                        window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_getString_url_for_coderesponsibly_section;
+                       }
+                   if (getString_url.slice(-10) == "assignment") {
+                         var next_getString_url_for_discussionques_section=getString_url.replace(getString_url.slice(-21),"discussion-questions");
+                         window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_getString_url_for_discussionques_section;
+                       }
+                   if (getString_url.slice(-9) == "questions") {
+
+                    //     window.location = "/securityinjections/secinjmodulecompletion";
+                       window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+
+                       }*/
+
+		    // NEW CODE **************************************************************
+			var next_urlwhenattempted = 'Treat-PHI-Responsibly';
+			if (next_urlwhenattempted == "") {			// empty slug means this exam was the last: the module is completed
+				window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+			} else {
+				window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_urlwhenattempted;
+			}
+
+
+                  }
+                );
+             });
+
+
+
+        var __exam_type = "exam";
+        var __autograde = true;
+
+
+        /* Do all the stuff below when page loads (~700 lines!) */
+        //$(document).ready(whenReady);
+
+        function whenReady () {
+
+            var unsavedChanges = false; //variable flag to denote chnages have been made on page
+            var last_page = 1;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+            $("#c2g_layout_l_column").load("/securityinjections/cyber4all_healthcare/Fall2016/leftnav",
+                     function() {
+
+                         $('#partner_container').load("/securityinjections/cyber4all_healthcare/Fall2016/rightnav", function() {
+                         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+    
+    
+    
+
+
+                         // Added by Andrew removes other modules from left nav
+                         $("#left-nav").children('div').each(function() {
+                             var ag_div = $(this);
+                             ag_div.children('h3').each(function() {
+                                 if (!($(this).attr('id') == ("sidebar-nav-heading-" + 3566 ))) {
+                                     $(this).parent().remove();
+                                 }
+                             });
+                         });
+
+
+                         $("#sidebar-nav-" + 3566).children('li').each(function() {
+
+                             $(this).children('p').each(function() {
+
+
+
+                                 if (($(this).attr('id') == ("leftnav-li-exam-"+"hippa-background"))) {
+
+
+
+
+                                     $(this).parent().append("<div id='selected' style='position:absolute;margin-left:-35px;bottom:-4px;height:4px;width:100%;background:rgb(0, 82, 153);'></div>");
+
+
+
+                                     if (($(this).parent().index() + 1) > last_page) {
+                                         $.ajax({
+                                             url: "/securityinjections/cyber4all_healthcare/Fall2016/exams/hippa-background/update_last_page",
+                                             dataType: "json",
+                                             type: 'POST',
+                                             data: {
+                                                 last_page: ++last_page,
+                                                 csrfmiddlewaretoken: 'fHnBdpbicqnsgFH3eC1s1hccDikptDTX'
+                                             }
+					
+										
+				     });
+                                     } else if (($(this).parent().index() + 1) < last_page) {
+                                         $(this).parent().find('div').css('background-image', '-moz-linear-gradient(center top , rgb(98, 196, 98), rgb(81, 163, 81)');
+                                     }
+                                 }
+
+
+
+                                 if (($(this).parent().index() + 1) > last_page) {
+                                     $(this).css({"pointer-events":"none","cursor":"default","color":"rgb(128, 128, 128)"});
+                                     $(this).children('a').css({"color":"rgb(128, 128, 128)"});
+                                 }
+
+
+                             });
+                         });
+
+
+                        // Forward to next section if all questions are correct -andrew
+                         parentidx = $("#selected").parent().index() + 1;
+                         if ((last_page == parentidx) && (last_page != 5)) {
+                             $('#reEnableFormwhenattempted').click();
+                             $('#reEnableForm').click();
+                         }
+
+                    });
+
+
+            // done loading leftnav
+            //$('#c2g_layout_l_column').removeClass("loading");
+
+    
+
+
+            /********** Add ordinal numbering if it doesn't already exist *********/
+            var addNumberToQuestionDiv = function(elem, num) {
+                var numberingDiv = $(elem).find('h3.questionNumber');
+                if (numberingDiv.length == 0){
+                  $(elem).prepend('<h3 class="questionNumber">Question ' + num +'</h3>');
+                }
+            };
+            var addQuestionDivLabel = function(elem, num, total) {
+                //$(elem).prepend('<div class="questionNumLabelDiv"><span class="questionNumLabel">' +
+                              //num + ' of ' + total +
+                              // '</span></div>');
+            };
+            var psetQuestions = $('div.question');
+            if (psetQuestions.length > 1) {
+                var qQumx = 1;
+                $(psetQuestions).each(function () {
+                                           addNumberToQuestionDiv(this, qQumx);
+                                           addQuestionDivLabel(this, qQumx, psetQuestions.length);
+                                           qQumx = qQumx + 1;}
+                );
+            }
+
+            /************************** end ordinal *******************************/
+
+
+            window.collectUserAnswers = function (inputCollection) {
+                var returnObj = {};
+                var userSelections = {};
+                var uniqueFormElements = {}; // object of named form elements
+                var totalUniqueFormEls = 0;
+                $(inputCollection).each(function () {
+                    var name = $(this).attr('name');
+                    var key = (name != undefined) ? name.trim() : "";
+                    // keep track of number of inputs with same name
+                    // for possible later use
+                    if (key != "") {
+                        if (uniqueFormElements[key] == undefined) {
+                            if (this.tagName == "SELECT") {
+                                uniqueFormElements[key] = $(this).find('option').length;
+                            } else {
+                                uniqueFormElements[key] = 1;
+                            }
+                            totalUniqueFormEls += 1;
+                        } else {
+                            uniqueFormElements[key] += 1;
+                        }
+                    }
+                    if (($(this).prop('type') == 'checkbox' || $(this).prop('type') == 'radio')
+                         && $(this).get(0).checked == true) {
+                        var tmpObj = {};
+                        if (!userSelections[key]) {
+                            userSelections[key] = [];
+                        }
+                        tmpObj.value = $(this).attr('value');
+                        tmpObj.associatedText = $(this).parent().text().trim().substr(0,40);
+                        tmpObj.report = $(this).attr('data-report');
+                        if ($(this).closest('fieldset').length > 0) {
+                            //inputs enclosed by a <fieldset>, use its data-report attr
+                            tmpObj.questionreport = $(this).closest('fieldset').attr('data-report');
+                        } else if ($(this).closest('tr').length > 0) {
+                            //else if it's enclosed by a <tr>, check that elem for the data-report attr
+                            tmpObj.questionreport = $(this).closest('tr').attr('data-report');
+                        }
+                        userSelections[key].push(tmpObj);
+                    } else if (($(this).prop('type') == 'text' || $(this).prop('type') == 'textarea')
+                         && $(this).val() != "") {
+                        var tmpObj = {};
+                        tmpObj.value = $(this).val();
+                        tmpObj.associatedText = $(this).parent().text().trim().substr(0,40);
+                        tmpObj.report = $(this).attr('data-report');
+                        tmpObj.questionreport = $(this).closest('.question').attr('data-report');
+                        userSelections[key]=tmpObj;
+                    } else if (this.tagName == "SELECT") {
+                        var questionreport = $(this).attr('data-report');
+                        userSelections[key] = [];
+                        $(this).find("option").filter(":selected").each(function () {
+                            var tmpObj = {};
+                            tmpObj.questionreport = questionreport;
+                            tmpObj.value = $(this).val();
+                            tmpObj.report = $(this).attr('data-report');
+                            tmpObj.associatedText = $(this).text().trim().substr(0,40);
+                            userSelections[key].push(tmpObj);
+                        });
+                    }
+                });
+
+                returnObj.userSelections = userSelections;
+                returnObj.uniqueFormElements = uniqueFormElements;
+
+                var userSelLength = 0;
+                for (el in userSelections) {
+                    userSelLength += 1;
+                }
+
+                returnObj.userSelLength = userSelLength;
+                returnObj.answeredAll = (userSelLength == totalUniqueFormEls);
+
+                return returnObj;
+
+            };
+
+            // Need toggleExplanation in single question format and when summative exams are submitted
+            // i.e. submission summary/record page needs to have toggle-able explanation
+            var toggleExplanation = function () {
+                var assocQ = $(this).closest('.question');
+
+                $(assocQ).find('.explanation').toggle();
+
+                if ($(this).attr('data-status') == 'Show' && $(assocQ).find('.explanation').css('display') == 'block') {
+                    $(this).attr('data-status', 'Hide');
+                    $(this).val('Hide Explanation');
+                } else {
+                    $(this).attr('data-status', 'Show');
+                    $(this).val('Show Explanation');
+                }
+
+            };
+
+         
+
+        
+         
+            
+                
+                var SUBMISSION_RETURN_URL = "/securityinjections/cyber4all_healthcare/Fall2016/exams/hippa-background/graded";
+                
+            
+        
+
+
+        
+
+        /********* Save Work Button (not submitting as complete) ********/
+
+        
+            var saveWorkBtn = document.createElement('button');
+            $(saveWorkBtn).text("Save Answers")
+                          .addClass('btn')
+                          .attr('id','saveWorkBtn');
+                       if ($('#prev-question').length == 0) {
+                           $(saveWorkBtn).insertAfter($('#submit-button'));
+                       } else {
+                           $(saveWorkBtn).insertAfter($('#prev-question'));
+                       }
+              $(saveWorkBtn).hide();
+              $(document).ready(function() {
+                setInterval("$(saveWorkBtn).trigger('click')", 10000);
+              });
+
+            $(saveWorkBtn).click(function () {
+                $(saveWorkBtn).attr('disabled', 'disabled')         /* Disallow saving while saving */
+                var fieldCollection = $('#exam-pane').find('input,textarea,select');
+                var userAnswerObj = window.collectUserAnswers(fieldCollection);
+                var userSelections = userAnswerObj.userSelections;
+
+                window.myData = JSON.stringify(userSelections);
+
+                var saveXHR = $.post("/securityinjections/cyber4all_healthcare/Fall2016/exams/hippa-background/save_student_progress",
+                               {   csrfmiddlewaretoken: "fHnBdpbicqnsgFH3eC1s1hccDikptDTX",
+                                   json_data:JSON.stringify(userSelections),
+                                   onpage:$(location).attr('href')
+                               });
+            
+                unsavedChanges = false; //clear flag when save button clicked
+            });
+
+
+        
+
+
+        /***************** End Save Work ********************************/
+
+        var allFieldsets = $('fieldset');
+
+            window.repopulateForm = function (jsonStr) {
+
+            // first wipe all inputs
+            $('input[type|="text"]').val('');
+            //$('textarea').text('');
+            $('input[type|="checkbox"]').removeAttr('checked');
+            $('input[type|="radio"]').removeAttr('checked');
+            $('select').val('');
+
+            // calling repopulateForm without an arg just wipes all data and returns
+            if (!jsonStr) {
+                return;
+            }
+
+            // all keys will be form input names as strings
+            var dataObj = JSON.parse(jsonStr);
+
+            // iterate through named form inputs
+            for (member in dataObj) {
+
+                if ($.type(dataObj[member]) == "object") {
+                    // it's a text input/textarea
+                    $('input[name|=' + member + ']').val(dataObj[member].value);
+                    $('textarea[name|=' + member + ']').val(dataObj[member].value);
+                    if (scores.hasOwnProperty(member)) {
+                          //Label the input with the score
+                            if (scores[member] != 1){
+                          $('input[name|=' + member + ']').before("<b style='color:black'></b> ");
+                            }
+                            else {
+
+                           $('input[name|=' + member + ']').before("");
+                            }
+
+                    };
+
+                } else {
+                    // it's multiple choice/select, therefore an array
+                    if (scores.hasOwnProperty(member)) {
+                        var type=$(":input[name="+member+"]").attr('type');
+                          //Label the closet div enclosing the choices with the score (probably want fieldset instead)
+                         if (scores[member]  != 1  &&  type =='checkbox'){
+                          $('input[name|=' + member + ']').first().closest('fieldset').before("<b style='color:red'>There  are multiple correct anwers, try again.</b>");
+                          $('select[name|=' + member + ']').before("<b style='color:green'></b>");
+                         }
+                         else if(scores[member] != 1 &&  type =='radio'){
+                          $('input[name|=' + member + ']').first().closest('fieldset').before("<b style='color:red'></b>");
+                          $('select[name|=' + member + ']').before("<b style='color:green'></b>");
+                         }
+                        else{
+                          $('input[name|=' + member + ']').first().closest('fieldset').before("");
+                          $('select[name|=' + member + ']').before("");
+                         }
+                    }
+                    if ($('select[name|=' + member + ']').length) {
+                        var selectValues = $.map(dataObj[member], function(val, idex) {
+                                   return val.value;
+                        });
+                        $('select[name|=' + member + ']').val(selectValues);
+                    } else {
+                        $('input[name|=' + member + ']').removeAttr('checked');
+
+                        var selectedValues = $.map(dataObj[member], function(val, idex) {
+                                                   return 'input[value="' + val.value + '"]';
+                                                   });
+
+                          //check all inputs
+                        var selector =  selectedValues.join(",");
+
+                          //console.log('input[name|=' + member + ']');
+                          //console.log(selector);
+                        $('input[name|=' + member + ']').filter(selector).attr('checked','checked');
+                    }
+                }
+            }
+
+            var enabled = ('True' == 'True') ? true : false;
+            if (!enabled) {
+                // disable all inputs
+                $('#main-content input').attr('disabled','disabled');
+                $('#main-content textarea').attr('disabled','disabled');
+                $('#main-content select').attr('disabled', 'disabled');
+
+                // hide submit button
+                var submitBtn = $('#submit-button');
+                submitBtn.addClass('btn btn-spaced');
+                submitBtn.hide();
+
+                // Added by Sagar on July 3, 2013 - This part checks if the all the questions are answered correct by user,
+                // the button gets generated to move to next the next section. This is only for those those sections where
+                // gate keeper questions are embedded. We will have to edit it always whenever new module is created. This module
+                // is for cs1JavaInput validation
+		
+		// Changed slug.contains."discussion" test to next_slug.is_empty test - Kyle, 4-7-2016
+
+                  var getString = 'Treat-PHI-Responsibly';
+
+               if ('' == '2.0' && getString == ""){
+                 submitBtn.show();
+
+                   $.ajax({
+
+                       url: "/securityinjections/cyber4all_healthcare/Fall2016/exams/hippa-background/update_last_page",
+                       dataType: "json",
+                       type: 'POST',
+                       data: {
+                           last_page: 5,
+                           csrfmiddlewaretoken: 'fHnBdpbicqnsgFH3eC1s1hccDikptDTX'
+                       }
+                   });
+
+
+               var reEnableBtn = document.createElement('input');
+                $(reEnableBtn).attr('id', 'reEnableForm');
+                $(reEnableBtn).attr('type', 'button');
+                $(reEnableBtn).attr('title', 'Complete! Finish');
+                $(reEnableBtn).addClass('btn btn-success pull-right');
+                $(reEnableBtn).val('Complete! Finish');
+                submitBtn.replaceWith($(reEnableBtn));
+                $(reEnableBtn).click(function () {
+
+
+
+                       //  window.location = "/securityinjections/secinjmodulecompletion";
+                       window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+
+//
+
+                });
+               }
+                // By Sagar- Added on July 2013 -if user did not correct all the questions right, then all the elements in the exam pane are re-enabled and
+                // "try again" button is created. The user will attempt the questions again and submit it
+
+		// Changed !slug.contains."discussion" test to !next_slug.is_empty test - Kyle, 4-7-2016
+
+                else if ('' == '2.0' && getString != ""){
+                 submitBtn.show();
+               var reEnableBtn = document.createElement('input');
+                $(reEnableBtn).attr('id', 'reEnableForm');
+                $(reEnableBtn).attr('type', 'button');
+                $(reEnableBtn).attr('title', 'Go To Next Section');
+                $(reEnableBtn).addClass('btn btn-success pull-right');
+                $(reEnableBtn).val('Go To Next Section');
+                submitBtn.replaceWith($(reEnableBtn));
+                $(reEnableBtn).click(function () {
+
+			/*
+			 * Edit by Kyle Sherbert, 4-5-2016
+			 * 	The below section forces slugs to conform to the same pattern in order to automatically redirect, which limits the flexibility of each module
+			 *	I have recently added a parameter via courses/exams/views.py (next_exam_slug) to make this much simpler and more general
+			 */
+
+			// OLD CODE *************************************************************
+                    /*var getString = 'hippa-background';
+                    if (getString.slice(-10) == "background") {
+                        var next_url_for_background_section=getString.replace(getString.slice(-10),"code-responsibly");
+                        window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_url_for_background_section;
+                       }
+                   if (getString.slice(-11) == "responsibly") {
+                        var next_url_for_coderesponsibly_section=getString.replace(getString.slice(-16),"laboratory-assignment");
+                        window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_url_for_coderesponsibly_section;
+                       }
+                   if (getString.slice(-10) == "assignment") {
+                         var next_url_for_discussionques_section=getString.replace(getString.slice(-21),"discussion-questions");
+                         window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_url_for_discussionques_section;
+                       }
+                   if (getString.slice(-9) == "questions") {
+
+                        // window.location = "/securityinjections/secinjmodulecompletion";
+                         window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+                       }*/
+
+			// NEW CODE **************************************************************
+			var next_urlwhenattempted = 'Treat-PHI-Responsibly';
+			if (next_urlwhenattempted == "") {			// empty slug means this exam was the last: the module is completed
+				window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+'module_completed'+'/'+'HIPPA';
+			} else {
+				window.location = '/securityinjections/'+'cyber4all_healthcare'+'/'+'Fall2016'+'/'+ 'exam'+'s/'+ next_urlwhenattempted;
+			}
+
+                });
+                }
+
+                else {
+                    // Add a "re-enable inputs" button
+                    // But not for checklists! Added by Andrew
+                    $('input').each(function() {
+                        if($(this).parents(".checklist").length == 0)
+                          $(this).removeAttr('disabled');
+                    });
+                    $('textarea').removeAttr('disabled');
+                    $('select').removeAttr('disabled');
+                    $(submitBtn).val('Incorrect! Try Again');
+                    submitBtn.removeAttr('disabled');
+                    submitBtn.show();
+                }
+             }
+        };
+
+
+
+        
+         
+
+
+        window.showCorrections = function (correxObj) {
+            //This function marks the user answer correct or wrong and then
+            //shows the question level explanations as well as relevant choice-level explanations
+
+            for (member in correxObj) {
+                if (member != "__metadata__") {
+                    var has_choices=true;
+                    var formEl = $('input[name|="' + member + '"]');
+                    if (formEl.length == 0)
+                        formEl = $('textarea[name|="' + member + '"]');
+
+                    if ($(formEl).attr('type') == 'checkbox' ||
+                        $(formEl).attr('type') == 'radio') {
+                        var curq = correxObj[member];
+                        for (correctChoice in curq.correct_choices) {
+                            var rightChoiceObj = $(formEl).filter('input[value|="' + correctChoice + '"]');
+                            if (rightChoiceObj.siblings('span.feedback').length == 0) {
+                                rightChoiceObj.after('<span class="feedback correct"> &#10004; </span>');
+                            } else {
+                                rightChoiceObj.siblings('span.feedback').html(' &#10004; ');
+                            }
+                        }
+                        for (wrongChoice in curq.wrong_choices) {
+                          //if (curq.wrong_choices[wrongChoice] == "fn")
+                          //      $(formEl).filter('input[value|="' + wrongChoice + '"]')
+                          //          .after('<span class="feedback incorrect"> Should be selected. </span>');
+                          //else
+                            if (curq.wrong_choices[wrongChoice] == "fp") {
+                                var wrongChoiceObj = $(formEl).filter('input[value|="' + wrongChoice + '"]');
+                                if (wrongChoiceObj.siblings('span.feedback').length == 0) {
+                                    wrongChoiceObj.after('<span class="feedback incorrect"> &#10006; </span>');
+                                } else {
+                                    wrongChoiceObj.siblings('span.feedback').html(' &#10006; ');
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        if (correxObj[member].correct == true) {
+                            if ($(formEl).siblings('span.feedback').length == 0) {
+                                $(formEl).after('<span class="feedback correct"> &#10004; </span>');
+                            } else {
+                                $(formEl).siblings('span.feedback:first').html(' &#10004; ');
+                            }
+                        } else {
+                            if ($(formEl).siblings('span.feedback').length == 0) {
+                                $(formEl).after('<span class="feedback incorrect"> &#10006; </span>');
+                            } else {
+                                $(formEl).siblings('span.feedback:first').html(' &#10006; ');
+                            }
+                        }
+                    }
+                }
+            }
+
+            var myXML = $.parseXML(correxObj["__metadata__"]);
+            console.log(myXML);
+            var examMD = $(myXML).find('exam_metadata');
+            var questionMD = $(examMD).find('question_metadata');
+            $(questionMD).each(function(){displayQuestionExplanation(this);
+                             displayChoiceExplanations(this);})
+            
+
+
+        };
+
+        
+
+        window.getDialog = function(title) {
+            var dialogDiv = $('#dialog-message');
+            if (dialogDiv.length == 0) {
+                dialogDiv = document.createElement('div');
+                $(dialogDiv).attr('id', 'dialog-message');
+                $(dialogDiv).attr('title',title);
+                $(dialogDiv).append('<p></p>');
+                $(document).append($(dialogDiv));
+            } else {
+                $('#ui-dialog-title-dialog-message').text(title);
+            }
+            return dialogDiv;
+        };
+
+        $('#submit-button').click(function () {
+
+            // Loading modal added by Andrew
+            $('#c2g_layout_m_column').addClass("loading");
+
+            $('#submit-button').attr('disabled','disabled');
+            var fieldCollection = $('#exam-pane').find('input,textarea,select');
+            var userAnswerObj = window.collectUserAnswers(fieldCollection);
+
+            /*
+            if (__exam_type != "survey" && !userAnswerObj.answeredAll) {
+                var userProceed = confirm("This will submit the entire Exam and you haven't answered all questions. Still submit?");
+                if (!userProceed) {
+                    $('#submit-button').removeAttr('disabled');
+                    return;
+                }
+            }*/
+
+            var userSelections = userAnswerObj.userSelections;
+
+            window.myData = JSON.stringify(userSelections);
+
+            /* Grab Partner if exists */
+            function getCookie(cname){
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++){
+                    var c = ca[i].trim();
+                    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+                }
+                return "";
+            }
+
+            var partner = getCookie("partner");
+
+            if(partner == ""){
+                partner = null;
+            }
+
+            var examXHR = $.post("/securityinjections/cyber4all_healthcare/Fall2016/exams/hippa-background/submit",
+                   {   csrfmiddlewaretoken: "fHnBdpbicqnsgFH3eC1s1hccDikptDTX",
+                       json_data:JSON.stringify(userSelections),
+                       onpage:$(location).attr('href'),
+                       partner_id:partner
+                   }
+            );
+
+            examXHR.success(function (evt, xhr, settings) {
+                $('#submit-button').removeAttr('disabled');
+                if (__autograde) {
+                    document.location = settings.responseText;
+                }
+                else {
+                    var message = "";
+                    var confirmText = "OK";
+                    var title="";
+
+                    if (__exam_type == "exam")
+                        { message = "Your submission has been saved.  \nPlease check back after Thu May 07 2099 for your score.";
+                          confirmText = "See My Submissions";
+                          title = "Submission complete.";}
+                    else if (__exam_type == "survey")
+                        { message = "Thanks!";
+                          title= "Survey complete.";}
+
+                    var dialogDiv = window.getDialog(title);
+
+                    $(dialogDiv).find('p').text(message);
+
+                    var buttonObj = {};
+                    buttonObj[confirmText] = function() {
+                        if ($(location).attr('href').indexOf('/videos/') >= 0) {//In a video, so just dismiss and resume video
+                            C2G.videoSetup.removeExamStage();
+                            $(this).dialog("close");
+                        }
+                        else
+                            document.location = SUBMISSION_RETURN_URL;
+                    };
+
+                    $(dialogDiv).dialog({ modal: true,
+                                        buttons: buttonObj});
+
+                }
+            });
+
+            examXHR.error(function(xhr, status, msg) {
+                $('#submit-button').removeAttr('disabled');
+                var dialogDiv = window.getDialog('');
+                $(dialogDiv).find('p').text(msg+": "+xhr.responseText.substr(0,99));
+                $(dialogDiv).dialog({modal: true});
+            });
+
+            unsavedChanges = false; //clear flag when submit button clicked
+        });
+
+        $('input[type="radio"], input[type="checkbox"]').change(function() {
+            unsavedChanges = true; //denote change on radio and checkbox inputs and register unsaved changes
+        });
+        $('textarea, input[type="text"]').keyup(function() {
+            unsavedChanges = true; //denote keystroke and register unsaved changes
+        });
+
+        $(window).on('beforeunload', function(){
+            if (unsavedChanges) {
+               return 'You have unsaved changes!';
+            }
+        });
+
+        // Make sure pre-pop is in a properly-escaped string
+        var prePopData = JSON.stringify({});
+
+        
+        //alert(prePopCorrex);
+        var scores = JSON.parse('{}');
+
+        if (prePopData != '') {
+            window.repopulateForm(prePopData);
+        }
+
+        
+
+        
+
+        
+
+
+        
+
+
+        } /* END document.ready function that executes when page loads */
+
+       /* AJAX request to rest api */
+
+
+       $(document).ready(function() {
+           $('#dummy_xml_questions').html("");
+           c_title = 'Cyber4All - Healthcare';
+           var re = /(.*Module\s+)(.*)(\s+\(.*)/;
+           var newtext = c_title.replace(re, "$2");
+           $('.pull-left > h2').html(newtext + " - " + 'HIPPA');
+
+           var p_id = '\u003Ch1 style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003EHLTH 207 Health Care in the United States – Lecture on Health Information Management Systems\u0022\u003C/h1\u003E\u000A\u003Ch3 style:\u003D\u0022text\u002Dalign: left\u003B\u0022\u003ECreated by: Mary Helen McSweeney\u002DFeld, Towson University\u003C/h3\u003E\u000A\u003Cp\u003E \u003C/p\u003E\u000A\u003Ch2 style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003E\u003Ca name\u003D\u0022B\u0022\u003E\u003C/a\u003EBackground\u003C/h2\u003E\u000A\u003Ch3 style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003ESummary:\u003C/h3\u003E\u000A\u003Cp style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003EThis module provides an overview of Health Information Basics, Cybersecurity and HIPAA Compliance.  The purpose of this module is to provide health care students with an overview of health information management basics, where cybersecurity falls in the area of health information management, and the importance of understanding the final provisions of the Health Information Portability and Accountability Act (HIPAA) and their application in healthcare workplaces.\u003C/p\u003E\u000A\u003Ch3 style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003EDescription:\u003C/h3\u003E\u000A\u003Cp style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003EThere have been a number of significant cybersecurity intrusions into the databases of large healthcare organizations in recent years.  Many of these events have occurred because of insufficient attention paid to the connection between HIPAA compliance in the workplace by healthcare workers and staff.  The purpose of this model is to raise awareness of healthcare students of potential problems faced in accessing and utilizing health information management systems and databases, and the necessity of compliance with the final HIPAA provisions to prevent potential cybersecurity events.\u003C/p\u003E\u000A\u003Ch3 style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003ERisk \u002D How can it happen?\u003C/h3\u003E\u000A\u003Cp style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003EHealth care organizations become vulnerable to cybersecurity intrusions because of insufficient awareness and training of their staff on HIPAA compliance issues.  For example, sharing passwords to systems, opening attachments to emails from unknown individuals or organizations, failures to remove or store data in a secure fashion can lead to potential cyber intrusions and events.  \u003C/p\u003E\u000A\u003Ch3 style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003EExample of occurrence:\u003C/h3\u003E\u000A\u003Cp style\u003D\u0022text\u002Dalign: left\u003B\u0022\u003EMultiple examples of cybersecurity problems exist in the healthcare field.  Allowing staff to bring home files containing the personal health information (PHI) of patients in a medical practice, use of laptops with unencrypted health information outside the workplace, sharing passwords, use of personal USB drives to access and store personal health information are all behaviors that can open the door to a healthcare organization’s database being hacked and information being used in unauthorized ways.  Interactions with unauthorized vendors can also introduce viruses and other malware into a healthcare organization’s systems and databases.\u003C/p\u003E\u000A\u000A \u003Ch3\u003EAnswer the following questions:\u003C/h3\u003E\u000A\u003Cdiv id\u003D\u0022problem_1\u0022 title\u003D\u0022Comp Lit Passwords Background Section Question 1\u0022\u000Adata\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion1\u0022 class\u003D\u0022question\u0022\u003E\u000A    \u003Ch3 class\u003D\u0022questionNumber\u0022\u003E\u003Cspan\u003EQuestion 1:  \u003C/span\u003E\u003C/h3\u003E\u000A    \u003Ch4\u003EWhat are the key HIPAA provisions affecting healthcare workers that use health information management systems?\u003C/h4\u003E\u000A        \u003Cfieldset name\u003D\u0022Q1_MC1\u0022 data\u002Dreport\u003D\u0022problems\u002Dwith\u002Dpasswords\u0022\u003E\u000A            \u003Clabel for\u003D\u0022Q1_MC1_1\u0022\u003E\u000A                \u003Cinput value\u003D\u00221\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion1_option1\u0022 id\u003D\u0022Q1_MC1_1\u0022 name\u003D\u0022Q1_MC1\u0022 type\u003D\u0022radio\u0022\u003EPrivacy and confidentiality of patient health information (PHI) must be maintained\u003C/label\u003E\u000A            \u003Clabel for\u003D\u0022Q1_MC1_2\u0022\u003E\u000A                \u003Cinput value\u003D\u00222\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion1_option2\u0022 id\u003D\u0022Q1_MC1_2\u0022 name\u003D\u0022Q1_MC1\u0022 type\u003D\u0022radio\u0022\u003EAdministrative safeguards should be set up to protect unauthorized access to health information systems by healthcare workers\u003C/label\u003E\u000A            \u003Clabel for\u003D\u0022Q1_MC1_3\u0022\u003E\u000A                \u003Cinput value\u003D\u00223\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion1_option3\u0022 id\u003D\u0022Q1_MC1_3\u0022 name\u003D\u0022Q1_MC1\u0022 type\u003D\u0022radio\u0022\u003EPhysical safeguards should be set up to protect health information systems\u003C/label\u003E\u000A            \u003Clabel for\u003D\u0022Q1_MC1_4\u0022\u003E\u000A                \u003Cinput value\u003D\u00224\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion1_option4\u0022 id\u003D\u0022Q1_MC1_4\u0022 name\u003D\u0022Q1_MC1\u0022 type\u003D\u0022radio\u0022\u003ETechnical safeguards should be set up to protect health information systems\u003C/label\u003E\u000A             \u003Clabel for\u003D\u0022Q1_MC1_5\u0022\u003E\u000A                \u003Cinput value\u003D\u00225\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion1_option5\u0022 id\u003D\u0022Q1_MC1_5\u0022 name\u003D\u0022Q1_MC1\u0022 type\u003D\u0022radio\u0022\u003EAll the Above\u003C/label\u003E\u000A        \u003C/fieldset\u003E\u000A        \u003Cp\u003E (Hint: read summary and description sections to answer this question.)\u003C/p\u003E\u000A\u003C/div\u003E\u000A\u000A\u003Cdiv id\u003D\u0022problem_2\u0022 title\u003D\u0022Comp Lit Passwords Background Section Question 2\u0022\u000Adata\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion2\u0022 class\u003D\u0022question\u0022\u003E\u000A    \u003Ch3 class\u003D\u0022questionNumber\u0022\u003E\u003Cspan\u003EQuestion 2:  \u003C/span\u003E\u003C/h3\u003E\u000A    \u003Ch4\u003EAll of the following types of actions should be taken by healthcare workers take to be HIPAA compliant and prevent unauthorized data breaches EXCEPT...\u003C/h4\u003E\u000A        \u003Cfieldset name\u003D\u0022Q2_MC2\u0022 data\u002Dreport\u003D\u0022hacker\u002Dattacks\u002Dpassword\u0022\u003E\u000A            \u003Clabel for\u003D\u0022Q2_MC2_1\u0022\u003E\u000A                \u003Cinput value\u003D\u00221\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion2_option1\u0022 id\u003D\u0022Q2_MC2_1\u0022 name\u003D\u0022Q2_MC2\u0022 type\u003D\u0022radio\u0022\u003EMaintain a strong password that is changed every 90 days, and do not share passwords\u003C/label\u003E\u000A            \u003Clabel for\u003D\u0022Q2_MC2_2\u0022\u003E\u000A                \u003Cinput value\u003D\u00222\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion2_option2\u0022 id\u003D\u0022Q2_MC2_2\u0022 name\u003D\u0022Q2_MC2\u0022 type\u003D\u0022radio\u0022\u003EStore PHI in a secure place and encrypt the data, especially if computers are upgraded\u003C/label\u003E\u000A            \u003Clabel for\u003D\u0022Q2_MC2_3\u0022\u003E\u000A                \u003Cinput value\u003D\u00223\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion2_option3\u0022 id\u003D\u0022Q2_MC2_3\u0022 name\u003D\u0022Q2_MC2\u0022 type\u003D\u0022radio\u0022\u003EAllow patients of the healthcare organization to access its system for copies of their PHI \u003C/label\u003E\u000A            \u003Clabel for\u003D\u0022Q2_MC2_4\u0022\u003E\u000A                \u003Cinput value\u003D\u00224\u0022 data\u002Dreport\u003D\u0022comp\u002Dlit\u002Dpasswords\u002Dbackground\u002Dsection\u002Dquestion2_option4\u0022 id\u003D\u0022Q2_MC2_4\u0022 name\u003D\u0022Q2_MC2\u0022 type\u003D\u0022radio\u0022\u003EProhibit the use of unencrypted laptops or devices outside the healthcare organization\u003C/label\u003E\u000A        \u003C/fieldset\u003E\u000A        \u003Cp\u003E (Hint: read summary and description sections to answer this question.)\u003C/p\u003E\u000A\u003C/div\u003E\u000A';
+
+           $.ajaxSetup({ cache: true,
+                       //  data: { csrfmiddlewaretoken: 'fHnBdpbicqnsgFH3eC1s1hccDikptDTX' }
+           });
+           $.ajax({
+                url: '/securityinjections/rest/exams',
+                dataType: "json",
+                type: 'POST',
+                data: {course: 'Cyber4All - Healthcare | Mode: ready',
+                       exam_html: p_id,
+                       csrfmiddlewaretoken: 'fHnBdpbicqnsgFH3eC1s1hccDikptDTX'
+                },
+                success: function( json ) {
+                            for (var i=0; i<json.length; i++) {
+                                if($('#' + json[i].slug).length && (json[i].mode == 'ready')){
+                                    $('#' + json[i].slug).html(json[i].html_content);
+                                }
+                            }
+                            whenReady();
+                            $('#reEnableFormwhenattempted').prop('disabled',false);
+                            $('#reEnableForm').prop('disabled',false);
+                }
+           });
+       });
+
+
+       /* end AJAX request */
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

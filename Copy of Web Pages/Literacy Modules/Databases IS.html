@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+  <head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Meta Images -->
+	<link rel="shortcut icon" href="http://www.towson.edu/favicon.ico" type="image/x-icon" />	
+<!-- Title and External Script Integration -->
+			<title>  SQL Injections- IS module</title>
+		
+	
+<!-- Wordpress Stuff -->
+	<meta name="generator" content="WordPress 4.0" /> <!-- leave this for stats -->
+	<link rel="alternate" type="application/rss+xml" title="Cybersecurity Modules: Security Injections|Cyber4All @Towson RSS Feed" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" />
+	<link rel="pingback" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php" />
+	 <!-- This makes the comment box appear where the ‘reply to this comment’ link is -->
+		
+			<script type="text/javascript">//<![CDATA[
+			// Google Analytics for WordPress by Yoast v4.2.8 | http://yoast.com/wordpress/google-analytics/
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-38487412-1']);
+							_gaq.push(['_trackPageview']);
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+			//]]></script>
+			<link rel='stylesheet' id='contact-form-7-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sccss_style-css'  href='http://cis1.towson.edu/~cssecinj?sccss=1&#038;ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='easy-modal-theme-css'  href='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/themes/default/styles.css?ver=4.0' type='text/css' media='all' />
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var easymodal = 
+    {"ajaxurl":"http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/ajax/content.php","settings":{"1":{"requestData":{"modalId":"1","action":"easy_modal"},"cf7form":true},"2":{"requestData":{"modalId":"2","action":"easy_modal"},"cf7form":true},"3":{"requestData":{"modalId":"3","action":"easy_modal"},"cf7form":true},"4":{"requestData":{"modalId":"4","action":"easy_modal"},"cf7form":true}}};
+    /* ]]> */
+    </script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/jquery.cycle.all.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/page-announcements/loader.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/easy-modal/js/easy-modal.js?ver=4.0'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cis1.towson.edu/~cssecinj/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cis1.towson.edu/~cssecinj/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.0" />
+<link rel='canonical' href='http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/' />
+<link rel='shortlink' href='http://cis1.towson.edu/~cssecinj/?p=3065' />
+<link type="text/css" rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-css-button/wp_button.css" />
+<script type="text/javascript" src="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_script.js"></script><link rel="stylesheet" type="text/css" href="http://cis1.towson.edu/~cssecinj/wp-content/plugins/wp-tool-tips/wptooltip_style.css" />
+<!-- Stylesheets -->
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/core/css/wp_core.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/style.css" type="text/css" media="screen" />
+	
+<!-- This is for printing - inserted by Sidd -->
+	<link rel="stylesheet" type="text/css" media="screen,print" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/print.css" />
+
+
+
+
+<!-- Modules w/ Javascript -->	
+
+
+
+	
+
+
+<!-- IE -->
+<!--[if IE 6]>
+	<link rel="stylesheet" href="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/css/ie6.css" type="text/css" media="screen" />
+	<script  type="text/javascript"  src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/js/belatedpng.js"></script>
+	<script>
+	  DD_belatedPNG.fix('.pngbg, .welcometext, .icons a, .containershadow, .fboxdividers, #morefootbg, .plimage, .post-footer .left span, #welcome');
+	 </script>	
+<![endif]--><style type="text/css">
+
+
+</style>
+<!-- Font Replacement -->
+  		</head>
+<body class="page page-id-3065 page-parent page-child parent-pageid-179 page-template-default">
+		<div id="site">
+		<div id="wrapper">
+			
+	
+					<div id="header" class="fix">
+						<div class="content fix">
+							<div class="headline">
+																<h1 class="site-title"><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Cybersecurity Modules: Security Injections|Cyber4All @Towson</a></h1>
+								<h6 class="site-description">towson.edu/securityinjections</h6>
+															</div>
+							<div class="icons">
+								
+						<!--										<a target="_blank" href="http://darwin.towson.edu/~cssecinj/secinj/rss.xml" class="rsslink"></a>
+								 -->
+								
+																
+							</div>
+						</div>
+					</div>
+					<div class="container fix ">
+						<div class="effect containershadow">
+							<div class="effect containershadow_rpt">
+								<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in 'header_orig.php' - Kyle Sherbert -->
+								<!--div id="sitenav" class="content fix">
+									<!--div id="nav" class="fix">
+										<!--?php if(pagelines('enable_drop_down')):?>
+											<!--ul class="dropdown clearfix">
+										<!--?php else:?>	 
+											<!--ul class="clearfix">
+										<!--?php endif;?>	
+								
+											<!--li class="page_item "><a class="home" href="http://cis1.towson.edu/~cssecinj/" title="Home">Home</a></li>
+											<!--?php 
+												$frontpage_id = get_option('page_on_front');
+												if($bbpress_forum && pagelinesforum('exclude_pages')){ $forum_exclude= ','.pagelinesforum('exclude_pages');}
+												else{ $forum_exclude = '';}
+												wp_list_pages('exclude='.$frontpage_id.$forum_exclude.'&depth=3&title_li=');?>
+										<!--/ul>
+									<!--/div><!-- /nav -->
+									<!--div class="clear"></div-->
+								<!--/div-->
+
+    <script type="text/javascript" language="JavaScript" src="http://j.maxmind.com/app/geoip.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>							
+
+<div id="contentcontainer" class="content fix"> 
+	<div id="contentborder">
+
+						<!-- Commented out below lines to remove Tier 0 menu from Security Injection website
+											original document is stored in '_sub_head_orig.php' - Kyle Sherbert -->
+		<!--div id="sub_head" class="fix">
+			<!--?php require(THEME_LIB.'/_sub_nav.php');?>
+		<!--/div-->
+			
+				
+		
+			<div id="maincontent" class="fullwidth" >
+								
+									
+	<div class="postwrap fix">	
+		<div class="post-3065 page type-page status-publish hentry" id="post-3065">
+						  	
+				<div class="copy fix">
+										<div class="textcontent">
+						<p><strong><em>The module for this lesson is still under development. Please <a href="mailto:securityinjections@towson.edu">contact us</a> if you have any questions.</em></strong></p>
+<p>&nbsp;</p>
+<p style="text-align: left;"><a name="top"></a></p>
+<h1 style="text-align: left;">SQL Injection –IS module</h1>
+<p style="text-align: left;"><br class="spacer_" /></p>
+<table style="width: 753px; text-align: left; height: 43px;" border="0" cellpadding="4">
+<tbody>
+<tr style="height: 10px;">
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/#B" >1. Read Background</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/#LA" >2. Execute Lab Assignment</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/#C" >3. Complete Security Checklist</a></h5>
+</td>
+<td align="center" valign="middle">
+<h5><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/#D" >4. Answer Discussion Questions</a></h5>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 style="text-align: left;"><a name="B"></a></h2>
+<h6 style="text-align: left;"><img class="alignnone" title="SQL Image" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads/sqlInjections1.JPG" alt="" width="279" height="136" /></h6>
+<h6 style="text-align: left;"><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/#top" >top</a></h6>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Summary: </span></h2>
+<p><strong>SQL injection</strong> is an attack technique that exploits a security vulnerability occurring in the database layer of an application .  Hackers use injections to obtain unauthorized access to the underlying data, structure, and DBMS.  It is one of the most common web application vulnerabilities.</p>
+<p><br class="spacer_" /></p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Description:</span></h2>
+<p style="text-align: left;">A Database is the heart of many, if not all, web-applications and is used to store information needed by the application, such as, credit card information, customer demographics, customer orders, client preferences, etc.  Consequently, databases have become attractive and very lucrative targets for hackers to hack into. SQL Injections happen when a developer accepts user input that is directly placed into a SQL Statement and doesn&#8217;t properly validate and filter out dangerous characters. This can allow an attacker to alter SQL statements passed to the database as parameters and enable her to not only steal data from your database, but also modify and delete it.</p>
+<p style="text-align: left;">A database is vulnerable to SQL injections when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed.  SQL injection attacks are also known as SQL insertion attacks.</p>
+<p style="text-align: left;">Injection vulnerabilities, such as SQL, LDAP, HTTP header injection and OS command injection, have been ranked number one on the OWASP (Open Web Application Security Project) Top 10 Web application vulnerabilities 2010 and the top 25 Most Dangerous Software Errors 2011.</p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Risk: How can it happen ?</span></h2>
+<p><img class="alignright" title="Sql Image" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads/sqlInjections2.JPG" alt="" width="486" height="365" /></p>
+<p>SQL injection attacks occur when a web application does not validate values received from a web form, cookie, input parameter, etc., before passing them to SQL queries that will be executed on a database server.  This will allow an attacker to manipulate the input so that the data is interpreted as code rather than as data.</p>
+<p style="text-align: left;">SQL injection attack risk is usually very high and the consequences are severe.  A successful attack can bypass authentication and authorization to gain full control of the database, steal sensitive data, change users’ passwords, retrieve users’ credential information, add non-existent accounts, drop tables, make illegal financial transactions, and destroy the existing database, and a lot more.  The following table summarizes SQL injection examples which result in different types of threats.</p>
+<p style="text-align: left;"> </p>
+<p style="text-align: left;"> </p>
+<table class="checklist" style="width: 600px; height: 409px; border: 2px solid #000000;" border="2" cellspacing="3" cellpadding="3" align="center">
+<tbody>
+<tr>
+<td style="text-align: center; width: 200px;"><strong>Types of Threat</strong></td>
+<td style="text-align: center;"><strong> SQL Injection Examples</strong></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 200px;">Spoofing</td>
+<td style="text-align: left;">
+<ul>
+<li><strong>Retrieve and use another user’s credentials</strong></li>
+<li><strong>Modify Author value for messages</strong></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="width: 200px;">Tampering</td>
+<td>
+<ul>
+<li><strong>Modify product stock informations</strong></li>
+<li><strong>Change any other data in the database</strong></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Repudiation</td>
+<td>
+<ul>
+<li><strong>Delete transaction records</strong></li>
+<li><strong>Delete database event logs</strong></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Information disclosure</td>
+<td>
+<ul>
+<li><strong>Obtain saved credit card numbers</strong></li>
+<li><strong>Gain insight into internal design of app</strong></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Denial of service</td>
+<td>
+<ul>
+<li><strong>Run resource-intensive SQL queries</strong></li>
+<li><strong>Kill sqlservr.exe process</strong></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Elevation of privilege</td>
+<td>
+<ul>
+<li><strong>Retrieve and use administrator credentials</strong></li>
+<li><strong>Run shell commands</strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br class="spacer_" /></p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">Example of occurrence:</span></h2>
+<p>In 2011, the hacker group LulzSec used Security Injection attacks to cause databases to spit out user names  and passwords from Websites, including one associated with F.B.I.&#8217;s InfraGard program, SonyPictures and NATO&#8217;s online bookstore and deface the PBS site.</p>
+<p>http://www.pcworld.com/article/231303/lulzsec_anonymous_hacks_were_avoidable_report_says.html</p>
+<p><strong>Examples:</strong></p>
+<p>A dynamic SQL statement is constructed during execution time.  Consider the following example written in .NET, where the input is provided by the user.</p>
+<p><br class="spacer_" /></p>
+<pre style="font: normal normal normal 12px/18px Consolas, Monaco, 'Courier New', Courier, monospace;">Query= "SELECT * FROM  users WHERE username  = ‘ " +request.getParameter("input")+ " ' " ;</pre>
+<p><br class="spacer_" /></p>
+<p>Below is the statement that this code builds:</p>
+<pre>SELECT * FROM  users WHERE username  = ‘input’</pre>
+<p><br class="spacer_" /></p>
+<p><strong>SQL Manipulation Attacks:</strong></p>
+<p>The most common SQL injection is SQL manipulation where the attacker attempts to modify an existing SQL query statement, and insert exploited statement into the database.</p>
+<pre style="text-align: left;">SELECT *
+FROM Users
+WHERE loginName = ‘ $user ‘ - -
+AND loginPassword =  ‘ $password ‘</pre>
+<p><br class="spacer_" /></p>
+<pre>SELECT * FROM Users WHERE  loginName = ‘ $user ‘ and loginPassword = ‘ $password’</pre>
+<p><br class="spacer_" /></p>
+<p>What if user enters:</p>
+<p><em> </em></p>
+<pre><em>$user = ‘ OR ‘1’ = ‘1 </em></pre>
+<pre><em>$password = ‘ OR ‘1’= ‘1</em></pre>
+<p><em> </em></p>
+<p>Since 1=1 is always true, the query will succeed and the attacker bypass authentication.  Similar attacks can be conducted for numeric fields for which we don’t include quotes.</p>
+<p>Another variation of SQL manipulation attack is to insert two consecutive dashes (&#8211;) or # in MySQL which comments out anything after it.</p>
+<pre>SELECT *
+FROM Users
+WHERE loginName = ‘ John ‘ - -
+AND Password = anything</pre>
+<p><br class="spacer_" /></p>
+<pre>SELECT *
+FROM Customers
+WHERE AccNumber = 1 OR 1 = 1 #
+AND Pin = anything<span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: x-small;"><span style="line-height: 19px; white-space: normal;">
+</span></span></pre>
+<p><br class="spacer_" /></p>
+<p>The UNION operator has also been used to conduct SQL manipulation attack.The UNION operator combines the result of two or more SELECT statements.  The result sets should have the same number of attributes (columns) with similar data types and same order. An attacker can use the UNION operator to obtain the values of fields from tables that don’t have anything to do with the data being queried.</p>
+<pre>SELECT Title, Author, Publishing
+FROM Books
+WHERE ISBN = ‘ ‘
+UNION ALL SELECT Price, Quantity
+FROM Pricing_Table
+WHERE	‘ ’ = ‘ ‘
+</pre>
+<p><br class="spacer_" /></p>
+<p><strong>Code Injection Attack:</strong></p>
+<p>Another type of SQL injection attack, called code injection attack, is done by appending SQL statement or executable commands right after vulnerable SQL statement.</p>
+<pre>SELECT *
+FROM Users
+WHERE UserName = ‘John’ AND Password = ‘myPassword’; DROP TABLE users;</pre>
+<p><br class="spacer_" /></p>
+<p>Or we can create a backdoor to the database by inserting a new record in the user table which would allow a hacker to access the database legally.</p>
+<p><br class="spacer_" /></p>
+<p><strong>Error Messages:</strong></p>
+<p>We can also mine useful information from error messages generated by the database server and use it to retrieve data.The very first task for a hacker is to identify the database platform in order to design and plan its attacks specific for that platform.For example the following error message can reveal a lot of useful information for a hacker.</p>
+<pre>  >> Microsoft OLE DB Provider for ODBC Drivers error '80040e14'
+[Microsoft][ODBC SQL Server Driver][SQL Server]Column 'users.id' is invalid in the select list because it is not
+ contained in an aggregate function and there is no GROUP BY clause.</pre>
+<p><br class="spacer_" /></p>
+<p>This is also known as Database foot printing.</p>
+<p><br class="spacer_" /></p>
+<h2 style="text-align: left;"><span style="font-weight: normal;">How can I avoid Injection problems ?</span></h2>
+<p><br class="spacer_" /></p>
+<ul>
+<li><strong>Limit user access:</strong>
+<ul>
+<li> Follow the principle of least privileges which will in turn limits the scope of an SQL Injection attack</li>
+<li> The front-end public interface to a website should have a restricted database access.</li>
+<li> Never ever connect as system administrator, if compromised, potential damage is unlimited</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Limit user input length and data types:</strong>
+<ul>
+<li> Restrict the length of input from text boxes and forms fields</li>
+<li> Restrict user input to the length of the corresponding field in the database</li>
+<li> Verify data types</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Quoting the input:</strong>
+<ul>
+<li> Replace single quotes with two single quotes in the user input, so the single quote is escaped and makes the SQL statement invalid. </li>
+<li> Filter out character like slash, back slash, semi colon, extended character like NULL, carry return, new line, etc, in all input from users</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Implement proper error handling:</strong>
+<ul>
+<li> Error messages often reveal technical details that can enable an attacker to identify vulnerable entry points </li>
+<li> Implement error handling and output error messages that do not provide technical details to the attacker</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Use Prepared/Parameterized Queries:</strong>
+<ul>
+<li> Parameterized queries are predefined statement and the intent of the parameters cannot be changed based on the user input. </li>
+<li> The database using parameterized queries distinguishes between data and code and string inputs are treated as strings no matter what data is entered by the user</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Use Stored Procedures:</strong>
+<ul>
+<li> The SQL code for the stored procedures are defines and stored in the database itself and input parameters are passed to the procedures. </li>
+<li> Stored procedures should not include any dynamically generated queries.</li>
+<li> Disable the stored procedures like master..XP_cmdshell, xp_startmail, etc.  if you are not using them.</li>
+</ul>
+</li>
+</ul>
+<p>Parameterized queries are most secure against SQL injection attacks.</p>
+<h2 style="text-align: left;"><a name="LA"></a></h2>
+<h6 style="text-align: left;"><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/#top" >top</a></h6>
+<h2><span style="font-weight: normal;">Laboratory Homework Assignment:</span></h2>
+<p><br class="spacer_" /></p>
+<p><span style="font-weight: normal;">1.OWASP WebGoat is a great web security teaching tool and a deliberately insecure web application. For this assignment, you need to install WebGoat 5.2,</span></p>
+<p><span style="font-weight: normal;"><span style="font-size: x-small;"><a href="http://www.owasp.org/index.php/Category:OWASP_WebGoat_Project" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.owasp.org']);">http://www.owasp.org/index.php/Category:OWASP_WebGoat_Project</a></span> OR <span style="font-size: x-small;"> <a href="http://code.google.com/p/webgoat/downloads/detail?name=readme-5.2.txt&amp;can=2&amp;q=" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://code.google.com']);">http://code.google.com/p/webgoat/downloads/detail?name=readme-5.2.txt&amp;can=2&amp;q=</a></span></span></p>
+<p><span style="font-weight: normal;">Consult the WebGoat user and Install Guide, available from the first WebGoat link above, for installation instructions. You’re free to install it on the operating system of your choice. After you unpack WebGoat, the readme.txt file will explain how to start it and access WebGoat through your web browser.  Make sure that you take your computer off the Internet before using WebGoat.</span></p>
+<p><br class="spacer_" /></p>
+<p><span style="font-weight: normal;"> </span></p>
+<div id="_mcePaste">WebGoat consists of a variety of lessons. For this assignment please complete the following lessons:</div>
+<p>1.Numeric SQL Injection<br />
+ 2.String SQL Injection<br />
+ 3.LAB: SQL Injection</p>
+<p>You also need to install WebScarab which is basically an intercepting proxy.</p>
+<p><span style="font-weight: normal;"><span style="font-size: x-small;"><a href="http://www.owasp.org/index.php/Category:OWASP_WebScarab_Project" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.owasp.org']);">http://www.owasp.org/index.php/Category:OWASP_WebScarab_Project</a></span></span></p>
+<h2 style="text-align: left;"><a name="D"></a></h2>
+<h6 style="text-align: left;"><a href="http://cis1.towson.edu/~cssecinj/modules/other-modules/database/sql-injections-is-module/#top" >top</a></h6>
+<h2><span style="font-weight: normal;">Discussion Questions:</span></h2>
+<ol>
+<li>What are some examples of web applications that connect to a database server to access data?</li>
+<li>What is the impact of SQL injection vulnerabilities?</li>
+<li>What is the main reason for the existence of SQL injection vulnerability?</li>
+<li>Is any web programming language immune to SQL injection?</li>
+<li>Can SQL injection be prevented?</li>
+</ol>
+<p><br class="spacer_" /></p>
+	
+							
+							
+					</div>	
+					<div class="tags">
+					&nbsp;
+					</div>
+				</div>
+												
+								
+					</div><!--post -->
+
+	</div>
+	
+	
+	<div class="clear"></div>
+	
+				
+									
+			
+	
+		
+				</div>
+		
+					
+		<div class="hl"></div>
+<div class="post-footer pfooterdark">
+	<div class="right"><span><a href="#header">Go To Top &raquo;</a></span></div>
+	<div class="clear"></div>
+
+</div>
+<div class="hl2"></div>		<div class="clear"></div>
+	</div>
+</div>
+		</div>
+	</div> 
+</div>
+
+<!--full width bottom widget -->
+<!--END full width bottom widget -->
+
+
+
+		<div class="clear"></div>
+				
+
+</div>
+	<div class="clear"></div>
+	
+	<div id="subfoot">
+	
+					<div id="cred" class="pagelines">
+				<a class="plimage" target="_blank" href="http://www.pagelines.com">
+					<img src="http://cis1.towson.edu/~cssecinj/wp-content/themes/whitehouse/images/pagelines.png" alt="WhiteHouse by PageLines" />
+				</a>
+			</div>
+			 	<hr class="hidden" />
+	</div><!--/subfoot -->
+
+  </div><!--/wrapper -->
+</div> <!-- end #site -->
+
+<!-- Footer Scripts Go Here -->
+	<center><font color="gray">Copyright © Towson University</font></center>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5547553; 
+var sc_invisible=1; 
+var sc_security="6be6d23b"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="counter customizable"
+href="http://statcounter.com/free_hit_counter.html"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/5547553/0/6be6d23b/1/"
+alt="counter customizable" ></a></div></noscript>
+<!-- End of StatCounter Code -->	<script type="text/javascript">
+$('a#feedback').hover(function(e){
+    $(this).animate({'right':'-1px'}, 500);
+},
+function(e){
+    $(this).animate({'right':'-10px'}, 500);
+});
+</script>
+<a class="eModal eModal-1" id="feedback" href="#contact_form_pop&quot;"><img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png" /></a>
+<div style="display: none;" class="eModal eModal-1">
+<div id="contact_form_pop">
+        [contact-form-7 id="4890" title="feedback"]
+    </div>
+</div>
+<!-- End Footer scripts -->
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-includes/js/comment-reply.min.js?ver=4.0'></script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.25.0-2013.01.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/cis1.towson.edu\/~cssecinj\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://cis1.towson.edu/~cssecinj/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.3.3'></script>
+</body>
+</html>
