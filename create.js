@@ -144,7 +144,7 @@ exports.write_3("Data Hiding","CS2 Java");
 exports.write_3("Data Hiding","CS2 C++");
 exports.write_3("Data Hiding","CS2 Python");
 exports.write_3("Exception Handling", "CS2 C++");
-//exports.write_3("Exception Handling", "CS2 Java");
+exports.write_3("Exception Handling", "CS2 Java");
 exports.write_3("Computer Literacy", "Passwords");
 exports.write_3("Computer Literacy", "Phishing");
 exports.write_3("Computer Literacy", "Cryptography");
