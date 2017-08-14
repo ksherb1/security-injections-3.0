@@ -162,36 +162,6 @@
                     "text": "2. ",
                     "ans": true,
                     "js": false
-                },
-                {
-                    "id": "q3",
-                    "text": "3. ",
-                    "ans": true,
-                    "js": false
-                },
-                {
-                    "id": "q4",
-                    "text": "4. ",
-                    "ans": true,
-                    "js": false
-                },
-                {
-                    "id": "q5",
-                    "text": "5. ",
-                    "ans": true,
-                    "js": false
-                },
-                {
-                    "id": "q6",
-                    "text": "6. ",
-                    "ans": true,
-                    "js": false
-                },
-                {
-                    "id": "q7",
-                    "text": "7. ",
-                    "ans": true,
-                    "js": false
                 }
             ]
         }

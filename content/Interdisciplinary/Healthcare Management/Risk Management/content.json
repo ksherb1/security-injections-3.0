@@ -1,0 +1,113 @@
+{
+    "name": "Healthcare Management",
+    "variant": "Risk Management",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A key aspect of cybersecurity is risk management. The risk management process is a full lifecycle activity that includes identifying, synthesizing, ranking, and keeping track of risks throughout the use of an information system within a organization."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A \"risk\" is anything that might negatively impact the operation of a business. \"Risk management\" is the process by which one prevents or adapts to these risks. Effective risk management allows businesses to efficiently allocate resources to the greatest benefit."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When a business utilizes an information system for its operation, risk management should be handled from three different perspectives:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk- How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                }
+            ]
+        },
+        {
+            "header": "Lab Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Program 1"
+                },
+                {
+                    "type": "codeblock",
+                    "code": " "
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": []
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
