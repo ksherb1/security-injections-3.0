@@ -89,6 +89,54 @@
 					</tr>
 				</table>
 				</div>
+
+				<!--JEWEL'S TABLE CODE (IN PROGRESS)--> 
+				<div ng-switch-when = "table" class="table table-bordered" style="width: auto">
+					<table class = "table">
+					<th>
+							<td>1.</td>
+							<td>2.</td>
+							<td>3.</td>
+					</th>
+					<tr>
+						<td>Asset</td>
+						<td> <input type = "text" style = "width: 10em"> </td>
+					</tr>
+					<tr>
+						<td>Threat</td>
+						<td><input type = "text" style = "width: 10em"></td>
+					</tr>
+					<tr>
+						<td>Vulnerabilities</td>
+						<td><input type = "text" style = "width: 10em"></td>
+					</tr>
+					<tr>
+						<td>Probability</td>
+						<td> <input id="prob_1" type="number" min="0" max="3" style="width:10em;"></td>
+					</tr>
+					<tr>
+						<td>Harm</td>
+						<td> <input id="harm_1" type="number" min="0" max="3" style="width:10em;"> </td>
+					</tr>
+					<tr>
+						<td>Risk</td>
+						<td>
+							<select style="width:10em;">
+								<option></option>
+								<option>LOW</option>
+								<option>MED</option>
+								<option>HI</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Mitigation</td>
+						<td><textarea style="height:6em;width:15em"></textarea></td>
+					</tr>
+				</table>
+			</div>
+
+		
 				<div ng-switch-when="question" class="col-sm-12 si-question" id="{{ unit.id }}">
 					<div class="well">
 					<h5 ng-bind-html="unit.prompt"></h5>
