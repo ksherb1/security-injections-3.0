@@ -66,7 +66,7 @@ exports.write_3 = function(name, variant, dev) {
 	html += '<head>'+'\n';
 	html += '\t'+'<meta charset="UTF-8">'+'\n';
 	html += '\t'+'<meta http-equiv="X-UA-Compatible" content="IE=edge">'+'\n';
-	html += '\t'+'<meta name="viewport" content="width = device-width, initial-scale = 1">'+'\n';
+	html += '\t'+'<meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit=no">'+'\n';
 	html += '\t'+'<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">'+'\n';
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>'+'\n';
 	html += '\t'+'<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>'+'\n';
@@ -132,7 +132,7 @@ exports.write_3("Buffer Overflow", "CS1 C++");
 exports.write_3("Buffer Overflow", "CS1 Java");
 exports.write_3("Buffer Overflow", "CS1 Python");
 exports.write_3("Buffer Overflow", "CS2 C++");
-//exports.write_3("Buffer Overflow", "CS2 Java");
+exports.write_3("Buffer Overflow", "CS2 Java");
 exports.write_3("Software Development Lifecycle", "CS0 C++");
 exports.write_3("Software Development Lifecycle", "CS0 Java");
 exports.write_3("Software Development Lifecycle", "CS0 Python");

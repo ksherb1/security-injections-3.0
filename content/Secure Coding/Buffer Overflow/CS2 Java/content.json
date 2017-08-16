@@ -288,6 +288,114 @@
                 {
                     "type": "subheader",
                     "text": "Complete the security checklist."
+                },
+                {
+                  "type": "checklist",
+                  "id": "Pgm1CL",
+                  "list": [
+                    {
+                      "id": "array",
+                      "header": "1. Finding Arrays:",
+                      "items": [
+                        {
+                          "id": "dec",
+                          "text": "Click each array declaration in the above code",
+                          "ans": true,
+                          "js": true
+                        },
+                        {
+                          "id": "ref",
+                          "text": "For each array, click all subsequent references",
+                          "ans": true,
+                          "js": true
+                        }
+                      ]
+                    },
+                    {
+                      "id": "var",
+                      "header": "2. Index Variables:",
+                      "items": [
+                        {
+                          "id": "range",
+                          "text": "For each array access that uses a variable as an index, write the legal index range next to it",
+                          "ans": true,
+                          "js": true
+                        },
+                        {
+                          "id": "occur",
+                          "text": "For each index marked in the previous step, click all occurrences of that variable",
+                          "ans": true,
+                          "js": true
+                        },
+                        {
+                          "id": "modify",
+                          "text": "Click any assignments, inputs or operations that may modify these index variables",
+                          "ans": true,
+                          "js": true
+                        },
+                        {
+                          "id": "array",
+                          "text": "Click any array that is indexed by a highlighted index variable",
+                          "ans": true,
+                          "js": true
+                        }
+                      ]
+                    },
+                      {
+                      "id": "loop",
+                      "header": "3. Loops that modify index variables:",
+                      "items": [
+                        {
+                          "id": "limit",
+                          "text": "Find loops that modify variables used to index arrays. For any index that occurs as part of a loop conditional, click the loop limit",
+                          "ans": true,
+                          "js": true
+                        },
+                        {
+                          "id": "range",
+                          "text": "Fill in the legal range of the array index next to the loop limit. Note if the loop limit could exceed the legal range of the array index",
+                          "ans": true,
+                          "js": true
+                        }
+                      ]
+                    },
+                    {
+                    "id": "function",
+                    "header": "4. Sending array indices or loop limits into functions:",
+                    "items": [
+                      {
+                        "id": "index",
+                        "text": "Click any function arguments that are used to send array indices in",
+                        "ans": true,
+                        "js": true
+                      },
+                      {
+                        "id": "loop",
+                        "text": "Click any function arguments that are used to send loop limits in",
+                        "ans": true,
+                        "js": true
+                      },
+                      {
+                        "id": "range",
+                        "text": "Write the legal range next to each underlined argument. Note any argument that is not verified to be within these limits.",
+                        "ans": true,
+                        "js": true
+                      },
+                      {
+                        "id": "call",
+                        "text": "Click any calls to the function. If the function does not verify that the arguments are within the required range, the code calling the function should do so",
+                        "ans": true,
+                        "js": true
+                      }
+                    ]
+                  }
+                  ],
+                  "code": "./securityChecklist.html",
+                  "javascript": "./checklist.js"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Highlighted areas indicate vulnerabilities."
                 }
             ]
         },

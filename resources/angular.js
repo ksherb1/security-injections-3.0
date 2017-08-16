@@ -608,5 +608,4 @@ function loadCoverPage(){
 	$scope.coverPageFrame = $sce.trustAsResourceUrl(coverPageUri);
 }
 
-
 }]);
