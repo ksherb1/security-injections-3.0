@@ -25,12 +25,12 @@
         <div class="container-fluid">
 					<ul class="nav nav-tabs nav-justified">
 								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted"  ng-class="{'active': $index==currentsectionIndex}" ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
-								<li class = "disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted" ><a>{{section.header}}</a></li>
+								<li class = "disabled" ng-repeat="section in module.sections" ng-if="($index > sectionscompleted)" ><a>{{section.header}}</a></li>
 					</ul>
 				</div>
 			</div>
 
-		<div ng-if="currentsectionIndex == 0">
+		<div ng-if="currentsection.header=='Learning Objectives'">
 				<div class ="jumbotron">
 					<div class = "row">
 					<h2 ng-bind-html="currentsection.header"></h2>
@@ -55,7 +55,7 @@
 	</div>
 
 		<!-- section content -->
-		<div ng-if="(currentsectionIndex < module.sections.length-1) && (currentsectionIndex != 0)" class="si-content">
+		<div ng-if="(currentsectionIndex < module.sections.length-1) && (currentsection.header!='Learning Objectives')" class="si-content">
 			<div class = "jumbotron">
 				<div class = "row">
 			<h2 ng-bind-html="currentsection.header" class = "col-sm-12"></h2>
@@ -255,7 +255,8 @@
 		      </div>
 					<form name="feedbackForm" ng-submit= "sendFeedback()">
 		      <div class="modal-body">
-						<h5>Use the form below to send us comments or report problems with specific modules<h5>
+						<h5>Use the form below to send us comments or report problems with specific modules</h5>
+						<h5>Alternatively, email us at <a href="mailto:securityinjections@towson.edu?subject=Feedback">securityinjections@towson.edu</a></h5>
 						<br>
 						<div class="input-group">
 							<span class="input-group-addon">Name</span>

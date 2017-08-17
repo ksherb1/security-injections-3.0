@@ -17,9 +17,15 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 
 		$scope.module = content;
 		$scope.module.sections.push({header:"Final Page"});		// section for completion page
-		$scope.module.sections.splice(0,0,{header:"Learning Objectives"});
-		$scope.currentsectionIndex = 1;
-		$scope.currentsection = $scope.module.sections[1];
+		if(content.hasOwnProperty('objectives')){
+			$scope.module.sections.splice(0,0,{header:"Learning Objectives"});
+			$scope.currentsectionIndex = 1;
+			$scope.currentsection = $scope.module.sections[1];
+		}
+		else{
+			$scope.currentsectionIndex = 0;
+			$scope.currentsection = $scope.module.sections[0];
+		}
 		getCookies();//on Module load attempt to fill with cookies and redirect if needed
 	}
 
