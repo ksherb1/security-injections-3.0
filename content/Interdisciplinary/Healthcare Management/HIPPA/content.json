@@ -6,12 +6,16 @@
             "header": "Background",
             "units": [
                 {
+                    "type": "author",
+                    "name": "Mary Helen McSweeney-Feld, Towson University"
+                },
+                {
                     "type": "subheader",
                     "text": "Summary:"
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "This module provides an overview of Health Information Basics, Cybersecurity and HIPAA Compliance. The purpose of this module is to provide health care students with an overview of health information management basics, where cybersecurity falls in the area of health information management, and the importance of understanding the final provisions of the Health Information Portability and Accountability Act (HIPAA) and their application in healthcare workplaces."
                 },
                 {
                     "type": "subheader",
@@ -19,7 +23,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "There have been a number of significant cybersecurity intrusions into the databases of large healthcare organizations in recent years. Many of these events have occurred because of insufficient attention paid to the connection between HIPAA compliance in the workplace by healthcare workers and staff. The purpose of this model is to raise awareness of healthcare students of potential problems faced in accessing and utilizing health information management systems and databases, and the necessity of compliance with the final HIPAA provisions to prevent potential cybersecurity events."
                 },
                 {
                     "type": "subheader",
@@ -27,7 +31,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "Health care organizations become vulnerable to cybersecurity intrusions because of insufficient awareness and training of their staff on HIPAA compliance issues. For example, sharing passwords to systems, opening attachments to emails from unknown individuals or organizations, failures to remove or store data in a secure fashion can lead to potential cyber intrusions and events."
                 },
                 {
                     "type": "subheader",
@@ -35,58 +39,203 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "Multiple examples of cybersecurity problems exist in the healthcare field. Allowing staff to bring home files containing the personal health information (PHI) of patients in a medical practice, use of laptops with unencrypted health information outside the workplace, sharing passwords, use of personal USB drives to access and store personal health information are all behaviors that can open the door to a healthcare organization’s database being hacked and information being used in unauthorized ways. Interactions with unauthorized vendors can also introduce viruses and other malware into a healthcare organization’s systems and databases."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "bq1",
+                    "prompt": "What are the key HIPAA provisions affecting healthcare workers that use health information management systems?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "a",
+                            "text": "Privacy and confidentiality of patient health information (PHI) must be maintained"
+                        },
+                        {
+                            "id": "b",
+                            "text": "Administrative safeguards should be set up to protect unauthorized access to health information systems by healthcare workers"
+                        },
+                        {
+                            "id": "c",
+                            "text": "Physical safeguards should be set up to protect health information systems"
+                        },
+                        {
+                            "id": "d",
+                            "text": "Technical safeguards should be set up to protect health information systems"
+                        },
+                        {
+                            "id": "e",
+                            "text": "All of the above"
+                        }
+                    ],
+                    "answer": "e"
+                },
+                {
+                    "type": "question",
+                    "id": "bq2",
+                    "prompt": "All of the following types of actions should be taken by healthcare workers take to be HIPAA compliant and prevent unauthorized data breaches EXCEPT...",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "maintain",
+                            "text": "Maintain a strong password that is changed every 90 days, and do not share passwords"
+                        },
+                        {
+                            "id": "store",
+                            "text": "Store PHI in a secure place and encrypt the data, especially if computers are upgraded"
+                        },
+                        {
+                            "id": "allow",
+                            "text": "Allow patients of the healthcare organization to access its system for copies of their PHI"
+                        },
+                        {
+                            "id": "prohibit",
+                            "text": "Prohibit the use of unencrypted laptops or devices outside the healthcare organization"
+                        }
+                    ],
+                    "answer": "allow"
                 }
             ]
         },
         {
-            "header": "Lab Assignment",
+            "header": "Treat PHI Responsibly",
             "units": [
                 {
                     "type": "subheader",
-                    "text": "Program 1"
+                    "text": "How Can You Avoid This Error?"
                 },
                 {
-                    "type": "codeblock",
-                    "code": " "
+                    "type": "paragraph",
+                    "text": "A number of options exist to ensure the privacy and confidentiality of protected health information. Proper use of passwords, and protection of information on mobile devices is extremely important."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Having employees change their passwords every 90 days, use of strong passwords, and ensuring that any unencrypted mobile devices are used within the premises of their healthcare organization, not outside the building, are possible solutions."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "tq1",
+                    "prompt": "Which of the following is an example of a strong password?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "never",
+                            "text": "Never share your password with another person in your organization"
+                        },
+                        {
+                            "id": "change",
+                            "text": "Change your password to a strong password annually"
+                        },
+                        {
+                            "id": "e1",
+                            "text": "Ensure that any mobile devices that you use are secured at all times"
+                        }
+                    ],
+                    "answer": "change"
+                },
+                {
+                    "type": "question",
+                    "id": "tq2",
+                    "prompt": "If a patient of your healthcare organization asks for access to your health information system with their own USB drive to obtain copies of their PHI, you should tell them that",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "paper",
+                            "text": "Paper copies of their PHI can be obtained for no charge upon request"
+                        },
+                        {
+                            "id": "cd",
+                            "text": "The healthcare organization can provide them with a CD containing their healthcare information"
+                        },
+                        {
+                            "id": "usb",
+                            "text": "The healthcare organization can provide them with a USB drive containing their healthcare information"
+                        },
+                        {
+                            "id": "all",
+                            "text": "All of the above"
+                        }
+                    ],
+                    "answer": "all"
                 }
             ]
         },
         {
-            "header": "Security Checklist",
-            "units": []
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Go to <a href = https://www.healthit.gov/providers-professionals/cybersecurity-shared-responsibility> https://www.healthit.gov/providers-professionals/cybersecurity-shared-responsibility</a>."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Review the Top 10 tips for Cybersecurity in Healthcare, which are:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Establish a Security Culture",
+                        "Protect Mobile Devices",
+                        "Maintain Good Computer Habits",
+                        "Use a Firewall",
+                        "Install and Maintain Anti-Virus Software",
+                        " Plan for the Unexpected",
+                        "Control Access to Protected Health Information",
+                        "Use Strong Passwords and Change Them Regularly",
+                        "Limit Network Access",
+                        "Control Physical Access"
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once you are done with this review, enter the Cybersecure: Your Medical Practice game which is posted on the site, and complete all three levels of the game (which tests your knowledge and ability to apply the Top 10 Tips above). Repeat the game (if necessary) until you are able to obtain a perfect score of 150 points for all three levels of the game."
+                }
+            ]
         },
         {
             "header": "Discussion Questions",
             "units": [
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq1",
+                    "prompt": "What is required to establish a security culture in a healthcare organization? How can employees of a healthcare organization ensure that HIPAA compliance is part of the security culture?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
                 },
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq2",
+                    "prompt": "What measure can healthcare employees take to protect their mobile devices?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
                 },
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq3",
+                    "prompt": "Why is it important to change your password every 90 days, and what types of passwords should be used by healthcare employees?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
                 },
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq4",
+                    "prompt": "What is encrypted data, and why is it important for healthcare organizations to encrypt the data in their databases to prevent cybersecurity attacks?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

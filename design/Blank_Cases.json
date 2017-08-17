@@ -43,6 +43,13 @@
         }
     ]
 }
+
+//AUTHOR
+{
+    "type": "author",
+    "name": ""
+},
+
 //RADIO MODE: For questions with only one answer
 {
     "type": "question",

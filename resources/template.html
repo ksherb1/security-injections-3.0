@@ -97,40 +97,6 @@
 								</table>
 							</div>
 
-<<<<<<< Updated upstream
-				<!--JEWEL'S TABLE CODE (IN PROGRESS)-->
-				<div ng-switch-when = "table" class="table table-bordered" style="width: auto">
-					<table class = "table">
-					<th>
-							<td>1.</td>
-							<td>2.</td>
-							<td>3.</td>
-					</th>
-					<tr>
-						<td>Asset</td>
-						<td> <input type = "text" style = "width: 10em"> </td>
-					</tr>
-					<tr>
-						<td>Threat</td>
-						<td><input type = "text" style = "width: 10em"></td>
-					</tr>
-					<tr>
-						<td>Vulnerabilities</td>
-						<td><input type = "text" style = "width: 10em"></td>
-					</tr>
-					<tr>
-						<td>Probability</td>
-						<td> <input id="prob_1" type="number" min="0" max="3" style="width:10em;"></td>
-					</tr>
-					<tr>
-						<td>Harm</td>
-						<td> <input id="harm_1" type="number" min="0" max="3" style="width:10em;"> </td>
-					</tr>
-					<tr>
-						<td>Risk</td>
-						<td>
-							<select style="width:10em;">
-=======
 							<!--JEWEL'S TABLE CODE (IN PROGRESS)-->
 							<div ng-switch-when="chart" class="table table-bordered" style="width: auto">
 								<table class="table">
@@ -162,7 +128,6 @@
 											<td>Risk</td>
 											<td ng-repeat="items in unit.headers">
 												<select style="width:15em;">
->>>>>>> Stashed changes
 								<option></option>
 								<option>LOW</option>
 								<option>MED</option>
@@ -179,21 +144,12 @@
 							</div>
 
 
-<<<<<<< Updated upstream
-				<div ng-switch-when="question" class="col-sm-12 si-question" id="{{ unit.id }}">
-					<div class="well">
-					<h5 ng-bind-html="unit.prompt"></h5>
-					<div ng-switch="unit.mode">
-						<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
-							<label>
-=======
 							<div ng-switch-when="question" class="col-sm-12 si-question" id="{{ unit.id }}">
 								<div class="well">
 									<h5 ng-bind-html="unit.prompt"></h5>
 									<div ng-switch="unit.mode">
 										<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
 											<label>
->>>>>>> Stashed changes
 								<input type="radio" ng-model="unit.value"  value="{{ choice.id }}" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
 								<span ng-bind-html="choice.text" ng-checked="unit.checked" id="{{ unit.id+'-'+choice.id }}-label"></span>
 								</label>

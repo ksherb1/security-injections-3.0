@@ -47,7 +47,10 @@
 							]
 
 
-				//NEW TABLE CASE MADE BY JEWEL (IN PROGRESS)
+					<case "author">
+                  		"name": "Natalie Scala, Towson University"
+                	}
+					
 					<case "chart">
                     	"headers": [
                         	"<string>",
