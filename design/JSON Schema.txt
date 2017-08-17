@@ -46,22 +46,15 @@
 								}
 							]
 
-							
+
 				//NEW TABLE CASE MADE BY JEWEL (IN PROGRESS)
-					<case "table">
-							"headers":[
-								"<string>",
-								...
-							],
-							"cells":[
-								{
-									"first": "<string>",
-									"second": "<string>"
-								},
-								{
-								...
-								}
-							]
+					<case "chart">
+                    	"headers": [
+                        	"<string>",
+                        	"<string>", 
+                        	...
+                    ]
+                }
 
 					<case "question">
 							"id"		: "<id-string>",			<all unit id's within section must be unique>
