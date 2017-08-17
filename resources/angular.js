@@ -5,8 +5,8 @@
  * Assumes html page loaded up angular js and jquery
  */
 
-var app = angular.module("modApp", ['ngSanitize', 'ngCookies']);		// the angular "app"
-app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce) {	// the angular "controller"
+var app = angular.module("modApp", ['ngSanitize', 'ngCookies','vcRecaptcha']);		// the angular "app"
+app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce, vcRecaptchaService) {	// the angular "controller"
 
 	/**
 	 * helper method to initialize module object
@@ -607,5 +607,32 @@ function loadCoverPage(){
 	var coverPageUri = $scope.repo+$("#name").html()+'/'+"coverpage.pdf";
 	$scope.coverPageFrame = $sce.trustAsResourceUrl(coverPageUri);
 }
+
+	$scope.response = null;
+	$scope.widgetId = null;
+	$scope.model = {
+	    key: '6LeLFC0UAAAAAGydkJ0GKYV2pjOdyjtlMzxPCq0X'
+	};
+	$scope.setResponse = function (response) {
+	    console.info('Response available: %s', response);
+			$scope.response = response;
+	};
+	$scope.setWidgetId = function (widgetId) {
+	    //console.info('Created widget ID: %s', widgetId);
+	    $scope.widgetId = widgetId;
+	};
+	$scope.sendFeedback = function () {
+	    var valid;
+	    /**
+	     * SERVER SIDE VALIDATION
+	     *
+	     * You need to implement your server side validation here.
+	     * Send the reCaptcha response to the server and use some of the server side APIs to validate it
+	     * See https://developers.google.com/recaptcha/docs/verify
+	     */
+	    console.log('sending the captcha response to the server', $scope.response);
+	};
+
+
 
 }]);

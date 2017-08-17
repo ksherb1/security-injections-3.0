@@ -75,6 +75,10 @@ exports.write_3 = function(name, variant, dev) {
 	html += '\t'+'<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>'+'\n';
 	html += '\t'+'<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>'+'\n';
 	//html += '\t'+'<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>'+'\n';
+	html += '\t'+'<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>'+'\n';
+  html += '\t'+'<script src="https://rawgit.com/VividCortex/angular-recaptcha/master/release/angular-recaptcha.js"></script>'+'\n';
+
+
 
 	html += '\t'+'<title>'+'Security Injection: '+module.name+' - '+module.variant+'</title>'+'\n';
 	if(dev) {	// in dev mode, link to sheets rather than including source
@@ -148,7 +152,7 @@ exports.write_3 = function(name, variant, dev) {
 //exports.write_3("Computer Literacy", "Passwords");
 //exports.write_3("Computer Literacy", "Phishing");
 //exports.write_3("Computer Literacy", "Cryptography");
-//exports.write_3("Computer Literacy", "Social Networking Security");
+exports.write_3("Computer Literacy", "Social Networking Security");
 //exports.write_3("Industrial Control Systems", "Introduction");
 //exports.write_3("Mobile Risk Management", "Introduction");
 //exports.write_3("Integer Error", "CS0 C++ Sample");

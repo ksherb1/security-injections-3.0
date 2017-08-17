@@ -253,6 +253,7 @@
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        <h4 class="modal-title" id="myModalLabel">Feedback</h4>
 		      </div>
+					<form ng-submit= "sendFeedback()">
 		      <div class="modal-body">
 						<h5>Use the form below to send us comments or report problems with specific modules<h5>
 						<br>
@@ -270,14 +271,15 @@
 							<span>Feedback:</span>
 							<textarea class = "form-control" rows = "5" style="resize:vertical;"></textarea>
 							<br>
-							<span>Enter code above:</span>
-							<textarea class = "form-control" rows = "1"></textarea>
+						</div>
+						<div vc-recaptcha theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)">
 						</div>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		        <button type="button" class="btn btn-primary">Submit</button>
+		        <button type="submit" class="btn btn-primary">Submit</button>
 		      </div>
+				</form>
 		    </div>
 		  </div>
 		</div>

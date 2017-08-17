@@ -2,6 +2,8 @@
   "name": "security-injections-3.0",
   "description": "Cybersecurity modules to teach secure programming principles",
   "dependencies": {
+    "angular-recaptcha": "^4.1.0",
+    "angular-route": "^1.6.5",
     "cors": "^2.8.3",
     "express": "^4.15.3",
     "uglify-js": "^3.0.20",
