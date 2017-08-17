@@ -1,31 +1,33 @@
 <div ng-app="modApp" ng-controller="modCtrl">
-<header class = "header">
-		<div class = "container">
-		<div class = "col-sm-10">
-			<h1 class = "header-text">
+	<header class="header">
+		<div class="container">
+			<div class="col-sm-10">
+				<h1 class="header-text">
 
-			</h1>
-		</div>
-			<div class = "col-sm-2">
-				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" class = "img-responsive" style:"vertical-align:middle;"></div>
+				</h1>
+			</div>
+			<div class="col-sm-2">
+				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" class="img-responsive" style:
+				 "vertical-align:middle;"></div>
 		</div>
 	</header>
-	<div class = "container">
+	<div class="container">
 		<div ng-if="contentError">
 			<p class="si-error">There was a problem getting content.</p>
 			<button ng-click="loadContent()">Try Again</button>
 		</div>
 
-	<div ng-if="!contentError">
-		<div class ="page-header">
+		<div ng-if="!contentError">
+			<div class="page-header">
 				<h1>{{ module.name }} - {{ module.variant }}</h1>
-		</div>
-		<!-- workflow -->
-			<div class = "container-fluid">
-        <div class="container-fluid">
+			</div>
+			<!-- workflow -->
+			<div class="container-fluid">
+				<div class="container-fluid">
 					<ul class="nav nav-tabs nav-justified">
-								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted"  ng-class="{'active': $index==currentsectionIndex}" ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
-								<li class = "disabled" ng-repeat="section in module.sections" ng-if="($index > sectionscompleted)" ><a>{{section.header}}</a></li>
+						<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted" ng-class="{'active': $index==currentsectionIndex}"
+						 ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
+						<li class="disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted"><a>{{section.header}}</a></li>
 					</ul>
 				</div>
 			</div>
@@ -47,12 +49,8 @@
 					<div id="coverPage" style="">
 							<iframe width="500" height="500" ng-src="{{coverPageFrame}}"></iframe>
 					</div>
-					<br>
-					<br>
 				</div>
 			</div>
-		</div>
-	</div>
 
 		<!-- section content -->
 		<div ng-if="(currentsectionIndex < module.sections.length-1) && (currentsection.header!='Learning Objectives')" class="si-content">
@@ -61,80 +59,85 @@
 			<h2 ng-bind-html="currentsection.header" class = "col-sm-12"></h2>
 			<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
 
-					<h3 ng-switch-when="subheader" ng-bind-html="unit.text" class = "col-sm-12"></h3>
-					<p ng-switch-when="paragraph" ng-bind-html="unit.text" class = "col-sm-12"></p>
-					<div ng-switch-when="list" class="si-list col-sm-12" >
-						<ol ng-if="unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ol>
-						<ul ng-if="!unit.ordered"><li ng-repeat="text in unit.items" ng-bind-html="text"></li></ul>
-					</div>
-				<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
+							<h3 ng-switch-when="subheader" ng-bind-html="unit.text" class="col-sm-12"></h3>
+							<p ng-switch-when="paragraph" ng-bind-html="unit.text" class="col-sm-12"></p>
+							<div ng-switch-when="list" class="si-list col-sm-12">
+								<ol ng-if="unit.ordered">
+									<li ng-repeat="text in unit.items" ng-bind-html="text"></li>
+								</ol>
+								<ul ng-if="!unit.ordered">
+									<li ng-repeat="text in unit.items" ng-bind-html="text"></li>
+								</ul>
+							</div>
+							<pre ng-switch-when="codeblock">{{ unit.code }}</pre>
 
-				<div ng-switch-when="image" class="col-sm-12">
-						<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}}; align: {{unit.align}};" class = "img-responsive">
-				</div>
-				<div ng-switch-when="video" class= "col-sm-12 embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
-				</div>
-				<small class = "col-sm-12" ng-switch-when="author" ng-bind-html = "'Created by: ' + unit.name"></small>
-				<small  class = "col-sm-12"ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
+							<div ng-switch-when="image" class="col-sm-12">
+								<img src="{{ unit.src }}" alt="{{ unit.alt }}" style="width:{{unit.width}}px; height:{{unit.height}}px; float:{{unit.float}}; align: {{unit.align}};"
+								 class="img-responsive">
+							</div>
+							<div ng-switch-when="video" class="col-sm-12 embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
+							</div>
+							<small class="col-sm-12" ng-switch-when="author" ng-bind-html="'Created by: ' + unit.name"></small>
+							<small class="col-sm-12" ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
 
-				<div ng-switch-when="table" class = "col-sm-8">
-					<table class="table">
-					<tr>
-						<th ng-repeat = "items in unit.headers" ng-bind-html ="items"></th>
-					</tr>
-					<tr ng-repeat = "items in unit.cells">
-						<td ng-bind-html = "items.first"></td>
-						<td ng-bind-html = "items.second"></td>
-					</tr>
-				</table>
-				</div>
+							<div ng-switch-when="table" class="col-sm-8">
+								<table class="table">
+									<tr>
+										<th ng-repeat="items in unit.headers" ng-bind-html="items"></th>
+									</tr>
+									<tr ng-repeat="items in unit.cells">
+										<td ng-bind-html="items.first"></td>
+										<td ng-bind-html="items.second"></td>
+									</tr>
+								</table>
+							</div>
 
-				<!--JEWEL'S TABLE CODE (IN PROGRESS)-->
-				<div ng-switch-when = "table" class="table table-bordered" style="width: auto">
-					<table class = "table">
-					<th>
-							<td>1.</td>
-							<td>2.</td>
-							<td>3.</td>
-					</th>
-					<tr>
-						<td>Asset</td>
-						<td> <input type = "text" style = "width: 10em"> </td>
-					</tr>
-					<tr>
-						<td>Threat</td>
-						<td><input type = "text" style = "width: 10em"></td>
-					</tr>
-					<tr>
-						<td>Vulnerabilities</td>
-						<td><input type = "text" style = "width: 10em"></td>
-					</tr>
-					<tr>
-						<td>Probability</td>
-						<td> <input id="prob_1" type="number" min="0" max="3" style="width:10em;"></td>
-					</tr>
-					<tr>
-						<td>Harm</td>
-						<td> <input id="harm_1" type="number" min="0" max="3" style="width:10em;"> </td>
-					</tr>
-					<tr>
-						<td>Risk</td>
-						<td>
-							<select style="width:10em;">
+							<!--JEWEL'S TABLE CODE (IN PROGRESS)-->
+							<div ng-switch-when="chart" class="table table-bordered" style="width: auto">
+								<table class="table">
+									<th>
+										<td ng-repeat="items in unit.headers" ng-bind-html="items"></td>
+									</th>
+									<tbody >
+										<tr>
+											<td>Asset</td>
+											<td ng-repeat="items in unit.headers"> <input type="text" style="width: 15em"> </td>
+										</tr>
+										<tr>
+											<td>Threat</td>
+											<td ng-repeat="items in unit.headers"><input type="text" style="width: 15em"></td>
+										</tr>
+										<tr>
+											<td>Vulnerabilities</td>
+											<td ng-repeat="items in unit.headers"><textarea style="height:6em; width:15em"></textarea></td>
+										</tr>
+										<tr>
+											<td>Probability</td>
+											<td ng-repeat="items in unit.headers"> <input id="prob_1" type="number" min="0" max="3" style="width:15em;"></td>
+										</tr>
+										<tr>
+											<td>Harm</td>
+											<td ng-repeat="items in unit.headers"> <input id="harm_1" type="number" min="0" max="3" style="width:15em;"> </td>
+										</tr>
+										<tr>
+											<td>Risk</td>
+											<td ng-repeat="items in unit.headers">
+												<select style="width:15em;">
 								<option></option>
 								<option>LOW</option>
 								<option>MED</option>
 								<option>HI</option>
 							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Mitigation</td>
-						<td><textarea style="height:6em;width:15em"></textarea></td>
-					</tr>
-				</table>
-			</div>
+											</td>
+										</tr>
+										<tr>
+											<td>Mitigation</td>
+											<td ng-repeat="items in unit.headers"><textarea style="height:6em; width:15em"></textarea></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 
 
 				<div ng-switch-when="question" class="col-sm-12 si-question" id="{{ unit.id }}">
@@ -146,93 +149,93 @@
 								<input type="radio" ng-model="unit.value"  value="{{ choice.id }}" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
 								<span ng-bind-html="choice.text" ng-checked="unit.checked" id="{{ unit.id+'-'+choice.id }}-label"></span>
 								</label>
-							</div>
-						<div ng-switch-when="checkbox" class="si-checkbox-choice" ng-repeat="choice in unit.choices">
-							<label>
+										</div>
+										<div ng-switch-when="checkbox" class="si-checkbox-choice" ng-repeat="choice in unit.choices">
+											<label>
 								<input type="checkbox" class="si-checkbox" ng-model="choice.value" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
 								<span ng-bind-html="choice.text" id="{{ unit.id+'-'+choice.id }}-label"></span>
 								</label>
+										</div>
+										<textarea class="form-control" rows="5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
+										<p ng-switch-default class="si-error">Mode invalid</p>
+									</div>
+								</div>
+
 							</div>
-						<textarea class = "form-control" rows = "5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
-						<p ng-switch-default class="si-error">Mode invalid</p>
-						</div>
-					</div>
+							<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
+								<div class="col-sm-5">
+									<div class="well">
+										<table class="table" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+											<tr>
+												<th colspan="2" ng-bind-html="group.header"></th>
+											</tr>
+											<tr ng-repeat="item in group.items">
+												<td class="si-checklist-label-cell">
+													<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
+												</td>
+												<td style="vertical-align: middle;" ng-if="item.js" class="si-checklist-box-cell">
+													<div id="checkMark">
+														<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}" class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
+														 disabled>
+														<label for="{{ unit.id+'-'+group.id+'-'+item.id }}"></label>
+													</div>
+												</td>
+												<td style="vertical-align: middle;" ng-if="!item.js" class="si-checklist-box-cell">
+													<div id="checkMark">
+														<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}" class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
+														<label for="{{ unit.id+'-'+group.id+'-'+item.id }}"></label>
+													</div>
+												</td>
 
-				</div>
-				<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
-					<div class ="col-sm-5">
-						<div class="well">
-						<table class="table" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
-							<tr><th colspan="2" ng-bind-html="group.header"></th></tr>
-							<tr ng-repeat="item in group.items">
-								<td class="si-checklist-label-cell">
-									<span id="{{ unit.id+'-'+group.id+'-'+item.id }}-label" ng-bind-html="item.text"></span>
-									</td>
-								<td style = "vertical-align: middle;" ng-if="item.js" class="si-checklist-box-cell">
-									<div id = "checkMark">
-										<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-												class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}"
-												disabled>
-										<label for="{{ unit.id+'-'+group.id+'-'+item.id }}"></label>
+											</tr>
+										</table>
 									</div>
-									</td>
-								<td style = "vertical-align: middle;" ng-if="!item.js" class="si-checklist-box-cell">
-									<div id = "checkMark">
-										<input type="checkbox" checked ng-model="item.value" name="{{ unit.id+'-'+group.id }}"
-												class="si-checkbox" id="{{ unit.id+'-'+group.id+'-'+item.id }}">
-										<label for="{{ unit.id+'-'+group.id+'-'+item.id }}"></label>
+								</div>
+								<div class="col-sm-7 checklist-block" style="position:relative;">
+									<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
+									<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
+									<div class="popover radiopop" style="position:absolute;">
+										<label name="popPrompt" text=" "></label>
+										<form>
+											<input type="radio" name="popOpt" value="Yes" />&nbsp;Yes&nbsp;
+											<input type="radio" name="popOpt" value="No" />&nbsp;No&nbsp;
+											<input type="button" name="popSave" class="btn-md" value="Check" />
+										</form>
 									</div>
-									</td>
-
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div class = "col-sm-7 checklist-block" style = "position:relative;">
-						<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
-						<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
-						<div class="popover radiopop" style = "position:absolute;">
-							<label name= "popPrompt" text = " "></label>
-							<form>
-						    <input type="radio" name= "popOpt" value="Yes"/>&nbsp;Yes&nbsp;
-								<input type="radio" name = "popOpt" value ="No"/>&nbsp;No&nbsp;
-						    <input type="button" name = "popSave" class="btn-md" value="Check"/>
-							</form>
-						</div>
-						<div class="popover rangepop" style = "position:absolute;">
-						    <form>
-									<input type = "textarea" id= "lowInt" style = "width: 24px"/>
-									<select id = "popSelect1">
+									<div class="popover rangepop" style="position:absolute;">
+										<form>
+											<input type="textarea" id="lowInt" style="width: 24px" />
+											<select id="popSelect1">
 										<option value = "<"/>&lt;
 										<option value = "<="/>&lt;=
 										<option value = "="/>=
 										<option value = ">="/>&gt;=
 										<option value = ">"/>&gt;
 									</select>&nbsp;i&nbsp;
-									<select id = "popSelect2">
+											<select id="popSelect2">
 										<option value = "<"/>&lt;
 										<option value = "<="/>&lt;=
 										<option value = "="/>=
 										<option value = ">="/>&gt;=
 										<option value = ">"/>&gt;
 									</select>
-									<input type = "textarea" id= "highInt" style = "width: 24px"/>
-						    	<input type="button" name = "popSave2" class="btn-md" value="Check"/>
-								</form>
+											<input type="textarea" id="highInt" style="width: 24px" />
+											<input type="button" name="popSave2" class="btn-md" value="Check" />
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<p ng-switch-default class="si-error">Type invalid</p>
 						</div>
 					</div>
 				</div>
 
-						<p ng-switch-default class="si-error">Type invalid</p>
-					</div>
-				</div>
-			</div>
 
-
-			<!-- buttons -->
-			<button class = "btn btn-primary btn-md" id="btn-check-answers" ng-click="checkAnswers()">Check Answers <span class="glyphicon glyphicon-ok"></span></button>
-			<button class = "btn btn-success btn-md" ng-if="currentsectionIndex < sectionscompleted" ng-click="gotoSection(currentsectionIndex+1)">Next Section <span class="glyphicon glyphicon-chevron-right"></span></button>
-			<button class = "btn btn-default btn-md" ng-if="currentsectionIndex >=  sectionscompleted" disabled>Next Section <span class="glyphicon glyphicon-ban-circle"></span></button>
+				<!-- buttons -->
+				<button class="btn btn-primary btn-md" id="btn-check-answers" ng-click="checkAnswers()">Check Answers <span class="glyphicon glyphicon-ok"></span></button>
+				<button class="btn btn-success btn-md" ng-if="currentsectionIndex < sectionscompleted" ng-click="gotoSection(currentsectionIndex+1)">Next Section <span class="glyphicon glyphicon-chevron-right"></span></button>
+				<button class="btn btn-default btn-md" ng-if="currentsectionIndex >=  sectionscompleted" disabled>Next Section <span class="glyphicon glyphicon-ban-circle"></span></button>
 			</div>
 		</div>
 
@@ -273,60 +276,57 @@
 							<textarea class = "form-control" rows = "5" style="resize:vertical;" ng-model="feedback.text"></textarea>
 							<br>
 						</div>
-						<div vc-recaptcha theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)">
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
 						</div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		        <button type="submit" class="btn btn-primary">Submit</button>
-		      </div>
-				</form>
-		    </div>
-		  </div>
+					</form>
+				</div>
+			</div>
 		</div>
 
 
 
 
-	<div ng-if="currentsectionIndex == module.sections.length-1" class="si-finished">
-		<div class ="jumbotron">
-			<div class = "row">
-			<h2 ng-bind-html="currentsection.header"></h2>
-				<div class = "col-sm-6">
-					<div class = "well">
-						<div class="si-certificate-form">
-							<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
-							<p>Complete this form to generate your certificate</p>
-							<form ng-submit="generateCertificate()">
-							<div class="input-group">
-				  			<span class="input-group-addon">Full Name</span>
-				  			<input ng-model="form.name" required type="text" class="form-control">
+		<div ng-if="currentsectionIndex == module.sections.length-1" class="si-finished">
+			<div class="jumbotron">
+				<div class="row">
+					<h2 ng-bind-html="currentsection.header"></h2>
+					<div class="col-sm-6">
+						<div class="well">
+							<div class="si-certificate-form">
+								<h5>Congratulations! You have completed the {{ module.variant }} {{ module.name }} module!</h5>
+								<p>Complete this form to generate your certificate</p>
+								<form ng-submit="generateCertificate()">
+									<div class="input-group">
+										<span class="input-group-addon">Full Name</span>
+										<input ng-model="form.name" required type="text" class="form-control">
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon">Email Address</span>
+										<input ng-model="form.email" required type="email" class="form-control">
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon">Instructor</span>
+										<input ng-model="form.instructor" required type="text" class="form-control">
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon">Institution</span>
+										<input ng-model="form.institution" required type="text" class="form-control">
+									</div>
+									<br>
+									<input class="btn btn-success btn-lg" type="submit" value="Generate Certificate">
+								</form>
 							</div>
-							<br>
-							<div class="input-group">
-				  			<span class="input-group-addon">Email Address</span>
-				  			<input ng-model="form.email" required type="email" class="form-control">
-							</div>
-							<br>
-							<div class="input-group">
-				  			<span class="input-group-addon">Instructor</span>
-				  			<input ng-model="form.instructor" required type="text" class="form-control">
-							</div>
-							<br>
-							<div class="input-group">
-			  				<span class="input-group-addon">Institution</span>
-			  				<input ng-model="form.institution" required type="text" class="form-control">
-							</div>
-							<br>
-							<input class="btn btn-success btn-lg" type="submit" value="Generate Certificate">
-							</form>
 						</div>
 					</div>
-				</div>
-					<div class = "col-sm-6">
+					<div class="col-sm-6">
 						<div id="si-certificate-pane" style="display:none">
-								<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
-								<a class = "btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
+							<iframe width="500" height="348" ng-src="{{detailFrame}}"></iframe>
+							<a class="btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
 						</div>
 					</div>
 				</div>
@@ -334,23 +334,23 @@
 		</div>
 	</div>
 	<br>
-	<footer class = "footer">
-		<div class = "container">
-			<div class = "col-sm-1">
-					<br>
-					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
+	<footer class="footer">
+		<div class="container">
+			<div class="col-sm-1">
+				<br>
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
 			</div>
-			<div class = "col-sm-10">
-					<p class = "footer-text">
-						The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation
-						under grants NSF DUE-1241738,  NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649,
-						the GenCyber program, and the Intel Corporation.
-						<br>
-						This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
-					</p>
+			<div class="col-sm-10">
+				<p class="footer-text">
+					The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation under
+					grants NSF DUE-1241738, NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649, the GenCyber program, and
+					the Intel Corporation.
+					<br> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
 			</div>
-			<div class = "col-sm-1">
-					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class = "img-responsive" style:"vertical-align:middle;">
+			<div class="col-sm-1">
+				<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class="img-responsive" style:
+				 "vertical-align:middle;">
 			</div>
 		</div>
 	</footer>

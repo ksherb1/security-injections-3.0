@@ -97,11 +97,11 @@
 {
     "type": "list",
     "items": [
-        " ",
-        " ",
-        " ",
-        " ",
-        " "
+        "",
+        "",
+        "",
+        "",
+        ""
     ],
     "ordered": false
 }
@@ -118,11 +118,11 @@
 {
     "type": "table",
     "headers": [
-        " ",
-        " ",
-        " ",
-        " ",
-        " "
+        "",
+        "",
+        "",
+        "",
+        ""
     ],
     "cells": [
         {
@@ -141,6 +141,16 @@
     "copyright": " ",
     "date": " ",
     "link": " "
+}
+
+//CHART
+{
+    "type": "chart",
+    "headers": [
+        "",
+        "", 
+        ""
+    ]
 }
 //SECURITY CHECKLIST TEMPLATE (change as needed)
 {
