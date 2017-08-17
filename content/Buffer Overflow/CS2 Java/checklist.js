@@ -58,16 +58,16 @@ $(document).ready(function() {
 					var spanLoc;
 					var spanLoc2;
 					if(next === name+"-var-range"){
-						spanLoc = 20;
-						spanLoc2 = 45;
+						spanLoc = 18;
+						spanLoc2 = 43;
 					} //NEED TO BE SET TO THE RIGHT SPAN 45
 					else if (next === name+'-loop-range'){
-						spanLoc = 15;
-						spanLoc2 = 37;
+						spanLoc = 13;
+						spanLoc2 = 35;
 					}//37
 					else if (next === name+'-function-range'){
-						spanLoc = 9;
-						spanLoc2 = 31;
+						spanLoc = 6;
+						spanLoc2 = 27;
 					}//31
 
 					//show Popover over the index span

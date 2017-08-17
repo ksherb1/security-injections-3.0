@@ -15,6 +15,28 @@ body {
 	margin-bottom: 120px;
 }
 
+textarea {
+   resize: none;
+}
+
+
+
+.feedback{
+position:fixed;
+width:38.46px;
+height:125px;
+right:-5px;
+top:40%;
+padding:0px 5px 5px 0px;
+}
+
+.feedback img{width:100%;height:auto;}​
+
+
+
+
+
+
 /* For bootstrap since relies on empty hrefs */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
