@@ -622,17 +622,31 @@ function loadCoverPage(){
 	    $scope.widgetId = widgetId;
 	};
 	$scope.sendFeedback = function () {
-	    var valid;
-	    /**
-	     * SERVER SIDE VALIDATION
-	     *
-	     * You need to implement your server side validation here.
-	     * Send the reCaptcha response to the server and use some of the server side APIs to validate it
-	     * See https://developers.google.com/recaptcha/docs/verify
-	     */
-	    console.log('sending the captcha response to the server', $scope.response);
+			var formData = this;
+			if($scope.response === null){ //if string is empty
+							 alert("Please resolve the captcha and submit!")
+			}
+			else{
+				var post_data = {  //prepare payload for request
+	          'name':formData.feedback.name,
+	          'email':formData.feedback.email,
+	          'text':formData.feedback.text,
+	          'response':$scope.response  //send g-captcah-reponse to our server
+	      };
+		    /**
+		     * SERVER SIDE VALIDATION
+		     *
+		     * You need to implement your server side validation here.
+		     * Send the reCaptcha response to the server and use some of the server side APIs to validate it
+		     * See https://developers.google.com/recaptcha/docs/verify
+		     */
+				console.log("Valid response");
+		    //console.log('sending the captcha response to the server', $scope.response);
+
+				//Need to then send email.
+
+
+			}
 	};
-
-
 
 }]);
