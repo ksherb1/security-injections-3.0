@@ -32,36 +32,34 @@
 				</div>
 			</div>
 
-			<div ng-if="currentsectionIndex == 0">
-				<div class="jumbotron">
-					<div class="row">
-						<h2 ng-bind-html="currentsection.header"></h2>
-						<div class="col-sm-6">
-							<h3>Learning Goals</h3>
-							<p ng-if="module.objectives.goals != ''" ng-repeat="goals in module.objectives.goals" ng-bind-html="' - ' + goals"></p>
-							<p ng-if="module.objectives.goals == ''">None given</p>
-							<h3>Learning Outcomes</h3>
-							<p ng-if="module.objectives.outcomes != ''" ng-repeat="outcomes in module.objectives.outcomes" ng-bind-html="' - ' + outcomes"></p>
-							<p ng-if="module.objectives.outcomes == ''">None given</p>
-						</div>
-						<div ng-if="module.objectives.goals != ''&& module.objectives.outcomes != ''" class="col-sm-6">
-							<h3>Cover Page</h3>
-							<div id="coverPage" style="">
-								<iframe width="500" height="500" ng-src="{{coverPageFrame}}"></iframe>
-							</div>
-							<br>
-							<br>
-						</div>
+		<div ng-if="currentsection.header=='Learning Objectives'">
+				<div class ="jumbotron">
+					<div class = "row">
+					<h2 ng-bind-html="currentsection.header"></h2>
+					<div class = "col-sm-6">
+					<h3>Learning Goals</h3>
+					<p ng-if = "module.objectives.goals != ''" ng-repeat = "goals in module.objectives.goals" ng-bind-html = "' - ' + goals"></p>
+					<p ng-if = "module.objectives.goals == ''">None given</p>
+					<h3>Learning Outcomes</h3>
+					<p ng-if = "module.objectives.outcomes != ''" ng-repeat = "outcomes in module.objectives.outcomes" ng-bind-html = "' - ' + outcomes"></p>
+					<p ng-if = "module.objectives.outcomes == ''">None given</p>
+					</div>
+				<div ng-if = "module.objectives.goals != ''&& module.objectives.outcomes != ''"class = "col-sm-6">
+					<h3>Cover Page</h3>
+					<div id="coverPage" style="">
+							<iframe width="500" height="500" ng-src="{{coverPageFrame}}"></iframe>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<!-- section content -->
-			<div ng-if="(currentsectionIndex < module.sections.length-1) && (currentsectionIndex != 0)" class="si-content">
-				<div class="jumbotron">
-					<div class="row">
-						<h2 ng-bind-html="currentsection.header" class="col-sm-12"></h2>
-						<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
+		<!-- section content -->
+		<div ng-if="(currentsectionIndex < module.sections.length-1) && currentsection.header!='Learning Objectives'" class="si-content">
+			<div class = "jumbotron">
+				<div class = "row">
+			<h2 ng-bind-html="currentsection.header" class = "col-sm-12"></h2>
+			<div ng-repeat="unit in currentsection.units" ng-switch="unit.type">
 
 							<h3 ng-switch-when="subheader" ng-bind-html="unit.text" class="col-sm-12"></h3>
 							<p ng-switch-when="paragraph" ng-bind-html="unit.text" class="col-sm-12"></p>
@@ -144,12 +142,12 @@
 							</div>
 
 
-							<div ng-switch-when="question" class="col-sm-12 si-question" id="{{ unit.id }}">
-								<div class="well">
-									<h5 ng-bind-html="unit.prompt"></h5>
-									<div ng-switch="unit.mode">
-										<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
-											<label>
+				<div ng-switch-when="question" class="col-sm-12 si-question" id="{{ unit.id }}">
+					<div class="well">
+					<h5 ng-bind-html="unit.prompt"></h5>
+					<div ng-switch="unit.mode">
+						<div ng-switch-when="radio" class="si-radio-choice" ng-repeat="choice in unit.choices">
+							<label>
 								<input type="radio" ng-model="unit.value"  value="{{ choice.id }}" name="{{ unit.id }}" id="{{ unit.id+'-'+choice.id }}">
 								<span ng-bind-html="choice.text" ng-checked="unit.checked" id="{{ unit.id+'-'+choice.id }}-label"></span>
 								</label>
@@ -254,7 +252,6 @@
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-<<<<<<< Updated upstream
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -263,7 +260,8 @@
 		      </div>
 					<form name="feedbackForm" ng-submit= "sendFeedback()">
 		      <div class="modal-body">
-						<h5>Use the form below to send us comments or report problems with specific modules<h5>
+						<h5>Use the form below to send us comments or report problems with specific modules</h5>
+						<h5>Alternatively, email us at <a href="mailto:securityinjections@towson.edu?subject=Feedback">securityinjections@towson.edu</a></h5>
 						<br>
 						<div class="input-group">
 							<span class="input-group-addon">Name</span>
@@ -279,36 +277,6 @@
 							<span>Feedback:</span>
 							<textarea class = "form-control" rows = "5" style="resize:vertical;" ng-model="feedback.text"></textarea>
 							<br>
-=======
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Feedback</h4>
-					</div>
-					<form ng-submit="sendFeedback()">
-						<div class="modal-body">
-							<h5>Use the form below to send us comments or report problems with specific modules
-								<h5>
-									<br>
-									<div class="input-group">
-										<span class="input-group-addon">Name</span>
-										<input ng-model="feedback.name" required type="text" class="form-control">
-									</div>
-									<br>
-									<div class="input-group">
-										<span class="input-group-addon">Email</span>
-										<input ng-model="feedback.email" required type="email" class="form-control">
-									</div>
-									<div id="feedbackText">
-										<br>
-										<span>Feedback:</span>
-										<textarea class="form-control" rows="5" style="resize:vertical;"></textarea>
-										<br>
-									</div>
-									<div vc-recaptcha theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)">
-									</div>
->>>>>>> Stashed changes
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -318,7 +286,7 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
 
 
 
@@ -367,6 +335,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<br>
 	<footer class="footer">
 		<div class="container">
@@ -388,4 +357,5 @@
 			</div>
 		</div>
 	</footer>
+</div>
 </div>
