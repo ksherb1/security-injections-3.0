@@ -51,9 +51,11 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
 		<!-- section content -->
-		<div ng-if="(currentsectionIndex < module.sections.length-1) && (currentsection.header!='Learning Objectives')" class="si-content">
+		<div ng-if="(currentsectionIndex < module.sections.length-1) && currentsection.header!='Learning Objectives'" class="si-content">
 			<div class = "jumbotron">
 				<div class = "row">
 			<h2 ng-bind-html="currentsection.header" class = "col-sm-12"></h2>
@@ -284,7 +286,7 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
 
 
 
@@ -333,6 +335,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<br>
 	<footer class="footer">
 		<div class="container">
@@ -354,4 +357,5 @@
 			</div>
 		</div>
 	</footer>
+</div>
 </div>
