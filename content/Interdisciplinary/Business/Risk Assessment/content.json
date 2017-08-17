@@ -1,0 +1,159 @@
+{
+    "name": "Business",
+    "variant": "Risk Assessment",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A key aspect of cybersecurity is risk management. The risk management process is a full lifecycle activity that includes identifying, synthesizing, ranking, and keeping track of risks throughout the use of an information system within a organization."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A \"risk\" is anything that might negatively impact the operation of a business. \"Risk management\" is the process by which one prevents or adapts to these risks. Effective risk management allows businesses to efficiently allocate resources to the greatest benefit."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When a business utilizes an information system for its operation, risk management should be handled from three different perspectives:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "the overall organization",
+                        "the business process",
+                        "the information system"
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "paragraph",
+                    "text": "At an organizational level, the executive board or CEO must make strategic decisions about what resources to invest in, and what operations the business should prioritize. At a business process level, supervisors must decide on the most efficient means of using those resources in order to carry out those operations. At the information system level, we must determine what security risks our system is vulnerable to, and then implement corrective measures so that the business operations can be continued without interruption. The corrective measures available are constrained by the resources available, but there should always be communication among the tiers so that the proper resources are made available."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The Risk Management Framework (RMF) provides a guideline for addressing risk at the information system level. It consists of six steps, which should be repeated as necessary:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<i>Categorize</i> what sorts of risks your information system is vulnerable to.",
+                        "<i>Select</i> what security measures to implement.",
+                        "<i>Implement</i> security measures you selected.",
+                        "<i>Assess</i> whether or not they your security measures are correctly implemented.",
+                        "<i>Authorize</i> your business to start using your secured information system.",
+                        "<i>Monitor</i> your information system and determine if it effectively handles all security concerns."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In the Manage Responsibly section, we will address the first two items in more detail."
+                },
+                {
+                    "type": "image",
+                    "src": "http://cis1.towson.edu/~cyber4all/wp-content/uploads/2016/10/Intel-2.jpg",
+                    "alt": "*intel*",
+                    "width": 100,
+                    "height": 100,
+                    "float": null
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This injection is supported by the Intel Security Program Open Source Curriculum."
+                }
+            ]
+        },
+        {
+            "header": "Manage Responsibly",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we provide a structured technique to complete the first two steps (<i>Categorize</i> and <i>Select</i>) of the RMF. Microsoft's version of this process is called threat modeling (Howard, 2003; Meier et al, 2003; Swiderski & Snyder, 2004):"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<strong>Identify</strong> assets that your systems must protect.",
+                        "<strong>Create an architecture</strong> overview using diagrams and tables.",
+                        "<strong>Decompose the application</strong> including the underlying network and host infrastructure design, to create a security profile for the application.",
+                        "<strong>Identify the threats</strong> using the STRIDE model, an acronym for Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege.",
+                        "<strong>Document the threats</strong> using a common threat template that defines a core set of attributes to capture for each threat.",
+                        "<strong>Rate the threats</strong> to prioritize and address the most significant threats first. The rating process weighs the probability of the threat against damage that could result should an attack occur. Some threats may not warrant action when you compare the risk posed by the threat with the resulting mitigation costs."
+                    ],
+                    "ordered": true
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Question 1: Pick a company that interests you. Complete a security risk analysis for your company."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "1. Identify three of your company’s Assets (could be tangible or intangible).<br>Examples: customer database, organization reputation, building, web server, intellectual property, funds"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "2. For each asset, identify a possible Threat (negative thing that could happen, could be intentional, accidental, natural).<br>Examples: flood, theft, hacker, service unavailability"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "3. List Vulnerabilities (weaknesses that make a system more prone to attack or an attack more likely to succeed)."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "4. Determine: <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp a. Probability – likelihood of occurrence (1: Low, 2: Med, 3: High) <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp b. Harm – damage inflicted (1: Low, 2: Med, 3: High) <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp c. Risk = Probability x Harm (1-3: Low, 4-6: Med, 7-9: High)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "5. Describe steps to mitigate or control the risk."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "6. Fill out the following chart with your work:<br><br>"
+                },
+                {
+                    "type": "chart",
+                    "headers": [
+                        "1.",
+                        "2.",
+                        "3."
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "dq1",
+                    "prompt": "Why is communication important between the organizational (high-level) and IT (low-level) risk-management?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "dq2",
+                    "prompt": "When is it acceptable to not put many resources into mitigating a risk?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}

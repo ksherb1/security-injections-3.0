@@ -158,8 +158,8 @@ exports.write_3 = function(name, variant, dev) {
 //exports.write_3("Integer Error", "CS0 C++ Sample");
 //exports.write_3("Mitigating Risk", "Value Modeling");
 //exports.write_3("Healthcare Management", "Risk Management");
-exports.write_3("Healthcare Management", "HIPPA");
-//exports.write_3("Business", "Risk Assessment");
-//exports.write_3("Business", "Confidentiality, Availability, and Trust");
+//exports.write_3("Healthcare Management", "HIPPA");
+exports.write_3("Business", "Risk Assessment");
+//exports.write_3("Business", "Confidentiality, Availability, Trust");
 //exports.write_3("Business", "Business Use Security");
 //exports.write_3("Business", "Government Use Security");

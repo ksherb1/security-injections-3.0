@@ -1,0 +1,97 @@
+{
+    "name": "Business",
+    "variant": "CAT",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk- How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " "
+                }
+            ]
+        },
+        {
+            "header": "Lab Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Program 1"
+                },
+                {
+                    "type": "codeblock",
+                    "code": " "
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": []
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
