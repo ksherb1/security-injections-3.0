@@ -3,10 +3,14 @@
     "variant": "Value Modeling",
     "objectives": {
         "goals" : [
-          ""
+          "Describe how a value model can support cyber decision making",
+          "Identify relevant metrics and best practices that can be used to secure cyber systems",
+          "Discuss how and when metrics and best practices can differ by organization"
         ],
         "outcomes" : [
-          ""
+          "Apply and Analyze: Create measures and value functions for cyber metrics decision making",
+          "Remember and Understand: List metrics and best practices that are appropriate for cybersecurity for individuals",
+          "Evaluate and Synthesize: Evaluate personal security and identify opportunities for improvement"
         ]
     },
     "sections": [
@@ -15,8 +19,10 @@
             "units": [
                 {
                   "type": "author",
-                  "name": "Natalie Scala, Towson University"
+                  "name": "Natalie Scala, Towson University<br>Adapted from: <em>Best Practices in Cybersecurity: Processes and Metrics</em> - Farahani, Scala, Goethals, and Tagert (2016)"
                 },
+
+
                 {
                     "type": "subheader",
                     "text": "Summary:"
@@ -35,7 +41,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Cyber attacks and breaches can and do happen to anyone. Farahani, Scala, Goethals, and Tagert (2016) show prominent businesses in Maryland, USA that were breached over a two year window. This is just one state in the United States of America, and the reported breached organizations vary by size and economic sector."
+                    "text": "Cyber attacks and breaches can and do happen to anyone. The map below is adapted from Farahani, Scala, Goethals, and Tagert (2016), and shows prominent businesses in Maryland, USA that were breached over a two year window. This is just one state in the United States of America, and the reported breached organizations vary by size and economic sector."
                 },
                 {
                     "type": "image",
@@ -57,15 +63,15 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "How can we protect our data and secure our networks? We can use metrics and best practices to implement strong operating procedures and reliable monitoring of our systems.  The choices of metrics and best practices are vast.  The National Security Agency’s (NSA) Science of Security initiative has indexed 110 papers related to metrics and best practices as of October 2016 (SoS, 2016); the Information Assurance Directorate (IAD) of NSA suggests ten top practices (NSA IAD, 2013); and various academic journals such as Viduto, Maple, Huang, and López-Peréz (2012) and Santos, Haimes, and Lian (2007) suggest a list of metrics and best practices.  In fact, Viduto, et al. (2012) suggest twenty-four  metrics for cybersecurity, including system administration, maintaining use of passwords, firewalls, patching, and separation of duties, and Santos, at al. (2007) identify four categories of metrics: cybersecurity cost, network vulnerability, equipment downtime, and production delay."
+                    "text": "How can we protect our data and secure our networks? We can implement metrics and best practices to support strong operating procedures and reliable monitoring of our systems.  The choices of metrics and best practices are vast.  The National Security Agency’s (NSA) Science of Security initiative has indexed 110 papers related to metrics and best practices as of October 2016 (SoS, 2016); the Information Assurance Directorate (IAD) of NSA suggests ten top practices (NSA IAD, 2013); and various academic journals such as Viduto, Maple, Huang, and López-Peréz (2012) and Santos, Haimes, and Lian (2007) suggest a list of metrics and best practices.  In fact, Viduto, et al. (2012) suggest twenty-four  metrics for cybersecurity, including system administration, maintaining use of passwords, firewalls, patching, and separation of duties, and Santos, at al. (2007) identify four categories of metrics: cybersecurity cost, network vulnerability, equipment downtime, and production delay."
                 },
                 {
                     "type": "paragraph",
-                    "text": "We cannot implement everything!  No organization has enough budget, some may not have enough sophistication, time is an issue, and some metrics and best practices may not be relevant for our system.  Regardless, we need adaptive responses to the adversaries, hackers, and malicious actors."
+                    "text": "We cannot implement everything!  No organization has enough budget, some may not have enough sophistication, time is an issue, and some metrics and best practices may not be relevant for the system.  Regardless, we need adaptive responses to the adversaries, hackers, and malicious actors."
                 },
                 {
                     "type": "paragraph",
-                    "text": "How do we choose which metrics and best practices to implement?  Cyber maturity plays a role.  For example, large universities that already have some best practices in place are going to choose different metrics to add to their network vs. small businesses or casual individuals who have little or no experience in cybersecurity.  So, to help us figure out what we care about and what is appropriate for our systems, we can use a value model.  This approach will help us mitigate risk by addressing core needs to create secure systems."
+                    "text": "How do we choose which metrics and best practices to implement?  Cyber maturity plays a role.  For example, large universities that already have some best practices in place are going to choose different metrics to add to their networks vs. small businesses or casual individuals who have little or no experience in cybersecurity.  So, to help us figure out what we care about and what is appropriate for our systems, we can use a value model.  This approach will help us mitigate risk by addressing core needs to create secure systems."
                 },
                 {
                     "type": "subheader",
@@ -132,7 +138,27 @@
                         }
                     ],
                     "answer": "110"
-                }
+                },
+                {
+        					"type": "subheader",
+        					"text": "References and Further Reading:"
+        				},
+        				{
+        					"type": "list",
+        					"items": [
+                    "Svitek, P., and Anderson, N. (2014, February 19). University of Maryland computer security breach exposes 300,000 records. Retrieved from https://www.washingtonpost.com/local/college-park-shady-grove-campuses-affected-by-university-of-maryland-securitybreach/2014/02/19/ce438108-99bd-11e3-80ac-63a8ba7f7942_story.html",
+                    "Chesney, M. (2015, January 7).  WBOC Talks with Cyber Security Expert, Investigation into Attack on Station Continues.  Retrieved from http://www.wboc.com/story/27786563/wboc-talks-with-cyber-security-expert-investigation-into-attack-on-station-continues",
+                    "Farahani, J., Scala, N. M., Goethals, P., & Tagert. A. (2016). Best practices in cybersecurity: Processes and metrics. Baltimore Business Review: A Maryland Journal, 28-32.",
+                    "Goldstein, M., Abelson, R. (2015, May 20). Up to 1.1 Million Customers Could be Affected in Data Breach at Insurer CareFirst. Retrieved from http://www.nytimes.com/2015/05/21/business/carefirst-discloses-data-breach-up-to-1-1-million-customers-affected.html?_r=0",              
+                    "National Security Agency Information Assurance Directorate. IAD’s top 10 information assurance mitigation strategies.  Retrieved July 16, 2017 from https://www.sans.org/security-resources/IAD_top_10_info_assurance_mitigations.pdf",
+                    "Sanginiti, T. (2014, August 1).  Police Warn of Credit Card Cyber Attack.  Retrieved from http://www.delawareonline.com/story/news/crime/2014/08/01/police-warn-credit-card-cyber-attack/13456795/",
+                    "Santos, J. R., Haimes, Y. Y., & Lian, C. (2007). A framework for linking cybersecurity metrics to the modeling of macroeconomic interdependencies. Risk Analysis, 27(5), 1283-1297.",
+                    "Science of Security (2016). SoS documents: By topic. Retrieved August 1, 2017 from http://cps-vo.org.",
+                    "Toth, S. (2014, January 24).  Howard Schools Recover from Possible Cyber Attack.  Retrieved from http://www.baltimoresun.com/news/maryland/howard/ellicott-city/ph-ho-cf-hcpss-internet-0123-20140121-story.html",
+                    "Viduto, V., Maple, C., Huang, W., & López-Peréz, D. (2012). A novel risk assessment and optimisation model for a multi-objective network security countermeasure selection problem. Decision Support Systems, 53, 599-610."
+        					],
+        					"ordered": false
+        				}
               ]
             },
             {
@@ -140,19 +166,19 @@
                     "units": [
                         {
                             "type": "paragraph",
-                            "text": "Value focused thinking (VFT) is a decision analysis method where the decision maker brainstorms everything he or she cares about in a decision process (Keeney, 2008).  The goal is to identify values or needs that are both conscious and unconscious, without being biased by constraints, alternatives, or cost.  What we care about is then arranged into a hierarchy, with the values, or cares, referred to as attributes.  A hierarchy will show relationships and if any value is dependent on or a subset of another attribute.  Hierarchies and the VFT process allow us to organize our thoughts and clearly identify what is important in the decision process.  Further details on VFT and the related multiple objective decision analysis process can be found in Keeney (1992; 2008), Parnell (2007), Keeney & Raiffa (1976), and Kirkwood (1997)."
+                            "text": "Value focused thinking (VFT) is a decision analysis method where the decision maker brainstorms everything he or she cares about in a decision process (Keeney, 2008).  The goal is to identify values or needs that are both conscious and unconscious, without being biased by constraints, alternatives, or cost.  What we care about is then arranged into a hierarchy, with the values, or cares, referred to as measures.  A hierarchy will show relationships and if any value is dependent on or a subset of another measure.  Hierarchies and the VFT process allow us to organize our thoughts and clearly identify what is important in the decision process.  Further details on VFT and the related multiple objective decision analysis process can be found in Keeney (1992; 2008), Parnell (2007), Keeney & Raiffa (1976), and Kirkwood (1997)."
                         },
                         {
                             "type": "paragraph",
-                            "text": "We can use VFT to identify what we value in a secure cyber system in order to create a hierarchy of attributes.  Each attribute then needs a value function, which identifies the best, worst, and intermediate cases of each attribute.  The best case receives a score of 100; the worst case gets a score of 0; and intermediate cases receive scores in between, corresponding to the amount of value each case provides."
+                            "text": "We can use VFT to identify what we value in a secure cyber system in order to create a hierarchy of measures.  Each measure then needs a value function, which identifies the best, worst, and intermediate cases of each measure.  The best case receives a score of 100; the worst case gets a score of 0; and intermediate cases receive scores in between, corresponding to the amount of value each case provides."
                         },
                         {
                             "type": "paragraph",
-                            "text": "Because each organization, industry, or individual is unique, the hierarchy of attributes may be different corresponding to what they value.  To build the hierarchy, we talk to the decision makers and subject matter experts at the organization or company in order to understand what they care about when securing their cyber systems.  We take notes during the conversation, and then create the hierarchy based on what we learned."
+                            "text": "Because each organization, industry, or individual is unique, the hierarchy of measures may be different corresponding to what they value.  To build the hierarchy, we talk to the decision makers and subject matter experts at the organization or company in order to understand what they care about when securing their cyber systems.  We take notes during the conversation and then create the hierarchy based on what we learned."
                         },
                         {
                             "type": "paragraph",
-                            "text": "Simple Solutions is a company that specializes in supply chain logistics and services a number of clients with their shipping and transportation needs.  The IT Department at Simple Solutions wants to secure the company’s network and created a value hierarchy, which is shown below.  Securing the cyber systems is the overall goal, and there are six main attributes: <em>data integrity</em>, <em>end-to-end security</em>, <em>cloud based services</em>, <em>policies</em>, <em>intrusion and threat detection</em>, and <em>patch sets and hot fixes</em>.  <em>Intrusion</em> and <em>threat detection</em> has multiple components, so we break it down into two sub-attributes: <em>monitoring</em> and <em>reaction</em>."
+                            "text": "Simple Solutions is a company that specializes in supply chain logistics and services a number of clients with their shipping and transportation needs.  The IT Department at Simple Solutions wants to secure the company’s network and created a value hierarchy, which is shown below.  Securing the cyber systems is the overall goal, and there are six main measures: <em>data integrity</em>, <em>end-to-end security</em>, <em>cloud based services</em>, <em>policies</em>, <em>intrusion and threat detection</em>, and <em>vulnerability mitigation</em>.  <em>Intrusion</em> and <em>threat detection</em> has multiple components, so we break it down into two sub-measures: <em>monitoring</em> and <em>reaction</em>."
                         },
                         {
                             "type": "image",
@@ -164,11 +190,11 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "A value function is then created for each attribute, but it is created for each sub-attribute if the attribute is broken down.  We call the attributes that have value functions <em>lowest level</em> attributes, as there nothing underneath them on the hierarchy.  In this example, we create value functions for <em>data integrity</em>, <em>end-to-end security</em>, <em>cloud based services</em>, <em>policies</em>, and <em>patch sets and hot fixes</em>, but not <em>intrusion and threat detection</em>, as it has two sub-attributes.  Instead we create value functions for <em>monitoring</em> and <em>reaction</em>, for a total of seven functions relating to seven lowest level attributes."
+                            "text": "A value function is then created for each measure, but it is created for each sub-measure if the measure is broken down.  We call the measures that have value functions <em>lowest level</em> measures, as there nothing underneath them on the hierarchy.  In this example, we create value functions for <em>data integrity</em>, <em>end-to-end security</em>, <em>cloud based services</em>, <em>policies</em>, and <em>vulnerability mitigation</em>, but not <em>intrusion and threat detection</em>, as it has two sub-measures.  Instead we create value functions for <em>monitoring</em> and <em>reaction</em>, for a total of seven functions relating to seven lowest level measures."
                         },
                         {
                             "type": "paragraph",
-                            "text": "To create value functions, we once again interview decision makers and subject matter experts and ask them what they desire for each attribute.  What is the best case?  What is the worst case?  What are intermediate cases that are important, and how good are those cases?  We do this for every lowest level attribute.  As an example, the value function for <em>data integrity</em> for Simple Solutions is shown below:"
+                            "text": "To create value functions, we once again interview decision makers and subject matter experts and ask them what they desire for each measure.  What is the best case?  What is the worst case?  What are intermediate cases that are important, and how good are those cases?  We do this for every lowest level measure.  As an example, the value function for <em>data integrity</em> for Simple Solutions is shown below:"
                         },
                         {
                 					"type": "table",
@@ -213,15 +239,15 @@
                 				},
                         {
                             "type": "paragraph",
-                            "text": "Therefore, the best case for <em>data integrity</em> is a metric or best practice that can support existence of both security and access permissions and transaction or version logs, and has or uses an audit process.  Those metrics or best practices would score 100 points.  An example of an intermediate case is a metric or best practice that supports the existence of only transaction and version logs; that metric or best practice would receive only 30 points."
+                            "text": "Therefore, the best case for <em>data integrity</em> is a metric or best practice that can support existence of both security and access permissions and transaction or version logs and has or uses an audit process.  Those metrics or best practices would score 100 points.  An example of an intermediate case is a metric or best practice that supports the existence of only transaction and version logs; that metric or best practice would receive only 30 points."
                         },
                         {
                             "type": "paragraph",
-                            "text": "Because our overall goal is to identify which metrics and best practices we should implement to support secure cyber systems, we then evaluate our alternatives, in this case our list of metrics and best practices, against the value functions to see how they perform for every lowest level attribute.  For example, we can use the Information Assurance top 10 practices and evaluate each of them against every lowest level attribute.  In this case, for <em>data integrity</em>, we have <em>application whitelisting</em> receiving a score of 70, as whitelisting supports security and access permissions (50 points) and audit access (20 points).  Similarly, <em>control administrative privileges</em> receives a score of 100 for <em>data integrity</em>, as it supports everything: security and access permissions (50 points), audit access (20 points), and existence of transaction and version logs (30 points)."
+                            "text": "Because our overall goal is to identify which metrics and best practices we should implement to support secure cyber systems, we then evaluate our alternatives, in this case our list of metrics and best practices, against the value functions to see how they perform for every lowest level measure.  For example, we can use the Information Assurance top 10 practices and evaluate each of them against every lowest level measure.  In this case, for <em>data integrity</em>, we have <em>application whitelisting</em> receiving a score of 70, as whitelisting supports security and access permissions (50 points) and audit access (20 points).  Similarly, <em>control administrative privileges</em> receives a score of 100 for <em>data integrity</em>, as it supports everything: security and access permissions (50 points), audit access (20 points), and existence of transaction and version logs (30 points)."
                         },
                         {
                             "type": "paragraph",
-                            "text": "To determine our final answer, for every metric or best practice, we multiply the score it received on an attribute by the weight of the attribute, and add them all up.  Mathematically, this is: "
+                            "text": "To determine our final answer, for every metric or best practice, we multiply the score it received on a measure by the weight of the measure, and add them all up.  Mathematically, this is: "
                         },
                         {
                             "type": "image",
@@ -233,7 +259,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "where  <em>w<sub>i</sub></em> is the weight of attribute <em>i</em> and <em>v<sub>ia</sub></em> is the value for attribute <em>i</em> from the value function, with <em>m</em> total attributes.  The weights for the lowest level attributes can be elicited from the decision maker or subject matter expert, or can be found using a mathematical formula called rank order centroid.  That formula is:"
+                            "text": "where  <em>w<sub>i</sub></em> is the weight of measure <em>i</em> and <em>v<sub>ia</sub></em> is the value for measure <em>i</em> from the value function, with <em>m</em> total measures.  The weights for the lowest level measures can be elicited from the decision maker or subject matter expert, or can be found using a mathematical formula called rank order centroid.  That formula is:"
                         },
                         {
                             "type": "image",
@@ -245,18 +271,18 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "(Barron, 1992). If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the attribute weights are shown below and were found using the rank order centroid method."
+                            "text": "(Barron, 1992). If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the measure weights are shown below and were found using the rank order centroid method."
                         },
                         {
                 					"type": "table",
                 						"headers":[
-                							"<strong>Attribute</strong>",
+                							"<strong>Measure</strong>",
                 							"<strong>Weight</strong>"
                 						],
                 						"cells":[
                 							{
                 						    "first": "End-to-end security",
-                							 	"second": "0.37"
+                							 	"second": "0.370"
                 							},
                               {
                 						    "first": "Cloud based services",
@@ -267,7 +293,7 @@
                 							 	"second": "0.156"
                 							},
                               {
-                						    "first": "Patch sets / hot fix",
+                						    "first": "Vulnerability mitigation",
                 							 	"second": "0.109"
                 							},
                               {
@@ -280,13 +306,13 @@
                 							},
                 							{
                 						    "first": "Policies",
-                							 	"second": "0.02"
+                							 	"second": "0.020"
                 							}
                 				 		]
                 				},
                         {
                             "type": "paragraph",
-                            "text": "For Simple Solutions, <em>data integrity</em> has a weight of 0.156.  Then for <em>application whitelisting</em>, we take 70 * 0.156 for <em>data integrity</em> and add it to the other six attributes.  Doing so gives us the final list of metrics and best practices scores, organized from highest to lowest:"
+                            "text": "For Simple Solutions, <em>data integrity</em> has a weight of 0.156.  Then for <em>application whitelisting</em>, we take 70 * 0.156 for <em>data integrity</em> and add it to the other six measures.  Doing so gives us the final list of metrics and best practices scores, organized from highest to lowest:"
                         },
                         {
                 					"type": "table",
@@ -296,12 +322,12 @@
                 						],
                 						"cells":[
                 							{
-                						    "first": "Control Administrative privileges",
+                						    "first": "Control administrative privileges",
                 							 	"second": "81.092  #1"
                 							},
                 							{
                 						    "first": "Limit workstation-to-workstation communication",
-                							 	"second": "78.86  #2"
+                							 	"second": "78.860  #2"
                 							},
                               {
                 						    "first": "Take advantage of software improvements",
@@ -343,7 +369,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "Once we have the metrics and best practices arranged in rank order based on value, we can then make a recommendation regarding what to implement.  In this example, <em>control administrative privileges</em> is #1, and best supports what Simple Solutions cares about in securing their cyber systems.  <em>Limit workstation-to-workstation communication</em> is in second place, followed by <em>take advantage of software improvements</em>, and so on.  A company can then implement these metrics and best practices in order from highest rank to lowest rank until they run out of budget, time, or other resources.  If they implement all of them, they can then use the model to create a new list of additional metrics.  They could also evaluate another list of metrics and best practices before implementing this list, to see if other ones score higher, which would mean more impact on value.  Finally, if the values of the company or organization change, the hierarchy and value functions can be updated, with the model then used to suggest the preferred metrics and best practices to support secure cyber systems under the new conditions."
+                            "text": "Once we have the metrics and best practices arranged in rank order based on value, we can then make a recommendation regarding what to implement.  In this example, <em>control administrative privileges</em> is #1 and best supports what Simple Solutions cares about in securing their cyber systems.  <em>Limit workstation-to-workstation communication</em> is in second place, followed by <em>take advantage of software improvements</em>, and so on.  A company can then implement these metrics and best practices in order from highest rank to lowest rank until they run out of budget, time, or other resources.  If they implement all of them, they can then use the model to create a new list of additional metrics.  They could also evaluate another list of metrics and best practices before implementing this list, to see if other ones score higher, which would mean more impact on value.  Finally, if the values of the company or organization change, the hierarchy and value functions can be updated, with the model then used to suggest the preferred metrics and best practices to support secure cyber systems under the new conditions."
                         },
 
                         {
@@ -356,8 +382,8 @@
                         },
                         {
                             "type": "question",
-                            "id": "attributeSS",
-                            "prompt": "Which of the following is not an attribute on a value hierarchy for Simple Solutions?",
+                            "id": "measureSS",
+                            "prompt": "Which of the following is not a measure on a value hierarchy for Simple Solutions?",
                             "ignored": false,
                             "mode": "checkbox",
                             "choices": [
@@ -368,7 +394,7 @@
                                 },
                                 {
                                     "id": "patch",
-                                    "text": "Patch sets and hot fixes",
+                                    "text": "Vulnerability mitigation",
                                     "ans": false
                                 },
                                 {
@@ -444,7 +470,24 @@
                                 }
                             ],
                             "answer": "false"
-                        }
+                        },
+                        {
+                					"type": "subheader",
+                					"text": "References and Further Reading:"
+                				},
+                				{
+                					"type": "list",
+                					"items": [
+                              "Barron, F. H. (1992). Selecting a best multiattribute alternative with partial information about attribute weights. Acta Psychologica, 80, 91-103.",
+                              "Keeney, R. L. (1992). Value-focused thinking: A path to creative decisionmaking. Cambridge, Massachusetts: Harvard University Press.",
+                              "Keeney, R. L. (2008). Applying value-focused thinking. Military Operations Research, 13(2), 7-17.",
+                              "Keeney, R. L., & Raiffa, H. (1976). Decisions with multiple objectives: Preferences and value tradeoffs. New York, NY: Wiley.",
+                              "Kirkwood, C. W. (1997). Strategic decision making: Multiobjective decision analysis with spreadsheets. Belmont, California: Duxbury Press.",
+                              "Parnell, G. (2007). Value-focused thinking using multiple objective decision analysis. In A. G. Loerch, & L. B. Rainey (Eds.), Methods for conducting military operational analysis: Best practices in use throughout the Department of Defense. Alexandria, Virginia: Military Operations Research Society, 619-656.",
+                              "Scala, N., Manuel, E., Fredman, R., Farahani, J., & Goethals, P. (2017). A value model for implementing cyber metrics and best practices. Symposium and Bootcamp on the Science of Security.  Poster retrieved August 1, 2017 from https://cps-vo.org/node/34167"
+                					],
+                					"ordered": false
+                				}
                     ]
                 },
                 {
@@ -456,7 +499,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "<br>Identify three attributes or values that are important to you in securing your personal cybersecurity.  What characteristics of your personal cyber systems (devices) are needed in order to secure your personal data?"
+                            "text": "<br>Identify three measures or values that are important to you in securing your personal cybersecurity.  What characteristics of your personal cyber systems (devices) are needed in order to secure your personal data?"
                         },
                         {
                             "type": "question",
@@ -468,7 +511,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "Then for each attribute or value, create a value function.  Identify the best case and worst case for each attribute.  Also identify intermediate cases.  What are the corresponding values, on a scale from 0-100, for each case?"
+                            "text": "Then for each measure or value, create a value function.  Identify the best case and worst case for each measure.  Also identify intermediate cases.  What are the corresponding values, on a scale from 0-100, for each case?"
                         },
                         {
                             "type": "question",
@@ -480,7 +523,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "Think about how these attributes or values can affect online behavior.  Now that you are aware of what you care about, will you make any changes to how you approach your personal cybersecurity?"
+                            "text": "Think about how these measures or values can affect online behavior.  Now that you are aware of what you care about, will you make any changes to how you approach your personal cybersecurity?"
                         },
                         {
                             "type": "question",
@@ -501,7 +544,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "Consider the following list of metrics, which are adapted from Farahani, et al. (2017) and the IAD top 10 list (NSA IAD, 2013)."
+                            "text": "Consider the following list of metrics, which are adapted from Farahani, et al. (2016) and the IAD top 10 list (NSA IAD, 2013)."
                         },
                         {
                 					"type": "table",
