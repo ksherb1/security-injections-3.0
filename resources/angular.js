@@ -321,6 +321,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
  * 	classify as correct or incorrect (to trigger CSS changes)
  * IF all answers are correct, enable 'continue' button
  */
+var needChecked = false;
 $scope.checkAnswers = function() {
 	var perfect = true;		// true if all questions/checklists are correct
 
@@ -422,6 +423,20 @@ $scope.checkAnswers = function() {
 	 *
 	 * PARAMETERS: i - the new section index
 	 */
+
+	 $scope.checkButtons = function(i) {
+		needChecked = false;
+ 		for (j in $scope.module.sections[i].units) {
+ 			unit = $scope.module.sections[i].units[j];
+ 			if((unit.type == "question")|| (unit.type == "checklist")) {
+ 				needChecked = true;
+ 			}
+ 		}
+		if (needChecked == false) {
+			$scope.checkAnswers();
+		}
+ 		return needChecked;
+ }
 	$scope.gotoSection = function(i) {
 		if(i <= $scope.sectionscompleted) {
 			$scope.currentsectionIndex = i;
@@ -430,7 +445,9 @@ $scope.checkAnswers = function() {
 		} else {
 			console.log("Cannot go to section "+i+": may only go up to section "+$scope.sectionscompleted);
 		}
+		$("body").animate({ scrollTop: 0 }, 500);
 	}
+
 
 	/**
 	 * Simple form of certificate, without Towson logo or fancy placement
