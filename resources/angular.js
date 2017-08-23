@@ -6,7 +6,7 @@
  */
 
 var app = angular.module("modApp", ['ngSanitize', 'ngCookies','vcRecaptcha']);		// the angular "app"
-app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce, vcRecaptchaService) {	// the angular "controller"
+app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scope, $http, $cookies, $sce) {	// the angular "controller"
 
 	/**
 	 * helper method to initialize module object
@@ -631,45 +631,94 @@ function loadCoverPage(){
 	$scope.coverPageFrame = $sce.trustAsResourceUrl(coverPageUri);
 }
 
+}]);
+
+app.controller('ContactController', ["$scope", "$http", function ($scope, $http, vcRecaptchaService) {
+  $scope.result = 'hidden'
 	$scope.response = null;
 	$scope.widgetId = null;
 	$scope.model = {
 	    key: '6LeLFC0UAAAAAGydkJ0GKYV2pjOdyjtlMzxPCq0X'
 	};
-	$scope.setResponse = function (response) {
-	    console.info('Response available: %s', response);
-			$scope.response = response;
-	};
-	$scope.setWidgetId = function (widgetId) {
-	    //console.info('Created widget ID: %s', widgetId);
-	    $scope.widgetId = widgetId;
-	};
-	$scope.sendFeedback = function () {
-			var formData = this;
-			if($scope.response === null){ //if string is empty
-							 alert("Please resolve the captcha and submit!")
-			}
-			else{
-				var post_data = {  //prepare payload for request
-	          'name':formData.feedback.name,
-	          'email':formData.feedback.email,
-	          'text':formData.feedback.text,
-	          'response':$scope.response  //send g-captcah-reponse to our server
-	      };
-		    /**
-		     * SERVER SIDE VALIDATION
-		     *
-		     * You need to implement your server side validation here.
-		     * Send the reCaptcha response to the server and use some of the server side APIs to validate it
-		     * See https://developers.google.com/recaptcha/docs/verify
-		     */
-				console.log("Valid response");
-		    //console.log('sending the captcha response to the server', $scope.response);
+  $scope.resultMessage;
+  $scope.formData; //formData is an object holding the name, email, subject, and message
+  $scope.submitButtonDisabled = false;
+  $scope.submitted = false; //used so that form  errors are shown only after the form has been submitted
+  $scope.submit = function(contactform, e) {
+			e.preventDefault();
+      $scope.submitted = true;
+      $scope.submitButtonDisabled = true;
+      if (contactform.$valid) {
+          $http({
+              method  : 'POST',
+              url     : 'http://cis1.towson.edu/~cyber4all/modules/scripts/contact-form.php',
+              data    : $.param($scope.formData),  //param method from jQuery
+              headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
+          }).success(function(data){
+              console.log(data);
+              if (data.success) { //success comes from the return json object
+                  $scope.submitButtonDisabled = true;
+                  $scope.resultMessage = data.message;
+                  $scope.result='bg-success';
+              } else {
 
-				//Need to then send email.
+                    $scope.submitButtonDisabled = false;
 
+                    $scope.resultMessage = data.message;
 
-			}
-	};
+                    $scope.result='bg-danger';
 
+                }
+
+            });
+
+        } else {
+
+            $scope.submitButtonDisabled = false;
+
+            $scope.resultMessage = 'Please fill out the form completely.';
+
+            $scope.result='bg-danger';
+
+        }
+
+    };
+		$scope.setResponse = function (response) {
+		    console.info('Response available: %s', response);
+				$scope.response = response;
+		};
+		$scope.setWidgetId = function (widgetId) {
+		    //console.info('Created widget ID: %s', widgetId);
+		    $scope.widgetId = widgetId;
+		};
+		$scope.sendFeedback = function () {
+				var formData = this;
+				console.log(formData.feedback.name);
+				console.log(formData.feedback.email);
+				console.log(formData.feedback.text);
+				console.log($scope.response);
+				if($scope.response === null){ //if string is empty
+								 alert("Please resolve the captcha and submit!")
+				}
+				else{
+					var post_data = {  //prepare payload for request
+		          'name':formData.feedback.name,
+		          'email':formData.feedback.email,
+		          'text':formData.feedback.text,
+		          'response':$scope.response  //send g-captcah-reponse to our server
+		      };
+			    /**
+			     * SERVER SIDE VALIDATION
+			     *
+			     * You need to implement your server side validation here.
+			     * Send the reCaptcha response to the server and use some of the server side APIs to validate it
+			     * See https://developers.google.com/recaptcha/docs/verify
+			     */
+					console.log("Valid response");
+			    //console.log('sending the captcha response to the server', $scope.response);
+
+					//Need to then send email.
+
+				}
+		};
 }]);
