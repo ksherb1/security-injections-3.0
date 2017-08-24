@@ -6,12 +6,16 @@
             "header": "Background",
             "units": [
                 {
+                    "type": "author",
+                    "name": "Barin Nag, Towson University"
+                },
+                {
                     "type": "subheader",
                     "text": "Summary:"
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "The use of the Internet for transaction, collaboration, and communication, in government work is growing as rapidly as it is in business. It is known as e-Government and comprises the entire range of collaborative work and information sharing as used by businesses. Although government work has the responsibility of transparency and accountability to oversight agencies, conditions of confidentiality and security is required for much of the internal communication and collaboration. Cybersecurity violations can expose vital information and can potentially have grave consequences in the government's ability to function with friendly or less-than-friendly governments."
                 },
                 {
                     "type": "subheader",
@@ -19,7 +23,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "No section of a government can work in isolation. For a government department or agency to function effectively, staff members at all levels need to share documents, information, and messages, with staff members in other departments or agencies, or with corporations as contractors. The Intranet or internal network of the agency is the same TCP/IP protocol environment as the general Internet, and is subject to the same security threats unless strict security protocols are used. Thus government documents become vulnerable to hacking and penetration by other governments, or even covert agencies supported by other governments, unless measures are taken that may include intrusion prevention and encryption."
                 },
                 {
                     "type": "subheader",
@@ -27,7 +31,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "It is unfortunate that information contained in a government document or communication can be more valuable than physical property to a foreign government, who may actively seek to penetrate the network. Thus, it is common to expect that foreign governments or their agencies may seek to penetrate the network and extract information for their own advantages. It should also be noted that these threats to cybersecurity often have more resources than ordinary businesses and less liability under international law."
                 },
                 {
                     "type": "subheader",
@@ -35,7 +39,97 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "Ms C. Lahiry is a very senior official in the US Federal Government. For security reasons we shall not disclose the department she is in or the capacity in which she works. She has the responsibility of developing policies for the interactions of the US government and its personnel with the agencies and departments of other branches of the US government and with those of many friendly and not-so-friendly governments around the world. In her official capacity she also makes tactical decisions in matters such as budgets and priorities in some major plans and events. However, operational decisions relating to the matters such as the specifics of personnel deployment, are done by lower level staff members without her knowledge."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Given the position that Ms Lahiry is in and considering the decisions she has to make, a high level of security is maintained around the entire computing environment that includes her personal computer, the computers used by her close associates, and the servers that they work on. Because of the hours she works, to make it convenient for her a private server was set up for her sole use with the same security conditions."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It would appear that all attention was given to security. She did make one small mistake in that she did use the private server for some personal emails."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "bq1",
+                    "prompt": "Which of the following statements best describes the importance of cybersecurity in government functions?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cyber",
+                            "text": "Cybersecurity is of paramount importance because the functions of the government affect the nation and the millions of people that make up the nation."
+                        },
+                        {
+                            "id": "gov",
+                            "text": "Government cybersecurity is not as important as personal cybersecurity as ID theft can ruin a person's life."
+                        },
+                        {
+                            "id": "important",
+                            "text": "Governments only work with forms. Cybersecurity is not important."
+                        },
+                        {
+                            "id": "business",
+                            "text": "Cybersecurity is more important for a business than for a government because the business has to survive in the competitive environment."
+                        }
+                    ],
+                    "answer": " "
+                },
+                {
+                    "type": "question",
+                    "id": "bq2",
+                    "prompt": "Which of the following statements would you associate with the question that security was violated?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id":  "genuine",
+                            "text": "It was all done in the course of genuine work and should not be considered negatively."
+                        },
+                        {
+                            "id": "irrelevant",
+                            "text": "The security violation was irrelevant."
+                        },
+                        {
+                            "id": "lay",
+                            "text": "She made a lay person's mistake of sending personal email on a secure server that might open a door to a threat."
+                        },
+                        {
+                            "id": "gross",
+                            "text": "She should be convicted of a gross violation of cybersecurity."
+                        }
+                    ],
+                    "answer": " "
+                },
+                {
+                    "type": "question",
+                    "id": "bq3",
+                    "prompt": "User error is considered to be one of the largest problems in cybersecurity as well as in almost every category of IT failure. Which of the following steps would have most likely prevented the cybersecurity problem?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "post",
+                            "text": "Post a sign on the computer not to do personal emails from the office."
+                        },
+                        {
+                            "id": "block",
+                            "text": "Block personal emails at the server level and notify the user."
+                        },
+                        {
+                            "id": "disconnect",
+                            "text": "Disconnect the computer. Use only handwritten notes."
+                        },
+                        {
+                            "id": "instruct",
+                            "text": "Instruct the user about personal email, block personal emails at the server level and notify the user."
+                        }
+                    ],
+                    "answer": " "
                 }
             ]
         },

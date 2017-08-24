@@ -6,12 +6,16 @@
             "header": "Background",
             "units": [
                 {
+                    "type": "author",
+                    "name": "Barin Nag, Towson University"
+                },
+                {
                     "type": "subheader",
                     "text": "Summary:"
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "Businesses commonly use Internet to access a variety of data and to perform transactions internally and externally. The Internet becomes the communications medium that links internal communications with the outside world. We discuss here the cybersecurity infrastructure and architecture that is associated with procedures and applications."
                 },
                 {
                     "type": "subheader",
@@ -19,7 +23,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "Businesses invest money to build a networking infrastructure and then build a networking and communication system on this infrastructure to support business activities. In today's environment, extensive use is made internal communication via the Intranet and external communication via the Internet. An open architecture, as often used earlier, might have been good for data access. With the increased number of threats as found today, the open architecture can expose data and other assets to attacks. We discuss business use of networking that protects the assets without hindering normal work."
                 },
                 {
                     "type": "subheader",
@@ -27,7 +31,23 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "There are a number of possibilities that may lead to undesirable situations, as follows: "
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Malicious destructive attack on network",
+                        "Systematic penetration to steal data",
+                        "Improper procedures to secure data",
+                        "Complacence, network designed without security measures",
+                        "Data integrated without partitions",
+                        "Inadequate oversight of insiders"
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The list is not necessarily complete."
                 },
                 {
                     "type": "subheader",
@@ -35,7 +55,108 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " "
+                    "text": "Ryan Chalak has recently taken charge of IT at Sun Health Systems which provides health care services over a region of the US. Because of the nature of their work, Sun Health holds in its database a large volume of patient information which has to be very secure as mandated by federal law. They also have other volumes of data that do not require the same level of security. Most of the data comes to the database at the head office from remote locations all over the region. However, the remote locations need access to the data to do their work."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ryan calls in a security consultant who has worked with defense contractors and they make a number of recommendations as follows:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "All the data should be transported through secure VPN tunnels.",
+                        "In addition to the existing firewalls there should be Intrusion Protection Systems (IPS).",
+                        "The network should be partitioned so a compromised segment can be isolated.",
+                        "The data should be segmented and partitioned with the highest security applied to only those parts that need the high security.",
+                        "Network administrators and personnel who have access to the secure data should be supervised."                        
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ryan took the recommendations to the Vice President who said that they were only providing health care and were not defense contractors. He could only provide money for some things."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "bq1",
+                    "prompt": "Considering that the VP has agreed to doing some of the work, what should Ryan do?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "worry",
+                            "text": "He should not worry unnecessarily. Nothing has happened so far."
+                        },
+                        {
+                            "id": "resign",
+                            "text": "He should resign. The company is in serious danger and it will be his responsibility."
+                        },
+                        {
+                            "id": "if",
+                            "text": "If all of the security measures cannot be done there will be so many holes that there is no point in doing anything."
+                        },
+                        {
+                            "id": "should",
+                            "text": "He should get a prioritization from the consultant, get the budgets, and negotiate with the VP for a phased approach."
+                        }
+                    ],
+                    "answer": " "
+                },
+                {
+                    "type": "question",
+                    "id": "bq2",
+                    "prompt": "A general approach to guarding data from cyberattacks and penetration threats is to segment and partition. Which of the following best describes the reason for this?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "security",
+                            "text": "Security can be focused and the most valuable data can be held most secure as in a vault."
+                        },
+                        {
+                            "id": "nobody",
+                            "text": "Nobody wants all the data. There is no point in keeping it together."
+                        },
+                        {
+                            "id": "one",
+                            "text": "One database may not have enough space for all data, and it is better to segment and separate."
+                        },
+                        {
+                            "id": "use",
+                            "text": "Use multiple databases so that if one is down the others are still available."
+                        }
+                    ],
+                    "answer": " "
+                },
+                {
+                    "type": "question",
+                    "id": "bq3",
+                    "prompt": "At least one of the consultant's recommendations can be implemented without any major budget outlay. This is the supervision of people with network access capabilities and access to sensitive data. What is the best approach in this respect?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "jobs",
+                            "text": "These jobs should be held only by friends and family of senior management."
+                        },
+                        {
+                            "id": "people",
+                            "text": "They are people and their privacy should be respected."
+                        },
+                        {
+                            "id": "everyone",
+                            "text": "Everyone in a secure environment must submit to vetting, supervision, and audit."
+                        },
+                        {
+                            "id": "all",
+                            "text": "All people should be encouraged to spy on their coworkers."
+                        }
+                    ],
+                    "answer": " "
                 }
             ]
         },
