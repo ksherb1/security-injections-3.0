@@ -19,7 +19,7 @@ var port = 8000;					//  which port to listen for requests on
 var express = require('express');	// simple node web server
 var cors = require('cors');			// CORS validation
 
-
+const path = require('path');
 
 var app = express();
 
@@ -30,12 +30,10 @@ var allowedContentRequests = {
 }
 
 // serve module content with cors compatibility
-// TODO: we may want to do this static serving in apache instead
 app.use('/', cors(allowedContentRequests), (req,res,next) => {
-	console.log("* Received request: "+req);
-	// TODO: more sophisticated logging
-	next();
-}, express.static('public'));
+  //Update the sendfile function to return the file you are working on
+  res.sendFile(path.join(__dirname, 'public/securityinjections/Computer_Literacy-Passwords.html'));
+});
 
 // TODO: database update, with suitable validation
 
