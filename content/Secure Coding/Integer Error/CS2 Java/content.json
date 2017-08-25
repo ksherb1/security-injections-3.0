@@ -117,22 +117,18 @@
             "units": [
                 {
                     "type": "subheader",
-                    "text": "How can I avoid an Integer Error?"
+                    "text": "How Can I Avoid an Integer Error?"
                 },
                 {
                     "type": "list",
                     "items": [
                         "<i><strong>Know your limits</i></strong>: Familiarize yourself with the ranges available for each data type. Since the size of data types is compiler and machine dependent, it is a good idea to run this sample program to show you the limits of each variable type.<br><br><code>import java.util.Scanner; <br> public class IntegerCheck { <br> &nbsp&nbsp&nbsp&nbsp public static void main(String[] args) { <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Scanner scan = new Scanner(System.in); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp int i; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp byte b; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp short sh; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp long lon; <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid integer is between \" + Integer.MIN_VALUE + \" and \" + Integer.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid byte    is between \" + Byte.MIN_VALUE + \" and \" + Byte.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid short   is between \" + Short.MIN_VALUE + \" and \" + Short.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.println(\"Valid long    is between \" + Long.MIN_VALUE + \" and \" + Long.MAX_VALUE ); <br> &nbsp&nbsp&nbsp&nbsp } <br>}</code><br>",
                         "<i><strong>Validate your input</i></strong>: Check input for range and reasonableness before conducting operations (more on this later).",
-                        "<i><strong>Check for possible overflows</i></strong>: Always check results of arithmetic operations or parsing of strings to integers, to be sure that an overflow has not occurred. The result of multiplying two positive integers should be at least as big as both of those integers. If you find a result that overflows, you can take appropriate action before the result is used. Imagine you were adding two positive integers. Instead of writing:<br><br><code>int sum = someInteger + someOtherInteger;</code><br><br>You might try this instead:<br><br><code>if (((someInteger >0) && (someOtherInteger >0) && (some Integer> (Integer.MAX_VALUE-someOtherInteger))) ||<br>&nbsp&nbsp&nbsp&nbsp((someInteger <0) && (someOtherInteger <0) && (someInteger < (Integer.MIN_VALUE-someOtherInteger)))) {<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp// throw an exception to handle the problem}<br>else   //  no exception, so no overflow.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  int sum = someInteger+someOtherInteger;<br></code><br>This won't completely solve the problem – you'll need to recover from the exception. As these tests can become fairly complex[1], you should be careful when relying upon manual checks for preventing integer overflow.",
+                        "<i><strong>Check for possible overflows</i></strong>: Always check results of arithmetic operations or parsing of strings to integers, to be sure that an overflow has not occurred. The result of multiplying two positive integers should be at least as big as both of those integers. If you find a result that overflows, you can take appropriate action before the result is used. Imagine you were adding two positive integers. Instead of writing:<br><br><code>int sum = someInteger + someOtherInteger;</code><br><br>You might try this instead:<br><br><code>if (((someInteger >0) && (someOtherInteger >0) && (some Integer> (Integer.MAX_VALUE-someOtherInteger))) ||<br>&nbsp&nbsp&nbsp&nbsp((someInteger <0) && (someOtherInteger <0) && (someInteger < (Integer.MIN_VALUE-someOtherInteger)))) {<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp// throw an exception to handle the problem}<br>else   //  no exception, so no overflow.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  int sum = someInteger+someOtherInteger;<br></code><br>This won't completely solve the problem – you'll need to recover from the exception. As these tests can become fairly complex, you should be careful when relying upon manual checks for preventing integer overflow.",
                         "<i><strong>Use compiler checks</i></strong>: Many compilers include options that can be used to check for possible integer overflows. Read the documentation for your compiler and use these functions whenever possible.",
                         "<i><strong>Use libraries that will help you avoid errors</i></strong>: C++ programmers might use the SafeInt class, which tests for errors before conducting operations. Java programmers can use the BigInteger class to conduct arbitrary-precision integer operations that might go beyond the bounds of long integers."
                     ],
                     "ordered": true
-                },
-                {
-                    "type": "paragraph",
-                    "text": "<small><small><small>[1]See <a href = https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow>https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow</a> for examples of solutions for other operations.</small></small></small>"
                 },
                 {
                     "type": "question",
@@ -368,7 +364,7 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion5",
-                    "prompt": "Write a version of program 1 that still uses short variables to store results, and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the short variables.",
+                    "prompt": "Write a version of Program 1 that still uses short variables to store results and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the short variables.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

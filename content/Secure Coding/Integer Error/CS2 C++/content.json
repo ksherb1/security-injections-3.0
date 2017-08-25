@@ -119,7 +119,7 @@
             "units": [
                 {
                     "type": "subheader",
-                    "text": "How can I avoid an Integer Error?"
+                    "text": "How Can I Avoid an Integer Error?"
                 },
                 {
                     "type": "list",
@@ -135,7 +135,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small><small><small>[1]See <a href = https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow>https://www.securecoding.cert.org/confluence/display/cplusplus/INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow</a> for examples of solutions for other operations.</small></small></small>"
+                    "text": "<small><small><small>[1]See <a href = https://www.securecoding.cert.org/confluence/display/cplusplus/VOID+INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow >https://www.securecoding.cert.org/confluence/display/cplusplus/VOID+INT32-CPP.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow</a> for examples of solutions for other operations.</small></small></small>"
                 },
                 {
                     "type": "question",
@@ -371,7 +371,7 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion5",
-                    "prompt": "Write a version of program 1 that still uses short variables to store results, and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the short variables.",
+                    "prompt": "Write a version of Program 1 that still uses short variables to store results and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the short variables.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

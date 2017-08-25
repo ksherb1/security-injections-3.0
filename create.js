@@ -20,7 +20,7 @@ exports.write_3 = function(name, variant, dev) {
 	if(typeof(dev)==='undefined') dev = false;		// default value for dev
 
 	// CONSTANTS
-	var contentDir = "content/Interdisciplinary/";
+	var contentDir = "content/Secure Coding/";
 	var resourceDir = "resources/";
 	var publicDir = "public/";
 	var moduleDir = publicDir+"securityinjections/";
@@ -112,13 +112,13 @@ exports.write_3 = function(name, variant, dev) {
 
 //Phase 2: module should not have "MAIN"
 // MAIN
-//exports.write_3("Integer Error", "CS0 C++");
-//exports.write_3("Integer Error", "CS0 Java");
-//exports.write_3("Integer Error", "CS0 Pseudocode");
-//exports.write_3("Integer Error", "CS1 C++");
-//exports.write_3("Integer Error", "CS1 Java");
-//exports.write_3("Integer Error", "CS2 C++");
-//exports.write_3("Integer Error", "CS2 Java");
+exports.write_3("Integer Error", "CS0 C++");
+exports.write_3("Integer Error", "CS0 Java");
+exports.write_3("Integer Error", "CS0 Pseudocode");
+exports.write_3("Integer Error", "CS1 C++");
+exports.write_3("Integer Error", "CS1 Java");
+exports.write_3("Integer Error", "CS2 C++");
+exports.write_3("Integer Error", "CS2 Java");
 //exports.write_3("Input Validation", "CS0 C++");
 //exports.write_3("Input Validation", "CS0 Java");
 //exports.write_3("Input Validation", "CS0 Python");
@@ -156,7 +156,7 @@ exports.write_3 = function(name, variant, dev) {
 //exports.write_3("Industrial Control Systems", "Introduction");
 //exports.write_3("Mobile Risk Management", "Introduction");
 //exports.write_3("Integer Error", "CS0 C++ Sample");
-exports.write_3("Mitigating Risk", "Value Modeling");
+//exports.write_3("Mitigating Risk", "Value Modeling");
 //exports.write_3("Healthcare Management", "Risk Management");
 //exports.write_3("Healthcare Management", "HIPPA");
 //exports.write_3("Business", "Risk Assessment");

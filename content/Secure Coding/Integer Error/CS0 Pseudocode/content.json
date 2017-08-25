@@ -7,7 +7,7 @@
 			"units": [
 				{
 					"type": "subheader",
-					"text": "Summary"
+					"text": "Summary:"
 				},
 				{
 					"type": "paragraph",
@@ -29,7 +29,7 @@
 				},
 				{
 					"type": "subheader",
-					"text": "Description"
+					"text": "Description:"
 				},
 				{
 					"type": "paragraph",
@@ -41,7 +41,7 @@
 				},
 				{
 					"type": "subheader",
-					"text": "Risk - How can it happen?"
+					"text": "Risk - How Can It Happen?"
 				},
 				{
 					"type": "paragraph",
@@ -120,7 +120,7 @@
 			"units": [
 				{
 					"type": "subheader",
-					"text": "How can I avoid an Integer Error?"
+					"text": "How Can I Avoid an Integer Error?"
 				},
 				{
 					"type": "list",
@@ -367,7 +367,7 @@
 				{
 					"type": "question",
 					"id": "largest",
-					"prompt": "What is the largest possible value of type int? Explain your answer using the information you read in the Background section.",
+					"prompt": "What is the largest possible value of type int? Explain your answer using the information you read in the background section.",
 					"ignored": true,
 					"mode": "textarea",
 					"pattern": null
@@ -407,7 +407,7 @@
 				{
 					"type": "question",
 					"id": "problem",
-					"prompt": "For which of these would the int data type be a problem: Population of the US, population of the world or US national debt?",
+					"prompt": "For which of these would the int data type be a problem: population of the US, population of the world or US national debt?",
 					"ignored": true,
 					"mode": "textarea",
 					"pattern": null
@@ -415,7 +415,7 @@
 				{
 					"type": "question",
 					"id": "Comair",
-					"prompt": "Discuss the Comair problem described in background section. What are the repercussions of such a problem?",
+					"prompt": "Discuss the Comair problem described in the background section. What are the repercussions of such a problem?",
 					"ignored": true,
 					"mode": "textarea",
 					"pattern": null

@@ -124,7 +124,7 @@
             "units": [
                 {
                     "type": "subheader",
-                    "text": "How can I avoid an Integer Error?"
+                    "text": "How Can I Avoid an Integer Error?"
                 },
                 {
                     "type": "list",
@@ -393,14 +393,14 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion5",
-                    "prompt": "Overflow can also occur when the dividend is equal to the minimum (negative) value for the signed integer type and the divisor is equal to -1. Demonstrate this problem adding the following lines to the end of the above program.<br><br><code>cout << \"INTEGER OVERFLOW: i = \" << INT_MIN/-1 << endl;</code>",
+                    "prompt": "Overflow can also occur when the dividend is equal to the minimum (negative) value for the signed integer type and the divisor is equal to -1. Demonstrate this problem adding the following lines to the end of the above program:<br><br><code>cout << \"INTEGER OVERFLOW: i = \" << INT_MIN/-1 << endl;</code>",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
                 },
                 {
                     "type": "subheader",
-                    "text": "For each of the following give the appropriate Java declaration:"
+                    "text": "For each of the following, give the appropriate C++ declaration:"
                 },
                 {
                     "type": "question",
@@ -429,7 +429,7 @@
                 {
                     "type": "question",
                     "id": "popWorld",
-                    "prompt": "the world population (6.6 billion)",
+                    "prompt": "The world population (6.6 billion)",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": null
