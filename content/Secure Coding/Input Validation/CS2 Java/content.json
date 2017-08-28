@@ -299,7 +299,7 @@
                         },
                         {
                             "id": "scanner",
-                            "text": "The Scanner arguement \"System.in\" is not type checked.",
+                            "text": "The Scanner argument \"System.in\" is not type checked.",
                             "ans": false
                         },
                         {

@@ -144,7 +144,7 @@
                     "units": [
                         {
                             "type": "paragraph",
-                            "text": "Value focused thinking (VFT) is a decision analysis method where the decision maker brainstorms everything he or she cares about in a decision process (Keeney, 2008).  The goal is to identify values or needs that are both conscious and unconscious, without being biased by constraints, alternatives, or cost.  What we care about is then arranged into a hierarchy, with the values, or cares, referred to as measures.  A hierarchy will show relationships and if any value is dependent on or a subset of another measure.  Hierarchies and the VFT process allow us to organize our thoughts and clearly identify what is important in the decision process.  Further details on VFT and the related multiple objective decision analysis process can be found in Keeney (1992; 2008), Parnell (2007), Keeney & Raiffa (1976), and Kirkwood (1997)."
+                            "text": "Value Focused Thinking (VFT) is a decision analysis method where the decision maker brainstorms everything he or she cares about in a decision process (Keeney, 2008).  The goal is to identify values or needs that are both conscious and unconscious, without being biased by constraints, alternatives, or cost.  What we care about is then arranged into a hierarchy, with the values, or cares, referred to as measures.  A hierarchy will show relationships and if any value is dependent on or a subset of another measure.  Hierarchies and the VFT process allow us to organize our thoughts and clearly identify what is important in the decision process.  Further details on VFT and the related multiple objective decision analysis process can be found in Keeney (1992; 2008), Parnell (2007), Keeney & Raiffa (1976), and Kirkwood (1997)."
                         },
                         {
                             "type": "paragraph",
@@ -249,7 +249,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "where K is the number of measures (Barron, 1992). If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the measure weights are shown below and were found using the rank order centroid method."
+                            "text": "where <em>K</em> is the number of measures (Barron, 1992). If we elicit weights, we need to make sure they add up to 1.  For Simple Solutions, the measure weights are shown below and were found using the rank order centroid method."
                         },
                         {
                 					"type": "table",
@@ -588,24 +588,24 @@
                     {
                       "type": "list",
                       "items": [
-                        "Barron, F. H. (1992). Selecting a best multiattribute alternative with partial information about attribute weights. Acta Psychologica, 80, 91-103.",
+                        "Barron, F. H. (1992). Selecting a best multiattribute alternative with partial information about attribute weights. <em>Acta Psychologica</em>, 80, 91-103.",
                         "Chesney, M. (2015, January 7).  WBOC Talks with Cyber Security Expert, Investigation into Attack on Station Continues.  Retrieved from http://www.wboc.com/story/27786563/wboc-talks-with-cyber-security-expert-investigation-into-attack-on-station-continues",
-                        "Farahani, J., Scala, N. M., Goethals, P., & Tagert. A. (2016). Best practices in cybersecurity: Processes and metrics. Baltimore Business Review: A Maryland Journal, 28-32.",
+                        "Farahani, J., Scala, N. M., Goethals, P., & Tagert. A. (2016). Best practices in cybersecurity: Processes and metrics. <em>Baltimore Business Review: A Maryland Journal</em>, 28-32.",
                         "Goldstein, M., Abelson, R. (2015, May 20). Up to 1.1 Million Customers Could be Affected in Data Breach at Insurer CareFirst. Retrieved from http://www.nytimes.com/2015/05/21/business/carefirst-discloses-data-breach-up-to-1-1-million-customers-affected.html?_r=0",
-                        "Keeney, R. L., & Raiffa, H. (1976). Decisions with multiple objectives: Preferences and value tradeoffs. New York, NY: Wiley.",
-                        "Keeney, R. L. (1992). Value-focused thinking: A path to creative decisionmaking. Cambridge, Massachusetts: Harvard University Press.",
-                        "Keeney, R. L. (2008). Applying value-focused thinking. Military Operations Research, 13(2), 7-17.",
-                        "Kirkwood, C. W. (1997). Strategic decision making: Multiobjective decision analysis with spreadsheets. Belmont, California: Duxbury Press.",
+                        "Keeney, R. L., & Raiffa, H. (1976). <em>Decisions with multiple objectives: Preferences and value tradeoffs</em>. New York, NY: Wiley.",
+                        "Keeney, R. L. (1992). <em>Value-focused thinking: A path to creative decisionmaking</em>. Cambridge, Massachusetts: Harvard University Press.",
+                        "Keeney, R. L. (2008). Applying value-focused thinking. <em>Military Operations Research</em>, 13(2), 7-17.",
+                        "Kirkwood, C. W. (1997). <em>Strategic decision making: Multiobjective decision analysis with spreadsheets</em>. Belmont, California: Duxbury Press.",
                         "National Security Agency Information Assurance Directorate. IAD’s top 10 information assurance mitigation strategies.  Retrieved July 16, 2017 from https://www.sans.org/security-resources/IAD_top_10_info_assurance_mitigations.pdf",
-                        "Parnell, G. (2007). Value-focused thinking using multiple objective decision analysis. In A. G. Loerch, & L. B. Rainey (Eds.), Methods for conducting military operational analysis: Best practices in use throughout the Department of Defense. Alexandria, Virginia: Military Operations Research Society, 619-656.",
+                        "Parnell, G. (2007). Value-focused thinking using multiple objective decision analysis. In A. G. Loerch, & L. B. Rainey (Eds.), <em>Methods for conducting military operational analysis: Best practices in use throughout the Department of Defense</em>. Alexandria, Virginia: Military Operations Research Society, 619-656.",
                         "Sanginiti, T. (2014, August 1).  Police Warn of Credit Card Cyber Attack.  Retrieved from http://www.delawareonline.com/story/news/crime/2014/08/01/police-warn-credit-card-cyber-attack/13456795/",
-                        "Santos, J. R., Haimes, Y. Y., & Lian, C. (2007). A framework for linking cybersecurity metrics to the modeling of macroeconomic interdependencies. Risk Analysis, 27(5), 1283-1297.",
+                        "Santos, J. R., Haimes, Y. Y., & Lian, C. (2007). A framework for linking cybersecurity metrics to the modeling of macroeconomic interdependencies. <em>Risk Analysis</em>, 27(5), 1283-1297.",
                         "Scala, N., Manuel, E., Fredman, R., Farahani, J., & Goethals, P. (2017). A value model for implementing cyber metrics and best practices. Symposium and Bootcamp on the Science of Security.  Poster retrieved August 1, 2017 from https://cps-vo.org/node/34167",
                         "Scala, N. M. and Goethals, P. (2017). An inventory of and model for cybersecurity values: Metrics and best practices.  Working paper.",
                         "Science of Security (2016). SoS documents: By topic. Retrieved August 1, 2017 from http://cps-vo.org.",
                         "Svitek, P., and Anderson, N. (2014, February 19). University of Maryland computer security breach exposes 300,000 records. Retrieved from https://www.washingtonpost.com/local/college-park-shady-grove-campuses-affected-by-university-of-maryland-securitybreach/2014/02/19/ce438108-99bd-11e3-80ac-63a8ba7f7942_story.html",
                         "Toth, S. (2014, January 24).  Howard Schools Recover from Possible Cyber Attack.  Retrieved from http://www.baltimoresun.com/news/maryland/howard/ellicott-city/ph-ho-cf-hcpss-internet-0123-20140121-story.html",
-                        "Viduto, V., Maple, C., Huang, W., & López-Peréz, D. (2012). A novel risk assessment and optimisation model for a multi-objective network security countermeasure selection problem. Decision Support Systems, 53, 599-610."
+                        "Viduto, V., Maple, C., Huang, W., & López-Peréz, D. (2012). A novel risk assessment and optimisation model for a multi-objective network security countermeasure selection problem. <em>Decision Support Systems</em>, 53, 599-610."
                       ],
                       "ordered": false
                     }

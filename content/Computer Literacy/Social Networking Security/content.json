@@ -18,36 +18,8 @@
                     "text": "Description"
                 },
                 {
-                    "type": "image",
-                    "src": "http://lsf.truman.edu/files/2013/04/Twitter_Logo_Volt.png",
-                    "alt": "Twitter",
-                    "width": 132,
-                    "height": 70,
-                    "float": null
-                },
-                {
-                    "type": "image",
-                    "src": "http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_132x32_2.png",
-                    "alt": "LinkedIn",
-                    "width": 132,
-                    "height": 32,
-                    "float": null
-                },
-                {
-                    "type": "image",
-                    "src": "http://lsf.truman.edu/files/2013/04/Twitter_Logo_Volt.png",
-                    "alt": "Facebook",
-                    "width": 132,
-                    "height": 70,
-                    "float": null
-                },
-                {
-                    "type": "image",
-                    "src": "http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_132x32_2.png",
-                    "alt": "Instagram",
-                    "width": 132,
-                    "height": 32,
-                    "float": null
+                    "type": "paragraph",
+                    "text": "<img src='http://chibabyconcierge.com/wp-content/uploads/2015/05/new-twitter-logo-vector-400x400.png' alt='twitter' style='width:132px; height:70px;' class='col-xs-3'>&nbsp;<img src='http://epsilon-e.com/wp-content/uploads/2016/03/linkedin-icon-logo-vector-400x400.png' alt='linkedin' style='width:132px; height:70px;' class='col-xs-3'>&nbsp;<img src='https://avatars0.githubusercontent.com/u/69631?v=4&s=400' alt='facebook' style='width:132px; height:70px;' class='col-xs-3'>&nbsp;<img src='https://ioufinancial.com/wp-content/uploads/2017/02/instagram-logo-vector-download-400x400.jpg' alt='insta' style='width:132px; height:70px;' class='col-xs-3'><br>"
                 },
                 {
                     "type": "paragraph",
@@ -136,15 +108,15 @@
                 },
                 {
                     "type": "image",
-                    "src": "http://lsf.truman.edu/files/2013/04/Twitter_Logo_Volt.png",
-                    "alt": "Twitter",
-                    "width": 132,
-                    "height": 70,
+                    "src": "http://www.clker.com/cliparts/j/L/3/m/C/u/padlock-icon-hi.png",
+                    "alt": "lock",
+                    "width": 103,
+                    "height": 150,
                     "float": null
                 },
                 {
                     "type": "paragraph",
-                    "text": "Confidentiality answers the question \"how private are my posts?\" The confidentiality of your posts can be analyzed by completing a few steps:"
+                    "text": "<br>Confidentiality answers the question \"how private are my posts?\" The confidentiality of your posts can be analyzed by completing a few steps:"
                 },
                 {
                     "type": "paragraph",
@@ -164,19 +136,19 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "AVAILABILITY"
+                    "text": "Availability"
                 },
                 {
                     "type": "image",
-                    "src": "http://lsf.truman.edu/files/2013/04/Twitter_Logo_Volt.png",
-                    "alt": "Twitter",
-                    "width": 132,
-                    "height": 70,
+                    "src": "http://freevector.co/wp-content/uploads/2013/01/77871-old-round-clock.png",
+                    "alt": "clock",
+                    "width": 150,
+                    "height": 150,
                     "float": null
                 },
                 {
                     "type": "paragraph",
-                    "text": "Availability answers the question \"how long is my information accessible?\" In order to determine the availability of posts or information you post on a social networking website, the following steps can be taken:"
+                    "text": "<br>Availability answers the question \"how long is my information accessible?\" In order to determine the availability of posts or information you post on a social networking website, the following steps can be taken:"
                 },
                 {
                     "type": "paragraph",
@@ -192,19 +164,19 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "TRUST"
+                    "text": "Trust"
                 },
                 {
                     "type": "image",
-                    "src": "http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_132x32_2.png",
-                    "alt": "LinkedIn",
-                    "width": 132,
-                    "height": 32,
+                    "src": "http://4vector.com/i/free-vector-facebook-style-icon-vector-material_020344_groups.png",
+                    "alt": "friends",
+                    "width": 150,
+                    "height": 150,
                     "float": null
                 },
                 {
                     "type": "paragraph",
-                    "text": "Trust answers the question \"who am I trusting with my information?\" The people you trust are the people who you allow to see your information and posts. To analyze the security of the trust you have, you can take the following steps:"
+                    "text": "<br>Trust answers the question \"who am I trusting with my information?\" The people you trust are the people who you allow to see your information and posts. To analyze the security of the trust you have, you can take the following steps:"
                 },
                 {
                     "type": "paragraph",
@@ -323,7 +295,7 @@
                                 {
                                     "id": "q1",
                                     "text": "Do you see any results on the first page with potential issues?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 }
                               ]
@@ -335,24 +307,25 @@
                                 {
                                     "id": "q2",
                                     "text": "a. Friends?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 },
                                 {
                                     "id": "q3",
                                     "text": "b. Family?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 },
                                 {
                                     "id": "q4",
                                     "text": "c. Potential employers/General public?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 }
                             ]
                         }
                     ],
+                    "optional":true,
                     "code": null,
           					"javascript": "./checklist.js"
                 },
@@ -383,7 +356,7 @@
                                 {
                                     "id": "q1",
                                     "text": "Can any group (friends, family, public) see all your posts, all the way back to the first post you made?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 }
                               ]
@@ -395,24 +368,25 @@
                                 {
                                     "id": "q2",
                                     "text": "a. 5 years time?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 },
                                 {
                                     "id": "q3",
                                     "text": "b. 10 years time?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 },
                                 {
                                     "id": "q4",
                                     "text": "c. 30 years time?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 }
                             ]
                         }
                     ],
+                    "optional":true,
                     "code": null,
           					"javascript": "./checklist.js"
                 },
@@ -443,7 +417,7 @@
                                 {
                                     "id": "q1",
                                     "text": "Do you trust everyone on your list with all the information you post?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 }
                               ]
@@ -455,24 +429,25 @@
                                 {
                                     "id": "q2",
                                     "text": "a. 5 years time?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 },
                                 {
                                     "id": "q3",
                                     "text": "b. 10 years time?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 },
                                 {
                                     "id": "q4",
                                     "text": "c. 30 years time?",
-                                    "ans": true,
+                                    "ans": false,
                                     "js": false
                                 }
                             ]
                         }
                     ],
+                    "optional":true,
                     "code": null,
           					"javascript": "./checklist.js"
                 },

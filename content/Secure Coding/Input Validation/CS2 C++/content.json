@@ -232,17 +232,17 @@
                     "choices": [
                         {
                             "id": "index",
-                            "text": "The index used returned by getWhich is not validated.",
+                            "text": "The index returned by getWhich is not validated.",
                             "ans": true
                         },
                         {
                             "id": "scanner",
-                            "text": "The Scanner arguement \"System.in\" is not type checked.",
+                            "text": "The input receieved from 'cin' is not type checked.",
                             "ans": false
                         },
                         {
                             "id": "value",
-                            "text": "The value returned by getArraySize() is not checked for reasonableness.",
+                            "text": "The index passed into getNames() is not checked to be within the proper range.",
                             "ans": true
                         }
                     ]
@@ -256,7 +256,7 @@
                     "choices": [
                         {
                             "id": "a",
-                            "text": "If the number typed for getWhich is less than the number provided for getArraySize."
+                            "text": "If the number typed for getWhich is less than the number declared in constant SIZE."
                         },
                         {
                             "id": "b",
@@ -264,7 +264,7 @@
                         },
                         {
                             "id": "c",
-                            "text": "If the number typed for getWhich is greater than the number provided for getArraySize."
+                            "text": "If the number typed for getWhich is greater than the number declared in constant SIZE."
                         }
                     ],
                     "answer": "c"

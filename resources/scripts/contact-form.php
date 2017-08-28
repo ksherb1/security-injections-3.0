@@ -5,19 +5,17 @@ require_once 'phpmailer/PHPMailerAutoload.php';
 
 if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputMessage'])) {
 
-    //check if any of the inputs are empty
     if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputMessage'])) {
         $data = array('success' => false, 'message' => 'Please fill out the form completely.');
         echo json_encode($data);
         exit;
     }
-
-    //create an instance of PHPMailer
+    
     $mail = new PHPMailer();
 
     $mail->From = $_POST['inputEmail'];
     $mail->FromName = $_POST['inputName'];
-    $mail->AddAddress('tylernhoward@gmail.com'); //recipient
+    $mail->AddAddress('securityinjections@towson.edu'); //recipient
     $mail->Subject = "Feedback";
     $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
 
