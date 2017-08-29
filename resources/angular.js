@@ -20,6 +20,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 		if(content.hasOwnProperty('objectives')){
 			$scope.module.sections.splice(0,0,{header:"Learning Objectives"});
 			$scope.currentsectionIndex = 1;
+			$scope.sectionscompleted = 1;
 			$scope.currentsection = $scope.module.sections[1];
 		}
 		else{

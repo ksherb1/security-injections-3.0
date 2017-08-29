@@ -9,7 +9,7 @@
 				</h1>
 			</div>
 			<div class="col-xs-2">
-				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" class="img-responsive" style:
+				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" class="img-responsive hidden-xs" style:
 				 "vertical-align:middle;"></div>
 		</div>
 	</div>
@@ -25,15 +25,24 @@
 				<h1>{{ module.name }} - {{ module.variant }}</h1>
 			</div>
 			<!-- workflow -->
-			<div class="container-fluid">
 				<div class="container-fluid">
-					<ul class="nav nav-tabs nav-justified">
-						<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted" ng-class="{'active': $index==currentsectionIndex}"
-						 ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
-						<li class="disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted"><a>{{section.header}}</a></li>
-					</ul>
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+            	</button>
+						</div>
+						<div id="navbar" class="navbar-collapse collapse">
+							<ul class="nav nav-tabs nav-justified">
+								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted" ng-class="{'active': $index==currentsectionIndex}"
+							 ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
+								<li class="disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted"><a>{{section.header}}</a></li>
+							</ul>
+						</div>
+					</nav>
 				</div>
-			</div>
 
 		<div ng-if="currentsection.header=='Learning Objectives'">
 				<div class ="jumbotron">
@@ -245,8 +254,11 @@
 		</div>
 
 		<div id="side-tabs">
-			<a class="feedback" data-toggle="modal" data-target="#fbModal">
+			<a class="feedback hidden-xs" data-toggle="modal" data-target="#fbModal">
 				<img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png">
+			</a>
+			<a class="feedback visible-xs-block" data-toggle="modal" data-target="#fbModal">
+				<img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png" style="opacity:0.5;">
 			</a>
 		</div>
 
@@ -298,24 +310,33 @@
 	<br>
 	<footer class="footer">
 		<div class="container">
-			<div class= "row">
-			<div class="col-xs-1">
-				<br>
-				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
-			</div>
-			<div class="col-xs-10">
+			<div class= "row hidden-xs">
+				<div class="col-xs-1">
+					<br>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
+				</div>
+				<div class="col-xs-10">
+					<p class="footer-text">
+						The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation under
+						grants NSF DUE-1241738, NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649, the GenCyber program, and
+						the Intel Corporation.
+					</p>
+					<p class ="footer-text hidden-sm">
+						<br> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+					</p>
+				</div>
+				<div class="col-xs-1">
+					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class="img-responsive" style:
+					 "vertical-align:middle;">
+				</div>
+		</div>
+		<div class= "row visible-xs-block">
+			<div class="col-xs-12">
 				<p class="footer-text">
-					The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation under
-					grants NSF DUE-1241738, NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649, the GenCyber program, and
-					the Intel Corporation.
-					<br> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+					The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 				</p>
 			</div>
-			<div class="col-xs-1">
-				<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class="img-responsive" style:
-				 "vertical-align:middle;">
-			</div>
-		</div>
+	</div>
 		</div>
 	</footer>
 </div>
