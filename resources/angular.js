@@ -648,10 +648,15 @@ app.controller('ContactController', ["$scope", "$http", function ($scope, $http,
 	};
   $scope.resultMessage;
   $scope.formData; //formData is an object holding the name, email, subject, and message
+
   $scope.submitButtonDisabled = false;
   $scope.submitted = false; //used so that form  errors are shown only after the form has been submitted
   $scope.submit = function(contactform, e) {
 			e.preventDefault();
+			$scope.formData.moduleTitle = $('#moduleTitle').text();
+			$scope.formData.url = window.location.href;
+			//console.log($scope.formData);
+
       $scope.submitted = true;
       $scope.submitButtonDisabled = true;
       if (contactform.$valid) {
@@ -661,7 +666,7 @@ app.controller('ContactController', ["$scope", "$http", function ($scope, $http,
               data    : $.param($scope.formData),  //param method from jQuery
               headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
           }).success(function(data){
-              console.log(data);
+              //console.log(data);
               if (data.success) { //success comes from the return json object
                   $scope.submitButtonDisabled = true;
                   $scope.resultMessage = data.message;
@@ -669,28 +674,20 @@ app.controller('ContactController', ["$scope", "$http", function ($scope, $http,
               } else {
 
                     $scope.submitButtonDisabled = false;
-
                     $scope.resultMessage = data.message;
-
                     $scope.result='bg-danger';
-
                 }
-
             });
-
-        } else {
-
-            $scope.submitButtonDisabled = false;
-
-            $scope.resultMessage = 'Please fill out the form completely.';
-
-            $scope.result='bg-danger';
-
         }
-
+				else {
+            $scope.submitButtonDisabled = false;
+            $scope.resultMessage = 'Please fill out the form completely.';
+            $scope.result='bg-danger';
+        }
     };
+
 		$scope.setResponse = function (response) {
-		    console.info('Response available: %s', response);
+		    //console.info('Response available: %s', response);
 				$scope.response = response;
 		};
 		$scope.setWidgetId = function (widgetId) {
@@ -717,7 +714,7 @@ app.controller('ContactController', ["$scope", "$http", function ($scope, $http,
 			     * Send the reCaptcha response to the server and use some of the server side APIs to validate it
 			     * See https://developers.google.com/recaptcha/docs/verify
 			     */
-					console.log("Valid response");
+					//console.log("Valid response");
 			    //console.log('sending the captcha response to the server', $scope.response);
 
 					//Need to then send email.
