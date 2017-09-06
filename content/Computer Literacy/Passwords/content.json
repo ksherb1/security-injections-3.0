@@ -401,6 +401,7 @@
 							]
 						}
 					],
+					"optional": true,
 					"code": null,
 					"javascript": "./samplechecklist.js"
 				},
@@ -474,7 +475,7 @@
 				},
 				{
 					"type": "checklist",
-					"id": "cl",
+					"id": "cl2",
 					"list": [
 						{
 							"id": "question2",
@@ -530,7 +531,7 @@
 				},
 				{
 					"type": "checklist",
-					"id": "cl",
+					"id": "cl3",
 					"list": [
 						{
 							"id": "question3",

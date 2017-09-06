@@ -180,7 +180,7 @@
 							<div ng-switch-when="checklist" class="si-checklist" id="{{ unit.id }}">
 								<div class="col-sm-5">
 									<div class="well">
-										<table class="table" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
+										<table class="table table-bordered" ng-repeat="group in unit.list" id="{{ unit.id+'-'+group.id }}">
 											<tr>
 												<th colspan="2" ng-bind-html="group.header"></th>
 											</tr>
