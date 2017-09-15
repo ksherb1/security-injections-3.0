@@ -1,44 +1,46 @@
 //THIS IS THE BACKBONE OF THE WHOLE CONTENT.JSON FILE
 {
-    "name": " ",
-    "variant": " ",
+    "name": "",
+    "variant": "",
     "sections": [
         {
-            "header": " ",
+            "header": "",
             "units": []
         }
     ]
 }
-//TEXT AREA: For questions where you need text boxes for the answers
+
+//TEXT AREA: For questions where you need text boxes for the answers.
 {
     "type": "question",
     "id": "",
-    "prompt": " ",
+    "prompt": "",
     "ignored": true,
     "mode": "textarea",
     "pattern": "null"
 }
-//CHECKBOX MODE: For questions with multiple answers
+
+//CHECKBOX MODE: For questions with multiple answers. These questions have square boxes.
 {
     "type": "question",
-    "id": " ",
-    "prompt": " ",
+    "id": "",
+    "prompt": "",
     "ignored": false,
     "mode": "checkbox",
     "choices": [
         {
-            "id": " ",
-            "text": " ",
+            "id": "",
+            "text": "",
             "ans":
         },
         {
-            "id": " ",
-            "text": " ",
+            "id": "",
+            "text": "",
             "ans":
         },
         {
-            "id": " ",
-            "text": " ",
+            "id": "",
+            "text": "",
             "ans":
         }
     ]
@@ -48,59 +50,65 @@
 {
     "type": "author",
     "name": ""
-},
+}
 
-//RADIO MODE: For questions with only one answer
+//RADIO MODE: For questions with only one answer. These questions have circular boxes.
 {
     "type": "question",
     "id": "",
-    "prompt": " ",
+    "prompt": "",
     "ignored": false,
     "mode": "radio",
     "choices": [
         {
-            "id": " ",
-            "text": " "
+            "id": "",
+            "text": ""
         },
         {
-            "id": " ",
-            "text": " "
+            "id": "",
+            "text": ""
         },
         {
-            "id": " ",
-            "text": " "
+            "id": "",
+            "text": ""
         }
     ],
-    "answer": " "
+    "answer": ""
 }
-//CODEBLOCK: for attaching pieces of code to the webpage. (You don't have to copy and past the code
-// which can be more tedious, you can just create a new code file and link it like this:  
-//"code": "./program1step3.cpp )
+
+//CODEBLOCK: For attaching pieces of code to the webpage. (You don't have to copy and paste the code to the json file,
+// which can be more tedious. You can simply create a new code file, place it in the same folder, and link it to the code like this:  
+//"code": "./program1step3.cpp)
 {
     "type": "codeblock",
-    "code": " "
+    "code": ""
 }
+
 //BLANK
 {
-    "type": " ",
-    "text": " "
+    "type": "",
+    "text": ""
 }
+
 //SUBHEADER
 {
     "type": "subheader",
-    "text": " "
+    "text": ""
 }
+
 //PARAGRAPH
 {
     "type": "paragraph",
-    "text": " "
+    "text": ""
 }
+
 //VIDEO
 {
     "type": "video",
     "url": ""
 }
-//LIST: creates a bulleted list where "Step 1" is bolded. If you want to number it, change "ordered" to 'true'.
+
+//LIST: Creates an unordered bulleted list. If you want to number it, change "ordered" to 'true'.
 {
     "type": "list",
     "items": [
@@ -112,15 +120,17 @@
     ],
     "ordered": false
 }
-//IMAGE: "alt" is for the text that will appear if the image doesn't.
+
+//IMAGE: "alt" is for the text that will appear if the image doesn't pop up.
 {
     "type": "image",
-    "src": " ",
-    "alt": " ",
+    "src": "",
+    "alt": "",
     "width": ,
     "height": ,
     "float": null
 }
+
 //TABLE
 {
     "type": "table",
@@ -142,24 +152,16 @@
         }
     ]
 }
+
 //ATTRIBUTION
 {
     "type": "attribution",
-    "copyright": " ",
-    "date": " ",
-    "link": " "
+    "copyright": "",
+    "date": "",
+    "link": ""
 }
 
-//CHART
-{
-    "type": "chart",
-    "headers": [
-        "",
-        "", 
-        ""
-    ]
-}
-//SECURITY CHECKLIST TEMPLATE (change as needed)
+//SECURITY CHECKLIST TEMPLATE 
 {
     "type": "checklist",
     "id": "securityChecklist",
@@ -169,18 +171,34 @@
             "header": "Security Checklist",
             "items": [
                 {
-                    "id": "q1",
-                    "text": "1. ",
+                    "id": "",
+                    "text": "",
                     "ans": true,
                     "js": false
                 },
                 {
-                    "id": "q2",
-                    "text": "2. ",
+                    "id": "",
+                    "text": "",
                     "ans": true,
                     "js": false
                 }
             ]
         }
+    ]
+    //The following code comment is for checklists, but you should rarely need it. It was used for a special case.
+    /*
+        "optional": true;
+        "code": null,
+        "javascript": ".'checklist.js"'
+    */
+}
+
+//CHART made specifically for the Risk Management module. You will likely never need to use this ever again.
+{
+    "type": "chart",
+    "headers": [
+        "",
+        "", 
+        ""
     ]
 }
