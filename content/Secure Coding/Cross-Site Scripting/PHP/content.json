@@ -1,0 +1,113 @@
+{
+    "name": "Cross-Site Scripting",
+    "variant": "PHP",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A web-browser may unknowingly run malicious client-side scripts (like JavaScript) that may be have been placed within the content from a trusted site."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Browsers can run scripts like JavaScript that are sent to them from a website. If a user trusts a website, then they are likely to allow these scripts to run. However, it is possible to ‘inject’ malicious scripts into content from trusted websites especially if those websites allow user generated content. These malicious scripts can hijack valid user sessions, deface the webpage being viewed, or redirect the user to other sites (hence the name ‘Cross-Site Scripting’ (XSS))."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "XSS flaws can be generally categorized into two types: stored and reflected. Stored XSS flaws are those where the malicious code is permanently stored in the target website (for example, in databases – comments, product descriptions, etc.). Reflected XSS attacks on the other hand, are ‘reflected’ off a trusted webserver where the malicious content is injected into the response sent by the webserver (for example, a search result, or an error page). Reflected attacks are sent to the victim through another route like an email or another website (see Example in code – 1 below)."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk- How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "XSS vulnerabilities can occur when a trusted website allows users to provide content. A classic example is a blog that allows its readers to comment on an article. An attacker can enter the following comment:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code>< script type=\"text/javascript\" > alert(\"Your hard disk is corrupted.\"); < /script ></code>"
+                },
+                  {
+                    "type": "paragraph",
+                    "text": "When the owner of the blog or any other user views the comments, the script is sent to their browser which executes it showing the victim the message in a pop-up alert box. This script (though probably harmless as it is written above) will get executed within the context of the victims browser and thus may have access to the victim’s login session and cookies. Such scripts do not have to be within HTML tags, they can also be associated with JavaScript events such as <i>onLoad</i> or <i>MouseOver</i>."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type":"paragraph",
+                    "text":"On September 21st 2010, Twitter was effected by a XSS attack that was based on a mouseover event. If users moused over a link sent as a tweet to their accounts, they would be redirected to a third party site. This was because Twitter had failed to escape out parts of JavaScript from the posted Tweets."
+                },
+                {
+                    "type":"paragraph",
+                    "text":"<small>Charles Arthur, \"Twitter users including Sarah Brown hit by malicious hacker attack\" <a href = http://www.guardian.co.uk/technology/blog/2010/sep/21/twitter-bug-malicious-exploit-xss> http://www.guardian.co.uk/technology/blog/2010/sep/21/twitter-bug-malicious-exploit-xss</a></small>"
+                } 
+            ]
+        },
+        {
+            "header": "Lab Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Program 1"
+                },
+                {
+                    "type": "codeblock",
+                    "code": " "
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": []
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "",
+                    "prompt": " ",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
