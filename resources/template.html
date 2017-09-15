@@ -109,36 +109,36 @@
 								</table>
 							</div>
 
-							<div ng-switch-when="chart" class="table table-bordered" style="width: auto">
-								<table class="table">
+							<div ng-switch-when="chart" class="well col-sm-12" style="width: auto">
+								<table class="table table-bordered chart">
 									<th>
 										<td ng-repeat="items in unit.headers" ng-bind-html="items"></td>
 									</th>
 									<tbody >
 										<tr>
 											<td>Asset</td>
-											<td ng-repeat="items in unit.headers"> <input type="text" style="width: 15em"> </td>
+											<td ng-repeat="items in unit.headers"> <input type="text" style="width: 15em"  ng-model = "unit.asset"> </td>
 										</tr>
 										<tr>
 											<td>Threat</td>
-											<td ng-repeat="items in unit.headers"><input type="text" style="width: 15em"></td>
+											<td ng-repeat="items in unit.headers"><input type="text" style="width: 15em" ng-model = "unit.threat"></td>
 										</tr>
 										<tr>
 											<td>Vulnerabilities</td>
-											<td ng-repeat="items in unit.headers"><textarea style="height:6em; width:15em"></textarea></td>
+											<td ng-repeat="items in unit.headers" ><textarea class="form control" style="height:6em; width:15em" ng-model = "unit.vulnerabilities"></textarea></td>
 										</tr>
 										<tr>
 											<td>Probability</td>
-											<td ng-repeat="items in unit.headers"> <input id="prob_1" type="number" min="0" max="3" style="width:15em;"></td>
+											<td ng-repeat="items in unit.headers"> <input id="prob_1" type="number" min="0" max="3" style="width:15em;" ng-model = "unit.probability"></td>
 										</tr>
 										<tr>
 											<td>Harm</td>
-											<td ng-repeat="items in unit.headers"> <input id="harm_1" type="number" min="0" max="3" style="width:15em;"> </td>
+											<td ng-repeat="items in unit.headers"> <input id="harm_1" type="number" min="0" max="3" style="width:15em;" ng-model = "unit.harm"> </td>
 										</tr>
 										<tr>
 											<td>Risk</td>
 											<td ng-repeat="items in unit.headers">
-												<select style="width:15em;">
+												<select style="width:15em;" ng-model = "unit.risk">
 													<option></option>
 													<option>LOW</option>
 													<option>MED</option>
@@ -148,7 +148,7 @@
 										</tr>
 										<tr>
 											<td>Mitigation</td>
-											<td ng-repeat="items in unit.headers"><textarea style="height:6em; width:15em"></textarea></td>
+											<td ng-repeat="items in unit.headers"><textarea style="height:6em; width:15em" ng-model = "unit.mitigation"></textarea></td>
 										</tr>
 									</tbody>
 								</table>

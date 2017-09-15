@@ -131,6 +131,7 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 				}
 
 				cookieAnswer = $cookies.getObject(moduleCookie + 'forms');
+				console.log(cookieAnswer);
 				n = 0;
 				if(typeof(cookieAnswer)==='undefined'){
 					console.log("No cookies to be loaded");
@@ -174,6 +175,18 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 									break;
 								}
 							}
+						else if(unit.type == "chart"){
+							if (cookieAnswer[n]!= null){
+								unit.asset = cookieAnswer[n].Asset;
+								unit.threat = cookieAnswer[n].Threat;
+								unit.vulnerabilities = cookieAnswer[n].Vulnerabilities;
+								unit.probability = cookieAnswer[n].Probability;
+								unit.harm = cookieAnswer[n].Harm;
+								unit.risk = cookieAnswer[n].Risk;
+								unit.mitigation = cookieAnswer[n].Mitigation;
+								n++;
+							}
+						}
 						else if(unit.type == "checklist") {
 							//Having trouble with checklist. Disregading for now
 							/*if(cookieAnswer[n]!=null){
@@ -215,6 +228,10 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 	 *
 	 */
 	 $scope.saveCookie = function (completed) {
+		
+
+
+
 		 var today = new Date();
 		 var expireTime = new Date(today);
 		 expireTime.setMinutes(today.getMinutes() + 120);//expires in 5 hours
@@ -256,6 +273,13 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 								break;
 							}
 						}
+					else if (unit.type == "chart"){
+						console.log();
+						var answers = $cookies.getObject(moduleCookie + 'forms');
+						answers.push({Asset:unit.asset, Threat: unit.threat,Vulnerabilities:unit.vulnerabilities,Probability:unit.probability,Harm:unit.harm,Risk:unit.risk,Mitigation:unit.mitigation});
+						$cookies.putObject(moduleCookie + 'forms',answers);
+					}
+
 
 					else if(unit.type == "checklist") {
 						//Again checklist is being saved proper.... Not loading right.
@@ -292,6 +316,8 @@ app.controller("modCtrl", ["$scope", "$http", "$cookies", "$sce", function($scop
 		 }
 		}
  }
+ 
+ 
 }
 
 	/**
