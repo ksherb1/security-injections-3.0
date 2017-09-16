@@ -115,8 +115,18 @@
                 {
                     "type": "chart",
                     "headers": [
-                        "1.",
-                        "2.",
+                        "1."
+                    ]
+                },
+                {
+                    "type": "chart",
+                    "headers": [
+                        "2."
+                    ]
+                },
+                {
+                    "type": "chart",
+                    "headers": [
                         "3."
                     ]
                 }
