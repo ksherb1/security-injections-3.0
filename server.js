@@ -14,7 +14,6 @@
  * NOTE: THERE is no phase 2 anymore per se. It is being folded into the CLARK
  * curriculum development application. [deleted] I'll delete the previous sentence
  * when I try out Visual Studio Code for comparison.
- * 
  */
 
 // PARAMETERS
