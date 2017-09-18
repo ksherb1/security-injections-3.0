@@ -12,8 +12,7 @@
  * Phase 2: extended significantly, and perhaps broken up over multiple files
  * 
  * NOTE: THERE is no phase 2 anymore per se. It is being folded into the CLARK
- * curriculum development application. Also, this comment is meaningless - it
- * is just a way to verify Eclipse GIT works. I'll delete the previous sentence
+ * curriculum development application. [deleted] I'll delete the previous sentence
  * when I try out Visual Studio Code for comparison.
  * 
  */
