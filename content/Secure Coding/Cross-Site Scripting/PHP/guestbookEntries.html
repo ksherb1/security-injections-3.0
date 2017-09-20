@@ -1,0 +1,26 @@
+";
+    // fetch the rows one at a time, and then echo the data to the page
+    while ($row = mysql_fetch_row($result)) {
+        echo ""
+        echo "
+"
+        echo "
+";
+        echo "Name: $row[0]";
+        echo "
+E-mail: $row[1]";
+        echo "
+Web Page: $row[2]";
+        echo "
+Occupation: $row[3]";
+        echo "
+From: $row[4]";
+        echo "
+Comments:"; echo "
+$row[6]";
+        echo "
+"
+    }
+    mysql_free_result($result);
+    mysql_close($connection);
+?>
