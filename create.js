@@ -152,15 +152,18 @@ exports.write_3("Data Hiding","CS2 C++");
 exports.write_3("Data Hiding","CS2 Python");
 exports.write_3("Exception Handling", "CS2 C++");
 exports.write_3("Exception Handling", "CS2 Java");
-*/
-
-/*
 exports.write_3("Computer Literacy", "Passwords");
 exports.write_3("Computer Literacy", "Phishing");
 exports.write_3("Computer Literacy", "Cryptography");
 exports.write_3("Computer Literacy", "Social Networking Security");
 */
-exports.write_3("Cross-Site Scripting", "PHP");
+
+
+//exports.write_3("Cross-Site Scripting", "PHP");
+//exports.write_3("Cross-Site Scripting", "Ruby on Rails");
+exports.write_3("SQL Injections", "Introduction");
+//exports.write_3("SQL Injection", "CS");
+//exports.write_3("SQL Injection", "IS");
 //exports.write_3("Industrial Control Systems", "Introduction");
 //exports.write_3("Mobile Risk Management", "Introduction");
 /*
