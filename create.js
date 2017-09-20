@@ -114,7 +114,7 @@ exports.write_3 = function(name, variant, dev) {
 //Phase 2: module should not have "MAIN"
 // MAIN
 
-
+/*
 exports.write_3("Integer Error", "CS0 C++");
 exports.write_3("Integer Error", "CS0 Java");
 exports.write_3("Integer Error", "CS0 Pseudocode");
@@ -152,18 +152,24 @@ exports.write_3("Data Hiding","CS2 C++");
 exports.write_3("Data Hiding","CS2 Python");
 exports.write_3("Exception Handling", "CS2 C++");
 exports.write_3("Exception Handling", "CS2 Java");
+*/
 
-//exports.write_3("Computer Literacy", "Passwords");
-//exports.write_3("Computer Literacy", "Phishing");
-//exports.write_3("Computer Literacy", "Cryptography");
-//exports.write_3("Computer Literacy", "Social Networking Security");
+/*
+exports.write_3("Computer Literacy", "Passwords");
+exports.write_3("Computer Literacy", "Phishing");
+exports.write_3("Computer Literacy", "Cryptography");
+exports.write_3("Computer Literacy", "Social Networking Security");
+*/
+exports.write_3("Cross-Site Scripting", "PHP");
 //exports.write_3("Industrial Control Systems", "Introduction");
 //exports.write_3("Mobile Risk Management", "Introduction");
-//exports.write_3("Integer Error", "CS0 C++ Sample");
-//exports.write_3("Mitigating Risk", "Value Modeling");
-//exports.write_3("Healthcare Management", "Risk Management");
-//exports.write_3("Healthcare Management", "HIPPA");
-//exports.write_3("Business", "Risk Assessment");
-//exports.write_3("Business", "Confidentiality, Availability, Trust");
-//exports.write_3("Business", "Business Use Security");
-//exports.write_3("Business", "Government Use Security");
+/*
+exports.write_3("Integer Error", "CS0 C++ Sample");
+exports.write_3("Mitigating Risk", "Value Modeling");
+exports.write_3("Healthcare Management", "Risk Management");
+exports.write_3("Healthcare Management", "HIPPA");
+exports.write_3("Business", "Risk Assessment");
+exports.write_3("Business", "Confidentiality, Availability, Trust");
+exports.write_3("Business", "Business Use Security");
+exports.write_3("Business", "Government Use Security");
+*/
