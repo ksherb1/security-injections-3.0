@@ -1,0 +1,307 @@
+{
+    "name": "Cross-Site Scripting",
+    "variant": "Ruby on Rails",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A web-browser may unknowingly run malicious client-side scripts (like JavaScript) that may be have been placed within the content from a trusted site."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Browsers can run scripts like JavaScript that are sent to them from a website. If a user trusts a website, then they are likely to allow these scripts to run. However, it is possible to ‘inject’ malicious scripts into content from trusted websites especially if those websites allow user generated content. These malicious scripts can hijack valid user sessions, deface the webpage being viewed, or redirect the user to other sites (hence the name ‘Cross-Site Scripting’ (XSS))."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "XSS flaws can be generally categorized into two types: stored and reflected. Stored XSS flaws are those where the malicious code is permanently stored in the target website (for example, in databases – comments, product descriptions, etc.). Reflected XSS attacks on the other hand, are ‘reflected’ off a trusted webserver where the malicious content is injected into the response sent by the webserver (for example, a search result, or an error page). Reflected attacks are sent to the victim through another route like an email or another website (see Example in code – 1 below)."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk- How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "XSS vulnerabilities can occur when a trusted website allows users to provide content. A classic example is a blog that allows its readers to comment on an article. An attacker can enter the following comment:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code>< script type=\"text/javascript\" > alert(\"Your hard disk is corrupted.\"); < /script ></code>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When the owner of the blog or any other user views the comments, the script is sent to their browser which executes it showing the victim the message in a pop-up alert box. This script (though probably harmless as it is written above) will get executed within the context of the victims browser and thus may have access to the victim’s login session and cookies. Such scripts do not have to be within HTML tags, they can also be associated with JavaScript events such as <i>onLoad</i> or <i>MouseOver</i>."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "On September 21st 2010, Twitter was effected by a XSS attack that was based on a mouseover event. If users moused over a link sent as a tweet to their accounts, they would be redirected to a third party site. This was because Twitter had failed to escape out parts of JavaScript from the posted Tweets."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<small>Charles Arthur, \"Twitter users including Sarah Brown hit by malicious hacker attack\" <a href = http://www.guardian.co.uk/technology/blog/2010/sep/21/twitter-bug-malicious-exploit-xss> http://www.guardian.co.uk/technology/blog/2010/sep/21/twitter-bug-malicious-exploit-xss</a></small>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example in code – 1:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Consider the following scenario: The attacker knows that the victim uses a popular e-commerce site (lets call it www.shopwithtrust.com). The attacker also knows that www.shopwithtrust.com allows users to post comments for products. The URL for posting a comment is:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "shopwithtrust.com/post-rating.php?product=5&comment=somecomment"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A valid link to post a comment sent to a user’s email looks like the following:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/shopwithtrust.com/post-rating.php?product=5&comment=somecomment>Click here to post a comment for the product you just bought</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When the user clicks this link, the comment will be posted to shopwithtrust.com. The website may then display the product page back to the user with the new comment on it. In this scenario, the attacker may use the following link instead (where the comment text is replaced with a JavaScript) and send to the victim’s email:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development/shopwithtrust.com/post-rating.php?product=5&comment=somecomment>Click here to post a comment for the product you just bought</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In the above case, the comment posted to shopwithtrust.com is"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code>&lt;script&gt;alert('hello')&lt;/script&gt; </code>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "which may be converted to text."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When the website shows the victim the product page with his/her comment, the browser will execute this script. This vulnerability can be used to run other malicious scripts or redirect to other malicious  sites instead of popping a harmless alert box. This is a classic reflected XSS attack, where the malicious script is ‘reflected’ off a trusted website."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example in code – 2:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Consider the following JSP script (Source: <a href = https://www.owasp.org/index.php/Main_Page> www.owasp.org</a> )."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It takes input from the user using a HTTP request and then displays it on the page."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code> <% String eid = request.getParameter(\"eid\"); %><br>...<br>Employee ID: <%= eid %> </code>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In this case, if the the parameter <i>eid</i> is a alphanumeric parameter (which is what is expected), then, there may not be any problem. However, if <i>eid</i> is a script, then the browser may execute that script when the user views the page."
+                }
+            ]
+        },
+        {
+            "header": "Code Responsibly",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "How Can I Avoid a XSS Vulnerability?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The basic premise in avoiding a XSS vulnerability is to look out for untrusted data entering your application and escape any characters in the untrusted data (like Javascript tags) that may have special meaning. There are many places in aHTML document where an attacker might be able to introduce malicious code."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The <a href = https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet> OWASP XSS Cheat Sheet </a> recommends rules to prevent XSS. The rules are based on the concept of having a whitelist rather than a blacklist for preventing security vulnerabilities. A whitelist is the best way to validate input to an application since a blacklist is likely to list only the known vulnerabilities and may miss unknown ways to attack an application. We adapt and list the most important rules here, for a thorough analysis visit the OWASP website."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "1. The first rule is based on the principle of <strong>deny all</strong>. Never insert untrusted data anywhere in the following contexts. Putting untrusted/user-generated data in these contexts is rarely (if ever) needed in a Web Application.Most importantly, never accept actual JavaScript code from an untrusted source and then run it. All JavaScript from other sources (like in the code example) should be escaped."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "2. HTML escape before inserting data into HTML element content. If you have to put untrusted data within a HTML document within tags like div, p, td. etc., then you have to escape it.<br><br><strong>...ESCAPE UNTRUSTED DATA BEFORE PUTTING HERE ...<br>...ESCAPE UNTRUSTED DATA BEFORE PUTTING HERE ...</strong><br>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The same is true for any other HTML element like<br><code>,<br>, , etc.</code>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Escape the following characters that have special meaning in  HTML before you insert them in your document from untrusted sources.<br><br>Replace & with &amp;<br>Replace < with &lt;<br>Replace > with &gt;<br>Replace \" with &quot;<br>Replace ' with &#x27;<br>Replace / with &#x2F;"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "However, implementing Rule 2 is not easy. Even though escaping code in some situations is simple, it is difficult to predict all the possibilities in all the contexts."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It is recommended that you use pre-built libraries to escape code. The OWASP ESAPI (<a href = http://www.owasp.org/index.php/ESAPI>http://www.owasp.org/index.php/ESAPI</a>) project has created an escaping library for many languages including Java, .NET, and PHP. Many web frameworks and languages also come with their own libraries."
+                },
+                {
+                    "type": "paragraph",
+                    "text": " If you use the Rails libraries, then you have to use the following statement for escaping characters obtained through user entered parameters before inserting them in the HTML document in the view:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code> <%= h(input_from_user)%> </code>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "3. Attribute Escape before inserting untrusted data into common HTML attributes. This rule is for putting data into attributes like width, name, value, href, style, etc."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code>. ..ESCAPE UNTRUSTED DATA BEFORE PUTTING HERE...>content</code>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": " If you use the Rails libraries, then you have to use the following statement for escaping characters obtained through user entered parameters before inserting them in the HTML document in the view:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code> <%= h(input_from_user)%> </code>"
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Consider the following simple web application:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Please take a moment to share your comments with us."
+                },                
+                {
+                    "type": "question",
+                    "id": "name",
+                    "prompt": "Your Name:",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "email",
+                    "prompt": "Your E-mail address:",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "web",
+                    "prompt": "Your Web Page address:",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "occupation",
+                    "prompt": "Your occupation:",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "location",
+                    "prompt": "Location (state):",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "color",
+                    "prompt": "Favorite color:",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "comments",
+                    "prompt": "Comments:",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The following code segment accepts data from the form above and inserts it into the database:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<code>comment = params [ :comment] <br> comment.save</code>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The following code segment in a view shows all the comments (assuming that the @comments variable has been populated in the controller) to any user who views the page. It also shows the users comments in his/her favorite color:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./guestbookEntries.html"
+                }
+            ]
+        },
+        {
+            "header": "Security Checklist",
+            "units": [
+               
+                {
+                    "type": "subheader",
+                    "text": "Lab Questions:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "1. Complete the security checklist for this program (click <a href =http://cis1.towson.edu/~cssecinj/modules/other-modules/web-development/cross-site-scripting-xss-web-development-ruby-on-rails/checklist-–-cross-site-scripting-xss-–-web-development/> here</a> to print the checklist and the code above)."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "2. Provide example inputs that might cause Cross Site Scripting (XSS) problems, and describe the problems that they might cause."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Further Work "
+                },
+                {
+                    "type" : "paragraph",
+                    "text" : "(optional – check with your instructor if you need to answer the following questions. Note to instructor: these questions may take significant time and are best assigned as take home work)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "1. Revise the Program 1* to properly prevent Cross Site Scripting (XSS) problems. You may use the <a href = https://code.google.com/archive/p/owasp-esapi-php/> OWASP ESAPI </a> toolkit for it. See an example here for using ESAPI to escape HTML tag and attribute content."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "2. Download and install the OWASP <a href = https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project> WebGoat application</a>. WebGoat is a deliberately insecure J2EE web application maintained by OWASP designed to teach web application security lessons. Complete the XSS lesson."
+                }
+            ]
+        }
+    ]
+}

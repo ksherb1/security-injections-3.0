@@ -1,4 +1,7 @@
-";
+$result = mysql_query( "select name, email, url, job, location, comments from guestbook");
+if (mysql_num_rows($result)>0) 
+    echo "View Guestbook Entries";
+
     // fetch the rows one at a time, and then echo the data to the page
     while ($row = mysql_fetch_row($result)) {
         echo ""

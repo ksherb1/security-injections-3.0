@@ -160,7 +160,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": " If you use the ESAPI libraries, then you have use the following statement for escaping characters obtained through user entered parameters before inserting them in the HTML document."
+                    "text": " If you use the ESAPI libraries, then you have to use the following statement for escaping characters obtained through user entered parameters before inserting them in the HTML document."
                 },
                 {
                     "type": "paragraph",
@@ -264,18 +264,15 @@
                     "text": "The following code segment queries that database to show all the comments to any user who views the page. It also shows the users comments in his/her favorite color:"
                 },
                 {
-                    "type": "paragraph",
-                    "text": "<code>$result = mysql_query( \"select name, email, url, job, location, comments from guestbook\");<br>if (mysql_num_rows($result)>0)<br>&nbsp&nbsp&nbsp&nbsp echo \"</code>"
+                    "type": "codeblock",
+                    "code": "./guestbookEntries.html"
                 }
             ]
         },
         {
             "header": "Security Checklist",
             "units": [
-                {
-                    "type": "codeblock",
-                    "code": "./guestbookEntries.html"
-                },
+               
                 {
                     "type": "subheader",
                     "text": "Lab Questions:"
