@@ -74,14 +74,73 @@
                     "text": "Program 1"
                 },
                 {
+        					"type": "paragraph",
+        					"text": "Type this out into your code editor:"
+        				},
+                {
                     "type": "codeblock",
                     "code": "./securityChecklist.html"
                 }
+
             ]
         },
         {
             "header": "Security Checklist",
-            "units": []
+            "units": [
+              {
+      					"type": "paragraph",
+      					"text": "On your own, complete the following checklist:"
+      				},
+              {
+      					"type": "checklist",
+      					"id": "Pgm1CL",
+      					"list": [
+      						{
+      							"id": "cl",
+      							"header": "Check each line of your code and mark with comments:",
+      							"items": [
+      								{
+      									"id": "var",
+      									"text": "Make a comment next to any variable which may be vulnerable.",
+      									"ans": true,
+      									"js": false
+      								},
+      								{
+      									"id": "input",
+      									"text": "Mark with a V multiple variable declarations per line",
+      									"ans": true,
+      									"js": false
+      								},
+      								{
+      									"id": "math",
+      									"text": "Make a comment next to each constant.",
+      									"ans": true,
+      									"js": false
+      								},
+                      {
+      									"id": "input",
+      									"text": "Mark with a V any variable that is shadowed.",
+      									"ans": true,
+      									"js": false
+      								},
+      								{
+      									"id": "assign",
+      									"text": "Mark with a V any variable whose scope is not minimised.",
+      									"ans": true,
+      									"js": false
+      								}
+      							]
+      						}
+      					],
+      					"code": "",
+      					"javascript": ""
+      				},
+      				{
+      					"type": "paragraph",
+      					"text": "Comments marked with 'V' indicate vulnerabilities in the code."
+      				}
+
+            ]
         },
         {
             "header": "Discussion Questions",

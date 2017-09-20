@@ -82,6 +82,44 @@
                     "ordered": true
                 },
                 {
+                  "type": "checklist",
+                  "id": "Pgm1CL",
+                  "list": [
+                    {
+                      "id": "cl1",
+                      "header": "Check each line of your code and mark with comments:",
+                      "items": [
+                        {
+                          "id": "var",
+                          "text": "Make a comment next to each statement that may cause an exception to occur.",
+                          "ans": true,
+                          "js": false
+                        }
+                      ]
+                    },
+                    {
+                      "id": "vuln",
+                      "header": "For each statement marked:",
+                      "items": [
+                        {
+                          "id": "input",
+                          "text": "Mark with comment any statement within the exception handler that may expose information about the program.",
+                          "ans": true,
+                          "js": false
+                        },
+                        {
+                          "id": "math",
+                          "text": "Mark with comment any statement within the exception handler that may expose information about the file system.",
+                          "ans": true,
+                          "js": false
+                        }
+                      ]
+                    }
+                  ],
+                  "code": "",
+                  "javascript": ""
+                },
+                {
                     "type": "subheader",
                     "text": "Program 2"
                 },
@@ -104,12 +142,46 @@
                         "Complete the security checklist for Program 2."
                     ],
                     "ordered": true
+                },
+                {
+                  "type": "checklist",
+                  "id": "Pgm2CL",
+                  "list": [
+                    {
+                      "id": "cl2",
+                      "header": "Check each line of your code and mark with comments:",
+                      "items": [
+                        {
+                          "id": "var",
+                          "text": "Make a comment next to each statement that may cause an exception to occur.",
+                          "ans": true,
+                          "js": false
+                        }
+                      ]
+                    },
+                    {
+                      "id": "vuln",
+                      "header": "For each statement marked:",
+                      "items": [
+                        {
+                          "id": "input",
+                          "text": "Mark with comment any statement within the exception handler that may expose information about the program.",
+                          "ans": true,
+                          "js": false
+                        },
+                        {
+                          "id": "math",
+                          "text": "Mark with comment any statement within the exception handler that may expose information about the file system.",
+                          "ans": true,
+                          "js": false
+                        }
+                      ]
+                    }
+                  ],
+                  "code": "",
+                  "javascript": ""
                 }
             ]
-        },
-        {
-            "header": "Security Checklist",
-            "units": []
         },
         {
             "header": "Discussion Questions",
