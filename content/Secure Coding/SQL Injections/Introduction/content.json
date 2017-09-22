@@ -131,8 +131,16 @@
                     "text": "The most common SQL injection is SQL manipulation where the attacker attempts to modify an existing SQL query statement, and insert exploited statement into the database."
                 },
                 {
+                    "type": "codeblock",
+                    "code": "./sql1.html"
+                },
+                {
                     "type": "paragraph",
-                    "text": "<code>SELECT * <br>FROM Users<br>WHERE loginName = ‘ $user ‘ - -<br>AND loginPassword =  ‘ $password ‘<br></code><br>What if user enters:<code><br>$user = ‘ OR ‘1’ = ‘1 <br>$password = ‘ OR ‘1’= ‘1</code>"
+                    "text": "<br>What if user enters:"
+                },
+                {
+                    "type": "codeblock",
+                    "code": "./userEnters.html"
                 },
                 {
                     "type": "paragraph",
@@ -143,8 +151,8 @@
                     "text": "Another variation of SQL manipulation attack is to insert two consecutive dashes (–) or # in MySQL which comments out anything after it."
                 },
                 {
-                    "type": "paragraph",
-                    "text": "<code>SELECT *<br>FROM Users<br>WHERE loginName = ‘ John ‘ - -<br>AND Password = anything<br><br><br><br><br>SELECT *<br> FROM Customers<br> WHERE AccNumber = 1 OR 1 = 1 #<br>AND Pin = anything</code>"
+                    "type": "codeblock",
+                    "code": "./sql2.html"
                 },
                 {
                     "type": "subheader",
@@ -155,8 +163,8 @@
                     "text": "Another type of SQL injection attack, called code injection attack, is done by appending SQL statement or executable commands right after vulnerable SQL statement."
                 },
                 {
-                    "type": "paragraph",
-                    "text": "<code>SELECT *<br>FROM Users<br>WHERE UserName = ‘John’ AND Password = ‘myPassword’; DROP TABLE users;</code>"
+                    "type": "codeblock",
+                    "code": "./code1.html"
                 },
                 {
                     "type": "paragraph",
