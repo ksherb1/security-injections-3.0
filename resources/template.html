@@ -9,8 +9,7 @@
 				</h1>
 			</div>
 			<div class="col-xs-2">
-				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" class="img-responsive hidden-xs" style:
-				 "vertical-align:middle;"></div>
+				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" alt="Towson logo" class="img-responsive hidden-xs" style="vertical-align:middle;"></div>
 		</div>
 	</div>
 	</header>
@@ -36,8 +35,7 @@
 						</div>
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav nav-tabs nav-justified">
-								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted" ng-class="{'active': $index==currentsectionIndex}"
-							 ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
+								<li ng-repeat="section in module.sections" ng-if="$index <= sectionscompleted" ng-class="{'active': $index==currentsectionIndex}" ng-click="gotoSection($index); "><a>{{section.header}}</a></li>
 								<li class="disabled" ng-repeat="section in module.sections" ng-if="$index > sectionscompleted"><a>{{section.header}}</a></li>
 							</ul>
 						</div>
@@ -61,7 +59,7 @@
 				<div ng-if = "module.objectives.goals != ''&& module.objectives.outcomes != ''"class = "col-sm-6">
 					<h3>Cover Page</h3>
 					<div id="coverPage" style="">
-							<iframe width="auto" height="500" ng-src="{{coverPageFrame}}"></iframe>
+							<iframe title="Cover Page" alt="Cover Page"width="auto" height="500" ng-src="{{coverPageFrame}}"></iframe>
 					</div>
 				</div>
 			</div>
@@ -92,7 +90,7 @@
 								 class="img-responsive">
 							</div>
 							<div ng-switch-when="video" class="col-sm-12 embed-responsive embed-responsive-16by9">
-								<iframe class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
+								<iframe title="Content Video" alt="Content Video"class="embed-responsive-item" ng-src="{{trustSrc(unit.url)}}"></iframe>
 							</div>
 							<small class="col-sm-12" ng-switch-when="author" ng-bind-html="'Created by: ' + unit.name"></small>
 							<small class="col-sm-12" ng-switch-when="attribution" ng-bind-html="unit.copyright+' ('+unit.date+')'"></small>
@@ -111,9 +109,7 @@
 
 							<div ng-switch-when="chart" class="well col-sm-12" style="width: auto">
 								<table class="table table-bordered chart">
-									<th>
-										<td ng-repeat="items in unit.headers" ng-bind-html="items"></td>
-									</th>
+									<th ng-repeat="items in unit.headers" ng-bind-html="items"></th>
 									<tbody >
 										<tr>
 											<td>Asset</td>
@@ -209,6 +205,7 @@
 								<div class="col-sm-7 checklist-block" style="position:relative;">
 									<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 									<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
+									<noscript><!--NEED SOMETHING HERE--></noscript>
 									<div class="popover radiopop" style="position:absolute;">
 										<label name="popPrompt" text=" "></label>
 										<form>
@@ -255,10 +252,10 @@
 
 		<div id="side-tabs">
 			<a class="feedback hidden-xs" data-toggle="modal" data-target="#fbModal">
-				<img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png">
+				<img alt="Feedback" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png">
 			</a>
 			<a class="feedback visible-xs-block" data-toggle="modal" data-target="#fbModal">
-				<img alt="" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png" style="opacity:0.5;">
+				<img alt="Feedback" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png" style="opacity:0.5;">
 			</a>
 		</div>
 
@@ -299,7 +296,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div id="si-certificate-pane" style="display:none">
-							<iframe width="auto" height="348" ng-src="{{detailFrame}}"></iframe>
+							<iframe title="Certificate" alt = "Certificate" width="auto" height="348" ng-src="{{detailFrame}}"></iframe>
 							<a class="btn btn-info btn-md" id="si-certificate-link" download="certificate.pdf">Download <span class="glyphicon glyphicon-download-alt"></span></a>
 						</div>
 					</div>
@@ -313,7 +310,7 @@
 			<div class= "row hidden-xs">
 				<div class="col-xs-1">
 					<br>
-					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive" style:"vertical-align:middle;"/></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" class="img-responsive"/></a>
 				</div>
 				<div class="col-xs-10">
 					<p class="footer-text">
@@ -326,7 +323,7 @@
 					</p>
 				</div>
 				<div class="col-xs-1">
-					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class="img-responsive" style:
+					<img src="http://cis1.towson.edu/~cyber4all/wp-content/uploads/2017/07/nsf_logo_transparent.png" class="img-responsive" style=
 					 "vertical-align:middle;">
 				</div>
 		</div>
