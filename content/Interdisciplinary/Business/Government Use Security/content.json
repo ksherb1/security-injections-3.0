@@ -77,7 +77,7 @@
                             "text": "Cybersecurity is more important for a business than for a government because the business has to survive in the competitive environment."
                         }
                     ],
-                    "answer": " "
+                    "answer": "cyber"
                 },
                 {
                     "type": "question",
@@ -87,7 +87,7 @@
                     "mode": "radio",
                     "choices": [
                         {
-                            "id":  "genuine",
+                            "id": "genuine",
                             "text": "It was all done in the course of genuine work and should not be considered negatively."
                         },
                         {
@@ -103,7 +103,7 @@
                             "text": "She should be convicted of a gross violation of cybersecurity."
                         }
                     ],
-                    "answer": " "
+                    "answer": "lay"
                 },
                 {
                     "type": "question",
@@ -129,58 +129,143 @@
                             "text": "Instruct the user about personal email, block personal emails at the server level and notify the user."
                         }
                     ],
-                    "answer": " "
+                    "answer": "instruct"
                 }
             ]
         },
         {
-            "header": "Lab Assignment",
+            "header": "Responsible Use",
             "units": [
                 {
                     "type": "subheader",
-                    "text": "Program 1"
+                    "text": "How Can These Errors Be Avoided?"
                 },
                 {
-                    "type": "codeblock",
-                    "code": " "
+                    "type": "paragraph",
+                    "text": "Email is among the worst threats to cybersecurity because email is unencrypted open text. There are ways to encrypt email between a limited set of users all of whom must have keys for encryption and decryption. An even better approach is to use pairing, with each pair having their own encryption and decryption keys."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Private email opens up a whole new set of threats and openings for hackers. Chances are that the person at the other end of the private email is on a different server and a different network with an uncertain level of security. Ms Lahiry is an important and busy person. It should have been possible to provide her with a second computer on an entirely different network."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "rq1",
+                    "prompt": "Encryption has been suggested above as one solution to the problem. Encryption can be time consuming and has to be used with care. According to you, what would be the best option among the following?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "r1a",
+                            "text": "She should get someone to help with the messages."
+                        },
+                        {
+                            "id": "r1b",
+                            "text": "Hacking does not happen every day. There is no cause for concern."
+                        },
+                        {
+                            "id": "r1c",
+                            "text": "Security should be at various levels depending on the user and the message content. As much a possible should be automated or built into the system, e.g. lists of users who have access, lists of users with maximum security, etc."
+                        },
+                        {
+                            "id": "r1d",
+                            "text": "She should first go through detailed training, and then emails should be monitored."
+                        }
+                    ],
+                    "answer": "r1c"
+                },
+                {
+                    "type": "question",
+                    "id": "rq2",
+                    "prompt": "Cybersecurity problems tend to be more with the network than with one computer. What is your best choice among the following?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "r2a",
+                            "text": "It is too complicated and too much money to have a second computer and a second network."
+                        },
+                        {
+                            "id": "r2b",
+                            "text": "People use multiple networks all the time. For example, the secure network could be wired and the other network wireless on separate servers not connected to one another."
+                        },
+                        {
+                            "id": "r2c",
+                            "text": "It is all about people making mistakes. "
+                        }
+                    ],
+                    "answer": "r2b"
                 }
             ]
         },
         {
-            "header": "Security Checklist",
-            "units": []
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "STEP 1:  Provide an exercise to demonstrate the risks of the problem this module presents."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "US Congress passed the first comprehensive Cybersecurity Act on December 30, 2015. The act enables a service provider to monitor unauthorized uses, and places on the provider the responsibility to limit such unauthorized use. You can read the text of the Act in the following link:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = https://www.congress.gov/bill/114th-congress/senate-bill/754>https://www.congress.gov/bill/114th-congress/senate-bill/754 </a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Summaries and reviews that are easier to read are found in the following links:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = https://www.sullcrom.com/siteFiles/Publications/SC_Publication_The_Cybersecurity_Act_of_2015.pdf>https://www.sullcrom.com/siteFiles/Publications/SC_Publication_The_Cybersecurity_Act_of_2015.pdf</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = https://www.lawfareblog.com/cybersecurity-act-2015> https://www.lawfareblog.com/cybersecurity-act-2015</a>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "lq1",
+                    "prompt": "How comprehensive is the Cybersecurity Act? Give examples of recent occurrences of violations.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "lq2",
+                    "prompt": "Does the Cybersecurity Act pose any threat to international hackers?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
         },
         {
             "header": "Discussion Questions",
             "units": [
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq1",
+                    "prompt": "\"The Internet is a valuable tool for a government to gather and disseminate information. The Internet is the biggest threat to a government in exposing information.\" Discuss.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
                 },
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "",
-                    "prompt": " ",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq2",
+                    "prompt": "\"The Internet connects the innermost working of a government to the world unless proper measures are taken. Government officials should work like spies in a hostile environment.\" Comment on the feasibility and other aspects.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

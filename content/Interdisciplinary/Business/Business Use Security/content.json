@@ -23,7 +23,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Businesses invest money to build a networking infrastructure and then build a networking and communication system on this infrastructure to support business activities. In today's environment, extensive use is made internal communication via the Intranet and external communication via the Internet. An open architecture, as often used earlier, might have been good for data access. With the increased number of threats as found today, the open architecture can expose data and other assets to attacks. We discuss business use of networking that protects the assets without hindering normal work."
+                    "text": "Businesses invest money to build a networking infrastructure and then build a networking and communication system on this infrastructure to support business activities. In today's environment, extensive use is made internal communication via the Intranet and external communication via the Internet. An open architecture, as often used earlier, might have been good for data access. With the increased number of threats as found today, the open architecture can expose data and other assets to attacks.<br><br>We discuss business use of networking that protects the assets without hindering normal work."
                 },
                 {
                     "type": "subheader",
@@ -51,7 +51,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Example of Occurence:"
+                    "text": "Example of Occurence: Scenarios"
                 },
                 {
                     "type": "paragraph",
@@ -68,7 +68,7 @@
                         "In addition to the existing firewalls there should be Intrusion Protection Systems (IPS).",
                         "The network should be partitioned so a compromised segment can be isolated.",
                         "The data should be segmented and partitioned with the highest security applied to only those parts that need the high security.",
-                        "Network administrators and personnel who have access to the secure data should be supervised."                        
+                        "Network administrators and personnel who have access to the secure data should be supervised."
                     ],
                     "ordered": true
                 },
@@ -104,7 +104,7 @@
                             "text": "He should get a prioritization from the consultant, get the budgets, and negotiate with the VP for a phased approach."
                         }
                     ],
-                    "answer": " "
+                    "answer": "should"
                 },
                 {
                     "type": "question",
@@ -130,7 +130,7 @@
                             "text": "Use multiple databases so that if one is down the others are still available."
                         }
                     ],
-                    "answer": " "
+                    "answer": "security"
                 },
                 {
                     "type": "question",
@@ -156,58 +156,139 @@
                             "text": "All people should be encouraged to spy on their coworkers."
                         }
                     ],
-                    "answer": " "
+                    "answer": "everyone"
                 }
             ]
         },
         {
-            "header": "Lab Assignment",
+            "header": "Responsible Use",
             "units": [
                 {
                     "type": "subheader",
-                    "text": "Program 1"
+                    "text": "How Can These Errors Be Avoided?"
                 },
                 {
-                    "type": "codeblock",
-                    "code": " "
+                    "type": "paragraph",
+                    "text": "This scenario involves a bank and highlights the fact that security is following the right procedures and may not always be electronic in context."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A bank may have many communications between branches and corporate offices all of which are done through secure channels. But there are also many communications with customers. Most messages sent to customers are accessed only via login to a secure website. Many customers are not aware of security policies, and prefer to conduct business over the telephone by calling from a crowded location on a cell phone. In these situations the bank may inform the customer not to say out loud the ID or social security number needed for identification. The bank customer should really retire to a private area such as inside a car so that no one can overhear any part of the conversation, or see keypad entries over the shoulder. It is also not a good practice to leave paper documents in the open where a passing person can steal a quick glance."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "rq1",
+                    "prompt": "If the customer requests the bank to email information because that is the most convenient way for him/her to receive the information, should the bank comply with the request?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "r1a",
+                            "text": "The bank should serve the customer and comply with the request."
+                        },
+                        {
+                            "id": "r1b",
+                            "text": "The bank should use email but only use vague and bland terms that would mean nothing to another person."
+                        },
+                        {
+                            "id": "r1c",
+                            "text": "The bank should not email but should complete the business on the telephone regardless of who else might be listening."
+                        },
+                        {
+                            "id": "r1d",
+                            "text": "The bank may only communicate documents through secure upload and download from the website, or use US Mail in a secure way."
+                        }
+                    ],
+                    "answer": "r1d"
+                },
+                {
+                    "type": "question",
+                    "id": "rq2",
+                    "prompt": "A customer might think that the bank’s security policies are designed to irritate the customer and deter the customer from communicating with the bank. Which of the following best represents the scope of the bank’s security policies?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "r2a",
+                            "text": "The security policies protect both the bank and the customer."
+                        },
+                        {
+                            "id": "r2b",
+                            "text": "The security policies are designed to cause delays and cover the bank’s slow response."
+                        },
+                        {
+                            "id": "r2c",
+                            "text": "The security policies are designed to take power away from the customer."
+                        },
+                        {
+                            "id": "r2d",
+                            "text": "Security policies are designed by people who have nothing better to do."
+                        }
+                    ],
+                    "answer": "r2a"
                 }
             ]
         },
         {
-            "header": "Security Checklist",
-            "units": []
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "STEP 1:  Internet Research"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The Best Practices in Cyber Security For Small-To-Medium-Sized Businesses by Kate Harrison:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = http://www.forbes.com/sites/kateharrison/2016/05/03/the-best-practices-in-cyber-security-for-small-to-medium-sized-businesses/#294655de5e8d> http://www.forbes.com/sites/kateharrison/2016/05/03/the-best-practices-in-cyber-security-for-small-to-medium-sized-businesses/#294655de5e8d</a>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Read the article listed above and answer the following questions."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "lq1",
+                    "prompt": "Why is it critically important to have a corporate security policy defined at the top level and have everyone trained in the principles of security?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "lq2",
+                    "prompt": "What are some of the electronic components of cyber security, e.g. firewalls, network threat prevention, rogue detection, etc.?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
         },
         {
             "header": "Discussion Questions",
             "units": [
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq1",
+                    "prompt": "Defense Against the Dark Arts is important not only in Harry Potter’s world but also in the world of business under the threat of cyber insecurity. Cyber Security measures are often substantial investments and may lead to substantial operating costs. Why is it still imperative for a business to take this route?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
                 },
                 {
                     "type": "question",
-                    "id": "",
-                    "prompt": " ",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "",
-                    "prompt": " ",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "",
-                    "prompt": " ",
+                    "id": "dq2",
+                    "prompt": "It is not legal for any business operating in the US to penetrate cyber defenses of any other business. There is no law protecting the US business from cyber attack from another country. It is difficult for FBI to go after international rogues. It is believed that NSA has more knowledge and capability in cyber security than any other organization. Would it be ethical for NSA to help US businesses in cybersecurity? <i>[Note: Would they want to? It might expose them.]</i>",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

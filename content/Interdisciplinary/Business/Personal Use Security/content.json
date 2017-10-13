@@ -1,0 +1,275 @@
+{
+    "name": "Business",
+    "variant": "Personal Use Security",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Internet-enabled mobile devices are commonly used by people in a business environment to do business work such as communicating with clients and co-workers involved in same or similar projects."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Business issued mobile devices are commonly used by employees and business associates in performing normal business functions. It can easily happen that a person is not aware of all the security policies and procedures, or perhaps the person makes a mistake in observing these security policies. Sensitive data may be exposed, or the business employer may become vulnerable, as a result."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Sometimes a user may carry only one mobile device which is used for both business and personal use. Even if this does not violate company policy, it may involve security risks."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk- How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "There are a number of possibilities that may lead to these situations, as follows:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Lack of a security policy for the organization",
+                        "Lack of awareness of existing security policies",
+                        "Forgetfulness or other error on the part of the user",
+                        "Complacence, and the notion that \"nobody will hurt us\"",
+                        "Pressure from work schedules or from management, and the need to rush through things"
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The list is not neccesarily complete."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurence: Scenarios"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Helena works remotely and commonly uses the mobile device issued to her to conduct client meetings and access the customer database. She is on the go a lot, and instead of using the secure 4G network issued by the company, she often uses the open access Wi-Fi network wherever a network might be available, such as at a Starbucks."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "There is no company policy against the personal use of company mobile devices. She knows it is against company policy to download applications, such as games, that have not been approved by the IT department. She has done this in violation of the policy, but she only plays the games at work."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "bq1",
+                    "prompt": "The company has issued Helena the mobile device to work remotely to interact with clients and access the database. Is this the right thing to do?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "q1a",
+                            "text": "Absolutely not. Even if she does not access clients and client data, she is possibly exposing the device and the data it contains to other users."
+                        },
+                        {
+                            "id": "q1b",
+                            "text": "She could be doing personal work, just not access any secure company data."
+                        },
+                        {
+                            "id": "q1c",
+                            "text": "Considering that the company has issued her this device, they expect her to use it remotely provided she follows security procedures."
+                        },
+                        {
+                            "id": "q1d",
+                            "text": "There is no problem. There is no need to be paranoid."
+                        }
+                    ],
+                    "answer": "q1c"
+                },
+                {
+                    "type": "question",
+                    "id": "bq2",
+                    "prompt": "Is it all right for Helena to use the company issued mobile device on an open access network that is not password protected?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "q2a",
+                            "text": "Absolutely not. Even if she does not access clients and client data, she is possibly exposing the device and the data it contains to other users."
+                        },
+                        {
+                            "id": "q2b",
+                            "text": "She could be doing personal work, just not access any secure company data."
+                        },
+                        {
+                            "id": "q2c",
+                            "text": "It is all right if she does it quickly. Keeping the connection open a long time could be risky."
+                        },
+                        {
+                            "id": "q2d",
+                            "text": "Some people are so paranoid. The only people in Starbucks are coffee lovers, not snoopers."
+                        }
+                    ],
+                    "answer": "q2a"
+                },
+                {
+                    "type": "question",
+                    "id": "bq3",
+                    "prompt": "Is it all right for Helena to be downloading games that have not been approved by the IT department?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "q3a",
+                            "text": "It is quite all right to download the games, but she should not be playing them at work."
+                        },
+                        {
+                            "id": "q3b",
+                            "text": "There is nothing wrong with downloading the game as long as she is playing within the security firewall."
+                        },
+                        {
+                            "id": "q3c",
+                            "text": "Everyone needs to relax with games. This is an example of an improper security policy."
+                        },
+                        {
+                            "id": "q3d",
+                            "text": "It is very wrong for her to disregard the security policy and the IT department. Games can come with spyware or malware. This is the big concern, bigger than her playing games at work."
+                        }
+                    ],
+                    "answer": "q3d"
+                }
+            ]
+        },
+        {
+            "header": "Responsible Use",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "How Can These Error Be Avoided?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "All the answers are given in the scenario. The company has issued Helena a mobile device with a secure 4G connection. They expect her to work remotely  to conduct client meetings and access the company database. She does not need to use public Wi-Fi where her device and communications are exposed to other users, who could also overhear her or look over her shoulder. Using the secure 4G she can connect from any private area, such as inside her parked car."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It is very wrong of her to ignore the company security policy and the IT department with respect to games. The company has not banned games. They only require games to be vetted by the IT department so it is free of spyware and malware that can expose sensitive information."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },   
+                {
+                    "type": "question",
+                    "id": "rq1",
+                    "prompt": "Which of the following best represents what Helena should do at work?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "r1a",
+                            "text": "Focus on work and not play games."
+                        },
+                        {
+                            "id": "r1b",
+                            "text": "Bring her own phone to play games at work."
+                        },
+                        {
+                            "id": "r1c",
+                            "text": "It doesn’t matter. One or two games will not hurt if she does not play too often."
+                        },
+                        {
+                            "id": "r1d",
+                            "text": "Have her work phone scanned on a regular basis by the IT department."
+                        }
+                    ],
+                    "answer": "r1d"
+                },
+                {
+                    "type": "question",
+                    "id": "rq2",
+                    "prompt": "Which of the following best represents what Helena should do when clients urgently request information from her when she is away from work?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "r2a",
+                            "text": "Find a secluded location where she can use her secure 4G connection."
+                        },
+                        {
+                            "id": "r2b",
+                            "text": "She should not answer the call."
+                        },
+                        {
+                            "id": "r2c",
+                            "text": "She should answer and give the client a time when she can give the information."
+                        },
+                        {
+                            "id": "r2d",
+                            "text": "She should only provide general information."
+                        }
+                    ],
+                    "answer": "r2a"
+                }
+            ]
+        },
+        {
+            "header": "Laboratory Assignment",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "STEP 1:  Internet Research"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "4G is the 4th generation of the International Mobile Telecommunication standard specified by the International Telecommunication Union, an agency of the UN. The specific standards are developed by the Institute of Electrical and Electronics Engineers (IEEE). Read about global 4G LTE developments for mobile devices, and the IEEE standards that support it. You will find it at:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<a href = http://spectrum.ieee.org/telecom/standards/lte-advanced-is-the-real-4g> http://spectrum.ieee.org/telecom/standards/lte-advanced-is-the-real-4g </a>"
+                },
+                {
+                    "type": "question",
+                    "id": "lq1",
+                    "prompt": "What can you describe about the increase in bandwidth from 3G to 4G to 4G LTE?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "lq2",
+                    "prompt": "You may have noticed an increase in screen size over the years in moving to 4G LTE. What features are supported by the larger screens?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        },
+        {
+            "header": "Discussion Questions",
+            "units": [
+                {
+                    "type": "question",
+                    "id": "dq1",
+                    "prompt": "The original WiMAX IEEE 802.16N city-wide Internet was scrapped because there was no security and too much interference. The current 4G LTE (4th Generation Long Term Evolution) is based on IEEE 802.16e-2005 and has higher levels of security. In moving from 3G to 4G and 4G LTE it often seems that the focus is on greater bandwidth and higher speeds. Discuss the importance of security in what is essentially an open global Internet.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "dq2",
+                    "prompt": "The openness of the Internet is the biggest boon for people. The openness of the Internet is the gravest danger for people. Comment on this statement in the context of cybersecurity.",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        }
+    ]
+}
