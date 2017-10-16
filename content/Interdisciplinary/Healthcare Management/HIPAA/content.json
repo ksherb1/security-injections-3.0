@@ -1,0 +1,376 @@
+{
+    "name": "Healthcare Management",
+    "variant": "Hipaa",
+    "sections":
+    [
+        {
+            "header": "Background",
+            "units":
+            [
+                {
+                    "type": "subheader",
+                    "text": "Summary:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This module provides an introduction to the Health Insurance Portability and Accountability Act (HIPAA) of 1996 Privacy and Security Rules, including provisions under the 2013 Final HIPAA rule. This module also covers HIPAA's rules for Privacy and Security as well as other Administrative Simplification provisions under HIPAA for health data and information exchange."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Description:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you had a serious illness that was being treated by a medical professional, and then found out that an employee at that office had shared that information on their personal Facebook page, how would you feel about that information being shared without your consent? This is one of the key reasons why the HIPAA Privacy Rules were established: to give individuals control over their personal information, and consent for its release. It also gives people access to virtually all of their health records, and holds individuals and organizations accountable for any violations of an individual's health information privacy rights. The HIPAA Security Rules cover all electronic protected health information created, received or transmitted by an organization, and include administrative, physical and technical safeguards. The Security Rules also cover protocols for how to handel data breaches if they occur."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Unauthorized release of an individual's health information can occur because of health care employees' lack of knowledge and training in the HIPAA Privacy and Security rules, or improper security protocols protecting individuals' health information, including how it is stored, accessed and exchanged. If an information management system does not store its patient data in a password-protected, encrypted format using firewalls, and exchanges this data electronically, individuals' protected health information could be accessed by hackers outside their company."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Example of Occurrence:"
+                },
+                {
+                    "type": "list",
+                    "items": 
+                    [
+                        "A receptionist at a medical group practice talks to Patient A about a medical procedure performed for them in the practice's public waiting room; the next day, another patient in the practice sees Patient A on the street and asks how they are feeling after the procedure.",
+                        "A medical records clerk leaves copies of medical records requested by one of their patients in an envelope with the patient's full name on it taped to the front door of their office for after-hours pickup by the patient.",
+                        "A doctor accesses an internet connection without a password at a local diner on her laptop to review lab work and images of patients while she eats dinner after work hours.",
+                        "A nurse practitioner shares their password for medical practice's system with the summer intern to expedite paperwork processing and submission of patient bills."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "subheader",
+                    "text": "Answer the following questions:"
+                },
+                {
+                    "type": "question",
+                    "id": "protected",
+                    "prompt": "Under the HIPAA Privacy Rule, protected health information is",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "individual",
+                            "text": "Individually identifiable health information"
+                        },
+                        {
+                            "id": "stored",
+                            "text": "Stored in electronic media"
+                        },
+                        {
+                            "id": "transmitted",
+                            "text": "Transmitted in electronic media"
+                        },
+                        {
+                            "id": "all",
+                            "text": "All of the above"
+                        }
+                    ],
+                "answer": "all"
+                },
+                {
+                    "type": "question",
+                    "id": "safeguards",
+                    "prompt": "The HIPAA Security Rule safegaurds are",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "administrative",
+                            "text": "administrative"
+                        },
+                        {
+                            "id": "physical",
+                            "text": "Physical"
+                        },
+                        {
+                            "id": "technical",
+                            "text": "Technical"
+                        },
+                        {
+                            "id": "BandC",
+                            "text": "B and C only"
+                        },
+                        {
+                            "id": "ABandC",
+                            "text": "A, B and C"
+                        }
+                    ],
+                    "answer": "ABandC"
+                }
+            ]
+        },
+
+
+
+        {
+            "header": "Code Responsibly",
+            "units":
+            [
+                {
+                    "type": "subheader",
+                    "text": "How can you avoid this error"
+                },
+                {
+                    "type": "list",
+                    "items":
+                    [
+                        "Training for employees in HIPAA polices and procedures regarding protected health information should be mandatory for new hires and annually for all employees",
+                        "Using secure passwords, changing passwords frequently and prohibiting the use of another employee's password should be part of an organization's HIPAA compliance policies",
+                        "System firewalls and data encryption should be used in the storage of protected health information",
+                        "Paper records should be securely isolated and locked in file cabinets or record storage rooms",
+                        "Patient-staff communications should use cubicles, dividers, shields or curtains to protect patient health information privacy"
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A risk analysis document for any health care organization should be completed to assess vulnerabilities, which are weaknesses that could be exploited by threats to compliance with the HIPAA Privacy and Security rules.  An overview of system hardware and software, firewalls, data storage, access to information by unauthorized individuals and password protection policies should be provided as part of that risk analysis."
+                },
+                {
+                    "type": "question",
+                    "id": "trained",
+                    "prompt": "Employees of healthcare organizations should be trained to",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "communicate",
+                            "text": "Not to communicate protected health information of patients in their organizations"
+                        },
+                        {
+                            "id": "passwords",
+                            "text": "Share system passwords with other employees if they cannot remember their own so they are able to get their work submitted on time"
+                        },
+                        {
+                            "id": "internet",
+                            "text": "Use any internet connection available, either inside or outside their organization, to provide patients with timely information about their medical conditions"
+                        },
+                        {
+                            "id": "paperwork",
+                            "text": "Take paperwork home with patients' protected health information on it so they can avoid delays in submitting bills"
+                        }
+                    ],
+                    "answer": "communicate"
+                },
+                {
+                    "type": "question",
+                    "id": "weakness",
+                    "prompt": "An inherent weakness or absence of a safeguard that could be exploited by a threat is a",
+                    "ignored": false,
+                    "mode":"radio",
+                    "choices":
+                    [
+                        {
+                            "id": "security",
+                            "text": "Security incident"
+                        },
+                        {
+                            "id": "breach",
+                            "text": "Breach"
+                        },
+                        {
+                            "id": "vulnerability",
+                            "text": "Vulnerability"
+                        },
+                        {
+                            "id": "threat",
+                            "text": "Threat"
+                        }
+                    ],
+                    "answer": "vulnerability"
+                }
+            ]
+        },
+
+
+        {
+            "header": "Discussion Questions",
+            "units":
+            [
+                {
+                    "type": "subheader",
+                    "text": "A Senario:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "As Joan waited in her favorite coffee shop for lunch she chatted with Sally, a server who she knew casually from her previous visits. As Sally put Joan's coffee on the table, she asked in a joking way ''in your condition, shouldn't you be drinking decaf?''"
+                },
+                {
+                    "type":"paragraph",
+                    "text": "Joan was shocked. Just the previous day, she started vomiting at work and a co-worker drove her to the urgent care center operated by Community Hospital. As part of the work-up, the doctor had ordered a pregnancy test and Joan was shocked when it came back positive. She isn't married and hasn't told anyone yet."
+                },
+                {
+                    "type":"paragraph",
+                    "text": "She asks Sally what she meant and with a smile, Sally told her that Tom, her husband, had told her ''the good news.'' It turns out that Tom was a lab tech at the hospital."
+                },
+                {
+                    "type": "question",
+                    "id": "shortQ1",
+                    "prompt": "In this breach of confidentiality, did Community Hospital violate HIPAA?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "shortQ2",
+                    "prompt": "Is Tom liable to Joan for breach of confidentiality under HIPAA?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "shortQ3",
+                    "prompt": "Is Sally liable to Joan for breach of confidentiality under HIPAA?",
+                    "ignored": true,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }
+            ]
+        },
+
+
+
+        {
+            "header": "Application Questions",
+            "units":
+            [
+                {
+                    "type": "question",
+                    "id": "DQ1",
+                    "prompt": "<em>True or False</em>: Patients have an unconditioned right to access their health information.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "Q1True",
+                            "text": "True"
+                        },
+                        {
+                            "id": "Q1False",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "Q1False"
+                },
+                {
+                    "type": "question",
+                    "id": "TrueFalseQ2",
+                    "prompt": "<em>True or False</em>: Appropriately deidentified health information is not subject to HIPAA regulations.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "Q2True",
+                            "text": "True"
+                        },
+                        {
+                            "id": "Q2False",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "Q2True"
+                },
+                {
+                    "type": "question",
+                    "id": "TrueFalseQ3",
+                    "prompt": "<em>True or False</em>: The HIPAA Security Rule specifies the methods for conducting the required risk analysis.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "Q3True",
+                            "text": "True"
+                        },
+                        {
+                            "id": "Q3False",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "Q3False"
+                },
+                {
+                    "type": "question",
+                    "id": "access",
+                    "prompt": "The technology and policies and procedures for its use that protects electronic protected health information and control access to it are",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "adminSafegaurds",
+                            "text": "Administrative Safeguards"
+                        },
+                        {
+                            "id": "techSafeguards",
+                            "text": "Technical Safeguards"
+                        },
+                        {
+                            "id": "phySafeguards",
+                            "text": "Physical Safeguards"
+                        },
+                        {
+                            "id": "integrity",
+                            "text": "Integrity Controls"
+                        }
+                    ],
+                    "answer": "techSafeguards"
+                },
+                {
+                    "type": "question",
+                    "id": "TrueFalseQ5",
+                    "prompt": "<em>True or False</em>: Maintaining access to electronic protected health information.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "Q5True",
+                            "text": "True"
+                        },
+                        {
+                            "id": "Q5False",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "Q5False"
+                },
+                {
+                    "type": "question",
+                    "id": "TrueFalseQ6",
+                    "prompt": "<em>True or False</em>: Health informatics and information management professionals really have no obligations to consumers when it comes to theft of their medical identity and protected health information.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices":
+                    [
+                        {
+                            "id": "Q6True",
+                            "text": "True"
+                        },
+                        {
+                            "id": "Q6False",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "Q6False"
+                }
+            ]
+        }
+    ]
+}
