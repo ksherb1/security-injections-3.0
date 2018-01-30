@@ -19,8 +19,8 @@ var Validate = require("./validate.js");
 exports.write_3 = function(name, variant, dev) {
 	if(typeof(dev)==='undefined') dev = false;		// default value for dev
 
-	// CONSTANTS
-	var contentDir = "content/Secure Coding/";
+	// CONSTANTSi
+	var contentDir = "content/Interdisciplinary/";
 
 	var resourceDir = "resources/";
 	var publicDir = "public/";
@@ -113,7 +113,6 @@ exports.write_3 = function(name, variant, dev) {
 
 //Phase 2: module should not have "MAIN"
 // MAIN
-
 /*
 exports.write_3("Integer Error", "CS0 C++");
 exports.write_3("Integer Error", "CS0 Java");
@@ -152,28 +151,28 @@ exports.write_3("Data Hiding","CS2 C++");
 exports.write_3("Data Hiding","CS2 Python");
 exports.write_3("Exception Handling", "CS2 C++");
 exports.write_3("Exception Handling", "CS2 Java");
-exports.write_3("Computer Literacy", "Passwords");
-exports.write_3("Computer Literacy", "Phishing");
-exports.write_3("Computer Literacy", "Cryptography");
-exports.write_3("Computer Literacy", "Social Networking Security");
 */
+// exports.write_3("Computer Literacy", "Passwords");
+// exports.write_3("Computer Literacy", "Phishing");
+// exports.write_3("Computer Literacy", "Cryptography");
+// exports.write_3("Computer Literacy", "Social Networking Security");
 
 
-//exports.write_3("Cross-Site Scripting", "PHP");
-//exports.write_3("Cross-Site Scripting", "Ruby on Rails");
-exports.write_3("SQL Injections", "Introduction");
-//exports.write_3("SQL Injection", "CS");
-//exports.write_3("SQL Injection", "IS");
-//exports.write_3("Industrial Control Systems", "Introduction");
-//exports.write_3("Mobile Risk Management", "Introduction");
-/*
-exports.write_3("Integer Error", "CS0 C++ Sample");
+
+// exports.write_3("Cross-Site Scripting", "PHP");
+// exports.write_3("Cross-Site Scripting", "Ruby on Rails");
+// exports.write_3("SQL Injections", "Introduction");
+
+// exports.write_3("Integer Error", "CS0 C++ Sample");
+
+// exports.write_3("Industrial Control Systems", "Introduction");
+// exports.write_3("Mobile Risk Management", "Introduction");
+
 exports.write_3("Mitigating Risk", "Value Modeling");
 exports.write_3("Healthcare Management", "Risk Management");
 exports.write_3("Healthcare Management", "HIPPA");
 exports.write_3("Healthcare Management", "Hipaa");
 exports.write_3("Business", "Risk Assessment");
-exports.write_3("Business", "Confidentiality, Availability, Trust");
+exports.write_3("Business", "CAT");
 exports.write_3("Business", "Business Use Security");
 exports.write_3("Business", "Government Use Security");
-*/
