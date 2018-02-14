@@ -202,6 +202,14 @@ padding:0px 5px 5px 0px;
     border: none !important;
 }
 
+.si-error{
+	margin-top: 25%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: pink;
+	border: 1px solid red;
+}
+
 
 .si-question-correct .well{
 	background-color: lightgreen;
