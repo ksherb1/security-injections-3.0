@@ -159,7 +159,7 @@
                 {
                     "type": "question",
                     "id": "develop1",
-                    "prompt": " ",
+                    "prompt": "Which of the following are factors to consider when implementing a solution?",
                     "ignored": false,
                     "mode": "checkbox",
                     "choices": [
