@@ -209,7 +209,7 @@
 				{
 					"type": "question",
 					"id": "error-million",
-					"prompt": "Enter 1000000 (1 million): did you get an error?",
+					"prompt": "Enter 1000000 for both numbers, did you get an unexpected result?",
 					"ignored": false,
 					"mode": "radio",
 					"choices": [

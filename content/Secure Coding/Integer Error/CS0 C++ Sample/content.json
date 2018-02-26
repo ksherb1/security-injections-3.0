@@ -213,7 +213,7 @@
 				{
 					"type": "question",
 					"id": "error-million",
-					"prompt": "Enter 1000000 (1 million): did you get an error?",
+					"prompt": "Enter 1000000 for both numbers, did you get an unexpected result?",
 					"ignored": false,
 					"mode": "radio",
 					"choices": [
@@ -226,12 +226,12 @@
 							"text": "No"
 						}
 					],
-					"answer": "n"
+					"answer": "y"
 				},
 				{
 					"type": "question",
 					"id": "error-billion",
-					"prompt": "Enter 2000000000 (2 billion): did you get an error?",
+					"prompt": "Enter 2000000000 (2 billion) for both numbers, did you get an unexpected result?",
 					"ignored": false,
 					"mode": "radio",
 					"choices": [
@@ -249,7 +249,7 @@
 				{
 					"type": "question",
 					"id": "error-ten-billion",
-					"prompt": "Enter 10000000000 (10 billion): did you get an error?",
+					"prompt": "Enter 10000000000 (10 billion) for both numbers, did you get an unexpected result?",
 					"ignored": false,
 					"mode": "radio",
 					"choices": [
