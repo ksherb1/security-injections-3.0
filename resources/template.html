@@ -1,6 +1,5 @@
 <div ng-app="modApp">
-	<div ng-controller="modCtrl" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false"
-	    onDrag="return false" onDrop="return false" autocomplete=off>
+	<div ng-controller="modCtrl" onselectstart="return false" autocomplete=off>
 		<header class="header">
 			<div class="container">
 				<div class="row">
@@ -194,7 +193,7 @@
 													<span ng-bind-html="choice.text" id="{{ unit.id+'-'+choice.id }}-label"></span>
 												</label>
 											</div>
-											<textarea class="form-control" rows="5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
+											<textarea onselectstart="return true" onCopy="return true" onCut="return true" class="form-control" rows="5" ng-switch-when="textarea" ng-model="unit.value"></textarea>
 											<p ng-switch-default class="si-error">Mode invalid</p>
 										</div>
 									</div>
