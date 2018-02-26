@@ -272,7 +272,7 @@
                 {
                     "type": "question",
                     "id": "type",
-                    "prompt": "What happens if you type non-numeric characters for either the number of names or which name you wanted to retrieve?",
+                    "prompt": "What happens if you type non-numeric characters for either the number of names or the name you wanted to retrieve?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
