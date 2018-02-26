@@ -1,18 +1,6 @@
 {
 	"name": "Integer Error",
 	"variant": "CS0 C++",
-	"objectives": {
-			"goals" : [
-				"Introduce the risks and mitigation methods associated with integer overflow for introductory CS students"
-			],
-			"outcomes" : [
-				"Describe integer errors and the risk associated with them",
-				"Identify the techniques to avoid an integer error",
-				"Evaluate mathematical operations that might lead to an overflow",
-				"Inspect code for segments that might lead to vulnerabilities",
-				"Appraise a problem and discuss the implications of integer overflow"
-			]
-	},
 	"sections": [
 		{
 			"header": "Background",
