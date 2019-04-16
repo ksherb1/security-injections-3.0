@@ -55,7 +55,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "In the code above, buffer has 10 elements but the loop writes 15 elements, which results in an error."
+                    "text": "In the code above, buffer has 10 elements but the loop writes 14 elements, which results in an error."
                 },
                 {
                     "type": "subheader",

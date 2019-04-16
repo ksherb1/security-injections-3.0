@@ -637,6 +637,7 @@ $scope.checkAnswers = function() {
 					'today': today
 				}
 
+		var pageIndex;
 		for(i in $scope.module.sections){
 			if ($scope.module.sections[i].header == "Discussion Questions"){
 				pageIndex = i;
@@ -644,6 +645,7 @@ $scope.checkAnswers = function() {
 		}
 
 		var discussionQuestions = [];
+		if (pageIndex && $scope.module.sections[pageIndex]) {
 			for (q in $scope.module.sections[pageIndex].units){
 					unit = $scope.module.sections[pageIndex].units[q];
 				if(unit.type == "question") {
@@ -654,6 +656,7 @@ $scope.checkAnswers = function() {
 					}
 				}
 			}
+		}
 
 		pdfCertificate(discussionQuestions,draw_data);
 		finalPDF = $scope.detailFrame

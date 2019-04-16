@@ -161,7 +161,7 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Computer Literacy", "Social Networking Security");
 
 
-
+exports.write_3("Business", "Ensuring Provisional Voting Security");
 
 
 // exports.write_3("Integer Error", "CS0 C++ Sample");
@@ -169,11 +169,12 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Industrial Control Systems", "Introduction");
 // exports.write_3("Mobile Risk Management", "Introduction");
 
-exports.write_3("Mitigating Risk", "Value Modeling");
-exports.write_3("Healthcare Management", "Risk Management");
-exports.write_3("Healthcare Management", "HIPPA");
-exports.write_3("Healthcare Management", "Hipaa");
-exports.write_3("Business", "Risk Assessment");
-exports.write_3("Business", "CAT");
-exports.write_3("Business", "Business Use Security");
-exports.write_3("Business", "Government Use Security");
+// exports.write_3("Mitigating Risk", "Value Modeling");
+// exports.write_3("Healthcare Management", "Risk Management");
+// exports.write_3("Healthcare Management", "HIPPA");
+// exports.write_3("Healthcare Management", "Hipaa");
+// exports.write_3("Business", "Risk Assessment");
+// exports.write_3("Business", "CAT");
+// exports.write_3("Business", "Business Use Security");
+// exports.write_3("Business", "Government Use Security");
+// exports.write_3("Business", "Ensuring Pollbook Security");

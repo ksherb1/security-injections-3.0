@@ -1,0 +1,50 @@
+                {
+                    "type": "paragraph",
+                    "text": "The layout of the polling location is below. Based on where the EPB station is located,"
+                },
+                {
+                    "type": "question",
+                    "id": "p1q2a",
+                    "prompt": "Identify which outlet the EBPs should connect to",
+                    "ignored": false,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "question",
+                    "id": "p1q2b",
+                    "prompt": "Identify where the EPB hub should be located",
+                    "ignored": false,
+                    "mode": "textarea",
+                    "pattern": "null"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Picture shows cords tangled and within voters walking path, that area is labeled “1”.",
+                        "Area “2” shows an EPB not connected to its printer and one EBP connected to a printer all the way on the other side of the table.",
+                        "Area “3” shows the hub (identified as HUB) on top of the EPB table.",
+                        "Area “4” shows all EPB connected to separate wall outlets.",
+                        "Area “5” points to an EPB laid on its face with its ports exposed."
+                    ],
+                    "ordered": false
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Attempt to cover any open ports on the EPB with painter’s tape",
+                        "Ensure all EPBs are connected to its own printer that is within arm’s reach for the EPB judge.",
+                        "Remove all cords from voters and election judges path. May use painter’s tape to carefully conceal cords.",
+                        "Plug all EPBs and HUB power cables to a power adapter to prevent shortages and electrical damage to the EPB.",
+                        "Attempt to cover any open ports on the hub with painter’s tape and remove HUB from plain sight."
+                    ],
+                    "ordered": true
+                },
+                {
+                    "type": "question",
+                    "id": "p1q3",
+                    "prompt": "The layout of the polling location is below. Identify and match all errors within the EPB set up with the correct action to solve said error.",
+                    "ignored": false,
+                    "mode": "textarea",
+                    "pattern": "null"
+                }

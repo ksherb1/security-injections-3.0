@@ -305,59 +305,6 @@
             ]
         },
         {
-            "header": "Security Checklist",
-            "units": [
-                {
-                    "type": "checklist",
-                    "id": "Pgm1CL",
-                    "list": [
-                        {
-                            "id": "var",
-                            "header": "Check each line of code:",
-                            "items": [
-                                {
-                                    "id": "var",
-                                    "text": "Click each declaration of an integer variable.",
-                                    "ans": true,
-                                    "js": true
-                                }
-                            ]
-                        },
-                        {
-                            "id": "vuln",
-                            "header": "For each variable:",
-                            "items": [
-                                {
-                                    "id": "input",
-                                    "text": "Click all input operations that assign values to the variable.",
-                                    "ans": true,
-                                    "js": true
-                                },
-                                {
-                                    "id": "math",
-                                    "text": "Click all mathematical operations involving the variable.",
-                                    "ans": true,
-                                    "js": true
-                                },
-                                {
-                                    "id": "assign",
-                                    "text": "Click all assignments made to the variable.",
-                                    "ans": true,
-                                    "js": true
-                                }
-                            ]
-                        }
-                    ],
-                    "code": "./program1checklist.html",
-                    "javascript": "./checklist.js"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "Highlighted areas indicate vulnerabilities."
-                }
-            ]
-        },
-        {
             "header": "Discussion Questions",
             "units": [
                 {
