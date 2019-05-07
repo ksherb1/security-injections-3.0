@@ -1,9 +1,9 @@
 {
-    "name": "Business",
+    "name": "Security Training for Election Judges",
     "variant": "Ensuring Provisional Voting Security",
     "sections": [
-        {
-            "header": "Introduction",
+     	{
+            "header": "Background",
             "units": [
                 {
                     "type": "author",
@@ -11,8 +11,21 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Summary"
+                    "text": "Learning Objectives"
                 },
+                {
+                    "type": "paragraph",
+                    "text": "By the end of this module, Election Judges will be able to understand and mitigate physical, human (insider), and cyber threats. This will be accomplished through review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the Provisional Voting process."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Reference: Keene, K. K., &amp; Livingston, D. E. (2018). Election Judge Manual 2018 (pp. 10.2-10.49) (United States, Board of Elections). Bel Air, MD: Harford County Board of Elections."
+                }
+            ]
+        },
+        {
+            "header": "Introduction",
+            "units": [
                 {
                     "type": "paragraph",
                     "text": "Under federal law, every voter that claims they are eligible and registered must be given the opportunity to vote. Provisional Voting is a voting mechanism used to allow citizens to vote before verifying their eligibility."
@@ -32,11 +45,11 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "In this section, we will review how to identify, prevent, and/or respond to cyber threats in the polling place during provisional voting."
+                    "text": "In this section, we will review how to identify, prevent, and/or respond to cyber threats in the polling place during Provisional Voting."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Provisional Voting is the least susceptible to cyber-attacks and/or cyber threats. This is because all provisional ballots are stored offline, submitted in provisional ballot transfer bags and marked with writing utensils instead of technology. It is still important, however, to be aware that cyber threats are still possible and to able to recognize the signs of them."
+                    "text": "Provisional Voting is the least susceptible to cyber attacks and/or cyber threats. This is because all provisional ballots are stored offline, submitted in provisional ballot transfer bags, and marked with writing utensils instead of technology. It is  important, however, to be aware that cyber threats are still possible and to be able to recognize the signs of them."
                 },
                 {
                     "type": "subheader",
@@ -45,25 +58,7 @@
                 {
                     "type": "question",
                     "id": "cq1",
-                    "prompt": "Cyber threats are the most likely to occur during provisional voting.",
-                    "ignored": false,
-                    "mode": "radio",
-                    "choices": [
-                        {
-                            "id": "cq1_True",
-                            "text": "True"
-                        },
-                        {
-                            "id": "cq1_False",
-                            "text": "False"
-                        }
-                    ],
-                    "answer": "cq1_False"
-                },
-                {
-                    "type": "question",
-                    "id": "cq2",
-                    "prompt": "Why is provisional voting the least susceptible to cyber threat?",
+                    "prompt": "Why is Provisional Voting the least susceptible to cyber threat?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -93,11 +88,11 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "In this section, we will review how to identify, prevent, and/or respond to physical threats in the polling place during provisional voting."
+                    "text": "In this section, we will review how to identify, prevent, and/or respond to physical threats in the polling place during Provisional Voting."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Physical threats to provisional voting are typically an act of negligence and/or human error. To prevent physical threats, make sure you are aware of how the polling place should be set up, how the provisional ballots should be managed, and how the provisional ballots should be collected."
+                    "text": "Physical threats to Provisional Voting are typically an act of negligence and/or human error. To prevent physical threats, make sure you are aware of how the polling place should be set up, how the provisional ballots should be managed, and how the provisional ballots should be collected."
                 },
                 {
                     "type": "subheader",
@@ -114,11 +109,11 @@
                 {
                     "type": "list",
                     "items": [
-                        "Make sure that voting booths have a privacy screen(s) on a table for voters to complete their ballots.",
-                        "Remember, only the Provisional Election Judge(s) and/or the Chief Judge can set up the Provisional Voting table. After they are done, make sure that all of the following supplies from the Provisional Judge supply bag are on the provisional voting table:<ul><li>Pens</li><li>Applications (with envelopes and instructions)</li><li>Provisional Judge Log</li><li>Provisional Judge Folder (should contain: Reasons for voting a provisional ballot, acceptable forms of ID, blank voter authority cards (VACs), sample provisional ballot applications)</li><li>Ballot transfer bag</li><li>Security seal to place on ballot transfer bag when closing the polling place</li><li>Envelope for VACs and cancelled VACs</li></ul>",
+                        "Make sure that voting booths have privacy screen(s) on a table for voters to complete their ballots.",
+                        "Remember, only the Provisional Election Judge(s) and/or the Chief Judge can set up the Provisional Voting table. After they are done, make sure that all of the following supplies from the Provisional Judge supply bag are on the Provisional Voting table:<ul><li>Pens</li><li>Applications (with envelopes and instructions)</li><li>Provisional Judge Log</li><li>Provisional Judge Folder (should contain: Reasons for voting a provisional ballot, acceptable forms of ID, blank voter authority cards (VACs), sample provisional ballot applications)</li><li>Ballot transfer bag</li><li>Security seal to place on ballot transfer bag when closing the polling place</li><li>Envelope for VACs and cancelled VACs</li></ul>",
                         "If you are a Provisional Election Judge, verify the security seal number on the zipper on the top of the orange provisional ballot bag is the same number as indicated on the Opening Security Integrity Report.",
                         "If you are a Provisional Election Judge, verify the orange provisional ballot bag is empty. If not, notify one of your Chief Judges immediately.",
-                        "If you area Provisional Election Judge, verify the bottom of the orange provisional bag is locked."
+                        "If you area Provisional Election Judge, verify the bottom of the orange provisional ballot bag is locked."
                     ]
                 },
                 {
@@ -133,7 +128,7 @@
                     "type": "list",
                     "items": [
                         "Make sure that each registered voter has or receives a voter authority card (VAC) with a provisional ballot reason code number printed on it.",
-                        "Check the voter authority card for the voter’s signature and Check-In Judge’s initials.",
+                        "Check the voter authority card (VAC) for the voter’s signature and Check-In Judge’s initials.",
                         "Check to make sure the voter’s provisional application is completed and signed."
                     ]
                 },
@@ -154,7 +149,7 @@
                     "items": [
                         "Place the security seal over the opening of the provisional ballot transfer bag.",
                         "Place the ballot transfer bag into the provisional judge supply bag alone with the VAC envelope and seal the bag.",
-                        "Give this back to the Chief Judge(s) to transport back to the Election Office."
+                        "Give this bag back to the Chief Judge(s) to transport back to the Election Office."
                     ]
                 },
                 {
@@ -238,21 +233,21 @@
                 {
                     "type": "question",
                     "id": "pq4",
-                    "prompt": "It’s the end of the night and you are placing the Ballot Transfer Bag into the Provisional Judge Supply Bag when you notice that the security seal has not been placed on it. What should you do?",
+                    "prompt": "It’s the end of the night and you are placing the ballot transfer bag into the provisional judge supply bag when you notice that the security seal has not been placed on it. What should you do?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "pq4_Place",
-                            "text": "Place the Ballot Transfer Bag in the Provisional Judge Supply Bag without sealing."
+                            "text": "Place the ballot transfer bag in the provisional judge supply bag without sealing."
                         },
                         {
                             "id": "pq4_Find",
-                            "text": "Find the seal and place it on the Ballot Transfer Bag’s opening and then place the Ballot Transfer Bag into the Provisional Judge Supply Bag."
+                            "text": "Find the seal and place it on the ballot transfer bag’s opening and then place the ballot transfer bag into the provisional judge supply bag."
                         },
                         {
                             "id": "pq4_Notify",
-                            "text": "Notify a Chief Judge that the seal was not placed on the Ballot Transfer Bag."
+                            "text": "Notify a Chief Judge that the seal was not placed on the ballot transfer bag."
                         }
                     ],
                     "answer": "pq4_Find"
@@ -264,11 +259,11 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "In this section, we will review how to identify, prevent, and/or respond to insider threats in the polling place during provisional voting."
+                    "text": "In this section, we will review how to identify, prevent, and/or respond to insider threats in the polling place during Provisional Voting."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Insider threats to provisional voting can occur intentionally and/or accidentally. Whether it is a person intentionally trying to tamper with the election or it is an Election Judge making an honest mistake, both pose serious threats to the election process and must be avoided. Throughout setup, voting hours, and the closing of the polls, be cautious of people posing as Election Judges. Also be aware of Election Judges acting maliciously and/or negligently."
+                    "text": "Insider threats to Provisional Voting can occur intentionally and/or accidentally. Whether it is a person intentionally trying to tamper with the election or it is an Election Judge making an honest mistake, both pose serious threats to the election process and must be avoided. Throughout setup, voting hours, and the closing of the polls, be cautious of people posing as Election Judges. Also be aware of Election Judges acting maliciously and/or negligently."
                 },
                 {
                     "type": "subheader",
@@ -281,7 +276,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "Make sure that all of the following supplies from the Provisional Judge Supply Bag are on the provisional voting table:<ul><li>Pens</li><li>Applications (with envelopes and instructions)</li><li>Provisional Judge Log</li><li>Provisional Judge Folder (should contain: Reasons for Voting a Provisional Ballot, Acceptable Forms of ID, Blank Voter Authority Cards (VACs), Sample Provisional Ballot Applications)</li><li>Ballot Transfer Bag</li><li>Security Seal to place on Ballot Transfer Bag when closing the polling place</li><li>Envelope for voter authority cards and cancelled VACS</li></ul>",
+                        "Make sure that all of the needed supplies from the Provisional Judge supply bag are on the provisional voting table.",
                         "Verify the security seal number on the zipper on the top of the orange provisional ballot bag is the same number as indicated on the Opening Security Integrity Report."
                     ]
                 },
@@ -296,9 +291,9 @@
                 {
                     "type": "list",
                     "items": [
-                        "Keep your log neat and accurate for each Provisional Voter.",
+                        "Keep your log neat and accurate for each provisional voter.",
                         "Make sure voters are given a new ballot if they make a mistake. Write 'Spoiled' across the old ballot and place it in the 'Spoiled Ballot Envelope' before issuing the voter a replacement ballot.",
-                        "Make sure that no provisional ballots are placed inside the scanning unit."
+                        "Make sure that <b> no provisional ballots </b> are placed inside the scanning unit."
                     ]
                 },
                 {
@@ -312,8 +307,8 @@
                 {
                     "type": "list",
                     "items": [
-                        "Verify the total number of voter authority cards against the number of provisional ballots voted from your Log.",
-                        "Count the voter authority cards for each party ballot issued and give these totals to the Chief Judges for the Closing Summary Report and to the Ballot Judge for the Closing Ballot Accounting Certificate."
+                        "Verify the total number of VACs against the number of provisional ballots voted from your log.",
+                        "Count the VACs for each party ballot issued and give these totals to the Chief Judges for the Closing Summary Report and to the Provisional Judge for the Closing Ballot Accounting Certificate."
                     ]
                 },
                 {
@@ -333,7 +328,7 @@
                         },
                         {
                             "id": "iq1_Trash",
-                            "text": "Retrieve the blank voter authority cards and sample provisional ballot applications from the trash."
+                            "text": "Retrieve the blank VACs and sample provisional ballot applications from the trash."
                         },
                         {
                             "id": "iq1_Report",
@@ -353,7 +348,7 @@
                 {
                     "type": "question",
                     "id": "iq2",
-                    "prompt": "You and a fellow Election Judge are working the provisional voting table. Towards the end of the night, you both notice that the provisional voting bag is full, but you still have a few more provisional voters. What should you do?",
+                    "prompt": "You and a fellow Election Judge are working the Provisional Voting table. Towards the end of the night, you both notice that the provisional voting bag is full, but you still have a few more provisional voters. What should you do?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -401,7 +396,7 @@
                 {
                     "type": "question",
                     "id": "iq4",
-                    "prompt": "How can you, as a Provisional Voting Judge, properly verify the number of voters recorded in the Provisional Judge Log?",
+                    "prompt": "How can you, as a Provisional Voting Judge, properly verify the number of voters recorded in the Provisional Judge log?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -415,7 +410,7 @@
                         },
                         {
                             "id": "iq4_Log",
-                            "text": "Verify the total number of voter authority cards against the number of provisional ballots voted from your Log."
+                            "text": "Verify the total number of VACs against the number of provisional ballots voted from your log."
                         },
                         {
                             "id": "iq4_Ask",
