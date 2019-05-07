@@ -161,7 +161,7 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Computer Literacy", "Social Networking Security");
 
 
-exports.write_3("Business", "Ensuring Provisional Voting Security");
+exports.write_3("Business", "Operating the Scanning Unit");
 
 
 // exports.write_3("Integer Error", "CS0 C++ Sample");
@@ -178,3 +178,5 @@ exports.write_3("Business", "Ensuring Provisional Voting Security");
 // exports.write_3("Business", "Business Use Security");
 // exports.write_3("Business", "Government Use Security");
 // exports.write_3("Business", "Ensuring Pollbook Security");
+// exports.write_3("Business", "Ensuring Provisional Voting Security");
+// exports.write_3("Business", "Operating the Scanning Unit");
