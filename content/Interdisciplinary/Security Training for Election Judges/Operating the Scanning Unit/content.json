@@ -15,11 +15,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "By the end of this module, Election Judges will be able to understand and mitigate physical, human (insider), and cyber threats. This will be accomplished through review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the operating the scanning unit."
+                    "text": "By the end of this module, Election Judges will be able to understand and mitigate physical, human (insider), and cyber threats. This will be accomplished through review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the operating the Scanning Unit."
                 },
                   {
                     "type": "paragraph",
-                    "text": "The Scanning Unit houses two record of ballots: 1. an electronic version in the form of a memory stick; and, 2. a paper record which is collected within the unit itself."
+                    "text": "The Scanning Unit houses two records of ballots: (1) an electronic version in the form of a memory stick; and, (2) a paper record which is collected within the unit itself."
                 },
                    {
                     "type": "paragraph",
@@ -74,7 +74,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "<b>Surge Protector:</b> When plugging the Scanning Unit into a power source, make sure there is a surge protector is attached. Be sure the surge protector is functioning by ensuring all lights on the surge protector are lit.",
+                        "<b>Surge Protector:</b> When plugging the Scanning Unit into a power source, make sure a surge protector is attached. Be sure the surge protector is functioning by ensuring all lights on the surge protector are lit.",
                         "<b>Power Supply:</b> If the Scanning Unit does not turn on, or if you hear a series of four beeps, check the power supply to the Scanning Unit. Make sure the power cord is connected firmly to the Scanning Unit, surge protector, and outlet. Make sure there is power coming through the outlet. If the scanning unit still does not turn on, alert a Chief Judge.",
                         "<b>Main Ballot Box / Ballot Transfer Bin:</b><ul><li>When opening the main ballot box, verify that it is empty. Do the same with the ballot transfer bin.</li><li>When replacing the ballot transfer bin in the main ballot box, check that both lids of the ballot transfer bin are open and resting on the sides inside the main ballot box. This ensures all successfully scanned ballots fall into the bin without disruption.</li><li>Be sure to CLOSE, LOCK, and SEAL the main ballot box to prevent theft of paper ballots.</li></ul>",
                         "<b>Emergency Ballot Compartment:</b> Once the emergency ballot compartment is unlocked, make sure the compartment is empty and the metal flap on the compartment door is raised. Then close, lock, and reseal the emergency ballot compartment door."
@@ -136,7 +136,7 @@
                         },
                         {
                             "id": "oq2_Alert",
-                            "text": "Alert the Chief Judge."
+                            "text": "Alert the Chiff Judge."
                         },
                         {
                             "id": "oq2_Break",
@@ -244,7 +244,7 @@
                         "Hold onto the VAC until the voter has cast their ballot.",
                         "Prompt voter on how to submit their ballot. <i>**Remember: ALWAYS stand at least two feet away from the Scanning Unit and only approach the voter if they request/accept assistance.</i>",
                         "The top slot on the Scanning Unit only accepts the ballot activation card that is printed by a ballot marking device. The bottom slot is for hand-marked ballots only. Attempting to place a ballot in the wrong slot may cause a paper jam.",
-                        "If any problems arise when attempting to submit a ballot, <b>ask the voter if they need assistance.</b> Then, carefully read the Scanning Unit screen and troubleshoot accordingly. Alert Chief Judge if more assistance is needed.",
+                        "If any problems arise when attempting to submit a ballot, <b>ask the voter if they need assistance.</b> Then, carefully read the Scanning Unit screen and troubleshoot accordingly. Alert the Chief Judge if more assistance is needed.",
                         "Once the ballot is accepted by the Scanning Unit, place their VAC into the designated box provided."
                     ]
                 },
@@ -255,7 +255,7 @@
                 {
                     "type": "question",
                     "id": "dq1",
-                    "prompt": "An Election Judge must either stand or sit at least two feet to the side of the Sanning Unit.",
+                    "prompt": "An Election Judge must either stand or sit at least two feet to the side of the Scanning Unit.",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -355,7 +355,7 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "Procedure to turn close the polls and the Scanning Unit is only to be completed when the last eligible voter in the polling place has completed the voting process."
+                    "text": "Procedure to close the polls and the Scanning Unit is only to be completed when the last eligible voter in the polling place has completed the voting process."
                 },
                 {
                     "type": "paragraph",
@@ -410,7 +410,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<i>Immediately give the memory stick to the Chief Judge. This memory stick holds an electronic record of the ballots from that day. Ensure the memory stick is not compromised and is paced in its designated security envelope by the Chief Judge.</i>"
+                    "text": "<i>Immediately give the memory stick to the Chief Judge. This memory stick holds an electronic record of the ballots from that day. Ensure the memory stick is not compromised and is placed in its designated security envelope by the Chief Judge.</i>"
                 },
                 {
                     "type": "paragraph",
@@ -437,7 +437,7 @@
                         },
                         {
                             "id": "cq1_Both",
-                            "text": "Both copies are for the pubic to view."
+                            "text": "Both copies are for the public to view."
                         },
                         {
                             "id": "cq1_Security",

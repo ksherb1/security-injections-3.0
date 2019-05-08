@@ -36,7 +36,7 @@
                 },
                 {
                     "type":"paragraph",
-                    "text": "Together, we can ensure that all eligible citizens are able to vote on Election Day by monitoring for cyber, physical, and insider threats."
+                    "text": "Together, we can ensure that all eligible citizens are able to vote on Election Day while monitoring for cyber, physical, and insider threats."
                 }
             ]
         },
@@ -110,10 +110,10 @@
                     "type": "list",
                     "items": [
                         "Make sure that voting booths have privacy screen(s) on a table for voters to complete their ballots.",
-                        "Remember, only the Provisional Election Judge(s) and/or the Chief Judge can set up the Provisional Voting table. After they are done, make sure that all of the following supplies from the Provisional Judge supply bag are on the Provisional Voting table:<ul><li>Pens</li><li>Applications (with envelopes and instructions)</li><li>Provisional Judge Log</li><li>Provisional Judge Folder (should contain: Reasons for voting a provisional ballot, acceptable forms of ID, blank voter authority cards (VACs), sample provisional ballot applications)</li><li>Ballot transfer bag</li><li>Security seal to place on ballot transfer bag when closing the polling place</li><li>Envelope for VACs and cancelled VACs</li></ul>",
+                        "Remember, only the Provisional Election Judge(s) and/or the Chief Judge can set up the Provisional Voting table. After they are done, make sure that all of the following supplies from the Provisional Judge supply bag are on the Provisional Voting table:<ul><li>Pens</li><li>Applications (with envelopes and instructions)</li><li>Provisional Judge Log</li><li>Provisional Judge Folder (should contain: reasons for voting a provisional ballot, acceptable forms of ID, blank voter authority cards (VACs), sample provisional ballot applications)</li><li>Ballot transfer bag</li><li>Security seal to place on ballot transfer bag when closing the polling place</li><li>Envelope for VACs and cancelled VACs</li></ul>",
                         "If you are a Provisional Election Judge, verify the security seal number on the zipper on the top of the orange provisional ballot bag is the same number as indicated on the Opening Security Integrity Report.",
                         "If you are a Provisional Election Judge, verify the orange provisional ballot bag is empty. If not, notify one of your Chief Judges immediately.",
-                        "If you area Provisional Election Judge, verify the bottom of the orange provisional ballot bag is locked."
+                        "If you are a Provisional Election Judge, verify the bottom of the orange provisional ballot bag is locked."
                     ]
                 },
                 {
@@ -334,13 +334,13 @@
                             "id": "iq1_Report",
                             "text": "Report the Election Judge to the Chief Judges."
                         },
+			{
+                            "id": "iq1_BC",
+                            "text": "Both B and C."
+                        },
                         {
                             "id": "iq1_All",
                             "text": "All of the above."
-                        },
-                        {
-                            "id": "iq1_BC",
-                            "text": "Both B and C."
                         }
                     ],
                     "answer": "iq1_BC"

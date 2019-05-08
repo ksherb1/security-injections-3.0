@@ -15,7 +15,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "By the end of this module, Election Judges will be able to understand and mitigate physical, human (insider), and cyber threats. This will be accomplished through review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the Electronic Pollbooks (Electronic Pollbooks)."
+                    "text": "By the end of this module, Election Judges will be able to understand and mitigate physical, human (insider), and cyber threats. This will be accomplished through review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the Electronic Pollbooks."
                 },
                 {
                     "type": "paragraph",
@@ -66,7 +66,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Setting up the Electronic Pollbook (Night Before OR Morning of Elections"
+                    "text": "Setting up the Electronic Pollbook (Night Before OR Morning of Elections)"
                 },
                 {
                     "type": "list",
@@ -87,7 +87,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "Check the seal to see if the Electronic Pollbook (Electronic Pollbook) has been tampered with overnight; report any concerns with the seal IMMEDIATELY to the Chief Judge.",
+                        "Check the seal to see if the Electronic Pollbook has been tampered with overnight; report any concerns with the seal IMMEDIATELY to the Chief Judge.",
                         "Ensure the compact flash (CF) card is located in each Electronic Pollbook.",
                         "Be sure to introduce yourself to all other Election Judges. Establish lines of communication in case problems arise.",
                         "Turn on each Electronic Pollbook and ensure the date/time are correct.",
@@ -432,7 +432,7 @@
                 {
                     "type": "question",
                     "id": "p3q1",
-                    "prompt": "You are checking in a voter when an observer comes to you and questions the voter's right to vote, giving their probable cause. What are you to do?",
+                    "prompt": "You are checking in a voter when an observer comes to you and questions the voter's identity, giving their probable cause. What are you to do?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -450,7 +450,7 @@
                         },
                         {
                             "id": "designatedPrecinct",
-                            "text": "As the Election Judge beside you for help to prove the voeter can vote at the designated precinct."
+                            "text": "As the Election Judge beside you for help to prove the voter can vote at the designated precinct."
                         }
                     ],
                     "answer": "callChiefJudge"
