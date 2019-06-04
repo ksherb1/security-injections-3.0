@@ -179,7 +179,7 @@
             							"items": [
             								{
             									"id": "input",
-            									"text": "Click all variables that recieve external input",
+            									"text": "Click all variables outside of the 'main' function that receive external input",
             									"ans": true,
             									"js": true
             								}
