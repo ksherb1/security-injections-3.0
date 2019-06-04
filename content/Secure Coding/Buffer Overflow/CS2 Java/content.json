@@ -249,7 +249,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong> Revise the program to eliminate potential buffer overflow problems. You should be able to do this wihtout adding any exception handling code."
+                    "text": "<strong>STEP 2:</strong> Revise the program to eliminate potential buffer overflow problems. You should be able to do this without adding any exception handling code."
                 },
                 {
                     "type": "paragraph",
