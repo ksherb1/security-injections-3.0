@@ -303,7 +303,7 @@
                       "items": [
                         {
                           "id": "dec",
-                          "text": "Click each array declaration in the above code",
+                          "text": "Click each array declaration in the adjacent code",
                           "ans": true,
                           "js": true
                         },
