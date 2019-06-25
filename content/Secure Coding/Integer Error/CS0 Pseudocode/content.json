@@ -33,7 +33,7 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short</strong>, <strong>int</strong>, <strong>long</strong>, etc. , to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
+					"text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short</strong>, <strong>int</strong>, <strong>long</strong>, etc. , to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit signed <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
 				},
 				{
 					"type": "paragraph",
@@ -68,8 +68,8 @@
 				{
 					"type": "list",
 					"items": [
-						"There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.",
-						"On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,768) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments."
+						"There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is 1 more than the largest number that can fit in a 32 bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on earth would be required to reach the goal of more than 4 billion members.",
+						"On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,767) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments."
 					],
 					"ordered": true
 				},
