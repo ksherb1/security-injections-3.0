@@ -35,7 +35,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Writing outside the bounds of a block of allocated memory can corrupt data, crash the program, or cause the execution of malicious code. C++ is particularly vulnerable to buffer overflow. However, Java is designed to avoid the buffer overflow by checking the bounds of a buffer (like an array) and preventing any access beyond those bounds. Even though Java may prevent a buffer overflow from becoming a security issue, it is essential for all programmers to understand the concepts described below."
+                    "text": "Writing outside the bounds of a block of allocated memory can corrupt data, crash the program, or cause the execution of malicious code. However, Java is designed to avoid the buffer overflow by checking the bounds of a buffer (like an array) and preventing any access beyond those bounds. Although some programming languages are designed to avoid buffer overflow, it is essential all programmers understand the issues described in this module."
                 },
                 {
                     "type": "subheader",
