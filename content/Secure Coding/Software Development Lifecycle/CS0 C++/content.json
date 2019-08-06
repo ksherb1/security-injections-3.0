@@ -59,8 +59,8 @@
                 {
                     "type": "list",
                     "items": [
-                        "In 2002, in response to the proliferation of security issues, including terrorist attacks and malicious software, Bill Gates wrote a famous \"security evangelist\" memo (found here), committing his company to building secure software.",
-                        "Thousands of vulnerabilities are reported each year (see here). At the same time, the number and severity of the attacks continue to increase."
+                        "In 2002, in response to the proliferation of security issues, including terrorist attacks and malicious software, Bill Gates wrote a famous \"security evangelist\" memo (<a href = https://www.wired.com/2002/01/bill-gates-trustworthy-computing/ target = _blank>found here</a>), committing his company to building secure software.",
+                        "Thousands of vulnerabilities are reported each year (<a href = https://nvd.nist.gov/# target = _blank>see here</a>). At the same time, the number and severity of the attacks continue to increase."
                     ],
                     "ordered": true
                 },
