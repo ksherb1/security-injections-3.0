@@ -328,8 +328,8 @@
                 },
                 {
                     "type": "question",
-                    "id": "games",
-                    "prompt": "Play at least two games of Anti-Phishing Phil at <a href = http://info.wombatsecurity.com/student-phil-phyllis-demo>http://info.wombatsecurity.com/student-phil-phyllis-demo</a>. Use \"students1\" as the password on the site. Create a \"blacklist\" of the phishing Web site addresses you encountered, and a \"whitelist\" of the legitimate Web sites (Hint: see the section on Anti-phishing Technologies.) Describe how the Anti-Phising Phil experience has helped you to better recognize phishing Web sites. What are your likes and dislikes about the game? Are there any suggestion(s) that you would like to provide so as to improve it? If so, explain.",
+                    "id": "test",
+                    "prompt": "Take the \"SonicWall Phishing and Spam IQ Test\" a couple of times (<a href = https://www.sonicwall.com/phishing-iq-test/>https://www.sonicwall.com/phishing-iq-test/</a>). What was your maximum score? Look at the test result sheet, and give the name that appears in the \"Subject\" column for three of the questions. For each of the subjects, click on the \"Why?\" link that appears under the \"Explain Answer Column.\" The e-mail you viewed for that question should re-appear—this time with explanations. Copy one of the given explanations for each of the e-mails.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -337,18 +337,6 @@
                 {
                     "type": "subheader",
                     "text": "Question 3"
-                },
-                {
-                    "type": "question",
-                    "id": "test",
-                    "prompt": "Take the \"SonicWall Phishing and Spam IQ Test\" a couple of times (<a href = http://www.sonicwall.com/phishing/>http://www.sonicwall.com/phishing/</a>). What was your maximum score? Look at the test result sheet, and give the name that appears in the \"Subject\" column for three of the questions. For each of the subjects, click on the \"Why?\" link that appears under the \"Explain Answer Column.\" The e-mail you viewed for that question should re-appear—this time with explanations. Copy one of the given explanations for each of the e-mails.",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "subheader",
-                    "text": "Question 4"
                 },
                 {
                     "type": "question",
@@ -360,7 +348,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Question 5"
+                    "text": "Question 4"
                 },
                 {
                     "type": "question",

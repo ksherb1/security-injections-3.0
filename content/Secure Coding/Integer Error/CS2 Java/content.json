@@ -33,7 +33,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
+                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit signed <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
                 },
                 {
                     "type": "paragraph",
@@ -43,7 +43,7 @@
                     "type": "list",
                     "items": [
                         "<i>Integer Overflow/Underflow</i>: Mathematical operations can increase integer values above the maximum or decrease them below the minimum allowed values. For instance, if <code>i = Integer.MAX_VALUE</code> , the increment operator i++ will cause an overflow and the resulting value will be the smallest possible integer value <code>Integer.MIN_VALUE</code>. Addition, subtraction, multiplication, and even division can cause overflow problems.",
-                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type (say, from a <strong>long</strong> to a <strong>short</strong>), the value will be truncated if it is outside the range of the smaller type: data that can't fit will simply be thrown out. For example, if you have a <strong>long</strong> variable that has a value that is greater than the largest value that can be stored in a <strong>short</strong> (<code>long l=32800</code>), assigning the <strong>long</strong> to a <strong>short</strong> (<code>short s = (short)l;</code>) will cause a truncation error (<code>s=-32736</code>)."
+                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type (say, from a <strong>long</strong> to a <strong>short</strong>), the value will be truncated if it is outside the range of the smaller type: the high-order bits that do not fit into the smaller type will simply be thrown out. For example, if you have a <strong>long</strong> variable that has a value that is greater than the largest value that can be stored in a <strong>short</strong> (<code>long l=32800</code>), assigning the <strong>long</strong> to a <strong>short</strong> (<code>short s = (short)l;</code>) will cause a truncation error (<code>s=-32736</code>)."
                     ],
                     "ordered": false
                 },

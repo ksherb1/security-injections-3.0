@@ -33,7 +33,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
+                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit signed <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
                 },
                 {
                     "type": "paragraph",
@@ -44,7 +44,7 @@
                     "items": [
                         "<i>Integer Overflow</i>: Mathematical operations can increase integer values above the maximum or decrease them below the minimum allowed values. For instance, if <code>i = INT_MAX</code> , the increment operator i++ will cause an overflow and the resulting value will be the smallest possible integer value <code>INT_MIN</code>. Addition, subtraction, multiplication, and even division can cause overflow problems.",
                         "<i>Sign Errors</i>: C++ has both signed and unsigned integer types. Signed variables can go from a large negative value to a large positive value, while unsigned variables can only store non-negative values. Problems can arise when converting from a signed to an unsigned variable. For example, if you have a negative signed value (<code>short i = -32767</code>), and you were to assign that value to an unsigned variable (<code>unsigned short u = i</code>), the internal representation of the number is unchanged, but the resulting value is interpreted as being unsigned, leading to an undesired result (<code>u=32769</code>).",
-                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type (say, from a <strong>long</strong> to a <strong>short</strong>), the value will be truncated if it is outside the range of the smaller type: data that can't fit will simply be thrown out. For example, if you have a <strong>long</strong> variable that has a value that is greater than the largest value that can be stored in a <strong>short</strong> (<code>long l=32800</code>), assigning the <strong>long</strong> to a <strong>short</strong> (<code>short s = (short)l;</code>) will cause a truncation error (<code>s=-32736</code>)."
+                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type (say, from a <strong>long</strong> to a <strong>short</strong>), the value will be truncated if it is outside the range of the smaller type: the high-order bits that do not fit into the smaller type will simply be thrown out. For example, if you have a <strong>long</strong> variable that has a value that is greater than the largest value that can be stored in a <strong>short</strong> (<code>long l=32800</code>), assigning the <strong>long</strong> to a <strong>short</strong> (<code>short s = (short)l;</code>) will cause a truncation error (<code>s=-32736</code>)."
                     ],
                     "ordered": false
                 },
@@ -63,7 +63,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,768) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments.",
+                        "On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,767) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments.",
                         "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then."
                     ],
                     "ordered": true

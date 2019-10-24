@@ -11,7 +11,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow occurs when data is input or written beyond the allocated bounds of an buffer, array, or other object causing a program crash or a vulnerability that hackers might exploit."
+                    "text": "Buffer overflow occurs when data is input or written beyond the allocated bounds of an buffer, array, or other object causing a program crash or a vulnerability that hackers might exploit. C++ is particularly vulnerable to buffer overflow."
                 },
                 {
                     "type": "subheader",
@@ -35,7 +35,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer oveflow problems are most prevalent in languages such as C/C++ which do not have inherent bounds checking and pointer control, but can happen in other languages as well."
+                    "text": "Writing outside the bounds of a block of allocated memory can corrupt data, crash the program, or cause the execution of malicious code. Buffer oveflow problems are most prevalent in languages such as C/C++ which do not have inherent bounds checking and pointer control, but can happen in other languages as well. Although some programming languages are designed to avoid buffer overflow, it is essential all programmers understand the issues described in this module."
                 },
                 {
                     "type": "subheader",
@@ -253,7 +253,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong> Revise the program to eliminate potential buffer overflow problems. You should be able to do this wihtout adding any exception handling code."
+                    "text": "<strong>STEP 2:</strong> Revise the program to eliminate potential buffer overflow problems. You should be able to do this without adding any exception handling code."
                 },
                 {
                     "type": "paragraph",
@@ -303,7 +303,7 @@
                       "items": [
                         {
                           "id": "dec",
-                          "text": "Click each array declaration in the above code",
+                          "text": "Click each array declaration in the adjacent code",
                           "ans": true,
                           "js": true
                         },

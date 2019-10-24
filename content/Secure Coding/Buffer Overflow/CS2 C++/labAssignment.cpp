@@ -1,5 +1,5 @@
-#include
-#include
+#include <iostream>
+#include <string>
 using namespace std;
 const int INPUT_SIZE = 10;
 string getString();
