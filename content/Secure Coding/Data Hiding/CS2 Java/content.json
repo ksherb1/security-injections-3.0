@@ -277,7 +277,7 @@
 				{
 					"type": "question",
 					"id": "decrypt",
-					"prompt": "Decrypt the following messages with the specified key:<br/>Key: 23<br/><br/><kbd>KLQB QEXQ JLABOK AXB ZOVMQLPVPQBJP LMBOXQB LK PBNRBKZBP LC WBOLP XKA LKBP KLQ IBQQBOP</kbd>",
+					"prompt": "Decrypt the following messages with the specified key:<br/>Key: 23<br/><br/><kbd>KLQB QEXQ JLABOK AXV ZOVMQLPVPQBJP LMBOXQB LK PBNRBKZBP LC WBOLP XKA LKBP KLQ IBQQBOP</kbd>",
 					"ignored": false,
 					"mode": "textarea",
 					"pattern": "note that modern day cryptosystems operate on sequences of zeros and ones not letters"
