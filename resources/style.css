@@ -132,7 +132,8 @@ main section div.sectionButtons button.primary {
 
 main section div.page {
 	width: 100%;
-	max-height: 600px;
+	max-height: calc(100vh - 350px);
+	min-height: 300px;
 	display: inline-block;
 	overflow-y: scroll;
 }
