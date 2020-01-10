@@ -33,6 +33,20 @@
 					<button ng-repeat="section in module.sections" ng-class="{ 'active': $index === currentsectionIndex }"
 						ng-disabled="$index > currentsectionIndex" ng-click="gotoSection($index);">{{ section.header }}</button>
 				</nav>
+				
+				<!-- Module -->
+				<div>
+					<!-- Current Section Page -->
+					<div>
+
+					</div>
+
+					<!-- Page Buttons -->
+					<div class="sectionButtons">
+						<button class="check" ng-if="checkButtons(currentsectionIndex)" id="btn-check-answers" ng-click="checkAnswers()">Check Answers</button>
+						<button class="primary" ng-if="currentsectionIndex < sectionscompleted" ng-click="gotoSection(currentsectionIndex + 1)">Next Section</button>
+					</div>
+				</div>
 			</section>
 		</div>
 	</main>
@@ -87,7 +101,7 @@
 			</div>
 		</div>
 	</div>
-</main>
+</div>
 
 
 
