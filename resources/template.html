@@ -26,6 +26,14 @@
 				<h1 id="moduleTitle">{{ module.name }} - {{ module.variant }}</h1>
 				<img src="https://www.towson.edu/universitymarketing/images/logos/towsonu-logo.png" alt="Towson logo">
 			</header>
+
+			<section>
+				<!-- Navigation -->
+				<nav>
+					<button ng-repeat="section in module.sections" ng-class="{ 'active': $index === currentsectionIndex }"
+						ng-disabled="$index > currentsectionIndex" ng-click="gotoSection($index);">{{ section.header }}</button>
+				</nav>
+			</section>
 		</div>
 	</main>
 
