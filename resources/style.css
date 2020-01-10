@@ -3,17 +3,43 @@
 
  		[What is currently present is only for demo purposes.]
 */
-html {
-	position: relative;
-	min-height: 100%;
-}
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
 
 body {
-	/*margin-top: 80px;*/
-	background-color: whitesmoke;
-	margin-top:40px;
-	margin-bottom: 120px;
+	background-color: white;
+	color: #424242;
+	margin: 0;
+	font-family: 'Oxygen', sans-serif;
 }
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 100px 50px 50px 50px;
+}
+
+header img {
+	width: 150px;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 textarea {
    resize: none;

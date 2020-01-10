@@ -20,7 +20,7 @@ exports.write_3 = function(name, variant, dev) {
 	if(typeof(dev)==='undefined') dev = false;		// default value for dev
 
 	// CONSTANTSi
-	var contentDir = "content/Interdisciplinary/";
+	var contentDir = "content/Secure Coding/";
 
 	var resourceDir = "resources/";
 	var publicDir = "public/";
@@ -161,7 +161,7 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Computer Literacy", "Social Networking Security");
 
 
-exports.write_3("Security Training for Election Judges", "Ensuring Pollbook Security");
+exports.write_3("Integer Error", "CS0 C++");
 
 
 // exports.write_3("Integer Error", "CS0 C++ Sample");
