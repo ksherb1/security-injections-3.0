@@ -10,8 +10,7 @@ body {
 	background-color: white;
 	color: #535d69;
 	font-family: 'Oxygen', sans-serif;
-	max-width: 1400px;
-	margin: 0 auto;
+	margin: 0;
 }
 
 ::-webkit-scrollbar {
@@ -25,6 +24,11 @@ body {
 ::-webkit-scrollbar-thumb {
 	background: #888;
 	border-radius: 3px;
+}
+
+.module {
+	max-width: 1400px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -159,6 +163,24 @@ main section div.page {
 
 main section div.content {
 	width: calc(100% - 100px);
+}
+
+footer {
+	padding: 20px;
+	width: 100%;
+	background: #32363f;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+}
+
+footer a {
+	color: white;
+	text-decoration: underline;
+}
+
+footer a:hover {
+	color: white;
 }
 
 @media(max-width: 850px) {
