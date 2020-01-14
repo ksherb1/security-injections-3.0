@@ -2,10 +2,10 @@
 	<main ng-controller="modCtrl" onselectstart="return false" autocomplete=off>
 		<div id="side-tabs">
 			<a class="feedback" data-toggle="modal" data-target="#fbModal">
-				<img alt="Feedback" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png">
+				<img alt="Submit Feedback" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png">
 			</a>
 			<a class="feedback" data-toggle="modal" data-target="#fbModal">
-				<img alt="Feedback" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png">
+				<img alt="Submit Feedback" src="http://cis1.towson.edu/~cssecinj/wp-content/uploads//feedback9.png">
 			</a>
 		</div>
 
@@ -237,6 +237,9 @@
 										<p>Complete by clicking the corresponding code below</p>
 										<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 										<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
+										<noscript>
+											Your browser does not support javascript. Please switch to a browser that supports it such as Chrome or Firefox.
+										</noscript>
 										<div class="popover radiopop" style="position:absolute;">
 											<label name="popPrompt" text=" "></label>
 											<form>
@@ -315,12 +318,12 @@
 									<b>You must email the certificate to your instructor to obtain credit</b>
 									<br>
 									<iframe title="Certificate" alt="Certificate" width="auto" height="348"
-										ng-src="{{detailFrame}}"></iframe>
+										ng-src="{{ detailFrame }}"></iframe>
 									<br>
-									<a class="btn btn-info btn-md" id="si-certificate-link"
-										download="certificate.pdf">Download
+									<button class="btn btn-info btn-md" id="si-certificate-link">
+										Download
 										<span class="glyphicon glyphicon-download-alt"></span>
-									</a>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -353,8 +356,7 @@
 						<div class="modal-body">
 							<h5>Use the form below to send us comments or report problems with specific modules</h5>
 							<h5>Alternatively, email us at
-								<a
-									href="mailto:securityinjections@towson.edu?subject=Feedback">securityinjections@towson.edu</a>
+								<a aria-label="Open Email Client to Send Feedback" href="mailto:securityinjections@towson.edu?subject=Feedback">securityinjections@towson.edu</a>
 							</h5>
 							<br>
 							<div class="form-group"
@@ -386,9 +388,8 @@
 							<p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-primary"
-								ng-disabled="submitButtonDisabled">Submit</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Cancel Feedback">Cancel</button>
+							<button type="submit" class="btn btn-primary" ng-disabled="submitButtonDisabled" aria-label="Submit Feedback">Submit</button>
 						</div>
 					</form>
 				</div>

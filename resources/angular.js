@@ -677,8 +677,12 @@ $scope.checkAnswers = function() {
 
 
 		// Step 6: Make certificate available for download
-
-		$("#si-certificate-link").attr('href', finalPDF);
+		$('#si-certificate-link').click(function() {
+			var download = document.createElement('a');
+			download.setAttribute('href', finalPDF);
+			download.setAttribute('download', 'certificate.pdf');
+			download.click();
+		});
 		$('#si-certificate-link').prop('disabled', false);
 		$('#si-certificate-pane').show();
 
