@@ -47,7 +47,21 @@ navigator.sayswho = (function () {
 			$scope.currentsectionIndex = 0;
 			$scope.currentsection = $scope.module.sections[0];
 		}
+
+		checkWindowWidth();
+		window.onresize = checkWindowWidth;
+
 		getCookies();//on Module load attempt to fill with cookies and redirect if needed
+	}
+
+	/**
+	 * Checks and sets toggleNav if on smaller screens
+	 */
+	function checkWindowWidth() {
+		$scope.toggleNav = undefined;
+		if (window.innerWidth <= 850) {
+			$scope.toggleNav = true;
+		}
 	}
 
 	/**

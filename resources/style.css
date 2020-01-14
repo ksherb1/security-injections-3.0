@@ -80,12 +80,16 @@ section nav button.active {
 	background: linear-gradient(90deg, #006D8F 0%, #3B788B 100%);
 }
 
+section nav button.navToggle {
+	display: none;
+}
+
 section nav button:disabled {
 	background: #E7E8F0;
 	cursor: not-allowed;
 }
 
-section nav button:first-child {
+section nav button:nth-child(2) {
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
@@ -199,6 +203,13 @@ main section div.content {
 
 	section nav button {
 		font-size: 14px;
+	}
+
+	section nav button.navToggle {
+		display: inline-block;
+		border-radius: 5px;
+		margin-bottom: 10px;
+		width: calc(100vw - 40px);
 	}
 
 	main section div.sectionButtons {

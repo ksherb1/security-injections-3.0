@@ -30,7 +30,8 @@
 			<section>
 				<!-- Navigation -->
 				<nav>
-					<button ng-repeat="section in module.sections"
+					<button class="navToggle" ng-class="{ 'active': toggleNav }" ng-click="toggleNav = !toggleNav;">Sections</button>
+					<button ng-if="toggleNav === undefined || !toggleNav" ng-repeat="section in module.sections"
 						ng-class="{ 'active': $index === currentsectionIndex }"
 						ng-disabled="$index > currentsectionIndex && $index > sectionscompleted"
 						ng-click="gotoSection($index);">{{ section.header }}</button>
