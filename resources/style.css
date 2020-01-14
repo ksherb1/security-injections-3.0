@@ -153,10 +153,13 @@ main section div.content {
 }
 
 @media(max-width: 850px) {
+	::-webkit-scrollbar {
+		width: 5px;
+	}
 
 	.feedback {
 		transform: rotate(-90deg);
-		right: 30px !important;
+		right: 40px !important;
 		top: -30px !important;
 		padding: 0 !important;
 	}
