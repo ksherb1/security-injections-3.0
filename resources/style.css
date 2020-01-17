@@ -55,6 +55,10 @@ header {
 	margin: 40px 50px 50px 50px;
 }
 
+header h1 {
+	margin-right: 30px;
+}
+
 header img {
 	width: 150px;
 }
