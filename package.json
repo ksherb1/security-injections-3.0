@@ -1,5 +1,5 @@
 {
-  "name": "security-injections-3.0",
+  "name": "security-injections",
   "description": "Cybersecurity modules to teach secure programming principles",
   "dependencies": {
     "angular-recaptcha": "^4.1.0",
