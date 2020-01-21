@@ -20,7 +20,7 @@ exports.write_3 = function(name, variant, dev) {
 	if(typeof(dev)==='undefined') dev = false;		// default value for dev
 
 	// CONSTANTSi
-	var contentDir = "content/Interdisciplinary/";
+	var contentDir = "content/Secure Coding/";
 
 	var resourceDir = "resources/";
 	var publicDir = "public/";
@@ -48,7 +48,7 @@ exports.write_3 = function(name, variant, dev) {
 		content[files[i]] = ""+fs.readFileSync(contentDir+contentLoc+files[i]);
 	}
 
-	var prereqs = {'name': name, 'variant':variant};
+	var prereqs = { name, variant };
 	var module = Validate.parse(content, prereqs);
 	content = JSON.stringify(module);					// content minified
 
@@ -114,13 +114,13 @@ exports.write_3 = function(name, variant, dev) {
 //Phase 2: module should not have "MAIN"
 // MAIN
 
-//  exports.write_3("Integer Error", "CS0 C++");
-//  exports.write_3("Integer Error", "CS0 Java");
-//  exports.write_3("Integer Error", "CS0 Pseudocode");
-//  exports.write_3("Integer Error", "CS1 C++");
-//  exports.write_3("Integer Error", "CS1 Java");
-//  exports.write_3("Integer Error", "CS2 C++");
-//  exports.write_3("Integer Error", "CS2 Java");
+// exports.write_3("Integer Error", "CS0 C++");
+// exports.write_3("Integer Error", "CS0 Java");
+// exports.write_3("Integer Error", "CS0 Pseudocode");
+// exports.write_3("Integer Error", "CS1 C++");
+// exports.write_3("Integer Error", "CS1 Java");
+// exports.write_3("Integer Error", "CS2 C++");
+// exports.write_3("Integer Error", "CS2 Java");
 // exports.write_3("Input Validation", "CS0 C++");
 // exports.write_3("Input Validation", "CS0 Java");
 // exports.write_3("Input Validation", "CS0 Python");
@@ -161,7 +161,7 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Computer Literacy", "Social Networking Security");
 
 
-exports.write_3("Security Training for Election Judges", "Ensuring Pollbook Security");
+exports.write_3("Integer Error", "CS0 C++");
 
 
 // exports.write_3("Integer Error", "CS0 C++ Sample");

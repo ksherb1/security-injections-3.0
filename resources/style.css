@@ -3,17 +3,295 @@
 
  		[What is currently present is only for demo purposes.]
 */
-html {
-	position: relative;
-	min-height: 100%;
-}
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
 
 body {
-	/*margin-top: 80px;*/
-	background-color: whitesmoke;
-	margin-top:40px;
-	margin-bottom: 120px;
+	background-color: white;
+	color: #535d69;
+	font-family: 'Oxygen', sans-serif;
+	margin: 0;
 }
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: white; 
+}
+   
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 3px;
+}
+
+.module {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 40px 50px 50px 50px;
+}
+
+header h1 {
+	margin-right: 30px;
+}
+
+header img {
+	width: 150px;
+}
+
+section {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0px 50px 0 60px;
+}
+
+section nav {
+	background-color: transparent;
+	width: 320px;
+	border-radius: 3px;
+	margin-left: 50px;
+}
+
+section nav button {
+	background: transparent;
+	width: 100%;
+	border: none;
+	font-size: 16px;
+	min-height: 60px;
+	padding: 10px 30px;
+	text-align: left;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+section nav button div.index {
+	width: 25px;
+	display: inline-block;
+	text-align: left;
+}
+
+section nav button div.sectionHeader {
+	width: calc(100% - 25px);
+	display: inline-block;
+}
+
+section nav button.active {
+	color: white;
+	background: linear-gradient(90deg, #006D8F 0%, #3B788B 100%);
+}
+
+section nav button.navToggle {
+	display: none;
+}
+
+section nav button:disabled {
+	background: #e1e5ec;
+	cursor: not-allowed;
+	color: #32363f;
+}
+
+section nav button:nth-child(2) {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+section nav button:last-child {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+main {
+	display: inline-block;
+	width: 100%;
+}
+
+main section div.sectionButtons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 120px;
+	width: 100%;
+}
+
+main section div.sectionButtons button {
+	transition-duration: .2s;
+	-moz-transition-duration: .2s;
+	background: transparent;
+	border: none;
+	border-radius: 10px;
+	font-size: 16px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+	min-width: 150px;
+	min-height: 50px;
+	cursor: pointer;
+	opacity: 1;
+}
+
+main section div.sectionButtons button:hover, :focus {
+	transition-duration: .4s;
+	-moz-transition-duration: .4s;
+	opacity: .9;
+}
+
+main section div.sectionButtons button.check {
+	color: white;
+	background: linear-gradient(90deg, #007C27 0%, #207C00 100%);
+}
+
+main section div.sectionButtons button.primary {
+	color: white;
+	background: linear-gradient(90deg, #006D8F 0%, #3B788B 100%);
+}
+
+main section div.page {
+	width: 100%;
+	max-height: calc(100vh - 350px);
+	min-height: 300px;
+	display: inline-block;
+	overflow-y: scroll;
+	font-size: 16px;
+}
+
+main section div.content {
+	width: calc(100% - 100px);
+}
+
+footer {
+	padding: 20px;
+	width: 100%;
+	background: #32363f;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+}
+
+footer a {
+	color: white;
+	text-decoration: underline;
+}
+
+footer a:hover {
+	color: white;
+}
+
+@media(max-width: 850px) {
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	.feedback {
+		transform: rotate(-90deg);
+		right: 40px !important;
+		top: -30px !important;
+		padding: 0 !important;
+	}
+
+	h1 {
+		font-size: 24px;
+	}
+	
+	h2 {
+		font-size: 24px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+	h4 {
+		font-size: 18px;
+	}
+
+	header {
+		margin: 60px 20px 50px 20px;
+	}
+
+	header img {
+		width: 100px;
+	}
+
+	section {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 0 20px;
+	}
+
+	section nav {
+		max-width: 100%;
+		margin-left: 0;
+		margin-bottom: 50px;
+	}
+
+	section nav button {
+		font-size: 16px;
+	}
+
+	section nav button.navToggle {
+		display: inline-block;
+		border-radius: 5px;
+		margin-bottom: 10px;
+		width: calc(100vw - 40px);
+	}
+
+	main section div.sectionButtons {
+		min-height: 80px;
+	}
+
+	main section div.sectionButtons button {
+		font-size: 16px;
+	}
+
+	main section div.page {
+		max-height: 100vh;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	main section div.content {
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 textarea {
    resize: none;
@@ -42,6 +320,7 @@ height: auto;
 right:-5px;
 top:40%;
 padding:0px 5px 5px 0px;
+z-index: 1;
 }
 
 .feedback img{width:100%;height:auto;}​

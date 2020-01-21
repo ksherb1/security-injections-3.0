@@ -1,5 +1,5 @@
 {
-  "name": "security-injections-3.0",
+  "name": "security-injections",
   "description": "Cybersecurity modules to teach secure programming principles",
   "dependencies": {
     "angular-recaptcha": "^4.1.0",
@@ -20,5 +20,6 @@
     "url": "git+https://github.com/tylernhoward/security-injections-3.0.git"
   },
   "author": "",
-  "license": ""
+  "license": "",
+  "version": "4.0.0"
 }
