@@ -20,5 +20,6 @@
     "url": "git+https://github.com/tylernhoward/security-injections-3.0.git"
   },
   "author": "",
-  "license": ""
+  "license": "",
+  "version": "4.0.0"
 }
