@@ -1,0 +1,533 @@
+{
+    "name": "Security Training for Election Judges",
+    "variant": "Operating the Scanning Unit Anne Arundel",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "author",
+                    "name": "Lorraine Black"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Learning Objectives"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "By the end of this module, election judges will be able to understand and mitigate physical, human (insider), and cyber threats. This will be accomplished through review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the operating the Scanning Unit."
+                },
+                  {
+                    "type": "paragraph",
+                    "text": "The Scanning Unit houses two records of ballots: (1) an electronic version in the form of a memory stick; and, (2) a paper record which is collected within the unit itself."
+                },
+                   {
+                    "type": "paragraph",
+                    "text": "Through a brief review of the Scanning Unit operating steps, we will highlight key areas that can become susceptible to threat. Being aware of these potential vulnerabilities gives us the opportunity to make our polling locations, and thus our elections, more secure."
+                },
+               {
+                    "type": "paragraph",
+                    "text": "Reference: Anne Arundel County Board of Elections election judge Manual 2020 Presidential Election (pp. 10.2-10.58)."
+                }
+            ]
+        },
+        {
+            "header": "Introduction",
+            "units": [
+                {
+                    "type": "author",
+                    "text": "Lorraine Black"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Learning Objectives"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "By the end of this module Election Judges will be able to increase the security of our elections by identifying and mitigating physical, cyber, and/or human security threats through proper use of the Scanning Unit."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The Scanning Unit houses two records of ballots: (1) an electronic version in the form of a memory stick, and (2) a paper record which is collected within the unit itself. Any tampering with the Scanning Unit can result in false voting records."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Through a brief review of the Scanning Unit operating steps, we will highlight key areas that can become susceptible to threat. Being aware of these potential vulnerabilities gives us the opportunity to make our polling locations, and thus our elections, as secure as possible."
+                }
+            ]
+        },
+        {
+            "header": "Opening the Polls",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "After removing the scanning unit from the black transfer cart and rolling it to its designated location, follow the directions given to you to setup the scanning unit."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<b>Have two or three persons assist in set up of the scanning unit.</b> This decreases the chance of errors when recording security seal, tamper tape numbers, and serial numbers throughout the process. Teamwork also reduces the opportunity for tampering with election equipment."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "While setting up the scanning unit, pay close attention to the following areas:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<b>Surge Protector:</b> When plugging the scanning unit into a power source, make sure a surge protector is attached. Be sure the surge protector is functioning by ensuring all lights on the surge protector are lit.",
+                        "<b>Power Supply:</b> If the scanning unit does not turn on, or if you hear a series of four beeps, check the power supply to the scanning unit. Make sure the power cord is connected firmly to the scanning unit, surge protector, and outlet. Make sure there is power coming through the outlet. If the scanning unit still does not turn on, alert a chief judge.",
+                        "<b>Main Ballot Box / Ballot Transfer Bin:</b><ul><li>When opening the main ballot box, verify that it is empty. Do the same with the ballot transfer bin.</li><li>When replacing the ballot transfer bin in the main ballot box, check that both lids of the ballot transfer bin are open and resting on the sides inside the main ballot box. This ensures all successfully scanned ballots fall into the bin without disruption.</li><li>Be sure to CLOSE, LOCK, and SEAL the main ballot box to prevent theft of paper ballots.</li></ul>",
+                        "<b>Emergency Ballot Compartment:</b> Once the emergency ballot compartment is unlocked, make sure the compartment is empty and the metal flap on the compartment door is raised. Then close, lock, and reseal the emergency ballot compartment door."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Set up of the scanning unit requires focus and cooperation. Recording, checking, and replacing security seals and tamper tape numbers are VERY important. Please:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Carefully read and follow the instructions you are given.",
+			"Use the Step-by-Step Guide: Scanning unit 2020 Presidential Election.",
+                        "Pay close attention when reciting and recording security seal, tamper tape, and serial numbers. One person should read the numbers while a second person should verify and/or record those numbers on the <i>Scanning Unit Opening Integrity Report</i>.",
+                        "Double/triple check to ensure records are correct.",
+                        "Have two or more people set up the scanning unit."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If there is any confusion or apparent error, alert a chief Judge immediately. <b>Never turn off the scanning unit</b> unless instructed by the Anne Arundel County Board of Elections. Be sure all setup supplies are put away before allowing voters into the polling place."
+                },
+                {
+                    "type": "question",
+                    "id": "oq1",
+                    "prompt": "Why is it important to have more than one person set up the scanning unit?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "oq1_Reduce",
+                            "text": "To reduce opportunities for both error and tampering and to ensure records are correct."
+                        },
+                        {
+                            "id": "oq1_Buttons",
+                            "text": "There are too many buttons."
+                        },
+                        {
+                            "id": "oq1_Alone",
+                            "text": "No one would want to set up the scanning unit alone."
+                        },
+                        {
+                            "id": "oq1_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "oq1_Reduce"
+                },
+                {
+                    "type": "question",
+                    "id": "oq2",
+                    "prompt": "If the scanning unit does not turn on, even though all directions were followed, what should an Election Judge do?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "oq2_Unplug",
+                            "text": "Unplug the scanning unit from its power source (i.e., unplug surge protector from its outlet)."
+                        },
+                        {
+                            "id": "oq2_Alert",
+                            "text": "Alert a chief judge."
+                        },
+                        {
+                            "id": "oq2_Break",
+                            "text": "Take a break."
+                        },
+                        {
+                            "id": "oq2_Ride",
+                            "text": "Ride down to the Anne Arundel County Board of Elections to discuss the issue."
+                        }
+                    ],
+                    "answer": "oq2_Alert"
+                },
+                {
+                    "type": "question",
+                    "id": "oq3",
+                    "prompt": "What is the purpose of ensuring the ballot transfer bin remains open?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "oq3_Successful",
+                            "text": "To collect all successfully scanned ballots."
+                        },
+                        {
+                            "id": "oq3_Scan",
+                            "text": "To scan completed ballots."
+                        },
+                        {
+                            "id": "oq3_Carry",
+                            "text": "To carry a completed ballot."
+                        },
+                        {
+                            "id": "oq3_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "oq3_Successful"
+                },
+                {
+                    "type": "question",
+                    "id": "oq4",
+                    "prompt": "What two compartments of the scanning unit hold completed ballots AND must be locked and sealed prior to opening of the polling place?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "oq4_Emergency",
+                            "text": "The emergency ballot compartment door and the main ballot box."
+                        },
+                        {
+                            "id": "oq4_Transfer",
+                            "text": "The Board of Elections and the black transfer case."
+                        },
+                        {
+                            "id": "oq4_Doors",
+                            "text": "Any back doors and sharp edges."
+                        },
+                        {
+                            "id": "oq4_Bin",
+                            "text": "The ballot transfer bin and the emergency ballot compartment door."
+                        }
+                    ],
+                    "answer": "oq4_Emergency"
+                }
+            ]
+        },
+        {
+            "header": "During Voting Hours",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "There are two ways voters can cast their ballot: (1) using a regular paper ballot, and (2) using a ballot marking device. The term 'ballot' is used to refer to both ballot types."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Before reviewing how to submit a ballot, remember the following:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<b>Election Judge Positioning:</b><ul><li>An election judge must always be stationed at the scanning unit at all times.</li><li>An election judge must not leave until replaced with another election judge.</li><li>An election judge must either stand or sit at least two feet away from the side of the scanning unit or stand at the beginning of the line to the scanning unit.</li><li>At no point should the scanning unit be left unmonitored.</li></ul>",
+                        "<b>Offer assistance:</b> Never handle a voter's ballot UNLESS the voter requests assistance OR the election judge offers assistance and it is accepted.",
+                        "<b>Check Power Supply:</b> Periodically, check that the scanning unit is plugged into power by looking at the scanning unit screen and checking the connected plugs icon next to the time. A battery icon means the unit needs to be plugged into an outlet.",
+                        "<b>Be aware of your surroundings, election equipment, and voters:</b><ul><li>Be aware of any unusual voter behavior.</li><li>If a voter is taking longer than normal or is possibly attempting to touch or tamper with the unit beyond normal ballot casting, ask them if they need assistance and/or ask the chief judge for assistance.</li><li>Do not allow anything to be placed and/or left on top of, or immediately adjacent to, the unit.</li></ul>"
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i>Under no circumstances should you allow anyone to attempt to connect or disconnect any items from the scanning unit.</i>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "How to Submit a Ballot"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The election judge will:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ask the voter for their Voter Authority Card (VAC) only. DO NOT handle any voted ballots.",
+                        "Verify the voter is not a provisional voter. A provisional voter will have an orange privacy sleeve around the ballot.",
+                        "Review the Voter Authority Card to verify it has been signed by the voter and properly initialed by other election judges.",
+                        "Hold onto the Voter Authority Card until the voter has cast their ballot.",
+                        "Prompt voter on how to submit their ballot. <i>**Remember: ALWAYS stand at least two feet away from the scanning unit and only approach the voter if they request/accept assistance.</i>",
+                        "The top slot on the scanning unit only accepts the ballot activation card that is printed by a ballot marking device. The bottom slot is for hand-marked ballots only. Attempting to place a ballot in the wrong slot may cause a paper jam.",
+                        "If the scanning unit accepts a ballot put displays an error message, <b>ask the voter if they need assistance.</b> Then, carefully read the scanning unit screen and troubleshoot accordingly. Alert a chief judge if more assistance is needed.",
+                        "Once the ballot is accepted by the scanning unit, place their Voter Authority Card into the green Voter Authority Card (VAC) bag attached to the scanning unit."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Throughout the day, the chief judge may delegate a variety of tasks to election judges. However, <b>at least one election judge must always be present at the scanning unit, while the polling location is open.</b>"
+                },
+                {
+                    "type": "question",
+                    "id": "dq1",
+                    "prompt": "An election judge must either stand or sit at least two feet to the side of the scanning unit.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq1_True",
+                            "text": "True"
+                        },
+                        {
+                            "id": "dq1_False",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "dq1_True"
+                },
+                {
+                    "type": "question",
+                    "id": "dq2",
+                    "prompt": "When are election judges permitted to handle a voter's ballot?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq2_Never",
+                            "text": "Never."
+                        },
+                        {
+                            "id": "dq2_Carry",
+                            "text": "If the voter is carrying an orange sleeve."
+                        },
+                        {
+                            "id": "dq2_Request",
+                            "text": "The voter requests assistance or the election judge offers assistance and it is accepted. The election judge my not look at the voter’s voted ballot."
+                        },
+                        {
+                            "id": "dq2_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "dq2_Request"
+                },
+                {
+                    "type": "question",
+                    "id": "dq3",
+                    "prompt": "What item must an election judge collect from a voter before the voter submits their ballot?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq3_All",
+                            "text": "All of the voter's belongings."
+                        },
+                        {
+                            "id": "dq3_Writing",
+                            "text": "Any writing utensils they may have taken from the voting booth."
+                        },
+                        {
+                            "id": "dq3_VAC",
+                            "text": "The voter's Voter Authority Card (VAC)."
+                        },
+                        {
+                            "id": "dq3_VIC",
+                            "text": "The voter's Voter Identification Card (VIC)."
+                        }
+                    ],
+                    "answer": "dq3_VAC"
+                },
+                {
+                    "type": "question",
+                    "id": "dq4",
+                    "prompt": "If the scanning unit accepts a voter's ballot but produces an error message, what should you do?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq4_Ask",
+                            "text": "Ask the voter if they need assistance. Once accepted, carefully read the scanning unit screen and troubleshoot accordingly."
+                        },
+                        {
+                            "id": "dq4_Assist",
+                            "text": "Immediately assist the voter at the scanning unit."
+                        },
+                        {
+                            "id": "dq4_Yell",
+                            "text": "Yell at the voter for breaking the machine. Then call the chief judge for assistance."
+                        },
+                        {
+                            "id": "dq4_Wait",
+                            "text": "Wait for another election judge to resolve the issue."
+                        }
+                    ],
+                    "answer": "dq4_Ask"
+                }
+            ]
+        },
+        {
+            "header": "Closing the Polls",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Procedure to close the polls and the scanning unit is only to be completed when the last eligible voter in the polling place has completed the voting process."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once again, please remember:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "CAREFULLY follow the instructions given on how to properly close the polls and scanning unit.",
+			"Use the Step-by-Step Guide: Scanning unit 2020 Presidential Election",
+                        "Pay close attention when reciting and recording security seal, tamper tape, and serial numbers.  One person should read the numbers while a second person should verify and/or record those numbers on the <i>Scanning Unit Closing Integrity Report</i>.",
+			"Double/triple check to ensure records are correct",
+                        "Have two or more people close the scanning unit."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Securing Paper Ballots"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When prompted to remove the blue ballot transfer bin, which contains the ballots from that day:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Check that all ballots are inside the bin. Place any loose ballots from the main ballot box into the blue ballot transfer bin.",
+                        "Tightly close the lid of the ballot transfer bin by following the 'tongue-in-groove' fit. Then, close and use the designated key to lock the main ballot box."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The only compartments that will NOT require a new security seal are the emergency ballot compartment and the main ballot box on the scanning unit."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Securing the Memory Stick"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once the scanning unit is unplugged, gently pull the memory stick straight out to remove it from the front access door compartment."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<i>Immediately give the memory stick to the chief judges. This memory stick holds an electronic record of the ballots from that day. Ensure the memory stick is not compromised and is placed inside the clear scanning unit Memory Stick Return Bag with a copy of the signed Scanning Unit Memory Stick Transmittal Form by the chief judges. .</i>"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "After ensuring the memory stick has been properly accounted for by the Chief Judge and successfully powering off the Scanning Unit, properly pack the Scanning Unit into the black transfer cart to be loaded for return to the local Board of Elections."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "At no point should the scanning Unit be left unmonitored."
+                },
+ {
+                    "type": "subheader",
+                    "text": "Powering Off the Scanning Unit"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Follow directions given to power off the scanning unit. In the process of powering off, the scanning unit will print two copies of “Results Report.” After the chief judges have signed both copies, give one copy to a chief judge and place the other for the public to view. Once prompted, the scanning unit could take several minutes to completely turn off. Allow all lights in the front access door compartment and on the display screen to go completely dark. Then unplug the scanning unit."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "After ensuring the memory stick has been properly accounted for by the chief judges and after successfully powering off the scanning unit, properly pack the scanning unit into the black transfer cart to be loaded for return to the Anne Arundel County Board of Elections."
+                },
+                {
+                    "type": "question",
+                    "id": "cq1",
+                    "prompt": "When powering off the scanning unit, two copies of the 'Results Report' print. Where do they belong?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq1_Copy",
+                            "text": "One copy with the chief judges and the other for the public to view."
+                        },
+                        {
+                            "id": "cq1_Review",
+                            "text": "One with the chief judges and the other for election judges to review."
+                        },
+                        {
+                            "id": "cq1_Both",
+                            "text": "Both copies are for the public to view."
+                        },
+                        {
+                            "id": "cq1_Security",
+                            "text": "One copy for the public to review and one copy for the polling location security."
+                        }
+                    ],
+                    "answer": "cq1_Copy"
+                },
+                {
+                    "type": "question",
+                    "id": "cq2",
+                    "prompt": "When is the only time an election judge is permitted to unplug the scanning unit from its power source?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq2_All",
+                            "text": "Once all procedures to close the scanning unit have been followed and all lights both in the front access door compartment and on the display screen go completely dark."
+                        },
+                        {
+                            "id": "cq2_Never",
+                            "text": "Never! Only a chief judge is permitted to unplug the scanning unit."
+                        },
+                        {
+                            "id": "cq2_Immediate",
+                            "text": "Immediately once all procedures to close the scanning unit have been followed."
+                        },
+                        {
+                            "id": "cq2_Last",
+                            "text": "When the last voter has scanned their ballot."
+                        }
+                    ],
+                    "answer": "cq2_All"
+                },
+                {
+                    "type": "question",
+                    "id": "cq3",
+                    "prompt": "What can you, an election judge stationed at a scanning unit, do to ensure all submitted ballots are accounted for in the blue transfer bin?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq3_Nothing",
+                            "text": "Nothing and just hope for the best."
+                        },
+                        {
+                            "id": "cq3_Check",
+                            "text": "Check the number of voters checked in versus the number of submitted ballots."
+                        },
+                        {
+                            "id": "cq3_Ask",
+                            "text": "Ask the chief judge."
+                        },
+                        {
+                            "id": "cq3_All",
+                            "text": "Check that all ballots are inside the blue transfer bin. Place any loose ballots found in the main ballot box into the blue ballot transfer bin."
+                        }
+                    ],
+                    "answer": "cq3_All"
+                },
+                {
+                    "type": "question",
+                    "id": "cq4",
+                    "prompt": "What is to be done with the memory stick once it has been removed from the scanning unit?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq4_Inside",
+                            "text": "The memory stick is to be left inside the scanning unit."
+                        },
+                        {
+                            "id": "cq4_Immediate",
+                            "text": "Give the memory stick to the chief judges immediately. Once the chief judges have properly stored and accounted for the memory stick, continue procedure to close the scanning unit."
+                        },
+                        {
+                            "id": "cq4_Store",
+                            "text": "An election judge finds a safe place to store it."
+                        },
+                        {
+                            "id": "cq4_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "cq4_Immediate"
+                }
+            ]
+        }
+    ]
+}
