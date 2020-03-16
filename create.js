@@ -180,3 +180,6 @@ exports.write_3("Integer Error", "CS0 C++");
 // exports.write_3("Security Training for Election Judges", "Ensuring Pollbook Security");
 // exports.write_3("Security Training for Election Judges", "Ensuring Provisional Voting Security");
 // exports.write_3("Security Training for Election Judges", "Operating the Scanning Unit");
+// exports.write_3("Security Training for Election Judges", "Ensuring Pollbook Security Anne Arundel");
+// exports.write_3("Security Training for Election Judges", "Ensuring Provisional Voting Security Anne Arundel");
+// exports.write_3("Security Training for Election Judges", "Operating the Scanning Unit Anne Arundel");
