@@ -115,10 +115,10 @@ exports.write_3 = function(name, variant, dev) {
 // MAIN
 
 // exports.write_3("Integer Error", "CS0 C++");
-// exports.write_3("Integer Error", "CS0 Java");
+exports.write_3("Integer Error", "CS0 Java");
 // exports.write_3("Integer Error", "CS0 Pseudocode");
-// exports.write_3("Integer Error", "CS1 C++");
-// exports.write_3("Integer Error", "CS1 Java");
+exports.write_3("Integer Error", "CS1 C++");
+exports.write_3("Integer Error", "CS1 Java");
 // exports.write_3("Integer Error", "CS2 C++");
 // exports.write_3("Integer Error", "CS2 Java");
 // exports.write_3("Input Validation", "CS0 C++");
@@ -161,7 +161,7 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Computer Literacy", "Social Networking Security");
 
 
-exports.write_3("Integer Error", "CS0 C++");
+// exports.write_3("Integer Error", "CS0 C++");
 
 
 // exports.write_3("Integer Error", "CS0 C++ Sample");
