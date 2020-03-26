@@ -15,7 +15,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "By the end of this module, election judges will be able to understand and mitigate physical, human (insider), and cyber threats. This will be accomplished through review of election day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the electronic pollbooks."
+                    "text": "By the end of this module, election judges will be able to understand and prevent physical, human (insider), and cyber threats. This will be done through review of election day responsibilities, with a primary focus on areas of weakness of and/or potential threat to the electronic pollbooks."
                 },
                 {
                     "type": "paragraph",
@@ -62,11 +62,11 @@
                         "Make sure the inner seal number on top of each electronic pollbook is not broken and the number matches the numbers in column 3 on the <i>Electronic Pollbook Integrity Report</i>.",
                         "Verify the power switch on the top is turned OFF.",
 			            "Insert the power cord (marked with yellow tape) into the first connection slot marked with PWR.  Plug the other end into a power source.  Do NOT turn on the power switch yet.",
-            			"Take the printer’s USB cable from the printer case.  Plug the larger end into one of the two USB ports located on the back of the electronic pollbook.  It does not matter which USB port you use.",
+			            "Take the printer’s USB cable from the printer case.  Plug the larger end into one of the two USB ports located on the back of the electronic pollbook.  It does not matter which USB port you use.",
 			            "Plug one end of the printer’s power cord (marked with blue tape) into the printer. Plug the other end into a power source.",
-            			"Plug the smaller end of the USB cable into the printer.",
-            			"Repeat all steps for each electronic pollbook.",
-			            "<ul><li>Ensure the electronic pollbook power cord, USB cable from the printer, and USB cable to the router is connected securely and correctly.</li><li>When connecting the electronic pollbook and router to power via its power cord, be sure to use a power adapter to prevent shortages and electrical damage to the electronic pollbook.</li>><li>Be sure to plug the devices in outlets that are out of the reach of voters and heavy foot traffic.</li><li>Be sure to keep all cords out of voter’s path and reach.  All cords on the floor should be taped down to avoid becoming a tripping hazard.</li></ul>"
+			            "Plug the smaller end of the USB cable into the printer.",
+			            "Repeat all steps for each electronic pollbook.",
+			            "<ul><li>Ensure the electronic pollbook power cord, USB cable from the printer, and USB cable to the router is connected securely and correctly.</li><li>When connecting the electronic pollbook and router to power via its power cord, be sure to use a power adapter to prevent shortages and electrical damage to the electronic pollbook.</li><li>Be sure to plug the devices in outlets that are out of the reach of voters and heavy foot traffic.</li><li>Be sure to keep all cords out of voter’s path and reach.  All cords on the floor should be taped down to avoid becoming a tripping hazard.</li></ul>"
                     ],
                     "ordered": true
                 },
@@ -86,7 +86,7 @@
 			            "Tap the <i>Ballots</i> and <i>Voters</I> tabs under the <I>Statistics</i> to make sure that all the numbers are zero.  Be sure to check both tabs under <i>Statistics</i> for zeros before networking the electronic pollbooks.  Tell a chief judge right away if any of the numbers are not zero",
             			"Make sure that the totals at the bottom of the screen are zero",
 			            "Repeat all steps for all electronic pollbooks",
-			            "<ul><li>Be sure to introduce yourself to all other election judges. Establish lines of communication in case problems arise</li><li>Follow the instructions beginning on page 10.12 of the 2020 Election Judge Manual to properly open the electronic pollbooks:</li><ul><li>Check synchronization by ALWAYS ensuring the electronic pollbooks are synchronized. If problems arise, alert a chief judge who will seek technical assistance.</li><li>Throughout the day, periodically check the vote totals at the bottom of the screen against the other electronic pollbooks in the polling place. All totals should match, but some pollbooks may take a few seconds to match with the other pollbooks.</li></ul><li>When prompted to sign in, be sure use your first name or initials.</li><li>Remember: DO NOT check-in voters before 7:00 AM.</li></ul>"
+            			"<ul><li>Be sure to introduce yourself to all other election judges. Establish lines of communication in case problems arise</li><li>Follow the instructions beginning on page 10.12 of the 2020 Election Judge Manual to properly open the electronic pollbooks:</li><ul><li>Check synchronization by ALWAYS ensuring the electronic pollbooks are synchronized. If problems arise, alert a chief judge who will seek technical assistance.</li><li>Throughout the day, periodically check the vote totals at the bottom of the screen against the other electronic pollbooks in the polling place. All totals should match, but some pollbooks may take a few seconds to match with the other pollbooks.</li></ul><li>When prompted to sign in, be sure use your first name and last name.</li><li>Remember: DO NOT check-in voters before 7:00 AM.</li></ul>"
                     ]
                 },
                 {
@@ -98,7 +98,7 @@
                     "items": [
                         "When checking in voters, election judges may not ask for ID but may accept it if offered by a voter.",
                         "Regardless of presented ID, election judges must ALWAYS ask the voter to state their name, address, and month and day of birth.",
-                        "Once a voter is successfully identified, print out their voter registration card. Have the voter verify the information is correct by signing the appropriate line.",
+                        "If the name, address and month and date of birth match exactly with the pollbook, print out their voter registration card. Have the voter verify the information is correct by signing the appropriate line.",
                         "If their information is not correct, follow-up with the appropriate actions. When in doubt, ask for help from fellow election judges or one of the chief judges.",
                         "NEVER leave your pollbook unattended. When helping a voter for an extended period of time, SIGN OUT of your pollbook.<ul><li>This will help prevent any unauthorized users from accessing and/or tampering with the pollbook.</li><li>Review “Resetting the Judges Name” beginning on page 10.49 of the 2020 Election Judge Manual.</li></ul>",
                         "If you have ANY issues with a voter, especially in “Special Situations,” DO NOT hesitate to ask a chief judge for assistance.<ul><li>Refrain from asking occupied election judges for assistance.</li></ul>"
@@ -112,7 +112,7 @@
                     "type": "list",
                     "items": [
                         "Ensure the electronic pollbook and all related materials are returned to their cases.",
-                        "See that the chief judge receives all electronic pollbook material before successfully closing the location."
+                        "See that the chief judge receives all electronic pollbook material including the compact flash card before successfully closing the location."
                     ]
                 },
                 {
@@ -412,7 +412,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The most obvious insider threats involve election judges compromising the election process by posing as an election judge and deliberately tampering with election devices, thus corrupting the process; observers distracting election officials; and individuals posing as observers actually being malicious actors."
+                    "text": "The most obvious insider threats involve election judges compromising the election process by posing as an election judge and deliberately tampering with election devices, thus corrupting the process; observers distracting election officials; and individuals posing as observers actually being malicious actors. Election judges, voters and observers can tamper with the equipment."
                 },
                 {
                     "type": "paragraph",
@@ -476,7 +476,7 @@
                             "text": "Leave your station to ask the suspicious person to stop their distracting activities."
                         }
                     ],
-                    "answer": "talkAbout"
+                    "answer": "notifyJudge"
                 },
                 {
                     "type": "question",
@@ -499,7 +499,7 @@
                         },
                         {
                             "id": "signLeave",
-                            "text": "Sign out of your assigned electronic pollbook each time you leave your station."
+                            "text": "Sign out of your assigned electronic pollbook each time you leave your station flip the electronic poll book on its screen."
                         }
                     ],
                     "answer": "signLeave"
@@ -547,6 +547,7 @@
                     "type": "list",
                     "items": [
                         "When closing the polling location, make sure that the inner tamper tape seal on the top of each electronic pollbook has not been broken.",
+                        "Check the tamper tape and compact flash card on the electronic poll book for tampering.",
 			            "Pack the electronic pollbooks in their cases and seal each case with a closing outer booth security seal provided by a chief judge and be sure the outer booth security seal is recorded on the <i>Electronic Pollbook Integrity Report</i>."
                     ]
                 },
@@ -595,7 +596,7 @@
                             "id": "epb",
                             "text": "Electronic Pollbook Integrity Report."
                         },
- 			{
+                        {
                             "id": "chief",
                             "text": "Chief Judge Election Day Log."
                         },
@@ -605,6 +606,19 @@
                         }
                     ],
                     "answer": "epb"
+                }
+            ]
+        },
+        {
+            "header": "Quiz",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "<b>Congratulations!</b> You have completed the Anne Arundel County Board of Elections Electronic Pollbook training module."
+                },
+                   {
+                    "type": "paragraph",
+                    "text": "You may check off this step on the card. To move on to the next step, click on the following link: <a href=\"http://tinyurl.com/PollbooksQuiz\" target=\"_blank\"> http://tinyurl.com/PollbooksQuiz</a>."
                 }
             ]
         }
