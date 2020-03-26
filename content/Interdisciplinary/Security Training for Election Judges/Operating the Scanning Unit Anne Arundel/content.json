@@ -179,13 +179,13 @@
                 {
                     "type": "question",
                     "id": "oq4",
-                    "prompt": "What two compartments of the scanning unit hold completed ballots AND must be locked and sealed prior to opening of the polling place?",
+                    "prompt": "What two compartments of the scanning unit must be locked and sealed prior to opening of the polling place?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "oq4_Emergency",
-                            "text": "The emergency ballot compartment door and the main ballot box."
+                            "text": "The emergency ballot compartment and the main ballot box."
                         },
                         {
                             "id": "oq4_Transfer",
@@ -288,7 +288,7 @@
                         },
                         {
                             "id": "dq2_Request",
-                            "text": "The voter requests assistance or the election judge offers assistance and it is accepted. The election judge my not look at the voter’s voted ballot."
+                            "text": "The voter requests assistance or the election judge offers assistance and it is accepted. The election judge may not look at the voter’s voted ballot."
                         },
                         {
                             "id": "dq2_None",
@@ -366,10 +366,10 @@
                     "type": "list",
                     "items": [
                         "CAREFULLY follow the instructions given on how to properly close the polls and scanning unit.",
-			"Use the Step-by-Step Guide: Scanning unit 2020 Presidential Election",
+			            "Use the Step-by-Step Guide: Scanning unit 2020 Presidential Election",
                         "Pay close attention when reciting and recording security seal, tamper tape, and serial numbers.  One person should read the numbers while a second person should verify and/or record those numbers on the <i>Scanning Unit Closing Integrity Report</i>.",
-			"Double/triple check to ensure records are correct",
-                        "Have two or more people close the scanning unit."
+			            "Double/triple check to ensure records are correct",
+                        "Have two or three people close the scanning unit."
                     ]
                 },
                 {
@@ -401,7 +401,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<i>Immediately give the memory stick to the chief judges. This memory stick holds an electronic record of the ballots from that day. Ensure the memory stick is not compromised and is placed inside the clear scanning unit Memory Stick Return Bag with a copy of the signed Scanning Unit Memory Stick Transmittal Form by the chief judges. .</i>"
+                    "text": "<i>Immediately give the memory stick to the chief judges. This memory stick holds an electronic record of the ballots from that day. Ensure the memory stick is not compromised and is placed inside the clear Scanning Unit Memory Stick Return Bag with a copy of the signed Scanning Unit Memory Stick Transmittal Form by the chief judges. .</i>"
                 },
                 {
                     "type": "paragraph",
@@ -409,9 +409,9 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "At no point should the scanning Unit be left unmonitored."
+                    "text": "At no point should the scanning unit be left unmonitored."
                 },
- {
+                {   
                     "type": "subheader",
                     "text": "Powering Off the Scanning Unit"
                 },
@@ -526,6 +526,19 @@
                         }
                     ],
                     "answer": "cq4_Immediate"
+                },
+                {
+                    "header": "Quiz",
+                    "units": [
+                        {
+                            "type": "paragraph",
+                            "text": "<b>Congratulations!</b> You have completed the Anne Arundel County Board of Elections Scanning Unit training module."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "You may check off this step on the card. To move on to the next step, click on the following link: <a href=\"https://tinyurl.com/ScanningUnitQuiz\" target=\"_blank\"> https://tinyurl.com/ScanningUnitQuiz </a>."
+                        }
+                    ]
                 }
             ]
         }
