@@ -1,0 +1,486 @@
+{
+    "name": "Security Training for Election Judges",
+    "variant": "Ensuring Ballot-Marking Devices Security Anne Arundel",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "author",
+                    "name": "Aikaterini Ieromonahos"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Learning Objectives"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "By the end of this module, election judges will be able to identify and mitigate cyber, physical, or human (insider) threats that may occur with the ballot marking device during election day. Election judges will develop a thorough comprehension of the device through a review of its proper usage along with its potential vulnerabilities."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Reference: Anne Arundel County Board of Elections Election Judge Manual 2020 (pp. 12.2-12.46)."
+                }
+            ]
+        },
+        {
+            "header": "Introduction",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Elections have always played a pivotal role within the United States, and election security continues to remain a top priority. However, because potential election day infiltration has continued to become an issue throughout recent years, it is important to ensure that election judges are aware of the potential threats, and how to prevent them from happening. The ballot marking device plays an essential role during election day because it provides voters with another option to mark their ballots independently. Each designated precinct receives a minimum of one ballot marking device, and it is the responsibility of the election judges to set up and monitor the equipment under the supervision of the chief judges. It is also the chief judge’s responsibility to ensure there are five (5) ballots cast from the ballot marking device by 1:00 PM."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This module will help election judges to develop an understanding of the equipment’s usage along with the various threats that could potentially occur, specifically with the devices, on election day."
+                }
+            ]
+        },
+        {
+            "header": "Equipment Use",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we will review the ballot marking device’s general usage, along with how to use the audio headset and keypad. The ballot marking device includes a touch screen and a keypad (with braille) that must be attached to the device and be ready to use prior to the opening of the polls. Submitting an audio ballot is an alternative extended to those using the ballot marking device; all accessibility features are still available with this option. The settings on the device can also be adjusted to offer high-contrast and enlarged print viewing options. It is important to note that the ballot marking device does NOT actually record votes; the voter’s ballot activation card gets inserted into the scanning unit, which then marks their selections."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ballot activation cards are issued to voters using the ballot marking device instead of regular paper ballots. Prior to voting the voting operations judge must make sure that the individual has their voter authority card, and that is has been signed by the voter and initialed by the check-in judge. You must then initial the voter authority card yourself, and then keep it in your possession as you escort the voter to the ballot marking device. Explain to the voter how to use the ballot marking device and include its various features."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<b> Be sure that:</b>"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The voter’s ballot activation card is inserted prior to commencing the voting process.",
+                        "The selected ballot style matches that of the ballot style on the voter authority card, and that the voter authority card is then put into the clear pouch on the privacy sleeve.",  
+                        "Instruct the voter on how to use the ballot marking device, and make sure the voter is aware of the “More” option, which indicates an additional page of choices, before they begin to use the ballot marking device."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Using the Audio Headset and Keypad"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If a voter indicates that they wish to submit an audio ballot, give them a pair of headphones and instruct them how to put them on. This is necessary because once the ballot activation card is identified, the device immediately begins to play the voting instructions and provide an overview of the keypad functions."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<b> Be sure to remember that:</b>"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "<b>Tempo</b>, which is the purple key on the right side of the keyboard, can be used if the voter wishes to speed up or slow down the audio.",
+                        "<b>Volume</b> can be adjusted through the orange key on the right side of the keypad.",
+                        "The voter is also allowed to pause the instructions if they need more time before continuing with the process." 
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Equipment Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "bq1",
+                    "prompt": "Who must initial the voter’s voter authority card prior to them placing their ballot activation card into the ballot marking device?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "bq1_Votingj",
+                            "text": "A voting operations judge."
+                        },
+                        {
+                            "id": "bq1_Check",
+                            "text": "A check-in judge."
+                        },
+                        {
+                            "id": "bq1_Chief",
+                            "text": "A chief judge."
+                        },
+                        {
+                            "id": "bq1_Both",
+                            "text": "Both A and B"
+                        }
+                    ],
+                    "answer": "bq1_Check"
+                },
+                {
+                    "type": "question",
+                    "id": "bq2",
+                    "prompt": "Where should the voting operations judge remain while the voter is using the ballot marking device?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "bq2_Back",
+                            "text": "With their back turned to the equipment to ensure voter privacy and security."
+                        },
+                        {
+                            "id": "bq2_Wait",
+                            "text": "Waiting for the voter by the scanning unit."
+                        },
+                        {
+                            "id": "bq2_Face",
+                            "text": "Directly next to the device while facing the voter."
+                        },
+                        {
+                            "id": "bq2_Away",
+                            "text": "Away from the voter but close enough to answer any questions."
+                        }
+                    ],
+                    "answer": "bq2_Away"
+                },
+                {
+                    "type": "question",
+                    "id": "bq3",
+                    "prompt": "What key can voters use to adjust the speed of their audio if they wish to do so?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "bq3_Rhythm",
+                            "text": "The rhythm key."
+                        },
+                        {
+                            "id": "bq3_Tempo",
+                            "text": "The tempo key."
+                        },
+                        {
+                            "id": "bq3_Volume",
+                            "text": "The volume key."
+                        },
+                        {
+                            "id": "bq3_Adjust",
+                            "text": "The adjustments key."
+                        }
+                    ],
+                    "answer": "bq3_Tempo"
+                }
+            ]
+        },
+        {
+            "header": "Potential Insider Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we are going to be reviewing the potential insider threats that could occur with a ballot marking device during election day. In order for an election judge to prevent insider threats with the equipment they must first assure that the proper procedures were executed in setting up the ballot marking device."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When setting up the ballot marking device there are a few important details to keep in mind:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "You must ensure that the ID tag designates the correct polling location.", 
+                        "You will need to confirm the serial number located at the top of the ballot marking device, which should be done using the <i>Ballot Marking Device Integrity Report</i>.",
+                        "The tamper tape is located on the left side compartment door of the ballot marking device; the tamper tape number must also be verified using the <i>Ballot Marking Device Integrity Report</i>.",
+                        "If the device’s memory stick is not installed, then a chief judge must be notified immediately.", 
+                        "Ensure that each ballot marking device is switched onto '<b>VOTER</b>' mode and that the keypad is installed before the device is started up.",  
+                        "It takes approximately four minutes for the device to start up, and the screen should <b>NOT</b> be touched during this time.", 
+                        "If the precinct number and name are incorrect on the device’s screen, promptly notify a chief judge, who will then contact the Anne Arundel County Board of Elections.",
+                        "Make sure to return the ballot marking device barrel key to a chief judge once you have finished setting up the ballot marking device."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It is essential for election judges to be able to identify possible insider threats on election day. The following are some ways in which election judges can prevent these threats:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Make sure to give the barrel key and the <i>Ballot Marking Device Integrity Report</i> back to a chief judge when you have finished setting up the ballot marking device. Be sure that all the necessary setup steps are completed prior to the location opening.",  
+                        "Voters should <b>NOT</b> take their phone out while using the ballot marking device, as it could be used to tamper or interfere with the equipment."
+
+                    ]
+                },
+
+                {
+                    "type": "question",
+                    "id": "cq1",
+                    "prompt": "How can an Election Judge prevent cyber threats from occurring with the Ballot-Marking Devices during Election Day?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq1_Nophone",
+                            "text": "They ensure that no voter takes their phone out while attempting to use the equipment."
+                        },
+                        {
+                            "id": "cq1_Confirm",
+                            "text": "They make sure to encourage the voter to confirm their selections before they have officially submitted their ballot."
+                        },
+                        {
+                            "id": "cq1_After",
+                            "text": "They make sure to encourage the voter to confirm their selections after they have officially submitted their ballot."
+                        },
+                        {
+                            "id": "cq1_Both",
+                            "text": "Both A and B"
+                        }
+                    ],
+                    "answer": "cq1_Both"
+                },
+                {
+                    "type": "question",
+                    "id": "cq2",
+                    "prompt": "What is a potential cyber threat that could occur on Election Day?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq2_Faulty",
+                            "text": "The Board of Elections gives your polling location a faulty Ballot-Marking device."
+                        },
+                        {
+                            "id": "cq2_Social",
+                            "text": "Somebody makes a post on social media with a picture of them sticking a thumbs up outside of the polling place."
+                        },
+                        {
+                            "id": "cq2_Phone",
+                            "text": "A voter takes their phone out in the middle of using the Ballot-Marking Device."
+                        },
+                        {
+                            "id": "cq2_None",
+                            "text": "None of the above"
+                        }
+                    ],
+                    "answer": "cq2_Phone"
+                }
+            ]
+        },
+        {
+            "header": "Insider Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we are going to be reviewing the potential insider threats that could occur with Ballot-Marking Devices during Election Day. In order for an Election Judge to prevent insider threats with the equipment they must first assure that the proper procedures were executed in setting it up."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When setting up the Ballot-Marking Device there are a few important details to keep in mind:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "You must ensure that the ID tag designates the correct polling location.", 
+                        "You will need to confirm the serial number located at the top of the Ballot-Marking Device, which can be done through the <b>Open Equipment Security Report</b>.",
+                        "The tamper tape is located on the left side compartment door of the Ballot-Marking Device; the tamper tape number must also be verified through the Open Equipment Security Report.",
+                        "If the device’s memory stick is not installed, then a Chief Judge must be notified immediately.", 
+                        "Ensure that each Ballot-Marking Device is switched onto “<b>VOTER</b>” mode and that the keypad is installed before the device is started up.",  
+                        "It takes approximately four minutes for the device to start up, and the screen should NOT be touched during this time.", 
+                        "If the precinct number and name are incorrect on the device’s screen, promptly notify the Chief Judge, who will then contact the Board of Elections.",
+                        "Make sure to return the Ballot-Marking Device barrel key to the Chief Judge once you have finished setting the station up."
+                        
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It is essential for Election Judges to be able to identify possible insider threats on Election Day. The following are some ways in which Election Judges can prevent these threats:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Make sure to give the barrel key and the Open Equipment Security Report back to the Chief Judge when you have finished setting up the Ballot-Marking Devices; be sure that all the necessary setup steps are completed prior to the location opening.",  
+                        "Voters should <b>NOT<b/> take their phone out while using the Ballot-Marking Device, as it could be used to tamper or interfere with the equipment." 
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Insider Threats Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "dq1",
+                    "prompt": "Who should be contacted if the precinct number on the ballot marking device is incorrect?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq1_Another",
+                            "text": "Another election judge."
+                        },
+                        {
+                            "id": "dq1_Board",
+                            "text": "The Anne Arundel County Board of Elections."
+                        },
+                        {
+                            "id": "dq1_Chiefboard",
+                            "text": "The chief judge who will notify the Anne Arundel County Board of Elections."
+                        },
+                        {
+                            "id": "dq1_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "dq1_Cheifboard"
+                },
+                {
+                    "type": "question",
+                    "id": "dq2",
+                    "prompt": "What should you return to the chief judge prior to the polling location opening?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq2_Barrel",
+                            "text": "The barrel key."
+                        },
+                        {
+                            "id": "dq2_Report",
+                            "text": "The <i>Ballot Marking Device Integrity Report</i>."
+                        },
+                        {
+                            "id": "dq2_Transfer",
+                            "text": "The black transfer cart."
+                        },
+                        {
+                            "id": "dq2_Both",
+                            "text": "Both A and B."
+                        }
+                    ],
+                    "answer": "dq2_Both"
+                },
+                {
+                    "type": "question",
+                    "id": "dq3",
+                    "prompt": "You look over at one of your fellow voting operations judges and see that they are struggling to understand the ballot marking device, what do you do?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq3_Nothing",
+                            "text": "Nothing."
+                        },
+                        {
+                            "id": "dq3_Stop",
+                            "text": "Stop everything you are doing to go and assist your fellow election judge."
+                        },
+                        {
+                            "id": "dq3_Finish",
+                            "text": "Finish the task you are currently working on, and proceed to ask the other voting operations judge if they seek assistance."
+                        },
+                        {
+                            "id": "dq3_Tell",
+                            "text": "Tell the chief judge."
+                        }
+                    ],
+                    "answer": "dq3_Finish"
+                }
+            ]
+        },
+        {
+            "header": "Potential Physical Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this final section, election judges will learn how to identify and prevent physical threats at their designated polling location."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When closing down the ballot marking device there are a few important steps that need to be taken in order to ensure the sanctity of the election process:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ensure that the left side compartment tamper tape is still in tact, and if not, then a chief judge should be notified immediately.",
+                        "Remove the tamper tape and place it into the back of the <i>Ballot Marking Device Integrity Report</i>.",
+                        "Unlock the side compartment door with the barrel key and turn the device off.   Lock the side compartment door and apply a new tamper tape that must get logged onto the <i>Ballot Marking Device Integrity Report</i>.", 
+                        "When packing up the ballot marking device make sure that the device itself, the keypad, the headphones, and the power cord are all in the bag before returning the bag back to the black transfer cart."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Make sure that the chain of custody remains intact throughout the period when the voting equipment is being transported. Doing so prevents the ballots or memory sticks from being lost or intercepted. Ensuring the chain of custody also prevents malware from being installed on the memory sticks prior to the voting process starting."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Physical Threats Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "eq1",
+                    "prompt": "What step has to be taken once you have turned the ballot marking device off?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "eq1_Lock",
+                            "text": "Lock side compartment door."
+                        },
+                        {
+                            "id": "eq1_Reapply",
+                            "text": "Apply new tamper tape."
+                        },
+                        {
+                            "id": "eq1_Log",
+                            "text": "Log the new tamper tape number on the <i>Ballot Marking Device Integrity Report</i>."
+                        },
+                        {
+                            "id": "eq1_All",
+                            "text": "All of the above."
+                        }
+                    ],
+                    "answer": "eq1_All"
+                },
+                {
+                    "type": "question",
+                    "id": "eq2",
+                    "prompt": "What could happen if the chain of custody does not remain intact while the voting equipment being transported?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "eq2_Incon",
+                            "text": "The election office could be slightly inconvenienced."
+                        },
+                        {
+                            "id": "eq2_File",
+                            "text": "The chief judge might have to file a report with the Anne Arundel County Board of Elections"
+                        },
+                        {
+                            "id": "eq2_Mem",
+                            "text": "The memory sticks could be intercepted and replaced with replicas."
+                        },
+                        {
+                            "id": "eq2_Steal",
+                            "text": "Somebody could steal the equipment and try to sell it."
+                        }
+                    ],
+                    "answer": "eq2_Mem"
+                },
+                {
+                    "type": "question",
+                    "id": "eq3",
+                    "prompt": "At the end of the day where does the used tamper tape go?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "eq3_Envelope",
+                            "text": "On the back of the <i>Ballot Marking Device Integrity Report</i>."
+                        },
+                        {
+                            "id": "eq3_Trash",
+                            "text": "In the trash can because it serves no use anymore."
+                        },
+                        {
+                            "id": "eq3_Bin",
+                            "text": "In the recycling bin because it is plastic."
+                        },
+                        {
+                            "id": "eq3_Staple",
+                            "text": "Attached and stapled to your closing report."
+                        }
+                    ],
+                    "answer": "eq3_Envelope"
+                }
+            ]
+        }
+    ]
+}
