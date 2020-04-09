@@ -1,0 +1,913 @@
+{
+    "name": "Security Training for Election Judges",
+    "variant": "Chief Judge Security Anne Arundel",
+    "sections": [
+     	{
+            "header": "Background",
+            "units": [
+                {
+                    "type": "author",
+                    "name": "Lorraine Black and Saraubi Harrison"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Learning Objectives"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "By the end of this module, chief judges will be able to understand and prevent physical, human (insider), and cyber threats. This will be done through a review of election day responsibilities, with a primary focus on areas of weakness of and/or potential threats to the polling location."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Reference: Anne Arundel County Board of Elections Election Judge Manual 2020 Presidential Election (pp. 5.2-5.29)."
+                }
+            ]
+        },
+        {
+            "header": "Introduction",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "The security of U.S elections has always been of high concern. However, with threats to our elections becoming more frequent and well-known, we need to ensure our elections are safe from attack. Chief judges manage all tasks and activities in the polling place to ensure that it operates in a peaceful, orderly manner, in accordance with all applicable policies and procedures."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It is important for all chief judges to continuously monitor the actions of everyone in their polling location - election judges, voters, observers and others - as well as all voting equipment, including but not limited to scanning unit(s), electronic pollbooks, reports, ballot marking devices, and ballots."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "We have identified areas of weak security that can be improved with the assistance of chief judges. This module will take you through these areas of weaknesses and provide you with ways to improve security."
+                },
+                {
+                    "type":"paragraph",
+                    "text": "Together, we can ensure that all eligible citizens are able to vote on Election Day by monitoring for cyber, physical, and insider threats."
+                }
+            ]
+        },
+        {
+            "header": "Pre-Election Day Setup",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Chief judges will, with few exceptions, have authorized access to the polling place the night before election day. Chief judges, along with election judges assigned to a polling place are responsible for proper setup."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Make sure that you and all the election judges sign the pre-election day sign-in sheets.  Only election judges assigned to a polling place and members of the Anne Arundel County Board of Elections staff are permitted to assist in setup. The sign-in sheet, provided by the Anne Arundel County Board of Elections, will list all persons who are permitted to assist in setup. To reduce the chance of insider threats, absolutely no one else is permitted to assist in setup of any polling location."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "DO NOT open the voting equipment or run opening reports from the scanning unit(s), ballot marking device or electronic pollbooks until election morning. Protect all items that contain passwords, the memory stick(s) for the scanning unit(s), and ballots from theft and tampering. This reduces the opportunity for physical threats."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "While inside the polling location, refrain from any use of personal electronic devices. Any electronic device may have the ability to remotely tamper or interfere with voting equipment."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When reviewing your polling place layout, it is important to note:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Accessible and visible entrances",
+                        "Locations of doors and exits.",
+                        "Location of electrical outlets.",
+                        "If all voting equipment has been received and is functional.",
+                        "If all carts, voting equipment, electronic pollbooks, provisional ballot bags, and ballot transfer bins have been properly sealed.",
+                        "If any voting equipment is damaged."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be vigilant and aware while election judges are setting up their respective polling materials. Do not be afraid to double check the election judge’s work.  While election judges have received training for their respective positions, a chief Judge must ensure all setup performed by Election Judges is done correctly, with no malicious intent."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Check-In Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Check-in judges have received their materials.",
+                        "All electronic pollbooks, printers, and hub is set up and plugged in.",
+                        "All power cords and cables are plugged in securely and free from voter walking paths.",
+                        "The router used by the electronic pollbooks is out of voters’ access.",
+                        "All equipment has been checked for tampering and damages."
+
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Ballot-Issuing Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ballot budges have received the quantity of and correct ballot styles for their precincts according to the <i>Ballot Opening Certificate</i>.",
+                        "Setup the ballot table with ballots, and privacy sleeves.", 
+                        "Complete all forms accurately and completely for future reference and quality checks."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Voting Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Voting operations judges have received their materials.",
+                        "All the scanning unit(s) are set up properly and plugged in.",
+                        "The voting booths are set up properly.", 
+                        "The ballot marking device is set up properly and plugged in.", 
+                        "All compartments on the scanning unit(s) and ballot marking device are locked and tamper tape or security seals have been applied, as required, reducing cyber threats.",
+                        "All power cords are plugged in securely and free from voter walking paths.",
+                        "All equipment has been checked for tampering and damage."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Provisional Voting Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Provisional judges have received their materials.",
+                        "All provisional supplies have been accounted for.",
+                        "The orange Provisional Ballot Transfer Bag has been checked for tampering and damage.",
+                        "The Provisional Opening & Closing Certificate has been reviewed."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Other Areas"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that, items sent to improve accessibility have been set up, and there are no obstacles or hazards inside the polling place that could cause injury or distraction. For example, fasten floor mats, rugs, and power cords securely or move them out of the way, and keep floors as dry as possible."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Pre-Election Day Setup Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "su1",
+                    "prompt": "How do you verify that only those permitted to assist in pre-election setup were in attendance?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "su1_sheet",
+                            "text": "A sign in sheet provided by the Anne Arundel County Board of Elections."
+                        },
+                        {
+                            "id": "su1_support",
+                            "text": "Your Election Field Support person from the Board of Elections."
+                        },
+                        {
+                            "id": "su1_notified",
+                            "text": "You will be notified of attendees on election judge training days."
+                        },
+                        {
+                            "id": "su1_passcode",
+                            "text": "Election judges need to present a passcode to enter the polling location."
+                        }
+                    ],
+                    "answer": "su1_sheet"
+                },
+                {
+                    "type": "question",
+                    "id": "su2",
+                    "prompt": "What item(s) are not allowed to be opened the night before Election Day?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "su2_memstick",
+                            "text": "The memory stick for the scanning unit."
+                        },
+                        {
+                            "id": "su2_case",
+                            "text": "The black transfer case."
+                        },
+                        {
+                            "id": "su2_epb",
+                            "text": "Electronic pollbooks."
+                        }
+                    ],
+                    "answer": "su2_epb"
+                },
+                {
+                    "type": "question",
+                    "id": "su3",
+                    "prompt": "What piece of voting equipment located in the check-in area should be kept from voters’ access at all times?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "su3_ballots",
+                            "text": "Empty ballots."
+                        },
+                        {
+                            "id": "su3_update",
+                            "text": "The Voter Update Form."
+                        },
+                        {
+                            "id": "su3_bin",
+                            "text": "The ballot transfer bin."
+                        },
+                        {
+                            "id": "su3_router",
+                            "text": "The router used by the electronic pollbooks."
+                        }
+                    ],
+                    "answer": "su3_router"
+                },
+                {
+                    "type": "question",
+                    "id": "su4",
+                    "prompt": "How can you, as a chief judge, verify your polling place has received the right quantity and correct ballot styles?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "su4_ballotstyles",
+                            "text": "Each polling location receives the same quantity and same ballot styles."
+                        },
+                        {
+                            "id": "su4_certificate",
+                            "text": "Check the Ballot Opening Certificate."
+                        },
+                        {
+                            "id": "su4_call",
+                            "text": "Call the Anne Arundel County Board of Elections."
+                        },
+                        {
+                            "id": "su4_bandc",
+                            "text": "Both B and C are correct."
+                        }
+                    ],
+                    "answer": "su4_certificate"
+                }
+            ]
+        },
+        {
+            "header": "Election Morning Setup",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "During the morning of the election, chief judges are responsible for supervising and delegating all tasks for set up. It is the chief judge’s responsibility to make sure everything is in order and that all election judges understand their tasks for the day."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "As a chief judge, you are expected to arrive at the polling place by 5:45 AM. It is the chief judge’s responsibility to make sure all election judges, including both chief judges, sign the morning sign-in sheets."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Check-In Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The <i>Ballot Counts Report</i> and the <i>Voter Counts Report</i> have been printed from each electronic pollbook and placed in the sheet protector labeled 'Electronic Pollbook Tapes' in the Chief Judges Blue Official Results binder.",
+                        "The 'Opening' section of the <i>Electronic Pollbook Integrity Report</i> has been filled out and signed.",
+                        "Make sure all electronic pollbooks are synchronizing and charging."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Ballot-Issuing Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The correct amounts of ballots, ballot styles, and ballot activation cards have been delivered.",
+                        "The <i>Ballot Opening Certificate</i> has been completed and initialed, and signed by the chief judges."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Voting Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "All opening procedures are completed.",
+                        "A <i>Configuration Report</i> has been printed from each scanning unit.",
+                        "Two <i>Zero Reports</i> have been printed from each scanning unit. Both <i>Zero Reports</i> should be signed. The first <i>Zero Report</i> with the <i>Configuration Report</i> attached, should be placed in the sheet protector labeled 'Voting Systems Tapes' in the Chief Judges' Blue Official Results binder.  The other should be posted for public viewing.",
+                        "The ballot marking device is set up, turned on, with headphones and keypad ready to use.",
+                        "All compartments on the scanning unit and the ballot marking device are locked, and tamper tape or security seals have been applied, as required.",
+                        "All power cords are plugged in properly." 
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Election Morning Setup Assessment"
+                }, 
+                {
+                    "type": "question",
+                    "id": "em1",
+                    "prompt": "What time must chief judges arrive to the polling place?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "em1_445",
+                            "text": "4:45 AM."
+                        },
+                        {
+                            "id": "em1_500",
+                            "text": "5:00 AM."
+                        },
+                        {
+                            "id": "em1_545",
+                            "text": "5:45 AM."
+                        },
+                        {
+                            "id": "em1_600",
+                            "text": "6:00 AM."
+                        }
+                    ],
+                    "answer": "em1_545"
+                },
+                {
+                    "type": "question",
+                    "id": "em2",
+                    "prompt": "What needs to be printed from each scanning unit?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "em2_config",
+                            "text": "A Congifuration Report."
+                        },
+                        {
+                            "id": "em2_zero",
+                            "text": "A Zero Report."
+                        },
+                        {
+                            "id": "em2_configzero",
+                            "text": "A Configuration Report and a Zero Report."
+                        },
+                        {
+                            "id": "em2_configtwozero",
+                            "text": "A Configuration Report and two Zero Reports."
+                        }
+                    ],
+                    "answer": "em2_configtwozero"
+                },
+                {
+                    "type": "question",
+                    "id": "em3",
+                    "prompt": "What do you do with the Zero Report(s)?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "em3_place",
+                            "text": "Place in the proper sheet protector in the Chief Judges Blue Official Results Binder."
+                        },
+                        {
+                            "id": "em3_display",
+                            "text": "Display it publicly."
+                        },
+                        {
+                            "id": "em3_attach",
+                            "text": "Attach it to the Configuration Report."
+                        },
+                        {
+                            "id": "em3_AB",
+                            "text": "Both A and B."
+                        },
+                        {
+                            "id": "em3_all",
+                            "text": "All of the above."
+                        }
+                    ],
+                    "answer": "em3_AB"
+                },
+                {
+                    "type": "question",
+                    "id": "em4",
+                    "prompt": "What equipment should be locked and tamper tape and security seals applied prior to the start of the election?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "em4_scan",
+                            "text": "Scanning units."
+                        },
+                        {
+                            "id": "em4_mark",
+                            "text": "Ballot marking device(s)."
+                        },
+                        {
+                            "id": "em4_AB",
+                            "text": "Both A and B."
+                        },
+                        {
+                            "id": "em4_all",
+                            "text": "All of the above."
+                        }
+                    ],
+                    "answer": "em4_AB"
+                }
+            ]
+        },
+        {
+            "header": "During Voting Hours",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "During voting hours, the chief judges must ensure voting processes are being followed by election judges and voters alike. Supervision of election judges; monitor the line of voters waiting to check-in; address the media, challengers, and watchers; monitor voters as they progress through the polling location; monitor voting equipment for signs of tampering; promptly record any problems, issues, or unusual situations in the <i>Chief Judge Election Day Log</i>. Maintaining a firm grasp on the operations of the polling place and taking immediate action that will reduce potential cyber, insider and physical threats."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The Anne Arundel County Board of Elections may send additional election judges to your polling place if assistance is needed. These individuals have undergone the same training for their position as the originally assigned election judges. Chief judges must brief these election judges on their duties and monitor them to reduce potential insider threats."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Each area within the polling location has different aspects of which you must be aware; this includes double-checking election judge activity throughout the day."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Check-In Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure to:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Verify all electronic pollbooks are synchronizing and charging.",
+                        "Ensure the router is out of voters’ access.",
+                        "Verify that check-in judges are effectively and properly processing voters.",
+                        "Verify challengers and watchers have a signed Challenger and Watcher Certificate.",
+                        "Process challenged voters and complete the <i>Affidavit for Challenger and Challenged Voter</i> as needed.",
+                        "Verify that election judges are completing the <i>Voter Update Form</i> and <i>Voter Assistance Form</i> as necessary.",
+                        "Keep election judges off of their personal electronic devices. This reduces cyber threats including the chance of remotely compromising information uploaded into the electronic pollbooks." 
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Ballot-Issuing Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure to:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Keep the ballot area organized by party and by ballot style.",
+                        "Distribute new ballots for voters who have spoiled their ballot.",
+                        "Keep spoiled ballots in designated envelope and safeguard.",
+                        "Monitor the supply of ballots and contact the Anne Arundel County Board of Elections help desk for more if needed.",
+                        "Keep election judges off of their personal electronic devices."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Voting Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure to:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Verify that all voting equipment is plugged-in and charging.",
+                        "Periodically verify that all tamper tape and security seals are properly applied and are intact or not voided to reduce the chance of cyber and physical threats.",
+                        "Verify that the number of <i>Voter Authority Cards</i> collected matches the public count indicated on the scanning unit.",
+                        "Periodically check the 'Public Count' on the scanning unit to prevent exceeding the capacity of the ballot transfer bin located inside the scanning unit.",
+                        "Verify that all voters in line when the polls are scheduled to close are allowed to vote.",
+                        "Ensure no items are left in voting booths, they should be empty.", 
+                        "Keep election judges off of their personal electronic devices." 
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Provisional Voting Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure to:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Verify that provisional judges are correctly processing voters.",
+                        "Monitor the supply of provisional ballot applications.",
+                        "Make sure the provisional judges are giving the voters the correct information about why they are voting a provisional ballot.",
+                        "Check that the orange Provisional Ballot Transfer Bag is not full.",
+                        "Check that the orange Provisional Ballot Transfer Bag remains locked and is in a secure location.",
+                        "Keep election judges off of their personal electronic devices."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Other Areas"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure to:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ensure all areas designed to improve the polling locations accessibility are not obstructed and are clearly marked.",
+                        "Periodically check the line of voters waiting to vote.",
+                        "If you have exit polling going on outside the polling room, check to make sure their activities are within the guidelines.",
+                        "Complete the <i>Chief Judge Election Day Log</i>, as needed.",
+                        "Remind voters they are not permitted to use personal electronic devices while inside the polling location.",
+                        "Ensure voters do not use their electronic devices and are not disturbing voting equipment." 
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Fleeing Voters"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "There are many instances where a voter is unable to submit their ballot. If a voter who was issued a ballot has walked away without casting their ballot, an election judge should attempt to find the voter so he/she can finish casting their ballot."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If the voter is unable to return, their ballot must be spoiled. Whether the voter will be permitted to submit a ballot at a later time depends on whether the voter’s Voter Authority Card <u>and</u> ballot activation card OR ballot can be found:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "When a ballot activation card and the <i>Voter Authority Card</i> are found, a chief judge, in the presence of an election judge from a different party, must spoil the ballot as directed with going to an electronic pollbook to cancel their <i>Voter Authority Card</i>. These voters are permitted to check-in to vote if they return later.",
+                        "If the voter’s <i>Voter Authority Card</i> is not found, spoil the ballot and note in the <i>Chief Judge Election Day Log</i>. These voters may only be issued a provisional ballot if they return to vote."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Observers and Challengers"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When a challenger or a watcher walks into your polling place, do your best to immediately approach the challenger/watcher to be sure they follow proper procedures. This way they do not distract election officials (reduce insider threat) and receive all information they require."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When a Challenger arrives:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Verify challengers and watchers have a signed Challenger and Watcher Certificate thus reducing insider threat.",
+                        "Process challenged voters and complete the <i>Affidavit for Challenger and Challenged Voter</i>, as needed.",
+                        "Monitor the polling place to ensure challengers are not disrupting voters nor election judges or tampering with voting equipment." 
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When a Watcher arrives:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Introduce yourself as a chief judge and ask if they are need of any assistance. In most instances, watchers will not need assistance from anyone.  Verify that they have a signed Challenger and Watcher Certificate.",
+                        "Monitor the polling place to ensure watchers are not disrupting voters or election judges or tampering with voting equipment."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "During Voting Hours Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "vh1",
+                    "prompt": "When a voter flees a polling place before casting their ballot, what items must be found for the voter to cast a ballot at a later time?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "vh1_bacvac",
+                            "text": "Their Ballot Activation Card and the Voter Authority Card."
+                        },
+                        {
+                            "id": "vh1_ballot",
+                            "text": "Their ballot."
+                        },
+                        {
+                            "id": "vh1_vacid",
+                            "text": "Their Voter Authority Card and their ID."
+                        },
+			{
+                            "id": "vh1_spoiled",
+                            "text": "Theior Ballot Activation Card and their spoiled ballot."
+                        },
+                        {
+                            "id": "vh1_ab",
+                            "text": "Both A and B are correct."
+                        }
+                    ],
+                    "answer": "vh1_ab"
+                },
+                {
+                    "type": "question",
+                    "id": "vh2",
+                    "prompt": "What should the chief judge do when/if a watcher enters the polling location?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "vh2_nothing",
+                            "text": "Nothing, they do not need assistance."
+                        },
+                        {
+                            "id": "vh2_greet",
+                            "text": "Greet them and offer assistance."
+                        },
+                        {
+                            "id": "vh2_cert",
+                            "text": "Have the watcher fill out the Challenger and Watcher Certificate."
+                        },
+                        {
+                            "id": "vh2_log",
+                            "text": "Have the watcher sign the Chief Judge Election Day Log."
+                        }
+                    ],
+                    "answer": "vh2_greet"
+                },
+                {
+                    "type": "question",
+                    "id": "vh3",
+                    "prompt": "If the Anne Arundel County Board of Elections sends an additional election judge to your polling place, what must you make sure to do?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "vh3_call",
+                            "text": "Call the Anne Arundel County Board of Elections to confirm the election judge’s arrival."
+                        },
+                        {
+                            "id": "vh3_rearrange",
+                            "text": "Rearrange election judge assignments."
+                        },
+                        {
+                            "id": "vh3_sign",
+                            "text": "Have them sign the morning sign-in sheet, brief the election judge on their duties to ensure they are knowledgeable about their role, and monitor them."
+                        },
+                        {
+                            "id": "vh3_intro",
+                            "text": "Introduce the new election judge to others and remind them of the no phone policy."
+                        }
+                    ],
+                    "answer": "vh3_sign"
+                },
+                {
+                    "type": "question",
+                    "id": "vh4",
+                    "prompt": "Who must verify that challengers and watchers have a signed Challenger and Watcher Certificate?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "vh4_checkin",
+                            "text": "Check-in judges."
+                        },
+                        {
+                            "id": "vh4_cheif",
+                            "text": "Cheif judge."
+                        },
+                        {
+                            "id": "vh4_provisional",
+                            "text": "Provisional judge."
+                        },
+                        {
+                            "id": "vh4_scan",
+                            "text": "Scanning unit election judge."
+                        }
+                    ],
+                    "answer": "vh4_cheif"
+                }
+            ]
+        },
+        {
+            "header": "After the Polls Close",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Following the election, the chief judges are responsible for ensuring all election materials, supplies and devices are properly powered off and stored."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Check-In Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Verify that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The final <i>Ballot Counts Report</i> and the <i>Voter Counts Report</i> have been printed from all the electronic pollbooks and placed in the sheet protector labeled 'Electronic Pollbook Tapes' in the Chief Judges Blue Official Results binder.",
+                        "All electronic pollbooks and printers are shut down and packed.",
+                        "The <i>Electronic Pollbook Integrity Report</i> have been completed.",
+                        "All power cords and cables have been packed.",
+                        "All other check-in supplies have been packed."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Ballot-Issuing Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Verify that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The <i>Ballot Closing Certificate</i> has been accurately completed.",
+                        "The total spoiled ballots have been recorded.",
+                        "The unused ballots have been placed in an empty blue ballet bin and placed inside the transfer cart.",
+                        "All other ballot area supplies have been packed."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Voting Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Verify that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "All <i>Voter Authority Cards</i> have been counted and placed into the black Voter Authority Card Expanding Folder.",
+                        "Two <i>Total Reports</i> have been printed from each scanning unit. Both <i>Total Reports</i> should be signed. One should be placed in the sheet protector labeled 'Voting Systems Tapes' in the Chief Judges Blue Official Results binder.  The other should be posted for public viewing with the <i>Zero Report</i>.",
+                        "Verify each scanning unit is powered off correctly.",
+                        "Verify the memory stick has been removed from each scanning unit and placed in the clear Scanning Unit Memory Stick Return Bag with a copy of the signed Scanning Unit Memory Stick Transmittal Form. The bag should be zipped close and sealed.",
+                        "The ballot transfer bin is removed from each scanning unit and is closed and sealed.",
+                        "All compartments on the scanning unit and ballot marking device are locked and new tamper tapes and security seals are applied, as appropriate.",
+                        "All voting equipment is closed, sealed and packed.",
+                        "The <i>Closing Scanning Unit Integrity Report</i> and the <i>Ballot Marking Device Integrity Report</i> are completed.",
+                        "All power cords are packed.",
+                        "All other voting equipment supplies are packed."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Provisional Voting Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Verify that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The orange Provisional Ballot Transfer Bag is locked and sealed.",
+                        "All provisional <i>Voter Authority Cards</i> are counted.",
+                        "All provisional supplies have been packed.",
+                        "The <i>Provisional Opening & Closing Certificate</i> has been reviewed and signed."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Other Areas"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Verify that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "All signs have been taken down and packed.",
+                        "All orange cones and 'No Electioneering Zone' signs have been retrieved and packed.",
+                        "Any other items sent to the polling place have been packed.",
+                        "The polling place has been left in a clean condition, with all materials to be picked up later placed in a secure location."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Closing Summary Report"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Be sure to complete the <i>Closing Summary Report</i>. Use the information from other reports as directed by the Anne Arundel County Board of Elections and your training class."
+                },
+                {
+                    "type": "subheader",
+                    "text": "After the Polls Close Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "pc1",
+                    "prompt": "How should the election be ended on each scanning unit?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "pc1_repub",
+                            "text": "As a Republican team."
+                        },
+                        {
+                            "id": "pc1_dem",
+                            "text": "As a Democratic team."
+                        },
+                        {
+                            "id": "pc1_indy",
+                            "text": "As an Independent team."
+                        },
+			            {
+                            "id": "pc1_bi",
+                            "text": "As a Bipartisan team."
+                        }
+                    ],
+                    "answer": "pc1_bi"
+                },
+                {
+                    "type": "question",
+                    "id": "pc2",
+                    "prompt": "How many Total Reports need to be printed from each scanning unit?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "pc2_one",
+                            "text": "One."
+                        },
+                        {
+                            "id": "pc2_two",
+                            "text": "Two."
+                        },
+                        {
+                            "id": "pc2_three",
+                            "text": "Three."
+                        },
+                        {
+                            "id": "pc2_four",
+                            "text": "Four."
+                        }
+                    ],
+                    "answer": "pc2_two"
+                },
+                {
+                    "type": "question",
+                    "id": "pc3",
+                    "prompt": "What needs to be removed from the scanning unit at the end of the election?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "pc3_mem",
+                            "text": "The Memory Stick."
+                        },
+                        {
+                            "id": "pc3_blue",
+                            "text": "The blue Ballot Transfer Bin."
+                        },
+                        {
+                            "id": "pc3_ab",
+                            "text": "Both A and B."
+                        },
+                        {
+                            "id": "pc3_neither",
+                            "text": "Neither A or B."
+                        }
+                    ],
+                    "answer": "pc3_ab"
+                }
+            ]
+        }
+    ]
+}

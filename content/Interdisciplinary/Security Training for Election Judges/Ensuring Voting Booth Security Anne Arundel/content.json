@@ -1,0 +1,497 @@
+{
+    "name": "Security Training for Election Judges",
+    "variant": "Ensuring Voting Booth Security Anne Arundel",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "author",
+                    "name": "Katerine Delgado"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Learning Objectives"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "By the end of this module, voting operations judges will be able to understand how to prevent any physical, human (insider), and cyber threats that could occur in the voting booths on election day. This will be done by reviewing the responsibilities of the voting operations judges and the various potential threats that could occur during election day."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "References: <br><br>Anne Arundel County Board of Election Election Judge Manual 2020 Presidential Election. <br><br>Baltimore Sun Staff. (2016). What Maryland voters need to know on Election Day. The Baltimore Sun. Retrieved from https://www.baltimoresun.com/politics/bs-md-how-to-vote-general-20161107-story.html."
+                }
+            ]
+        },
+        {
+            "header": "Introduction",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Ensuring the security of U.S. elections has become a greater concern since the Presidential Election in 2016. Since the frequency of threats during elections will increase, it is essential that we ensure our elections are secure from potential cyber, human, and physical attacks. Voting operations judges are essential to assist the chief judges during an election day with various responsibilities and tasks. However, one of the most important responsibilities or tasks that the voting operations judges are in charge of relates to voting booths."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This module will help voting operations judges become familiar enough with the traditional process of voting with pen and paper as well as voting booths in order to combat any threats that could appear on election day."
+                }
+            ]
+        },
+        {
+            "header": "Cyber Threats in Voting Booths",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we will discuss possible cyber threat scenarios that voting operations judges may need to mitigate in order to secure voting booths during an election day. Although there are less cyber threats in voting booths with pen and paper, there are some threats that can still appear, including:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The voter brings in their cell phone or another electronic device and takes a photo of their ballot. It is important to notify voters that they are not allowed to bring and use their cellphones or any other form of electronic device into the voting booths. The voter’s cell phone or electronic device(s) must be turned off.",
+                        "A malicious 'voter' could have brought a phone or another device that could intercept the ballot marking device and hack it."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Voting Booths Cyber Threats Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "bq1",
+                    "prompt": "If a voter has their cell phone or any other form of electronic device with them in the voting booth, what should the election judge do?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "bq1_Phone",
+                            "text": "Grab their phone."
+                        },
+                        {
+                            "id": "bq1_Tell",
+                            "text": "Politely tell them to turn it off and put it away while they vote."
+                        },
+                        {
+                            "id": "bq1_Exchange",
+                            "text": "Ask to exchange social media information."
+                        },
+                        {
+                            "id": "bq1_Make",
+                            "text": "Make them put their cell phone or electronic device in the designated bin."
+                        }
+                    ],
+                    "answer": "bq1_Tell"
+                }
+            ]
+        },
+        {
+            "header": "Insider Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we will discuss possible insider (i.e., human) threat scenarios that voting operations judges may need to mitigate in order to secure voting booths during an election day. Some threats could be:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "An individual uses their cell phone or any other electronic device during the election process to remotely tamper or interfere with the equipment.",
+                        "An individual or voter can take pictures of the equipment or the process itself. Taking pictures of the equipment or the process itself can be harmful in the election process because an outsider with malicious intent may tamper with the votes.",
+                        "An individual can also bring in another electronic device that could hack into the equipment and breach the security of the polls.",
+                        "A voter could interfere with the election process by being careless and not fully paying attention to the instructions on how to properly fill out the ballot."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Insider threats could be prevented from the very beginning of election day, especially during the set up period."
+                }
+            ]
+        },
+        {
+            "header": "Setting Up on Election Day Morning",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "ALL tasks and responsibilities are supervised by the chief judges ONLY. Some of these tasks and responsibilities may include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Distributing supplies",
+                        "Posting signs",
+                        "Setting up tables"
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It is important that voting operations judges work together to ensure the polling place is ready by 7:00 a.m., as well as ensuring the security at the voting booths."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Election Day Morning Setup Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "cq1",
+                    "prompt": "Who is in charge of the voting operations judges’ tasks and responsibilities?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq1_Other",
+                            "text": "Other voting operations judges."
+                        },
+                        {
+                            "id": "cq1_Chief",
+                            "text": "Chief judges."
+                        },
+                        {
+                            "id": "cq1_Both",
+                            "text": "Other voting operations judges and chief judges."
+                        },
+                        {
+                            "id": "cq1_Board",
+                            "text": "The electin field support person."
+                        }
+                    ],
+                    "answer": "cq1_Cheif"
+                },
+                {
+                    "type": "question",
+                    "id": "cq2",
+                    "prompt": "What time should the polling place and voting booths be ready by?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq2_Ten",
+                            "text": "10:00 a.m."
+                        },
+                        {
+                            "id": "cq2_Six",
+                            "text": "6:00 a.m."
+                        },
+                        {
+                            "id": "cq2_Eight",
+                            "text": "8:30 a.m."
+                        },
+                        {
+                            "id": "cq2_Seven",
+                            "text": "7:00 a.m."
+                        }
+                    ],
+                    "answer": "cq2_Seven"
+                }
+            ]
+        },
+        {
+            "header": "During Voting Hours",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Many issues can emerge at the polling place that voting operations judges may need to resolve. These issues include replacing ballots."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When voters approach the voting area, it is the voting operations judge’s responsibility to:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Verify that the voter has a privacy sleeve and their Voter Authority Card has been signed by the voter and initialed by the check-in judge and the ballot judge.",
+                        "Verify that the ballot style on the Voter Authority Card matches with the ballot that was given to the voter.",
+                        "Verify that the voter is NOT a provisional voter; provisional voters have an orange privacy sleeve.",
+                        "Once the voter has been completely verified, direct or escort the voter to a voting booth or the ballot marking device to mark their ballot."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "You will also need to answer questions and provide assistance when asked by voters in the following situations:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Have <i>Voter Assistance Form</i> filled out as necessary.", 
+                        "If voter requires assistance, it is important to ensure the privacy and security of their ballot.",
+                        "DO NOT look or ask to see the voter’s ballot AND stand to the side of the voting booth or the ballot marking device.",
+                        "Provide instructions to voters on how to mark their selections on either paper ballots or ballot marking devices."  
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Election Day Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "dq1",
+                    "prompt": "What does the voting operations judge need to verify when voters approach them at the voting area?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq1_Vacid",
+                            "text": "The voter’s Voter Authority Card and ID."
+                        },
+                        {
+                            "id": "dq1_Vacidballot",
+                            "text": "The voter’s driver’s license, Voter Authority Card, and ballot."
+                        },
+                        {
+                            "id": "dq1_Signature",
+                            "text": "The Voter’s Voter Authority Card with voter signature, the check-in judge and ballot judge’s initials, privacy sleeve, and correct ballot."
+                        },
+                        {
+                            "id": "dq1_License",
+                            "text": "The voter’s driver’s license and ballot"
+                        }
+                    ],
+                    "answer": "dq1_Signature"
+                },
+                {
+                    "type": "question",
+                    "id": "dq2",
+                    "prompt": "What color sleeves do provisional voters have?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "dq2_Blue",
+                            "text": "Blue"
+                        },
+                        {
+                            "id": "dq2_Red",
+                            "text": "Red"
+                        },
+                        {
+                            "id": "dq2_Orange",
+                            "text": "Orange"
+                        },
+                        {
+                            "id": "dq2_Yellow",
+                            "text": "Yellow"
+                        }
+                    ],
+                    "answer": "dq2_Orange"
+                }
+            ]
+        },
+        {
+            "header": "Marking a Ballot by Hand",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "Voters will cast their votes by marking their ballots by hand. The responsibility of the voting operations judge is to instruct voters on how to mark their ballots correctly in order to prevent any inaccuracies. The voting operations judge will:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ask the voter for their Voter Authority Card -- the voting operations judge will verify the card by checking to see if it has been signed by the voter and initialed by the check-in judge and the ballot judge.",
+                        "Verify that the voter has the correct ballot by checking the ballot style that is printed on their Voter Authority Card.", 
+                        "Once the ballot style has been verified, place the Voter Authority Card in the clear plastic pouch on the front of the privacy sleeve.",
+                        "Instruct the voter to read the ballot very carefully and how to mark their selections on the ballot. It is important to tell the voters to use the marking pen that is provided at the voting booth and to completely fill in the oval for each of their selections. Also, tell the voter to raise their hand or alert a voting operations judge if they have any questions, make any mistakes, or need assistance.",
+                        "Finally, the voting operations judge will escort or direct the voter to an open voting booth."
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Replacing Spoiled Ballots",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "There will be circumstances where the voter will request a new ballot due to them making a mistake in their selections on their original ballot. These mistakes are common and typically honest. However, it is important to know how to replace the ballot and dispose of the spoiled ballot in order to prevent any false counting of votes."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Mistakes made by a voter can occur on election day; it is essential that voting operations judges know how to properly help the voter through the replacement process."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "There are several reasons as to why voters may ask to replace their ballots; these reasons may include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The voter wanting to change a selection they previously marked on their ballot.",
+                        "The paper ballot is damaged to the extent that the scanning unit will not accept it.",
+                        "The ballot marking device is not working properly."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When a voter requires help, a bipartisan team of election judges or a person designated by the voter can assist the voter. The Voter Assistance Form needs to be completed before assisting the voter."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "When a voter requests a new ballot, it is important that the voting operations judges:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ask the voter for their Voter’s Authority Card (VAC) for verification.", 
+                        "Direct the voter to stay at the voting booth or at another location to spoil their ballot and wait to receive a replacement ballot from the voting operations judge or a chief judge.", 
+                        "Provide the voter with a black marker and instruct them on how to spoil their ballot. The voter needs to write 'Spoiled' across their ballot and fill in all ovals with the black marker in order for their original selection to not be counted.",
+	                    "While the voter is spoiling their ballot, re-initial the voter’s Voter Authoerity Card and retrieve a new ballot from the a ballot judge.", 
+	                    "Take the Voter Authority Card and the new ballot to the voter and put the Voter Authority Card in the clear plastic pouch in the front of the privacy sleeve.", 
+	                    "Take the spoiled ballot/ballot activation card to a chief judge who will place the spoiled ballot into the Spoiled Ballot Envelope."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once the voter is done completing their ballot, the voting operations judges will:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Direct or escort voters to the scanning unit to cast their ballots.",
+                        "Ensure that the voting booths are clean after voter has left.",
+                        "Ensure that ballot marking device is charging when it is not being used."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The voting operations judge at the scanning unit should:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Ask for the voter’s Voter Authority Card and initial it.",
+                        "Verify again that the voter is not a provisional voter.",
+                        "Tell the voter to keep their privacy sleeve until the ballot is put into the scanning unit.",
+                        "Provide instructions to the voter on how to insert and cast their ballot into the scanning unit, The voting operations judge should also tell the voter that their privacy sleeve can be used as a “shield” when casting their ballot.",
+                        "Initial the voter’s Voter Authority Card and place it in the Green Voter Authority Card Bag hanging on the top of the scanning unit."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It is important that the voter’s privacy and secrecy is maintained throughout the process. It is important for the voting operations judges to:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Not look at or ask to look at the voter’s marked ballot.",
+                        "Not touch the voter’s ballot unless the voter themselves ask for assistance.",
+                        "Stand away from the scanning unit unless the voter requests for assistance."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Ballot Replacement Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "eq1",
+                    "prompt": "Where do voting operations judges place the spoiled ballot?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "eq1_Privacy",
+                            "text": "Give to a chief judge who will place in the Spoiled Ballot Envelope."
+                        },
+                        {
+                            "id": "eq1_Trash",
+                            "text": "In the nearest trash can."
+                        },
+                        {
+                            "id": "eq1_Orange",
+                            "text": "In the orange privacy sleeve."
+                        },
+                        {
+                            "id": "eq1_Shred",
+                            "text": "In the shredder."
+                        }
+                    ],
+                    "answer": "eq1_Privacy"
+                },
+                {
+                    "type": "question",
+                    "id": "eq2",
+                    "prompt": "What form needs to be completed after replacing a spoiled ballot?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "eq2_New",
+                            "text": "A new ballot."
+                        },
+                        {
+                            "id": "eq2_Replace",
+                            "text": "The Ballot Replacement Form."
+                        },
+                        {
+                            "id": "eq2_Assist",
+                            "text": "The Voting Operations Judge Assistance Form."
+                        },
+                        {
+                            "id": "eq2_Voter",
+                            "text": "The Voter Assistance Form."
+                        },
+                        {
+                            "id": "eq2_None",
+                            "text": "No for needed."
+                        }
+                    ],
+                    "answer": "eq2_None"
+                }
+            ]
+        },
+        {
+            "header": "Physical Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we will discuss possible physical threat scenarios that voting Operations judges may need to mitigate in order to secure voting booths during an election day. Some threats could be:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A voting operations judge could introduce false information in the recording of votes.",
+                        "Voting operations judges may accidentally count the votes incorrectly -- it’s essential to get them to check again.",
+                        "A voting operations judge could hide or alter any additional information that can confirm the number of votes.",
+                        "There could be insufficient equipment for voters to cast their vote."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we will review the responsibilities of the voting operation judges when closing the polls. Physical threats could be mitigated when closing down the polls. These responsibilities include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Verifying the total number of voter authority cards that match the public count that is found on the scanning unit — if there isn’t a match, immediately alert a chief judge.",
+                        "Counting and reporting the number of voter authority cards to the chief judges.",
+                        "Following the chief judges’ instructions on how to end the election and pack the equipment and supplies."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Closing the Polls Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "fq1",
+                    "prompt": "Who do you alert when the total number of Voter Authority Cards and the public count on the scanning unit does not match?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "f1_Board",
+                            "text": "The Anne Arundel County Board of Elections."
+                        },
+                        {
+                            "id": "fq1_Chief",
+                            "text": "The cheif judges."
+                        },
+                        {
+                            "id": "fq1_Both",
+                            "text": "Other voting operations judges and the chief judges."
+                        },
+                        {
+                            "id": "fq1_Other",
+                            "text": "Other voting operations judges."
+                        }
+                    ],
+                    "answer": "fq1_Chief"
+                }
+            ]
+        }
+    ]
+}
