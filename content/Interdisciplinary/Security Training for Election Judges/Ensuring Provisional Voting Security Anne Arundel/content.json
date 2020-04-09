@@ -439,19 +439,19 @@
                         }
                     ],
                     "answer": "iq4_Log"
+                }
+            ]
+        },
+        {
+            "header": "Quiz",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "b>Congratulations!</b> You have completed the Anne Arundel County Board of Elections Provisional Voting training module."
                 },
                 {
-                    "header": "Quiz",
-                    "units": [
-                        {
-                            "type": "paragraph",
-                            "text": "b>Congratulations!</b> You have completed the Anne Arundel County Board of Elections Provisional Voting training module."
-                        },
-                           {
-                            "type": "paragraph",
-                            "text": "You may check off this step on the card. To move on to the next step, click on the following link: <a href=\"https://tinyurl.com/ProvisionalQuiz\" target=\"_blank\"> https://tinyurl.com/ProvisionalQuiz</a>."
-                        }
-                    ]
+                        "type": "paragraph",
+                        "text": "You may check off this step on the card. To move on to the next step, click on the following link: <a href=\"https://tinyurl.com/ProvisionalQuiz\" target=\"_blank\"> https://tinyurl.com/ProvisionalQuiz</a>."
                 }
             ]
         }

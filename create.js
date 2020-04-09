@@ -20,7 +20,7 @@ exports.write_3 = function(name, variant, dev) {
 	if(typeof(dev)==='undefined') dev = false;		// default value for dev
 
 	// CONSTANTSi
-	var contentDir = "content/Secure Coding/";
+	var contentDir = "content/Interdisciplinary/";
 
 	var resourceDir = "resources/";
 	var publicDir = "public/";
@@ -179,7 +179,7 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Business", "Government Use Security");
 // exports.write_3("Security Training for Election Judges", "Ensuring Pollbook Security");
 // exports.write_3("Security Training for Election Judges", "Ensuring Provisional Voting Security");
-// exports.write_3("Security Training for Election Judges", "Operating the Scanning Unit");
+exports.write_3("Security Training for Election Judges", "Operating the Scanning Unit");
 // exports.write_3("Security Training for Election Judges", "Ensuring Pollbook Security Anne Arundel");
 // exports.write_3("Security Training for Election Judges", "Ensuring Provisional Voting Security Anne Arundel");
-// exports.write_3("Security Training for Election Judges", "Operating the Scanning Unit Anne Arundel");
+exports.write_3("Security Training for Election Judges", "Operating the Scanning Unit Anne Arundel");
