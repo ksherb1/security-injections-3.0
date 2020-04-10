@@ -148,10 +148,10 @@
                         },
                         {
                             "id": "cq1_Board",
-                            "text": "The electin field support person."
+                            "text": "The election field support person."
                         }
                     ],
-                    "answer": "cq1_Cheif"
+                    "answer": "cq1_Chief"
                 },
                 {
                     "type": "question",
