@@ -183,6 +183,6 @@ exports.write_3 = function(name, variant, dev) {
 // exports.write_3("Security Training for Election Judges", "Ensuring Pollbook Security Anne Arundel");
 // exports.write_3("Security Training for Election Judges", "Ensuring Provisional Voting Security Anne Arundel");
 // exports.write_3("Security Training for Election Judges", "Operating the Scanning Unit Anne Arundel");
-exports.write_3("Security Training for Election Judges", "Chief Judge Security Anne Arundel");
-exports.write_3("Security Training for Election Judges", "Ensuring Ballot-Marking Devices Security Anne Arundel");
-exports.write_3("Security Training for Election Judges", "Ensuring Voting Booth Security Anne Arundel");
+// exports.write_3("Security Training for Election Judges", "Chief Judge Security Anne Arundel");
+// exports.write_3("Security Training for Election Judges", "Ensuring Ballot-Marking Devices Security Anne Arundel");
+// exports.write_3("Security Training for Election Judges", "Ensuring Voting Booth Security Anne Arundel");
