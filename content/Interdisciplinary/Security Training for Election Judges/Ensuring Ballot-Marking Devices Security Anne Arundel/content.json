@@ -184,60 +184,64 @@
                         "Never allow a voter to take their phone out while using a ballot marking device.",
                         "Always encourage every voter to review their submissions before entering their ballot and after it has already been submitted."
                     ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Cyber Threats Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "cq1",
+                    "prompt": "How can an Election Judge prevent cyber threats from occurring with the Ballot-Marking Devices during Election Day?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                    {
+                        "id": "cq1_Nophone",
+                        "text": "They ensure that no voter takes their phone out while attempting to use the equipment."
+                    },
+                    {
+                        "id": "cq1_Confirm",
+                        "text": "They make sure to encourage the voter to confirm their selections before they have officially submitted their ballot."
+                    },
+                    {
+                        "id": "cq1_After",
+                        "text": "They make sure to encourage the voter to confirm their selections after they have officially submitted their ballot."
+                    },
+                    {
+                        "id": "cq1_Both",
+                        "text": "Both A and B"
+                    }
+                ],
+                "answer": "cq1_Both"
+                },
+                {
+                    "type": "question",
+                    "id": "cq2",
+                    "prompt": "What is a potential cyber threat that could occur on Election Day?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "cq2_Faulty",
+                            "text": "The Board of Elections gives your polling location a faulty Ballot-Marking device."
+                        },
+                        {
+                            "id": "cq2_Social",
+                            "text": "Somebody makes a post on social media with a picture of them sticking a thumbs up outside of the polling place."
+                        },
+                        {
+                            "id": "cq2_Phone",
+                            "text": "A voter takes their phone out in the middle of using the Ballot-Marking Device."
+                        },
+                        {
+                            "id": "cq2_None",
+                            "text": "None of the above"
+                        }
+                    ],
+                    "answer": "cq2_Phone"
                 }
-            ]
-        },
-        {
-            "type": "question",
-            "id": "cq1",
-            "prompt": "How can an Election Judge prevent cyber threats from occurring with the Ballot-Marking Devices during Election Day?",
-            "ignored": false,
-            "mode": "radio",
-            "choices": [
-                {
-                    "id": "cq1_Nophone",
-                    "text": "They ensure that no voter takes their phone out while attempting to use the equipment."
-                },
-                {
-                    "id": "cq1_Confirm",
-                    "text": "They make sure to encourage the voter to confirm their selections before they have officially submitted their ballot."
-                },
-                {
-                    "id": "cq1_After",
-                    "text": "They make sure to encourage the voter to confirm their selections after they have officially submitted their ballot."
-                },
-                {
-                    "id": "cq1_Both",
-                    "text": "Both A and B"
-                }
-            ],
-            "answer": "cq1_Both"
-        },
-        {
-            "type": "question",
-            "id": "cq2",
-            "prompt": "What is a potential cyber threat that could occur on Election Day?",
-            "ignored": false,
-            "mode": "radio",
-            "choices": [
-                {
-                    "id": "cq2_Faulty",
-                    "text": "The Board of Elections gives your polling location a faulty Ballot-Marking device."
-                },
-                {
-                    "id": "cq2_Social",
-                    "text": "Somebody makes a post on social media with a picture of them sticking a thumbs up outside of the polling place."
-                },
-                {
-                    "id": "cq2_Phone",
-                    "text": "A voter takes their phone out in the middle of using the Ballot-Marking Device."
-                },
-                {
-                    "id": "cq2_None",
-                    "text": "None of the above"
-                }
-            ],
-            "answer": "cq2_Phone"
+            ]   
         },
         {
             "header": "Potential Insider Threats",
@@ -273,99 +277,6 @@
                         "Make sure to give the barrel key and the <i>Ballot Marking Device Integrity Report</i> back to a chief judge when you have finished setting up the ballot marking device. Be sure that all the necessary setup steps are completed prior to the location opening.",  
                         "Voters should <b>NOT</b> take their phone out while using the ballot marking device, as it could be used to tamper or interfere with the equipment."
 
-                    ]
-                },
-                {
-                    "type": "subheader",
-                    "text": "Cyber Threats Assessment"
-                },
-                {
-                    "type": "question",
-                    "id": "cq1",
-                    "prompt": "How can an election judge prevent cyber threats from occurring with the ballot marking device during election day?",
-                    "ignored": false,
-                    "mode": "radio",
-                    "choices": [
-                        {
-                            "id": "cq1_Nophone",
-                            "text": "They ensure that no voter takes their phone out while attempting to use the equipment."
-                        },
-                        {
-                            "id": "cq1_Confirm",
-                            "text": "They make sure to encourage the voter to confirm their selections <b>before</b> they have officially submitted their ballot."
-                        },
-                        {
-                            "id": "cq1_After",
-                            "text": "They make sure to encourage the voter to confirm their selections <b>after</b> they have officially submitted their ballot."
-                        },
-                        {
-                            "id": "cq1_Both",
-                            "text": "Both A and B"
-                        }
-                    ],
-                    "answer": "cq1_Both"
-                },
-                {
-                    "type": "question",
-                    "id": "cq2",
-                    "prompt": "What is a potential cyber threat that could occur on election day?",
-                    "ignored": false,
-                    "mode": "radio",
-                    "choices": [
-                        {
-                            "id": "cq2_Faulty",
-                            "text": "The Anne Arundel County Board of Elections gives your polling location a faulty ballot marking device."
-                        },
-                        {
-                            "id": "cq2_Social",
-                            "text": "Somebody makes a post on social media with a picture of them sticking a thumbs up outside of the polling place."
-                        },
-                        {
-                            "id": "cq2_Phone",
-                            "text": "A voter takes their phone out in the middle of using the Ballot-Marking Device."
-                        },
-                        {
-                            "id": "cq2_None",
-                            "text": "None of the above"
-                        }
-                    ],
-                    "answer": "cq2_Phone"
-                }
-            ]
-        },
-        {
-            "header": "Potential Insider Threats",
-            "units": [
-                {
-                    "type": "paragraph",
-                    "text": "In this section, we are going to be reviewing the potential insider threats that could occur with a ballot marking device during election day. In order for an election judge to prevent insider threats with the equipment they must first assure that the proper procedures were executed in setting up the ballot marking device."
-                },
-                {
-                    "type": "paragraph",
-                    "text": "When setting up the ballot marking device there are a few important details to keep in mind:"
-                },
-                {
-                    "type": "list",
-                    "items": [
-                        "You must ensure that the ID tag designates the correct polling location.", 
-                        "You will need to confirm the serial number located at the top of the ballot marking device, which should be done using the <i>Ballot Marking Device Integrity Report</i>.",
-                        "The tamper tape is located on the left side compartment door of the ballot marking device; the tamper tape number must also be verified using the <i>Ballot Marking Device Integrity Report</i>.",
-                        "If the device’s memory stick is not installed, then a chief judge must be notified immediately.", 
-                        "Ensure that each ballot marking device is switched onto '<b>VOTER</b>' mode and that the keypad is installed before the device is started up.",  
-                        "It takes approximately four minutes for the device to start up, and the screen should <b>NOT</b> be touched during this time.", 
-                        "If the precinct number and name are incorrect on the device’s screen, promptly notify a chief judge, who will then contact the Anne Arundel County Board of Elections.",
-                        "Make sure to return the ballot marking device barrel key to a chief judge once you have finished setting up the ballot marking device."
-                    ]
-                },
-                {
-                    "type": "paragraph",
-                    "text": "It is essential for election judges to be able to identify possible insider threats on election day. The following are some ways in which election judges can prevent these threats:"
-                },
-                {
-                    "type": "list",
-                    "items": [
-                        "Make sure to give the barrel key and the <i>Ballot Marking Device Integrity Report</i> back to a chief judge when you have finished setting up the ballot marking device. Be sure that all the necessary setup steps are completed prior to the location opening.",  
-                        "Voters should <b>NOT<b/> take their phone out while using the ballot marking device, as it could be used to tamper or interfere with the equipment." 
                     ]
                 },
                 {
