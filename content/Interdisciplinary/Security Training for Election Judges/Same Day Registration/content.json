@@ -1,0 +1,497 @@
+{
+    "name": "Security Training for Election Judges",
+    "variant": "Same Day Registration",
+    "sections": [
+        {
+            "header": "Background",
+            "units": [
+                {
+                    "type": "author",
+                    "name": "Rakshitha Rao Matti"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Learning Objectives"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "By the end of this module, election judges will be able to understand and prevent physical, insider, and cyber threats. This will be done through a review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threats to the same day registration process."
+                },
+               {
+                    "type": "paragraph",
+                    "text": "Reference: Anne Arundel County Board of Elections <i>Election Judge Manual 2020 Presidential Election and Same Day Registration Manual 2020 Presidential Election</i>."
+                }
+            ]
+        },
+        {
+            "header": "Introduction / Summary",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "The security of U.S elections has always been of high concern. However, with threats to our elections becoming more prevalent, we need to ensure our elections are safe from attack."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The same day registration process allows individuals who are not currently registered to vote, to register on the Election Day or during Early Voting and cast their vote. To register to vote a regular ballot on Election Day or Early Voting, an individual must:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Register at the assigned polling place where he or she lives.",
+                        "Show a current valid Maryland driver’s license or MVA ID card or an official document that meets the requirements established by State Board of Elections.",
+                        "Be a pre-qualified voter in the electronic pollbook."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If an individual does not meet any of the above requirements, they may be eligible to cast a provisional ballot."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The provisional judges in Anne Arundel County are responsible for processing same day registrations. This module will prepare these judges to provide the utmost security while registering voters."
+                }
+            ]
+        },
+        {
+            "header": "Same Day Registration Processes",
+            "units": [
+                {
+                    "type": "subheader",
+                    "text": "Setting up for Same Day Registration"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "1) Set up the voting place by laying out supplies, posting signs and setting up tables."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "2) Make sure that the following supplies are available for the same day registration:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Router",
+                        "Router antennas",
+                        "Electronic pollbook(s)",
+                        "Printer for electronic pollbook(s)",
+                        "Handheld barcode scanner(s)",
+                        "Extra roll of paper for the printer",
+                        "Provisional privacy sleeves",
+                        "<i>Voter Update Forms</i>",
+                        "<i>Voter Assistance Forms</i>",
+                        "<i>Certificates of Participation</i>",
+                        "Pens and note pads" 
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "3) Plug the barcode scanner into the electronic pollbook."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "4) Router Setup:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "If not connected, attach four antennas to the routers. Keep the antennas straight when you screw them to the ports.",
+                        "Plug the router’s power cord to the power port on the back of the router.",
+                        "Plug the other end of the router’s power cord into a power source.",
+                        "Turn the power switch to ON.  The power and connection indicator lights will appear in a few minutes.",
+                        "Angle the four antennas to 90 degrees."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "5) Networking the electronic pollbooks:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Turn electronic poll books OFF <b>before</b> connecting to the network.",
+                        "Plug the CAT-5 cable to the LAN Port on the electronic pollbook and the other end to port labelled “1” on the router.",
+                        "Repeat the above steps for each electronic pollbook.",
+                        "Turn ON the electronic pollbook <b>after</b> connecting all the electronic poll books to the router.", 
+                        "Only one electronic pollbook has a barcode scanner."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "6) Check synchronization by ALWAYS ensuring the electronic pollbooks are synchronized. If problems arise, alert a Chief Judge who will seek technical assistance."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "7) Make sure that:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The barcode scanner is setup and plugged into the electronic pollbook used for same day registration.",
+                        "Same day registration supplies are set up.",
+                        "Regularly check the supply of same day registration applications and other supplies. Tell the Anne Arundel County Board of Elections Help Desk right away when the supply of applications gets low. If you notice the supply of applications are being used quickly, tell the Anne Arundel County Board of Elections Help Desk right away."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Processing Same Day Registrations"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If a person’s name is not listed in the electronic pollbook, refer the person to the election judge who processes same day registrations."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If a person is not eligible to register to vote using the same day registration process, he or she will need to provide required identification to prove their eligibility to vote in Anne Arundel County."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Acceptable IDs for Same Day Registration"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "All of the IDs listed must be current within the last three months. The following are the acceptable forms of IDs:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Current MVA driver’s license",
+                        "Current MVA issue photo ID card",
+                        "Current student photo ID card",
+                        "Current employee photo ID card",
+                        "Current military photo ID card",
+                        "Current Passport",
+                        "Current State or Federal-issued photo ID card",
+                        "Current utility bill (address has to match with pollbook)",
+                        "Current bank statement (address has to match with pollbook)",
+                        "Current government check (address has to match with pollbook)",
+                        "Current Paycheck (address has to match with pollbook)",
+                        "Other current government document (address has to match with pollbook)"
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Cyber Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we will review how to identify, prevent, and/or respond to cyber threats relating to same day registration."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Same day registration voters may cast a regular ballot or provisional ballot. Regular ballots are subject to a higher degree of cyber threats than provisional ballots. This is because all provisional ballots are stored offline, submitted in orange Provisional Ballot Transfer Bags and marked with writing utensils instead of technology."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Some examples of cyber threats include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Corruption of compact flash drive.",
+                        "Electronic database and/or network is hacked.",
+                        "Hackers tampering with the synchronization of the pollbooks through remote access.",
+                        "Voter using a mobile phone in the polling location to gain access to the network." 
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Cyber threats can be reduced by:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Being aware of suspicious and/or adverse behavior and actions.",
+                        "Watching over other election judges, observers, voters, and election material.",
+                        "Notifying the Chief Judge of ANY AND ALL suspicious or adverse behavior or actions from fellow Election Judges, observers, voters, etc."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Cyber Threat Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "ct1",
+                    "prompt": "Same day registration process is least susceptible to cyber threat.",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "ct1_True",
+                            "text": "True"
+                        },
+                        {
+                            "id": "ct1_False",
+                            "text": "False"
+                        }
+                    ],
+                    "answer": "ct1_False"
+                },
+                {
+                    "type": "question",
+                    "id": "ct2",
+                    "prompt": "As a provisional voting judge, what do you do if you observe a voter using a mobile phone inside the polling location?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "ct2_Ask",
+                            "text": "Ask the voter to not use the mobile phone."
+                        },
+                        {
+                            "id": "ct2_Notify",
+                            "text": "Notify a Chief Judge."
+                        },
+                        {
+                            "id": "ct2_Nothing",
+                            "text": "Take no action. A voter is allowed to use mobile phones at the polling station."
+                        },
+                        {
+                            "id": "ct2_AB",
+                            "text": "Both A and B."
+                        }
+                    ],
+                    "answer": "ct2_AB"
+                }
+            ]
+        },
+        {
+            "header": "Insider Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "In this section, we will review how to identify, prevent, and/or respond to insider threats relating to same day registration."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Insider threats result from people trying to compromise the election process either intentionally and/or accidentally. These people can be election judges, voters and/or observers."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The following are some examples of insider threat:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Intentional or accidental damage to devices.",
+                        "Wrongly register people who are ineligible to vote.",
+                        "Intentionally or accidentally refuse to register eligible voters.",
+                        "Intentionally or accidentally make an error while registering voters.",
+                        "Possibility of election judges or poll workers not being properly trained.",
+                        "Tampering of machines during setup."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The above situations pose serious threats to the election process and must be avoided. In order to prevent insider threat, Election judges must:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Be cautious of people around them  including other election judges, observers and voters.", 
+                        "Watch out for suspicious behavior throughout setup, voting hours, and the closing of the polls.", 
+                        "Aware of election judges acting maliciously and/or negligently. Notify the chief judge of all malicious and/or negligent activities immediately.", 
+                        "Double check machines before letting voters in."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Insider Threat Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "ia1",
+                    "prompt": "Which of the following is an insider threat?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "ia1_Judge",
+                            "text": "An election judge unknowingly refuses to register an eligible voter."
+                        },
+                        {
+                            "id": "ia1_Flash",
+                            "text": "Compact flash drive containing voter data are not encrypted properly."
+                        },
+                        {
+                            "id": "ia1_Both",
+                            "text": "Both A and B."
+                        },
+                        {
+                            "id": "ia1_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "ia1_Judge"
+                },
+                {
+                    "type": "question",
+                    "id": "ia2",
+                    "prompt": "When is the only time an election judge is permitted to unplug the scanning unit from its power source?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "ia2_Voter",
+                            "text": "Voter."
+                        },
+                        {
+                            "id": "ia2_Same",
+                            "text": "Same day registration judge."
+                        },
+                        {
+                            "id": "ia2_Chief",
+                            "text": "Chief Judge."
+                        },
+                        {
+                            "id": "ia2_Both",
+                            "text": "Both A and B."
+                        }
+                    ],
+                    "answer": "ia2_Both"
+                },
+                {
+                    "type": "question",
+                    "id": "ia3",
+                    "prompt": "Who is in charge of setting up the Same Day Registration process?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "ia3_Provision",
+                            "text": "Provision Election Judges."
+                        },
+                        {
+                            "id": "ia3_Any",
+                            "text": "Any Election Judge."
+                        },
+                        {
+                            "id": "ia3_Cheif",
+                            "text": "Chief Judge."
+                        },
+                        {
+                            "id": "ia3_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "ia3_Provision"
+                }
+            ]
+        },
+        {
+            "header": "Physical Threats",
+            "units": [
+                {
+                    "type": "paragraph",
+                    "text": "The election process is susceptible to physical threats. Physical threats to provisional voting are typically an act of negligence and/or human error. Some examples of physical threats include:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Incorrect set up of election devices causing them to malfunction.", 
+                        "Closing the polls without performing the required steps.",
+                        "Voters using forms of ID with previous addresses.",
+                        "Voters ballot gets misplaced.",
+                        "Voter using hacked equipment.", 
+                        "Voter does not understand the manual (unintentional)."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In order to prevent physical, make sure:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Read the instruction manual thoroughly.",
+                        "Understand the process of set up of devices.", 
+                        "Be thorough with the actions to be performed during closing.",
+                        "Be thorough with provisional voting requirements.",
+                        "Voter’s document should be checked thoroughly."
+                    ]
+                },
+                {
+                    "type": "subheader",
+                    "text": "Physical Threat Assessment"
+                },
+                {
+                    "type": "question",
+                    "id": "pt1",
+                    "prompt": "To what device must the barcode scanner be connected?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "pt1_Scan",
+                            "text": "Scanning unit."
+                        },
+                        {
+                            "id": "pt1_Pollbook",
+                            "text": "Electronic pollbook."
+                        },
+                        {
+                            "id": "pt1_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "pt1_Pollbook"
+                },
+
+
+                {
+                    "type": "question",
+                    "id": "pt2",
+                    "prompt": "How do voters who cast their vote via Provisional Voting submit their ballots?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "pt2_Electronic",
+                            "text": "Electronically."
+                        },
+                        {
+                            "id": "pt2_Place",
+                            "text": "By placing the ballot into the pocket of the Provisional Ballot Application, seal it, and then put the sealed Provisional Ballot Application envelope in the orange provisional transfer ballot bag."
+                        },
+                        {
+                            "id": "pt2_Either",
+                            "text": "Either electronically or by paper."
+                        },
+                        {
+                            "id": "pt2_None",
+                            "text": "None of the above."
+                        }
+                    ],
+                    "answer": "pt2_Place"
+                },
+                {
+                    "type": "question",
+                    "id": "pt3",
+                    "prompt": "Where do Provisional Ballots go once they are completed?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "pt3_Scan",
+                            "text": "Scanning unit."
+                        },
+                        {
+                            "id": "pt3_Provisional",
+                            "text": "Provisional Ballot Bag."
+                        },
+                        {
+                            "id": "pt3_Both",
+                            "text": "Both A and B."
+                        },
+                        {
+                            "id": "pt3_Neither",
+                            "text": "Neither A or B."
+                        }
+                    ],
+                    "answer": "pt3_Provisional"
+                }
+            ]
+        }
+    ]
+}
