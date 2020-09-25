@@ -426,7 +426,7 @@
                         },
                         {
                             "id": "eq2_None",
-                            "text": "No for needed."
+                            "text": "No form needed."
                         }
                     ],
                     "answer": "eq2_None"
@@ -478,7 +478,7 @@
                         },
                         {
                             "id": "fq1_Chief",
-                            "text": "The cheif judges."
+                            "text": "The chief judges."
                         },
                         {
                             "id": "fq1_Both",

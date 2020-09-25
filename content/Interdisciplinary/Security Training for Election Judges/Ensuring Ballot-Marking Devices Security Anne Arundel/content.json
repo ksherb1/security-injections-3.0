@@ -28,7 +28,7 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "Elections have always played a pivotal role within the United States, and election security continues to remain a top priority. However, because potential election day infiltration has continued to become an issue throughout recent years, it is important to ensure that election judges are aware of the potential threats, and how to prevent them from happening. The ballot marking device plays an essential role during election day because it provides voters with another option to mark their ballots independently. Each designated precinct receives a minimum of one ballot marking device, and it is the responsibility of the election judges to set up and monitor the equipment under the supervision of the chief judges. It is also the chief judge’s responsibility to ensure there are five (5) ballots cast from the ballot marking device by 1:00 PM."
+                    "text": "Elections have always played a pivotal role within the United States, and election security continues to remain a top priority. However, because potential election day infiltration has continued to become an issue throughout recent years, it is important to ensure that election judges are aware of the potential threats, and how to prevent them from happening. The Ballot Marking Device provides voters with impairments another option to mark their ballots independently. ALL Voters are also encouraged to use this device. Each designated precinct receives a minimum of one ballot marking device, and it is the responsibility of the election judges to set up and monitor the equipment under the supervision of the chief judges. It is also the chief judge’s responsibility to ensure there are five (5) ballots cast from the ballot marking device by 1:00 PM."
                 },
                 {
                     "type": "paragraph",
@@ -65,7 +65,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "If a voter indicates that they wish to submit an audio ballot, give them a pair of headphones and instruct them how to put them on. This is necessary because once the ballot activation card is identified, the device immediately begins to play the voting instructions and provide an overview of the keypad functions."
+                    "text": "If a voter would like to submit a ballot using the Ballot Marking Device, hand them a pair of headphones and instruct them how to put them on. Instruct the voter to place these on before inserting the Ballot Activation Card, since the voting instructions will begin playing immediately after the card is inserted."
                 },
                 {
                     "type": "paragraph",
@@ -261,7 +261,7 @@
                         "You will need to confirm the serial number located at the top of the ballot marking device, which should be done using the <i>Ballot Marking Device Integrity Report</i>.",
                         "The tamper tape is located on the left side compartment door of the ballot marking device; the tamper tape number must also be verified using the <i>Ballot Marking Device Integrity Report</i>.",
                         "If the device’s memory stick is not installed, then a chief judge must be notified immediately.", 
-                        "Ensure that each ballot marking device is switched onto '<b>VOTER</b>' mode and that the keypad is installed before the device is started up.",  
+                        "Ensure that each ballot marking device is switched onto '<b>VOTER</b>' mode.",  
                         "It takes approximately four minutes for the device to start up, and the screen should <b>NOT</b> be touched during this time.", 
                         "If the precinct number and name are incorrect on the device’s screen, promptly notify a chief judge, who will then contact the Anne Arundel County Board of Elections.",
                         "Make sure to return the ballot marking device barrel key to a chief judge once you have finished setting up the ballot marking device."

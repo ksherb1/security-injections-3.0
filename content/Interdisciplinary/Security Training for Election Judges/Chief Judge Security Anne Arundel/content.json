@@ -350,7 +350,7 @@
                         },
                         {
                             "id": "em1_545",
-                            "text": "5:45 AM."
+                            "text": "5:30 AM."
                         },
                         {
                             "id": "em1_600",
@@ -472,10 +472,11 @@
                         "Verify all electronic pollbooks are synchronizing and charging.",
                         "Ensure the router is out of voters’ access.",
                         "Verify that check-in judges are effectively and properly processing voters.",
-                        "Verify challengers and watchers have a signed Challenger and Watcher Certificate.",
+                        "Verify that challengers and watchers have presented an approved Challenger & Watcher Certificate to the Chief Judge. Be sure that these individuals are stationed nearby, but not so close as to disturb the operation of the Check-in Area judges.",
                         "Process challenged voters and complete the <i>Affidavit for Challenger and Challenged Voter</i> as needed.",
                         "Verify that election judges are completing the <i>Voter Update Form</i> and <i>Voter Assistance Form</i> as necessary.",
-                        "Keep election judges off of their personal electronic devices. This reduces cyber threats including the chance of remotely compromising information uploaded into the electronic pollbooks." 
+                        "Keep election judges off of their personal electronic devices. This reduces cyber threats including the chance of remotely compromising information uploaded into the electronic pollbooks.",
+                        "Ensure that election workers and voters are complying with the <i>No Electronic Devices</i> rule within the Polling Place room." 
                     ]
                 },
                 {
@@ -621,11 +622,11 @@
                         },
                         {
                             "id": "vh1_ballot",
-                            "text": "Their ballot."
+                            "text": "Their ballot or ballot activation card."
                         },
                         {
                             "id": "vh1_vacid",
-                            "text": "Their Voter Authority Card and their ID."
+                            "text": "Their Voter Authority Card."
                         },
 			{
                             "id": "vh1_spoiled",
@@ -703,7 +704,7 @@
                         },
                         {
                             "id": "vh4_cheif",
-                            "text": "Cheif judge."
+                            "text": "Chief judge."
                         },
                         {
                             "id": "vh4_provisional",

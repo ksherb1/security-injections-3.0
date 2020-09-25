@@ -19,7 +19,7 @@
                 },
                {
                     "type": "paragraph",
-                    "text": "Reference: Anne Arundel County Board of Elections <i>Election Judge Manual 2020 Presidential Election and Same Day Registration Manual 2020 Presidential Election</i>."
+                    "text": "Reference: Anne Arundel County Board of Elections <i>Election Judge Manual 2020 Presidential Election and Same Day Registration</i>."
                 }
             ]
         },
@@ -32,12 +32,12 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The same day registration process allows individuals who are not currently registered to vote, to register on the Election Day or during Early Voting and cast their vote. To register to vote a regular ballot on Election Day or Early Voting, an individual must:"
+                    "text": "The same day registration process allows individuals who are not currently registered to vote to register on the Election Day or during Early Voting and cast their vote. To register and vote a regular ballot on Election Day or Early Voting, an individual must:"
                 },
                 {
                     "type": "list",
                     "items": [
-                        "Register at the assigned polling place where he or she lives.",
+                        "Register at the assigned polling place where they live.",
                         "Show a current valid Maryland driver’s license or MVA ID card or an official document that meets the requirements established by State Board of Elections.",
                         "Be a pre-qualified voter in the electronic pollbook."
                     ]
@@ -61,11 +61,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "1) Set up the voting place by laying out supplies, posting signs and setting up tables."
+                    "text": "1) Set up the voting place by laying out supplies, posting signs, and setting up tables."
                 },
                 {
                     "type": "paragraph",
-                    "text": "2) Make sure that the following supplies are available for the same day registration:"
+                    "text": "2) Make sure that the following supplies are available for same day registration:"
                 },
                 {
                     "type": "list",
@@ -190,7 +190,7 @@
                     "items": [
                         "Corruption of compact flash drive.",
                         "Electronic database and/or network is hacked.",
-                        "Hackers tampering with the synchronization of the pollbooks through remote access.",
+                        "Hackers tampering with synchronization of the pollbooks through remote access.",
                         "Voter using a mobile phone in the polling location to gain access to the network." 
                     ]
                 },
@@ -202,7 +202,7 @@
                     "type": "list",
                     "items": [
                         "Being aware of suspicious and/or adverse behavior and actions.",
-                        "Watching over other election judges, observers, voters, and election material.",
+                        "Watching over other Election Judges, observers, voters, and election material.",
                         "Notifying the Chief Judge of ANY AND ALL suspicious or adverse behavior or actions from fellow Election Judges, observers, voters, etc."
                     ]
                 },
@@ -213,7 +213,7 @@
                 {
                     "type": "question",
                     "id": "ct1",
-                    "prompt": "Same day registration process is least susceptible to cyber threat.",
+                    "prompt": "Compared to same day provisional ballots, the same day registration process for regular ballots are less least susceptible to cyber threat.",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -265,7 +265,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Insider threats result from people trying to compromise the election process either intentionally and/or accidentally. These people can be election judges, voters and/or observers."
+                    "text": "Insider threats result from people trying to compromise the election process either intentionally and/or accidentally. These people can be Election Judges, voters and/or observers."
                 },
                 {
                     "type": "paragraph",
@@ -278,7 +278,7 @@
                         "Wrongly register people who are ineligible to vote.",
                         "Intentionally or accidentally refuse to register eligible voters.",
                         "Intentionally or accidentally make an error while registering voters.",
-                        "Possibility of election judges or poll workers not being properly trained.",
+                        "Possibility of Election Judges or poll workers not being properly trained.",
                         "Tampering of machines during setup."
                     ]
                 },
@@ -289,9 +289,9 @@
                 {
                     "type": "list",
                     "items": [
-                        "Be cautious of people around them  including other election judges, observers and voters.", 
+                        "Be cautious of people around them  including other Election Judges, observers, and voters.", 
                         "Watch out for suspicious behavior throughout setup, voting hours, and the closing of the polls.", 
-                        "Aware of election judges acting maliciously and/or negligently. Notify the chief judge of all malicious and/or negligent activities immediately.", 
+                        "Be aware of Election Judges acting maliciously and/or negligently. Notify the chief judge of all malicious and/or negligent activities immediately.", 
                         "Double check machines before letting voters in."
                     ]
                 },
@@ -308,11 +308,11 @@
                     "choices": [
                         {
                             "id": "ia1_Judge",
-                            "text": "An election judge unknowingly refuses to register an eligible voter."
+                            "text": "An Election Judge unknowingly refuses to register an eligible voter."
                         },
                         {
                             "id": "ia1_Flash",
-                            "text": "Compact flash drive containing voter data are not encrypted properly."
+                            "text": "Compact flash drives containing voter data are not encrypted properly."
                         },
                         {
                             "id": "ia1_Both",
@@ -328,7 +328,7 @@
                 {
                     "type": "question",
                     "id": "ia2",
-                    "prompt": "When is the only time an election judge is permitted to unplug the scanning unit from its power source?",
+                    "prompt": "When is the only time an Election Judge is permitted to unplug the scanning unit from its power source?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -384,31 +384,30 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "The election process is susceptible to physical threats. Physical threats to provisional voting are typically an act of negligence and/or human error. Some examples of physical threats include:"
+                    "text": "The election process is susceptible to physical threats. Physical threats are typically an act of negligence and/or human error. Some examples of physical threats include:"
                 },
                 {
                     "type": "list",
                     "items": [
-                        "Incorrect set up of election devices causing them to malfunction.", 
+                        "Incorrect set up of election devices causing malfunction.", 
                         "Closing the polls without performing the required steps.",
                         "Voters using forms of ID with previous addresses.",
-                        "Voters ballot gets misplaced.",
-                        "Voter using hacked equipment.", 
-                        "Voter does not understand the manual (unintentional)."
+                        "Voter's ballot gets misplaced.",
+                        "Voter using hacked equipment."
                     ]
                 },
                 {
                     "type": "paragraph",
-                    "text": "In order to prevent physical, make sure:"
+                    "text": "In order to prevent physical threats, make sure to:"
                 },
                 {
                     "type": "list",
                     "items": [
                         "Read the instruction manual thoroughly.",
-                        "Understand the process of set up of devices.", 
+                        "Understand the processes of setting up devices.", 
                         "Be thorough with the actions to be performed during closing.",
                         "Be thorough with provisional voting requirements.",
-                        "Voter’s document should be checked thoroughly."
+                        "Check voter’s documents thoroughly."
                     ]
                 },
                 {
@@ -442,7 +441,7 @@
                 {
                     "type": "question",
                     "id": "pt2",
-                    "prompt": "How do voters who cast their vote via Provisional Voting submit their ballots?",
+                    "prompt": "How do voters who cast their vote via provisional voting submit their ballots?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -452,7 +451,7 @@
                         },
                         {
                             "id": "pt2_Place",
-                            "text": "By placing the ballot into the pocket of the Provisional Ballot Application, seal it, and then put the sealed Provisional Ballot Application envelope in the orange provisional transfer ballot bag."
+                            "text": "By placing the ballot into the pocket of the Provisional Ballot Application, sealing it, and then putting the sealed Provisional Ballot Application envelope in the orange provisional transfer Ballot Bag."
                         },
                         {
                             "id": "pt2_Either",

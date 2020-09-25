@@ -76,7 +76,7 @@
                     "items": [
                         "<b>Surge Protector:</b> When plugging the scanning unit into a power source, make sure to connect it to a surge protector and plug it into an outlet. Be sure the surge protector is functioning by ensuring all lights on the surge protector are lit.",
                         "<b>Power Supply:</b> If the scanning unit does not turn on, or if you hear a series of four beeps, check the power supply to the scanning unit. Make sure the power cord is connected firmly to the scanning unit, surge protector, and outlet. Make sure there is power coming through the outlet. If the scanning unit still does not turn on, alert a chief judge.",
-                        "<b>Main Ballot Box / Ballot Transfer Bin:</b><ul><li>When opening the main ballot box, verify that it is empty. Do the same with the ballot transfer bin.</li><li>When replacing the ballot transfer bin in the main ballot box, check that both lids of the ballot transfer bin are open and resting on the sides inside the main ballot box. This ensures all successfully scanned ballots fall into the bin without disruption.</li><li>Be sure to CLOSE, LOCK, and SEAL the main ballot box to prevent theft of paper ballots.</li></ul>",
+                        "<b>Main Ballot Box / Ballot Transfer Bin:</b><ul><li>Before polls are open, be sure to close, lock, and seal the Main & Emergency ballot bins.</li><li>When opening the main ballot box, verify that it is empty. Do the same with the ballot transfer bin.</li><li>When replacing the ballot transfer bin in the main ballot box, check that both lids of the ballot transfer bin are open and resting on the sides inside the main ballot box. This ensures all successfully scanned ballots fall into the bin without disruption.</li><li>Be sure to CLOSE, LOCK, and SEAL the main ballot box to prevent theft of paper ballots.</li></ul>",
                         "<b>Emergency Ballot Compartment:</b> Once the emergency ballot compartment is unlocked, make sure the compartment is empty and the metal flap on the compartment door is raised. Then close, lock, and reseal the emergency ballot compartment door."
                     ]
                 },
@@ -133,7 +133,7 @@
                     "choices": [
                         {
                             "id": "oq2_Unplug",
-                            "text": "Unplug the scanning unit from its power source (i.e., unplug surge protector from its outlet)."
+                            "text": "Unplug the scanning unit from its power souce and plug it back in is acceptable or closing the lid and reopening it."
                         },
                         {
                             "id": "oq2_Alert",
@@ -218,7 +218,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "<b>Election Judge Positioning:</b><ul><li>An election judge must always be stationed at the scanning unit at all times.</li><li>An election judge must not leave until replaced with another election judge.</li><li>An election judge must either stand or sit at least two feet away from the side of the scanning unit or stand at the beginning of the line to the scanning unit.</li><li>At no point should the scanning unit be left unmonitored.</li></ul>",
+                        "<b>Election Judge Positioning:</b><ul><li>Election Judges must not leave their scanner station unless relieved by Chief Judge or another Election Judge appointed by Chief Judge.</li><li>An election judge must either stand or sit at least two feet away from the side of the scanning unit or stand at the beginning of the line to the scanning unit.</li><li>At no point should the scanning unit be left unmonitored.</li></ul>",
                         "<b>Offer assistance:</b> Never handle a voter's ballot UNLESS the voter requests assistance OR the election judge offers assistance and it is accepted.",
                         "<b>Check Power Supply:</b> Periodically, check that the scanning unit is plugged into power by looking at the scanning unit screen and checking the connected plugs icon next to the time. A battery icon means the unit needs to be plugged into an outlet.",
                         "<b>Be aware of your surroundings, election equipment, and voters:</b><ul><li>Be aware of any unusual voter behavior.</li><li>If a voter is taking longer than normal or is possibly attempting to touch or tamper with the unit beyond normal ballot casting, ask them if they need assistance and/or ask the chief judge for assistance.</li><li>Do not allow anything to be placed and/or left on top of, or immediately adjacent to, the unit.</li></ul>"
@@ -366,9 +366,9 @@
                     "type": "list",
                     "items": [
                         "CAREFULLY follow the instructions given on how to properly close the polls and scanning unit.",
-		            	"Use the Step-by-Step Guide: Scanning unit 2020 Presidential Election",
+			            "Use the Step-by-Step Guide: Scanning unit 2020 Presidential Election",
                         "Pay close attention when reciting and recording security seal, tamper tape, and serial numbers.  One person should read the numbers while a second person should verify and/or record those numbers on the <i>Scanning Unit Closing Integrity Report</i>.",
-			            "Double/triple check to ensure records are correct",
+	            		"Double/triple check to ensure records are correct",
                         "Have two or three people close the scanning unit."
                     ]
                 },
