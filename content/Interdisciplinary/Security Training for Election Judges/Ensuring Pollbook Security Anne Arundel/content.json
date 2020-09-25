@@ -54,19 +54,19 @@
                 {
                     "type": "list",
                     "items": [
-                        "Make sure the outer seal number on each case matches the number in column 1 of the <i>Electronic Pollbook Integrity Report</i>.",
+                        "Ensure the Inner Tamper Tape Seal is intact and not voided. If voided, inform the Chief Judge. Do not remove this seal!",
                         "Take off the outer security seal and place all broken security seals in the red Tamper Tape & Security Seals Bag.",
                         "Open the two latches.",
                         "Take the electronic pollbook and power cord from the case. Handle the electronic pollbook with care by removing the pollbook by the elastic band.",
-                        "Make sure the state asset tag number on the back of each electronic pollbook matches the numbers in column 2 on the <i>Electronic Pollbook Integrity Report</i> for each electronic pollbook. Work together with the other election judges to ensure accuracy.",
+                        "Verify the State Asset Tag & Tamper Tape Seal numbers match, check off/sign your initials in the check column. Bipartisan judges must also sign initials in the column.",
                         "Make sure the inner seal number on top of each electronic pollbook is not broken and the number matches the numbers in column 3 on the <i>Electronic Pollbook Integrity Report</i>.",
                         "Verify the power switch on the top is turned OFF.",
-			            "Insert the power cord (marked with yellow tape) into the first connection slot marked with PWR.  Plug the other end into a power source.  Do NOT turn on the power switch yet.",
-			            "Take the printer’s USB cable from the printer case.  Plug the larger end into one of the two USB ports located on the back of the electronic pollbook.  It does not matter which USB port you use.",
+            			"Insert the power cord (marked with yellow tape) into the first connection slot marked with PWR.  Plug the other end into a power source.  Do NOT turn on the power switch yet.",
+            			"Take the printer’s USB cable from the printer case.  Plug the larger end into one of the two USB ports located on the back of the electronic pollbook.  It does not matter which USB port you use.",
 			            "Plug one end of the printer’s power cord (marked with blue tape) into the printer. Plug the other end into a power source.",
-			            "Plug the smaller end of the USB cable into the printer.",
+            			"Plug the smaller end of the USB cable into the printer.",
 			            "Repeat all steps for each electronic pollbook.",
-			            "<ul><li>Ensure the electronic pollbook power cord, USB cable from the printer, and USB cable to the router is connected securely and correctly.</li><li>When connecting the electronic pollbook and router to power via its power cord, be sure to use a power adapter to prevent shortages and electrical damage to the electronic pollbook.</li><li>Be sure to plug the devices in outlets that are out of the reach of voters and heavy foot traffic.</li><li>Be sure to keep all cords out of voter’s path and reach.  All cords on the floor should be taped down to avoid becoming a tripping hazard.</li></ul>"
+            			"<ul><li>Ensure the electronic pollbook power cord, USB cable from the printer, and USB cable to the router is connected securely and correctly.</li><li>When connecting the electronic pollbook and router to power via its power cord, be sure to use a power strip with a surge supressor to prevent shortages and electrical damage to the electronic pollbook.</li><li>Be sure to plug the devices in outlets that are out of the reach of voters and heavy foot traffic.</li><li>Be sure to keep all cords out of voter’s path and reach.  All cords on the floor should be taped down to avoid becoming a tripping hazard.</li></ul>"
                     ],
                     "ordered": true
                 },
@@ -86,7 +86,7 @@
 			            "Tap the <i>Ballots</i> and <i>Voters</I> tabs under the <I>Statistics</i> to make sure that all the numbers are zero.  Be sure to check both tabs under <i>Statistics</i> for zeros before networking the electronic pollbooks.  Tell a chief judge right away if any of the numbers are not zero",
             			"Make sure that the totals at the bottom of the screen are zero",
 			            "Repeat all steps for all electronic pollbooks",
-            			"<ul><li>Be sure to introduce yourself to all other election judges. Establish lines of communication in case problems arise</li><li>Follow the instructions beginning on page 10.12 of the 2020 Election Judge Manual to properly open the electronic pollbooks:</li><ul><li>Check synchronization by ALWAYS ensuring the electronic pollbooks are synchronized. If problems arise, alert a chief judge who will seek technical assistance.</li><li>Throughout the day, periodically check the vote totals at the bottom of the screen against the other electronic pollbooks in the polling place. All totals should match, but some pollbooks may take a few seconds to match with the other pollbooks.</li></ul><li>When prompted to sign in, be sure use your first name and last name.</li><li>Remember: DO NOT check-in voters before 7:00 AM.</li></ul>"
+			            "<ul><li>Be sure to introduce yourself to all other election judges. Establish lines of communication in case problems arise</li><li>Follow the instructions beginning on page 10.12 of the 2020 Election Judge Manual to properly open the electronic pollbooks:</li><ul><li>Check synchronization by ALWAYS ensuring the electronic pollbooks are synchronized. If problems arise, alert a chief judge who will seek technical assistance.</li><li>Throughout the day, periodically check the vote totals at the bottom of the screen against the other electronic pollbooks in the polling place. All totals should match, but some pollbooks may take a few seconds to match with the other pollbooks.</li></ul><li>When prompted to sign in, be sure use your first name and/or initials.</li><li>Remember: DO NOT check-in voters before 7:00 AM.</li></ul>"
                     ]
                 },
                 {
@@ -98,7 +98,7 @@
                     "items": [
                         "When checking in voters, election judges may not ask for ID but may accept it if offered by a voter.",
                         "Regardless of presented ID, election judges must ALWAYS ask the voter to state their name, address, and month and day of birth.",
-                        "If the name, address and month and date of birth match exactly with the pollbook, print out their voter registration card. Have the voter verify the information is correct by signing the appropriate line.",
+                        "If the name, address and month & date of birth match exactly, print out the Voter Authorization Card. Have the voter verify the information is correct by signing the appropriate line.",
                         "If their information is not correct, follow-up with the appropriate actions. When in doubt, ask for help from fellow election judges or one of the chief judges.",
                         "NEVER leave your pollbook unattended. When helping a voter for an extended period of time, SIGN OUT of your pollbook.<ul><li>This will help prevent any unauthorized users from accessing and/or tampering with the pollbook.</li><li>Review “Resetting the Judges Name” beginning on page 10.49 of the 2020 Election Judge Manual.</li></ul>",
                         "If you have ANY issues with a voter, especially in “Special Situations,” DO NOT hesitate to ask a chief judge for assistance.<ul><li>Refrain from asking occupied election judges for assistance.</li></ul>"
@@ -111,8 +111,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "Ensure the electronic pollbook and all related materials are returned to their cases.",
-                        "See that the chief judge receives all electronic pollbook material including the compact flash card before successfully closing the location."
+                        "Ensure the electronic pollbook and all related materials are returned to their cases."
                     ]
                 },
                 {
@@ -167,7 +166,7 @@
                     ],
                     "answer": "wait"
                 },
-{
+                {
                     "type": "question",
                     "id": "p1q3",
                     "prompt": "When unpacking an electronic pollbook, how do you verify that the electronic pollbook belongs at your polling location?",
@@ -235,10 +234,10 @@
                     ],
                     "answer": "p1q4None"
                 },
- 		{
+ 		        {
                     "type": "question",
                     "id": "p1q5",
-                    "prompt": "Where do we place all Outer Booth Seals that have been cut? ",
+                    "prompt": "Where do we place all Outer Seals that have been cut? ",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -261,7 +260,7 @@
                     ],
                     "answer": "tamper"
                 },
-		{
+		        {
                     "type": "question",
                     "id": "p1q6",
                     "prompt": "Outer seal numbers and asset tag numbers from each pollbook are recorded on which form?",
@@ -280,7 +279,7 @@
                             "id": "epb",
                             "text": "Electronic Pollbook Integrity Report."
                         },
- 			{
+ 			            {
                             "id": "chief",
                             "text": "Chief Judge Election Day Log."
                         },
@@ -378,7 +377,7 @@
                 {
                     "type": "question",
                     "id": "p2q3",
-                    "prompt": "As a voting operations judge working in the check-in area, how can you determine if your electronic pollbook has been tampered with during voting hours?",
+                    "prompt": "As a voting operations judge working in the check-in area, how can you determine if your electronic pollbook may have been tampered with during voting hours?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -392,7 +391,7 @@
                         },
                         {
                             "id": "sync",
-                            "text": "Your electronic pollbook does not successfully sync with other electronic pollbooks in a reasonable amount of time."
+                            "text": "Your electronic pollbook does not successfully synchronize with other electronic pollbooks in a reasonable amount of time."
                         },
                         {
                             "id": "allabove",
@@ -577,7 +576,7 @@
                     ],
                     "answer": "trafficSlows"
                 },
-                   {
+                {
                     "type": "question",
                     "id": "p5q2",
                     "ignored": false,
@@ -596,7 +595,7 @@
                             "id": "epb",
                             "text": "Electronic Pollbook Integrity Report."
                         },
-                        {
+ 			            {
                             "id": "chief",
                             "text": "Chief Judge Election Day Log."
                         },
@@ -616,7 +615,7 @@
                     "type": "paragraph",
                     "text": "<b>Congratulations!</b> You have completed the Anne Arundel County Board of Elections Electronic Pollbook training module."
                 },
-                   {
+                {
                     "type": "paragraph",
                     "text": "You may check off this step on the card. To move on to the next step, click on the following link: <a href=\"http://tinyurl.com/PollbooksQuiz\" target=\"_blank\"> http://tinyurl.com/PollbooksQuiz</a>."
                 }

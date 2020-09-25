@@ -151,7 +151,7 @@
                         "Make sure that each registered voter has or receives a voter authority card with a provisional ballot reason code number printed on it.",
                         "Check the voter authority card for the voter’s signature and check-in judge’s initials.",
                         "Check to make sure the voter’s provisional application is completed properly and signed.",
-                        "If a voter makes a mistake on their provisional voting ballot, have the voter write <i>Spoiled</i> across the old ballot and place it in the <i>Spoiled Ballot Envelope</i> before issuing the voter a replacement ballot."
+                        "If a voter makes a mistake on their provisional voting ballot, have the voter darken in all ovals in each contest and then write <i>Spoiled</i> across the old ballot and place it in the <i>Spoiled Ballot Envelope</i> before issuing the voter a replacement ballot."
                     ]
                 },
                 {
@@ -169,7 +169,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "Place the security seal over the opening of the orange Provisional Ballot Transfer Bag.",
+                        "Place the security seal thru the opening of the orange GROMMET Provisional Ballot Transfer Bag and the opening of the zipper, then pull the seal tight.",
                         "Give the orange Provisional Ballot Transfer Bag to the Chief Judge(s) to transport back to the Anne Arundel County Board of Elections."
                     ]
                 },
@@ -339,7 +339,7 @@
                 {
                     "type": "question",
                     "id": "iq1",
-                    "prompt": "During set up you notice another election judge sneaking off to throw something away. You follow them and realize they threw away the Blank Voter Authority Cards and the Laminated Instruction Sheet for Provisional Ballot Applications provisional ballot applications. What should you do?",
+                    "prompt": "During set up you notice another election judge sneaking off to throw something away. You follow them and realize they threw away the Blank Voter Authority Cards and the Laminated Instruction Sheet for Provisional Ballot Applications. What should you do?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -450,8 +450,8 @@
                     "text": "b>Congratulations!</b> You have completed the Anne Arundel County Board of Elections Provisional Voting training module."
                 },
                 {
-                        "type": "paragraph",
-                        "text": "You may check off this step on the card. To move on to the next step, click on the following link: <a href=\"https://tinyurl.com/ProvisionalQuiz\" target=\"_blank\"> https://tinyurl.com/ProvisionalQuiz</a>."
+                    "type": "paragraph",
+                    "text": "You may check off this step on the card. To move on to the next step, click on the following link: <a href=\"https://tinyurl.com/ProvisionalQuiz\" target=\"_blank\"> https://tinyurl.com/ProvisionalQuiz</a>."
                 }
             ]
         }
