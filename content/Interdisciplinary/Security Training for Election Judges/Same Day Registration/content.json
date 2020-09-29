@@ -15,7 +15,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "By the end of this module, election judges will be able to understand and prevent physical, insider, and cyber threats. This will be done through a review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threats to the same day registration process."
+                    "text": "By the end of this module, Election Judges will be able to understand and prevent physical, insider, and cyber threats. This will be done through a review of Election Day responsibilities, with a primary focus on areas of weakness of and/or potential threats to the same day registration process."
                 },
                {
                     "type": "paragraph",
@@ -137,7 +137,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "If a person’s name is not listed in the electronic pollbook, refer the person to the election judge who processes same day registrations."
+                    "text": "If a person’s name is not listed in the electronic pollbook, refer the person to the Election Judge who processes same day registrations."
                 },
                 {
                     "type": "paragraph",
@@ -159,12 +159,12 @@
                         "Current student photo ID card",
                         "Current employee photo ID card",
                         "Current military photo ID card",
-                        "Current Passport",
+                        "Current passport",
                         "Current State or Federal-issued photo ID card",
                         "Current utility bill (address has to match with pollbook)",
                         "Current bank statement (address has to match with pollbook)",
                         "Current government check (address has to match with pollbook)",
-                        "Current Paycheck (address has to match with pollbook)",
+                        "Current paycheck (address has to match with pollbook)",
                         "Other current government document (address has to match with pollbook)"
                     ]
                 }
@@ -213,7 +213,7 @@
                 {
                     "type": "question",
                     "id": "ct1",
-                    "prompt": "Compared to same day provisional ballots, the same day registration process for regular ballots are less least susceptible to cyber threat.",
+                    "prompt": "Compared to same day provisional ballots, the same day registration process for regular ballots are less susceptible to cyber threat.",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -284,14 +284,14 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The above situations pose serious threats to the election process and must be avoided. In order to prevent insider threat, Election judges must:"
+                    "text": "The above situations pose serious threats to the election process and must be avoided. In order to prevent insider threat, Election Judges must:"
                 },
                 {
                     "type": "list",
                     "items": [
                         "Be cautious of people around them  including other Election Judges, observers, and voters.", 
                         "Watch out for suspicious behavior throughout setup, voting hours, and the closing of the polls.", 
-                        "Be aware of Election Judges acting maliciously and/or negligently. Notify the chief judge of all malicious and/or negligent activities immediately.", 
+                        "Be aware of Election Judges acting maliciously and/or negligently. Notify the Chief Judge of all malicious and/or negligent activities immediately.", 
                         "Double check machines before letting voters in."
                     ]
                 },
@@ -328,7 +328,7 @@
                 {
                     "type": "question",
                     "id": "ia2",
-                    "prompt": "When is the only time an Election Judge is permitted to unplug the scanning unit from its power source?",
+                    "prompt": "Who is permitted to unplug the scanning unit from its power source?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -360,7 +360,7 @@
                     "choices": [
                         {
                             "id": "ia3_Provision",
-                            "text": "Provision Election Judges."
+                            "text": "Provisional Election Judges."
                         },
                         {
                             "id": "ia3_Any",
@@ -451,7 +451,7 @@
                         },
                         {
                             "id": "pt2_Place",
-                            "text": "By placing the ballot into the pocket of the Provisional Ballot Application, sealing it, and then putting the sealed Provisional Ballot Application envelope in the orange provisional transfer Ballot Bag."
+                            "text": "By placing the ballot into the pocket of the Provisional Ballot Application, sealing it, and then putting the sealed Provisional Ballot Application envelope in the orange Provisional Transfer Ballot Bag."
                         },
                         {
                             "id": "pt2_Either",
