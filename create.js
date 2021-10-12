@@ -75,8 +75,6 @@ exports.write_3 = function(name, variant, dev) {
 	html += '\t'+'<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>'+'\n';
 	html += '\t'+'<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>'+'\n';
 	html += '\t'+'<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>'+'\n';
-	html += '\t'+'<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>'+'\n';
-  	html += '\t'+'<script src="https://rawgit.com/VividCortex/angular-recaptcha/master/release/angular-recaptcha.js"></script>'+'\n';
 
 	// Google Analytics setup
 	html +=
