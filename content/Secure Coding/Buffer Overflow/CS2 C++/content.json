@@ -52,7 +52,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "http://cis1.towson.edu/~cssecinj/wp-content/uploads/cs2/buffer-overflow.jpg",
+                    "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads/cs2/buffer-overflow.jpg",
                     "alt": "buffer overflow",
                     "width": 471,
                     "height": 376,
