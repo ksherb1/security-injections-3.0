@@ -234,7 +234,7 @@
 										</div>
 									</div>
 									<div class="col-sm-7 checklist-block" style="position:relative;">
-										<p>Complete by clicking the corresponding code below</p>
+										<p ng-if="unit.code">Complete by clicking the corresponding code below</p>
 										<pre ng-if="unit.code" class="si-checklist-code" ng-bind-html="unit.code"></pre>
 										<script ng-if="unit.javascript" ng-bind="unit.javascript"></script>
 										<noscript>
