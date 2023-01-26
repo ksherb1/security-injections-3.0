@@ -11,13 +11,13 @@ int main() {
   cout << "What is the rate of growth? (e.g., for 10% enter 10)";
   cin >> growth;
 
-  float growthRate = static_cast(growth) / 100;
+  float growthRate = static_cast<float>(growth) / 100;
   cout << growthRate << endl;
 
   cout << "Year\tGrowth\tNew Population" << endl;
 
   for (size_t i = 1; i <= 10; i++) {
-    short increase = static_cast(pop * growthRate);
+    short increase = static_cast<short>(pop * growthRate);
     short newpop = pop + increase;
 
     cout << i << "\t" << increase << "\t" << newpop << endl;

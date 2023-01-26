@@ -29,7 +29,7 @@
                 {
                     "type": "table",
                     "headers": [
-                        "Types of Threat",
+                        "Types of Access Specifier",
                         "Accesibility"
                     ],
                     "cells": [

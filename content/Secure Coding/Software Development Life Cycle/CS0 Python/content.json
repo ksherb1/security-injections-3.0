@@ -1,11 +1,11 @@
 {
-    "name": "Software Development Lifecycle",
+    "name": "Software Development Life Cycle",
     "variant": "CS0 Python",
     "grant": "The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation under grants NSF DUE-1241738, NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649, the GenCyber program, and the Intel Corporation.",
-	"license": {
-		"name": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License",
-		"link": "http://creativecommons.org/licenses/by-nc-sa/3.0/"
-	},
+    "license": {
+        "name": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License",
+        "link": "http://creativecommons.org/licenses/by-nc-sa/3.0/"
+    },
     "sections": [
         {
             "header": "Background",
@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Security should be considered at all phases of the software development lifecycle."
+                    "text": "Security should be considered at all phases of the Software Development Life Cycle."
                 },
                 {
                     "type": "subheader",
@@ -24,16 +24,16 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The traditional Software Development Lifecycle (SDLC) is a structured methodology for developing software. These phases of development include:"
+                    "text": "The traditional Software Development Life Cycle (SDLC) is a structured methodology for developing software. These phases of development include:"
                 },
                 {
                     "type": "list",
                     "items": [
-                        "Analysis or requirements gathering -- clearly defining the problem or project",
-                        "Design or planning-- creating an algorithmic solution for the problem",
-                        "Implementation-- coding the solution using a programming language, and running for correctness",
-                        "Testing-- formally testing and debugging",
-                        "Maintenance-- maintaining, changing, and documenting the program"
+                        "<strong>Analysis or requirements gathering</strong>: clearly defining the problem or project",
+                        "<strong>Design or planning</strong>: creating an algorithmic solution for the problem",
+                        "<strong>Implementation</strong>: coding the solution using a programming language, and running for correctness",
+                        "<strong>Testing</strong>: formally testing and debugging",
+                        "<strong>Maintenance</strong>: maintaining, changing, and documenting the program"
                     ],
                     "ordered": true
                 },
@@ -45,13 +45,13 @@
                     "type": "image",
                     "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads/SDLC.jpg",
                     "alt": "SDLC",
-                    "width": 550,
+                    "width": 450,
                     "height": 301,
                     "float": null
                 },
                 {
                     "type": "subheader",
-                    "text": "Risk -- What's the Risk?:"
+                    "text": "Risks:"
                 },
                 {
                     "type": "paragraph",
@@ -64,7 +64,7 @@
                 {
                     "type": "list",
                     "items": [
-                        "In 2002, in response to the proliferation of security issues, including terrorist attacks and malicious software, Bill Gates wrote a famous \"security evangelist\" memo (<a href = https://www.wired.com/2002/01/bill-gates-trustworthy-computing/ target = _blank>found here</a>), committing his company to building secure software.",
+                        "In 2002, in response to the proliferation of security issues, including terrorist attacks and malicious software, Bill Gates wrote a famous \"security evangelist\" memo (<a href = https://news.microsoft.com/2012/01/11/memo-from-bill-gates/ target = _blank>found here</a>), committing his company to building secure software.",
                         "Thousands of vulnerabilities are reported each year (<a href = https://nvd.nist.gov/# target = _blank>see here</a>). At the same time, the number and severity of the attacks continue to increase."
                     ],
                     "ordered": true
@@ -76,7 +76,7 @@
                 {
                     "type": "question",
                     "id": "background1",
-                    "prompt": "Security should be considered at all phases of the software development lifecycle.",
+                    "prompt": "Security should be considered at all phases of the Software Development Life Cycle.",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -185,7 +185,7 @@
                         },
                         {
                             "id": "a4",
-                            "text": "What languages are compatible with the given development environment (eg. what languages is your instructor willing to grade)",
+                            "text": "What languages are compatible with the given development environment (e.g., what languages is your instructor willing to grade)",
                             "ans": true
                         }
                     ]
@@ -214,10 +214,6 @@
             "header": "Laboratory Assignment",
             "units": [
                 {
-                    "type": "subheader",
-                    "text": "Laboratory Assignment"
-                },
-                {
                     "type": "paragraph",
                     "text": "<strong>STEP 1:</strong>   Create a project in an Integrated Development Environment (IDE), recommended by your instructor."
                 },
@@ -228,22 +224,22 @@
                 {
                     "type": "image",
                     "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads/python3.jpg",
-                    "alt": "Software Development Lifecycle Code Block",
+                    "alt": "Software Development Life Cycle Code Block",
                     "width": 482,
                     "height": 99,
                     "float": null
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 3:</strong>    Compile and run the program. Examine the output carefully."
+                    "text": "<strong>STEP 3:</strong> Compile and run the program. Examine the output carefully."
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 4:</strong>    If you carefully completed the background section, you will see that 6 is incorrect. Security features should not be added after the program is complete, but should be included at all levels of the SDLC. Revise the program (remove step 6 and add \"with security in mind\" at each step), so that it produces the correct output."
+                    "text": "<strong>STEP 4:</strong> If you carefully completed the Background Section, you will see that step 6 is incorrect. Security features should not be added after the program is complete, but should be included at all levels of the SDLC. Revise the program (remove step 6 and add \"with security in mind\" at each step), so that it produces the correct output."
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 5:</strong>    Checklists are used by airline pilots, in emergency rooms in hospitals, and increasingly in the software industry, to enforce safety procedures. We will use checklists throughout these modules, primarily to check the security of our code. Use the following checklist to ensure you have completed this lab correctly."
+                    "text": "<strong>STEP 5:</strong> Checklists are used by airline pilots, in emergency rooms in hospitals, and increasingly in the software industry, to enforce safety procedures. We will use checklists throughout these modules, primarily to check the security of our code. Use the following checklist to ensure you have completed this lab correctly."
                 },
                 {
                     "type": "checklist",
@@ -297,7 +293,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "If you answered yes to all of the above questions, you are describing the Secure Development Lifecycle (SDLC)"
+                    "text": "If you answered yes to all of the above questions, you are describing the Secure Development Life Cycle (SDLC)."
                 }
             ]
         },

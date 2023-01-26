@@ -438,7 +438,7 @@ $scope.checkAnswers = function() {
 			for (j in unit.list) {
 				group = unit.list[j];
 				group_id = id+"-"+group.id;
-
+				
 				for (k in group.items) {
 					item = group.items[k];
 					item_id = group_id+"-"+item.id;
@@ -446,7 +446,7 @@ $scope.checkAnswers = function() {
 					// if checkbox hasn't been touched, angular thinks it is undefined
 					if(typeof(item.value)==='undefined') item.value = false;
 					// when checkbox is mediated by javascript, must manually bind item.value
-					if(item.js) item.value = $(item_id).is(':checked');
+					if(item.js) item.value = i;
 
 					var item_right = item.value == item.ans;
 

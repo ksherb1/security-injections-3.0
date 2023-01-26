@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow occurs when data is input or written beyond the allocated bounds of an object, such as an array, causing a program crash or creating a vulnerability that attackers might exploit."
+                    "text": "A buffer overflow occurs when data is written beyond the boundaries of a fixed length buffer, overwriting adjacent memory locations which may include other buffers, variables, and program flow instructions. Considered the \"nuclear bomb\" of the software industry, the buffer overflow is one of the most persistently exploited security vulnerabilities."
                 },
                 {
                     "type": "subheader",
@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler. No captions availible.</small></small>"
                 },
                 {
                     "type": "subheader",
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan Morris Worm Turns 20: Look what it's Done Network World, October 30, 2008  <a href = http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1 > http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1</a></small></small></small>"
+                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan, Morris Worm Turns 20: Look what it's done, October 30, 2008  <a href = https://archive.nytimes.com/www.nytimes.com/external/idg/2008/10/30/30idg-Morris-worm-tur.html</a></small></small></small>"
                 },
                 {
                     "type": "subheader",
@@ -64,7 +64,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "In the code above, buffer has 10 elements but the loop writes 15 elements, which overwrites importantData."
+                    "text": "In the code above, buffer has 10 elements but the loop writes 15 elements, which overwrites <code>importantData</code>."
                 },
                 {
                     "type": "subheader",
@@ -229,7 +229,7 @@
                     "choices": [
                         {
                             "id": "buffer overflow",
-                            "text": "The code outputs \"after buffer overflow: \" and \"importantdata = 1\"."
+                            "text": "The code outputs <code>after buffer overflow: </code> and </code>importantdata = 1</code>."
                         },
                         {
                             "id": "error",
@@ -265,13 +265,13 @@
                 {
                     "type": "question",
                     "id": "q2",
-                    "prompt": "Potential buffer overflow could occur in the array \"tests\" due to assignments, inputs, or operations that may modify the index variables. How could we prevent this?",
+                    "prompt": "Potential buffer overflow could occur in the array <code>tests</code> due to assignments, inputs, or operations that may modify the index variables. How could we prevent this?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "less",
-                            "text": "The vulnerability occurs because we do not verify that numElems is greater than or equal to 10. We can prevent this by making sure that numElems is never less than 10."
+                            "text": "The vulnerability occurs because we do not verify that <code>numElems</code> is greater than or equal to 10. We can prevent this by making sure that <code>numElems</code> is never less than 10."
                         },
                         {
                             "id": "greater",
@@ -389,7 +389,7 @@
                 {
                     "type": "question",
                     "id": "Dquestion4",
-                    "prompt": "What can result from a buffer overflow ?",
+                    "prompt": "What can result from a buffer overflow?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

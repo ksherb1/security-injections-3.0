@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler. No captions availible.</small></small>"
                 },
                 {
                     "type": "subheader",
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan Morris Worm Turns 20: Look what it's Done Network World, October 30, 2008  <a href = http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1 > http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1</a></small></small></small>"
+                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan, Morris Worm Turns 20: Look what it's done, October 30, 2008  <a href = https://archive.nytimes.com/www.nytimes.com/external/idg/2008/10/30/30idg-Morris-worm-tur.html</a></small></small></small>"
                 },
                 {
                     "type": "subheader",
@@ -60,7 +60,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "In the code above, buffer has 10 elements but the loop writes 15 elements, which overwrites importantData."
+                    "text": "In the code above, buffer has 10 elements but the loop writes 15 elements, which overwrites <code>importantData.</code>"
                 },
                 {
                     "type": "subheader",
@@ -215,7 +215,7 @@
                 {
                     "type": "question",
                     "id": "question1",
-                    "prompt": "What happened when you trace the example in code? why?",
+                    "prompt": "What happened when you traced the example in code? Why?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -239,13 +239,13 @@
       							"items": [
       								{
       									"id": "dec",
-      									"text": "Click each array declaration in the above code",
+      									"text": "Click the array declaration in the above code",
       									"ans": true,
       									"js": true
       								},
                       {
       									"id": "ref",
-      									"text": "For each array, click all subsequent references",
+      									"text": "Click all subsequent array references",
       									"ans": true,
       									"js": true
       								}
@@ -333,7 +333,7 @@
                 {
                     "type": "question",
                     "id": "Dquestion4",
-                    "prompt": "What can result from a buffer overflow ?",
+                    "prompt": "What can result from a buffer overflow?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

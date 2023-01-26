@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow occurs when data is input or written beyond the allocated bounds of an object, such as an array, causing a program crash or creating a vulnerability that attackers might exploit."
+                    "text": "A buffer overflow occurs when data is written beyond the boundaries of a fixed length buffer, overwriting adjacent memory locations which may include other buffers, variables, and program flow instructions. Considered the \"nuclear bomb\" of the software industry, the buffer overflow is one of the most persistently exploited security vulnerabilities."
                 },
                 {
                     "type": "subheader",
@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler. No captions availible.</small></small>"
                 },
                 {
                     "type": "subheader",
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan Morris Worm Turns 20: Look what it's Done Network World, October 30, 2008  <a href = http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1 > http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1</a></small></small></small>"
+                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan, Morris Worm Turns 20: Look what it's done, October 30, 2008  <a href = https://archive.nytimes.com/www.nytimes.com/external/idg/2008/10/30/30idg-Morris-worm-tur.html</a></small></small></small>"
                 },
                 {
                     "type": "subheader",
@@ -301,7 +301,7 @@
                 {
                     "type": "question",
                     "id": "Dquestion4",
-                    "prompt": "What can result from a buffer overflow ?",
+                    "prompt": "What can result from a buffer overflow?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

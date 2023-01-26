@@ -471,7 +471,7 @@ z-index: 1;
 		box-shadow: 0 8px 16px -6px black;
 }
 .well{
-
+	position: sticky;
 }
 
 .nav-tabs{
@@ -517,15 +517,47 @@ z-index: 1;
 	background-color: lightpink;
 }
 
+/* increase font size */
 .si-checklist-active {
-	font-size: 1.6em;
+	font-size: 1.5em;
+	transition: font-size 0.5s;
 }
 
+/* correctly clicked code */
 .si-code-clicked {
 	font-weight: bold;
 	font-style: italic;
+	border-radius: 3px;
+	background-color: lightgreen;
+	transition: background-color 0.5s;
 }
 
 .si-code-vulnerability {
 	background-color: yellow;
+}
+
+.progress{
+	width: auto;
+	height: 20px;
+	opacity: 100%;
+	margin-top: 10px;
+	position:relative;
+	border-radius: 10px;
+	background-color: #c9c9c9;
+	transition-delay: 1s;
+	transition: opacity 1s;
+}
+
+.progress-data{
+	width: 0%;
+	height: 100%;
+	background-color: lightgreen;
+	border-radius: 10px;
+	position: absolute;
+	transition: width 1s;
+}
+
+.progress-hidden {
+	visibility: hidden;
+	opacity: 0%;
 }

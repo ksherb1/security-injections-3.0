@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Any program input--such as a user typing at a keyboard, a file or a network connection--can be the source of security vulnerabilities and disastrous bugs. All input should be treated as potentially dangerous."
+                    "text": "Any program input — a user typing on a keyboard, a file or network connection — can invite security vulnerabilities and disastrous bugs. All input should be treated as potential danger."
                 },
                 {
                     "type": "subheader",
@@ -24,7 +24,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Determined attackers can use carefully crafted input to cause programs to execute arbitrary code. This technique can be used to delete or damage data, propagate worms, or obtain sensitive information."
+                    "text": "Determined attackers can use carefully crafted input to make your program execute unauthorized commands. This threat can delete or damage your data, propagate worms or malware on your machine, or obtain your sensitive information."
                 },
                 {
                     "type": "paragraph",
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads/fat_finger.jpg",
+                    "src": "https://s3.amazonaws.com/security-injections.clark.center/assets/Input_Validation-CS0_C%2B%2B/fat_finger.jpeg",
                     "alt": "Dominik Joswig",
                     "width": 406,
                     "height": 226,
@@ -65,10 +65,9 @@
                 {
                     "type": "list",
                     "items": [
-                        "In December 2005, a Japanese securities trader made a $1 billion typing error, when he mistakenly sold 600,000 shares of stock at 1 yen each instead of selling one share for 600,000 yen. A few lines of code may have averted this error. Fat fingered typing costs a trader’s bosses £128m.  <br><small><small><small><i>The Times Online</i>, December 09, 2005</small></small></small>",
-                        "Web applications are highly vulnerable to input validation errors. Inputting the invalid entry \"!@#$%^&*()\" on a vulnerable e-commerce site may cause performance issues or denial of service on a vulnerable system or invalid passwords such as \"pwd’\" or \"1=1— \" may result in unauthorized access. <a href = http://www.processor.com/editorial/article.asp?article=articles%2Fp3112%2F32p12%2F32p12%2F32p12.asp&guid=&searchtype=&WordList=&bJumpTo=True>http://www.processor.com/editorial/article.asp?article=articles%2Fp3112%2F32p12%2F32p12%2F32p12.asp&guid=&searchtype=&WordList=&bJumpTo=True</a>",
-                        "A Norwegian woman mistyped her account number on an internet banking system. Instead of typing her 11-digit account number, she accidentally typed an extra digit, for a total of 12 numbers. The system discarded the extra digit, and transferred $100,000 to the (incorrect) account. A simple dialog box informing her that she had typed too many digits would have helped avoid this expensive error.<br><small><small><small>Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008</small></small></small>",
-                        "The site <strong>xssed.com</strong> lists nearly 13,000 vulnerable Web pages, including sites such as <strong>yahoo.com</strong>, <strong>google.com</strong>, <strong>msn.com</strong>, <strong>facebook.com</strong>, <strong>craigslist.com</strong> and <strong>cnn.com</strong>"
+                        "In December 2005, a Japanese securities trader made a financially catastrophic typing error when he mistakenly sold 610,000 shares of stock at 1 yen each instead of selling one share for 610,000 yen. A few lines of code may have averted this error. Fat fingered typing cost his supervisors 27 billion yen ($142 million).  <br><small><small><small><i>The Guardian</i>, December 09, 2005</small></small></small>",
+                        "Web applications are highly vulnerable to input validation errors. Making the invalid input \"!@#$%^&*()\" on a vulnerable e-commerce site may cause performance issues or denial of service. Entering invalid passwords like \"pwd’\" or \"1=1— \" on a vulnerable system may result in unauthorized access.",
+                        "A Norwegian woman mistyped her account number on an internet banking system. Instead of typing her 11-digit account number, she accidentally typed an extra digit for a total of 12 numbers. The system discarded the extra digit and transferred $100,000 to the wrong account. A simple dialog box alerting her that she had typed too many digits would have helped avoid this expensive error.<br><small><small><small>Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008</small></small></small>"
                     ],
                     "ordered": false
                 },
@@ -142,12 +141,12 @@
                 {
                     "type": "list",
                     "items": [
-                        "<strong>Type check:</strong> variables are checked to ensure they are the appropriate data type; for example, names should generally be alphabetic and age should be numeric.",
-                        "<strong>Length check:</strong> variables are checked to ensure they are the appropriate length; for example, a US telephone number has 10 digits.",
-                        "<strong>Range check:</strong> numbers are checked to ensure they are within a range of possible values; for example, the value for month should lie between 1 and 12.",
-                        "<strong>Reasonable check:</strong> values are checked for their reasonableness; for example: (age > 16) && (age < 100)",
+                        "<strong>Type check:</strong> variables are the appropriate data type; for example, names should be alphabetic and age should be numeric.",
+                        "<strong>Length check:</strong> variables are the appropriate length; for example, a US telephone number has 10 digits.",
+                        "<strong>Range check:</strong> numbers within a range of possible values; for example, the value for month should lie between 1 and 12.",
+                        "<strong>Reasonable check:</strong> values are reasonable; for example: (age > 16) && (age < 100)",
                         "<strong>Arithmetic check:</strong> variables are checked for values that might cause problems such as division by zero.",
-                        "<strong>Format check:</strong> data are checked to ensure they are in a specified format (template); for example, dates have to be in the format DD/MM/YYYY."
+                        "<strong>Format check:</strong> data are in a specified format or template; for example, dates must be in the format DD/MM/YYYY."
                     ],
                     "ordered": false
                 },
@@ -161,7 +160,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong><i>Recover appropriately:</i></strong> A robust program responds to invalid input in a manner that is appropriate, correct, and secure. When your program runs across invalid input, it should recover as much as possible and then repeat the request or otherwise alert the user to a problem."
+                    "text": "<strong><i>Recover appropriately:</i></strong> A robust program will respond to invalid input in a manner that is appropriate, correct, and secure. When your program runs across invalid input, it should recover as much as possible, and then repeat the request, or otherwise continue on. Arbitrary decisions such as truncating or otherwise reformatting data to \"make it fit\" should be avoided."
                 },
                 {
                     "type": "subheader",
@@ -176,22 +175,22 @@
                     "choices": [
                         {
                             "id": "age",
-                            "text": "age",
+                            "text": "Age",
                             "ans": true
                         },
                         {
                             "id": "firstName",
-                            "text": "first name",
+                            "text": "First name",
                             "ans": false
                         },
                         {
                             "id": "city",
-                            "text": "city",
+                            "text": "City",
                             "ans": false
                         },
                         {
                             "id": "itemPrice",
-                            "text": "item price",
+                            "text": "Item price",
                             "ans": true
                         }
                     ]
@@ -205,22 +204,22 @@
                     "choices": [
                         {
                             "id": "ssn",
-                            "text": "social security number",
+                            "text": "Social security number",
                             "ans": true
                         },
                         {
                             "id": "nationalDebt",
-                            "text": "national debt",
+                            "text": "National debt",
                             "ans": false
                         },
                         {
                             "id": "telephoneNumber",
-                            "text": "telephone number",
+                            "text": "Telephone number",
                             "ans": true
                         },
                         {
                             "id": "bd",
-                            "text": "birth date",
+                            "text": "Birth date",
                             "ans": true
                         }
                     ]
@@ -232,11 +231,153 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 1:</strong> Type (do not copy and paste) in the example code from the Background section (reprinted below) into a program and compile. Run the program."
+                    "text": "<strong>Which type of input validation (length, range, format, or type) applies to each of the following:</strong>"
                 },
                 {
-                    "type": "codeblock",
-                    "code": "./examplesInCode.py"
+                    "type": "question",
+                    "id": "phoneNumber",
+                    "prompt": "1. Phone number",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": true
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": false
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": true
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "age",
+                    "prompt": "2. Age",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": false
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": true
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": false
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "ccNum",
+                    "prompt": "3. Credit card number",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": true
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": false
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": true
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "name",
+                    "prompt": "4. Name",
+                    "ignored": false,
+                    "mode": "checkbox",
+                    "choices": [
+                        {
+                            "id": "length",
+                            "text": "Length",
+                            "ans": false
+                        },
+                        {
+                            "id": "rr",
+                            "text": "Range or Reasonableness",
+                            "ans": false
+                        },
+                        {
+                            "id": "format",
+                            "text": "Format",
+                            "ans": false
+                        },
+                        {
+                            "id": "type",
+                            "text": "Type",
+                            "ans": true
+                        }
+                    ]
+                },
+                {
+                    "type": "question",
+                    "id": "challenging",
+                    "prompt": "Which of the following would be the most challenging to properly validate?",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "1",
+                            "text": "Phone"
+                        },
+                        {
+                            "id": "2",
+                            "text": "Age"
+                        },
+                        {
+                            "id": "3",
+                            "text": "Credit card number"
+                        },
+                        {
+                            "id": "4",
+                            "text": "Name"
+                        }
+                    ],
+                    "answer": "4"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>STEP 1:</strong> Type (do not copy and paste) the example code from the Background section into an editor. Compile and run."
                 },
                 {
                     "type": "question",
@@ -306,7 +447,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong> Type program 1 below and compile. Run the program."
+                    "text": "<strong>STEP 2:</strong> Type Program 1 into an editor. Compile and run."
                 },
                 {
                     "type": "paragraph",
@@ -315,6 +456,24 @@
                 {
                     "type": "codeblock",
                     "code": "./labAssignment.py"
+                },
+                {
+                    "type": "question",
+                    "id": "integerOverflow",
+                    "prompt": "Could integer overflow occur for the variable total? (Refer to the Integer Error lab if necessary)",
+                    "ignored": false,
+                    "mode": "radio",
+                    "choices": [
+                        {
+                            "id": "y",
+                            "text": "Yes"
+                        },
+                        {
+                            "id": "n",
+                            "text": "No"
+                        }
+                    ],
+                    "answer": "y"
                 }
             ]
         },

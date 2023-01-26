@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Any input that comes into a program from an external source – such as a user typing at a keyboard or a network connection – can be the source of security concerns and disastrous bugs. All input should be treated as potentially dangerous."
+                    "text": "Any program input — a user typing on a keyboard, a file or network connection — can invite security vulnerabilities and disastrous bugs. All input should be treated as potential danger."
                 },
                 {
                     "type": "subheader",
@@ -44,11 +44,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "All input data is a potential source of problems. If input is not checked to verify that it has the correct type, format, and length, it can cause problems. Failure to validate input can lead to serious security risks such as integer error, buffer overflow, and <i>SQL injections</i> among others."
+                    "text": "All program inputs are a potential source of problems. If external data is not validated to ensure that it contains the right type of information, the right amount of information, and the right structure of information, it can cause problems."
                 },
                 {
                     "type": "image",
-                    "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads/fat_finger.jpg",
+                    "src": "https://s3.amazonaws.com/security-injections.clark.center/assets/Input_Validation-CS0_C%2B%2B/fat_finger.jpeg",
                     "alt": "Dominik Joswig",
                     "width": 406,
                     "height": 226,
@@ -65,7 +65,8 @@
                 {
                     "type": "list",
                     "items": [
-                        "A Norwegian woman mistyped her account number on an internet banking system. Instead of typing her 11-digit account number, she accidentally typed an extra digit, for a total of 12 numbers. The system discarded the extra digit, and transferred $100,000 to the (incorrect) account. A simple dialog box informing her that she had typed too many digits would have helped avoid this expensive error.<br><small><small><small>Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008</small></small></small>"
+                        "In December 2005, a Japanese securities trader made a financially catastrophic typing error when he mistakenly sold 610,000 shares of stock at 1 yen each instead of selling one share for 610,000 yen. A few lines of code may have averted this error. Fat fingered typing cost his supervisors 27 billion yen ($142 million).  <br><small><small><small><i>The Guardian</i>, December 09, 2005</small></small></small>",
+                        "A Norwegian woman mistyped her account number on an internet banking system. Instead of typing her 11-digit account number, she accidentally typed an extra digit for a total of 12 numbers. The system discarded the extra digit and transferred $100,000 to the wrong account. A simple dialog box alerting her that she had typed too many digits would have helped avoid this expensive error.<br><small><small><small>Olsen, Kai. “The $100,000 Keying error” IEEE Computer, August 2008</small></small></small>"
                     ],
                     "ordered": false
                 },
@@ -83,7 +84,15 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "This program has two input validation problems. The first problem occurs if the user inputs a non-integer value. In Java, this causes a <i>NumberFormatException</i> to be thrown. The second problem occurs if the user enters a value that does not lie between 0 and 9. In Java, this will lead to an <i>ArrayIndexOutOfBoundsException</i>. A robust program would catch this error, provide a clear and appropriate error message, and ask the user to re-type their input."
+                    "text": "This program has two input validation problems."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The first problem occurs if the user inputs a non-integer value. In Java, this causes a <code>NumberFormatException</code> to be thrown. The second problem occurs if the user enters a value that does not lie between 0 and 9. In Java, this will lead to an <code>ArrayIndexOutOfBoundsException</code>. A robust program would catch this error, provide a clear and appropriate error message, and ask the user to re-type their input."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The second problem occurs if the user enters a value that does not lie between 0 and 9. In Java, this will lead to an <code>ArrayIndexOutOfBoundsException</code>. A robust program would catch this error, provide a clear and appropriate error message, and ask the user to re-type their input."
                 },
                 {
                     "type": "subheader",
@@ -138,18 +147,18 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "<strong><i>Check your input:</i></strong> The basic rule is for input validation is to check that input data matches all of the constraints that it must meet to be used correctly in the given circumstance. In many cases, this can be very difficult: confirming that a set of digits is, in fact, a telephone number may require consideration of the many differing phone number formats used by countries around the world. Some of the checks that you might want to use include:"
+                    "text": "<strong><i>Check your input:</i></strong> The basic rule is input validation is to check that input data matches all of the constraints. In many cases, this can be challenging. Confirming that a set of digits is, in fact, a telephone number may require consideration of the many differing phone number formats used by countries around the world. Some of the checks that you might want to use include:"
                 },
                 {
                     "type": "list",
                     "items": [
                         "<i>Type:</i> Input data should be of the right type. Names should generally be alphabetic, numbers numeric. Punctuation and other uncommon characters are particularly troubling, as they can often be used to form the basis of code-injection attacks. Many programs will handle input data by assuming that all input is of string form, verifying that the string contains appropriate characters, and then converting the string into the desired data type.",
-                        "<i>Range:</i> Verify that numbers are within a range of possible values: For example, the month of a person's date of birth should lie between 1 and 12. Another common range check involves values that may lead to division by zero errors.",
-                        "<i>Plausibility:</i> Check that values make sense: a person's age shouldn't be less than 0 or more than 150.",
+                        "<i>Range:</i> Verify that numbers are within a range of possible values. For example, the month of a person's date of birth should lie between 1 and 12. Another common range check involves values that may lead to division by zero errors.",
+                        "<i>Plausibility:</i> Check that values make sense. A person's age shouldn't be less than 0 or more than 150.",
                         "<i>Presence check:</i> Guarantee presence of important data – the omission of important data can be seen as an input validation error.",
-                        "<i>Length:</i> Input that is either too long or too short will not be legitimate. Phone numbers generally don't have 39 digits; Social Security Numbers have exactly 9.",
+                        "<i>Length:</i> Input that is either too long or too short will not be legitimate. Phone numbers generally don't have 39 digits, and social security numbers have exactly 9.",
                         "<i>Format:</i> Dates, credit card numbers, and other data types have limitations on the number of digits and any other characters used for separation. For example, dates are usually specified by 2 digits for the month, one or two for the day, and either two or four for the year.",
-                        "<i>Checksums:</i>  Identification numbers such as bank accounts, often have check digits: additional digits included at the end of a number to provide a verifiability check. The check digit is determined by a calculation based on the remaining digits – if the check digit does not match the results of the calculation,either the ID is bad or the check digit is bad. In either case, the number should be rejected as invalid."
+                        "<i>Checksums:</i> Identification numbers such as bank accounts, often have check digits - additional digits included at the end of a number to provide a verifiability check. The check digit is determined by a calculation based on the remaining digits. If the check digit does not match the results of the calculation, either the ID is bad or the check digit is bad. In either case, the number should be rejected as invalid."
                     ],
                     "ordered": false
                 },
@@ -159,7 +168,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The choice of programming languages can play a role in the potential severity of input validation vulnerabilities. As strongly-typed languages, Java and C++ require that the type of data stored in a variable is known ahead of time. This requirement leads to the type mismatch problem when – for example- a string such as \"abcd\" is typed in response to a request for an integer. Untyped languages such as Perl and Ruby do not have any such requirements – any variable can store any type of value. Of course, these languages do not eliminate validation problems – you may still run into trouble if you use a string to retrieve an item from an integer- indexed array. Some languages provide additional help in the form of built-in procedures that can be used to remove potentially damaging characters from input strings."
+                    "text": "The choice of programming language can potentially play a role in the severity of input validation vulnerabilities. As strongly-typed languages, Java and C++ require that the type of data stored in a variable is known ahead of time. This requirement leads to the type mismatch problem. This occurs when a string like \"abcd\" is typed in response to a request for an integer. Untyped languages such as Perl and Ruby do not have any such requirements; any variable can store any type of value. Of course, these languages do not eliminate validation problems and you may still run into trouble if you use a string to retrieve an item from an integer (indexed array). Some languages provide additional help in the form of built-in procedures that can be used to remove potentially damaging characters from input strings."
                 },
                 {
                     "type": "paragraph",
@@ -178,22 +187,22 @@
                     "choices": [
                         {
                             "id": "age",
-                            "text": "age",
+                            "text": "Age",
                             "ans": true
                         },
                         {
                             "id": "firstName",
-                            "text": "first name",
+                            "text": "First name",
                             "ans": false
                         },
                         {
                             "id": "city",
-                            "text": "city",
+                            "text": "City",
                             "ans": false
                         },
                         {
                             "id": "itemPrice",
-                            "text": "item price",
+                            "text": "Item price",
                             "ans": true
                         }
                     ]
@@ -207,22 +216,22 @@
                     "choices": [
                         {
                             "id": "ssn",
-                            "text": "social security number",
+                            "text": "Social security number",
                             "ans": true
                         },
                         {
                             "id": "nationalDebt",
-                            "text": "national debt",
+                            "text": "National debt",
                             "ans": false
                         },
                         {
                             "id": "telephoneNumber",
-                            "text": "telephone number",
+                            "text": "Telephone number",
                             "ans": true
                         },
                         {
                             "id": "bd",
-                            "text": "birth date",
+                            "text": "Birth date",
                             "ans": true
                         }
                     ]
@@ -234,7 +243,7 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 1:</strong>Complete the security checklist for this program."
+                    "text": "<strong>STEP 1: </strong>Complete the Security Checklist for this program."
                 },
                 {
                   "type": "checklist",
@@ -299,17 +308,17 @@
                     "choices": [
                         {
                             "id": "index",
-                            "text": "The index used returned by getWhich is not validated.",
+                            "text": "The index used returned by <code>getWhich</code> is not validated.",
                             "ans": true
                         },
                         {
                             "id": "scanner",
-                            "text": "The Scanner argument \"System.in\" is not type checked.",
+                            "text": "The scanner argument <code>System.in</code> is not type checked.",
                             "ans": false
                         },
                         {
                             "id": "value",
-                            "text": "The value returned by getArraySize() is not checked for reasonableness.",
+                            "text": "The value returned by <code>getArraySize()</code> is not checked for reasonableness.",
                             "ans": true
                         }
                     ]
@@ -323,15 +332,15 @@
                     "choices": [
                         {
                             "id": "a",
-                            "text": "If the number typed for getWhich is less than the number provided for getArraySize."
+                            "text": "If the number typed for <code>getWhich</code> is less than the number provided for <code>getArraySize</code>."
                         },
                         {
                             "id": "b",
-                            "text": "If the number typed for getWhich is an integer."
+                            "text": "If the number typed for <code>getWhich</code> is an integer."
                         },
                         {
                             "id": "c",
-                            "text": "If the number typed for getWhich is greater than the number provided for getArraySize."
+                            "text": "If the number typed for <code>getWhich</code> is greater than the number provided for <code>getArraySize</code>."
                         }
                     ],
                     "answer": "c"
@@ -349,7 +358,7 @@
                         },
                         {
                             "id": "thrown",
-                            "text": "InputMismatchException will be thrown."
+                            "text": "<code>InputMismatchException</code> will be thrown."
                         },
                         {
                             "id": "crash",
@@ -360,7 +369,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong>  Revise the program to properly validate input and gracefully recover from errors."
+                    "text": "<strong>STEP 2:</strong> Revise the program to properly validate input and gracefully recover from errors."
                 },
                 {
                     "type": "paragraph",
@@ -380,7 +389,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 3.2:</strong> Your program should validate the user input for both quantities. To do so, take the following steps:"
+                    "text": "<strong>STEP 3.2: </strong> Your program should validate the user input for both quantities. To do so, take the following steps:"
                 },
                 {
                     "type": "list",
@@ -394,7 +403,7 @@
                     "items": [
                         "Ask the user to type the number of items",
                         "Read this value into a string",
-                        "Write a routine that will examine the string to verify that it contains a number that can be a legal amount of money. This string must contain:<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -Some number of integers (possibly zero) – the number of dollars<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -An optional decimal point<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -Some number of integers (possibly zero) - the number of cents<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -There must be at least one digit in the number. Thus, \"12.34\", \"12\", and \".34\", are all valid prices, but \"12,34\" and ‘.\" are not. To examine all of the characters in the string, you can use the charAt(i) method from the string class. You can check each character in the string to see that it is either a decimal or an integer. You should also check to make sure that there are not multiple decimal points.<br>This routine should return a boolean value that is true if the string is a legitimate price and false otherwise.",
+                        "Write a routine that will examine the string to verify that it contains a number that can be a legal amount of money. This string must contain:<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -Some number of integers (possibly zero) – the number of dollars<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -An optional decimal point<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -Some number of integers (possibly zero) - the number of cents<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -There must be at least one digit in the number. Thus, \"12.34\", \"12\", and \".34\", are all valid prices, but \"12,34\" and ‘.\" are not. To examine all of the characters in the string, you can use the <code>charAt(i)</code> method from the string class. You can check each character in the string to see that it is either a decimal or an integer. You should also check to make sure that there are not multiple decimal points.<br>This routine should return a boolean value that is true if the string is a legitimate price and false otherwise.",
                         "If the value provided is not legitimate, print an error message.",
                         "If the value is legitimate, convert it into a float by using<br><code>Float f = Float.parseFloat(s) </code><br>if s is the string that the user typed."
                     ],
@@ -403,14 +412,14 @@
                 {
                     "type": "list",
                     "items": [
-                        "Number of items: This will be similar to the price, but you must simply check for whole numbers – no decimals allowed. The quantity must be greater than or equal to one. You will convert the result to an int (using Integer.parseInt(s) ), not a float.",
-                        "An interactive loop: put these two checks in a loop that will ask for both values, check both to see if they are valid, and then repeat requests for any values that are not valid. The easiest way to do this is probably to have two boolean values , one for each input quantity. These values will represent the validity of the input quantities. You will stay in an input loop as long as at least one of them is false. When this is the case, you will then check the values to see which is false (i.e., invalid) . If a value is not valid, you will repeat the prompt and validate the response. This will continue until both are valid."
+                        "Number of items: This will be similar to the price, but you must simply check for whole numbers – no decimals allowed. The quantity must be greater than or equal to one. You will convert the result to an <code>int</code> (using <code>Integer.parseInt(s)</code>), not a float.",
+                        "An interactive loop: Put these two checks in a loop that will ask for both values, check both to see if they are valid, and then repeat requests for any values that are not valid. The easiest way to do this is probably to have two boolean values, one for each input quantity. These values will represent the validity of the input quantities. You will stay in an input loop as long as at least one of them is false. When this is the case, you will then check the values to see which is false (i.e., invalid). If a value is not valid, you will repeat the prompt and validate the response. This will continue until both are valid."
                     ],
                     "ordered": false
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 3.3:</strong> Turn in program 2 to your instructor."
+                    "text": "<strong>STEP 3.3:</strong> Turn in Program 2 to your instructor."
                 }
             ]
         },
@@ -452,7 +461,7 @@
                 {
                     "type": "question",
                     "id": "question5",
-                    "prompt": "Revisit Program 2 (if you completed program 2 from laboratory assignment section). Are there any inputs that the above description accepts as valid that perhaps should be considered invalid? If so, what are they and how might you handle them?",
+                    "prompt": "Revisit Program 2 (if you completed Program 2 from Laboratory Assignment section). Are there any inputs that the above description accepts as valid that perhaps should be considered invalid? If so, what are they and how might you handle them?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

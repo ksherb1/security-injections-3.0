@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Integer values that are too large or too small may fall outside the allowable bounds for their data type, leading to unpredictable problems that can both reduce the robustness of your code and lead to potential security problems."
+                    "text": "Integer values that are too large or small may exceed the range of their data type, which can cause unpredictable behavior. This can reduce the robustness of your code and invite security vulnerabilities."
                 },
                 {
                     "type": "image",
@@ -38,18 +38,18 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Declaring a variable as type <strong>int</strong> allocates a fixed amount of space in memory. Most languages include several integer types, including <strong>short, int, long,</strong> etc., to allow for less or more storage. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit signed <strong>int</strong> variable can hold values from -2<sup>31</sup> through 2<sup>31</sup>-1."
+                    "text": "Declaring a variable as type <code>int</code> allocates a fixed amount of space in memory. Most languages include several integer types, including <code>short</code>, <code>int</code>, <code>long</code>, etc., to allow for various storage capacities. The amount of space allocated limits the range of values that can be stored. For example, a 32-bit signed <code>int</code> variable can hold values from -2<sup>31</sup> (-2,147,413,648 bits) through 2<sup>31</sup>-1 (2,147,413,647 bits)."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Operations that result in values outside of this range can lead to a variety of problems, which apply to all data types that store integer variables, including <strong>int</strong>, <strong>short</strong>, and <strong>long</strong>."
+                    "text": "Operations that respond with values outside of the given range can give way to a variety of problems for data types that hold integer values, like <code>int</code>, <code>short</code>, and <code>long</code>."
                 },
                 {
                     "type": "list",
                     "items": [
-                        "<i>Integer Overflow</i>: Mathematical operations can increase integer values above the maximum or decrease them below the minimum allowed values. For instance, if <code>i = INT_MAX</code> , the increment operator i++ will cause an overflow and the resulting value will be the smallest possible integer value <code>INT_MIN</code>. Addition, subtraction, multiplication, and even division can cause overflow problems.",
-                        "<i>Sign Errors</i>: C++ has both signed and unsigned integer types. Signed variables can go from a large negative value to a large positive value, while unsigned variables can only store non-negative values. Problems can arise when converting from a signed to an unsigned variable. For example, if you have a negative signed value (<code>short i = -32767</code>), and you were to assign that value to an unsigned variable (<code>unsigned short u = i</code>), the internal representation of the number is unchanged, but the resulting value is interpreted as being unsigned, leading to an undesired result (<code>u=32769</code>).",
-                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type (say, from a <strong>long</strong> to a <strong>short</strong>), the value will be truncated if it is outside the range of the smaller type: the high-order bits that do not fit into the smaller type will simply be thrown out. For example, if you have a <strong>long</strong> variable that has a value that is greater than the largest value that can be stored in a <strong>short</strong> (<code>long l=32800</code>), assigning the <strong>long</strong> to a <strong>short</strong> (<code>short s = (short)l;</code>) will cause a truncation error (<code>s=-32736</code>)."
+                        "<i>Integer Overflow</i>: Mathematical operations can cause integer values to fall below the minimum or above the maximum capacity their data type can allow. For instance, if <code>i = INT_MAX</code>, the increment operator <code>i++</code> will cause an overflow, and the resulting value will be the smallest possible integer value <code>INT_MIN</code>. Addition, subtraction, multiplication, and even division can cause an overflow instance.",
+                        "<i>Sign Errors</i>: C++ has both signed and unsigned integer types. Signed variables can go from a large negative value to a large positive value, while unsigned variables can only store non-negative values. Problems can arise when converting from a signed to an unsigned variable. For example, if you have a negative signed value <code>short i = -32767</code>, and you were to assign that value to an unsigned variable <code>unsigned short u = i</code>, the internal representation of the number is unchanged, but the resulting value is interpreted as being unsigned, leading to an undesired result <code>u = 32769</code>.",
+                        "<i>Truncation</i>: If an integer is converted from a larger type to a smaller type where the value goes out of range (say, from a <code>long</code> to a <code>short</code>), the value will be truncated; the high-order bits that do not fit into the smaller type will simply be thrown out. For example, if you have a <code>long</code> variable with a value greater than the largest value that can be stored in a <code>short</code> (<code>long l = 32800</code>), assigning the <code>long</code> to a <code>short</code> (<code>short s = (short)l</code>) will cause a truncation error <code>s = -32736</code>."
                     ],
                     "ordered": false
                 },
@@ -62,14 +62,29 @@
                     "text": "Integer variables are often used to indicate the number of items that must be stored in an array or other fixed-size buffer. If a variable with an overflow is used for this purpose, the resulting buffer might be too small for the data that will be copied into it. This can cause your program to crash, lead to incorrect behavior, or open security vulnerabilities."
                 },
                 {
+					"type": "image",
+					"src": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png",
+					"alt": "*Facebook group image*",
+					"width": 378,
+					"height": 275,
+					"float": null
+				},
+                {
+					"type": "attribution",
+					"copyright": "Facebook",
+					"date": "2017",
+					"link": "http://4.bp.blogspot.com/-58kvuzDhzus/TWgnjsyE-7I/AAAAAAAAAG4/0HijRxwS8Ew/s1600/group+reaches+s.png"
+				},
+                {
                     "type": "subheader",
                     "text": "Examples of Occurence:"
                 },
                 {
                     "type": "list",
                     "items": [
-                        "On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,767) to store the number of crew changes. That number was exceeded due to bad weather that month which led to numerous crew reassignments.",
-                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that software that projects out to future dates – including tools for mortgage payment and retirement fund distribution – might face problems long before then."
+                        "There is a Facebook group called 'If this group reaches 4,294,967,296 it might cause an integer overflow.' This value is 1 more than the largest number that can fit in a 32-bit unsigned integer. If the number of members of the group exceeded this number, it might cause an overflow. Whether it will cause an overflow or not depends upon how Facebook is implemented and which language is used – they might use data types that can hold larger numbers. In any case, the chances of an overflow seem remote, as roughly 2/3 of the people on Earth would be required to reach the goal of more than 4 billion members.",
+                        "On December 25, 2004, Comair airlines was forced to ground 1,100 flights after its flight crew scheduling software crashed. The software used a 16-bit integer (max 32,767) to store the number of crew changes. The bad weather that month lead to a spike in crew changes, which caused an integer overflow.",
+                        "Many Unix operating systems store time values in 32-bit signed (positive or negative) integers, counting the number of seconds since midnight on January 1, 1970. On Tuesday, January 19, 2038, this value will overflow, becoming a negative number. Although the impact of this problem in 2038 is not yet known, there are concerns that some software projects – including tools for mortgage payment and retirement fund distribution – might face problems long before then."
                     ],
                     "ordered": true
                 },
@@ -80,7 +95,7 @@
                 {
                     "type": "question",
                     "id": "memory",
-                    "prompt": "Declaring a variable as type integer:",
+                    "prompt": "Declaring a variable as type <code>int</code>:",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -98,7 +113,7 @@
                 {
                     "type": "question",
                     "id": "effect",
-                    "prompt": "An integer error in C++ or Cpp causes:",
+                    "prompt": "An integer error in C++ causes:",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
@@ -129,10 +144,10 @@
                 {
                     "type": "list",
                     "items": [
-                        "<i>Know your limits</i>: Familiarize yourself with the ranges available for each data type. Since the size of C++ data types is compiler and machine dependent, it is a good idea to run this sample program to show you the limits of each variable type.",
-                        "<i>Choose your data types wisely</i>: Many programming languages contain multiple data types for storing integer values. If you have any concerns about the integer values that you will be using, learn about the options available in the language you are using, and choose integer types that are large enough to hold the values you will be using. One useful strategy for reducing integer errors is to declare any variable that is used to represent the size of an object, including integer values used as sizes, indices, loop counters, and lengths, as <strong>size_t</strong>. The <strong>size_t</strong> type is the unsigned integer type. If your variable will hold only positive values, declare as an <strong>unsigned int</strong>. If there's any doubt at all as to whether the variable will have values that are too large for a <strong>short</strong>, use an <strong>int</strong>. If an <strong>int</strong> might be too small, use a <strong>long</strong>.",
-                        "<i>Validate your input</i>: Check input for range and reasonableness before conducting operations (more on this later).",
-                        "<i>Check for possible overflows</i>: Always check results of arithmetic operations or parsing of strings to integers, to be sure that an overflow has not occurred. The result of multiplying two positive integers should be at least as big as both of those integers. If you find a result that overflows, you can take appropriate action before the result is used. Imagine you were adding two positive integers. Instead of writing:<br><br><code>int sum = someInteger + someOtherInteger;</code><br><br>You might try this instead:<br><br><code>if (((someInteger >0) && (someOtherInteger >0) && (some Integer> (INT_MAX-someOtherInteger))) ||<br>&nbsp&nbsp&nbsp&nbsp((someInteger <0) && (someOtherInteger <0) && (someInteger < (INT_MIN-someOtherInteger))))<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp... throw an exception to handle the problem<br>else   //  no exception, so no overflow.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  int sum = someInteger+someOtherInteger;<br></code><br>This won't completely solve the problem – you'll need to recover from the exception. As these tests can become fairly complex[1], you should be careful when relying upon manual checks for preventing integer overflow.",
+                        "<i>Know your limits</i>: Familiarize yourself with the range of each data type. Since the sizes of C++ data types are compiler and machine dependent, it is a good idea to run this sample program to see the limits of each variable type.",
+                        "<i>Choose your data types wisely</i>: Many programming languages contain a variety of data types that can store integer values. If you are concerned about the integer values you will be using, learn about the options available in the language you are using, and choose integer types large enough to hold those values. One useful strategy for reducing integer errors is to declare any variable that is used to represent the size of an object, including integer values used as sizes, indices, loop counters, and lengths, as <code>size_t</code>. The <code>size_t</code> type is the unsigned integer type. If your variable will hold only positive values, declare as an <code>unsigned int</code>. If there's any doubt as to whether the variable will have values that are too large for a <code>short</code>, use an <code>int</code>. If an <code>int</code> might be too small, use a <code>long</code>.",
+                        "<i>Validate your input</i>: Check your input for range and reasonableness before conducting operations (more on this later).",
+                        "<i>Check for possible overflows</i>: Always check the results of arithmetic operations or parsing strings to integers to be proactive against integer errors. The result of multiplying two positive integers should be at least as big as both of those integers. If you find a result that overflows, you can take appropriate action before the result is used. Imagine you were adding two positive integers. Instead of writing:<br><br><code>int sum = someInteger + someOtherInteger;</code><br><br>You might try this instead:<br><br><code>if (((someInteger >0) && (someOtherInteger >0) && (some Integer> (INT_MAX-someOtherInteger))) ||<br>&nbsp&nbsp&nbsp&nbsp((someInteger <0) && (someOtherInteger <0) && (someInteger < (INT_MIN-someOtherInteger))))<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp... throw an exception to handle the problem<br>else   //  no exception, so no overflow.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  int sum = someInteger+someOtherInteger;<br></code><br>This won't completely solve the problem – you'll need to recover from the exception. As these tests can become fairly complex[1], you should be careful when relying upon manual checks for preventing integer overflow.",
                         "<i>Use compiler checks</i>: Many compilers include options that can be used to check for possible integer overflows. Read the documentation for your compiler and use these functions whenever possible.",
                         "<i>Use libraries that will help you avoid errors</i>: C++ programmers might use the SafeInt class, which tests for errors before conducting operations. C programmers can use IntegerLib."
                     ],
@@ -151,7 +166,7 @@
                     "choices": [
                         {
                             "id": "bounds",
-                            "text": "Know the smallest and largest allowable values for each data type in the programming language you are using.",
+                            "text": "Know the smallest and largest possible values for each data type in your chosen programming language.",
                             "ans": true
                         },
                         {
@@ -173,7 +188,7 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 1:</strong> Type the program below, in a Cpp compiler. Compile and Run."
+                    "text": "<strong>STEP 1:</strong> Type Program 1 into a C++ compiler. Compile and run."
                 },
                 {
                     "type": "subheader",
@@ -196,11 +211,11 @@
                         },
                         {
                             "id": "2",
-                            "text": "The program displays yearly population of next 10 years, with final population as 25,934"
+                            "text": "The program displays yearly population for the next 10 years, with final population as 25,934"
                         },
                         {
                             "id": "3",
-                            "text": "Program crashes"
+                            "text": "The program crashes"
                         }
                     ],
                     "answer": "2"
@@ -218,11 +233,11 @@
                         },
                         {
                             "id": "2",
-                            "text": "The program displays yearly population of next 10 years, with final population as 25,934"
+                            "text": "The program displays yearly population for the next 10 years, with final population as 25,934"
                         },
                         {
                             "id": "3",
-                            "text": "Program crashes"
+                            "text": "The program crashes"
                         }
                     ],
                     "answer": "1"
@@ -256,24 +271,24 @@
                 {
                     "type": "question",
                     "id": "doesAShort",
-                    "prompt": "Does a short seem like a good choice of data type for this program?",
+                    "prompt": "Does a <code>short</code> seem like a good choice for this program?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "yes",
-                            "text": "Yes, since the population grows at a single digit rate"
+                            "text": "Yes, since the population grows at a single-digit rate"
                         },
                         {
                             "id": "no",
-                            "text": "No, since the population of a country can go upto 1.3 billion"
+                            "text": "No, since the population of a country can go up to 1.3 billion"
                         }
                     ],
                     "answer": "no"
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong> Write a corrected version of this program that uses appropriate data types that will make this program run correctly for calculating population growths for any university and any country in the world. Turn in the correct program to your instructor."
+                    "text": "<strong>STEP 2:</strong> Write a corrected version of this program that will calculate population growth for any university or country. Turn in the corrected program to your instructor."
                 }
             ]
         },
@@ -376,7 +391,7 @@
                 {
                     "type": "question",
                     "id": "DiscussionQuestion5",
-                    "prompt": "Write a version of Program 1 that still uses short variables to store results and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the short variables.",
+                    "prompt": "Write a version of Program 1 that still uses <code>short</code> variables to store results and uses appropriate error and result handling to respond to errors. You may use the technique of storing values in temporary variables before assigning them to the <code>short</code> variables.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -384,7 +399,7 @@
                 {
                     "type": "question",
                     "id": "qDiscussionQuestion6",
-                    "prompt": "Does a short seem like a good choice of data type for this program? Why or why not?",
+                    "prompt": "Does a <code>short</code> seem like a good choice for this program? Why or why not?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

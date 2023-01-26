@@ -13,7 +13,7 @@
                 {
                     "type": "image",
                     "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads/sqlInjections1.JPG",
-                    "alt": "*image*",
+                    "alt": "SQL injection",
                     "width": 279,
                     "height": 136,
                     "float": null
@@ -24,7 +24,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>SQL injection</strong> is an attack technique that exploits a security vulnerability occurring in the database layer of an application .  Hackers use injections to obtain unauthorized access to the underlying data, structure, and DBMS.  It is one of the most common web application vulnerabilities."
+                    "text": "An <strong>SQL injection</strong> is an attack technique that exploits a security vulnerability in the database layer of an application. Hackers use injections to obtain unauthorized access to the underlying data, structure, and Database Management System (DBMS). It is one of the most common web-application threats."
                 },
                 {
                     "type": "subheader",
@@ -32,27 +32,15 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "A Database is the heart of many, if not all, web-applications and is used to store information needed by the application, such as, credit card information, customer demographics, customer orders, client preferences, etc.  Consequently, databases have become attractive and very lucrative targets for hackers to hack into. SQL Injections happen when a developer accepts user input that is directly placed into a SQL Statement and doesn’t properly validate and filter out dangerous characters. This can allow an attacker to alter SQL statements passed to the database as parameters and enable her to not only steal data from your database, but also modify and delete it."
+                    "text": "A <strong>database</strong> is the heart of most web-applications and is used to store information that the application needs, including credit card information, customer demographics, customer orders, client preferences, etc. Consequently, databases are attractive and lucrative targets for hackers. SQL Injections happen when a program accepts user input that is directly placed into an SQL Statement and fails to properly validate and filter out dangerous characters. Attackers will alter SQL statements passed to the database as parameters, steal data from your database, and possible modify or delete data."
                 },
                 {
                     "type": "paragraph",
-                    "text": "A database is vulnerable to SQL injections when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed.  SQL injection attacks are also known as SQL insertion attacks."
+                    "text": "A database can be vulnerable to SQL injections when user input is incorrectly filtered for string literal escape characters embedded in SQL statements, or when user input is not strongly typed. SQL injection attacks are also known as SQL insertion attacks."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Injection vulnerabilities, such as SQL, LDAP, HTTP header injection and OS command injection, have been ranked number one on the OWASP (Open Web Application Security Project) Top 10 Web application vulnerabilities 2010 and the top 25 Most Dangerous Software Errors 2011."
-                },
-                {
-                    "type": "subheader",
-                    "text": "Risk - How Can It Happen?"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "SQL injection attacks occur when a web application does not validate values received from a web form, cookie, input parameter, etc., before passing them to SQL queries that will be executed on a database server.  This will allow an attacker to manipulate the input so that the data is interpreted as code rather than as data."
-                },
-                {
-                    "type": "paragraph",
-                    "text": "SQL injection attack risk is usually very high and the consequences are severe.  A successful attack can bypass authentication and authorization to gain full control of the database, steal sensitive data, change users’ passwords, retrieve users’ credential information, add non-existent accounts, drop tables, make illegal financial transactions, and destroy the existing database, and a lot more.  The following table summarizes SQL injection examples which result in different types of threats."
+                    "text": "Injection vulnerabilities -- such as SQL, LDAP, HTTP header injection and OS command injection -- have been ranked number one the Open Web Application Security Project (OWASP) Top 10 Web Application Vulnerabilities 2022 list, and third on the Common Weakness Enumeration (CWE) Top 25 Most Dangerous Software Weaknesses 2011 list."
                 },
                 {
                     "type": "image",
@@ -63,6 +51,18 @@
                     "float": null
                 },
                 {
+                    "type": "subheader",
+                    "text": "Risk - How Can It Happen?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "SQL injection attacks occur when a web application fails to validate values received from a web form, cookie, input parameter, etc. before passing them to SQL queries that will be executed on a database server. This will allow an attacker to manipulate the input so the data is interpreted as code, rather than as data."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "SQL injection attack risk is very high and the consequences are severe. A successful attack can bypass authentication and authorization to gain full control of the database, steal sensitive data, change users’ passwords, retrieve users’ credential information, add non-existent accounts, drop tables, make illegal financial transactions, and destroy the existing database. The following table depicts several SQL injection examples."
+                },
+                {
                     "type": "table",
                     "headers": [
                         "Types of Threat",
@@ -71,7 +71,7 @@
                     "cells": [
                         {
                             "first": "Spoofing",
-                            "second": "Retrieve and use another user’s credentials <br> Modify Author value for messages"
+                            "second": "Retrieve and use another user’s credentials <br> Modify author value for messages"
                         },
                         {
                             "first": "Tampering",
@@ -101,7 +101,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "In 2011, the hacker group LulzSec used Security Injection attacks to cause databases to spit out user names  and passwords from Websites, including one associated with F.B.I.’s InfraGard program, SonyPictures and NATO’s online bookstore and deface the PBS site."
+                    "text": "In 2011, the hacker group LulzSec used Security Injection attacks to make databases spit out user names and passwords, including one website associated with F.B.I.’s InfraGard program, SonyPictures, and NATO’s online bookstore. They also defaced the PBS website."
                 },
                 {
                     "type": "paragraph",
@@ -113,7 +113,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "A dynamic SQL statement is constructed during execution time.  Consider the following example written in .NET, where the input is provided by the user."
+                    "text": "A dynamic SQL statement is constructed during execution time. Consider the following example written in .NET where the input is provided by the user."
                 },
                 {
                     "type": "paragraph",
@@ -133,7 +133,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The most common SQL injection is SQL manipulation where the attacker attempts to modify an existing SQL query statement, and insert exploited statement into the database."
+                    "text": "The most common SQL injection is SQL manipulation, where the attacker attempts to modify an existing SQL query statement and insert the exploited statement into the database."
                 },
                 {
                     "type": "codeblock",
@@ -141,7 +141,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<br>What if user enters:"
+                    "text": "<br>What if the user enters:"
                 },
                 {
                     "type": "codeblock",
@@ -149,11 +149,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Since 1=1 is always true, the query will succeed and the attacker bypass authentication.  Similar attacks can be conducted for numeric fields for which we don’t include quotes."
+                    "text": "Since 1 = 1 is always true, the query will succeed and the attacker can bypass authentication. Similar attacks can be conducted in numeric fields where we exclude quotes."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Another variation of SQL manipulation attack is to insert two consecutive dashes (–) or # in MySQL which comments out anything after it."
+                    "text": "Another variation of SQL manipulation attack is to insert two consecutive dashes (–) or # in MySQL, which comments out anything after it."
                 },
                 {
                     "type": "codeblock",
@@ -165,7 +165,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Another type of SQL injection attack, called code injection attack, is done by appending SQL statement or executable commands right after vulnerable SQL statement."
+                    "text": "Another type of SQL injection attack, called code injection attack, is done by appending SQL statements or executable commands right after a vulnerable SQL statement."
                 },
                 {
                     "type": "codeblock",
@@ -173,9 +173,12 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Or we can create a backdoor to the database by inserting a new record in the user table which would allow a hacker to access the database legally."
+                    "text": "Or we can create a backdoor to the database by inserting a new record in the user table, which would allow a hacker to access the database legally."
                 }
             ]
+        },
+        {
+            "comment": "left off here"
         },
         {
             "header": "Execute Lab Assignment",
@@ -194,7 +197,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Consult the WebGoat user and Install Guide, available from the first WebGoat link above, for installation instructions. You’re free to install it on the operating system of your choice. After you unpack WebGoat, the readme.txt file will explain how to start it and access WebGoat through your web browser.  Make sure that you take your computer off the Internet before using WebGoat."
+                    "text": "Consult the WebGoat user and Install Guide available from the first WebGoat link above for installation instructions. You may install it on the operating system of your choice. After you unpack WebGoat, the readme.txt file will help get you started and access WebGoat through your web browser. Make sure you take your computer off the Internet before using WebGoat."
                 },
                 {
                     "type": "paragraph",
@@ -211,11 +214,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "You also need to install WebScarab which is basically an intercepting proxy."
+                    "text": "You also need to install WebScarab, which is an intercepting proxy."
                 },
                 {
                     "type": "paragraph",
-                    "text": "<a href = http://www.owasp.org/index.php/Category:OWASP_WebScarab_Project> http://www.owasp.org/index.php/Category:OWASP_WebScarab_Project</a>"
+                    "text": "<a href = https://wiki.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project> https://wiki.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project</a>"
                 }
             ]
         },
@@ -233,7 +236,7 @@
                 {
                     "type": "question",
                     "id": "dq2",
-                    "prompt": "What is the impact of SQL injection vulnerabilities?",
+                    "prompt": "What are the possible impacts of an SQL injection attack?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -241,7 +244,7 @@
                 {
                     "type": "question",
                     "id": "dq3",
-                    "prompt": "What is the main reason for the existence of SQL injection vulnerability?",
+                    "prompt": "What is the main reason why SQL injection is a vulnerability?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

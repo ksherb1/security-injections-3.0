@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Today, the use of social media websites such as Facebook, Instagram, Twitter, and TikTok has become the norm for online communication with friends, family, and acquaintances. While such sites help people keep in touch, they also pose a great risk to personal identifiable information (PII). In order to protect this PII, users must think of confidentiality, availability, and trust (or the CAT model) before making posts on a social networking website like Facebook or Twitter."
+                    "text": "Today, the use of social media websites such as Facebook, Instagram, Twitter, and TikTok has become the norm for online communication with friends, family, and acquaintances. While such sites help people keep in touch, they also pose a great risk to personal identifiable information (PII). In order to protect this PII, users must think of <strong>confidentiality, availability, and trust</strong> (or the CAT model) before making posts on a social networking website like Facebook or Twitter."
                 },
                 {
                     "type": "subheader",
@@ -28,7 +28,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The use of all social networking websites revolve around one main activity-- posting information about yourself. While sharing information about yourself can be fun, you always run the risk of sharing it with someone you didn't want to; this is the real danger of using social networking websites like Facebook or Twitter."
+                    "text": "The use of all social networking websites revolve around one main activity - posting information about yourself. While sharing information about yourself can be fun, you always run the risk of sharing it with someone you didn't want to; this is the real danger of using social networking websites like Facebook or Twitter."
                 },
                 {
                     "type": "subheader",
@@ -36,7 +36,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Posting online without first weighing the consequences or taking precautions to ensure that your information is safe is a practice that can get any user in trouble. It is important that before you make any post, you consider the privacy of your post, the lifetime of your post, and the audience your post will reach. These three considerations are the <strong>CAT model: Confidentiality</strong> (How private your posts are), <strong>Availability</strong> (How long your posts are accessible), and <strong>Trust</strong> (who you're trusting with your posts). Posting carelessly without taking these issues into consideration can be a risky practice that can lead to trouble for you now or down the road in your career."
+                    "text": "Posting online without first weighing the consequences or taking precautions to ensure that your information is safe is a practice that can get any user in trouble. It is important that before you make any post, you consider the privacy of your post, the lifetime of your post, and the audience your post will reach. These three considerations are the <strong>CAT model</strong>: Confidentiality (How private your posts are), Availability (How long your posts are accessible), and Trust (who you're trusting with your posts). Posting carelessly without taking these issues into consideration can be a risky practice that can lead to trouble for you now or down the road in your career."
                 },
                 {
                     "type": "subheader",
@@ -44,11 +44,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "A woman working as a teacher's aide made a post on Facebook out of frustration towards the kids she worked with, and later got fired for her behavior."
+                    "text": "A manager of a Dollar General store uploaded frequent posts to TikTok about her frustrations and criticisms of the company, she was later fired for the posts."
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small>Source: <a href =http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post> http://www.newson6.com/story/23547100/concho-teachers-aide-fired-over-facebook-post </a> </small>"
+                    "text": "<small>Source: <a href =https://www.wfla.com/news/hillsborough-county/tampa-dollar-general-store-manager-fired-after-viral-tiktok-posts-about-challenges-at-the-job/>https://www.wfla.com/news/hillsborough-county/tampa-dollar-general-store-manager-fired-after-viral-tiktok-posts-about-challenges-at-the-job/</a> </small>"
                 },
                 {
                     "type": "subheader",
@@ -113,15 +113,15 @@
                 },
                 {
                     "type": "image",
-                    "src": "http://www.clker.com/cliparts/j/L/3/m/C/u/padlock-icon-hi.png",
+                    "src": "https://s3.amazonaws.com/security-injections.clark.center/assets/Computer_Literacy-Social_Networking_Security/padlock-icon-hi.png",
                     "alt": "lock",
-                    "width": 103,
-                    "height": 150,
+                    "width": 200,
+                    "height": 200,
                     "float": null
                 },
                 {
                     "type": "paragraph",
-                    "text": "<br>Confidentiality answers the question \"how private are my posts?\" The confidentiality of your posts can be analyzed by completing a few steps:"
+                    "text": "<br>Confidentiality answers the question, \"How private are my posts?\" The confidentiality of your posts can be analyzed by completing a few steps:"
                 },
                 {
                     "type": "paragraph",
@@ -137,7 +137,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>d. Think of your four audiences.</strong>  When posting to a profile, think about what permissions you have given each of these four audiences: friends, family, potential employers, and public. Consider who you want to see the post vs. who might see it."
+                    "text": "<strong>d. Think of your four audiences.</strong>  When posting to a profile, think about what permissions you have given each of these four audiences: friends, family, current and potential employers, and public. Consider who you want to see the post vs. who might see it."
                 },
                 {
                     "type": "subheader",
@@ -145,15 +145,15 @@
                 },
                 {
                     "type": "image",
-                    "src": "http://freevector.co/wp-content/uploads/2013/01/77871-old-round-clock.png",
+                    "src": "https://s3.amazonaws.com/security-injections.clark.center/assets/Computer_Literacy-Social_Networking_Security/77871-old-round-clock.png",
                     "alt": "clock",
-                    "width": 150,
-                    "height": 150,
+                    "width": 200,
+                    "height": 200,
                     "float": null
                 },
                 {
                     "type": "paragraph",
-                    "text": "<br>Availability answers the question \"how long is my information accessible?\" In order to determine the availability of posts or information you post on a social networking website, the following steps can be taken:"
+                    "text": "<br>Availability answers the question, \"How long is my information accessible?\" In order to determine the availability of posts or information you post on a social networking website, the following steps can be taken:"
                 },
                 {
                     "type": "paragraph",
@@ -173,15 +173,15 @@
                 },
                 {
                     "type": "image",
-                    "src": "http://4vector.com/i/free-vector-facebook-style-icon-vector-material_020344_groups.png",
+                    "src": "https://s3.amazonaws.com/security-injections.clark.center/assets/Computer_Literacy-Social_Networking_Security/free-vector-facebook-style-icon-vector-material_020344_groups.png",
                     "alt": "friends",
-                    "width": 150,
-                    "height": 150,
+                    "width": 200,
+                    "height": 200,
                     "float": null
                 },
                 {
                     "type": "paragraph",
-                    "text": "<br>Trust answers the question \"who am I trusting with my information?\" The people you trust are the people who you allow to see your information and posts. To analyze the security of the trust you have, you can take the following steps:"
+                    "text": "<br>Trust answers the question, \"Who am I trusting with my information?\" The people you trust are the people who you allow to see your information and posts. To analyze the security of the trust you have, you can take the following steps:"
                 },
                 {
                     "type": "paragraph",
@@ -212,7 +212,7 @@
                         },
                         {
                             "id": "a",
-                            "text": "Availability is concerned witht he privacy of the post."
+                            "text": "Availability is concerned with the privacy of the post."
                         },
                         {
                             "id": "t",
@@ -228,7 +228,7 @@
             "units": [
                 {
                     "type": "paragraph",
-                    "text": "For this assignment, you will be working in partners. It is important that you are not friends with this partner on any social media website. Both partners should have accounts on Facebook and Twitter. Introduce yourselves and log on to your computers.In order to complete this lab, each partner will plant two ‘flags’ for the other partner to try and find through social networking. On your Twitter account, post your favorite movie title. On your Facebook account, post your favorite color."
+                    "text": "For this assignment, you will be working in partners. It is important that you are not friends with this partner on any social media website. Both partners should have accounts on Facebook and Twitter. Introduce yourselves and log on to your computers. In order to complete this lab, each partner will plant two ‘flags’ for the other partner to try and find through social networking. On your Twitter account, post your favorite movie title. On your Facebook account, post your favorite color."
                 },
                 {
                     "type": "paragraph",
@@ -279,7 +279,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 5:</strong>  Complete the security checklist for confidentiality."
+                    "text": "<strong>STEP 5:</strong>  Complete the Security Checklist for confidentiality."
                 },
                 {
                     "type": "paragraph",
@@ -336,11 +336,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small>Highlighted areas above indicate the confidentiality of your information is risky!</small>"
+                    "text": "<small>Highlighted areas above indicate where the confidentiality of your information is risky!</small>"
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 6:</strong> Complete the security checklist for Availability."
+                    "text": "<strong>STEP 6:</strong> Complete the Security Checklist for Availability."
                 },
                 {
                     "type": "paragraph",
@@ -397,11 +397,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small>Highlighted areas above indicate the confidentiality of your information is risky!</small>"
+                    "text": "<small>Highlighted areas above indicate where the confidentiality of your information is risky!</small>"
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 7:</strong> Complete the security checklist for Trust."
+                    "text": "<strong>STEP 7:</strong> Complete the Security Checklist for Trust."
                 },
                 {
                     "type": "paragraph",
@@ -458,7 +458,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small>Highlighted areas above indicate the confidentiality of your information is risky!</small>"
+                    "text": "<small>Highlighted areas above indicate where the confidentiality of your information is risky!</small>"
                 },
                 {
                     "type": "question",

@@ -11,6 +11,14 @@
             "header": "Background",
             "units": [
                 {
+                    "type": "image",
+                    "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads/buffer_overflow.png",
+                    "alt": "buffer overflow",
+                    "width": 337,
+                    "height": 117,
+                    "float": null
+                },
+                {
                     "type": "subheader",
                     "text": "Summary:"
                 },
@@ -32,7 +40,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler. No captions availible.</small></small>"
                 },
                 {
                     "type": "subheader",
@@ -48,7 +56,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "A buffer overflow in a 2004 version of AOL's AIM instant-messaging software exposed users to buffer overflow vulnerabilities. If a user posted a URL in their \"I'm away\" message, any of his or her friends who clicked on that link might be vulnerable to attack. AOL's response was to suggest that users update to a new version that would fix the bug.<br><small><small><small>Paul Roberts “AOL IM 'Away' message flaw deemed critical”, Infoworld, August 9, 2004<a href = http://www.infoworld.com/article/04/08/09/HNaolimflaw_1.html > http://www.infoworld.com/article/04/08/09/HNaolimflaw_1.html</a></small></small></small>"
+                    "text": "A buffer overflow in a 2004 version of AOL's AIM instant-messaging software exposed users to buffer overflow vulnerabilities. If a user posted a URL in their \"I'm away\" message, any of his or her friends who clicked on that link might be vulnerable to attack. AOL's response was to suggest that users update to a new version that would fix the bug.<br><small><small><small>Paul Roberts “AOL IM 'Away' message flaw deemed critical”, Computerworld, August 9, 2004<a href = https://www.computerworld.com/article/2566089/aol-im--away--message-flaw-deemed-critical.html</a></small></small></small>"
                 },
                 {
                     "type": "subheader",
@@ -60,7 +68,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "When this program is run, the loop counter will exceed the value of a suitable index for the array. When the assignment statement tries to store a value in vals[10], buffer overflow occurs. The result is unpredictable. Depending on the operating system and the specific nature of the overflow, it may not cause any apparent problems, or it will cause the program to crash. Buffer Overflow can occur in many languages. In Java, the code results in an ArrayIndexOutOfBoundsException."
+                    "text": "When this program is run, the loop counter will exceed the value of a suitable index for the array. When the assignment statement tries to store a value in <code>vals[10]</code>, buffer overflow occurs. The result is unpredictable. Depending on the operating system and the specific nature of the overflow, it may not cause any apparent problems, or it will cause the program to crash. Buffer overflow can occur in many languages. In Java, the code results in an <code>ArrayIndexOutOfBoundsException</code>."
                 },
                 {
                     "type": "subheader",
@@ -139,7 +147,7 @@
                         "<i><strong>Mind your Indices!</strong></i> <br>&nbsp&nbsp&nbsp&nbsp -Validate your input. Always check values that are input as an array index.<br> &nbsp&nbsp&nbsp&nbsp -Check your loops! Especially watch the limit, beware of off-by-one errors.<br> &nbsp&nbsp&nbsp&nbsp -Check any methods that may modify an array index.",
                         "<i><strong>Make sure you have enough space:</strong></i> Before copying data to a fixed size block, make sure it is large enough to hold the data that you are going to copy. If it is not large enough, do not copy more data than your available space can hold. If your program is not able to continue properly after filling the available space, you may have to find some way to recover from the error.",
                         "<i><strong>Validate indices:</strong></i> If you have an integer variable, verify that it is within the proper bounds before you use it as an index to an array. This validation is particularly important for any values that might have been provided as user input or other untrusted input, such as information that might be read from a file or from a network connection.",
-                        "<i><strong>When possible, use buffer-size accessors:</strong></i> Loops that iterate over arrays need to know the size of the array. Using a variable with the wrong value – or the incorrect constant value – can lead to buffer overflows. Some languages -such as Java – provide operators that can be used to retrieve the size of an array. Using these operators can help you avoid some of these problems.",
+                        "<i><strong>When possible, use buffer-size accessors:</strong></i> Loops that iterate over arrays need to know the size of the array. Using a variable with the wrong value – or the incorrect constant value – can lead to buffer overflows. Some languages - such as Java – provide operators that can be used to retrieve the size of an array. Using these operators can help you avoid some of these problems.",
                         "<i><strong>Use alternative data structures that reduce the risk of overflows:</strong></i> Many buffer overflow vulnerabilities can be avoided by using vectors or other structures instead of traditional arrays. When possible, use vectors and iterators instead of arrays and integer-indexed loops. Note that these tools will not prevent you from running into trouble: you will still have to write your code carefully and correctly. However, they can reduce your risk of buffer overflow vulnerabilities."
                     ],
                     "ordered": true
@@ -218,7 +226,7 @@
                 {
                     "type": "question",
                     "id": "LQ1",
-                    "prompt": "Describe the results of above program run in step 1 ?",
+                    "prompt": "Describe the results of above program run in Step 1?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -377,7 +385,7 @@
                 {
                     "type": "question",
                     "id": "SC1",
-                    "prompt": "List places where the bounds checking should occur?",
+                    "prompt": "List places where bounds checking should occur.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -385,7 +393,7 @@
                 {
                     "type": "question",
                     "id": "SC2",
-                    "prompt": "Provide example inputs that might cause array index out of bounds exception?",
+                    "prompt": "Provide example inputs that might cause array index out-of-bounds exception.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -396,7 +404,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 2:</strong> Create the following java file in a java complier:"
+                    "text": "<strong>STEP 2:</strong> Create the following Java file in a Java complier:"
                 },
                 {
                     "type": "codeblock",
@@ -404,7 +412,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 3:</strong> Create the following temps.txt file(Make sure this file is in the same folder where the above java file is stored): <br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 </code><br>"
+                    "text": "<strong>STEP 3:</strong> Create the following <code>temps.txt</code> file (Make sure this file is in the same folder where the above Java file is stored): <br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 </code><br>"
                 },
                 {
                     "type": "paragraph",
@@ -412,7 +420,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>STEP 5:</strong>  Change temps.txt to the following: <br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 31.0 31.2 </code><br>"
+                    "text": "<strong>STEP 5:</strong>  Change <code>temps.txt</code> to the following: <br><br><code>30.0 30.1 30.2 30.3 30.4 30.5 30.6 20.7 30.8 30.9 31.0 31.2 </code><br>"
                 },
                 {
                     "type": "paragraph",
@@ -421,7 +429,7 @@
                 {
                     "type": "question",
                     "id": "SC3",
-                    "prompt": "What happended after compiling and running the program in step 5 and why?",
+                    "prompt": "What happended after compiling and running the program in Step 6 and why?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

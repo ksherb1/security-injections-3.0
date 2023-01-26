@@ -16,14 +16,14 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "During the last few years, the number of vulnerabilities being discovered in applications is far greater than the number of vulnerabilities discovered in operating systems. There are all sorts of programming ideas and even template type code available to make computer programs more secure. The purpose of this lab is to have security begin at the design stage. It is much easier (& smarter) to create secure code from design than to try to secure it during coding."
+                    "text": "During the last few years, the number of vulnerabilities being discovered in applications is far greater than the number of vulnerabilities discovered in operating systems. There are all sorts of programming ideas and even template type code available to make computer programs more secure. The purpose of this lab is to have security begin at the design stage. It is much easier, and smarter, to create secure code from design than to try to secure it during coding."
                 },
                 {
                     "type": "image",
-                    "src": "https://cisserv1.towson.edu/~cssecinj/wp-content/uploads//variablepic.jpg",
-                    "alt": "*image*",
-                    "width": 302,
-                    "height": 147,
+                    "src": "https://s3.amazonaws.com/security-injections.clark.center/assets/Computer_Literacy-Cryptography/VulnerabilitiesTriangle.png",
+                    "alt": "Vulerabilities inverted triangle",
+                    "width": 500,
+                    "height": 500,
                     "float": null
                 },
                 {
@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The cost of fixing system vulnerabilities and the risk associated with vulnerabilities after system deployment are high for both developers and end users. Steps to reduce the cost of system maintenance and the risk of security vulnerabilities need to be adopted by software development organizations. While there are a number of best practices available to address the issue of software security vulnerabilities, these practices are frequently difficult to reuse due to the implementation specific nature of the best practices. In addition, greater understanding of the root causes of security flaws has led to a greater appreciation of the importance of taking security into account in all phases in the software development life cycle, not just in the implementation and deployment phases. Many current best security practices focus on implementation and deployment issues and so do not address security flaws introduced in earlier phases of the development process."
+                    "text": "The cost of fixing system vulnerabilities, and the risk associated with vulnerabilities after system deployment, are high for both developers and end users. Steps to reduce the cost of system maintenance and the risk of security vulnerabilities need to be adopted by software development organizations. While there are a number of best practices available to address the issue of software security vulnerabilities, these practices are often difficult to reuse due to the implementation-specific nature of the best practices. Many current best security practices focus on implementation and deployment issues and do not address security flaws introduced in earlier phases of the development process."
                 },
                 {
                     "type": "subheader",
@@ -40,7 +40,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Application software that does not properly check the size of user input, fails to sanitize user input by filtering out unneeded but potentially malicious character sequences, or does not initialize and clear variables properly could be vulnerable to remote compromise. Attackers can inject specific exploits, including buffer overflows, SQL injection attacks, and cross-site scripting code to gain control over vulnerable machines."
+                    "text": "Application software that does not properly check the size of user input fails to filter out unneeded and potentially malicious character sequences, or does not initialize/clear variables properly, could be vulnerable to remote compromise. Attackers can inject specific exploits, including buffer overflows, SQL injection attacks, and cross-site scripting code, to gain control over vulnerable machines."
                 },
                 {
                     "type": "subheader",
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "In one attack in 2008, more than 1 million web servers were exploited and turned 25 into infection engines for visitors to those sites using SQL injection. During that attack, trusted websites from state governments and other organizations compromised by attackers were used to infect hundreds of thousands of browsers that accessed those websites. Many more web and non-web application vulnerabilities are discovered on a regular basis."
+                    "text": "In a 2008 <a href = https://abcnews.go.com/Technology/story?id=7098329&page=1>SQL injection attack</a>, more than 1 million web servers were exploited and turned 25 into infection engines for site visitors. During that attack, trusted websites from state governments and other organizations were compromised by attackers and used to infect every browser that accessed those websites. Many more web and non-web application vulnerabilities are discovered on a regular basis."
                 }
             ]
         },
@@ -62,9 +62,9 @@
                 {
                     "type": "list",
                     "items": [
-                        "Declare your variables all on different lines. For example, we all know the following is acceptable (& easy):<br><br><code>int a, b, c, d;</code><br><br>but:<br><br><code>int a;<br>int b;<br>int c;<br>int d;</code><br><br> is more secure.",
-                        "\"Global\" variables (those declared outside of any method, but inside of main) are easy to design and define, but they are \"alive\" during the entire program’s execution, making them susceptible to attack. Scope minimization also helps developers avoid common programming errors, improves code readability by connecting the declaration and actual use of a variable, and improves maintainability because unused variables are more easily detected and removed. Therefore, these types of variables should be avoided.",
-                        "Constants should be declared as static final and denoted with UPPERCASE CHARACTERS. The static modifier says that the constant is a class variable (the closet we come to a global variable in JAVA). The final modifier tells the program that this variable cannot be changed; therefore, malware cannot change it, making the variable more secure. These types of variables are usually declared private, as well.",
+                        "Declare your variables all on different lines. For example, we all know the following is acceptable and easy:<br><br><code>int a, b, c, d;</code><br><br>but:<br><br><code>int a;<br>int b;<br>int c;<br>int d;</code><br><br> is more secure.",
+                        "\"Global\" variables (those declared outside of any method, but inside of main) are easy to design and define, but they are \"alive\" during the entire program’s execution, making them susceptible to attack. Scope minimization improves code readability by connecting the declaration and actual use of a variable, and improves maintainability by making unused variables more easily detected and removed. Therefore, these types of variables should be avoided.",
+                        "Constants should be declared as \"static final\" and denoted with UPPERCASE CHARACTERS. The <code>static</code> modifier says that the constant is a class variable (the closest we come to a global variable in JAVA). The <code>final</code> modifier tells the program that this variable cannot be changed; therefore, not even malware can change it. These types of variables are usually declared private as well.",
                         "Reuse of identifier names in subscopes leads to obscuration or shadowing. The identifiers in the current scope render those defined elsewhere inaccessible; such ambiguity burdens code maintainers, especially when code requires access to both the original named entity and the inaccessible one. The problem is aggravated when the reused name is defined in a different package. A simple name may occur in contexts where it may potentially be interpreted as the name of a variable, a type, or a package. No identifier should obscure or shadow another identifier in a containing scope. For instance, a local variable should not reuse the name of a class field or method, or the class name or package name. Similarly, an inner class name should not reuse the name of an outer class or package."
                     ],
                     "ordered": true
@@ -161,7 +161,7 @@
                 {
                     "type": "question",
                     "id": "dq2",
-                    "prompt": "What happens when a class (\"global\") variable is declared in terms of its time in RAM? Explain.",
+                    "prompt": "What happens when a class \"global\" variable is declared in terms of its time in RAM? Explain.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -177,7 +177,7 @@
                 {
                     "type": "question",
                     "id": "dq4",
-                    "prompt": "What is the rule for using inner class & outer class names that are the same?",
+                    "prompt": "What is the rule for using the same names for inner classes and outer classes?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

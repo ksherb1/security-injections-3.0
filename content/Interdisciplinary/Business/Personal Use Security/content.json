@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Internet-enabled mobile devices are commonly used by people in a business environment to do business work such as communicating with clients and co-workers involved in same or similar projects."
+                    "text": "Internet-enabled mobile devices are commonly used by people in a business environment to communicate with clients and co-workers."
                 },
                 {
                     "type": "subheader",
@@ -24,11 +24,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Business issued mobile devices are commonly used by employees and business associates in performing normal business functions. It can easily happen that a person is not aware of all the security policies and procedures, or perhaps the person makes a mistake in observing these security policies. Sensitive data may be exposed, or the business employer may become vulnerable, as a result."
+                    "text": "Business-issued mobile devices are typically used by employees and business associates to perform business functions. Oftentimes, people are not aware of all the security policies and procedures that come with using a business device. Sensitive data may be exposed or the business employer may become vulnerable as a result."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Sometimes a user may carry only one mobile device which is used for both business and personal use. Even if this does not violate company policy, it may involve security risks."
+                    "text": "Sometimes a user may use one mobile device for both business and personal functions. Even if this does not violate company policy, it may involve security risks."
                 },
                 {
                     "type": "subheader",
@@ -36,7 +36,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "There are a number of possibilities that may lead to these situations, as follows:"
+                    "text": "There are a number of possibilities why security risks may arise:"
                 },
                 {
                     "type": "list",
@@ -51,7 +51,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "The list is not neccesarily complete."
+                    "text": "The list above is not exhaustive. There are numerous reasons why security can be put at risk."
                 },
                 {
                     "type": "subheader",
@@ -59,11 +59,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Helena works remotely and commonly uses the mobile device issued to her to conduct client meetings and access the customer database. She is on the go a lot, and instead of using the secure 4G network issued by the company, she often uses the open access Wi-Fi network wherever a network might be available, such as at a Starbucks."
+                    "text": "Helena works remotely and often uses her business-issued mobile device to conduct client meetings and access the customer database. She is on the go daily, and instead of using the secure 4G network issued by the company, she often uses the open access Wi-Fi network wherever a network might be available, such as at a Starbucks."
                 },
                 {
                     "type": "paragraph",
-                    "text": "There is no company policy against the personal use of company mobile devices. She knows it is against company policy to download applications, such as games, that have not been approved by the IT department. She has done this in violation of the policy, but she only plays the games at work."
+                    "text": "There is no company policy against the personal use of company mobile devices. Helena knows it is against company policy to download applications, such as games, that have not been approved by the IT department. She has has downloaded games in violation of the policy, but she only plays them at work."
                 },
                 {
                     "type": "subheader",
@@ -72,25 +72,25 @@
                 {
                     "type": "question",
                     "id": "bq1",
-                    "prompt": "The company has issued Helena the mobile device to work remotely to interact with clients and access the database. Is this the right thing to do?",
+                    "prompt": "The company has issued Helena the mobile device so she may interact with clients and access the database remotely. Did the company make the right decision by granting her this privilege?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "q1a",
-                            "text": "Absolutely not. Even if she does not access clients and client data, she is possibly exposing the device and the data it contains to other users."
+                            "text": "Absolutely not, even if she does not access clients and client data, she is possibly exposing the device and the data it contains to other users."
                         },
                         {
                             "id": "q1b",
-                            "text": "She could be doing personal work, just not access any secure company data."
+                            "text": "Yes, she could be doing personal work, just not access any secure company data."
                         },
                         {
                             "id": "q1c",
-                            "text": "Considering that the company has issued her this device, they expect her to use it remotely provided she follows security procedures."
+                            "text": "No, considering that the company has issued her this device, they expect her to follow their security procedures."
                         },
                         {
                             "id": "q1d",
-                            "text": "There is no problem. There is no need to be paranoid."
+                            "text": "Yes, there is no problem."
                         }
                     ],
                     "answer": "q1c"
@@ -98,25 +98,25 @@
                 {
                     "type": "question",
                     "id": "bq2",
-                    "prompt": "Is it all right for Helena to use the company issued mobile device on an open access network that is not password protected?",
+                    "prompt": "Is it okay for Helena to use the company-issued mobile device on an open-access network that is not password protected?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "q2a",
-                            "text": "Absolutely not. Even if she does not access clients and client data, she is possibly exposing the device and the data it contains to other users."
+                            "text": "Absolutely not, ven if she does not access clients and client data, she is possibly exposing the device and the data it contains to other users."
                         },
                         {
                             "id": "q2b",
-                            "text": "She could be doing personal work, just not access any secure company data."
+                            "text": "Yes, she could be doing personal work, just not access any secure company data."
                         },
                         {
                             "id": "q2c",
-                            "text": "It is all right if she does it quickly. Keeping the connection open a long time could be risky."
+                            "text": "Yes, if she does it quickly. Keeping the connection open for a long period of time could be risky."
                         },
                         {
                             "id": "q2d",
-                            "text": "Some people are so paranoid. The only people in Starbucks are coffee lovers, not snoopers."
+                            "text": "Yes, the only people in Starbucks are coffee lovers, not snoopers."
                         }
                     ],
                     "answer": "q2a"
@@ -124,25 +124,25 @@
                 {
                     "type": "question",
                     "id": "bq3",
-                    "prompt": "Is it all right for Helena to be downloading games that have not been approved by the IT department?",
+                    "prompt": "Is it okay for Helena to be downloading games that have not been approved by the IT department?",
                     "ignored": false,
                     "mode": "radio",
                     "choices": [
                         {
                             "id": "q3a",
-                            "text": "It is quite all right to download the games, but she should not be playing them at work."
+                            "text": "Yes, it is okay to download the games, but she should not be playing them at work."
                         },
                         {
                             "id": "q3b",
-                            "text": "There is nothing wrong with downloading the game as long as she is playing within the security firewall."
+                            "text": "Yes, there is nothing wrong with downloading the game as long as she is playing within the security firewall."
                         },
                         {
                             "id": "q3c",
-                            "text": "Everyone needs to relax with games. This is an example of an improper security policy."
+                            "text": "Yes, everyone needs to relax with games. This is an example of an improper security policy."
                         },
                         {
                             "id": "q3d",
-                            "text": "It is very wrong for her to disregard the security policy and the IT department. Games can come with spyware or malware. This is the big concern, bigger than her playing games at work."
+                            "text": "No, it is wrong for her to disregard the security policy and the IT department. Games can come with spyware or malware. This is the big concern, bigger than her playing games at work."
                         }
                     ],
                     "answer": "q3d"
@@ -158,11 +158,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "All the answers are given in the scenario. The company has issued Helena a mobile device with a secure 4G connection. They expect her to work remotely  to conduct client meetings and access the company database. She does not need to use public Wi-Fi where her device and communications are exposed to other users, who could also overhear her or look over her shoulder. Using the secure 4G she can connect from any private area, such as inside her parked car."
+                    "text": "The company has issued Helena a mobile device with a secure 4G connection. They expect her to conduct client meetings and access the company database remotely. By having a 4G connection, Helena does not need to use public Wi-Fi where her device and communications are exposed to other users, who could also overhear her or look over her shoulder. She can connect from any private area, such as inside her parked car."
                 },
                 {
                     "type": "paragraph",
-                    "text": "It is very wrong of her to ignore the company security policy and the IT department with respect to games. The company has not banned games. They only require games to be vetted by the IT department so it is free of spyware and malware that can expose sensitive information."
+                    "text": "It is wrong of her to ignore the company security policy and the IT department with respect to games. The company has not banned games. They only require games to be vetted by the IT department so it is free of spyware and malware that can expose sensitive information."
                 },
                 {
                     "type": "subheader",
@@ -235,20 +235,12 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<a href = http://spectrum.ieee.org/telecom/standards/lte-advanced-is-the-real-4g> http://spectrum.ieee.org/telecom/standards/lte-advanced-is-the-real-4g </a>"
+                    "text": "<a href = https://www.techtarget.com/searchmobilecomputing/definition/4G> https://www.techtarget.com/searchmobilecomputing/definition/4G </a>"
                 },
                 {
                     "type": "question",
                     "id": "lq1",
                     "prompt": "What can you describe about the increase in bandwidth from 3G to 4G to 4G LTE?",
-                    "ignored": true,
-                    "mode": "textarea",
-                    "pattern": "null"
-                },
-                {
-                    "type": "question",
-                    "id": "lq2",
-                    "prompt": "You may have noticed an increase in screen size over the years in moving to 4G LTE. What features are supported by the larger screens?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -269,7 +261,7 @@
                 {
                     "type": "question",
                     "id": "dq2",
-                    "prompt": "The openness of the Internet is the biggest boon for people. The openness of the Internet is the gravest danger for people. Comment on this statement in the context of cybersecurity.",
+                    "prompt": "The openness of the Internet is one of its most attractive featuers, but also the gravest danger for people. Comment on this statement in the context of cybersecurity.",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

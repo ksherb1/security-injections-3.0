@@ -16,7 +16,7 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "Confidentiality is one of the three pillars of computer security, the other two being integrity and availability. Confidentiality depends upon authentication. The most popular form of authentication in use today is the password. But there are problems with passwords. “People can’t remember strong passwords, and the passwords they can remember are easy to guess.”"
+					"text": "<strong>Confidentiality</strong> is one of the three pillars of computer security, the other two being <strong>integrity</strong> and <strong>availability</strong>. Confidentiality depends upon authentication. The most popular form of authentication in use today is the password. But there are problems with passwords. People can’t remember strong passwords, and the passwords they can remember are easy to guess."
 				},
 				{
 					"type": "subheader",
@@ -24,7 +24,7 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "A password is an authentication mechanism used to verify if a user is the legitimate owner of a user ID. Hackers can use attacks, such as brute force (which is a type of attack that relies purely on trial and error) and dictionary attacks (that attempt to crack a password by testing it against a list of dictionary words) to guess your password and use this information to commit illegal or undesirable acts in your name."
+					"text": "A <strong>password</strong> is an authentication mechanism used to verify if a user is the legitimate owner of a <strong>user ID</strong>. Hackers can use attacks to guess your password and use this information to commit illegal or undesirable acts in your name. The first type of attack is called <strong>brute force</strong>, which relies purely on trial and error, and the second type is a <strong>dictionary attack</strong>, which attempts to crack a password by testing it against a list of dictionary words."
 				},
 				{
 					"type": "subheader",
@@ -32,7 +32,7 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "When you use an easily guessed password, such as your user ID, any name, or a word from the dictionary; your password becomes an easy target for brute force and dictionary attacks. When you use a strong password but write it down and stick it to your monitor, place it under your mouse pad, in your drawer or write it in a book; your password could be stolen."
+					"text": "When you use an easily-guessed password, like your user ID, any name, or a word from the dictionary; your password becomes an easy target for brute force and dictionary attacks. When you use a strong password but write it down and stick it to your monitor, place it under your mouse pad, in your drawer or write it in a book; your password could be stolen."
 				},
 				{
 					"type": "subheader",
@@ -40,11 +40,11 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "On Sunday, January 4th, 2009, a hacker known only as GMZ, used a tool he developed to launch a dictionary attack against the account of a Twitter user named Crystal. The program ran for several hours overnight automatically trying different English words. When “he checked the results Monday morning at around 11:00 a.m. E.T., he found he was in Crystal's account.” GMZ soon realized that Crystal was actually a Twitter staffer with administrative privileges. He was able to compromise several high-profile accounts by resetting their passwords and making them available to fellow hackers. Some of these included the accounts of President Elect Barack Obama, Britney Spears, CBS News and Fox News."
+					"text": "On Sunday, January 4th, 2009, a hacker known only as GMZ used a tool he developed to launch a dictionary attack against the account of a Twitter user named Crystal. The program ran for several hours overnight automatically trying different English words. When he checked the results the next morning, he was in Crystal's account. GMZ soon realized that Crystal was actually a Twitter staffer with administrative privileges. He was able to compromise several high-profile accounts by resetting their passwords and making them available to fellow hackers. Some of these included the accounts of President Elect Barack Obama, Britney Spears, CBS News and Fox News."
 				},
 				{
 					"type": "paragraph",
-					"text": "Weak Password Brings 'Happiness' to Twitter Hacker:  <a href='http://blog.wired.com/27bstroke6/2009/01/professed-twitt.html'>http://blog.wired.com/27bstroke6/2009/01/professed-twitt.html</a>"
+					"text": "<a href='http://blog.wired.com/27bstroke6/2009/01/professed-twitt.html'>Weak Password Brings 'Happiness' to Twitter Hacker</a>"
 				},
 				{
 					"type": "subheader",
@@ -151,7 +151,7 @@
 					"type": "list",
 					"items": [
 						"<strong>Memorability:</strong> you should be able to remember the password",
-						"<strong>Length:</strong> the password should be at least eight characters long; but generally, the longer the password, the stronger it will be—Windows XP allows up to 127 characters",
+						"<strong>Length:</strong> the password should be at least eight characters long; but generally, the longer the password, the stronger it will be — Windows 10 allows up to 127 characters",
 						"<strong>Alphanumeric characters:</strong> the password should include both letters and numbers",
 						"<strong>Upper- and lower-case:</strong> the password should include both upper and lowercase letters",
 						"<strong>Punctuation and non-alphanumeric characters:</strong> it should include one or more characters, such as #, $, !, @ and punctuation marks, such as the period and comma."
@@ -160,13 +160,13 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "One method to help construct a good password includes the following steps:"
+					"text": "One way to write a strong password you can remember:"
 				},
 				{
 					"type": "list",
 					"items": [
 						"Make up a sentence you can easily remember",
-						"Make the first letter of every word in the sentence, and include the punctuation; throw in extra punctuation or change numbers into digits for variety. "
+						"Make the first letter of every word in the sentence, and include the punctuation; throw in extra punctuation or change numbers into digits for variety."
 					],
 					"ordered": false
 				},
@@ -202,7 +202,7 @@
 				{
 					"type": "question",
 					"id": "passwordStrength",
-					"prompt": "Which of the following has a strong password?",
+					"prompt": "Which of the following could make a strong password?",
 					"ignored": false,
 					"mode": "checkbox",
 					"choices": [
@@ -614,7 +614,7 @@
 				{
 					"type": "list",
 					"items" : [
-						"Use the Password Meter to verify whether your passwords are strong enough. The Password Meter is a free tool and is available at: <a href = http://www.passwordmeter.com> www.passwordmeter.com </a>",
+						"Use the Password Meter to verify whether your passwords are strong enough. DO NOT put real passwords into this website. The site is for exercise purposes only. The Password Meter is a free tool and is available at: <a href = http://www.passwordmeter.com> www.passwordmeter.com </a>",
 					  "Click the link to watch a video on <a href = 'https://www.usatoday.com/videos/tech/2016/02/07/79939088'>how to make your passwords less hackable</a>."
 					]
 				}

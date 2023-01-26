@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler. No captions availible.</small></small>"
                 },
                 {
                     "type": "subheader",
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan Morris Worm Turns 20: Look what it's Done Network World, October 30, 2008  <a href = http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1 > http://www.networkworld.com/news/2008/103008-morris-worm.html?page=1</a></small></small></small>"
+                    "text": "Buffer overflow vulnerabilities were exploited by the first major attack on the Internet. Known as the Morris worm, this attack infected more than 60,000 machines and shut down much of the Internet for several days in 1988.<br><small><small><small>Carolyn Duffy Marsan, Morris Worm Turns 20: Look what it's done, October 30, 2008  <a href = https://archive.nytimes.com/www.nytimes.com/external/idg/2008/10/30/30idg-Morris-worm-tur.html</a></small></small></small>"
                 },
                 {
                     "type": "subheader",
@@ -60,7 +60,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "In the code above, buffer has 10 elements but the loop attempts to writes through 15 elements, which can result in a buffer overflow in many languages. In Java, the code results in an ArrayIndexOutOfBoundsException:"
+                    "text": "In the code above, buffer has 10 elements but the loop attempts to writes through 15 elements, which can result in a buffer overflow in many languages. In Java, the code results in an <code>ArrayIndexOutOfBoundsException:</code>"
                 },
                 {
                     "type": "codeblock",
@@ -229,7 +229,7 @@
                     "choices": [
                         {
                             "id": "buffer overflow",
-                            "text": "The code outputs \"after buffer overflow: \" and \"importantdata = 1\"."
+                            "text": "The code outputs <code>after buffer overflow: </code> and <code>importantdata = 1/code>."
                         },
                         {
                             "id": "error",
@@ -237,7 +237,7 @@
                         },
                         {
                             "id": "loopError",
-                            "text": "The error ArrayIndexOutOfBoundsException occurs because the array has a max index of 10 elements and is set to accept 15 from the for loop."
+                            "text": "The error <code>ArrayIndexOutOfBoundsException</code> occurs because the array has a max index of 10 elements and is set to accept 15 from the for loop."
                         }
                     ],
                     "answer": "loopError"
@@ -385,7 +385,7 @@
                 {
                     "type": "question",
                     "id": "Dquestion4",
-                    "prompt": "What can result from a buffer overflow ?",
+                    "prompt": "What can result from a buffer overflow?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

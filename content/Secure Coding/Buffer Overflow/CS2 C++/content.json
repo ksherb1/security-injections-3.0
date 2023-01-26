@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Buffer overflow occurs when data is input or written beyond the allocated bounds of an buffer, array, or other object causing a program crash or a vulnerability that hackers might exploit. C++ is particularly vulnerable to buffer overflow."
+                    "text": "A buffer overflow occurs when data is input or written beyond the allocated bounds of a buffer, array, or another object, causing a program crash or a vulnerability that hackers might exploit. C++ is particularly vulnerable to buffer overflow."
                 },
                 {
                     "type": "subheader",
@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler.</small></small>"
+                    "text": "<small><small>Video by Lydia Spurrier and Miya Dubler. No captions available.</small></small>"
                 },
                 {
                     "type": "subheader",
@@ -68,11 +68,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "This program increments the loop counter past the last element of the array. When the assignment statement tries to store a value in vals[10], a buffer overflow occurs. The results are unpredictable, depending on the compiler and the specific nature of the overflow. Some overflows will not cause any apparent problems, while others will cause the program to crash. However, all buffer overflows are undefined behavior and must be remedied. Some languages have tools that will catch buffer overflows before they can become vulnerabilities: Java's automatic array bound checking facilities will trigger an ArrayIndexOutOfBoundsException when a buffer overflow occurs."
+                    "text": "This program increments the loop counter past the last element of the array. When the assignment statement tries to store a value in <code>vals[10]</code>, a buffer overflow occurs. The results are unpredictable, depending on the compiler and the specific nature of the overflow. Some overflows will not cause any apparent problems, while others will cause the program to crash. However, all buffer overflows are undefined behavior and must be remedied. Some languages have tools that will catch buffer overflows before they can become vulnerabilities. Java's automatic array bounds checking facilities will trigger an <code>ArrayIndexOutOfBoundsException</code> when a buffer overflow occurs."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Because buffer overflow is a common problem in C/C++, it is recommended to declare any variable that is used to represent the size of an object, including integer values used as sizes, indices, loop counters, and lengths, as <i>size_t</i>. The <i>size_t</i> type is an unsigned integer type."
+                    "text": "Because buffer overflow is a common problem in C/C++, it is recommended to declare any variable that is used to represent the size of an object, including integer values used as sizes, indices, loop counters, and lengths, as <code>size_t</code>. The <code>size_t</code> type is an unsigned integer type."
                 },
                 {
                     "type": "subheader",
@@ -152,11 +152,11 @@
                         "<i><strong>Make sure you have enough space:</strong></i> Before copying data to a fixed size block, make sure it is large enough to hold the new data. Do not copy more data than your available space can hold.",
                         "<i><strong>Validate indices:</strong></i> If you have an integer variable, declare it as an unsigned int and verify that it is within the proper bounds before you use it as an index to an array. This validation is particularly important for any values that might have come from untrusted sources such as user input, network data, or untrusted files.",
                         "<i><strong>When possible, use buffer-size accessors:</strong></i> Some languages—such as Java—provide operators that can be used to retrieve the size of an array. Using these operators can help you avoid buffer overflow.",
-                        "<i><strong>Use alternative data structures that reduce the risk of overflows:</strong></i>When possible, use vectors and iterators instead of arrays and integer-indexed loops. These tools will not eliminate the problem, but will greatly reduce the risk of buffer overflow.",
+                        "<i><strong>Use alternative data structures that reduce the risk of overflows:</strong></i> When possible, use vectors and iterators instead of arrays and integer-indexed loops. These tools will not eliminate the problem, but will greatly reduce the risk of buffer overflow.",
                         "<i><strong>Try to avoid allocating storage until you know how much you need:</strong></i> When possible, wait to allocate memory until after you know how much space you need. In some cases, this may mean allocating a new buffer instead of reusing an old one.",
                         "<i><strong>Send the size of the array along with the array:</strong></i> If you’re using an array as an argument to a function, be sure to send the size of the array to the function as well. This value can be used as an upper limit on array indices.",
                         "<i><strong>Avoid risky functions:</strong></i> Some languages have a variety of library functions that may lead to buffer overflow vulnerabilities. If you are using any library functions for reading user data, copying data, or allocating/freeing blocks of data, understand the appropriate uses of these functions. In many cases, more secure versions of risky functions are available—use these instead.",
-                        "<i><strong>Use your tools:</strong></i> Many compilers provide warnings in cases of potential buffer overflows. Use high warning settings, and fix your code to avoid these warnings. Use static analysis tools to analyze your source coda or use dynamic analysis tools to examine and report on the state of your program while running.",
+                        "<i><strong>Use your tools:</strong></i> Many compilers provide warnings in cases of potential buffer overflows. Use high warning settings, and fix your code to avoid these warnings. Use static analysis tools to analyze your source code or use dynamic analysis tools to examine and report on the state of your program while running.",
                         "<i><strong>Handle exceptions with care:</strong></i> Checking for and responding to potential overflows in your code, instead of relying on the exception-handling mechanism, will make your code more robust and secure."
                     ],
                     "ordered": true
@@ -251,7 +251,7 @@
                 {
                     "type": "question",
                     "id": "LQ3",
-                    "prompt": "What strategies might you use to remove potential buffer overflow vulnerabilities from this program? (hint: 1) Revise copyVals to return an array. 2) Modify getChars. 3) Modify getSubstring)",
+                    "prompt": "What strategies might you use to remove potential buffer overflow vulnerabilities from this program? Hint: Revise <code>copyVals</code> to return an array. 2) Modify <code>getChars</code>. 3) Modify <code>getSubstring</code>",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

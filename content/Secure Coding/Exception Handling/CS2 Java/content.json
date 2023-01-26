@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "During the execution of a program, things can, and do go wrong. The user may enter inappropriate data, a device may go offline, necessary disk space for output may not be available, etc. Errors occurring at runtime are known as exceptions and exception handling is the process designed to handle exceptions. Failure to properly handle an exception can cause a program to abort and/or expose sensitive information about the program and the environment in which the program is executing."
+                    "text": "During the execution of a program, things can and do go wrong. The user may enter inappropriate data, a device may go offline, necessary disk space for output may not be available, etc. Errors occurring at runtime are known as exceptions and exception handling is the process designed to handle exceptions. Failure to properly handle an exception can cause a program to abort and/or expose sensitive information about the program and the environment in which the program is executing."
                 },
                 {
                     "type": "subheader",
@@ -24,11 +24,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "When an exception occurs, the Java runtime creates an exception object containing information about the error and the program state at the time of the error. There are numerous (well over 50!) exception classes defined in the Java API."
+                    "text": "When an exception occurs, the Java runtime creates an exception object containing information about the error and the program state at the time of the error. There are well over 50 exception classes defined in the Java API."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Once the exception object has been constructed, it is handed to the Java runtime system. This is called 'throwing' an exception. The Java runtime system must then locate an exception handler. In searching for an exception handler, the runtime system begins with the method in which the exception occurred. If this method is not prepared to handle the exception, the runtime system will search the call stack in reverse in search of a suitable exception handler. For example, if methodA calls methodB which calls methodC and an exception occurs during the execution of methodC, the runtime system will search methodC first, then methodB, and lastly methodA for an exception handler. When an appropriate exception handler is found, the runtime system turns over the exception object to the handler. The selected exception handler is said to 'catch' the exception."
+                    "text": "Once the exception object has been constructed, it is handed to the Java runtime system. This is called <strong>throwing</strong> an exception. The Java runtime system must then locate an exception handler. In searching for an exception handler, the runtime system begins with the method where the exception occurred. If this method is not prepared to handle the exception, the runtime system will search the call stack in reverse for a suitable exception handler. For example, if methodA calls methodB which calls methodC and an exception occurs during the execution of methodC, the runtime system will search methodC first, then methodB, and lastly methodA for an exception handler. When an appropriate exception handler is found, the runtime system turns over the exception object to the handler. The selected exception handler is said to <strong>catch</strong> the exception."
                 },
                 {
                     "type": "subheader",
@@ -36,7 +36,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Some exceptions are known as checked exceptions and exception handling, or catching checked exceptions, is required to be included in the program. Other exceptions, unchecked exceptions, do not require an exception handler. Most unchecked exceptions, however, cause the program to display an error message (which may be a security issue since it exposes the inner details of your application) and stop execution when not handled. Exception handling provides a way for the program to possibly recover from an error or at least terminate in a graceful manner."
+                    "text": "Some exceptions are known as \"checked exceptions,\" or catching checked exceptions. Other exceptions, like <strong>unchecked exceptions</strong>, do not require an exception handler. Most unchecked exceptions, however, cause the program to display an error message and stop execution when not handled. This may lead to security issues because it exposes the inner details of your application. Others unchecked exceptions, like problems with input/output, must be activated by the programmer before the runtime will throw them. Exception handling provides a way for the program to possibly recover from an error or at least terminate in a graceful manner."
                 }
             ]
         },
@@ -50,11 +50,11 @@
                 {
                     "type": "list",
                     "items": [
-                        "<strong><i>Know your exceptions</i></strong>: Every method in the Java API lists any exceptions that might be thrown. Checked exceptions must be handled. Although unchecked exceptions do not require exception handling code, consider handling them or providing code checks such that the exception can never occur.",
-                        "<strong><i>Order exception handlers correctly</strong></i>:When more than one exception handler is desired, code them in the order that they are more likely to occur. When a generic exception handler is also used, it should appear last.",
-                        "<strong><i>Handle exceptions appropriately</strong></i>: Once an exception occurs, the remaining statements of the try block will not be executed. Therefore, it is important that the exception handler recover from the exception such that the program can continue. If recovery in not possible, exit the program.",
-                        "<strong><i>An exception should not expose sensitive information</strong></i>: Some exception objects such as FileNotFoundException, define messages that expose information about the state of the program and/or the file system. Displaying the stack trace from the exception object may also leak information. Therefore, do not utilize the exception object’s printStackTrace() method and do not display the result of the exception object’s getMessage() method.",
-                        "RuntimeException exceptions are thrown due to bugs in the program. These bugs should be corrected during development."
+                        "<strong><i>Know your exceptions</i></strong>: Every method in the Java API lists any exceptions that might be thrown. Checked exceptions must be handled. Although unchecked exceptions do not require exception handling code, consider handling them or providing code checks so the exception can never occur.",
+                        "<strong><i>Order exception handlers correctly</strong></i>: When more than one exception handler is desired, code them in the order that they are more likely to occur. When a generic exception handler is also used, it should appear last.",
+                        "<strong><i>Handle exceptions appropriately</strong></i>: Once an exception occurs, the remaining statements of the try block will not be executed. Therefore, it is important that the exception handler recovers from the exception so the program can continue. If recovery is not possible, exit the program.",
+                        "<strong><i>An exception should not expose sensitive information</strong></i>: Some exception objects such as <code>FileNotFoundException</code>, define messages that expose information about the state of the program or the file system. Displaying the stack trace from the exception object may also leak information. Therefore, do not utilize the exception object’s <code>printStackTrace()</code> method, and do not display the result of the exception object’s <code>getMessage()</code> method.",
+                        "<strong><i><code>RuntimeException</code> exceptions are thrown due to bugs in the program</strong></i>: These bugs should be corrected during development."
                     ],
                     "ordered": true
                 }
@@ -78,11 +78,11 @@
                 {
                     "type": "list",
                     "items": [
-                        "Type* the program above and compile. Run and enter an integer between 1 and 10.",
-                        "The program is requesting a number between 1 and 10. Run the program again and enter 5.5.  Although this number is between 1 and 10, the program will abort.  Examine the error message.  You should see the word Exception, the method where the exception occurred (main), the class name of the exception (InputMismatchException), as well as the call stack listing the method calls.",
-                        "Add a try/catch block to catch and handle the InputMismatchException exception. Identify the statements that cause the error as well as the portions of the program that depend upon these statements.  Enclose these statements within the try block.  Follow the try block with the catch block given below.  Note, the InputMismatchException class is defined in java.util and must be imported.  Also, when the Scanner throws an InputMismatchException, the input token will remain in the buffer so that it can be examined by the program.  In our case, we will not be examining the token, but will simply clear out of the buffer to start over.<br><br><code>catch (InputMismatchException ime) {<br> &nbsp&nbsp&nbsp&nbsp System.out.println(\"Enter whole numbers only, with no spaces or other characters\");<br> &nbsp&nbsp&nbsp&nbsp scan.next(); &nbsp&nbsp&nbsp&nbsp&nbsp // clear the scanner buffer<br>}</code>",
-                        "Compile and run the program again, testing with a variety of input (integers, floats, characters). The program should not abort when floats or character data is given.",
-                        "Complete the security checklist for Program 1."
+                        "Type the program above and compile. Run and enter an integer between 1 and 10.",
+                        "The program is requesting a number between 1 and 10. Run the program again and enter 5.5.  Although this number is between 1 and 10, the program will abort. Examine the error message. You should see the word <code>exception</code>, the method where the exception occurred (<code>main()</code>), the class name of the exception (<code>InputMismatchException</code>), and the call stack listing the method calls.",
+                        "Add a try/catch block to catch and handle the <code>InputMismatchException</code> exception. Identify the statements that cause the error as well as the portions of the program that depend upon these statements. Enclose these statements within the try block. Follow the try block with the catch block given below. Note, the <code>InputMismatchException</code> class is defined in <code>java.util</code> and must be imported.  Also, when the Scanner throws an <code>InputMismatchException</code>, the input token will remain in the buffer so that it can be examined by the program. In our case, we will not be examining the token, but will simply clear out of the buffer to start over.<br><br><kbd>catch (InputMismatchException ime) {<br> &nbsp&nbsp&nbsp&nbsp System.out.println(\"Enter whole numbers only, with no spaces or other characters\");<br> &nbsp&nbsp&nbsp&nbsp scan.next(); &nbsp&nbsp&nbsp&nbsp&nbsp // clear the scanner buffer<br>}</kbd>",
+                        "Compile and run the program again, testing with a variety of input (integers, floats, characters). The program should not abort when float or character data is given.",
+                        "Complete the Security Checklist for Program 1."
                     ],
                     "ordered": true
                 },
@@ -139,12 +139,12 @@
                 {
                     "type": "list",
                     "items": [
-                        "As we saw in Lab Program 1, the Scanner may throw an <i>InputMismatchException</i>. This is an unchecked exception and we are not required to handle unchecked exceptions. The Java runtime system will handle the exception by aborting the program and displaying the exception information. Other methods may throw checked exceptions. A checked exception must be handled. Type* the program above and compile. You should receive a compilation error stating that the <i>FileNotFoundException</i> must be caught or declared to be thrown.",
-                        "We will first test the program knowing that the input file does not exist. Add a try/catch block such that if the input file is not found, report the problem and display a total of 0. Use the getMessage() method of the exception object to report the problem.<br><br><code>catch (FileNotFoundException fnf) {<br> &nbsp&nbsp&nbsp&nbsp //display total of 0<br> &nbsp&nbsp&nbsp&nbsp System.out.println(fnf.getMessage());<br>  } </code>",
-                        "Create a file named inFile.txt using a plain text editor. Enter only integer values into the file and save the file in the same folder as the program (if you are using a IDE, then put it in the main project folder). Run the program to verify that the program functions correctly with a valid input file.",
-                        "Any number of catch clauses may be coded for a single try block. Add another catch clause to catch <i>InputMismatchException</i> immediately before or after the <i>FileNotFoundException</i> clause. Remember to import the exception class and to clear the scanner buffer. Modify the inFile.txt file to include an error. Run and test the program. As soon as an exception occurs, the catch clause is executed. Since the <i>InputMismatchException</i> catch clause is outside of the read loop, the first invalid piece of data will cause the program to end without reading the remainder of the file.",
-                        "Any number of try blocks may be coded with each having a least one catch clause. Rather than catching the <i>InputMismatchException</i> outside the loop, let’s move it inside the loop. This will allow our program to report the invalid data, resume processing, and produce correct results for the valid data given. Add a new try block within the while loop and move the <i>InputMismatchException</i> catch block such that the while loop is as shown below.<br><br><code>while (inputFile.hasNext())  {<br> &nbsp&nbsp&nbsp&nbsp try{ <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp num = inputFile.nextInt(); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp total += num; <br> &nbsp&nbsp&nbsp&nbsp } catch (InputMismatchException ime) { <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.print( \"Illegal value found\"); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp inputFile.next();<br> &nbsp&nbsp&nbsp&nbsp }<br>} &nbsp&nbsp&nbsp&nbsp //end while</code>",
-                        "Complete the security checklist for Program 2."
+                        "As we saw in Lab Program 1, the Scanner may throw an <code>InputMismatchException</code>. This is an unchecked exception and we are not required to handle unchecked exceptions. The Java runtime system will handle the exception by aborting the program and displaying the exception information. Other methods may throw checked exceptions. A checked exception must be handled. Type the program above and compile. You should receive a compilation error stating that the <code>FileNotFoundException</code> must be caught or declared to be thrown.",
+                        "We will first test the program knowing that the input file does not exist. Add a try/catch block so that if the input file is not found, report the problem and display a total of 0. Use the <code>getMessage()</code> method of the exception object to report the problem.<br><br><kbd>catch (FileNotFoundException fnf) {<br> &nbsp&nbsp&nbsp&nbsp //display total of 0<br> &nbsp&nbsp&nbsp&nbsp System.out.println(fnf.getMessage());<br>  } </kbd>",
+                        "Create a file named <code>inFile.txt</code> using a plain text editor. Enter only integer values into the file and save the file in the same folder as the program (if you are using a IDE, then put it in the main project folder). Run the program to verify that the program functions correctly with a valid input file.",
+                        "Any number of catch clauses may be coded for a single try block. Add another catch clause to catch <code>InputMismatchException</code> immediately before or after the <code>FileNotFoundException</code> clause. Remember to import the exception class and to clear the scanner buffer. Modify the <code>inFile.txt</code> file to include an error. Run and test the program. As soon as an exception occurs, the catch clause is executed. Since the <code>InputMismatchException</code> catch clause is outside of the read loop, the first invalid piece of data will cause the program to end without reading the remainder of the file.",
+                        "Any number of try blocks may be coded with each having a least one catch clause. Rather than catching the <code>InputMismatchException</code> outside the loop, let’s move it inside the loop. This will allow our program to report the invalid data, resume processing, and produce correct results for the valid data given. Add a new try block within the while loop and move the <code>InputMismatchException</code> catch block such that the while loop is as shown below.<br><br><kbd>while (inputFile.hasNext())  {<br> &nbsp&nbsp&nbsp&nbsp try{ <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp num = inputFile.nextInt(); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp total += num; <br> &nbsp&nbsp&nbsp&nbsp } catch (InputMismatchException ime) { <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp System.out.print( \"Illegal value found\"); <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp inputFile.next();<br> &nbsp&nbsp&nbsp&nbsp }<br>} &nbsp&nbsp&nbsp&nbsp //end while</kbd>",
+                        "Complete the Security Checklist for Program 2."
                     ],
                     "ordered": true
                 },
@@ -202,7 +202,7 @@
                 {
                     "type": "question",
                     "id": "dq2",
-                    "prompt": "An <i>InputMismatchException</i> is an unchecked exception.  Since exception handling of an unchecked exception in not required, why should the programmer add this checking?",
+                    "prompt": "An <code>InputMismatchException</code> is an unchecked exception. Since exception handling of an unchecked exception in not required, why should the programmer add this checking?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -218,7 +218,7 @@
                 {
                     "type": "question",
                     "id": "dq4",
-                    "prompt": "Describe other types of exceptions (non-IO related) that may occur at runtime. <br>(<i>Hint:  view the Exceptions category of various libraries such as java.lang and java.util in the Java API.</i>)",
+                    "prompt": "Describe other types of exceptions (non-IO related) that may occur at runtime. <br>(<i>Hint: view the Exceptions category of various libraries such as java.lang and java.util in the Java API.</i>)",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
@@ -234,7 +234,7 @@
                 {
                     "type": "question",
                     "id": "dq6",
-                    "prompt": "Exception classes are derived from other exception classes. For example, the <i>FileNotFoundeException</i> class is derived from the <i>IOException</i> class. And, the <i>IOException</i> class is derived from the <i>Exception</i> class. Rather than check for the exact exception class, the catch clause could specify a super class. What are the advantages and disadvantages of specifying a super class in a catch clause?",
+                    "prompt": "Exception classes are derived from other exception classes. For example, the <code>FileNotFoundeException</code> class is derived from the <code>IOException</code> class. And, the <code>IOException</code> class is derived from the <code>Exception</code> class. Rather than check for the exact exception class, the catch clause could specify a super class. What are the advantages and disadvantages of specifying a super class in a catch clause?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"

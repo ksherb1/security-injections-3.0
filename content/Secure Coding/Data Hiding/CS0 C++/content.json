@@ -16,7 +16,7 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "\"Data hiding\" is the process of obscuring sensitive data so that others cannot easily understand it. \"Cryptology\", which is literally Greek for the \"study of hiding\", is the most secure form of data hiding."
+					"text": "\"Data hiding\" is the process of obscuring sensitive data so that others cannot easily understand it. \"Cryptology,\" which is Greek for the \"study of hiding,\" is the most secure form of data hiding."
 				},
 				{
 					"type": "subheader",
@@ -79,11 +79,11 @@
 					"choices": [
 						{
 							"id": "plain",
-							"text": "plaintext"
+							"text": "Plaintext"
 						},
 						{
 							"id": "cipher",
-							"text": "ciphertext"
+							"text": "Ciphertext"
 						}
 					],
 					"answer": "cipher"
@@ -97,11 +97,11 @@
 					"choices": [
 						{
 							"id": "true",
-							"text": "true"
+							"text": "True"
 						},
 						{
 							"id": "false",
-							"text": "false"
+							"text": "False"
 						}
 					],
 					"answer": "true"
@@ -118,10 +118,10 @@
 				{
 					"type": "list",
 					"items": [
-						"be resistant to brute-force attacks",
-						"be resistant to statistical attacks",
-						"resolve the key-sharing problem",
-						"be computationally efficient"
+						"Be resistant to brute-force attacks",
+						"Be resistant to statistical attacks",
+						"Resolve the key-sharing problem",
+						"Be computationally efficient"
 					],
 					"ordered": true
 				},
@@ -131,11 +131,11 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "A \"brute-force\" attack is one where the assailant simply tries to decrypt the ciphertext with every possible key until something makes sense."
+					"text": "A \"brute-force\" attack is one where the assailant tries to decrypt the ciphertext with every possible key until they crack the code."
 				},
 				{
 					"type": "paragraph",
-					"text": "<strong>To be resistant to a brute-force attack, a cipher should have a very large number of possible keys.</strong> For example, a \"single-substitution cipher\" maps each letter of plaintext to a different letter of ciphertext. There are over 4*10<sup>26</sup> different ways to map all 26 letters, so there are over 4*10<sup>26</sup> keys. In general, the more possible keys there are, the more time an assailant must devote for a brute-force attack to be effective."
+					"text": "<strong>To resist a brute-force attack, a cipher should have a large number of possible keys.</strong> For example, a \"single-substitution cipher\" maps each letter of plaintext to a different letter of ciphertext. There are over 4*10<sup>26</sup> different ways to map all 26 letters, so there are over 4*10<sup>26</sup> keys. In general, the more possible keys there are, the more time an assailant must devote to a brute-force attack."
 				},
 				{
 					"type": "subheader",
@@ -147,11 +147,11 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "<strong>To be resistant to a statistical attack, a cipher should avoid creating a one-to-one mapping of characters in plaintext and ciphertext</strong> (ex. 'a' should not always become 's', 'b' should not always become 'h', etc.). One strategy to resist statistical attacks is to perform substitution on blocks of text, rather than single letters. For example, a \"double-substitution cipher\" might convert the letters 'aa' to 'st', the letters 'ab' to 'qi', and so on."
+					"text": "<strong>To resist a statistical attack, a cipher should avoid creating a one-to-one mapping of characters in plaintext and ciphertext</strong> (e.g., 'a' should not always become 's', 'b' should not always become 'h'). One strategy to resist statistical attacks is to perform substitution on blocks of text, rather than single letters. For example, a \"double-substitution cipher\" might convert the letters 'aa' to 'st', the letters 'ab' to 'qi', and so on."
 				},
 				{
 					"type": "paragraph",
-					"text": "But beware! Certain multi-letter combinations still appear with different frequency than others, and are therefore still vulnerable to sophisticated statistical attacks. In general, the larger the block size, the less pronounced these differences, and the longer a message must be for a statistical attack to be effective."
+					"text": "But beware! Certain multi-letter combinations still appear with different frequency than others, making them vulnerable to sophisticated statistical attacks. In general, the larger the block size, the longer a message must be for a statistical attack to be effective."
 				},
 				{
 					"type": "subheader",
@@ -159,11 +159,11 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "The key-sharing problem is simple: say two people are on opposite sides of the globe, and they would like to exchange messages securely. How can they agree on a key to use, without the risk that an attacker may intercept it (and also preferably without flying)?"
+					"text": "The key-sharing problem is simple: say two people are on opposite sides of the globe, and they would like to exchange messages securely. How can they agree on a key to use without the risk that an attacker may intercept it AND without travelling?"
 				},
 				{
 					"type": "paragraph",
-					"text": "<strong>Public-key cryptosystems</strong> bypass this problem by using ciphers that rely on two separate keys: a <strong>public key</strong>, used for encryption, and a <strong>private key</strong>, used for decryption. Every person who receives encrypted messages must have their own public/private key pair. All public keys can be safely shared with anyone, allowing anyone to send encrypted messages. But each person keeps their own private key secret, meaning only they are able to decrypt messages sent to them."
+					"text": "<strong>Public-key cryptosystems</strong> bypass this problem by using ciphers that rely on two separate keys: a <strong>public key</strong> for encryption, and a <strong>private key</strong> for decryption. Anyone who receives encrypted messages must have their own public/private key pair. All public keys can be safely shared because they allow anyone to send encrypted messages. However, everyone must keep their own private key secret so only they can decrypt messages sent to them."
 				},
 				{
 					"type": "subheader",
@@ -182,22 +182,22 @@
 					"choices": [
 						{
 							"id": "complex",
-							"text": "a time-consuming encryption/decryption process",
+							"text": "A time-consuming encryption/decryption process",
 							"ans": false
 						},
 						{
 							"id": "keys",
-							"text": "a large number of possible keys",
+							"text": "A large number of possible keys",
 							"ans": false
 						},
 						{
 							"id": "plaintocipher",
-							"text": "each letter of plaintext may become several letters of ciphertext",
+							"text": "Each letter of plaintext may become several letters of ciphertext",
 							"ans": true
 						},
 						{
 							"id": "ciphertoplain",
-							"text": "each letter of ciphertext may have been several letters of plaintext",
+							"text": "Each letter of ciphertext may have been several letters of plaintext",
 							"ans": true
 						}
 					]
@@ -205,7 +205,7 @@
 				{
 					"type":	"question",
 					"id":	"send",
-					"prompt": "Alice would like to send Bob a message using public-key cryptography. Which key does she use to encrypt her message?",
+					"prompt": "Alice would like to send Bob a message using public-key cryptography. Which key should she use to encrypt her message?",
 					"ignored": false,
 					"mode":	"radio",
 					"choices": [
@@ -231,7 +231,7 @@
 				{
 					"type":	"question",
 					"id":	"receive",
-					"prompt": "Bob has just received a message from Alice encrypted using public-key cryptography. Which key does he use to decrypt her message?",
+					"prompt": "Bob has just received Alice's encrypted message. Which key should he use to decrypt her message?",
 					"ignored": false,
 					"mode":	"radio",
 					"choices": [
@@ -261,7 +261,7 @@
 			"units": [
 				{
 					"type": "paragraph",
-					"text": "Consider the <strong>shift cipher</strong>, which shifts each letter in the alphabet by a certain amount. The <strong>key</strong> is simply a number between 1 and 25, specifying the amount to shift by. For example, the letter 'a' shifted by 1 becomes 'b'. The letter 'z' wraps back to the beginning of the alphabet, so 'z' shifted by 1 becomes 'a'."
+					"text": "Consider the <strong>shift cipher</strong>, which shifts each letter in the alphabet by a certain <strong>key</strong>, wich is a number between 1 and 25. For example, the letter 'a' shifted by 1 becomes 'b'. The letter 'z' wraps back to the beginning of the alphabet, so 'z' shifted by 1 becomes 'a'."
 				},
 				{
 					"type": "subheader",
@@ -270,7 +270,7 @@
 				{
 					"type": "question",
 					"id": "encrypt",
-					"prompt": "Encrypt the following message with the specified key:<br/>Key: 7<br/><br/><kbd>traditionally plaintext is all lower case and ciphertext is all uppercase and punctuation is avoided</kbd>",
+					"prompt": "Encrypt the following message with the specified key: 7<br><br><kbd>encrypted text should be typed as all uppercase and decrypted text should be typed as all lowercase and punctuation is avoided</kbd></br></br>",
 					"ignored": false,
 					"mode": "textarea",
 					"pattern": "AYHKPAPVUHSSF WSHPUALEA PZ HSS SVDLY JHZL HUK JPWOLYALEA PZ HSS BWWLYJHZL HUK WBUJABHAPVU PZ HCVPKLK"
@@ -282,7 +282,7 @@
 				{
 					"type": "question",
 					"id": "decrypt",
-					"prompt": "Decrypt the following messages with the specified key:<br/>Key: 23<br/><br/><kbd>KLQB QEXQ JLABOK AXV ZOVMQLPVPQBJP LMBOXQB LK PBNRBKZBP LC WBOLP XKA LKBP KLQ IBQQBOP</kbd>",
+					"prompt": "Decrypt the following message with the specified key: 23<br><br><kbd>KLQB QEXQ JLABOK AXV ZOVMQLPVPQBJP LMBOXQB LK PBNRBKZBP LC WBOLP XKA LKBP KLQ IBQQBOP</kbd></br></br>",
 					"ignored": false,
 					"mode": "textarea",
 					"pattern": "note that modern day cryptosystems operate on sequences of zeros and ones not letters"
@@ -293,7 +293,7 @@
 				},
 				{
 					"type": "paragraph",
-					"text": "Finish the following program, which prompts for and receives a ciphertext string, then displays all 25 possible decryptions."
+					"text": "Finish the following program, which prompts for a ciphertext string, then displays all 25 possible decryptions."
 				},
 				{
 					"type": "codeblock",
@@ -302,7 +302,7 @@
 				{
 					"type": "question",
 					"id": "key",
-					"prompt": "Use your program on the following message. What key produced the ciphertext?<br/><br/>KYV JYZWK TZGYVI ZJ RCJF BEFNE RJ KYV TRVJRI TZGYVI, RWKVI ALCZLJ TRVJRI, NYF IVGLKVUCP LJVU KYV TZGYVI KF GRJJ DVJJRXVJ KF YZJ KIFFGJ ULIZEX YZJ DZCZKRIP TRDGRZXEJ ZE XRLC. EFKV KYRK KYV <strong>TRVJRI</strong> TZGYVI ZJ VRJZCP TIRTBVU SP KYV <strong>SILKV</strong>-WFITV RKKRTB.",
+					"prompt": "Use your program on the following message. What key produced the ciphertext?<br><br><kbd>KYV JYZWK TZGYVI ZJ RCJF BEFNE RJ KYV TRVJRI TZGYVI RWKVI ALCZLJ TRVJRI NYF IVGLKVUCP LJVU KYV TZGYVI KF GRJJ DVJJRXVJ KF YZJ KIFFGJ ULIZEX YZJ DZCZKRIP TRDGRZXEJ ZE XRLC. EFKV KYRK KYV TRVJRI TZGYVI ZJ VRJZCP TIRTBVU SP KYV SILKV WFITV RKKRTB.</kbd></br></br>",
 					"ignored": false,
 					"mode": "textarea",
 					"pattern": "17"
@@ -446,7 +446,7 @@
 				{
 					"type": "question",
 					"id": "shift",
-					"prompt": "Say you have intercepted a message encrypted with a shift cipher, and you know the message ends with \"Love Bob\". Describe how you can decrypt the rest of the message without knowing the key.",
+					"prompt": "You have intercepted a message encrypted with a shift cipher, and you know the message ends with \"Love Bob.\" Describe how you can decrypt the rest of the message without knowing the key.",
 					"ignored": true,
 					"mode": "textarea",
 					"pattern": null
@@ -454,7 +454,7 @@
 				{
 					"type": "question",
 					"id": "sub",
-					"prompt": "Say you have intercepted a message encrypted with a single-substitution cipher, and you know the message starts with \"Dear Alice\". Describe how you can decrypt the rest of the message without knowing the key.",
+					"prompt": "You have intercepted a message encrypted with a single-substitution cipher, and you know the message starts with \"Dear Alice.\" Describe how you can decrypt the rest of the message without knowing the key.",
 					"ignored": true,
 					"mode": "textarea",
 					"pattern": null
@@ -462,7 +462,7 @@
 				{
 					"type": "question",
 					"id": "rsa",
-					"prompt": "You've learned that RSA doesn't really meet two of our criteria for a good cipher, yet it is the most widely used public-key cryptosystem today. What makes it secure enough for use?",
+					"prompt": "You've learned that RSA doesn't meet two of our criteria for a good cipher, yet it is the most widely used public-key cryptosystem today. What makes it secure enough for use?",
 					"ignored": true,
 					"mode": "textarea",
 					"pattern": null

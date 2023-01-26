@@ -1,6 +1,6 @@
 {
     "name": "Business",
-    "variant": "Business Use Security",
+    "variant": "Use Security",
     "grant": "The Security Injections@Towson, SPLASH@Towson, and Cyber4All projects are supported by the National Science Foundation under grants NSF DUE-1241738, NSF DUE -0817267, NSF DGE-1516113, NSF DGE-1516113, NSF DGE-1241649, the GenCyber program, and the Intel Corporation.",
 	"license": {
 		"name": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License",
@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "subheader",
-                    "text": "Risk- How Can It Happen?"
+                    "text": "Risk - How Can It Happen?"
                 },
                 {
                     "type": "paragraph",
@@ -285,7 +285,7 @@
                 {
                     "type": "question",
                     "id": "dq1",
-                    "prompt": "Defense Against the Dark Arts is important not only in Harry Potter’s world but also in the world of business under the threat of cyber insecurity. Cyber Security measures are often substantial investments and may lead to substantial operating costs. Why is it still imperative for a business to take this route?",
+                    "prompt": "Cyber Security measures are often substantial investments and may lead to substantial operating costs. Why is it still imperative for a business to take this route?",
                     "ignored": true,
                     "mode": "textarea",
                     "pattern": "null"
