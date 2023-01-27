@@ -282,22 +282,9 @@ footer a:hover {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
 textarea {
    resize: none;
 }
-
-
 
 .table-bordered th,
 .table-bordered td {
@@ -307,7 +294,6 @@ textarea {
 .chart th, .chart td{
 	border: 0px solid #999 !important;
 }
-
 
 .feedback{
 position:fixed;
@@ -324,11 +310,6 @@ z-index: 1;
 }
 
 .feedback img{width:100%;height:auto;}​
-
-
-
-
-
 
 /* For bootstrap since relies on empty hrefs */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

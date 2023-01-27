@@ -16,6 +16,10 @@ $(document).ready(function() {
 	 */
 	function advance(question) {
 		var next;
+		
+		// remove highlight from previous question
+		$(".span-" + name).removeClass("si-code-clicked");
+		
 		if(typeof(question)==='undefined') {
 			next = name+"-array-dec";  // first question
 		} else {
@@ -50,10 +54,13 @@ $(document).ready(function() {
 
 		// focus on next question
 		$("#"+next+"-label").addClass("si-checklist-active");
-		// Remove hidden class from progress bar when question is highlighted
-		$("#" + next + "-progress-label").removeClass("progress-hidden");
-		// Add the progress bar css
-		$("#" + next + "-progress-label").addClass("progress");
+		// if the question only has 1 span to click, don't show progress bar
+		if(next.endsWith("-array-dec") || next.endsWith("-array-ref") || next.endsWith("-var-array")){ }else{
+			// remove hidden class from progress bar
+			$("#" + next + "-progress-label").removeClass("progress-hidden");
+			// add the progress bar fill
+			$("#" + next + "-progress-label").addClass("progress");
+		}
 
 		//IF POPOVER IS NEEDED
 		if(next === name+"-var-range") { 
@@ -105,7 +112,7 @@ $(document).ready(function() {
 
 	current = advance();
 
-	//Handles score for each individual question
+	//Handles score for each question
 	$(".span-"+name).each(function(index) {
 		spans.push($(this));
 		
@@ -113,19 +120,9 @@ $(document).ready(function() {
 			span = $(this);
 
 			// continue if user is currently supposed to click this span, and hasn't already
-			if( 
-			span.hasClass(current+"-"+name) && 
-			$.inArray(index,clicked) < 0 
-			) {
+			if(span.hasClass(current+"-"+name) && $.inArray(index,clicked) < 0 ) {
 				clicked.push(index);  // note that it's been clicked, programmatically
 				span.addClass("si-code-clicked");  // note that it's been clicked, graphically
-				if(
-				span.hasClass(name+"-var-modify-"+name)|| 
-				span.hasClass(name+"-var-array-"+name)
-				) {
-					//needs to be changed for vulnerabilities
-					span.addClass("si-code-vulnerability"); //	some spans get extra graphics to indicate vulnerability
-				}
 
 				// Check if 'current' question is finished yet
 				var finished = true;
@@ -140,8 +137,11 @@ $(document).ready(function() {
 
 				// if it is, go to next question
 				if (finished) {
-					previousWaitingOnCount += waitingOn.length;
-					current = advance(current);
+					// highlights correct answer before moving on to next question
+					setTimeout(function(){
+						previousWaitingOnCount += waitingOn.length;
+						current = advance(current);
+					}, 500);
 				}
 			}
 		});
