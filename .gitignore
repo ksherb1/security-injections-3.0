@@ -1,4 +1,4 @@
 node_modules
 public
 Copy\ of\ Web\ Pages/
-.DS_Store
+*.DS_Store
